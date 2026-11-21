@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0FEA9CB1717A69EFEE0992D /* LibreCoverageTransmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE6F810289C9B22FAA4A7B /* LibreCoverageTransmitterTests.swift */; };
+		C0FE06E563F94C05182FC09B /* LibreCoverageTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE234A75ACB0799E1AAC14 /* LibreCoverageTestSupport.swift */; };
+		C0FE45E8D445EBDA78979163 /* LibreCoverageSensorTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEE2DC9F025C1B3893B754 /* LibreCoverageSensorTypeTests.swift */; };
+		C0FE7854B6434D3EF30EFE38 /* LibreCoverageRealDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEDC71C2A5D23DE766DB6A /* LibreCoverageRealDataTests.swift */; };
+		C0FE951E0CBD1C6A1FC52492 /* LibreCoverageLibre3SupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE304714FCFD75B58C0631 /* LibreCoverageLibre3SupportTests.swift */; };
+		C0FE96FF7F7C1B8A75D9E4CF /* LibreCoverageLibre3ReadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE623D907ECF39F4F5F322 /* LibreCoverageLibre3ReadingTests.swift */; };
+		C0FE520F1FD29B49F53F33F3 /* LibreCoverageDataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE952535A67B12C2FBE267 /* LibreCoverageDataParserTests.swift */; };
+		C0FE5B0DA97C91FE3D71F069 /* LibreCoverageAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEADAF2FCB390781E97D31 /* LibreCoverageAlgorithmTests.swift */; };
 		A19A00370000000000000001 /* RepeatingAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A00370000000000000002 /* RepeatingAlarmTests.swift */; };
 		7E7760013000000100000001 /* SensorExpiryReminderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000002 /* SensorExpiryReminderManager.swift */; };
 		7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */; };
@@ -1001,6 +1009,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C0FE6F810289C9B22FAA4A7B /* LibreCoverageTransmitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageTransmitterTests.swift; sourceTree = "<group>"; };
+		C0FE234A75ACB0799E1AAC14 /* LibreCoverageTestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageTestSupport.swift; sourceTree = "<group>"; };
+		C0FEE2DC9F025C1B3893B754 /* LibreCoverageSensorTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageSensorTypeTests.swift; sourceTree = "<group>"; };
+		C0FEDC71C2A5D23DE766DB6A /* LibreCoverageRealDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageRealDataTests.swift; sourceTree = "<group>"; };
+		C0FE304714FCFD75B58C0631 /* LibreCoverageLibre3SupportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageLibre3SupportTests.swift; sourceTree = "<group>"; };
+		C0FE623D907ECF39F4F5F322 /* LibreCoverageLibre3ReadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageLibre3ReadingTests.swift; sourceTree = "<group>"; };
+		C0FE952535A67B12C2FBE267 /* LibreCoverageDataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageDataParserTests.swift; sourceTree = "<group>"; };
+		C0FEADAF2FCB390781E97D31 /* LibreCoverageAlgorithmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageAlgorithmTests.swift; sourceTree = "<group>"; };
 		A19A00370000000000000002 /* RepeatingAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingAlarmTests.swift; sourceTree = "<group>"; };
 		7E7760013000000100000002 /* SensorExpiryReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManager.swift; sourceTree = "<group>"; };
 		7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManagerTests.swift; sourceTree = "<group>"; };
@@ -2868,6 +2884,14 @@
 				7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */,
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
+				C0FE6F810289C9B22FAA4A7B /* LibreCoverageTransmitterTests.swift */,
+				C0FE234A75ACB0799E1AAC14 /* LibreCoverageTestSupport.swift */,
+				C0FEE2DC9F025C1B3893B754 /* LibreCoverageSensorTypeTests.swift */,
+				C0FEDC71C2A5D23DE766DB6A /* LibreCoverageRealDataTests.swift */,
+				C0FE304714FCFD75B58C0631 /* LibreCoverageLibre3SupportTests.swift */,
+				C0FE623D907ECF39F4F5F322 /* LibreCoverageLibre3ReadingTests.swift */,
+				C0FE952535A67B12C2FBE267 /* LibreCoverageDataParserTests.swift */,
+				C0FEADAF2FCB390781E97D31 /* LibreCoverageAlgorithmTests.swift */,
 				50E2401E5ED94424A2FEC5E8 /* xDrip Tests/TherapyMetricsTests.swift */,
 			);
 			path = "xDrip Tests";
@@ -4787,6 +4811,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0FEA9CB1717A69EFEE0992D /* LibreCoverageTransmitterTests.swift in Sources */,
+				C0FE06E563F94C05182FC09B /* LibreCoverageTestSupport.swift in Sources */,
+				C0FE45E8D445EBDA78979163 /* LibreCoverageSensorTypeTests.swift in Sources */,
+				C0FE7854B6434D3EF30EFE38 /* LibreCoverageRealDataTests.swift in Sources */,
+				C0FE951E0CBD1C6A1FC52492 /* LibreCoverageLibre3SupportTests.swift in Sources */,
+				C0FE96FF7F7C1B8A75D9E4CF /* LibreCoverageLibre3ReadingTests.swift in Sources */,
+				C0FE520F1FD29B49F53F33F3 /* LibreCoverageDataParserTests.swift in Sources */,
+				C0FE5B0DA97C91FE3D71F069 /* LibreCoverageAlgorithmTests.swift in Sources */,
 				4F3200013008000100000001 /* BgReadingTrendTests.swift in Sources */,
 				5A0100043015000100000001 /* GlucoseRangeDistributionTests.swift in Sources */,
 				5A0921023015000100000001 /* GMIStatisticsTests.swift in Sources */,
