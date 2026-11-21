@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0FE82E75AAB6EAE385B9D8A /* DataCoverageUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE87ED7BE0F9F5891C55E7 /* DataCoverageUserDefaultsTests.swift */; };
+		C0FE08796EADED9E4127D5AA /* DataCoverageHousekeepingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE445BB532BE1AE7C8146F /* DataCoverageHousekeepingTests.swift */; };
+		C0FE03321DACB692220D470A /* DataCoverageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE613DB88DD2C8C2698D17 /* DataCoverageExtensionsTests.swift */; };
+		C0FE33F5EAAA7C71D8E991E0 /* DataCoverageCoreDataClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE8F7EF2B3B676F3BCA17B /* DataCoverageCoreDataClassTests.swift */; };
+		C0FE4C1A3D7F7F98ED1F4689 /* DataCoverageBackupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FED3BF677B2754CE789751 /* DataCoverageBackupTests.swift */; };
+		C0FEF2C5FBCDDAF48141D3B6 /* DataCoverageAccessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FED964A38CB63FB839B50A /* DataCoverageAccessorTests.swift */; };
+		C0FE404E4B25EEAF78BB5E0D /* AlgorithmCoverageStatisticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEDED9E85CEEEDD06DE400 /* AlgorithmCoverageStatisticsTests.swift */; };
+		C0FE62B3CC3B85282FCDF10D /* AlgorithmCoverageSmoothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE68C014CF9E4A7C60E6FF /* AlgorithmCoverageSmoothingTests.swift */; };
+		C0FE84BCA91E460385CA2C1D /* AlgorithmCoverageSensorNoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEAC461374DA168546D53E /* AlgorithmCoverageSensorNoiseTests.swift */; };
+		C0FE2C63C1E4209B5E5E4C06 /* AlgorithmCoveragePostProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE937C156F5D451C1D6B4A /* AlgorithmCoveragePostProcessingTests.swift */; };
+		C0FE9645F6B04B71AC3C75E5 /* AlgorithmCoverageCalibratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE035EB1E62DDA39E7C58B /* AlgorithmCoverageCalibratorTests.swift */; };
 		C0FE7DE0A41FF777B65A225B /* NightscoutCoverageUploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEC6048A88CAF42689ADE4 /* NightscoutCoverageUploadTests.swift */; };
 		C0FE8A557758F7C836AF1C50 /* NightscoutCoverageSyncManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE69A14AD7F62B322E103D /* NightscoutCoverageSyncManagerTests.swift */; };
 		C0FEA9075ACA2105DC7C4C71 /* NightscoutCoverageSyncFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEAB5E854EB18A551A37A4 /* NightscoutCoverageSyncFlowTests.swift */; };
@@ -1029,6 +1040,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C0FE87ED7BE0F9F5891C55E7 /* DataCoverageUserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageUserDefaultsTests.swift; sourceTree = "<group>"; };
+		C0FE445BB532BE1AE7C8146F /* DataCoverageHousekeepingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageHousekeepingTests.swift; sourceTree = "<group>"; };
+		C0FE613DB88DD2C8C2698D17 /* DataCoverageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageExtensionsTests.swift; sourceTree = "<group>"; };
+		C0FE8F7EF2B3B676F3BCA17B /* DataCoverageCoreDataClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageCoreDataClassTests.swift; sourceTree = "<group>"; };
+		C0FED3BF677B2754CE789751 /* DataCoverageBackupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageBackupTests.swift; sourceTree = "<group>"; };
+		C0FED964A38CB63FB839B50A /* DataCoverageAccessorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageAccessorTests.swift; sourceTree = "<group>"; };
+		C0FEDED9E85CEEEDD06DE400 /* AlgorithmCoverageStatisticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoverageStatisticsTests.swift; sourceTree = "<group>"; };
+		C0FE68C014CF9E4A7C60E6FF /* AlgorithmCoverageSmoothingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoverageSmoothingTests.swift; sourceTree = "<group>"; };
+		C0FEAC461374DA168546D53E /* AlgorithmCoverageSensorNoiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoverageSensorNoiseTests.swift; sourceTree = "<group>"; };
+		C0FE937C156F5D451C1D6B4A /* AlgorithmCoveragePostProcessingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoveragePostProcessingTests.swift; sourceTree = "<group>"; };
+		C0FE035EB1E62DDA39E7C58B /* AlgorithmCoverageCalibratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoverageCalibratorTests.swift; sourceTree = "<group>"; };
 		C0FEC6048A88CAF42689ADE4 /* NightscoutCoverageUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageUploadTests.swift; sourceTree = "<group>"; };
 		C0FE69A14AD7F62B322E103D /* NightscoutCoverageSyncManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageSyncManagerTests.swift; sourceTree = "<group>"; };
 		C0FEAB5E854EB18A551A37A4 /* NightscoutCoverageSyncFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageSyncFlowTests.swift; sourceTree = "<group>"; };
@@ -2924,6 +2946,17 @@
 				7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */,
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
+				C0FE87ED7BE0F9F5891C55E7 /* DataCoverageUserDefaultsTests.swift */,
+				C0FE445BB532BE1AE7C8146F /* DataCoverageHousekeepingTests.swift */,
+				C0FE613DB88DD2C8C2698D17 /* DataCoverageExtensionsTests.swift */,
+				C0FE8F7EF2B3B676F3BCA17B /* DataCoverageCoreDataClassTests.swift */,
+				C0FED3BF677B2754CE789751 /* DataCoverageBackupTests.swift */,
+				C0FED964A38CB63FB839B50A /* DataCoverageAccessorTests.swift */,
+				C0FEDED9E85CEEEDD06DE400 /* AlgorithmCoverageStatisticsTests.swift */,
+				C0FE68C014CF9E4A7C60E6FF /* AlgorithmCoverageSmoothingTests.swift */,
+				C0FEAC461374DA168546D53E /* AlgorithmCoverageSensorNoiseTests.swift */,
+				C0FE937C156F5D451C1D6B4A /* AlgorithmCoveragePostProcessingTests.swift */,
+				C0FE035EB1E62DDA39E7C58B /* AlgorithmCoverageCalibratorTests.swift */,
 				C0FEC6048A88CAF42689ADE4 /* NightscoutCoverageUploadTests.swift */,
 				C0FE69A14AD7F62B322E103D /* NightscoutCoverageSyncManagerTests.swift */,
 				C0FEAB5E854EB18A551A37A4 /* NightscoutCoverageSyncFlowTests.swift */,
@@ -4871,6 +4904,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0FE82E75AAB6EAE385B9D8A /* DataCoverageUserDefaultsTests.swift in Sources */,
+				C0FE08796EADED9E4127D5AA /* DataCoverageHousekeepingTests.swift in Sources */,
+				C0FE03321DACB692220D470A /* DataCoverageExtensionsTests.swift in Sources */,
+				C0FE33F5EAAA7C71D8E991E0 /* DataCoverageCoreDataClassTests.swift in Sources */,
+				C0FE4C1A3D7F7F98ED1F4689 /* DataCoverageBackupTests.swift in Sources */,
+				C0FEF2C5FBCDDAF48141D3B6 /* DataCoverageAccessorTests.swift in Sources */,
+				C0FE404E4B25EEAF78BB5E0D /* AlgorithmCoverageStatisticsTests.swift in Sources */,
+				C0FE62B3CC3B85282FCDF10D /* AlgorithmCoverageSmoothingTests.swift in Sources */,
+				C0FE84BCA91E460385CA2C1D /* AlgorithmCoverageSensorNoiseTests.swift in Sources */,
+				C0FE2C63C1E4209B5E5E4C06 /* AlgorithmCoveragePostProcessingTests.swift in Sources */,
+				C0FE9645F6B04B71AC3C75E5 /* AlgorithmCoverageCalibratorTests.swift in Sources */,
 				C0FE7DE0A41FF777B65A225B /* NightscoutCoverageUploadTests.swift in Sources */,
 				C0FE8A557758F7C836AF1C50 /* NightscoutCoverageSyncManagerTests.swift in Sources */,
 				C0FEA9075ACA2105DC7C4C71 /* NightscoutCoverageSyncFlowTests.swift in Sources */,
