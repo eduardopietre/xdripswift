@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0FE423E27150ECC40D67E34 /* AppCoverageUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEBD2F19999D2F568C768D /* AppCoverageUtilitiesTests.swift */; };
+		C0FE1C559CE737E991C3AD83 /* AppCoverageTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEAC7056684FE870E17746 /* AppCoverageTestSupport.swift */; };
+		C0FEE29EBED41AA0379CBCF4 /* AppCoverageSpeechAndCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEF43A3FA76FB573BE49A4 /* AppCoverageSpeechAndCalendarTests.swift */; };
+		C0FED5062B6D984440CCDEEE /* AppCoverageReadSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE37DF39B71EC7E3B1C521 /* AppCoverageReadSuccessTests.swift */; };
+		C0FEBF8180C75B12076372D6 /* AppCoverageManagersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE45895C7C177D36B8EABD /* AppCoverageManagersTests.swift */; };
+		C0FECF075AECC28E0F1B9A92 /* AppCoverageLoopManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE3B5155655AC446032E45 /* AppCoverageLoopManagerTests.swift */; };
+		C0FE24944B2663F715221EC7 /* AppCoverageChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE988FA3CB9A8FB2B7A221 /* AppCoverageChartTests.swift */; };
+		C0FEC53FB16E29358A8DFB9F /* AppCoverageAlertManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE84778F1F2A21BF1BB99D /* AppCoverageAlertManagerTests.swift */; };
+		C0FE8FE3871BEF325D953CE1 /* AppCoverageAlertKindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE0B00139168990CFB56C7 /* AppCoverageAlertKindTests.swift */; };
 		C0FE82E75AAB6EAE385B9D8A /* DataCoverageUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE87ED7BE0F9F5891C55E7 /* DataCoverageUserDefaultsTests.swift */; };
 		C0FE08796EADED9E4127D5AA /* DataCoverageHousekeepingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE445BB532BE1AE7C8146F /* DataCoverageHousekeepingTests.swift */; };
 		C0FE03321DACB692220D470A /* DataCoverageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE613DB88DD2C8C2698D17 /* DataCoverageExtensionsTests.swift */; };
@@ -1040,6 +1049,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C0FEBD2F19999D2F568C768D /* AppCoverageUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageUtilitiesTests.swift; sourceTree = "<group>"; };
+		C0FEAC7056684FE870E17746 /* AppCoverageTestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageTestSupport.swift; sourceTree = "<group>"; };
+		C0FEF43A3FA76FB573BE49A4 /* AppCoverageSpeechAndCalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageSpeechAndCalendarTests.swift; sourceTree = "<group>"; };
+		C0FE37DF39B71EC7E3B1C521 /* AppCoverageReadSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageReadSuccessTests.swift; sourceTree = "<group>"; };
+		C0FE45895C7C177D36B8EABD /* AppCoverageManagersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageManagersTests.swift; sourceTree = "<group>"; };
+		C0FE3B5155655AC446032E45 /* AppCoverageLoopManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageLoopManagerTests.swift; sourceTree = "<group>"; };
+		C0FE988FA3CB9A8FB2B7A221 /* AppCoverageChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageChartTests.swift; sourceTree = "<group>"; };
+		C0FE84778F1F2A21BF1BB99D /* AppCoverageAlertManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageAlertManagerTests.swift; sourceTree = "<group>"; };
+		C0FE0B00139168990CFB56C7 /* AppCoverageAlertKindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageAlertKindTests.swift; sourceTree = "<group>"; };
 		C0FE87ED7BE0F9F5891C55E7 /* DataCoverageUserDefaultsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageUserDefaultsTests.swift; sourceTree = "<group>"; };
 		C0FE445BB532BE1AE7C8146F /* DataCoverageHousekeepingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageHousekeepingTests.swift; sourceTree = "<group>"; };
 		C0FE613DB88DD2C8C2698D17 /* DataCoverageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoverageExtensionsTests.swift; sourceTree = "<group>"; };
@@ -2946,6 +2964,15 @@
 				7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */,
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
+				C0FEBD2F19999D2F568C768D /* AppCoverageUtilitiesTests.swift */,
+				C0FEAC7056684FE870E17746 /* AppCoverageTestSupport.swift */,
+				C0FEF43A3FA76FB573BE49A4 /* AppCoverageSpeechAndCalendarTests.swift */,
+				C0FE37DF39B71EC7E3B1C521 /* AppCoverageReadSuccessTests.swift */,
+				C0FE45895C7C177D36B8EABD /* AppCoverageManagersTests.swift */,
+				C0FE3B5155655AC446032E45 /* AppCoverageLoopManagerTests.swift */,
+				C0FE988FA3CB9A8FB2B7A221 /* AppCoverageChartTests.swift */,
+				C0FE84778F1F2A21BF1BB99D /* AppCoverageAlertManagerTests.swift */,
+				C0FE0B00139168990CFB56C7 /* AppCoverageAlertKindTests.swift */,
 				C0FE87ED7BE0F9F5891C55E7 /* DataCoverageUserDefaultsTests.swift */,
 				C0FE445BB532BE1AE7C8146F /* DataCoverageHousekeepingTests.swift */,
 				C0FE613DB88DD2C8C2698D17 /* DataCoverageExtensionsTests.swift */,
@@ -4904,6 +4931,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0FE423E27150ECC40D67E34 /* AppCoverageUtilitiesTests.swift in Sources */,
+				C0FE1C559CE737E991C3AD83 /* AppCoverageTestSupport.swift in Sources */,
+				C0FEE29EBED41AA0379CBCF4 /* AppCoverageSpeechAndCalendarTests.swift in Sources */,
+				C0FED5062B6D984440CCDEEE /* AppCoverageReadSuccessTests.swift in Sources */,
+				C0FEBF8180C75B12076372D6 /* AppCoverageManagersTests.swift in Sources */,
+				C0FECF075AECC28E0F1B9A92 /* AppCoverageLoopManagerTests.swift in Sources */,
+				C0FE24944B2663F715221EC7 /* AppCoverageChartTests.swift in Sources */,
+				C0FEC53FB16E29358A8DFB9F /* AppCoverageAlertManagerTests.swift in Sources */,
+				C0FE8FE3871BEF325D953CE1 /* AppCoverageAlertKindTests.swift in Sources */,
 				C0FE82E75AAB6EAE385B9D8A /* DataCoverageUserDefaultsTests.swift in Sources */,
 				C0FE08796EADED9E4127D5AA /* DataCoverageHousekeepingTests.swift in Sources */,
 				C0FE03321DACB692220D470A /* DataCoverageExtensionsTests.swift in Sources */,
