@@ -115,6 +115,8 @@ final class AppCoverageLoopManagerTests: XCTestCase {
         XCTAssertEqual(try XCTUnwrap(dexcom.warmupEndsAt) - (try XCTUnwrap(dexcom.startedAt)), ConstantsMaster.minimumSensorWarmUpRequiredInMinutesDexcomG5G6 * 60, accuracy: 0.001)
         XCTAssertEqual(dexcom.type, "dexcom")
         UserDefaults.standard.followerDataSourceType = .libreLinkUp
+        // the host app's follow manager reacts to the source change and may clear the sensor
+        startSensor(daysAgo: 1, description: "Dexcom G6")
         let libre = try XCTUnwrap(build(context()).sensor)
         XCTAssertEqual(try XCTUnwrap(libre.warmupEndsAt) - (try XCTUnwrap(libre.startedAt)), ConstantsLibreLinkUp.sensorWarmUpRequiredInMinutesForLibre * 60, accuracy: 0.001)
     }
