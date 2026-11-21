@@ -157,8 +157,8 @@ class CalibrationsAccessor {
         
         // define predicates
         let subPredicate1 = NSPredicate(format: "sensor == %@", sensor)
-        let subPredicate2 = NSPredicate(format: "sensorConfidence != %@", 0.0)
-        let subPredicate3 = NSPredicate(format: "slopeConfidence != %@", 0.0)
+        let subPredicate2 = NSPredicate(format: "sensorConfidence != 0")
+        let subPredicate3 = NSPredicate(format: "slopeConfidence != 0")
         fetchRequest.predicate = NSCompoundPredicate(type: .and, subpredicates: [subPredicate1, subPredicate2, subPredicate3])
         
         // set limit to 1

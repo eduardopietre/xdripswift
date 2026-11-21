@@ -750,3 +750,16 @@ final class DexcomCoverageMessageTests: XCTestCase {
                                          UInt8(predicted & 0xFF), UInt8(predicted >> 8), flags]
     }
 }
+
+extension DexcomCoverageMessageTests {
+    func testTransmitterVersionRxKeepsTheHighByteOfTheExpiry() {
+        var body: [UInt8] = [0x4B, 0x00, 1, 6, 5, 25] + Array(repeating: 0, count: 11)
+        body[13] = 0x6D
+        body[14] = 0x01
+        let message = TransmitterVersionRxMessage(data: Data(body).appendingCRC())
+        XCTAssertEqual(message?.transmitterExpiryInDays, 365)
+        XCTAssertEqual(message?.isAnubis(), false)
+        body[13] = 180
+        XCTAssertEqual(TransmitterVersionRxMessage(data: Data(body).appendingCRC())?.isAnubis(), false)
+    }
+}

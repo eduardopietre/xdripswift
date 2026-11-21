@@ -389,3 +389,15 @@ final class DataCoverageUserDefaultsTests: XCTestCase {
         XCTAssertTrue(policy.masterUploadsGlucoseToNightscout)
     }
 }
+
+extension DataCoverageUserDefaultsTests {
+    func testDeviceStatusUpdatedFlagDoesNotShareStorageWithSyncRequired() {
+        defaults.nightscoutSyncRequired = true
+        defaults.nightscoutDeviceStatusWasUpdated = false
+        XCTAssertTrue(defaults.nightscoutSyncRequired)
+        defaults.nightscoutDeviceStatusWasUpdated = true
+        XCTAssertTrue(defaults.bool(forKey: UserDefaults.Key.nightscoutDeviceStatusWasUpdated.rawValue))
+        defaults.nightscoutSyncRequired = false
+        XCTAssertTrue(defaults.nightscoutDeviceStatusWasUpdated)
+    }
+}

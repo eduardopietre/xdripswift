@@ -262,3 +262,12 @@ private final class MinimalCGMTransmitter: CGMTransmitter {
     func getCBUUID_Service() -> String { "" }
     func getCBUUID_Receive() -> String { "" }
 }
+
+extension BLECoverageTypeTests {
+    func testDexcomTransmitterIdsWithAnyNonAlphanumericCharacterAreRejected() {
+        XCTAssertEqual(BluetoothPeripheralType.DexcomType.validateTransmitterId(transmitterId: "8G12!@"), Texts_ErrorMessages.DexcomTransmitterIDInvalidCharacters)
+        XCTAssertEqual(BluetoothPeripheralType.DexcomType.validateTransmitterId(transmitterId: "8G 123"), Texts_ErrorMessages.DexcomTransmitterIDInvalidCharacters)
+        XCTAssertEqual(BluetoothPeripheralType.DexcomG7Type.validateTransmitterId(transmitterId: "DX1-3"), Texts_ErrorMessages.DexcomTransmitterIDInvalidCharacters)
+        XCTAssertNil(BluetoothPeripheralType.DexcomG7Type.validateTransmitterId(transmitterId: "DX1a"))
+    }
+}

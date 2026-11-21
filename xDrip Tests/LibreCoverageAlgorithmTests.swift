@@ -289,3 +289,13 @@ final class LibreCoverageAlgorithmTests: XCTestCase {
         XCTAssertNotEqual(a, b)
     }
 }
+
+extension LibreCoverageAlgorithmTests {
+    func testBlankCalibrationInfoYieldsZeroInsteadOfCrashing() {
+        let info = LibreCalibrationInfo(bytes: Data(repeating: 0, count: 344), libreSensorType: .libre1)
+        XCTAssertEqual(info.i2, 0)
+        let measurement = LibreMeasurement(rawGlucose: 1500, rawTemperature: 7000)
+        XCTAssertEqual(measurement.glucoseValueFromRaw(libreCalibrationInfo: info), 0)
+        XCTAssertEqual(measurement.roundedGlucoseValueFromRaw(libreCalibrationInfo: info), 0)
+    }
+}

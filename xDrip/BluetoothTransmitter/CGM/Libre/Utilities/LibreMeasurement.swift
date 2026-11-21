@@ -177,6 +177,9 @@ class LibreMeasurement {
         
         let g3 = g1 * g2
         
+        // i2 comes from FRAM; 0 (blank or corrupt calibration) has no table entry
+        guard t1.indices.contains(libreCalibrationInfo.i2 - 1), t2.indices.contains(libreCalibrationInfo.i2 - 1) else { return 0 }
+
         let v1 = t1[libreCalibrationInfo.i2 - 1]
         let v2 = t2[libreCalibrationInfo.i2 - 1]
         

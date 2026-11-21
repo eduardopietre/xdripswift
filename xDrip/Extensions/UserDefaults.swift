@@ -2304,10 +2304,10 @@ extension UserDefaults {
     /// will be set to true when the nightscout device status has been updated fully
     @objc dynamic var nightscoutDeviceStatusWasUpdated: Bool {
         get {
-            return bool(forKey: Key.nightscoutSyncRequired.rawValue)
+            return bool(forKey: Key.nightscoutDeviceStatusWasUpdated.rawValue)
         }
         set {
-            set(newValue, forKey: Key.nightscoutSyncRequired.rawValue)
+            set(newValue, forKey: Key.nightscoutDeviceStatusWasUpdated.rawValue)
         }
     }
 

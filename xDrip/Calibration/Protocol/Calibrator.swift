@@ -328,14 +328,11 @@ extension Calibrator {
     ///     - calibration : calibration to check if it's in the list
     ///     - list : list to check
     private func check(ifThisCalibration calibration:Calibration, isInThisList list:inout Array<Calibration>) {
-        loop1 : for (index, calibrationItem) in list.enumerated() {
-            if calibration.timeStamp.toMillisecondsAsDouble() > calibrationItem.timeStamp.toMillisecondsAsDouble() {
-                list.insert(calibration, at: index)
-            } else if calibrationItem.id == calibration.id {
-                break loop1
-            } else if index == (list.count - 1) {
-                list.append(calibration)
-            }
+        guard !list.contains(where: { $0.id == calibration.id }) else { return }
+        if let index = list.firstIndex(where: { calibration.timeStamp > $0.timeStamp }) {
+            list.insert(calibration, at: index)
+        } else {
+            list.append(calibration)
         }
     }
     

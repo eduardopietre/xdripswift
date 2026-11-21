@@ -410,3 +410,16 @@ final class DataCoverageAccessorTests: XCTestCase {
         try XCTUnwrap(Calendar.current.date(from: DateComponents(year: 2026, month: 3, day: 10, hour: hour)))
     }
 }
+
+extension DataCoverageAccessorTests {
+    func testFirstAndLastCalibrationSkipZeroConfidenceCalibrations() {
+        let accessor = CalibrationsAccessor(coreDataManager: core)
+        let sensor = Sensor(startDate: now.addingTimeInterval(-86_400), nsManagedObjectContext: context)
+        _ = calibration(sensor: sensor, minutesAgo: 300, sensorConfidence: 0, slopeConfidence: 1)
+        let first = calibration(sensor: sensor, minutesAgo: 200)
+        let last = calibration(sensor: sensor, minutesAgo: 100)
+        _ = calibration(sensor: sensor, minutesAgo: 50, sensorConfidence: 1, slopeConfidence: 0)
+        XCTAssertTrue(accessor.firstCalibrationForActiveSensor(withActivesensor: sensor) === first)
+        XCTAssertTrue(accessor.lastCalibrationForActiveSensor(withActivesensor: sensor) === last)
+    }
+}

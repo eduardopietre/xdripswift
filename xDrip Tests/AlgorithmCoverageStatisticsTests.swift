@@ -346,3 +346,22 @@ private func assertClose(_ actual: [Double], _ expected: [Double], accuracy: Dou
         XCTAssertEqual(left, right, accuracy: accuracy, file: file, line: line)
     }
 }
+
+extension AlgorithmCoverageStatisticsTests {
+    @MainActor
+    func testDailyTIRClassifiesBoundaryReadingsTheSameInMmolAsInMgDl() async throws {
+        let start = try yesterdayAtTen()
+        insert([70, 100, 180, 181, 69, 100], from: start)
+        XCTAssertTrue(core.saveChangesSynchronously())
+        UserDefaults.standard.bloodGlucoseUnitIsMgDl = false
+        let manager = StatisticsManager(coreDataManager: core)
+        let daily: [Date: StatisticsManager.Statistics] = await withCheckedContinuation { continuation in
+            manager.calculateDailyTIR(fromDate: Calendar.current.startOfDay(for: start), toDate: Date()) { continuation.resume(returning: $0) }
+        }
+        let day = try XCTUnwrap(daily[Calendar.current.startOfDay(for: start)])
+        XCTAssertEqual(day.inRangeStatisticValue, 400.0 / 6, accuracy: 0.000_001)
+        XCTAssertEqual(day.lowStatisticValue, 100.0 / 6, accuracy: 0.000_001)
+        XCTAssertEqual(day.highStatisticValue, 100.0 / 6, accuracy: 0.000_001)
+        XCTAssertEqual(day.averageStatisticValue, 700.0 / 6 * ConstantsBloodGlucose.mgDlToMmoll, accuracy: 0.000_001)
+    }
+}
