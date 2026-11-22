@@ -345,11 +345,14 @@ final class WatchManager: NSObject, ObservableObject, @unchecked Sendable {
             }
             return
         }
-        if updateTypes.contains(.status) {
+        // Building the payload reads 12 hours of readings. Skip it when the session is active
+        // and no Watch app can receive it; the next update after pairing builds it again.
+        let watchCanReceive = session.activationState != .activated || (session.isPaired && session.isWatchAppInstalled)
+        if watchCanReceive, updateTypes.contains(.status) {
             status = currentStatus(therapyMetrics: therapyMetrics)
         }
 
-        if updateTypes.contains(.bgReadings) {
+        if watchCanReceive, updateTypes.contains(.bgReadings) {
             bgReadings = currentBgReadings()
         }
 

@@ -76,7 +76,7 @@ final class TherapyMetricsManager {
                     + "-\(UserDefaults.standard.showIOBCOB)"
                 guard signature != self.preferenceSignature else { return }
                 self.preferenceSignature = signature
-                NotificationCenter.default.post(name: Self.changed, object: self)
+                self.postChanged()
             }
         })
     }
@@ -91,7 +91,44 @@ final class TherapyMetricsManager {
         }
         chartCache.removeAll()
         lock.unlock()
-        DispatchQueue.main.async { NotificationCenter.default.post(name: Self.changed, object: self) }
+        guard treatmentsChanged else {
+            postChanged()
+            return
+        }
+        // Read the current window's treatments before telling observers. Otherwise each of them
+        // asks for a snapshot, finds no inputs yet, and gets a second notification once they are
+        // read: two rounds of Live Activity, Watch and Home work for one change.
+        let policy = UserDefaults.standard.dataFlowPolicy
+        let settings = TherapyModelSettings(defaults: .standard)
+        guard policy.externalIOBSource == nil || policy.externalCOBSource == nil else {
+            postChanged()
+            return
+        }
+        inputQueue.async { [weak self] in
+            guard let self else { return }
+            let now = Date()
+            _ = self.treatments(from: now.addingTimeInterval(-TherapyModelSettings.visibilityInterval), to: now, policy: policy, settings: settings)
+            self.postChanged()
+        }
+    }
+
+    /// Changes often come in bursts (several saves for one pump update). Observers hear about
+    /// them once, shortly after the last.
+    private var changedPostWorkItem: DispatchWorkItem?
+
+    private func postChanged() {
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async { self.postChanged() }
+            return
+        }
+        changedPostWorkItem?.cancel()
+        let workItem = DispatchWorkItem { [weak self] in
+            guard let self else { return }
+            self.changedPostWorkItem = nil
+            NotificationCenter.default.post(name: Self.changed, object: self)
+        }
+        changedPostWorkItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
     }
 
     private func key(policy: DataFlowPolicy, settings: TherapyModelSettings) -> String {
@@ -205,7 +242,7 @@ final class TherapyMetricsManager {
                     let current = generation == self.treatmentRevision
                     self.lock.unlock()
                     if current {
-                        DispatchQueue.main.async { NotificationCenter.default.post(name: Self.changed, object: self) }
+                        self.postChanged()
                     }
                 }
             }

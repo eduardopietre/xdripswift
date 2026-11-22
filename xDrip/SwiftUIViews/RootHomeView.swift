@@ -154,14 +154,19 @@ struct RootHomeView: View {
         .onReceive(NotificationCenter.default.publisher(for: DirectWatchSettings.changed)) { _ in
             stateModel.refreshWatchCollectorStatus()
         }
+        // The timers keep firing whenever the app is awake in the background (a Bluetooth
+        // wake, for example); Home is not visible then, so they do nothing.
         .onReceive(watchCollectorStatusTimer) { _ in
+            guard scenePhase != .background else { return }
             if state.dataSource.showsWatchCollectorIcon { stateModel.refreshWatchCollectorStatus() }
         }
         .onReceive(chartRefreshTimer) { _ in
+            guard scenePhase != .background else { return }
             refreshCurrentTimeRangeIfNeeded(showsLoading: false)
             requestMiniChartState(forceReset: false)
         }
         .onReceive(clockRefreshTimer) { _ in
+            guard scenePhase != .background else { return }
             if state.visibility.showsClock {
                 stateModel.updateClock()
             }

@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
 // MARK: - Presentation State
 
@@ -263,6 +264,44 @@ final class RootHomeStateModel: ObservableObject {
     private var alertManager: AlertManager?
     private var bgPostProcessingManager: BgPostProcessingManager?
 
+    // MARK: - Background deferral
+
+    /// Home is not visible in the background, but readings and device updates keep arriving.
+    /// Rebuilding its state and charts then only costs battery, so the latest request of each
+    /// kind waits and runs once when the app returns to the foreground.
+    private var deferredRefresh: (() -> Void)?
+    private var deferredPumpRefresh = false
+    private var deferredChartInvalidation = false
+    private var foregroundObserver: NSObjectProtocol?
+
+    init() {
+        foregroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [weak self] _ in
+            self?.runDeferredUpdates()
+        }
+    }
+
+    deinit {
+        foregroundObserver.map(NotificationCenter.default.removeObserver)
+    }
+
+    /// True while the app is in the background. Inactive (for example with Notification Center
+    /// pulled over the app) still counts as visible.
+    private var isInBackground: Bool {
+        UIApplication.shared.applicationState == .background
+    }
+
+    /// Run what was deferred while in the background. A full refresh includes the pump and loop
+    /// status, so that one is only run on its own when no full refresh was waiting.
+    func runDeferredUpdates() {
+        let refresh = deferredRefresh, pump = deferredPumpRefresh, charts = deferredChartInvalidation
+        deferredRefresh = nil
+        deferredPumpRefresh = false
+        deferredChartInvalidation = false
+        refresh?()
+        if pump && refresh == nil { refreshPumpAndLoopStatus() }
+        if charts { invalidateCharts() }
+    }
+
     // MARK: - Configuration and Refresh
 
     /// Attaches the existing application services without taking ownership of them.
@@ -293,6 +332,13 @@ final class RootHomeStateModel: ObservableObject {
                 )
             }
 
+            return
+        }
+
+        guard !isInBackground else {
+            deferredRefresh = { [weak self] in
+                self?.refresh(activeSensor: activeSensor, isScreenLocked: isScreenLocked, usesScreenLockNightLayout: usesScreenLockNightLayout)
+            }
             return
         }
 
@@ -357,6 +403,11 @@ final class RootHomeStateModel: ObservableObject {
                 self.refreshPumpAndLoopStatus()
             }
 
+            return
+        }
+
+        guard !isInBackground else {
+            deferredPumpRefresh = true
             return
         }
 
@@ -479,6 +530,14 @@ final class RootHomeStateModel: ObservableObject {
     }
 
     func invalidateCharts() {
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async { self.invalidateCharts() }
+            return
+        }
+        guard !isInBackground else {
+            deferredChartInvalidation = true
+            return
+        }
         updateState { state in
             state.chartRevision &+= 1
         }

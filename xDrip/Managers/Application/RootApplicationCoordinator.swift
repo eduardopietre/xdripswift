@@ -212,6 +212,10 @@ import AppIntents
     private var lastTherapyPublication: TherapyMetricsSnapshot?
     private var lastTherapyPublicationAt = Date.distantPast
     private var pendingTherapyPublication: Task<Void, Never>?
+    /// Widget and Live Activity requests made within a short window, merged into one update.
+    private var pendingCompanionUpdate: (forceRestart: Bool, therapyMetrics: TherapyMetricsSnapshot?, sensorStartDate: Date?)?
+    private var pendingCompanionUpdateWorkItem: DispatchWorkItem?
+    private var pendingCompanionUpdateBackgroundTask: UIBackgroundTaskIdentifier = .invalid
     
     /// Last timestamp when a log line was produced by TransmitterReadSuccessManager
     private var transmitterReadSuccessTimeStampOfLastLogCreated: Date?
@@ -2818,9 +2822,53 @@ import AppIntents
         updateLiveActivityAndWidgets(forceRestart: true)
     }
 
+    /// A new reading asks for a widget and Live Activity update several times: from the reading
+    /// itself, the chart refresh and the IOB/COB change that follows. Requests within one second
+    /// are merged into a single update, which reads the database and encodes the data once.
+    /// A forced restart runs at once. A background task keeps the app awake for the short wait.
+    private func updateLiveActivityAndWidgets(forceRestart: Bool, therapyMetrics: TherapyMetricsSnapshot? = nil, sensorStartDate: Date? = nil) {
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async {
+                self.updateLiveActivityAndWidgets(forceRestart: forceRestart, therapyMetrics: therapyMetrics, sensorStartDate: sensorStartDate)
+            }
+            return
+        }
+        let previous = pendingCompanionUpdate
+        let merged = (forceRestart: forceRestart || previous?.forceRestart == true,
+                      therapyMetrics: therapyMetrics ?? previous?.therapyMetrics,
+                      sensorStartDate: sensorStartDate ?? previous?.sensorStartDate)
+        pendingCompanionUpdate = merged
+        if merged.forceRestart {
+            runPendingCompanionUpdate()
+            return
+        }
+        guard pendingCompanionUpdateWorkItem == nil else { return }
+        if pendingCompanionUpdateBackgroundTask == .invalid {
+            pendingCompanionUpdateBackgroundTask = UIApplication.shared.beginBackgroundTask(withName: "companion-update") { [weak self] in
+                self?.runPendingCompanionUpdate()
+            }
+        }
+        let workItem = DispatchWorkItem { [weak self] in self?.runPendingCompanionUpdate() }
+        pendingCompanionUpdateWorkItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: workItem)
+    }
+
+    private func runPendingCompanionUpdate() {
+        pendingCompanionUpdateWorkItem?.cancel()
+        pendingCompanionUpdateWorkItem = nil
+        if let update = pendingCompanionUpdate {
+            pendingCompanionUpdate = nil
+            performLiveActivityAndWidgetsUpdate(forceRestart: update.forceRestart, therapyMetrics: update.therapyMetrics, sensorStartDate: update.sensorStartDate)
+        }
+        if pendingCompanionUpdateBackgroundTask != .invalid {
+            UIApplication.shared.endBackgroundTask(pendingCompanionUpdateBackgroundTask)
+            pendingCompanionUpdateBackgroundTask = .invalid
+        }
+    }
+
     /// check if the conditions are correct to start a live activity, update it, or end it
     /// also update the widget data stored in user defaults
-    private func updateLiveActivityAndWidgets(forceRestart: Bool, therapyMetrics: TherapyMetricsSnapshot? = nil, sensorStartDate: Date? = nil) {
+    private func performLiveActivityAndWidgetsUpdate(forceRestart: Bool, therapyMetrics: TherapyMetricsSnapshot? = nil, sensorStartDate: Date? = nil) {
         let publicationDate = Date()
         let sensorWarmupEndDate = liveActivitySensorWarmupEndDate(sensorStartDate: sensorStartDate)
         let keepAliveDisabledMessage = !UserDefaults.standard.isMaster && UserDefaults.standard.followerBackgroundKeepAliveType == .disabled
