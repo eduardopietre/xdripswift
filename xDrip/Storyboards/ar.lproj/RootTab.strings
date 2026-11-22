@@ -1,5 +1,6 @@
 /* Root tab titles. */
 "rootTab.home" = "الرئيسية";
-"rootTab.treatments" = "Treatments";
+"rootTab.treatments" = "العلاجات";
 "rootTab.devices" = "الأجهزة";
 "rootTab.settings" = "الإعدادات";
+"rootTab.statistics" = "الإحصائيات";

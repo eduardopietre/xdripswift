@@ -31,7 +31,7 @@
 "settingsviews_urgentLowValue" = "Urgent Low Value";
 "settingsviews_showcoloredobjectives" = "Farvede linjer";
 "settingsviews_showtarget" = "Mållinje";
-"settingsviews_sectiontitletreatments" = "Treatments";
+"settingsviews_sectiontitletreatments" = "Behandlinger";
 "settingsviews_showTreatments" = "Behandling";
 "settingsviews_smallBolusTreatmentThresholdMessage" = "Below how many units should we consider a bolus as a micro-bolus?\n\n(Recommended value: 1.0U)";
 "settingsviews_sectiontitlestatistics" = "Statistics";

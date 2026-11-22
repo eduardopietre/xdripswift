@@ -2,7 +2,7 @@
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-"treatments_title" = "Treatments";
+"treatments_title" = "治疗";
 "treatments_new_button" = "New";
 "treatments_new_entry" = "New Treatment";
 "treatments_carbs_with_unit" = "Carbs (g)";

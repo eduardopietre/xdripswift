@@ -170,7 +170,7 @@
 "settingsviews_sectionTitleHousekeeper" = "Data Management";
 
 /// treatments settings, section title
-"settingsviews_sectiontitletreatments" = "Treatments";
+"settingsviews_sectiontitletreatments" = "Tedaviler";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 

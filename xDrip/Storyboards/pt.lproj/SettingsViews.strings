@@ -30,7 +30,7 @@
 "settingsviews_urgentLowValue" = "Valor Hipo Urgente";
 "settingsviews_showcoloredobjectives" = "Linhas coloridas";
 "settingsviews_showtarget" = "Linha alvo";
-"settingsviews_sectiontitletreatments" = "Tratamentos";
+"settingsviews_sectiontitletreatments" = "Terapias";
 "settingsviews_showTreatments" = "Terapia";
 "settingsviews_smallBolusTreatmentThreshold" = "Limiar Micro-bolus";
 "settingsviews_smallBolusTreatmentThresholdMessage" = "Abaixo de quantas unidades devemos considerar um bolus como micro-bolus?\n\n(Valor recomendado: 1.0U)";

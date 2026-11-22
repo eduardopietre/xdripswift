@@ -1,5 +1,6 @@
 /* Root tab titles. */
 "rootTab.home" = "Hem";
-"rootTab.treatments" = "Treatments";
+"rootTab.treatments" = "Behandlingar";
 "rootTab.devices" = "Enheter";
 "rootTab.settings" = "Inställningar";
+"rootTab.statistics" = "Statistik";

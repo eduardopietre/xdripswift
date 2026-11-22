@@ -215,7 +215,7 @@
 
 
 /// treatments settings, section title
-"settingsviews_sectiontitletreatments" = "Treatments";
+"settingsviews_sectiontitletreatments" = "Терапія";
 
 /// nightscout settings, when clicking the cell, test the url and api key
 "testUrlAndAPIKey" = "Перевірити з’єднання";

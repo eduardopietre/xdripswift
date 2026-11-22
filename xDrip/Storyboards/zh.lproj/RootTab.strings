@@ -1,5 +1,6 @@
 /* Root tab titles. */
-"rootTab.home" = "Home";
-"rootTab.treatments" = "Treatments";
+"rootTab.home" = "首页";
+"rootTab.treatments" = "治疗";
 "rootTab.devices" = "设备";
-"rootTab.settings" = "Settings";
+"rootTab.settings" = "设置";
+"rootTab.statistics" = "统计";

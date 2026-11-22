@@ -23,7 +23,7 @@
 "settingsviews_labelShowReadingInAppBadge" = "Pastille d’app";
 "settingsviews_multipleAppBadgeValueWith10" = "Pastille d’app x10";
 "settingsviews_showClockWhenScreenIsLocked" = "Horloge";
-"settingsviews_sectiontitletreatments" = "Traitements";
+"settingsviews_sectiontitletreatments" = "Soins";
 "settingsviews_showTreatments" = "Thérapie";
 "settingsviews_smallBolusTreatmentThreshold" = "Seuil des micro-bolus";
 "settingsviews_smallBolusTreatmentThresholdMessage" = "En dessous de combien d'unités un bolus est considéré micro-bolus?\n\n(Valeur conseillée: 1.0U)";

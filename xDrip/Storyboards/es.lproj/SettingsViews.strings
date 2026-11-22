@@ -63,7 +63,7 @@
 "settingsviews_urgentLowValue" = "Valor de Glucemia Baja (Urgente)";
 "settingsviews_showcoloredobjectives" = "Líneas de colores";
 "settingsviews_showtarget" = "Línea objetivo";
-"settingsviews_sectiontitletreatments" = "Tratamientos";
+"settingsviews_sectiontitletreatments" = "Terapias";
 "settingsviews_showTreatments" = "Terapia";
 "settingsviews_smallBolusTreatmentThreshold" = "Límite Micro-bolo";
 "settingsviews_smallBolusTreatmentThresholdMessage" = "Por debajo de cuántas unidades debemos considerar un bolo como micro-bolo?\n\n(Valor recomendado: 1.0U)";

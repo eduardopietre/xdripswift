@@ -123,7 +123,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// treatments settings, section title
-"settingsviews_sectiontitletreatments" = "Treatments";
+"settingsviews_sectiontitletreatments" = "العلاجات";
 
 /// When clicking the threshold setting, a pop up asks for the number of units under which a bolus should be considered a micro-bolus
 "settingsviews_smallBolusTreatmentThresholdMessage" = "Below how many units should we consider a bolus as a micro-bolus?\n\n(Recommended value: 1.0U)";

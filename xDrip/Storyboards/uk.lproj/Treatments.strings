@@ -43,7 +43,7 @@
 "treatments_exercise" = "Exercise";
 
 /// Title of treatments view.
-"treatments_title" = "Treatments";
+"treatments_title" = "Терапія";
 
 /// Blood Glucose Check
 "treatments_bgcheck" = "BG Check";
