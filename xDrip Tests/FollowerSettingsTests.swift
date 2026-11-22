@@ -191,7 +191,7 @@ final class FollowerSettingsTests: XCTestCase {
             standard.showDeveloperSettings = true
             standard.careLinkVersion = ConstantsCareLink.carePartnerAppVersionDefault
 
-            let model = SettingsViewDevelopmentSettingsViewModel(rowGroup: .advanced)
+            let model = SettingsViewDevelopmentSettingsViewModel(rowGroup: .advancedOptions)
             let rows = model.settingsRows(sectionID: 0)
             let libreIndex = try XCTUnwrap(rows.firstIndex { $0.id == "developer.libreLinkUpVersion" })
             let careLinkIndex = try XCTUnwrap(rows.firstIndex { $0.id == "developer.careLinkVersion" })
