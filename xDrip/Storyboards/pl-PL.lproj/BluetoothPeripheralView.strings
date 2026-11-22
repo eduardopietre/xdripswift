@@ -4,80 +4,80 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// text in button top right, this button will disable automatic connect
-"donotconnect" = "Stop Scanning";
+"donotconnect" = "Zatrzymaj skanowanie";
 
 /// BluetoothPeripheral view, this is a name of a BluetoothPeripheral assigned by the user, to recognize the device
 "bluetoothPeripheralAlias" = "Alias";
 
 /// 
-"battery" = "Battery";
+"battery" = "Bateria";
 "versionCode" = "Kod wersji";
 "voltageA" = "Napięcie A";
 "voltageB" = "Napięcie B";
 "waitingForData" = "Oczekiwanie na dane...";
 
 /// cell text, shows when last reset was done, if known. Only for Dexcom
-"lastReset" = "Last Reset";
+"lastReset" = "Ostatni reset";
 
 /// button text, to connect
-"connect" = "Connect";
+"connect" = "Połącz";
 
 /// when M5Stack is shown, title of the cell with the address
-"address" = "Address";
+"address" = "Adres";
 
 /// User tries to add a CGM or connect an already existing CGM, while in follower mode.
-"cannotActiveCGMInFollowerMode" = "You cannot activate or connect to a CGM whilst in Follower Mode.";
+"cannotActiveCGMInFollowerMode" = "Nie można aktywować CGM ani się z nim połączyć w trybie obserwatora.";
 
 /// Bluetooth Peripheral view, when user clicks alias field
-"selectAliasText" = "Choose an alias for this bluetooth device, the name will be shown in the app and is easier for you to recognize";
+"selectAliasText" = "Wybierz alias dla tego urządzenia Bluetooth. Nazwa będzie wyświetlana w aplikacji i ułatwi Ci jego rozpoznanie";
 
 /// Bluetooth Peripheral view, when user clicks the trash button - this is not the complete sentence, it will be followed either by 'name' or 'alias', depending on the availability of an alias
-"confirmDeletionPeripheral" = "Do you want to delete bluetooth device: ";
+"confirmDeletionPeripheral" = "Czy chcesz usunąć urządzenie Bluetooth: ";
 
 /// BluetoothPeripheral view, text of the cell with the sensor type (only used for Libre)
-"sensorType" = "Sensor Type";
+"sensorType" = "Typ sensora";
 
 /// BluetoothPeripheral view, text of the cell with the serial number (this is not the sensor serial number
-"serialNumber" = "Serial Number";
+"serialNumber" = "Numer seryjny";
 
 /// BluetoothPeripheral view, text of the cell with the sensor serial number
 "SensorSerialNumber" = "Sensor Serial Number";
 
 /// Bluetooth Peripheral view, when user clicks alias field
-"aliasAlreadyExists" = "There is already a bluetooth device with this alias";
+"aliasAlreadyExists" = "Urządzenie Bluetooth o tym aliasie już istnieje";
 
 /// 
-"notConnected" = "Not Connected";
+"notConnected" = "Niepołączony";
 
 /// To give result about transitter result in notification body
-"transmitterResultResult" = "Transmitter Reset Result";
+"transmitterResultResult" = "Wynik resetu transmitera";
 
 /// row in bluetoothperipheral view, title
 "bootLoader" = "Bootloader";
 
 /// when Bluetooth Peripheral is shown, connection status, connected
-"connected" = "Connected";
+"connected" = "Połączono";
 
 /// text in status row, if scanning ongoing
-"scanning" = "Scanning";
+"scanning" = "Skanowanie";
 
 /// cell text, if user needs to set the transmitter id
-"needsTransmitterId" = "Missing Transmitter ID";
+"needsTransmitterId" = "Brak ID transmitera";
 
 /// cell text, shows when last reset was done, if known. Only for Dexcom
-"lastResetNotKnown" = "Last Reset Timestamp is not known";
+"lastResetNotKnown" = "Czas ostatniego resetu jest nieznany";
 
 /// text in status rown, when not connect but app is trying to connect
-"tryingToConnect" = "Scanning";
+"tryingToConnect" = "Skanowanie";
 
 /// button text, to disconnect
-"disconnect" = "Disconnect";
+"disconnect" = "Rozłącz";
 
 /// text in status row, if ready to start scanning
-"readyToScan" = "Ready to Scan";
+"readyToScan" = "Gotowy do skanowania";
 
 /// text in button to start scanning
-"scan" = "Scan";
+"scan" = "Skanuj";
 "medtrumNanoPumpScanNoticeTitle" = "Połączenie z pompą Medtrum Nano";
 "medtrumNanoPumpScanNoticeMessage" = "Ta opcja łączy się z pompą Medtrum Nano, a nie bezpośrednio z nadajnikiem Nano CGM.\n\nPrzed skanowaniem upewnij się, że aplikacja EasyPatch jest uruchomiona, połączona z pompą i odbiera aktualne wartości CGM.\n\nAplikacja EasyPatch musi być zawsze uruchomiona i stale odbierać wartości.";
 "libre2ScanNoticeTitle" = "Bluetooth aplikacji Libre";
@@ -88,19 +88,19 @@
 "dexcomG7ScanNoticeMessage" = "Przed skanowaniem upewnij się, że aplikacja Dexcom G7 działa w tle, jest połączona z sensorem i odbiera aktualne wartości glukozy.\n\nAplikacja Dexcom G7 musi być zawsze uruchomiona i stale odbierać wartości.";
 
 /// cell text, where the disconnection timestamp is shown
-"disConnectedAt" = "Disconnected At";
+"disConnectedAt" = "Rozłączono o";
 
 /// text in status row, when not connected and app is not scanning
-"notTryingToConnect" = "Not Scanning";
+"notTryingToConnect" = "Brak skanowania";
 
 /// when Bluetooth Peripheral is shown, title of the cell with the status
 "status" = "Status";
 
 /// cell text, where the connection timestamp is shown
-"connectedAt" = "Connected At";
+"connectedAt" = "Połączono o";
 
 /// cell text, where user can select to reset a transmitter at next connect. Only for Dexcom
-"resetRequired" = "Reset Transmitter";
+"resetRequired" = "Zresetuj transmiter";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -113,50 +113,50 @@
 "runningInPrimaryMode" = "Działa w trybie podstawowym";
 
 /// Disconnect transmitter, title
-"confirmDisconnectTitle" = "Confirm Disconnect";
+"confirmDisconnectTitle" = "Potwierdź rozłączenie";
 
 /// Confirm that the user wants to really disconnect the transmitter, title
-"confirmDisconnectMessage" = "Click 'Disconnect' to confirm that you really want to disconnect from the transmitter.";
+"confirmDisconnectMessage" = "Kliknij „Rozłącz”, aby potwierdzić, że na pewno chcesz rozłączyć się z transmiterem.";
 
 /// cell text, sensor start time
-"sensorStartDate" = "Sensor Started";
+"sensorStartDate" = "Sensor uruchomiony";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "Transmiter uruchomiony";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ Skanowanie sensora udane!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Kalibracja wielopunktowa to funkcja zaawansowana.\n\nNie używaj tej funkcji, dopóki nie przeczytasz sekcji o kalibracji w pomocy online i nie zrozumiesz, jak działa.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "Zeskanuj ponownie";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ Skanowanie sensora nie powiodło się";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "Skanowanie sensora nie powiodło się";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "Wymagane skanowanie NFC";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "Błąd skanowania sensora\n\nPonawianie... # ";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Rozgrzewanie do";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "Skanuj ponownie";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "Kliknij OK i poczekaj, aż sensor Libre zakończy łączenie przez Bluetooth.\n\nWkrótce status powinien zmienić się na „Połączono”.";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "Ostatnie 24 godziny";
@@ -183,7 +183,7 @@
 "readSuccessNow" = "Teraz";
 "scanningForTransmitter" = "Wyszukiwanie...";
 "connecting" = "Łączenie";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Łączenie...";
 "reconnecting" = "Ponowne łączenie";
 "reconnectingToTransmitter" = "Ponowne łączenie...";
 "waiting" = "Oczekiwanie...";
@@ -268,3 +268,10 @@
 "bluetoothAccessNotEnabled" = "Dostęp do Bluetooth nie jest włączony";
 "bluetoothAccessInstructions" = "Aby się połączyć, otwórz Ustawienia → Prywatność i ochrona → Bluetooth i zezwól na dostęp aplikacji %@.";
 "bluetoothAccessRestrictedInstructions" = "Ograniczenia urządzenia uniemożliwiają dostęp do Bluetooth. Sprawdź ustawienia Czasu przed ekranem lub skontaktuj się z administratorem urządzenia, aby włączyć dostęp.";
+"confirmAlgorithmChangeToTransmitterMessage" = "Potwierdź, że chcesz wrócić do algorytmu natywnego/transmitera";
+"confirmAlgorithmChangeToxDripMessage" = "Potwierdź, że chcesz zmienić algorytm na xDrip.\n\nSpowoduje to krótkie wstrzymanie odczytów, a po zakończeniu pojawi się prośba o wartość kalibracji początkowej.";
+"confirmCalibrationChangeToMultiPointMessage" = "Potwierdź, że chcesz zmienić typ kalibracji na wielopunktową\n\n⚠️ Ta metoda jest przeznaczona tylko dla zaawansowanych użytkowników i przy nieprawidłowej kalibracji może dawać niebezpieczne wyniki.\n\nJeśli nie wiesz, jak jej używać, naciśnij Anuluj.";
+"confirmCalibrationChangeToSinglePointMessage" = "Potwierdź, że chcesz zmienić typ kalibracji na standardową\n\nSpowoduje to krótkie wstrzymanie odczytów, a po zakończeniu pojawi się prośba o wartość kalibracji początkowej.";
+"nativeAlgorithm" = "Algorytm natywny";
+"xDripAlgorithm" = "Algorytm xDrip";
+"confirm" = "Potwierdź";

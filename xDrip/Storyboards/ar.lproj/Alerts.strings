@@ -30,3 +30,7 @@
 "sensorExpiry.hoursHelp" = "أدخل عددًا صحيحًا من 1 إلى 48 ساعة.";
 "sensorExpiry.endingSoonBody" = "من المتوقع أن يصل المستشعر إلى نهاية عمره في %@.";
 "sensorExpiry.expectedExpiryBody" = "وصل المستشعر إلى وقت انتهائه المتوقع (%@).";
+"alertWhenAboveValue" = "فقط عند الارتفاع فوق";
+"alertWhenBelowValue" = "فقط عند الانخفاض تحت";
+"alerts_sensortransmitterfailure" = "عطل الحساس/جهاز الإرسال";
+"alerts_notloopingalerttitle" = "Loop لا يعمل";

@@ -1,6 +1,9 @@
 "screenTitle" = "Enheder";
 "selectCategory" = "Vælg type";
-"selectType" = "Select Transmitter Type";
-"batteryLevel" = "Battery Level";
+"selectType" = "Vælg transmittertype";
+"batteryLevel" = "Batteriniveau";
 "noBluetoothPeripheralsConfigured" = "Ingen Bluetooth-enheder konfigureret";
-"noMultipleActiveCGMsAllowed" = "You already have one CGM transmitter connected.\n\nVerify your other CGM transmitters and click 'Stop Scanning', 'Disconnect' or just delete them if needed.";
+"noMultipleActiveCGMsAllowed" = "Du har allerede én CGM-transmitter forbundet.\n\nKontrollér dine andre CGM-transmittere og tryk på 'Stop søgning' eller 'Afbryd forbindelse', eller slet dem om nødvendigt.";
+"heartbeatDeviceFooter" = "En heartbeat-enhed leverer ikke glukosemålinger. Den bruger Bluetooth-aktivitet til at vække appen i baggrunden, så følgeropdateringer, alarmer, badges og notifikationer kan fortsætte.";
+"m5StackDeviceFooter" = "M5Stack-enheder er små eksterne skærme baseret på ESP32. De kan vise glukoseværdier, der sendes fra xDrip4iOS via Bluetooth.";
+"noMultipleActiveCGMsAllowedFooter" = "Du har allerede én CGM forbundet.";

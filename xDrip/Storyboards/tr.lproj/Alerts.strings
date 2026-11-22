@@ -30,3 +30,7 @@
 "sensorExpiry.hoursHelp" = "1 ile 48 arasında bir tam saat sayısı girin.";
 "sensorExpiry.endingSoonBody" = "Sensörünüzün kullanım ömrünün %@ tarihinde sona ermesi bekleniyor.";
 "sensorExpiry.expectedExpiryBody" = "Sensörünüz beklenen bitiş zamanına ulaştı (%@).";
+"alertWhenAboveValue" = "Yalnızca Üstünde İken";
+"alertWhenBelowValue" = "Yalnızca Altında İken";
+"alerts_sensortransmitterfailure" = "Sensör/Verici Arızası";
+"alerts_notloopingalerttitle" = "Loop Çalışmıyor";

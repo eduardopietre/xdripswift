@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "时间戳";
 "backfilledAtFooterFormat" = "回填 %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "血糖读数";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "原始数据";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "没有可显示的读数…";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "计算值";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "常规";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "血糖读数";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "内部数据";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "趋势箭头";
 
 "glucoseRange" = "葡萄糖范围";
 "bgRangeUrgent" = "紧急";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "于 %@ 通过 Watch 接收";
 "backfilledViaWatchAtFooterFormat" = "于 %@ 通过 Watch 回填";
 "receivedViaWatch" = "通过 Watch 接收";
+"finalGlucose" = "血糖值";
+"glucoseValueSectionHeader" = "血糖值";
+"backfilled" = "已回填";
+"rawValue" = "原始值";
+"smoothedValue" = "平滑值";
+"date" = "日期";
+"calibratedValue" = "校准值";
+"adjustedValue" = "调整值";
+"finalValue" = "最终值";

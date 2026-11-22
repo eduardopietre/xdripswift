@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "Zaman damgası";
 "backfilledAtFooterFormat" = "Geri dolduruldu %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "Glukoz Okuması";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "Ham veri";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "Gösterilecek okuma yok...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "Hesaplanan değer";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "Genel";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "Glukoz Okumaları";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "Dahili veri";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "Eğim oku";
 
 "glucoseRange" = "Glikoz aralığı";
 "bgRangeUrgent" = "Acil";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "Watch üzerinden %@ saatinde alındı";
 "backfilledViaWatchAtFooterFormat" = "Watch üzerinden %@ saatinde tamamlandı";
 "receivedViaWatch" = "Watch üzerinden alındı";
+"finalGlucose" = "Glukoz Değeri";
+"glucoseValueSectionHeader" = "Glukoz Değeri";
+"backfilled" = "Sonradan doldurulan";
+"rawValue" = "Ham Değer";
+"smoothedValue" = "Yumuşatılmış Değer";
+"date" = "Tarih";
+"calibratedValue" = "Kalibre Edilmiş Değer";
+"adjustedValue" = "Ayarlanmış Değer";
+"finalValue" = "Nihai Değer";

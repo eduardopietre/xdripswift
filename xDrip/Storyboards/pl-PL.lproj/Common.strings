@@ -7,7 +7,7 @@
 "common_Ok" = "OK";
 
 /// blood glucose unit in short, for text field title
-"common_bloodglucoseunit_short" = "BG Unit";
+"common_bloodglucoseunit_short" = "Jednostka";
 
 /// for settings row, literally firmware
 "firmware" = "Firmware";
@@ -34,95 +34,95 @@
 "off" = "Off";
 
 /// for settings row, literally hardware
-"hardware" = "Hardware";
+"hardware" = "Sprzęt";
 
 /// literal translation needed
-"common_week" = "week";
+"common_week" = "tydzień";
 
 /// to show the sensor status
-"sensorStatus" = "Sensor Status";
+"sensorStatus" = "Status sensora";
 
 /// can be used in several screens, just the words Bloodglucose unit
-"common_bloodglucoseunit" = "Blood Glucose Unit";
+"common_bloodglucoseunit" = "Jednostka glikemii";
 
 /// literal translation needed
-"common_hours" = "hours";
+"common_hours" = "godz.";
 
 /// literally default, will be the name of default alerttypes that will be created during initial app launch
-"common_default" = "Default";
+"common_default" = "Domyślne";
 
 /// literally add
 "add" = "Add";
 
 /// literal translation needed
-"common_hour" = "hour";
+"common_hour" = "godzina";
 
 /// yellow
-"yellow" = "yellow";
+"yellow" = "żółty";
 
 /// literally update
-"update" = "Edit";
+"update" = "Edytuj";
 
 /// 
-"delete" = "Delete";
+"delete" = "Usuń";
 
 /// literally password
-"common_password" = "Password";
+"common_password" = "Hasło";
 
 /// literally no, without capital
 "no" = "No";
 
 /// green
-"green" = "green";
+"green" = "zielony";
 
 /// name
-"name" = "Name";
+"name" = "Nazwa";
 
 /// literal translation needed
-"common_minutes" = "mins";
+"common_minutes" = "min";
 
 /// literally yes, without capital
 "yes" = "Tak";
 
 /// literally 'Cancel'
-"common_cancel" = "Cancel";
+"common_cancel" = "Anuluj";
 "common_close" = "Zamknij";
 
 /// literally warning
-"warning" = "Warning!";
+"warning" = "Ostrzeżenie!";
 
 /// white
-"white" = "white";
+"white" = "biały";
 
 
 /// mg/dl
 "common_mgdl" = "mg/dL";
 
 /// whenever invalid value is given by user somewhere in a field
-"invalidValue" = "Invalid Value";
+"invalidValue" = "Nieprawidłowa wartość";
 
 /// general usage
-"unknown" = "Unknown";
+"unknown" = "Nieznane";
 
 /// the word HIGH, in capitals
-"common_high" = "HIGH";
+"common_high" = "WYSOKA";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Where credentials need to be given, if either account or password is invalid (for the moment only applicable to Dexcom Share
-"invalidAccountOrPassword" = "Invalid account or password";
+"invalidAccountOrPassword" = "Nieprawidłowe konto lub hasło";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the word today
-"common_todayshort" = "Today";
+"common_todayshort" = "Dziś";
 
 /// the word high
-"common_statistics_high" = "High";
+"common_statistics_high" = "Wysoka";
 
 /// phrase HbA1c
 
@@ -138,22 +138,22 @@
 "common_statistics_low" = "Low";
 
 /// literal translation needed
-"common_days" = "days";
+"common_days" = "dni";
 "common_landscape_showAGPChartData" = "Pokaż dane wykresu AGP:";
 "common_landscape_comparisonDays" = "%d dni";
 "common_landscape_comparisonNone" = "Brak";
 
 /// the word average
-"common_statistics_average" = "Average";
+"common_statistics_average" = "Średnia";
 
 /// literal translation needed
 "common_dayshort" = "d";
 
 /// the word today
-"common_today" = "Today";
+"common_today" = "Dziś";
 
 /// the words in range
-"common_statistics_inRange" = "In Range";
+"common_statistics_inRange" = "W zakresie";
 
 /// literal translation needed
 "common_hourshort" = "h";
@@ -163,17 +163,17 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// don't show again
-"common_dontshowagain" = "Don't Show Again";
+"common_dontshowagain" = "Nie pokazuj ponownie";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Wąski zakres";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Zakres użytkownika";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "Szacowana aktywna insulina";
@@ -200,3 +200,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Włączone";
+"common_report_period" = "Okres raportu";
+"common_statistics_insufficientData" = "Za mało danych";
+"common_statistics_title" = "Statystyki";
+"common_report_unableToPrepareTitle" = "Nie można przygotować raportu";
+"common_report_patientIDPlaceholder" = "Dokumentacja medyczna / ID pacjenta";
+"common_statistics_dailySummary" = "Podsumowanie dzienne";
+"common_report_patientPeriodTitleFormat" = "%@: %@";
+"common_statistics_averageTDD" = "Średnia TDD";
+"common_report_aidPeriod" = "Dane pętli";
+"common_report_periodTitleFormat" = "Raport z %d dni";
+"common_report_passwordProtectionOpenError" = "Nie można otworzyć pliku PDF raportu w celu ochrony hasłem.";
+"common_statistics_timeInRange" = "Czas w zakresie";
+"common_statistics_dailyPatternFooter" = "Słupki pokazują dzienny odsetek czasu w zakresie %@. Przerywana linia oznacza kliniczny cel 70%%.";
+"common_statistics_cvTrend" = "Trend CV";
+"common_report_none" = "Brak";
+"common_notRequired" = "Niewymagane";
+"common_notAvailable" = "Niedostępne";
+"common_report_passwordFieldPlaceholder" = "Hasło do otwarcia PDF";
+"common_statistics_estimatedA1cTrend" = "Trend szacowanego HbA1c";
+"common_report_notIncluded" = "Nie uwzględniono";
+"common_statistics_report" = "Raport";
+"common_statistics_averageGlucose" = "Średnia glukoza";
+"common_report_language" = "Język";
+"common_disabled" = "Wyłączone";
+"common_report_patientFooter" = "Dane pacjenta są przechowywane lokalnie na tym urządzeniu i drukowane w nagłówku raportu.";
+"common_statistics_targetGreaterThanOrEqual" = "Cel >=%@";
+"common_report_periodFooter" = "Dla klinicznego raportu CGM zalecane jest 90 dni.";
+"common_report_passwordConfirmationPlaceholder" = "Wprowadź hasło ponownie";
+"common_report_patientName" = "Imię i nazwisko pacjenta";
+"common_value" = "Wartość";
+"common_report_willBePasswordProtected" = "Raport będzie chroniony hasłem";
+"common_report_generatingStatus" = "Generowanie raportu klinicznego...";
+"common_report_notSet" = "Nie ustawiono";
+"common_statistics_ambulatoryGlucoseProfile" = "Ambulatoryjny profil glukozy";
+"common_statistics_averageCarbs" = "Średnie węglowodany";
+"common_report_willNotBePasswordProtected" = "Raport nie będzie chroniony hasłem";
+"common_report_aidPeriodFooter" = "Dla danych pętli zalecane jest 7 dni.";
+"common_statistics_bestDay" = "Najlepszy dzień";
+"common_statistics_period" = "Okres";
+"common_report_passwordFooter" = "To hasło jest używane tylko dla następnego wygenerowanego pliku PDF i nie jest zapisywane.";
+"common_statistics_dailyPattern" = "Wzorzec dzienny";
+"common_checking" = "Sprawdzanie...";
+"common_statistics_summary" = "Podsumowanie";
+"common_statistics_section" = "Sekcja";
+"common_report_patientNamePlaceholder" = "Imię i nazwisko pacjenta";
+"common_enterValue" = "Wprowadź wartość";
+"common_statistics_waitingForGlucoseData" = "Oczekiwanie na dane glukozy...";
+"common_statistics_mostHigh" = "Najwięcej wysokich";
+"common_statistics_trends" = "Trendy";
+"common_statistics_dataCapture" = "Pokrycie danych";
+"common_statistics_targetLessThanOrEqual" = "Cel <=%@";
+"common_report_patientSection" = "Pacjent";
+"common_statistics_noDataTitle" = "Brak statystyk";
+"common_report_passwordToOpen" = "Hasło do otwarcia";
+"common_report_paperSize" = "Rozmiar papieru";
+"common_statistics_insufficientAGPData" = "Za mało danych do wykresu percentylowego AGP";
+"common_statistics_averageFormat" = "Średnia %@";
+"common_report_patientID" = "ID pacjenta";
+"common_report_generateTitle" = "Generuj raport";
+"common_statistics_noDataMessage" = "Brak wystarczającej ilości zapisanych danych CGM dla tego okresu.";
+"common_report_notEnoughData" = "Za mało danych";
+"common_report_shareAccessibility" = "Udostępnij raport";
+"common_report_generationFailedTitle" = "Generowanie raportu nie powiodło się";
+"next" = "Dalej";
+"common_statistics_mostLow" = "Najwięcej niskich";
+"common_statistics_tempBasalDelta" = "Delta tymczasowej bazy";
+"common_dismiss" = "Zamknij";
+"common_report_options" = "Opcje raportu";
+"common_statistics_timeInTightRange" = "Czas w wąskim zakresie";
+"common_report_passwordProtectionWriteError" = "Nie można utworzyć pliku PDF raportu chronionego hasłem.";
+"common_statistics_cgmEstimate" = "Szacunek CGM";

@@ -4,10 +4,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Device must support at least iOS 14.0
-"deviceMustSupportIOS14" = "To connect to Libre 2, this iPhone needs upgrading to iOS14";
+"deviceMustSupportIOS14" = "要连接 Libre 2，此 iPhone 需要升级到 iOS 14";
 
 /// Device must support NFC
-"deviceMustSupportNFC" = "This iPhone does not support NFC";
+"deviceMustSupportNFC" = "此 iPhone 不支持 NFC";
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,13 +22,13 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// when NFC scanning is started, this message will appear
-"holdTopOfIphoneNearSensor" = "Hold the top of your iPhone near the sensor until it stops vibrating.";
+"holdTopOfIphoneNearSensor" = "将 iPhone 顶部靠近传感器，直到振动停止。";
 
 /// The user has connected to another (older?) Libre 2 with bluetooth than the one for which NFC scan was done, in that case, inform user that he/she should click 'disconnect', add a new CGM sensor and scan again.
-"connectedLibre2DoesNotMatchScannedLibre2" = "You have scanned a new Libre sensor, but %@ has connected to a different sensor (probably the previous one).\n\nTo solve this do NOT delete this old sensor just yet. Click 'Disconnect' or 'Stop Scanning', go back to the previous screen and add a new CGM of type Libre 2 and scan the sensor again.\n\n%@ should now try and connect to the new sensor.";
+"connectedLibre2DoesNotMatchScannedLibre2" = "您已扫描了新的 Libre 传感器，但 %@ 连接的是另一个传感器（可能是之前的那个）。\n\n要解决此问题，请先不要删除旧传感器。点击“断开连接”或“停止扫描”，返回上一页面，添加一个类型为 Libre 2 的新 CGM，然后再次扫描传感器。\n\n%@ 现在应会尝试连接新传感器。";
 
 /// After Libre NFC scanning, and after successful bluetooth connection, this message will be shown to explain that he or she should not allow bluetooth permission on the Libre app
-"donotusethelibrelinkapp" = "Connected to Libre 2.\n\nPlease ensure you have disabled bluetooth permission for the Libre app in your iPhone settings.\n\nIf you don't do this, when you scan with the Libre app you will break the connection between %@ and the Libre 2.\n\nPlease note that there is a %@ minute warm-up period after starting a new Libre 2 before you will get readings.";
+"donotusethelibrelinkapp" = "已连接到 Libre 2。\n\n请确保已在 iPhone 设置中停用 Libre 应用的蓝牙权限。\n\n否则，当您使用 Libre 应用扫描时，将会断开 %@ 与 Libre 2 之间的连接。\n\n请注意，启动新的 Libre 2 后有 %@ 分钟的预热期，之后才会有读数。";
 
 /// after scanning NFC, scan complete message
-"scanComplete" = "Sensor scan successful";
+"scanComplete" = "传感器扫描成功";

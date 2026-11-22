@@ -44,34 +44,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// if web oop enabled, and also if transmitter supports this, user clicks calibrate button, but calibration is not possible
-"calibrationNotNecessary" = "When using the native transmitter algorithm, manual calibration is not available.\n\nIf you want to calibrate, you can switch to the xDrip algorithm in the transmitter screen (if available).";
+"calibrationNotNecessary" = "Όταν χρησιμοποιείται ο εγγενής αλγόριθμος του πομπού, η χειροκίνητη βαθμονόμηση δεν είναι διαθέσιμη.\n\nΑν θέλετε να βαθμονομήσετε, μπορείτε να αλλάξετε στον αλγόριθμο xDrip στην οθόνη του πομπού (αν είναι διαθέσιμο).";
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Το Nightscout είναι απενεργοποιημένο";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "Απόκρυψη URL για %@ δ...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Δεν υπάρχουν δεδομένα αισθητήρα";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Διάρκεια αισθητήρα";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "Λείπει το URL";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Αποσυνδέστε και συνδέστε ξανά τον αισθητήρα Libre";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Λείπει το όνομα χρήστη/κωδικός";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Δεν είναι συνδεδεμένη πηγή δεδομένων CGM";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "Μετρήσεις 5 λεπτών";
+"postProcessingAlgorithm" = "Αλγόριθμος";
 "sensorLifetimeRemainingFormat" = "Απομένουν %@";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -103,14 +103,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Γράφημα ιστορικού θορύβου αισθητήρα";
 "pumpBattery" = "Μπαταρία";
 "pumpReservoir" = "Δεξαμενή";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Παρήλθαν / Απομένουν";
+"sensorManagementSessionDetails" = "Λεπτομέρειες συνεδρίας";
+"sensorManagementCalibrationOpenTitle" = "Λεπτομέρειες βαθμονόμησης";
+"sensorManagementCGMType" = "Τύπος CGM";
 "sensorManagementLastCalibration" = "Τελευταία";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Αισθητήρας ενεργός";
+"sensorManagementStarted" = "Έναρξη";
+"sensorManagementEnds" = "Λήξη";
 "sensorHealthPersistentNoiseTitle" = "Πολύ υψηλός θόρυβος αισθητήρα";
 "sensorHealthPersistentNoiseGuidance" = "Πολύ υψηλός θόρυβος για 12 ώρες. Εξετάστε την αντικατάσταση του αισθητήρα αν συνεχιστεί.";
 "sensorHealthFlatlineTitle" = "Το σήμα του αισθητήρα είναι επίπεδο";
@@ -202,3 +202,89 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "Η προσαρμογή μετατόπισης και σχήματος δεν είναι διαθέσιμη, επειδή αυτό το CGM χρησιμοποιεί εγγενή βαθμονόμηση.";
 
 "postProcessingWarningAgreement" = "Πατήστε «OK» μόνο αν κατανοείτε αυτή τη λειτουργία και συμφωνείτε να την ενεργοποιήσετε.";
+"postProcessingShape" = "Έμφαση";
+"sensorManagementCalibrationSafetyFooter" = "Βαθμονομήστε μόνο αν καταλαβαίνετε πώς να το κάνετε με ασφάλεια.";
+"snoozeAllTitle" = "Αναβολή όλων";
+"postProcessingUpdateAllReadingsLastPeriod" = "Αντικατάσταση όλων των τιμών των τελευταίων %@";
+"postProcessingEnterValue" = "Εισαγάγετε τιμή";
+"postProcessingStrong" = "Ισχυρή";
+"sensorManagementCalibrationIntercept" = "Τομή";
+"snoozeUrgentAlarms" = "Μόνο επείγουσες ειδοποιήσεις";
+"showHideHomeScreenFooter" = "Εμφάνιση ή απόκρυψη βασικών στοιχείων της αρχικής οθόνης, χρήσιμο σε iPhone με μικρότερη οθόνη";
+"postProcessingSofterLowsDescription" = "Εφαρμόζει μεγαλύτερο εφέ κλίμακας σε χαμηλές τιμές γλυκόζης και μικρότερο σε υψηλές.";
+"postProcessingMasterNightscoutUploadDisabled" = "Η μεταφόρτωση στο Nightscout είναι απενεργοποιημένη";
+"sensorManagementCalibrationSlope" = "Κλίση";
+"postProcessingReadingFrequency" = "Συχνότητα μετρήσεων";
+"sensorManagementCalibrationFalling" = "Πτώση";
+"postProcessingOffset" = "Μετατόπιση";
+"waitingForDataSource" = "Το CGM συνδέθηκε. Αναμονή για δεδομένα...";
+"sensorManagementCalibrationSlightlyHigh" = "Ελαφρώς υψηλή";
+"sensorManagementCalibrationFallingFast" = "Γρήγορη πτώση";
+"postProcessingOffsetBgCheckHint" = "Συνιστάται τουλάχιστον ένας πρόσφατος έλεγχος BG";
+"noDataSourceConnectedWatch" = "Ανοίξτε την εφαρμογή iOS";
+"sensorManagementCalibrationStableTrend" = "Σταθερή τάση";
+"sensorNoiseHistoryFooter" = "Το γράφημα δείχνει τη διακύμανση 30 λεπτών, την κυλιόμενη τιμή 4 ωρών και τη διάμεσο 12 ωρών που χρησιμοποιείται για τις προειδοποιήσεις επίμονου θορύβου. Χαμηλότερες τιμές σημαίνουν ομαλότερο σήμα. Δεν μετρά την ακρίβεια της γλυκόζης.";
+"sensorManagementCalibrationNoTrend" = "Χωρίς τάση";
+"sensorManagementCalibrationNoReading" = "Χωρίς μέτρηση";
+"postProcessingEnterGlucose" = "Εισαγάγετε γλυκόζη";
+"sensorHealthTestTransmitterFailure" = "Δοκιμή αποτυχίας πομπού σε 5 δευτερόλεπτα";
+"postProcessingNow" = "Τώρα";
+"sensorManagementCalibrationReadinessBad" = "Η βαθμονόμηση είναι απίθανο να είναι ακριβής αυτή τη στιγμή. Παρακαλώ περιμένετε.";
+"postProcessingOriginal" = "Αρχική";
+"sensorManagementCalibrationReadinessCaution" = "Η βαθμονόμηση μπορεί να είναι λιγότερο αξιόπιστη. Ίσως είναι καλύτερα να περιμένετε.";
+"postProcessingSofterLows" = "Χαμηλές";
+"postProcessingApplyFrom" = "Εφαρμογή από";
+"sensorManagementLargeCalibrationDifferenceWarningFormat" = "Είναι πιθανό αυτή η βαθμονόμηση να μην λειτουργήσει. Προσπαθήστε να περιορίζετε κάθε αλλαγή βαθμονόμησης σε το πολύ %@ τη φορά.";
+"sensorManagementCalibrationStable" = "Σταθερή";
+"sensorHealthTestTemporaryIssue" = "Δοκιμή προσωρινού προβλήματος σε 5 δευτερόλεπτα";
+"postProcessingScaleBgCheckHint" = "Συνιστώνται τουλάχιστον δύο πρόσφατοι έλεγχοι BG";
+"postProcessingOriginalGlucose" = "Αρχική γλυκόζη";
+"sensorManagementCalibrationGood" = "Καλή";
+"sensorNoiseHistoryPersistentCompact" = "12 ω";
+"postProcessingNoCurrentValues" = "Δεν υπάρχουν τρέχουσες τιμές";
+"postProcessingMedium" = "Μέτρια";
+"showHideItemsTitle" = "Γρήγορη εμφάνιση/απόκρυψη";
+"postProcessingAdjustedGlucose" = "Προσαρμοσμένη γλυκόζη";
+"showHideStandByModeFooter" = "Αλλάζει τον τρόπο εμφάνισης της λειτουργίας StandBy αν ενεργοποιηθεί στις ρυθμίσεις του iPhone";
+"followerAccountCredentialsInvalid" = "Μη έγκυρος λογαριασμός";
+"postProcessingNightscoutDataNotUpdated" = "Τα δεδομένα Nightscout δεν θα ενημερωθούν";
+"sensorManagementNoisePersistent" = "Τελευταίες 12 ώρες";
+"sensorRemaining" = "Υπολειπόμενος χρόνος αισθητήρα";
+"sensorManagementCalibrationFlatline" = "Επίπεδη";
+"sensorManagementCalibrationStale" = "Παλιά";
+"showHideHomeScreenTitle" = "Αρχική οθόνη";
+"postProcessingSmoothed" = "Εξομαλυμένη";
+"postProcessingApply" = "Εφαρμογή";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "Η προσαρμογή είναι απενεργοποιημένη επειδή αυτός ο αισθητήρας χρησιμοποιεί ήδη τη δική του βαθμονόμηση. Αλλάξτε στον εγγενή αλγόριθμο για να επιτρέψετε προσαρμογές γλυκόζης.";
+"sensorManagementCalibrationRaw" = "Ακατέργαστη";
+"postProcessingPreviewHours" = "Ώρες προεπισκόπησης";
+"snoozeAllSnoozed" = "Όλες οι ειδοποιήσεις έχουν αναβληθεί!";
+"postProcessingAdjusted" = "Προσαρμοσμένη";
+"snoozeAllDisabled" = "Η αναβολή όλων είναι απενεργοποιημένη";
+"showTreatments" = "Εμφάνιση θεραπειών";
+"sensorHealthTestSensorFailure" = "Δοκιμή αποτυχίας αισθητήρα σε 5 δευτερόλεπτα";
+"sensorManagementCalibrationReadinessGood" = "Τώρα είναι καλή στιγμή για βαθμονόμηση.";
+"postProcessingScale" = "Κλίμακα";
+"postProcessingTitle" = "Προσαρμογές γλυκόζης";
+"postProcessingSofterHighs" = "Υψηλές";
+"postProcessingNeutralDescription" = "Εφαρμόζει το εφέ κλίμακας ομοιόμορφα σε όλο το εύρος γλυκόζης.";
+"postProcessingSofterHighsDescription" = "Εφαρμόζει μεγαλύτερο εφέ κλίμακας σε υψηλές τιμές γλυκόζης και μικρότερο σε χαμηλές.";
+"postProcessingValidGlucoseRange" = "Εισαγάγετε τιμή μεταξύ %@ και %@";
+"postProcessingStrength" = "Ένταση";
+"remaining" = "απομένουν";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Ο Savitzky-Golay εξομαλύνει την καμπύλη γλυκόζης προσαρμόζοντας μικρά τοπικά παράθυρα, διατηρώντας το γενικό σχήμα των κορυφών και των κοιλάδων.";
+"showHideStandByModeTitle" = "Λειτουργία StandBy";
+"postProcessingLight" = "Ήπια";
+"sensorManagementCalibrationValue" = "Τιμή βαθμονόμησης";
+"postProcessingNeutral" = "Κανονική";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "Η προσαρμογή είναι απενεργοποιημένη επειδή αυτός ο αισθητήρας χρησιμοποιεί ήδη τη δική του βαθμονόμηση.";
+"sensorManagementCalibrationRising" = "Άνοδος";
+"snoozeAllSnoozedUntil" = "Αναβολή έως %@";
+"sensorManagementCalibrationSlightlyLow" = "Ελαφρώς χαμηλή";
+"sensorHealthTestPersistentNoise" = "Δοκιμή επίμονου θορύβου σε 5 δευτερόλεπτα";
+"sensorHealthTestFlatline" = "Δοκιμή επίπεδου σήματος σε 5 δευτερόλεπτα";
+"postProcessingShapeExplanation" = "Η έμφαση αλλάζει σε ποιο σημείο η Κλίμακα έχει το μεγαλύτερο αποτέλεσμα στην καμπύλη. Βοηθά αν ένας αισθητήρας φαίνεται να υπερβάλλει στις υψηλότερες ή χαμηλότερες τιμές γλυκόζης περισσότερο από το υπόλοιπο εύρος.";
+"postProcessingDexcomShareDataNotUpdated" = "Τα δεδομένα Dexcom Share δεν θα ενημερωθούν";
+"sensorManagementCalibrationBG" = "BG";
+"waitingForCGMConnection" = "Αναμονή για σύνδεση CGM...";
+"sensorManagementCalibrationRisingFast" = "Γρήγορη άνοδος";

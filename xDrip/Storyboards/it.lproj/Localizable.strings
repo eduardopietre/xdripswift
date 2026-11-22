@@ -19,7 +19,7 @@
 "directWatchPausedSinceFormat" = "Dal %@";
 "directWatchConnecting" = "In attesa…";
 "directWatchCollectedReadings" = "Letture raccolte";
-"directWatchReadingGapFormat" = "(%dm %ds)";
+"directWatchReadingGapFormat" = "(%d m %d s)";
 "directWatchNoCollectedReadings" = "Nessuna lettura ancora raccolta tramite Watch";
 
 "directWatchSessionStarted" = "Avviata alle %@";

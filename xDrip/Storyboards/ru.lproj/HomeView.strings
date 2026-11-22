@@ -44,34 +44,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// if web oop enabled, and also if transmitter supports this, user clicks calibrate button, but calibration is not possible
-"calibrationNotNecessary" = "When using the native transmitter algorithm, manual calibration is not available.\n\nIf you want to calibrate, you can switch to the xDrip algorithm in the transmitter screen (if available).";
+"calibrationNotNecessary" = "При использовании нативного алгоритма передатчика ручная калибровка недоступна.\n\nЕсли хотите откалибровать, переключитесь на алгоритм xDrip на экране передатчика (если доступно).";
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout отключён";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "Скрытие URL на %@ с...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Нет данных сенсора";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Срок службы сенсора";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL не указан";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Отключите и снова подключите сенсор Libre";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Не указаны имя пользователя/пароль";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Источник данных CGM не подключён";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "5-минутные показания";
+"postProcessingAlgorithm" = "Алгоритм";
 "sensorLifetimeRemainingFormat" = "Осталось %@";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -103,14 +103,14 @@
 "sensorNoiseHistoryChartAccessibility" = "График истории шума сенсора";
 "pumpBattery" = "Батарея";
 "pumpReservoir" = "Резервуар";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Прошло / осталось";
+"sensorManagementSessionDetails" = "Сведения о сеансе";
+"sensorManagementCalibrationOpenTitle" = "Сведения о калибровке";
+"sensorManagementCGMType" = "Тип CGM";
 "sensorManagementLastCalibration" = "Последняя";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Сенсор активен";
+"sensorManagementStarted" = "Запущен";
+"sensorManagementEnds" = "Заканчивается";
 "sensorHealthPersistentNoiseTitle" = "Очень высокий шум сенсора";
 "sensorHealthPersistentNoiseGuidance" = "Очень высокий шум в течение 12 часов. Если он сохраняется, рассмотрите замену сенсора.";
 "sensorHealthFlatlineTitle" = "Сигнал сенсора не меняется";
@@ -202,3 +202,89 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "Настройка смещения и формы недоступна, поскольку этот CGM использует встроенную калибровку.";
 
 "postProcessingWarningAgreement" = "Нажимайте «ОК», только если вы понимаете эту функцию и согласны её включить.";
+"postProcessingShape" = "Акцент";
+"sensorManagementCalibrationSafetyFooter" = "Калибруйте, только если понимаете, как сделать это безопасно.";
+"snoozeAllTitle" = "Отложить все";
+"postProcessingUpdateAllReadingsLastPeriod" = "Перезаписать все значения за последние %@";
+"postProcessingEnterValue" = "Введите значение";
+"postProcessingStrong" = "Сильно";
+"sensorManagementCalibrationIntercept" = "Смещение";
+"snoozeUrgentAlarms" = "Только срочные сигналы";
+"showHideHomeScreenFooter" = "Показать или скрыть основные элементы главного экрана; удобно на небольших экранах iPhone";
+"postProcessingSofterLowsDescription" = "Эффект масштаба сильнее при низких значениях глюкозы и слабее при высоких.";
+"postProcessingMasterNightscoutUploadDisabled" = "Выгрузка в Nightscout отключена";
+"sensorManagementCalibrationSlope" = "Наклон";
+"postProcessingReadingFrequency" = "Частота показаний";
+"sensorManagementCalibrationFalling" = "Падает";
+"postProcessingOffset" = "Сдвиг";
+"waitingForDataSource" = "CGM подключён. Ожидание данных...";
+"sensorManagementCalibrationSlightlyHigh" = "Немного высоко";
+"sensorManagementCalibrationFallingFast" = "Быстро падает";
+"postProcessingOffsetBgCheckHint" = "Рекомендуется хотя бы одно недавнее измерение ГК";
+"noDataSourceConnectedWatch" = "Откройте приложение iOS";
+"sensorManagementCalibrationStableTrend" = "Стабильный тренд";
+"sensorNoiseHistoryFooter" = "На графике показаны 30-минутный джиттер, скользящее 4-часовое значение и 12-часовая медиана, используемые для предупреждений о постоянном шуме. Меньшие значения означают более гладкий сигнал. Это не измеряет точность глюкозы.";
+"sensorManagementCalibrationNoTrend" = "Нет тренда";
+"sensorManagementCalibrationNoReading" = "Нет показаний";
+"postProcessingEnterGlucose" = "Введите глюкозу";
+"sensorHealthTestTransmitterFailure" = "Тест сбоя передатчика через 5 секунд";
+"postProcessingNow" = "Сейчас";
+"sensorManagementCalibrationReadinessBad" = "Калибровка сейчас, скорее всего, будет неточной. Пожалуйста, подождите.";
+"postProcessingOriginal" = "Исходное";
+"sensorManagementCalibrationReadinessCaution" = "Калибровка может быть менее надёжной. Лучше подождать.";
+"postProcessingSofterLows" = "Низкие";
+"postProcessingApplyFrom" = "Применить с";
+"sensorManagementLargeCalibrationDifferenceWarningFormat" = "Возможно, эта калибровка не сработает. Старайтесь менять калибровку не более чем на %@ за раз.";
+"sensorManagementCalibrationStable" = "Стабильно";
+"sensorHealthTestTemporaryIssue" = "Тест временной проблемы через 5 секунд";
+"postProcessingScaleBgCheckHint" = "Рекомендуется хотя бы два недавних измерения ГК";
+"postProcessingOriginalGlucose" = "Исходная глюкоза";
+"sensorManagementCalibrationGood" = "Хорошо";
+"sensorNoiseHistoryPersistentCompact" = "12 ч";
+"postProcessingNoCurrentValues" = "Нет текущих значений";
+"postProcessingMedium" = "Средне";
+"showHideItemsTitle" = "Быстро показать/скрыть";
+"postProcessingAdjustedGlucose" = "Скорректированная глюкоза";
+"showHideStandByModeFooter" = "Меняет отображение режима «Ожидание» (StandBy), если он включён в настройках iPhone";
+"followerAccountCredentialsInvalid" = "Недействительная учётная запись";
+"postProcessingNightscoutDataNotUpdated" = "Данные Nightscout не будут обновлены";
+"sensorManagementNoisePersistent" = "Последние 12 часов";
+"sensorRemaining" = "До конца работы сенсора";
+"sensorManagementCalibrationFlatline" = "Плоский сигнал";
+"sensorManagementCalibrationStale" = "Устарело";
+"showHideHomeScreenTitle" = "Главный экран";
+"postProcessingSmoothed" = "Сглажено";
+"postProcessingApply" = "Применить";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "Корректировка отключена, так как этот сенсор уже использует собственную калибровку. Переключитесь на нативный алгоритм, чтобы разрешить корректировку глюкозы.";
+"sensorManagementCalibrationRaw" = "Необработано";
+"postProcessingPreviewHours" = "Часов предпросмотра";
+"snoozeAllSnoozed" = "Все сигналы отложены!";
+"postProcessingAdjusted" = "Скорректировано";
+"snoozeAllDisabled" = "Отложить все отключено";
+"showTreatments" = "Показывать терапию";
+"sensorHealthTestSensorFailure" = "Тест сбоя сенсора через 5 секунд";
+"sensorManagementCalibrationReadinessGood" = "Сейчас хорошее время для калибровки.";
+"postProcessingScale" = "Масштаб";
+"postProcessingTitle" = "Корректировка глюкозы";
+"postProcessingSofterHighs" = "Высокие";
+"postProcessingNeutralDescription" = "Эффект масштаба применяется равномерно по всему диапазону глюкозы.";
+"postProcessingSofterHighsDescription" = "Эффект масштаба сильнее при высоких значениях глюкозы и слабее при низких.";
+"postProcessingValidGlucoseRange" = "Введите значение от %@ до %@";
+"postProcessingStrength" = "Сила";
+"remaining" = "осталось";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay сглаживает кривую глюкозы, подгоняя короткие локальные окна, и сохраняет общую форму пиков и впадин.";
+"showHideStandByModeTitle" = "Режим StandBy";
+"postProcessingLight" = "Слабо";
+"sensorManagementCalibrationValue" = "Значение калибровки";
+"postProcessingNeutral" = "Обычно";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "Корректировка отключена, так как этот сенсор уже использует собственную калибровку.";
+"sensorManagementCalibrationRising" = "Растёт";
+"snoozeAllSnoozedUntil" = "Отложено до %@";
+"sensorManagementCalibrationSlightlyLow" = "Немного низко";
+"sensorHealthTestPersistentNoise" = "Тест постоянного шума через 5 секунд";
+"sensorHealthTestFlatline" = "Тест плоского сигнала через 5 секунд";
+"postProcessingShapeExplanation" = "Акцент меняет то, где параметр «Масштаб» сильнее всего влияет на кривую. Это может помочь, если сенсор преувеличивает высокие или низкие значения глюкозы сильнее, чем в остальном диапазоне.";
+"postProcessingDexcomShareDataNotUpdated" = "Данные Dexcom Share не будут обновлены";
+"sensorManagementCalibrationBG" = "ГК";
+"waitingForCGMConnection" = "Ожидание подключения CGM...";
+"sensorManagementCalibrationRisingFast" = "Быстро растёт";

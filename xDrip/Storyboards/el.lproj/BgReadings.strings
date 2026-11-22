@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "Χρονοσήμανση";
 "backfilledAtFooterFormat" = "Συμπληρώθηκε αναδρομικά %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "Μέτρηση γλυκόζης";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "Ακατέργαστα δεδομένα";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "Δεν υπάρχουν μετρήσεις...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "Υπολογισμένη τιμή";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "Γενικά";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "Μετρήσεις γλυκόζης";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "Εσωτερικά δεδομένα";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "Βέλος τάσης";
 
 "glucoseRange" = "Εύρος γλυκόζης";
 "bgRangeUrgent" = "Επείγον";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "Ελήφθη μέσω Watch στις %@";
 "backfilledViaWatchAtFooterFormat" = "Συμπληρώθηκε μέσω Watch στις %@";
 "receivedViaWatch" = "Ελήφθη μέσω Watch";
+"finalGlucose" = "Τιμή γλυκόζης";
+"glucoseValueSectionHeader" = "Τιμή γλυκόζης";
+"backfilled" = "Συμπληρώθηκε εκ των υστέρων";
+"rawValue" = "Ακατέργαστη τιμή";
+"smoothedValue" = "Εξομαλυμένη τιμή";
+"date" = "Ημερομηνία";
+"calibratedValue" = "Βαθμονομημένη τιμή";
+"adjustedValue" = "Προσαρμοσμένη τιμή";
+"finalValue" = "Τελική τιμή";

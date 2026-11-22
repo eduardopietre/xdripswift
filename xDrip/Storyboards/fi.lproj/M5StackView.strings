@@ -4,7 +4,7 @@
 "m5StackResetRequiredWarning" = "M5Stack on resetoitava uuden väliaikaisen salasanan luomiseksi. Napsauta kun olet valmis ";
 "m5StackSoftWhereHelpCellText" = "Mistä löytyy M5Stack ohjelmisto ?";
 "m5StickCSoftWhereHelpCellText" = "Mistä löytyy M5StickC ohjelmisto ?";
-"m5StackSoftWareHelpText" = "Go to";
+"m5StackSoftWareHelpText" = "Siirry osoitteeseen";
 "m5StackViewscreenTitle" = "M5Stack";
 "m5StickCViewscreenTitle" = "M5StickC";
 "deviceMustBeConnectedToPowerOff" = "M5Stack on oltava yhdistetty jotta voit sammuttaa sen";

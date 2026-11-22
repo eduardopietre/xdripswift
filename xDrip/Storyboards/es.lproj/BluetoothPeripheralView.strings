@@ -54,31 +54,31 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ ¡Sensor escaneado correctamente!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "La calibración multipunto es una función avanzada.\n\nPor favor, no uses esta función hasta que hayas leído la sección de calibración de la ayuda en línea y entiendas cómo funciona.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "Por favor, escanea de nuevo";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ Falló el escaneo del sensor";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "Ha fallado el escaneo del sensor";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "Se necesita escaneo NFC";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "Error al escanear el sensor\n\nReintentando... # ";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "Escanear de nuevo";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "Pulsa OK y espera a que el sensor Libre termine de conectarse por Bluetooth.\n\nEn poco tiempo el estado debería cambiar a 'Conectado'.";
 
 
 "nativeAlgorithm" = "Algoritmo nativo";
@@ -114,7 +114,7 @@
 "readSuccessNow" = "Ahora";
 "scanningForTransmitter" = "Buscando...";
 "connecting" = "Conectando";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Conectando...";
 "reconnecting" = "Reconectando";
 "reconnectingToTransmitter" = "Reconectando...";
 "waiting" = "Esperando...";

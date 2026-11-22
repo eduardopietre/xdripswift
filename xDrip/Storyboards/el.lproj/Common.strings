@@ -38,7 +38,7 @@
 "delete" = "Διαγραφή";
 "invalidValue" = "Μη έγκυρη τιμή";
 "firmware" = "Firmware";
-"hardware" = "Hardware";
+"hardware" = "Υλικό";
 "unknown" = "Άγνωστο";
 "sensorStatus" = "Κατάσταση αισθητήρα";
 "invalidAccountOrPassword" = "Λάθος όνομα χρήστη ή κωδικός";
@@ -59,10 +59,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Στενό εύρος";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Εύρος χρήστη";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "Εκτιμώμενη ενεργή ινσουλίνη";
@@ -89,3 +89,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Ενεργό";
+"common_report_period" = "Περίοδος αναφοράς";
+"common_statistics_insufficientData" = "Ανεπαρκή δεδομένα";
+"common_statistics_title" = "Στατιστικά";
+"common_report_unableToPrepareTitle" = "Αδυναμία προετοιμασίας αναφοράς";
+"common_report_patientIDPlaceholder" = "Ιατρικό αρχείο / ID ασθενούς";
+"common_statistics_dailySummary" = "Ημερήσια σύνοψη";
+"common_report_patientPeriodTitleFormat" = "%@ – %@";
+"common_statistics_averageTDD" = "Μέση TDD";
+"common_report_aidPeriod" = "Δεδομένα Looping";
+"common_report_periodTitleFormat" = "Αναφορά %d ημερών";
+"common_report_passwordProtectionOpenError" = "Το PDF της αναφοράς δεν μπόρεσε να ανοιχτεί για προστασία με κωδικό.";
+"common_statistics_timeInRange" = "Χρόνος εντός στόχου";
+"common_statistics_dailyPatternFooter" = "Οι μπάρες δείχνουν το ημερήσιο ποσοστό στο εύρος %@. Η διακεκομμένη γραμμή σημειώνει τον κλινικό στόχο 70%%.";
+"common_statistics_cvTrend" = "Τάση CV";
+"common_report_none" = "Κανένα";
+"common_notRequired" = "Δεν απαιτείται";
+"common_notAvailable" = "Μη διαθέσιμο";
+"common_report_passwordFieldPlaceholder" = "Κωδικός ανοίγματος PDF";
+"common_statistics_estimatedA1cTrend" = "Τάση εκτιμώμενης HbA1c";
+"common_report_notIncluded" = "Δεν περιλαμβάνεται";
+"common_statistics_report" = "Αναφορά";
+"common_statistics_averageGlucose" = "Μέση γλυκόζη";
+"common_report_language" = "Γλώσσα";
+"common_disabled" = "Απενεργοποιημένο";
+"common_report_patientFooter" = "Τα στοιχεία του ασθενούς αποθηκεύονται τοπικά σε αυτή τη συσκευή και εκτυπώνονται στην κεφαλίδα της αναφοράς.";
+"common_statistics_targetGreaterThanOrEqual" = "Στόχος >=%@";
+"common_report_periodFooter" = "Για κλινική αναφορά CGM συνιστώνται 90 ημέρες.";
+"common_report_passwordConfirmationPlaceholder" = "Εισαγάγετε ξανά τον κωδικό";
+"common_report_patientName" = "Όνομα ασθενούς";
+"common_value" = "Τιμή";
+"common_report_willBePasswordProtected" = "Η αναφορά θα προστατεύεται με κωδικό";
+"common_report_generatingStatus" = "Δημιουργία κλινικής αναφοράς...";
+"common_report_notSet" = "Δεν έχει οριστεί";
+"common_statistics_ambulatoryGlucoseProfile" = "Προφίλ γλυκόζης εξωνοσοκομειακά (AGP)";
+"common_statistics_averageCarbs" = "Μέσοι υδατάνθρακες";
+"common_report_willNotBePasswordProtected" = "Η αναφορά δεν θα προστατεύεται με κωδικό";
+"common_report_aidPeriodFooter" = "Για τα δεδομένα Looping συνιστώνται 7 ημέρες.";
+"common_statistics_bestDay" = "Καλύτερη ημέρα";
+"common_statistics_period" = "Περίοδος";
+"common_report_passwordFooter" = "Αυτός ο κωδικός χρησιμοποιείται μόνο για το επόμενο PDF που θα δημιουργηθεί και δεν αποθηκεύεται.";
+"common_statistics_dailyPattern" = "Ημερήσιο μοτίβο";
+"common_checking" = "Έλεγχος...";
+"common_statistics_summary" = "Σύνοψη";
+"common_statistics_section" = "Ενότητα";
+"common_report_patientNamePlaceholder" = "Όνομα ασθενούς";
+"common_enterValue" = "Εισαγάγετε τιμή";
+"common_statistics_waitingForGlucoseData" = "Αναμονή για δεδομένα γλυκόζης...";
+"common_statistics_mostHigh" = "Πιο υψηλές";
+"common_statistics_trends" = "Τάσεις";
+"common_statistics_dataCapture" = "Καταγραφή δεδομένων";
+"common_statistics_targetLessThanOrEqual" = "Στόχος <=%@";
+"common_report_patientSection" = "Ασθενής";
+"common_statistics_noDataTitle" = "Δεν υπάρχουν στατιστικά";
+"common_report_passwordToOpen" = "Κωδικός ανοίγματος";
+"common_report_paperSize" = "Μέγεθος χαρτιού";
+"common_statistics_insufficientAGPData" = "Ανεπαρκή δεδομένα για το γράφημα εκατοστημορίων AGP";
+"common_statistics_averageFormat" = "Μέσος όρος %@";
+"common_report_patientID" = "ID ασθενούς";
+"common_report_generateTitle" = "Δημιουργία αναφοράς";
+"common_statistics_noDataMessage" = "Δεν υπάρχουν αρκετά αποθηκευμένα δεδομένα CGM για αυτή την περίοδο.";
+"common_report_notEnoughData" = "Ανεπαρκή δεδομένα";
+"common_report_shareAccessibility" = "Κοινοποίηση αναφοράς";
+"common_report_generationFailedTitle" = "Η δημιουργία της αναφοράς απέτυχε";
+"next" = "Επόμενο";
+"common_statistics_mostLow" = "Πιο χαμηλές";
+"common_statistics_tempBasalDelta" = "Διαφορά προσωρινής βασικής";
+"common_dismiss" = "Απόρριψη";
+"common_report_options" = "Επιλογές αναφοράς";
+"common_statistics_timeInTightRange" = "Χρόνος σε στενό εύρος";
+"common_report_passwordProtectionWriteError" = "Το PDF αναφοράς με προστασία κωδικού δεν μπόρεσε να δημιουργηθεί.";
+"common_statistics_cgmEstimate" = "Εκτίμηση CGM";

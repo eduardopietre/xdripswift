@@ -39,7 +39,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Where credentials need to be given, if either account or password is invalid (for the moment only applicable to Dexcom Share
-"invalidAccountOrPassword" = "Invalid account or password";
+"invalidAccountOrPassword" = "Virheellinen tili tai salasana";
 
 /// the word today
 "common_todayshort" = "Tänään";
@@ -89,10 +89,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Tiukka alue";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Käyttäjän alue";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "Arvioitu aktiivinen insuliini";
@@ -119,3 +119,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Käytössä";
+"common_report_period" = "Raportin jakso";
+"common_statistics_insufficientData" = "Ei riittävästi tietoja";
+"common_statistics_title" = "Tilastot";
+"common_report_unableToPrepareTitle" = "Raporttia ei voi valmistella";
+"common_report_patientIDPlaceholder" = "Potilaskertomus / potilastunnus";
+"common_statistics_dailySummary" = "Päivittäinen yhteenveto";
+"common_report_patientPeriodTitleFormat" = "%@: %@";
+"common_statistics_averageTDD" = "Keskimääräinen TDD";
+"common_report_aidPeriod" = "Looppaustiedot";
+"common_report_periodTitleFormat" = "%d päivän raportti";
+"common_report_passwordProtectionOpenError" = "Raportin PDF:ää ei voitu avata salasanasuojausta varten.";
+"common_statistics_timeInRange" = "Aika alueella";
+"common_statistics_dailyPatternFooter" = "Palkit näyttävät päivittäisen osuuden %@-alueella. Katkoviiva merkitsee 70 %%:n kliinistä tavoitetta.";
+"common_statistics_cvTrend" = "CV-trendi";
+"common_report_none" = "Ei mitään";
+"common_notRequired" = "Ei pakollinen";
+"common_notAvailable" = "Ei saatavilla";
+"common_report_passwordFieldPlaceholder" = "Salasana PDF:n avaamiseen";
+"common_statistics_estimatedA1cTrend" = "Arvioitu HbA1c-trendi";
+"common_report_notIncluded" = "Ei mukana";
+"common_statistics_report" = "Raportti";
+"common_statistics_averageGlucose" = "Keskimääräinen verensokeri";
+"common_report_language" = "Kieli";
+"common_disabled" = "Pois käytöstä";
+"common_report_patientFooter" = "Potilastiedot tallennetaan vain tälle laitteelle ja tulostetaan raportin ylätunnisteeseen.";
+"common_statistics_targetGreaterThanOrEqual" = "Tavoite >=%@";
+"common_report_periodFooter" = "Kliiniseen CGM-raporttiin suositellaan 90 päivää.";
+"common_report_passwordConfirmationPlaceholder" = "Anna salasana uudelleen";
+"common_report_patientName" = "Potilaan nimi";
+"common_value" = "Arvo";
+"common_report_willBePasswordProtected" = "Raportti suojataan salasanalla";
+"common_report_generatingStatus" = "Luodaan kliinistä raporttia...";
+"common_report_notSet" = "Ei asetettu";
+"common_statistics_ambulatoryGlucoseProfile" = "Ambulatorinen glukoosiprofiili";
+"common_statistics_averageCarbs" = "Keskimääräiset hiilihydraatit";
+"common_report_willNotBePasswordProtected" = "Raporttia ei suojata salasanalla";
+"common_report_aidPeriodFooter" = "Looppaustiedoille suositellaan 7 päivää.";
+"common_statistics_bestDay" = "Paras päivä";
+"common_statistics_period" = "Jakso";
+"common_report_passwordFooter" = "Tätä salasanaa käytetään vain seuraavaan luotavaan PDF:ään, eikä sitä tallenneta.";
+"common_statistics_dailyPattern" = "Päivittäinen kuvio";
+"common_checking" = "Tarkistetaan...";
+"common_statistics_summary" = "Yhteenveto";
+"common_statistics_section" = "Osio";
+"common_report_patientNamePlaceholder" = "Potilaan nimi";
+"common_enterValue" = "Anna arvo";
+"common_statistics_waitingForGlucoseData" = "Odotetaan verensokeritietoja...";
+"common_statistics_mostHigh" = "Korkein";
+"common_statistics_trends" = "Trendit";
+"common_statistics_dataCapture" = "Tietojen kattavuus";
+"common_statistics_targetLessThanOrEqual" = "Tavoite <=%@";
+"common_report_patientSection" = "Potilas";
+"common_statistics_noDataTitle" = "Tilastoja ei saatavilla";
+"common_report_passwordToOpen" = "Avauksen salasana";
+"common_report_paperSize" = "Paperikoko";
+"common_statistics_insufficientAGPData" = "Ei riittävästi tietoja AGP-persentiilikaaviota varten";
+"common_statistics_averageFormat" = "Keskiarvo %@";
+"common_report_patientID" = "Potilastunnus";
+"common_report_generateTitle" = "Luo raportti";
+"common_statistics_noDataMessage" = "Tälle jaksolle ei ole tallennettu tarpeeksi CGM-tietoja.";
+"common_report_notEnoughData" = "Ei tarpeeksi tietoja";
+"common_report_shareAccessibility" = "Jaa raportti";
+"common_report_generationFailedTitle" = "Raportin luonti epäonnistui";
+"next" = "Seuraava";
+"common_statistics_mostLow" = "Matalin";
+"common_statistics_tempBasalDelta" = "Tilapäisen basaalin muutos";
+"common_dismiss" = "Sulje";
+"common_report_options" = "Raportin asetukset";
+"common_statistics_timeInTightRange" = "Aika tiukalla alueella";
+"common_report_passwordProtectionWriteError" = "Salasanasuojattua raportti-PDF:ää ei voitu luoda.";
+"common_statistics_cgmEstimate" = "CGM-arvio";

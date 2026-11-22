@@ -20,10 +20,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// warn about trying to set a future bg value
-"treatments_cannotStoreFutureBGCheck" = "You cannot store a BG Check in the future.\n\nIt will be stored at the actual time.";
+"treatments_cannotStoreFutureBGCheck" = "Et voi tallentaa verensokerin tarkistusta tulevaisuuteen.\n\nSe tallennetaan todelliseen aikaan.";
 
 /// filter the treatments by type
-"treatments_filterTreatmentsLabel" = "Filter";
+"treatments_filterTreatmentsLabel" = "Suodata";
 "treatments_automaticBasal" = "Automaattinen basaali";
 
 /* Section heading when choosing a new treatment type. */

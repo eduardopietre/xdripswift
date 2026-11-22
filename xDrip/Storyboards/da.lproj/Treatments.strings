@@ -1,26 +1,26 @@
 "treatments_title" = "Behandlinger";
 "treatments_new_button" = "New";
 "treatments_new_entry" = "New Entry";
-"treatments_carbs_with_unit" = "Carbs (g)";
-"treatments_insulin_with_unit" = "Insulin (U)";
-"treatments_exercise_with_unit" = "Exercise (min)";
+"treatments_carbs_with_unit" = "Kulhydrater (g)";
+"treatments_insulin_with_unit" = "Insulin (E)";
+"treatments_exercise_with_unit" = "Motion (min.)";
 "treatments_carbs_unit" = "g";
 "treatments_insulin_unit" = "U";
 "treatments_exercise_unit" = "min";
-"treatments_carbs" = "Carbs";
+"treatments_carbs" = "Kulhydrater";
 "treatments_insulin" = "Bolus";
-"treatments_exercise" = "Exercise";
+"treatments_exercise" = "Motion";
 "treatments_bgcheck" = "BG Kontrol";
 "treatments_question_mark" = "?";
-"treatments_success" = "Success";
-"treatments_sync_complete" = "Synchronization complete.";
+"treatments_success" = "Lykkedes";
+"treatments_sync_complete" = "Synkronisering fuldført.";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// warn about trying to set a future bg value
-"treatments_cannotStoreFutureBGCheck" = "You cannot store a BG Check in the future.\n\nIt will be stored at the actual time.";
+"treatments_cannotStoreFutureBGCheck" = "Du kan ikke gemme en BS-måling i fremtiden.\n\nDen gemmes på det faktiske tidspunkt.";
 
 /// filter the treatments by type
 "treatments_filterTreatmentsLabel" = "Filter";

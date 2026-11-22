@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "Tidsstämpel";
 "backfilledAtFooterFormat" = "Bakåtfylld %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "Glukosavläsning";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "Rådata";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "Inga avläsningar att visa...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "Beräknat värde";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "Allmänt";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "Glukosavläsningar";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "Interna data";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "Trendpil";
 
 "glucoseRange" = "Glukosintervall";
 "bgRangeUrgent" = "Akut";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "Mottaget via Watch kl. %@";
 "backfilledViaWatchAtFooterFormat" = "Efterhämtat via Watch kl. %@";
 "receivedViaWatch" = "Mottaget via Watch";
+"finalGlucose" = "Glukosvärde";
+"glucoseValueSectionHeader" = "Glukosvärde";
+"backfilled" = "Efterfyllt";
+"rawValue" = "Råvärde";
+"smoothedValue" = "Utjämnat värde";
+"date" = "Datum";
+"calibratedValue" = "Kalibrerat värde";
+"adjustedValue" = "Justerat värde";
+"finalValue" = "Slutvärde";

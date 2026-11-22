@@ -19,7 +19,7 @@
 "directWatchPausedSinceFormat" = "Sinds %@";
 "directWatchConnecting" = "Wachten…";
 "directWatchCollectedReadings" = "Verzamelde metingen";
-"directWatchReadingGapFormat" = "(%dm %ds)";
+"directWatchReadingGapFormat" = "(%d m %d s)";
 "directWatchNoCollectedReadings" = "Nog geen Watch-metingen verzameld";
 
 "directWatchSessionStarted" = "Gestart om %@";

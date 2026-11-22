@@ -53,34 +53,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ تم مسح الحساس بنجاح!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "المعايرة متعددة النقاط ميزة متقدمة.\n\nيرجى عدم استخدامها قبل قراءة قسم المعايرة في المساعدة عبر الإنترنت وفهم طريقة عملها.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "يرجى المسح مرة أخرى";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ فشل مسح الحساس";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "فشل مسح الحساس";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "مسح NFC مطلوب";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "خطأ في مسح الحساس\n\nجارٍ إعادة المحاولة... # ";
 
 /// sensor warm-up text
 "warmingUpUntil" = "إحماء حتى";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "المسح مجدداً";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "اضغط موافق وانتظر حتى يكمل حساس Libre الاتصال عبر Bluetooth.\n\nبعد قليل ستتغير الحالة إلى «متصل».";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "آخر 24 ساعة";
@@ -107,7 +107,7 @@
 "readSuccessNow" = "الآن";
 "scanningForTransmitter" = "جارٍ البحث...";
 "connecting" = "جارٍ الاتصال";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "جارٍ الاتصال...";
 "reconnecting" = "جارٍ إعادة الاتصال";
 "reconnectingToTransmitter" = "جارٍ إعادة الاتصال...";
 "waiting" = "انتظار...";
@@ -192,3 +192,10 @@
 "bluetoothAccessNotEnabled" = "الوصول إلى Bluetooth غير مفعّل";
 "bluetoothAccessInstructions" = "للاتصال، افتح الإعدادات ← الخصوصية والأمان ← Bluetooth واسمح بالوصول لتطبيق %@.";
 "bluetoothAccessRestrictedInstructions" = "تمنع قيود الجهاز الوصول إلى Bluetooth. تحقق من إعدادات مدة استخدام الجهاز أو تواصل مع مسؤول الجهاز لتفعيل الوصول.";
+"confirmAlgorithmChangeToTransmitterMessage" = "يرجى تأكيد رغبتك في العودة إلى الخوارزمية الأصلية لجهاز الإرسال";
+"confirmAlgorithmChangeToxDripMessage" = "يرجى تأكيد رغبتك في التغيير إلى خوارزمية xDrip.\n\nسيؤدي هذا إلى إيقاف القراءات لفترة قصيرة وطلب قيمة المعايرة الأولية عند الجاهزية.";
+"confirmCalibrationChangeToMultiPointMessage" = "يرجى تأكيد رغبتك في تغيير نوع المعايرة إلى متعددة النقاط\n\n⚠️ يرجى ملاحظة أن هذه الطريقة للمستخدمين المتقدمين فقط وقد تعطي نتائج خطرة إذا لم تتم المعايرة بشكل صحيح.\n\nإذا لم تكن متأكداً من كيفية استخدام هذه الطريقة، اضغط إلغاء.";
+"confirmCalibrationChangeToSinglePointMessage" = "يرجى تأكيد رغبتك في تغيير نوع المعايرة إلى المعايرة القياسية\n\nسيؤدي هذا إلى إيقاف القراءات لفترة قصيرة وطلب قيمة المعايرة الأولية عند الجاهزية.";
+"nativeAlgorithm" = "الخوارزمية الأصلية";
+"xDripAlgorithm" = "خوارزمية xDrip";
+"confirm" = "تأكيد";

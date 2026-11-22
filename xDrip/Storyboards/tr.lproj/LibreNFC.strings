@@ -7,13 +7,13 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// when NFC scanning is started, this message will appear
-"holdTopOfIphoneNearSensor" = "Hold the top of your iPhone near the sensor until it stops vibrating.";
+"holdTopOfIphoneNearSensor" = "iPhone'unuzun üst kısmını titreşim durana kadar sensörün yakınında tutun.";
 
 /// The user has connected to another (older?) Libre 2 with bluetooth than the one for which NFC scan was done, in that case, inform user that he/she should click 'disconnect', add a new CGM sensor and scan again.
-"connectedLibre2DoesNotMatchScannedLibre2" = "You have scanned a new Libre sensor, but %@ has connected to a different sensor (probably the previous one).\n\nTo solve this do NOT delete this old sensor just yet. Click 'Disconnect' or 'Stop Scanning', go back to the previous screen and add a new CGM of type Libre 2 and scan the sensor again.\n\n%@ should now try and connect to the new sensor.";
+"connectedLibre2DoesNotMatchScannedLibre2" = "Yeni bir Libre sensörü taradınız, ancak %@ farklı bir sensöre (büyük olasılıkla öncekine) bağlandı.\n\nBunu çözmek için bu eski sensörü henüz SİLMEYİN. 'Bağlantıyı Kes' veya 'Taramayı Durdur'a dokunun, önceki ekrana dönün, Libre 2 türünde yeni bir CGM ekleyin ve sensörü tekrar tarayın.\n\n%@ şimdi yeni sensöre bağlanmayı denemelidir.";
 
 /// After Libre NFC scanning, and after successful bluetooth connection, this message will be shown to explain that he or she should not allow bluetooth permission on the Libre app
-"donotusethelibrelinkapp" = "Connected to Libre 2.\n\nPlease ensure you have disabled bluetooth permission for the Libre app in your iPhone settings.\n\nIf you don't do this, when you scan with the Libre app you will break the connection between %@ and the Libre 2.\n\nPlease note that there is a %@ minute warm-up period after starting a new Libre 2 before you will get readings.";
+"donotusethelibrelinkapp" = "Libre 2'ye bağlandı.\n\nLütfen iPhone ayarlarında Libre uygulaması için Bluetooth iznini kapattığınızdan emin olun.\n\nBunu yapmazsanız Libre uygulamasıyla tarama yaptığınızda %@ ile Libre 2 arasındaki bağlantı kopar.\n\nYeni bir Libre 2 başlattıktan sonra okuma alabilmek için %@ dakikalık ısınma süresi olduğunu unutmayın.";
 
 /// after scanning NFC, scan complete message
-"scanComplete" = "Sensor scan successful";
+"scanComplete" = "Sensör taraması başarılı";

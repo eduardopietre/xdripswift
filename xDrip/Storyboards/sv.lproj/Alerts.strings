@@ -30,3 +30,7 @@
 "sensorExpiry.hoursHelp" = "Ange ett helt antal timmar från 1 till 48.";
 "sensorExpiry.endingSoonBody" = "Din sensor förväntas nå slutet av sin livslängd den %@.";
 "sensorExpiry.expectedExpiryBody" = "Din sensor har nått sin förväntade sluttid (%@).";
+"alertWhenAboveValue" = "Endast över";
+"alertWhenBelowValue" = "Endast under";
+"alerts_sensortransmitterfailure" = "Sensor-/sändarfel";
+"alerts_notloopingalerttitle" = "Loopar inte";

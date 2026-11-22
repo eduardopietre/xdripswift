@@ -44,34 +44,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// if web oop enabled, and also if transmitter supports this, user clicks calibrate button, but calibration is not possible
-"calibrationNotNecessary" = "When using the native transmitter algorithm, manual calibration is not available.\n\nIf you want to calibrate, you can switch to the xDrip algorithm in the transmitter screen (if available).";
+"calibrationNotNecessary" = "Yerel verici algoritması kullanılırken manuel kalibrasyon mevcut değildir.\n\nKalibre etmek isterseniz verici ekranından xDrip algoritmasına geçebilirsiniz (mevcutsa).";
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout devre dışı";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "URL %@ sn gizleniyor...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Sensör verisi yok";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Sensör Süresi";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL eksik";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Libre sensörünün bağlantısını kesip yeniden bağlayın";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Kullanıcı adı/parola eksik";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Bağlı CGM veri kaynağı yok";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "5 dakikalık okumalar";
+"postProcessingAlgorithm" = "Algoritma";
 "sensorLifetimeRemainingFormat" = "%@ kaldı";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -103,14 +103,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Sensör gürültüsü geçmişi grafiği";
 "pumpBattery" = "Pil";
 "pumpReservoir" = "Rezervuar";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Geçen / Kalan";
+"sensorManagementSessionDetails" = "Oturum Ayrıntıları";
+"sensorManagementCalibrationOpenTitle" = "Kalibrasyon Ayrıntıları";
+"sensorManagementCGMType" = "CGM Türü";
 "sensorManagementLastCalibration" = "Son";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Sensör Aktif";
+"sensorManagementStarted" = "Başlangıç";
+"sensorManagementEnds" = "Bitiş";
 "sensorHealthPersistentNoiseTitle" = "Çok Yüksek Sensör Gürültüsü";
 "sensorHealthPersistentNoiseGuidance" = "12 saattir çok yüksek gürültü. Devam ederse sensörü değiştirmeyi düşünün.";
 "sensorHealthFlatlineTitle" = "Sensör Sinyali Sabit";
@@ -202,3 +202,89 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "Bu CGM kendi kalibrasyonunu kullandığından ofset ve şekil ayarı kullanılamaz.";
 
 "postProcessingWarningAgreement" = "Yalnızca bu özelliği anlıyor ve etkinleştirmeyi kabul ediyorsanız Tamam’a dokunun.";
+"postProcessingShape" = "Vurgu";
+"sensorManagementCalibrationSafetyFooter" = "Yalnızca güvenli şekilde nasıl yapılacağını biliyorsanız kalibre edin.";
+"snoozeAllTitle" = "Tümünü Ertele";
+"postProcessingUpdateAllReadingsLastPeriod" = "Son %@ içindeki tüm değerlerin üzerine yaz";
+"postProcessingEnterValue" = "Değer girin";
+"postProcessingStrong" = "Güçlü";
+"sensorManagementCalibrationIntercept" = "Kesişim";
+"snoozeUrgentAlarms" = "Yalnızca Acil Alarmlar";
+"showHideHomeScreenFooter" = "Ana ekrandaki temel öğeleri gösterin veya gizleyin; daha küçük iPhone ekranlarında kullanışlıdır";
+"postProcessingSofterLowsDescription" = "Ölçek etkisini düşük glukoz değerlerinde daha fazla, yüksek değerlerde daha az uygular.";
+"postProcessingMasterNightscoutUploadDisabled" = "Nightscout'a yükleme devre dışı";
+"sensorManagementCalibrationSlope" = "Eğim";
+"postProcessingReadingFrequency" = "Okuma Sıklığı";
+"sensorManagementCalibrationFalling" = "Düşüyor";
+"postProcessingOffset" = "Ofset";
+"waitingForDataSource" = "CGM bağlandı. Veri bekleniyor...";
+"sensorManagementCalibrationSlightlyHigh" = "Hafif Yüksek";
+"sensorManagementCalibrationFallingFast" = "Hızlı Düşüyor";
+"postProcessingOffsetBgCheckHint" = "En az bir yakın tarihli KŞ ölçümü önerilir";
+"noDataSourceConnectedWatch" = "iOS Uygulamasını Aç";
+"sensorManagementCalibrationStableTrend" = "Sabit eğilim";
+"sensorNoiseHistoryFooter" = "Grafik 30 dakikalık dalgalanmayı, kayan 4 saatlik değeri ve kalıcı gürültü uyarıları için kullanılan 12 saatlik medyanı gösterir. Düşük değerler daha pürüzsüzdür. Glukoz doğruluğunu ölçmez.";
+"sensorManagementCalibrationNoTrend" = "Eğilim Yok";
+"sensorManagementCalibrationNoReading" = "Okuma Yok";
+"postProcessingEnterGlucose" = "Glukoz Girin";
+"sensorHealthTestTransmitterFailure" = "5 Saniye İçinde Verici Arızasını Test Et";
+"postProcessingNow" = "Şimdi";
+"sensorManagementCalibrationReadinessBad" = "Şu anda kalibrasyonun doğru olması olası değil. Lütfen bekleyin.";
+"postProcessingOriginal" = "Orijinal";
+"sensorManagementCalibrationReadinessCaution" = "Kalibrasyon daha az güvenilir olabilir. Beklemek daha iyi olabilir.";
+"postProcessingSofterLows" = "Düşükler";
+"postProcessingApplyFrom" = "Şundan İtibaren Uygula";
+"sensorManagementLargeCalibrationDifferenceWarningFormat" = "Bu kalibrasyon çalışmayabilir. Her seferinde kalibrasyon değişikliğini en fazla %@ ile sınırlamaya çalışın.";
+"sensorManagementCalibrationStable" = "Sabit";
+"sensorHealthTestTemporaryIssue" = "5 Saniye İçinde Geçici Sorunu Test Et";
+"postProcessingScaleBgCheckHint" = "En az iki yakın tarihli KŞ ölçümü önerilir";
+"postProcessingOriginalGlucose" = "Orijinal Glukoz";
+"sensorManagementCalibrationGood" = "İyi";
+"sensorNoiseHistoryPersistentCompact" = "12 sa";
+"postProcessingNoCurrentValues" = "Güncel değer yok";
+"postProcessingMedium" = "Orta";
+"showHideItemsTitle" = "Hızlı Göster/Gizle";
+"postProcessingAdjustedGlucose" = "Ayarlanmış glukoz";
+"showHideStandByModeFooter" = "iPhone ayarlarında etkinleştirilmişse StandBy modunun nasıl görüntüleneceğini değiştirir";
+"followerAccountCredentialsInvalid" = "Geçersiz Hesap";
+"postProcessingNightscoutDataNotUpdated" = "Nightscout verileri güncellenmeyecek";
+"sensorManagementNoisePersistent" = "Son 12 Saat";
+"sensorRemaining" = "Sensör Kalan";
+"sensorManagementCalibrationFlatline" = "Düz Çizgi";
+"sensorManagementCalibrationStale" = "Eski";
+"showHideHomeScreenTitle" = "Ana Ekran";
+"postProcessingSmoothed" = "Yumuşatılmış";
+"postProcessingApply" = "Uygula";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "Bu sensör zaten kendi kalibrasyonunu kullandığı için ayarlama devre dışı. Glukoz ayarlamalarına izin vermek için yerel algoritmaya geçin.";
+"sensorManagementCalibrationRaw" = "Ham";
+"postProcessingPreviewHours" = "Önizleme Saatleri";
+"snoozeAllSnoozed" = "Tüm alarmlar ertelendi!";
+"postProcessingAdjusted" = "Ayarlanmış";
+"snoozeAllDisabled" = "Tümünü Ertele Devre Dışı";
+"showTreatments" = "Tedavileri Göster";
+"sensorHealthTestSensorFailure" = "5 Saniye İçinde Sensör Arızasını Test Et";
+"sensorManagementCalibrationReadinessGood" = "Şimdi kalibre etmek için iyi bir zaman.";
+"postProcessingScale" = "Ölçek";
+"postProcessingTitle" = "Glukoz Ayarlamaları";
+"postProcessingSofterHighs" = "Yüksekler";
+"postProcessingNeutralDescription" = "Ölçek etkisini glukoz aralığı boyunca eşit uygular.";
+"postProcessingSofterHighsDescription" = "Ölçek etkisini yüksek glukoz değerlerinde daha fazla, düşük değerlerde daha az uygular.";
+"postProcessingValidGlucoseRange" = "%@ ile %@ arasında bir değer girin";
+"postProcessingStrength" = "Güç";
+"remaining" = "kaldı";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay, tepe ve çukurların genel şeklini korurken kısa yerel pencerelere uyum sağlayarak glukoz eğrisini yumuşatır.";
+"showHideStandByModeTitle" = "StandBy Modu";
+"postProcessingLight" = "Hafif";
+"sensorManagementCalibrationValue" = "Kalibrasyon Değeri";
+"postProcessingNeutral" = "Normal";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "Bu sensör zaten kendi kalibrasyonunu kullandığı için ayarlama devre dışı.";
+"sensorManagementCalibrationRising" = "Yükseliyor";
+"snoozeAllSnoozedUntil" = "%@ Saatine Kadar Ertelendi";
+"sensorManagementCalibrationSlightlyLow" = "Hafif Düşük";
+"sensorHealthTestPersistentNoise" = "5 Saniye İçinde Kalıcı Gürültüyü Test Et";
+"sensorHealthTestFlatline" = "5 Saniye İçinde Düz Sinyali Test Et";
+"postProcessingShapeExplanation" = "Vurgu, Ölçeğin eğri üzerinde en çok nerede etkili olacağını değiştirir. Bir sensör yüksek veya düşük glukoz değerlerini aralığın geri kalanından daha fazla abartıyorsa yardımcı olabilir.";
+"postProcessingDexcomShareDataNotUpdated" = "Dexcom Share verileri güncellenmeyecek";
+"sensorManagementCalibrationBG" = "KŞ";
+"waitingForCGMConnection" = "CGM bağlantısı bekleniyor...";
+"sensorManagementCalibrationRisingFast" = "Hızlı Yükseliyor";

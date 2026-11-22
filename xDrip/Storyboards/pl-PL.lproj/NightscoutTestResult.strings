@@ -4,23 +4,23 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// POP up after verifying nightscout credentials, to say that verification of url and api key were successful - this is the title
-"nightscouttestresult_verificationsuccessfulalerttitle" = "Verification Successful";
+"nightscouttestresult_verificationsuccessfulalerttitle" = "Weryfikacja udana";
 
 /// in settings screen, user tries to test url and API Key but one of them is not set
-"warningAPIKeyOrURLIsnil" = "Your Nightscout URL (and optionally API_SECRET or Token) must be set before you can run the test";
+"warningAPIKeyOrURLIsnil" = "Aby uruchomić test, musisz ustawić URL Nightscout (oraz opcjonalnie API_SECRET lub token)";
 
 /// POP up after verifying nightscout credentials, to say that verification of url and api key was not successful - this is the title
-"nightscouttestresult_verificationerroralerttitle" = "Verification Error";
+"nightscouttestresult_verificationerroralerttitle" = "Błąd weryfikacji";
 
 /// in settings screen, user clicked test button for nightscout url and apikey
-"nightscoutAPIKeyAndURLStartedBody" = "Nightscout Verification Test Started\n\nThis message should automatically disappear shortly";
+"nightscoutAPIKeyAndURLStartedBody" = "Rozpoczęto test weryfikacji Nightscout\n\nTa wiadomość powinna wkrótce zniknąć automatycznie";
 
 /// POP up after verifying nightscout credentials, to say that verification of url and api key were successful - this is the body
-"nightscouttestresult_verificationsuccessfulalertbody" = "Your Nightscout site was verified successfully";
+"nightscouttestresult_verificationsuccessfulalertbody" = "Twoja witryna Nightscout została pomyślnie zweryfikowana";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// in settings screen, user clicked test button for nightscout url and apikey - this is the title
-"nightscoutAPIKeyAndURLStartedTitle" = "Verifying...";
+"nightscoutAPIKeyAndURLStartedTitle" = "Weryfikowanie...";

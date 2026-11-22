@@ -8,7 +8,7 @@
 "confirmDeletionPeripheral" = "Wil je bluetooth apparaat verwijderen: ";
 "bluetoothPeripheralAlias" = "Alias";
 "SensorSerialNumber" = "Sensor Serie Nummer";
-"sensorType" = "Sensor Type";
+"sensorType" = "Sensortype";
 "serialNumber" = "Serie Nummer";
 "battery" = "Batterij";
 "versionCode" = "Versiecode";
@@ -55,10 +55,10 @@
 "runningInCoexistenceMode" = "Actief in co-existentiemodus";
 "runningInPrimaryMode" = "Actief in primaire modus";
 /// cell text, sensor start time
-"sensorStartDate" = "Sensor Started";
+"sensorStartDate" = "Sensor Gestart";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "Transmitter Gestart";
 
 
 "nfcScanFailedTitle" = "⚠️ Sensor Scan mislukt";
@@ -74,10 +74,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Multipuntskalibratie is een geavanceerde functie.\n\nGebruik deze functie pas nadat je het kalibratiegedeelte van de online help hebt gelezen en begrijpt hoe het werkt.";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "NFC-scan nodig";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Opwarmen tot";
@@ -114,7 +114,7 @@
 "readSuccessNow" = "Nu";
 "scanningForTransmitter" = "Zoeken...";
 "connecting" = "Verbinden";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Verbinden...";
 "reconnecting" = "Opnieuw verbinden";
 "reconnectingToTransmitter" = "Opnieuw verbinden...";
 "waiting" = "Wachten...";
@@ -199,3 +199,4 @@
 "bluetoothAccessNotEnabled" = "Bluetooth-toegang is niet ingeschakeld";
 "bluetoothAccessInstructions" = "Open Instellingen → Privacy en beveiliging → Bluetooth en geef %@ toegang om verbinding te maken.";
 "bluetoothAccessRestrictedInstructions" = "Apparaatbeperkingen verhinderen Bluetooth-toegang. Controleer Schermtijd of neem contact op met de apparaatbeheerder om toegang in te schakelen.";
+"confirm" = "Bevestig";

@@ -40,7 +40,7 @@
 "firmware" = "Firmware";
 "hardware" = "Hardware";
 "unknown" = "Onbekend";
-"sensorStatus" = "Sensor Status";
+"sensorStatus" = "Sensorstatus";
 /// Where credentials need to be given, if either account or password is invalid (for the moment only applicable to Dexcom Share
 "invalidAccountOrPassword" = "Verkeerde account en/of paswoord";
 "common_statistics_low" = "Laag";
@@ -55,10 +55,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Strak Bereik";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Eigen Bereik";
 "common_statistics_title" = "Statistieken";
 "common_statistics_period" = "Periode";
 "common_statistics_summary" = "Samenvatting";
@@ -150,3 +150,15 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Ingeschakeld";
+"common_report_aidPeriod" = "Loopdata";
+"common_notRequired" = "Niet vereist";
+"common_notAvailable" = "Niet Beschikbaar";
+"common_report_notIncluded" = "Niet Opgenomen";
+"common_disabled" = "Uitgeschakeld";
+"common_report_periodFooter" = "90 dagen wordt aanbevolen voor een klinisch CGM-rapport.";
+"common_value" = "Waarde";
+"common_report_aidPeriodFooter" = "7 dagen wordt aanbevolen voor Loopdata.";
+"common_checking" = "Controleren...";
+"common_enterValue" = "Voer Waarde in";
+"next" = "Volgende";
+"common_dismiss" = "Sluiten";

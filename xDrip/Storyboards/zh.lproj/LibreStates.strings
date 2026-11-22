@@ -4,22 +4,22 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Possible Libre Sensor states
-"failure" = "failed";
+"failure" = "失败";
 
 /// Possible Libre Sensor states
-"shutdown" = "shut down";
+"shutdown" = "已关闭";
 
 /// Possible Libre Sensor states
-"starting" = "starting";
+"starting" = "正在启动";
 
 /// Possible Libre Sensor states
-"expired" = "expired";
+"expired" = "已过期";
 
 /// general usage
-"unknown" = "unknown";
+"unknown" = "未知";
 
 /// Possible Libre Sensor states
-"ready" = "ready";
+"ready" = "就绪";
 
 /// Possible Libre Sensor states
-"notYetStarted" = "not yet started";
+"notYetStarted" = "尚未启动";

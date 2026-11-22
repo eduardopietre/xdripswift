@@ -32,3 +32,5 @@
 "sensorExpiry.hoursHelp" = "Introduce un número entero de 1 a 48 horas.";
 "sensorExpiry.endingSoonBody" = "Se prevé que tu sensor llegue al final de su vida útil el %@.";
 "sensorExpiry.expectedExpiryBody" = "Tu sensor ha alcanzado su caducidad prevista (%@).";
+"alerts_sensortransmitterfailure" = "Fallo de sensor/transmisor";
+"alerts_notloopingalerttitle" = "Sin looping";

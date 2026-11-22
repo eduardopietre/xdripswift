@@ -4,30 +4,30 @@
 
 "treatments_title" = "Soins";
 "treatments_new_button" = "New";
-"treatments_new_entry" = "New Treatment";
-"treatments_carbs_with_unit" = "Carbs (g)";
-"treatments_insulin_with_unit" = "Insulin (U)";
-"treatments_exercise_with_unit" = "Exercise (min)";
+"treatments_new_entry" = "Nouveau traitement";
+"treatments_carbs_with_unit" = "Glucides (g)";
+"treatments_insulin_with_unit" = "Insuline (U)";
+"treatments_exercise_with_unit" = "Exercice (min)";
 "treatments_carbs_unit" = "g";
 "treatments_insulin_unit" = "U";
 "treatments_exercise_unit" = "min";
-"treatments_carbs" = "Carbs";
+"treatments_carbs" = "Glucides";
 "treatments_insulin" = "Bolus";
-"treatments_exercise" = "Exercise";
+"treatments_exercise" = "Exercice";
 "treatments_bgcheck" = "Contrôle Glycémie";
 "treatments_question_mark" = "?";
-"treatments_success" = "Success";
-"treatments_sync_complete" = "Synchronization complete.";
+"treatments_success" = "Succès";
+"treatments_sync_complete" = "Synchronisation terminée.";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// warn about trying to set a future bg value
-"treatments_cannotStoreFutureBGCheck" = "You cannot store a BG Check in the future.\n\nIt will be stored at the actual time.";
+"treatments_cannotStoreFutureBGCheck" = "Vous ne pouvez pas enregistrer une mesure de glycémie dans le futur.\n\nElle sera enregistrée à l'heure actuelle.";
 
 /// filter the treatments by type
-"treatments_filterTreatmentsLabel" = "Filter";
+"treatments_filterTreatmentsLabel" = "Filtrer";
 "treatments_automaticBasal" = "Basale automatique";
 
 /* Section heading when choosing a new treatment type. */

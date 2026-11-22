@@ -4,7 +4,10 @@
 
 "screenTitle" = "Συσκευές";
 "selectCategory" = "Επιλέξτε τύπο";
-"selectType" = "Select Transmitter Type";
-"batteryLevel" = "Battery Level";
+"selectType" = "Επιλογή τύπου πομπού";
+"batteryLevel" = "Επίπεδο μπαταρίας";
 "noBluetoothPeripheralsConfigured" = "Δεν έχουν ρυθμιστεί συσκευές Bluetooth";
-"noMultipleActiveCGMsAllowed" = "You already have one CGM transmitter connected.\n\nVerify your other CGM transmitters and click 'Stop Scanning', 'Disconnect' or just delete them if needed.";
+"noMultipleActiveCGMsAllowed" = "Έχετε ήδη συνδεδεμένο έναν πομπό CGM.\n\nΕλέγξτε τους άλλους πομπούς CGM και πατήστε 'Διακοπή σάρωσης', 'Αποσύνδεση' ή διαγράψτε τους αν χρειάζεται.";
+"heartbeatDeviceFooter" = "Μια συσκευή heartbeat δεν παρέχει μετρήσεις γλυκόζης. Χρησιμοποιεί τη δραστηριότητα Bluetooth για να ξυπνά την εφαρμογή στο παρασκήνιο, ώστε οι ενημερώσεις ακολούθων, οι ειδοποιήσεις, τα εμβλήματα και οι γνωστοποιήσεις να συνεχίζουν να λειτουργούν.";
+"m5StackDeviceFooter" = "Οι συσκευές M5Stack είναι μικρές εξωτερικές οθόνες βασισμένες σε ESP32. Μπορούν να εμφανίζουν τιμές γλυκόζης που στέλνονται από το xDrip4iOS μέσω Bluetooth.";
+"noMultipleActiveCGMsAllowedFooter" = "Έχετε ήδη συνδεδεμένο ένα CGM.";

@@ -1,8 +1,8 @@
-"notYetStarted" = "not yet started";
-"starting" = "starting";
-"ready" = "ready";
-"expired" = "expired";
-"shutdown" = "shut down";
-"failure" = "failed";
-"unknown" = "unknown";
+"notYetStarted" = "endnu ikke startet";
+"starting" = "starter";
+"ready" = "klar";
+"expired" = "udløbet";
+"shutdown" = "lukket ned";
+"failure" = "mislykkedes";
+"unknown" = "ukendt";
 

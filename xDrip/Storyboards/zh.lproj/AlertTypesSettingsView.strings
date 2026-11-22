@@ -18,7 +18,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// 
-"alertTypeNoSound" = "No Sound";
+"alertTypeNoSound" = "无声音";
 
 "alerttypesettingsview_repeatsound" = "重复声音";
 "alerttypesettingsview_previewalert" = "预览警报";

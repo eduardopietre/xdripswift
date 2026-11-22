@@ -4,7 +4,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When very high alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_veryhighalerttitle" = "Very High Alarm";
+"alerts_veryhighalerttitle" = "Тривога дуже високого рівня";
 "alerts_snooze_high_title" = "Високий";
 "alerts_snooze_very_high_title" = "Дуже високий";
 "alerts_snooze_low_title" = "Низький";
@@ -13,55 +13,55 @@
 "alerts_snooze_fast_rise_title" = "Швидке зростання";
 
 /// an alentry is applicable as of a certain value (eg low alert as of 70 mg/dl), this is the name of the field in the settings screen that allows to modify this valule
-"alerttype" = "Alarm Type";
+"alerttype" = "Тип тривоги";
 
 /// When fast drop alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_fastdrop" = "Fast Drop Alarm";
+"alerts_fastdrop" = "Тривога швидкого падіння";
 
 /// When fast drop alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_fastrise" = "Fast Rise Alarm";
+"alerts_fastrise" = "Тривога швидкого зростання";
 
 /// When Missed reading alert happens, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_missedreadingalerttitle" = "Missed Readings";
+"alerts_missedreadingalerttitle" = "Пропущені показання";
 
 /// Action text for alerts. This is the button that allows to snooze the alert
-"alerts_snooze" = "Snooze";
+"alerts_snooze" = "Відкласти";
 
 /// shown on top of the screen that allows user to view all the alerts in one table
-"alertssettingsview_screentitle" = "Edit Alarm";
+"alertssettingsview_screentitle" = "Редагувати тривогу";
 
 /// When pop up is shown to let user pick the snooze time, this is the title of this pop up
-"alerts_select_snooze_time" = "Select Snooze Time";
+"alerts_select_snooze_time" = "Оберіть час відкладення";
 
 /// shown on top of the screen that allows user to edit an alert
-"alertsettingsview_screentitle" = "Alarms";
+"alertsettingsview_screentitle" = "Тривоги";
 
 /// an alentry is applicable as of a certain value (eg low alert as of 70 mg/dl), this is the name of the field in the settings screen that allows to modify this valule
-"alertvalue" = "Value";
+"alertvalue" = "Значення";
 
 /// when editing an alert value, a pop is shown, this is the explanation message in the pop up
-"changealertvalue" = "Change Alarm Value";
+"changealertvalue" = "Змінити значення тривоги";
 
 /// When very low alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_lowalerttitle" = "Low Alarm";
+"alerts_lowalerttitle" = "Тривога низького рівня";
 
 /// transmitter battery low, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_batterylow" = "Transmitter Battery Low";
+"alerts_batterylow" = "Низький заряд батареї трансмітера";
 
 /// When high alarm rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alarm
-"alerts_highalerttitle" = "High Alarm";
+"alerts_highalerttitle" = "Тривога високого рівня";
 
 /// when trying to delete an alert, user needs to confirm first, this is the message
-"confirmdeletionalert" = "Delete Alarm?";
+"confirmdeletionalert" = "Видалити тривогу?";
 
 /// an alentry is applicable as of a certain timestamp in the day, this is the text in the field in the settings screen that allows to modify this timestamp
-"alertstart" = "Apply from";
+"alertstart" = "Застосовувати з";
 
 /// When very low alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_verylowalerttitle" = "Very Low Alarm";
+"alerts_verylowalerttitle" = "Тривога дуже низького рівня";
 
 /// when calibration is needed, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_calibrationneeded" = "Calibration Reminder";
+"alerts_calibrationneeded" = "Нагадування про калібрування";
 
 /* Optional one-off sensor expiry reminders. */
 "sensorExpiry.endingSoon" = "Термін роботи сенсора скоро спливе";
@@ -70,3 +70,7 @@
 "sensorExpiry.hoursHelp" = "Введіть ціле число від 1 до 48 годин.";
 "sensorExpiry.endingSoonBody" = "Очікується, що термін роботи сенсора завершиться %@.";
 "sensorExpiry.expectedExpiryBody" = "Сенсор досяг очікуваного терміну завершення роботи (%@).";
+"alertWhenAboveValue" = "Лише вище";
+"alertWhenBelowValue" = "Лише нижче";
+"alerts_sensortransmitterfailure" = "Збій сенсора/трансмітера";
+"alerts_notloopingalerttitle" = "Loop не працює";

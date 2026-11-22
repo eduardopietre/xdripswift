@@ -31,7 +31,7 @@
 "settingsviews_showStatistics" = "الإحصائيات";
 "settingsviews_daysToUseStatisticsTitle" = "عدد الأيام للاحصائيات";
 "settingsviews_daysToUseStatisticsMessage" = "الحد الأقصى للأيام التي يجب أن نحاول استخدامها لحساب الإحصائيات?\n\n(أدخل 0 لحساب احصائيات اليوم منذ منتصف الليل)";
-"settingsviews_useIFCCGMI" = "GMI in mmols/mol";
+"settingsviews_useIFCCGMI" = "GMI بوحدة mmol/mol";
 "settingsviews_sectiontitletransmitter" = "جهاز الإرسال";
 "settingsviews_transmittertype" = "نوع جهاز الإرسال";
 "settingsviews_transmitterid" = "رقم هوية جهاز الإرسال";
@@ -126,7 +126,7 @@
 "settingsviews_sectiontitletreatments" = "العلاجات";
 
 /// When clicking the threshold setting, a pop up asks for the number of units under which a bolus should be considered a micro-bolus
-"settingsviews_smallBolusTreatmentThresholdMessage" = "Below how many units should we consider a bolus as a micro-bolus?\n\n(Recommended value: 1.0U)";
+"settingsviews_smallBolusTreatmentThresholdMessage" = "دون كم وحدة نعتبر البولس بولساً صغيراً؟\n\n(القيمة الموصى بها: 1.0U)";
 
 /// treatments settings, show the treatments on main chart
 "settingsviews_showTreatments" = "العلاج";
@@ -137,76 +137,76 @@
 
 
 /// Housekeeper settings, section title
-"settingsviews_sectionTitleHousekeeper" = "Data Management";
+"settingsviews_sectionTitleHousekeeper" = "إدارة البيانات";
 
 /// When clicking the retention setting, a pop up asks for how many days should data be stored
-"settingsviews_housekeeperRetentionPeriodMessage" = "For how many days should data be stored? (Min 90, Max 365)\n\n(Recommended: 90 days)";
+"settingsviews_housekeeperRetentionPeriodMessage" = "لكم يوماً يجب تخزين البيانات؟ (الحد الأدنى 90، الأقصى 365)\n\n(الموصى به: 90 يوماً)";
 
 /// Housekeeper retention period, for how long to store data
-"settingsviews_housekeeperRetentionPeriod" = "Retention Period";
+"settingsviews_housekeeperRetentionPeriod" = "فترة الاحتفاظ";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Settings screen for loop delay
-"Select Time" = "Select Time";
+"Select Time" = "اختر الوقت";
 
 /// transmitter settings, to explain that the reset option only works for certain transmitters
-"settingsviews_resetDexcomTransmitterMessage" = "This option will attempt to reset your Anubis transmitter on the next connection.";
+"settingsviews_resetDexcomTransmitterMessage" = "سيحاول هذا الخيار إعادة ضبط جهاز الإرسال Anubis عند الاتصال التالي.";
 
 /// data source settings, keep-alive mode is set to aggressive
 "settingsviews_followerKeepAliveTypeAggressiveMessage" = "إبقاء التشغيل is set to aggressive.\n\nWhen the app is not on screen, we will aggressively attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a very noticeable impact on the battery of your device and should only be used if absolutely necessary.";
 
 /// libre link up follower settings, no active sensor
-"settingsviews_libreLinkUpNoActiveSensor" = "No active sensor data";
+"settingsviews_libreLinkUpNoActiveSensor" = "لا توجد بيانات حساس نشط";
 
 /// data source settings, keep-alive mode is set to disabled
 "settingsviews_followerKeepAliveTypeDisabledMessage" = "إبقاء التشغيل is disabled.\n\nWhen the app is not on screen, no alarms, app badges, notifications or BG updates will take place.\n\nThe app will remain sleeping until you open it again.\n\nThis mode has very little impact on the battery of your device.";
 
 /// Settings screen for loop delay, explanatory text for value
-"expanatoryTextSelectValue" = "Delay in minutes, applied to readings shared with OS-AID";
+"expanatoryTextSelectValue" = "التأخير بالدقائق، يُطبَّق على القراءات المشاركة مع OS-AID";
 
 /// statistics settings, prefer time in tight range
-"settingsviews_timeInRangeTypeTightRange" = "Tight Range";
+"settingsviews_timeInRangeTypeTightRange" = "النطاق الضيق";
 
 /// data source settings, keep-alive mode is set to normal
-"settingsviews_followerKeepAliveTypeNormal" = "Normal";
+"settingsviews_followerKeepAliveTypeNormal" = "عادي";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressive" = "Aggressive";
+"settingsviews_followerKeepAliveTypeAggressive" = "مكثّف";
 
 /// statistics settings, prefer standard time in range
 "settingsviews_timeInRangeTypeStandardRange" = "قياسي";
 
 /// statistics settings, the type of time in range selected
-"settingsviews_labelTimeInRangeType" = "Time In Range";
+"settingsviews_labelTimeInRangeType" = "الوقت في النطاق";
 
 /// data source settings, enable background keep alive
 "settingsviews_labelfollowerKeepAliveType" = "إبقاء التشغيل";
 
 /// this setting is required
-"settingsviews_valueIsRequired" = "⚠️ Required";
+"settingsviews_valueIsRequired" = "⚠️ مطلوب";
 
 /// treatments settings, offset the carb treatments on main chart
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 
 /// When user creates new loopdelay, with a timestamp that already exists - this is the warning text
-"warningLoopDelayAlreadyExists" = "There is already a loopDelay for this time.";
+"warningLoopDelayAlreadyExists" = "يوجد loopDelay لهذا الوقت بالفعل.";
 
 /// statistics settings, prefer user-defined range
-"settingsviews_timeInRangeTypeUserDefinedRange" = "User Range";
+"settingsviews_timeInRangeTypeUserDefinedRange" = "نطاق المستخدم";
 
 /// CGM data source settings, section title
 "settingsviews_sectionTitleDataSource" = "مصدر البيانات";
 "settingsviews_dataSourceMasterDevicesFooter" = "انتقل إلى علامة تبويب الأجهزة لإضافة أجهزة متوافقة.";
 
 /// follower settings, pop up that asks user to enter their username
-"settingsviews_enterUsername" = "Enter your username";
+"settingsviews_enterUsername" = "أدخل اسم المستخدم";
 
 /// data source settings, show that Nightscout is disabled
-"settingsviews_nightscoutNotEnabledRowText" = "Disabled";
+"settingsviews_nightscoutNotEnabledRowText" = "معطّل";
 
 /// data source settings, keep-alive mode is set to use an external heartbeat
 "settingsviews_followerKeepAliveTypeHeartbeatMessage" = "إبقاء التشغيل is set to use an external heartbeat.\n\nWhen the app is not on screen, the external heartbeat will wake it up in the background so that BG updates are received and alarms can be triggered.\n\nMake sure you add a valid heartbeat device in the Bluetooth screen.\n\nThis mode has very little impact on the battery of your device but will only work if a valid heartbeat is running.";
@@ -217,19 +217,19 @@
 /// When clicking the event interval setting, a pop up asks for minimum number of minutes between two events, this is the pop up message - this is used for setting the interval between two calendar events
 
 /// data source settings, enable Nightscout in the Nightscout section
-"settingsviews_nightscoutNotEnabled" = "Nightscout is disabled\n\nTo upload BG values to Nightscout, you must enable it in the Nightscout section.";
+"settingsviews_nightscoutNotEnabled" = "Nightscout معطّل\n\nلرفع قيم سكر الدم إلى Nightscout، يجب تفعيله في قسم Nightscout.";
 
 /// screen dimming is disabled
-"settingsviews_screenLockDimmingTypeDisabled" = "Disabled";
+"settingsviews_screenLockDimmingTypeDisabled" = "معطّل";
 
 /// When clicking the speak interval setting, a pop up asks for minimum number of minutes between two speech events, this is the pop up message - this is used for setting the interval between two spoken bg announcements
-"settingsviews_SpeakIntervalTitle" = "Speak Interval";
+"settingsviews_SpeakIntervalTitle" = "الفاصل بين النطق";
 
 /// libre link up follower settings, pop up that asks user to enter their region
-"settingsviews_libreLinkUpReAcceptNeeded" = "Need to accept terms";
+"settingsviews_libreLinkUpReAcceptNeeded" = "يجب قبول الشروط";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two bg announcements, this is the pop up message - this is used for setting the interval between two readings in BG announcements, Speak readings, Apple Watch
-"settingsviews_SpeakIntervalMessage" = "Minimum interval between two voice announcements";
+"settingsviews_SpeakIntervalMessage" = "الحد الأدنى للفاصل بين إعلانين صوتيين";
 
 /// home screen settings, should the mini-chart be shown
 "settingsviews_showMiniChart" = "الرسم البياني المصغر";
@@ -239,37 +239,37 @@
 "settingsviews_followerPatientName" = "الاسم المستعار";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabled" = "Disabled";
+"settingsviews_followerKeepAliveTypeDisabled" = "معطّل";
 
 /// screen dimming is dark
-"settingsviews_screenLockDimmingTypeDark" = "Dark";
+"settingsviews_screenLockDimmingTypeDark" = "مظلم";
 
 /// screen dimming is dimmed
-"settingsviews_screenLockDimmingTypeDimmed" = "Dimmed";
+"settingsviews_screenLockDimmingTypeDimmed" = "خافت";
 
 /// When enabled, then it should be possible to run xDrip4iOS/Libre 2 in parallel with other app(s)
-"suppressUnLockPayLoad" = "Suppress Unlock Payload";
+"suppressUnLockPayLoad" = "منع حمولة Unlock";
 
 /// Settings screen for loop delay
-"Select Value" = "Select Value";
+"Select Value" = "اختر القيمة";
 
 /// Settings screen for loop delay, explanatory text for time
-"expanatoryTextSelectTime" = "As of what time should the value apply";
+"expanatoryTextSelectTime" = "ابتداءً من أي وقت تُطبَّق القيمة";
 
 /// data source settings, data source region
-"settingsviews_labelFollowerDataSourceRegion" = "Region";
+"settingsviews_labelFollowerDataSourceRegion" = "المنطقة";
 
 /// data source settings, data source
 "settingsviews_labelFollowerDataSourceType" = "مصدر البيانات";
 
 /// data source settings, enable Nightscout upload
-"settingsviews_labelUploadDataToNightscout" = "Upload to Nightscout";
+"settingsviews_labelUploadDataToNightscout" = "الرفع إلى Nightscout";
 
 /// data source settings, ask the user to enter the name of the person we are following if they want to - it's optional
-"settingsviews_followerPatientNameMessage" = "Here you can optionally write an alias for the person you are following.";
+"settingsviews_followerPatientNameMessage" = "يمكنك هنا كتابة اسم مستعار للشخص الذي تتابعه (اختياري).";
 
 /// follower settings, pop up that asks user to enter their password
-"settingsviews_enterPassword" = "Enter your password";
+"settingsviews_enterPassword" = "أدخل كلمة المرور";
 
 /// The user needs to update their calendar permissions
 
@@ -282,7 +282,7 @@
 /// Should loop data be shared only every 5 minutes
 
 /// screen dimming is very dark
-"settingsviews_screenLockDimmingTypeVeryDark" = "Very Dark";
+"settingsviews_screenLockDimmingTypeVeryDark" = "مظلم جداً";
 
 // MARK: - Automatic Housekeeping
 "settingsviews_dataManagementStorageInfo" = "معلومات التخزين";
@@ -471,10 +471,10 @@
 "settingsviews_nightscoutImportBatchProgress" = "دفعة %1$d من %2$d";
 "settingsviews_nightscoutImportErrorServer" = "أرجع Nightscout خطأً مؤقتًا في الخادم (HTTP %d). استأنف الاستيراد لاحقًا.";
 "settingsviews_nightscoutImportErrorUnexpectedStatus" = "أعاد Nightscout استجابة غير متوقعة (HTTP %d).";
-"sensorNoiseSensitivity" = "Sensor Sensitivity";
-"sensorNoiseSensitivitySensitive" = "Sensitive";
-"sensorNoiseSensitivityNormal" = "Normal";
-"sensorNoiseSensitivityPermissive" = "Permissive";
+"sensorNoiseSensitivity" = "حساسية الحساس";
+"sensorNoiseSensitivitySensitive" = "حساس";
+"sensorNoiseSensitivityNormal" = "عادي";
+"sensorNoiseSensitivityPermissive" = "متساهل";
 "settingsviews_followerServiceStatus" = "الحالة";
 "settingsviews_liveActivityDisabledInFollowerModeMessage" = "Live Activities are disabled in Follower Mode unless an external heartbeat is used for إبقاء التشغيل.";
 "settingsviews_infoContactsKeepAliveDisabled" = "You are using Follower mode with إبقاء التشغيل disabled.\n\nContact Image function cannot work without إبقاء التشغيل.";
@@ -560,7 +560,7 @@
 "therapy.smallCarbThreshold" = "كربوهيدرات";
 "therapy.treatmentThresholdsExplanation" = "قيم البلعات والكربوهيدرات دون الحدود مخفية على الرسم. حد البلعة يحدد أيضًا البلعات الصغيرة في قائمة العلاجات. «لا» يعرض كل القيم.";
 
-"settingsviews_useIFCCA1C" = "HbA1c in mmols/mol";
+"settingsviews_useIFCCA1C" = "HbA1c بوحدة mmol/mol";
 
 "settingsviews_statisticsEstimate" = "تقدير الجلوكوز";
 
@@ -596,3 +596,73 @@
 "settingsviews_shareReport" = "مشاركة التقرير";
 "settingsviews_shareIssueReport" = "مشاركة تقرير المشكلة";
 "settingsviews_reportShareFailed" = "تعذر إعداد ملفات السجل. يرجى المحاولة مرة أخرى.";
+"calendarShareStatusFooter" = "يضيف «تضمين السجل» قراءات حديثة كل 5 دقائق إلى كل حزمة ليتمكن المتابعون من ملء القيم الفائتة. لزيادة الموثوقية، اختر أقل كمية سجل تعمل جيداً.";
+"settingsviews_highValueMessage" = "أدخل قيمة الجلوكوز للحد الأعلى.";
+"calendarShareAliasMessage" = "يُرسل هذا الاسم إلى أجهزة المتابعين.";
+"settingsviews_shareUploadUnchecked" = "لم يُفحص";
+"calendarShareLastValue" = "آخر قيمة";
+"calendarFollowHistoricalReadingsFooter" = "تُستورد القراءات التاريخية من آخر حزمة فقط عندما تكون مفقودة محلياً.";
+"settingsviews_shareUploadReceiverNotAssigned" = "هذا الجهاز المستقبِل غير مرتبط بحساب Dexcom الخاص بك. سجّله باستخدام تطبيق Dexcom الرسمي.";
+"settingsviews_shareUploadFailed" = "فشل الرفع";
+"settingsviews_homeScreenScreenLockSectionTitle" = "قفل الشاشة";
+"calendarShareConnectionFooter" = "اختر تقويماً مشتركاً يمكن لأجهزة المتابعين الوصول إليه أيضاً. يوصى بتقويم iCloud المشترك لأفضل أداء.";
+"settingsviews_cleanDataDeviceStatus" = "حالة الجهاز";
+"settingsviews_shareUploadAccountVerified" = "تم التحقق من الحساب";
+"nightscoutToken" = "Token";
+"warningChangeToFollowerDexcomShare" = "سيؤدي التبديل إلى وضع متابع Dexcom Share إلى تعطيل «الرفع إلى Dexcom Share».";
+"calendarShareAlias" = "الاسم المستعار";
+"settingsviews_followerKeepAliveTypeContinuousMessage" = "تم ضبط الإبقاء نشطاً على مستمر.\n\nعندما لا يكون التطبيق على الشاشة، سيُشغَّل صوت صامت باستمرار لبذل أقصى جهد ممكن للإبقاء على تحديثات المتابعة والتنبيهات.\n\nلا يضمن هذا الوضع أن يُبقي iOS التطبيق نشطاً. وهو الأكثر استهلاكاً للبطارية ويجب استخدامه فقط إذا كان وضع «مكثّف» غير موثوق.";
+"settingsviews_shareUploadLocalOnly" = "الرفع إلى Dexcom Share متاح فقط مع مصدر جلوكوز محلي.";
+"settingsviews_urgentHighValueMessage" = "أدخل قيمة الجلوكوز لحد الارتفاع العاجل.";
+"settingsviews_sensorHealthNotificationsFooter" = "يتحكم في الإشعارات النظامية الاختيارية الخاصة بالضوضاء المطولة للحساس والإشارة المسطحة ومشكلات الحساس المؤقتة. يُضبط عطل الحساس/جهاز الإرسال مع التنبيهات الأخرى. يظل شريط الشاشة الرئيسية القابل للإغلاق متاحاً.";
+"settingsviews_nightscoutImportDeviceStatus" = "حالة الجهاز";
+"settingsviews_issueReportSectionFooter" = "لا ترسل تقرير مشكلة ما لم يطلبه مطوّر xDrip4iOS، وإلا سيُحذف تقريرك تلقائياً.";
+"settingsviews_infoContactsAccessRestricted" = "لا يمكنك منح %@ إذن الوصول إلى جهات الاتصال. ربما يعود ذلك إلى قيود مفعّلة مثل الرقابة الأبوية.";
+"settingsviews_urgentLowValueMessage" = "أدخل قيمة الجلوكوز لحد الانخفاض العاجل.";
+"calendarFollowCalendarFooter" = "اختر التقويم الذي يشاركه iPhone الرئيسي. للحصول على أفضل النتائج، استخدم تقويم iCloud مشتركاً.";
+"settingsviews_homeScreenMainChartSectionFooter" = "تتحكم هذه الخيارات في طريقة عرض بيانات الجلوكوز على المخطط الرئيسي.";
+"settingsviews_storeFrequentReadingsInHealthKitMessage" = "سيتجاوز هذا الخيار حدود الكتابة كل 5 دقائق ويسمح بإضافة بيانات أكثر تكراراً إلى Apple Health، مثل قيم Libre 2 Direct كل 60 ثانية.\n\nيرجى تفعيل هذا الخيار فقط إذا كنت بحاجة فعلاً إلى بيانات أكثر تكراراً. على معظم المستخدمين إبقاؤه معطّلاً.";
+"enterNightscoutPortNumber" = "أدخل رقم المنفذ";
+"settingsviews_storeFrequentReadingsInNightscout" = "رفع متكرر إلى Nightscout";
+"settingsviews_followerKeepAliveTypeContinuous" = "مستمر";
+"settingsviews_contactImageSectionTitle" = "صورة جهة الاتصال";
+"infoCalendarAccessWriteOnly" = "لا يمكنك استخدام Calendar Share حتى تغيّر إذن الوصول إلى التقويم من «إضافة أحداث فقط» إلى «وصول كامل».\n\nانتقل إلى إعدادات iPhone > التطبيقات > %@ > التقويمات واختر «وصول كامل».";
+"warningChangeFromMasterToFollowerDexcomShare" = "التبديل من الرئيسي إلى متابع Dexcom Share سيوقف الحساس الحالي ويعطّل أيضاً «الرفع إلى Dexcom Share». هل تريد المتابعة؟";
+"calendarEventPreview" = "حدث التقويم";
+"settingsviews_labelCalibrationTitle" = "معايرة الحساس";
+"settingsviews_shareUploadConfigurationRequired" = "أدخل اسم المستخدم وكلمة المرور والرقم التسلسلي للمستقبِل.";
+"settingsviews_shareUploadTooLarge" = "رفض Dexcom Share عملية رفع كبيرة الحجم.";
+"calendarShareStatus" = "حالة المشاركة";
+"settingsviews_nightscoutImportDeviceStatusAdded" = "تمت إضافة حالة الجهاز";
+"settingsviews_shareUploadLastConnection" = "آخر اتصال ناجح";
+"settingsviews_lowValueMessage" = "أدخل قيمة الجلوكوز للحد الأدنى.";
+"settingsviews_contactImageCreatedByString" = "تم إنشاء جهة الاتصال تلقائياً بواسطة";
+"settingsviews_targetValueMessage" = "اضبط على 0 لتعطيل الهدف";
+"settingsviews_labelCalibrationType" = "نوع المعايرة";
+"settingsviews_medtrumSelectedPatient" = "المريض المحدد";
+"calendarFollowStatusFooter" = "يقرأ Shared Calendar أحدث ملاحظات الأحداث المشفّرة من التقويم المحدد أثناء التحديثات في الخلفية.";
+"settingsviews_CalenderIntervalTitle" = "الفاصل بين الأحداث";
+"settingsviews_shareUploadNever" = "ليس بعد";
+"calendarShareIncludeHistory" = "تضمين السجل";
+"settingsviews_labelAlgorithmType" = "نوع الخوارزمية";
+"giveNightscoutToken" = "أدخل Token";
+"settingsviews_shareUploadCheckFooter" = "يتحقق «اختبار الاتصال» من حسابك. يتم التحقق من الرقم التسلسلي للمستقبِل عند رفع القراءات.";
+"settingsviews_medtrumSelectPatientFromList" = "اختر المريض من القائمة";
+"settingsviews_homeScreenScreenLockSectionFooter" = "تتحكم هذه الخيارات في سلوك الشاشة الرئيسية عند ترك التطبيق مفتوحاً أو مقفلاً.";
+"settingsviews_displayVisualIndicatorInCalendarEvent" = "مؤشر مرئي";
+"calendarEventSettingsFooter" = "تغيّر هذه الخيارات عنوان حدث التقويم المرئي فقط.";
+"calendarFollowFirstHistoricalReading" = "أول قراءة";
+"settingsviews_storeFrequentReadingsInHealthKit" = "كتابة متكررة في HealthKit";
+"calendarFollowNoHistoricalData" = "لا توجد بيانات تاريخية";
+"settingsviews_sensorHealthNotifications" = "تحذيرات حالة الحساس";
+"settingsviews_cleanDataDeviceStatusDeleted" = "تم حذف حالة الجهاز";
+"createCalendarEvent" = "Calendar Share";
+"calendarFollowHistoricalReadings" = "القراءات التاريخية";
+"settingsviews_CalenderIntervalMessage" = "الحد الأدنى للفاصل بين حدثَي تقويم";
+"calendarFollowHistoricalCount" = "العدد";
+"settingsviews_glucoseRangesSectionFooter" = "تؤثر نطاقات الجلوكوز فقط على ألوان المخطط الرئيسي. وهي غير مرتبطة بقيم التنبيهات.";
+"settingsviews_shareUploadError" = "خطأ في الرفع";
+"settingsviews_shareUploadPaused" = "متوقف مؤقتاً حسب الجدول";
+"calendarEventsSectionTitle" = "Calendar Share";
+"settingsviews_shareUploadLastUpload" = "آخر رفع ناجح";
+"settingsviews_medtrumSelectPatient" = "اختر المريض";

@@ -53,37 +53,37 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ Сенсор успешно отсканирован!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Многоточечная калибровка — расширенная функция.\n\nНе используйте её, пока не прочитаете раздел о калибровке в онлайн-справке и не поймёте, как она работает.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "Пожалуйста, отсканируйте снова";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ Не удалось отсканировать сенсор";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "Не удалось отсканировать сенсор";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "Требуется сканирование NFC";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "Ошибка сканирования сенсора\n\nПовторная попытка... # ";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "Передатчик запущен";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Прогрев до";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "Сканировать снова";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "Нажмите OK и подождите, пока сенсор Libre завершит подключение по Bluetooth.\n\nЧерез некоторое время статус должен измениться на «Подключено».";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "Последние 24 часа";
@@ -110,7 +110,7 @@
 "readSuccessNow" = "Сейчас";
 "scanningForTransmitter" = "Поиск...";
 "connecting" = "Подключение";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Подключение...";
 "reconnecting" = "Переподключение";
 "reconnectingToTransmitter" = "Переподключение...";
 "waiting" = "Ожидание...";
@@ -195,3 +195,10 @@
 "bluetoothAccessNotEnabled" = "Доступ к Bluetooth не включён";
 "bluetoothAccessInstructions" = "Для подключения откройте Настройки → Конфиденциальность и безопасность → Bluetooth и разрешите доступ для %@.";
 "bluetoothAccessRestrictedInstructions" = "Ограничения устройства блокируют доступ к Bluetooth. Проверьте настройки Экранного времени или обратитесь к администратору устройства, чтобы включить доступ.";
+"confirmAlgorithmChangeToTransmitterMessage" = "Подтвердите возврат к нативному алгоритму передатчика";
+"confirmAlgorithmChangeToxDripMessage" = "Подтвердите переключение на алгоритм xDrip.\n\nПоказания ненадолго прекратятся, а когда всё будет готово, вас попросят ввести начальное значение калибровки.";
+"confirmCalibrationChangeToMultiPointMessage" = "Подтвердите изменение типа калибровки на многоточечную\n\n⚠️ Этот метод предназначен только для опытных пользователей и при неправильной калибровке может дать опасные результаты.\n\nЕсли вы не уверены, как его использовать, нажмите «Отмена».";
+"confirmCalibrationChangeToSinglePointMessage" = "Подтвердите изменение типа калибровки на стандартную\n\nПоказания ненадолго прекратятся, а когда всё будет готово, вас попросят ввести начальное значение калибровки.";
+"nativeAlgorithm" = "Нативный алгоритм";
+"xDripAlgorithm" = "Алгоритм xDrip";
+"confirm" = "Подтвердить";

@@ -62,34 +62,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ Sensorin skannaus onnistui!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Monipistekalibrointi on edistynyt ominaisuus.\n\nÄlä käytä tätä ominaisuutta ennen kuin olet lukenut online-ohjeen kalibrointiosion ja ymmärrät, miten se toimii.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "Skannaa uudelleen";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ Sensorin skannaus epäonnistui";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "Sensorin skannaus epäonnistui";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "NFC-skannaus tarvitaan";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "Sensorin skannausvirhe\n\nYritetään uudelleen... # ";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Lämmitys päättyy";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "Skannaa uudelleen";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "Paina OK ja odota, että Libre-sensori yhdistyy Bluetoothilla.\n\nHetken kuluttua tilan pitäisi muuttua tilaan 'Yhdistetty'.";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "Viimeiset 24 tuntia";
@@ -116,7 +116,7 @@
 "readSuccessNow" = "Nyt";
 "scanningForTransmitter" = "Etsitään...";
 "connecting" = "Yhdistetään";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Yhdistetään...";
 "reconnecting" = "Yhdistetään uudelleen";
 "reconnectingToTransmitter" = "Yhdistetään uudelleen...";
 "waiting" = "Odotetaan...";
@@ -201,3 +201,10 @@
 "bluetoothAccessNotEnabled" = "Bluetoothin käyttöä ei ole otettu käyttöön";
 "bluetoothAccessInstructions" = "Muodosta yhteys avaamalla Asetukset → Tietosuoja ja suojaus → Bluetooth ja salli Bluetoothin käyttö sovellukselle %@.";
 "bluetoothAccessRestrictedInstructions" = "Laitteen rajoitukset estävät Bluetoothin käytön. Tarkista Ruutuaika tai ota yhteyttä laitteen ylläpitäjään Bluetoothin käytön sallimiseksi.";
+"confirmAlgorithmChangeToTransmitterMessage" = "Vahvista, että haluat vaihtaa takaisin lähettimen alkuperäiseen algoritmiin";
+"confirmAlgorithmChangeToxDripMessage" = "Vahvista, että haluat vaihtaa xDrip-algoritmiin.\n\nTämä keskeyttää lukemat hetkeksi, ja sinulta pyydetään alkukalibrointiarvo, kun se on valmis.";
+"confirmCalibrationChangeToMultiPointMessage" = "Vahvista, että haluat vaihtaa kalibrointityypin monipistekalibrointiin\n\n⚠️ Huomaa, että tämä menetelmä on tarkoitettu vain edistyneille käyttäjille ja voi antaa vaarallisia tuloksia, jos kalibrointia ei tehdä oikein.\n\nJos et ole varma menetelmän käytöstä, paina Peruuta.";
+"confirmCalibrationChangeToSinglePointMessage" = "Vahvista, että haluat vaihtaa kalibrointityypin tavalliseen kalibrointiin\n\nTämä keskeyttää lukemat hetkeksi, ja sinulta pyydetään alkukalibrointiarvo, kun se on valmis.";
+"nativeAlgorithm" = "Alkuperäinen algoritmi";
+"xDripAlgorithm" = "xDrip-algoritmi";
+"confirm" = "Vahvista";

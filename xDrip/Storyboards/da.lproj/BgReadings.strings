@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "Tidsstempel";
 "backfilledAtFooterFormat" = "Efterfyldt %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "Glukosemåling";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "Rådata";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "Ingen målinger at vise...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "Beregnet værdi";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "Generelt";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "Glukosemålinger";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "Interne data";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "Tendenspil";
 
 "glucoseRange" = "Glukoseområde";
 "bgRangeUrgent" = "Akut";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "Modtaget via Watch kl. %@";
 "backfilledViaWatchAtFooterFormat" = "Efterfyldt via Watch kl. %@";
 "receivedViaWatch" = "Modtaget via Watch";
+"finalGlucose" = "Glukoseværdi";
+"glucoseValueSectionHeader" = "Glukoseværdi";
+"backfilled" = "Efterfyldt";
+"rawValue" = "Råværdi";
+"smoothedValue" = "Udjævnet værdi";
+"date" = "Dato";
+"calibratedValue" = "Kalibreret værdi";
+"adjustedValue" = "Justeret værdi";
+"finalValue" = "Slutværdi";

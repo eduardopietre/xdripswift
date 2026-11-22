@@ -11,7 +11,7 @@
 "common_low" = "BAJA";
 "common_hour" = "hora";
 "common_hours" = "horas";
-"common_minutes" = "mins";
+"common_minutes" = "min";
 "common_minute" = "min";
 "common_day" = "día";
 "common_days" = "días";
@@ -144,3 +144,10 @@
 
 /* Switch title when the surrounding screen or section identifies the feature */
 "common_enable" = "Habilitar";
+"common_report_aidPeriod" = "Datos de Loop";
+"common_report_notIncluded" = "No incluido";
+"common_report_periodFooter" = "Se recomiendan 90 días para un informe clínico de MCG.";
+"common_value" = "Valor";
+"common_report_aidPeriodFooter" = "Se recomiendan 7 días para los datos de Loop.";
+"common_enterValue" = "Introduce un valor";
+"common_dismiss" = "Cerrar";

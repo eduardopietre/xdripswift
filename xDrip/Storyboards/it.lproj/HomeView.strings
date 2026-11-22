@@ -4,126 +4,126 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// for home view, Info how to start : set transmitter and id, then go back to home screen, start scanning
-"transmitterinfo" = "First go to the Bluetooth screen where you can add and scan for your transmitter.\r\n\nThen come back to the Home screen and start your sensor.";
+"transmitterinfo" = "Vai prima alla schermata Bluetooth dove puoi aggiungere e cercare il tuo trasmettitore.\n\nPoi torna alla schermata Home e avvia il sensore.";
 
 /// After clicking scan button, this message will appear
-"startScanningInfo" = "Scanning Started.\n\nKeep %@ open in the foreground until a connection is made.\n\n(There's no need to turn off Auto-Lock. Just don't press the home button and don't lock your iPhone)";
+"startScanningInfo" = "Scansione avviata.\n\nTieni %@ aperta in primo piano finché non viene stabilita una connessione.\n\n(Non serve disattivare il blocco automatico. Basta non premere il tasto Home e non bloccare l'iPhone)";
 
 /// status info : literally 'Transmitter Battery Level', shows the battery level
-"transmitterbatterylevel" = "Transmitter Battery Level";
+"transmitterbatterylevel" = "Livello batteria del trasmettitore";
 
 /// for home view, title of pop up that gives info about how to select the transmitter. Simply the word Info
-"info" = "Please Read";
+"info" = "Leggi con attenzione";
 
 /// Text in button on home screen
-"calibrate" = "Calibrate";
+"calibrate" = "Calibra";
 
 /// If transmitter needs pairing, user needs to click the notification
-"transmitternotpaired" = "The Transmitter is not paired with this iPhone. Open the application.";
+"transmitternotpaired" = "Il trasmettitore non è associato a questo iPhone. Apri l'applicazione.";
 
 /// when user manually starts scanning, this is the message that scanning is ongoing
-"scanbluetoothdeviceongoing" = "Scanning for Transmitter...";
+"scanbluetoothdeviceongoing" = "Ricerca del trasmettitore...";
 
 /// when user clicks transmitterButton, this is the action to start scanning
-"scanbluetoothdeviceactiontitle" = "Scan for Transmitter";
+"scanbluetoothdeviceactiontitle" = "Cerca trasmettitore";
 
 /// for home view, where it say how old the reading is, 'x minutes ago', literaly translation of 'ago'
 "ago" = "ago";
 
 /// when user starts scanning for bluetooth device, but bluetooth is not authorized
-"bluetoothIsNotAuthorized" = "You did not give bluetooth permission for %@. Go to the settings, find the %@ app, and enable Bluetooth.";
+"bluetoothIsNotAuthorized" = "Non hai concesso il permesso Bluetooth a %@. Vai nelle impostazioni, trova l'app %@ e attiva il Bluetooth.";
 
 /// for home view, license info
-"licenseinfo" = "This program is free software distributed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.\r\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.\r\n\nSee http://www.gnu.org/licenses/gpl.txt for more details.\r\n\r\nInfo: ";
+"licenseinfo" = "Questo programma è software libero distribuito secondo i termini della GNU General Public License pubblicata dalla Free Software Foundation, nella versione 3 o in qualsiasi versione successiva.\n\nQuesto programma è distribuito nella speranza che sia utile, ma SENZA ALCUNA GARANZIA.\n\nVedi http://www.gnu.org/licenses/gpl.txt per maggiori dettagli.\n\nInfo: ";
 
 /// To give info to user that the transmitter pairing requeset timed out
-"transmitterpairingattempttimeout" = "Transmitter did not reply to pairing request.";
+"transmitterpairingattempttimeout" = "Il trasmettitore non ha risposto alla richiesta di associazione.";
 
 /// for home view, user clicks calibrate but there's no sensor started yet
-"startsensorbeforecalibration" = "You cannot calibrate unless you have started a sensor.";
+"startsensorbeforecalibration" = "Non puoi calibrare senza aver avviato un sensore.";
 
 /// Text in button on home screen
-"presnooze" = "Snooze";
+"presnooze" = "Posticipa";
 
 /// for home view, user clicks calibrate but there's no reading yet
-"theremustbeareadingbeforecalibration" = "There must be at least two readings before you can calibrate. You will be requested to calibrate as soon as there is another reading.";
+"theremustbeareadingbeforecalibration" = "Servono almeno due letture prima di poter calibrare. Ti verrà chiesto di calibrare appena ci sarà un'altra lettura.";
 
 /// status info : literally 'Sensor Start'
-"sensorstart" = "Sensor Started";
+"sensorstart" = "Sensore avviato";
 
 /// To give info to user that the transmitter is successfully paired
-"transmitterpairingsuccessful" = "The Transmitter was successfully paired.";
+"transmitterpairingsuccessful" = "Il trasmettitore è stato associato correttamente.";
 
 /// When user has no CGM transmitter created with 'Always connect', and tries to calibrate, then this message is shown
-"theresNoCGMTransmitterActive" = "You cannot calibrate unless you have a transmitter connected.";
+"theresNoCGMTransmitterActive" = "Non puoi calibrare senza un trasmettitore connesso.";
 
 /// for home view, miaomiao doesn't detect a sensor
-"sensornotdetected" = "The sensor was not detected. Check if the Transmitter is correctly placed on the sensor.";
+"sensornotdetected" = "Il sensore non è stato rilevato. Controlla che il trasmettitore sia posizionato correttamente sul sensore.";
 
 /// If transmitter needs pairing, a notification was fired, user clicked it more than 60 seconds later, which is too late
-"transmitterpairingtoolate" = "Too late! The Transmitter has already been disconnected. You should get a new pairing request in a few minutes.";
+"transmitterpairingtoolate" = "Troppo tardi! Il trasmettitore è già stato disconnesso. Dovresti ricevere una nuova richiesta di associazione tra qualche minuto.";
 
 /// Literally 'Sensor', used as name in the button in the home screen, but also in text in pop ups
-"sensor" = "Sensor";
+"sensor" = "Sensore";
 
 /// status info : literally 'not known', used if transmitter name is not known
-"notknown" = "Not Known";
+"notknown" = "Non noto";
 
 /// when user clicks transmitterButton, this is the first action, to show the status
-"statusactiontitle" = "Status";
+"statusactiontitle" = "Stato";
 
 /// To give result about transitter result in notification body, successful
-"success" = "Success";
+"success" = "Operazione riuscita";
 
 /// when user clicks transmitterButton, this is the action to stop the sensor
-"stopsensor" = "Stop Sensor";
+"stopsensor" = "Ferma sensore";
 
 /// when user manually starts sensor, this is the message that explains that time should be correct
-"startsensortimeinfo" = "In the next dialogs, you will need to set the date and time the sensor was inserted. It is important that you set the date and time as correct as possible.";
+"startsensortimeinfo" = "Nelle prossime schermate dovrai impostare la data e l'ora di inserimento del sensore. È importante impostare data e ora nel modo più preciso possibile.";
 
 /// when user clicks transmitterButton, this is the action to forget the device, so that user can scan for a new device, in case user switches device
-"forgetbluetoothdeviceactiontitle" = "Forget Transmitter";
+"forgetbluetoothdeviceactiontitle" = "Dimentica trasmettitore";
 
 /// when user starts scanning but bluetooth is not on
-"bluetoothisnoton" = "Bluetooth is not on. Switch on bluetooth first and then try again.";
+"bluetoothisnoton" = "Il Bluetooth non è attivo. Attiva prima il Bluetooth e riprova.";
 
 /// when user clicks transmitterButton, this is the action to start the sensor
-"startsensor" = "Start Sensor";
+"startsensor" = "Avvia sensore";
 
 /// Error message in case Dexcom G5 (and G6?) battery is too low. This is deteced by wrong G5 values 2096896
-"dexcomBatteryTooLow" = "The Transmitter battery is too low!";
+"dexcomBatteryTooLow" = "La batteria del trasmettitore è troppo scarica!";
 
 /// status info : literally 'not started', used if sensor is not started
-"notstarted" = "Not Started";
+"notstarted" = "Non avviato";
 
 /// To give result about transitter result in notification body, failed
-"failed" = "Failed";
+"failed" = "Non riuscito";
 
 /// status info : literally 'Last connection', shows when the last connection to a transmitter occured
-"lastconnection" = "Last Connection";
+"lastconnection" = "Ultima connessione";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Text in button on home screen
-"unlock" = "Unlock";
+"unlock" = "Sblocca";
 
 /// Text in button on home screen
-"lock" = "Lock";
+"lock" = "Blocca";
 
 /// Screen Lock Title
-"screenlocktitle" = "Screen Lock Enabled";
+"screenlocktitle" = "Blocco schermo attivo";
 
 /// Info message to explain screen lock function
-"screenlockinfo" = "This will keep the screen awake until you move to another app or click Unlock.\r\n\nIt is recommended that you keep the phone plugged into a charger to prevent battery drain.";
+"screenlockinfo" = "Lo schermo resterà acceso finché non passi a un'altra app o tocchi Sblocca.\n\nÈ consigliato lasciare il telefono collegato a un caricabatterie per evitare di scaricare la batteria.";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When user clicks stop sensor, ask confirmation
-"stopSensorConfirmation" = "Are you sure you want to stop the sensor?";
+"stopSensorConfirmation" = "Vuoi davvero fermare il sensore?";
 
 /// When user needs to enter sensor code, to start firefly sensor
 "enterSensorCode" = "Scansiona l’etichetta del sensore o scegli una foto per leggere il codice del sensore.";
@@ -133,41 +133,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// status info : literally 'Sensor End'
-"sensorend" = "Sensor Ends";
+"sensorend" = "Fine del sensore";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// if web oop enabled, and also if transmitter supports this, user clicks calibrate button, but calibration is not possible
-"calibrationNotNecessary" = "When using the native transmitter algorithm, manual calibration is not available.\n\nIf you want to calibrate, you can switch to the xDrip algorithm in the transmitter screen (if available).";
+"calibrationNotNecessary" = "Con l'algoritmo nativo del trasmettitore la calibrazione manuale non è disponibile.\n\nSe vuoi calibrare, puoi passare all'algoritmo xDrip nella schermata del trasmettitore (se disponibile).";
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout è disattivato";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "URL nascosto per %@ s...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Nessun dato del sensore";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Durata del sensore";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL mancante";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Disconnetti e riconnetti il sensore Libre";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Nome utente/password mancanti";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Nessuna sorgente dati CGM connessa";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "Letture a 5 minuti";
+"postProcessingAlgorithm" = "Algoritmo";
 "sensorLifetimeRemainingFormat" = "%@ rimanenti";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -199,14 +199,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Grafico della cronologia del rumore del sensore";
 "pumpBattery" = "Batteria";
 "pumpReservoir" = "Serbatoio";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Trascorso / Rimanente";
+"sensorManagementSessionDetails" = "Dettagli della sessione";
+"sensorManagementCalibrationOpenTitle" = "Dettagli della calibrazione";
+"sensorManagementCGMType" = "Tipo di CGM";
 "sensorManagementLastCalibration" = "Ultima";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Sensore attivo";
+"sensorManagementStarted" = "Avviato";
+"sensorManagementEnds" = "Termina";
 "sensorManagementCalibrationValue" = "Valore di calibrazione";
 "sensorManagementCalibrationStableTrend" = "Tendenza stabile";
 "sensorManagementCalibrationSlightlyLow" = "Leggermente basso";
@@ -321,3 +321,66 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "La regolazione dell'offset e della forma non è disponibile perché questo CGM usa la calibrazione nativa.";
 
 "postProcessingWarningAgreement" = "Tocca OK solo se comprendi questa funzione e accetti di attivarla.";
+"postProcessingShape" = "Enfasi";
+"snoozeAllTitle" = "Posticipa tutti";
+"postProcessingUpdateAllReadingsLastPeriod" = "Sovrascrivi tutti i valori dell'ultimo periodo di %@";
+"postProcessingEnterValue" = "Inserisci valore";
+"postProcessingStrong" = "Forte";
+"snoozeUrgentAlarms" = "Solo allarmi urgenti";
+"showHideHomeScreenFooter" = "Mostra o nascondi gli elementi principali della schermata Home, utile con iPhone dallo schermo più piccolo";
+"postProcessingSofterLowsDescription" = "Applica maggiormente l'effetto di scala ai valori di glucosio più bassi e meno a quelli più alti.";
+"postProcessingMasterNightscoutUploadDisabled" = "Il caricamento su Nightscout è disattivato";
+"postProcessingReadingFrequency" = "Frequenza delle letture";
+"postProcessingOffset" = "Offset";
+"waitingForDataSource" = "CGM connesso. In attesa dei dati...";
+"postProcessingOffsetBgCheckHint" = "Si consiglia almeno un controllo glicemico recente";
+"noDataSourceConnectedWatch" = "Apri l'app iOS";
+"sensorNoiseHistoryFooter" = "Il grafico mostra la variabilità su 30 minuti, il valore mobile su 4 ore e la mediana su 12 ore usati per gli avvisi di rumore persistente. Valori più bassi indicano una curva più regolare. Non misura l'accuratezza del glucosio.";
+"postProcessingEnterGlucose" = "Inserisci glucosio";
+"sensorHealthTestTransmitterFailure" = "Test guasto del trasmettitore tra 5 secondi";
+"postProcessingNow" = "Adesso";
+"postProcessingOriginal" = "Originale";
+"postProcessingSofterLows" = "Bassi";
+"postProcessingApplyFrom" = "Applica da";
+"sensorHealthTestTemporaryIssue" = "Test problema temporaneo tra 5 secondi";
+"postProcessingScaleBgCheckHint" = "Si consigliano almeno due controlli glicemici recenti";
+"postProcessingOriginalGlucose" = "Glucosio originale";
+"sensorNoiseHistoryPersistentCompact" = "12 h";
+"postProcessingNoCurrentValues" = "Nessun valore attuale";
+"postProcessingMedium" = "Medio";
+"showHideItemsTitle" = "Mostra/nascondi rapido";
+"postProcessingAdjustedGlucose" = "Glucosio corretto";
+"showHideStandByModeFooter" = "Cambia come viene visualizzata la modalità StandBy, se attivata nelle impostazioni dell'iPhone";
+"followerAccountCredentialsInvalid" = "Account non valido";
+"postProcessingNightscoutDataNotUpdated" = "I dati di Nightscout non verranno aggiornati";
+"sensorManagementNoisePersistent" = "Ultime 12 ore";
+"sensorRemaining" = "Durata residua del sensore";
+"showHideHomeScreenTitle" = "Schermata Home";
+"postProcessingSmoothed" = "Livellato";
+"postProcessingApply" = "Applica";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "La correzione è disattivata perché questo sensore usa già una propria calibrazione. Passa all'algoritmo nativo per consentire le correzioni del glucosio.";
+"postProcessingPreviewHours" = "Ore di anteprima";
+"snoozeAllSnoozed" = "Tutti gli allarmi sono posticipati!";
+"postProcessingAdjusted" = "Corretto";
+"snoozeAllDisabled" = "Posticipa tutti disattivato";
+"showTreatments" = "Mostra trattamenti";
+"sensorHealthTestSensorFailure" = "Test guasto del sensore tra 5 secondi";
+"postProcessingScale" = "Scala";
+"postProcessingTitle" = "Correzioni del glucosio";
+"postProcessingSofterHighs" = "Alti";
+"postProcessingNeutralDescription" = "Applica l'effetto di scala in modo uniforme su tutto l'intervallo del glucosio.";
+"postProcessingSofterHighsDescription" = "Applica maggiormente l'effetto di scala ai valori di glucosio più alti e meno a quelli più bassi.";
+"postProcessingValidGlucoseRange" = "Inserisci un valore tra %@ e %@";
+"postProcessingStrength" = "Intensità";
+"remaining" = "rimanenti";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay leviga la curva del glucosio adattando brevi finestre locali e preservando la forma generale di picchi e minimi.";
+"showHideStandByModeTitle" = "Modalità StandBy";
+"postProcessingLight" = "Leggero";
+"postProcessingNeutral" = "Normale";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "La correzione è disattivata perché questo sensore usa già una propria calibrazione.";
+"snoozeAllSnoozedUntil" = "Posticipato fino a %@";
+"sensorHealthTestPersistentNoise" = "Test rumore persistente tra 5 secondi";
+"sensorHealthTestFlatline" = "Test segnale piatto tra 5 secondi";
+"postProcessingShapeExplanation" = "L'enfasi cambia dove la scala ha il massimo effetto sulla curva. Può essere utile se un sensore sembra esagerare i valori di glucosio più alti o più bassi rispetto al resto dell'intervallo.";
+"postProcessingDexcomShareDataNotUpdated" = "I dati di Dexcom Share non verranno aggiornati";
+"waitingForCGMConnection" = "In attesa della connessione CGM...";

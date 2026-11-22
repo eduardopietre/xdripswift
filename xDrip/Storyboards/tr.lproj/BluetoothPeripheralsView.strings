@@ -4,3 +4,6 @@
 "batteryLevel" = "Pil Seviyesi";
 "noBluetoothPeripheralsConfigured" = "Yapılandırılmış Bluetooth cihazı yok";
 "noMultipleActiveCGMsAllowed" = "Bağlı veya taranmakta olan birden fazla CGM Vericiniz olamaz.\nDiğer CGM Vericilerinizi doğrulayın ve 'Taramayı Durdur', 'Bağlantıyı Kes'i tıklayın veya sadece silin";
+"heartbeatDeviceFooter" = "Heartbeat cihazı glukoz okuması sağlamaz. Takipçi güncellemelerinin, alarmların, rozetlerin ve bildirimlerin çalışmaya devam edebilmesi için uygulamayı arka planda uyandırmak üzere Bluetooth etkinliğini kullanır.";
+"m5StackDeviceFooter" = "M5Stack cihazları ESP32 tabanlı küçük harici ekranlardır. xDrip4iOS'tan Bluetooth ile gönderilen glukoz değerlerini gösterebilirler.";
+"noMultipleActiveCGMsAllowedFooter" = "Zaten bağlı bir CGM'iniz var.";

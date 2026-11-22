@@ -4,51 +4,51 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// when selecting the sound of an alert type, 
-"alerttypesettingsview_picksoundname" = "Sound Name";
+"alerttypesettingsview_picksoundname" = "Nazwa dźwięku";
 
 /// when editing the snoozeperiod of an alert type, 
-"alerttypesettingsview_givesnoozeperiod" = "Snooze Time in Minutes";
+"alerttypesettingsview_givesnoozeperiod" = "Czas drzemki w minutach";
 
 /// shown on top of the screen that allows user to view all the alert types or add a new alert type
-"alerttypessettingsview_screentitle" = "Alarm Types";
+"alerttypessettingsview_screentitle" = "Typy alarmów";
 
 /// when editing an alert type, field title for name
-"alerttypesettingsview_name" = "Name";
+"alerttypesettingsview_name" = "Nazwa";
 
 /// when editing an alert type, field title for Override Mute
-"alerttypesettingsview_overridemute" = "Override Mute";
+"alerttypesettingsview_overridemute" = "Ignoruj wyciszenie";
 
 /// shown on top of the screen that allows user to edit an alert type
-"alerttypesettingsview_screentitle" = "Edit Alarm Type";
+"alerttypesettingsview_screentitle" = "Edytuj typ alarmu";
 
 /// when editing the name of an alert type, 
-"alerttypesettingsview_givename" = "Alarm Name";
+"alerttypesettingsview_givename" = "Nazwa alarmu";
 
 /// when editing an alert type, field title for Snooze Period
-"alerttypesettingsview_defaultsnoozeperiod" = "Default Snooze Time";
+"alerttypesettingsview_defaultsnoozeperiod" = "Domyślny czas drzemki";
 
 /// when editing an alert type, field title for Sound
-"alerttypesettingsview_sound" = "Sound";
+"alerttypesettingsview_sound" = "Dźwięk";
 
 /// when editing an alert type, field title for Enabled
 
 /// 
-"alertTypeNoSound" = "No Sound";
+"alertTypeNoSound" = "Bez dźwięku";
 
 /// when editing an alert type, if alert type sound name is default iOS sound
-"alerttypesettingsview_defaultiossound" = "iOS Sound";
+"alerttypesettingsview_defaultiossound" = "Dźwięk iOS";
 
 /// when trying to delete an alert type, user needs to confirm first, this is the message
-"confirmdeletionalerttype" = "Delete Alarm Type: ";
+"confirmdeletionalerttype" = "Usuń typ alarmu: ";
 
 /// when adding a new alert type, but the name is already used for another alert type, this is the error messages
-"alerttypenamealreadyexistsmessages" = "An Alarm Type with this name already exists. Use a different name";
+"alerttypenamealreadyexistsmessages" = "Typ alarmu o tej nazwie już istnieje. Użyj innej nazwy";
 
 /// when editing an alert type, field title for Snooze Via Notification
-"alerttypesettingsview_snoozevianotification" = "Allow Snooze Via Notification";
+"alerttypesettingsview_snoozevianotification" = "Zezwalaj na drzemkę z powiadomienia";
 
 /// when editing an alert type, field title for Vibrate
-"alerttypesettingsview_vibrate" = "Vibrate";
+"alerttypesettingsview_vibrate" = "Wibracje";
 
 "alerttypesettingsview_repeatsound" = "Powtarzaj dźwięk";
 "alerttypesettingsview_previewalert" = "Podgląd alarmu";

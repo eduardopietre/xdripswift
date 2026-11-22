@@ -1,7 +1,7 @@
 "presnooze" = "Torkku";
 "sensor" = "Sensori";
 "calibrate" = "Kalibroi";
-"statusactiontitle" = "Status";
+"statusactiontitle" = "Tila";
 "scanbluetoothdeviceactiontitle" = "Skannaa lähetin";
 "forgetbluetoothdeviceactiontitle" = "Unohda lähetin";
 "startsensor" = "Aloita sensori";
@@ -10,14 +10,14 @@
 "scanbluetoothdeviceongoing" = "Skannataan lähetintä...";
 "bluetoothisnoton" = "Bluetooth ei ole päällä. Kytke ensin bluetooth päälle ja yritä uudelleen.";
 "bluetoothIsNotAuthorized" = "Bluetoothia ei ole sallittu %@:lle. Mene asetuksiin, etsi %@ sovellus ja salli Bluetooth.";
-"startScanningInfo" = "Scanning Started.\n\nKeep %@ open in the foreground until a connection is made.\n\n(There's no need to turn off Auto-Lock. Just don't press the home button and don't lock your iPhone)";
+"startScanningInfo" = "Skannaus aloitettu.\n\nPidä %@ auki etualalla, kunnes yhteys on muodostettu.\n\n(Automaattista lukitusta ei tarvitse poistaa käytöstä. Älä vain paina koti-painiketta äläkä lukitse iPhonea)";
 "sensorstart" = "Sensori aloitus";
 "notstarted" = "Ei aloitettu";
 "notknown" = "Tuntematon";
 "lastconnection" = "Viimeinen yhteys";
 "transmitterbatterylevel" = "Lähettimen varaustaso";
 "ago" = "sitten";
-"licenseinfo" = "This program is free software distributed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.\r\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.\r\n\nSee http://www.gnu.org/licenses/gpl.txt for more details.\r\n\r\nInfo: ";
+"licenseinfo" = "Tämä ohjelma on vapaa ohjelmisto, jota jaetaan Free Software Foundationin julkaiseman GNU General Public License -lisenssin version 3 tai myöhemmän version ehtojen mukaisesti.\n\nTätä ohjelmaa jaetaan siinä toivossa, että se on hyödyllinen, mutta ILMAN MINKÄÄNLAISTA TAKUUTA.\n\nKatso lisätietoja osoitteesta http://www.gnu.org/licenses/gpl.txt.\n\nTiedot: ";
 "info" = "Info";
 "transmitterinfo" = "Siirry ensin bluetooth näyttöön, jossa voit lisätä ja skannata lähettimen.\r\n\nPalaa sitten koti näyttöön  ja aloita sensori.";
 "startsensorbeforecalibration" = "Et voi kalibroida, koska sensoria ei ole aloitettu.";
@@ -57,37 +57,37 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// if web oop enabled, and also if transmitter supports this, user clicks calibrate button, but calibration is not possible
-"calibrationNotNecessary" = "When using the native transmitter algorithm, manual calibration is not available.\n\nIf you want to calibrate, you can switch to the xDrip algorithm in the transmitter screen (if available).";
+"calibrationNotNecessary" = "Käytettäessä lähettimen alkuperäistä algoritmia manuaalinen kalibrointi ei ole käytettävissä.\n\nJos haluat kalibroida, voit vaihtaa xDrip-algoritmiin lähettimen näytössä (jos saatavilla).";
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout ei ole käytössä";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "Piilotetaan URL %@ s ajaksi...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Ei sensoritietoja";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Sensorin kesto";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL puuttuu";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Katkaise yhteys ja yhdistä Libre-sensori uudelleen";
 
 /// Error message in case Dexcom G5 (and G6?) battery is too low. This is deteced by wrong G5 values 2096896
-"dexcomBatteryTooLow" = "The Transmitter battery is too low!";
+"dexcomBatteryTooLow" = "Lähettimen akku on liian vähissä!";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Käyttäjätunnus/salasana puuttuu";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "CGM-tietolähdettä ei ole yhdistetty";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "5 minuutin lukemat";
+"postProcessingAlgorithm" = "Algoritmi";
 "sensorLifetimeRemainingFormat" = "%@ jäljellä";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -119,14 +119,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Sensorin kohinahistorian kaavio";
 "pumpBattery" = "Akku";
 "pumpReservoir" = "Säiliö";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Kulunut / jäljellä";
+"sensorManagementSessionDetails" = "Istunnon tiedot";
+"sensorManagementCalibrationOpenTitle" = "Kalibroinnin tiedot";
+"sensorManagementCGMType" = "CGM-tyyppi";
 "sensorManagementLastCalibration" = "Viimeisin";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Sensori aktiivinen";
+"sensorManagementStarted" = "Aloitettu";
+"sensorManagementEnds" = "Päättyy";
 "sensorHealthPersistentNoiseTitle" = "Erittäin voimakas anturikohina";
 "sensorHealthPersistentNoiseGuidance" = "Erittäin voimakasta kohinaa 12 tunnin ajan. Harkitse anturin vaihtamista, jos se jatkuu.";
 "sensorHealthFlatlineTitle" = "Anturin signaali on tasainen";
@@ -218,3 +218,89 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "Siirtymän ja muodon säätö ei ole käytettävissä, koska tämä CGM käyttää omaa kalibrointiaan.";
 
 "postProcessingWarningAgreement" = "Napauta OK vain, jos ymmärrät tämän ominaisuuden ja hyväksyt sen käyttöönoton.";
+"postProcessingShape" = "Painotus";
+"sensorManagementCalibrationSafetyFooter" = "Kalibroi vain, jos ymmärrät, miten se tehdään turvallisesti.";
+"snoozeAllTitle" = "Torkuta kaikki";
+"postProcessingUpdateAllReadingsLastPeriod" = "Korvaa kaikki arvot viimeisen %@ ajalta";
+"postProcessingEnterValue" = "Anna arvo";
+"postProcessingStrong" = "Voimakas";
+"sensorManagementCalibrationIntercept" = "Leikkauspiste";
+"snoozeUrgentAlarms" = "Vain kiireelliset hälytykset";
+"showHideHomeScreenFooter" = "Näytä tai piilota kotinäytön pääelementit. Hyödyllinen pienemmillä iPhonen näytöillä";
+"postProcessingSofterLowsDescription" = "Käyttää skaalausvaikutusta enemmän matalilla verensokeriarvoilla ja vähemmän korkeilla arvoilla.";
+"postProcessingMasterNightscoutUploadDisabled" = "Nightscout-lähetys on pois käytöstä";
+"sensorManagementCalibrationSlope" = "Kulmakerroin";
+"postProcessingReadingFrequency" = "Lukemien tiheys";
+"sensorManagementCalibrationFalling" = "Laskeva";
+"postProcessingOffset" = "Siirtymä";
+"waitingForDataSource" = "CGM yhdistetty. Odotetaan tietoja...";
+"sensorManagementCalibrationSlightlyHigh" = "Hieman korkea";
+"sensorManagementCalibrationFallingFast" = "Nopeasti laskeva";
+"postProcessingOffsetBgCheckHint" = "Vähintään yksi tuore verensokerin tarkistus suositellaan";
+"noDataSourceConnectedWatch" = "Avaa iOS-sovellus";
+"sensorManagementCalibrationStableTrend" = "Vakaa trendi";
+"sensorNoiseHistoryFooter" = "Kaavio näyttää 30 minuutin vaihtelun, liukuvan 4 tunnin arvon ja 12 tunnin mediaanin, joita käytetään jatkuvan kohinan varoituksiin. Pienemmät arvot ovat tasaisempia. Se ei mittaa verensokerin tarkkuutta.";
+"sensorManagementCalibrationNoTrend" = "Ei trendiä";
+"sensorManagementCalibrationNoReading" = "Ei lukemaa";
+"postProcessingEnterGlucose" = "Anna verensokeri";
+"sensorHealthTestTransmitterFailure" = "Testaa lähettimen vika 5 sekunnin kuluttua";
+"postProcessingNow" = "Nyt";
+"sensorManagementCalibrationReadinessBad" = "Kalibrointi ei todennäköisesti ole tarkka juuri nyt. Odota.";
+"postProcessingOriginal" = "Alkuperäinen";
+"sensorManagementCalibrationReadinessCaution" = "Kalibrointi voi olla epäluotettavampi. Odottaminen voi olla parempi.";
+"postProcessingSofterLows" = "Matalat";
+"postProcessingApplyFrom" = "Käytä alkaen";
+"sensorManagementLargeCalibrationDifferenceWarningFormat" = "Tämä kalibrointi ei välttämättä toimi. Yritä rajoittaa kunkin kalibroinnin muutos enintään arvoon %@ kerrallaan.";
+"sensorManagementCalibrationStable" = "Vakaa";
+"sensorHealthTestTemporaryIssue" = "Testaa tilapäinen ongelma 5 sekunnin kuluttua";
+"postProcessingScaleBgCheckHint" = "Vähintään kaksi tuoretta verensokerin tarkistusta suositellaan";
+"postProcessingOriginalGlucose" = "Alkuperäinen verensokeri";
+"sensorManagementCalibrationGood" = "Hyvä";
+"sensorNoiseHistoryPersistentCompact" = "12 t";
+"postProcessingNoCurrentValues" = "Ei nykyisiä arvoja";
+"postProcessingMedium" = "Keskitaso";
+"showHideItemsTitle" = "Pikanäyttö/piilotus";
+"postProcessingAdjustedGlucose" = "Säädetty verensokeri";
+"showHideStandByModeFooter" = "Muuttaa, miten StandBy-tila näytetään, jos se on otettu käyttöön iPhonen asetuksissa";
+"followerAccountCredentialsInvalid" = "Virheellinen tili";
+"postProcessingNightscoutDataNotUpdated" = "Nightscout-tietoja ei päivitetä";
+"sensorManagementNoisePersistent" = "Viimeiset 12 tuntia";
+"sensorRemaining" = "Sensoria jäljellä";
+"sensorManagementCalibrationFlatline" = "Tasainen signaali";
+"sensorManagementCalibrationStale" = "Vanhentunut";
+"showHideHomeScreenTitle" = "Kotinäyttö";
+"postProcessingSmoothed" = "Tasoitettu";
+"postProcessingApply" = "Käytä";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "Säätö on pois käytöstä, koska tämä sensori käyttää jo omaa kalibrointiaan. Vaihda alkuperäiseen algoritmiin salliaksesi verensokerin säädöt.";
+"sensorManagementCalibrationRaw" = "Raaka";
+"postProcessingPreviewHours" = "Esikatselun tunnit";
+"snoozeAllSnoozed" = "Kaikki hälytykset on torkutettu!";
+"postProcessingAdjusted" = "Säädetty";
+"snoozeAllDisabled" = "Torkuta kaikki pois käytöstä";
+"showTreatments" = "Näytä hoidot";
+"sensorHealthTestSensorFailure" = "Testaa sensorin vika 5 sekunnin kuluttua";
+"sensorManagementCalibrationReadinessGood" = "Nyt on hyvä aika kalibroida.";
+"postProcessingScale" = "Skaalaus";
+"postProcessingTitle" = "Verensokerin säädöt";
+"postProcessingSofterHighs" = "Korkeat";
+"postProcessingNeutralDescription" = "Käyttää skaalausvaikutusta tasaisesti koko verensokerialueella.";
+"postProcessingSofterHighsDescription" = "Käyttää skaalausvaikutusta enemmän korkeilla verensokeriarvoilla ja vähemmän matalilla arvoilla.";
+"postProcessingValidGlucoseRange" = "Anna arvo väliltä %@ ja %@";
+"postProcessingStrength" = "Voimakkuus";
+"remaining" = "jäljellä";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay tasoittaa verensokerikäyrää sovittamalla lyhyitä paikallisia ikkunoita säilyttäen samalla huippujen ja pohjien yleisen muodon.";
+"showHideStandByModeTitle" = "StandBy-tila";
+"postProcessingLight" = "Kevyt";
+"sensorManagementCalibrationValue" = "Kalibrointiarvo";
+"postProcessingNeutral" = "Normaali";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "Säätö on pois käytöstä, koska tämä sensori käyttää jo omaa kalibrointiaan.";
+"sensorManagementCalibrationRising" = "Nouseva";
+"snoozeAllSnoozedUntil" = "Torkutettu kunnes %@";
+"sensorManagementCalibrationSlightlyLow" = "Hieman matala";
+"sensorHealthTestPersistentNoise" = "Testaa jatkuva kohina 5 sekunnin kuluttua";
+"sensorHealthTestFlatline" = "Testaa tasainen signaali 5 sekunnin kuluttua";
+"postProcessingShapeExplanation" = "Painotus muuttaa sitä, missä kohdassa Skaalaus vaikuttaa käyrään eniten. Tämä voi auttaa, jos sensori vaikuttaa liioittelevan korkeampia tai matalampia verensokeriarvoja enemmän kuin muuta aluetta.";
+"postProcessingDexcomShareDataNotUpdated" = "Dexcom Share -tietoja ei päivitetä";
+"sensorManagementCalibrationBG" = "VS";
+"waitingForCGMConnection" = "Odotetaan CGM-yhteyttä...";
+"sensorManagementCalibrationRisingFast" = "Nopeasti nouseva";

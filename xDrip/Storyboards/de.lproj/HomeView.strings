@@ -95,7 +95,7 @@
 "lastconnection" = "Letzte Verbindung";
 
 /// for home view, license info
-"licenseinfo" = "This program is free software distributed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.\r\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.\r\n\nSee http://www.gnu.org/licenses/gpl.txt for more details.\r\n\r\nInfo: ";
+"licenseinfo" = "Dieses Programm ist freie Software, die unter den Bedingungen der GNU General Public License, veröffentlicht von der Free Software Foundation, in Version 3 oder einer späteren Version verbreitet wird.\n\nDieses Programm wird in der Hoffnung verbreitet, dass es nützlich ist, jedoch OHNE JEGLICHE GARANTIE.\n\nWeitere Details unter http://www.gnu.org/licenses/gpl.txt\n\nInfo: ";
 
 "lock" = "Sperren";
 "unlock" = "Entsperren";
@@ -107,7 +107,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When user clicks stop sensor, ask confirmation
-"stopSensorConfirmation" = "Are you sure you want to stop the sensor?";
+"stopSensorConfirmation" = "Möchtest du den Sensor wirklich stoppen?";
 
 /// When user needs to enter sensor code, to start firefly sensor
 "enterSensorCode" = "Scanne das Sensoretikett oder wähle ein Foto aus, um den Sensorcode zu lesen.";
@@ -117,7 +117,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// status info : literally 'Sensor End'
-"sensorend" = "Sensor Ends";
+"sensorend" = "Sensor endet";
 
 "calibrationNotNecessary" = "Bei Verwendung des originalen Sensor Algorithmus ist eine manuelle Kalibrierung nicht möglich.\n\nWenn Sie kalibrieren möchten, aktivieren Sie bitte den xDrip Algorithmus.";
 
@@ -126,31 +126,31 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout ist deaktiviert";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "URL wird ausgeblendet in %@ s…";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Keine Sensordaten";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Sensordauer";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL fehlt";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Libre-Sensor trennen und erneut verbinden";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Benutzername/Passwort fehlt";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Keine CGM-Datenquelle verbunden";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "5-Minuten-Messwerte";
+"postProcessingAlgorithm" = "Algorithmus";
 "sensorLifetimeRemainingFormat" = "%@ verbleibend";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -182,14 +182,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Diagramm des Sensorrauschverlaufs";
 "pumpBattery" = "Batterie";
 "pumpReservoir" = "Reservoir";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Verstrichen / Verbleibend";
+"sensorManagementSessionDetails" = "Sitzungsdetails";
+"sensorManagementCalibrationOpenTitle" = "Kalibrierungsdetails";
+"sensorManagementCGMType" = "CGM-Typ";
 "sensorManagementLastCalibration" = "Letzte";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Sensor aktiv";
+"sensorManagementStarted" = "Gestartet";
+"sensorManagementEnds" = "Endet";
 "sensorManagementCalibrationValue" = "Kalibrierungswert";
 "sensorManagementCalibrationStableTrend" = "Stabiler Verlauf";
 "sensorManagementCalibrationSlightlyLow" = "Leicht niedrig";
@@ -304,3 +304,66 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "Offset- und Formanpassung sind nicht verfügbar, da dieses CGM eine eigene Kalibrierung verwendet.";
 
 "postProcessingWarningAgreement" = "Tippe nur auf „OK“, wenn du diese Funktion verstehst und ihrer Aktivierung zustimmst.";
+"postProcessingShape" = "Gewichtung";
+"snoozeAllTitle" = "Alle schlummern";
+"postProcessingUpdateAllReadingsLastPeriod" = "Alle Werte der letzten %@ überschreiben";
+"postProcessingEnterValue" = "Wert eingeben";
+"postProcessingStrong" = "Stark";
+"snoozeUrgentAlarms" = "Nur dringende Alarme";
+"showHideHomeScreenFooter" = "Wichtige Elemente des Hauptbildschirms ein- oder ausblenden, nützlich bei kleineren iPhone-Bildschirmen";
+"postProcessingSofterLowsDescription" = "Wendet den Skalierungseffekt bei niedrigen Glukosewerten stärker und bei hohen Werten schwächer an.";
+"postProcessingMasterNightscoutUploadDisabled" = "Upload zu Nightscout ist deaktiviert";
+"postProcessingReadingFrequency" = "Messintervall";
+"postProcessingOffset" = "Versatz";
+"waitingForDataSource" = "CGM verbunden. Warte auf Daten…";
+"postProcessingOffsetBgCheckHint" = "Mindestens eine aktuelle BZ-Messung empfohlen";
+"noDataSourceConnectedWatch" = "iOS-App öffnen";
+"sensorNoiseHistoryFooter" = "Das Diagramm zeigt das 30-Minuten-Rauschen, den gleitenden 4-Stunden-Wert und den 12-Stunden-Median, die für Warnungen bei anhaltendem Rauschen verwendet werden. Niedrigere Werte sind glatter. Es misst nicht die Genauigkeit der Glukosewerte.";
+"postProcessingEnterGlucose" = "Glukose eingeben";
+"sensorHealthTestTransmitterFailure" = "Transmitter-Ausfall in 5 Sekunden testen";
+"postProcessingNow" = "Jetzt";
+"postProcessingOriginal" = "Original";
+"postProcessingSofterLows" = "Niedrige Werte";
+"postProcessingApplyFrom" = "Anwenden ab";
+"sensorHealthTestTemporaryIssue" = "Vorübergehendes Problem in 5 Sekunden testen";
+"postProcessingScaleBgCheckHint" = "Mindestens zwei aktuelle BZ-Messungen empfohlen";
+"postProcessingOriginalGlucose" = "Originale Glukose";
+"sensorNoiseHistoryPersistentCompact" = "12 Std.";
+"postProcessingNoCurrentValues" = "Keine aktuellen Werte";
+"postProcessingMedium" = "Mittel";
+"showHideItemsTitle" = "Schnell ein-/ausblenden";
+"postProcessingAdjustedGlucose" = "Angepasste Glukose";
+"showHideStandByModeFooter" = "Ändert die Darstellung des StandBy-Modus, wenn er in den iPhone-Einstellungen aktiviert ist";
+"followerAccountCredentialsInvalid" = "Ungültiges Konto";
+"postProcessingNightscoutDataNotUpdated" = "Nightscout-Daten werden nicht aktualisiert";
+"sensorManagementNoisePersistent" = "Letzte 12 Stunden";
+"sensorRemaining" = "Sensor verbleibend";
+"showHideHomeScreenTitle" = "Hauptbildschirm";
+"postProcessingSmoothed" = "Geglättet";
+"postProcessingApply" = "Anwenden";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "Die Anpassung ist deaktiviert, da dieser Sensor bereits seine eigene Kalibrierung verwendet. Wechsle zum nativen Algorithmus, um Glukoseanpassungen zu ermöglichen.";
+"postProcessingPreviewHours" = "Vorschau-Stunden";
+"snoozeAllSnoozed" = "Alle Alarme sind geschlummert!";
+"postProcessingAdjusted" = "Angepasst";
+"snoozeAllDisabled" = "Alle schlummern deaktiviert";
+"showTreatments" = "Behandlungen anzeigen";
+"sensorHealthTestSensorFailure" = "Sensorausfall in 5 Sekunden testen";
+"postProcessingScale" = "Skalierung";
+"postProcessingTitle" = "Glukoseanpassungen";
+"postProcessingSofterHighs" = "Hohe Werte";
+"postProcessingNeutralDescription" = "Wendet den Skalierungseffekt gleichmäßig über den gesamten Glukosebereich an.";
+"postProcessingSofterHighsDescription" = "Wendet den Skalierungseffekt bei hohen Glukosewerten stärker und bei niedrigen Werten schwächer an.";
+"postProcessingValidGlucoseRange" = "Gib einen Wert zwischen %@ und %@ ein";
+"postProcessingStrength" = "Stärke";
+"remaining" = "verbleibend";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay glättet die Glukosekurve durch Anpassung kurzer lokaler Fenster und erhält dabei die allgemeine Form von Spitzen und Tälern.";
+"showHideStandByModeTitle" = "StandBy-Modus";
+"postProcessingLight" = "Leicht";
+"postProcessingNeutral" = "Normal";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "Die Anpassung ist deaktiviert, da dieser Sensor bereits seine eigene Kalibrierung verwendet.";
+"snoozeAllSnoozedUntil" = "Geschlummert bis %@";
+"sensorHealthTestPersistentNoise" = "Anhaltendes Rauschen in 5 Sekunden testen";
+"sensorHealthTestFlatline" = "Flaches Signal in 5 Sekunden testen";
+"postProcessingShapeExplanation" = "Die Gewichtung legt fest, wo die Skalierung die stärkste Wirkung auf die Kurve hat. Das kann helfen, wenn ein Sensor höhere oder niedrigere Glukosewerte stärker übertreibt als den übrigen Bereich.";
+"postProcessingDexcomShareDataNotUpdated" = "Dexcom-Share-Daten werden nicht aktualisiert";
+"waitingForCGMConnection" = "Warte auf CGM-Verbindung…";

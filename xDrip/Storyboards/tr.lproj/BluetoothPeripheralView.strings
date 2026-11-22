@@ -37,7 +37,7 @@
 "lastReset" = "Son Sıfırlama";
 "lastResetNotKnown" = "Son Sıfırlama Zaman Damgası bilinmiyor";
 "transmitterResultResult" = "Verici Sıfırlama Sonucu";
-"bootLoader" = "Bootloader";
+"bootLoader" = "Önyükleyici";
 "cannotActiveCGMInFollowerMode" = "Takipçi Modunda bir CGM'yi etkinleştiremezsiniz";
 "confirmDisconnectTitle" = "Bağlantıyı Kesmeyi onaylayın";
 "confirmDisconnectMessage" = "Verici bağlantısını gerçekten kesmek istediğinizi onaylamak için 'Bağlantıyı Kes'i tıklayın.";
@@ -53,34 +53,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ Sensör Taraması Başarılı!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Çok noktalı kalibrasyon gelişmiş bir özelliktir.\n\nLütfen çevrimiçi yardımın kalibrasyon bölümünü okuyup nasıl çalıştığını anlamadan bu özelliği kullanmayın.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "Lütfen tekrar tarayın";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ Sensör Taraması Başarısız";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "Sensör taraması başarısız oldu";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "NFC taraması gerekli";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "Sensör tarama hatası\n\nYeniden deneniyor... # ";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Isınma sonu";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "Tekrar Tara";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "Tamam'a dokunun ve Libre sensörünün Bluetooth ile bağlanmasını tamamlaması için bekleyin.\n\nKısa süre içinde durum 'Bağlandı' olarak değişmelidir.";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "Son 24 Saat";
@@ -107,7 +107,7 @@
 "readSuccessNow" = "Şimdi";
 "scanningForTransmitter" = "Aranıyor...";
 "connecting" = "Bağlanıyor";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Bağlanıyor...";
 "reconnecting" = "Yeniden bağlanıyor";
 "reconnectingToTransmitter" = "Yeniden bağlanıyor...";
 "waiting" = "Bekleniyor...";
@@ -192,3 +192,10 @@
 "bluetoothAccessNotEnabled" = "Bluetooth erişimi etkin değil";
 "bluetoothAccessInstructions" = "Bağlanmak için Ayarlar → Gizlilik ve Güvenlik → Bluetooth yolunu açın ve %@ için erişime izin verin.";
 "bluetoothAccessRestrictedInstructions" = "Aygıt kısıtlamaları Bluetooth erişimini engelliyor. Erişimi etkinleştirmek için Ekran Süresi ayarlarını kontrol edin veya aygıt yöneticinizle iletişime geçin.";
+"confirmAlgorithmChangeToTransmitterMessage" = "Lütfen yerel/verici algoritmasına geri dönmek istediğinizi onaylayın";
+"confirmAlgorithmChangeToxDripMessage" = "Lütfen xDrip algoritmasına geçmek istediğinizi onaylayın.\n\nBu işlem okumaları kısa süreliğine durduracak ve hazır olduğunda sizden ilk kalibrasyon değerini isteyecektir.";
+"confirmCalibrationChangeToMultiPointMessage" = "Lütfen kalibrasyon türünü çok noktalıya değiştirmek istediğinizi onaylayın\n\n⚠️ Bu yöntemin yalnızca ileri düzey kullanıcılar için olduğunu ve doğru kalibre edilmezse tehlikeli sonuçlar verebileceğini unutmayın.\n\nBu yöntemi nasıl kullanacağınızdan emin değilseniz lütfen İptal'e basın.";
+"confirmCalibrationChangeToSinglePointMessage" = "Lütfen kalibrasyon türünü standart kalibrasyona değiştirmek istediğinizi onaylayın\n\nBu işlem okumaları kısa süreliğine durduracak ve hazır olduğunda sizden ilk kalibrasyon değerini isteyecektir.";
+"nativeAlgorithm" = "Yerel algoritma";
+"xDripAlgorithm" = "xDrip algoritması";
+"confirm" = "Onayla";

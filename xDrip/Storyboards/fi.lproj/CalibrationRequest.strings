@@ -3,3 +3,5 @@
 "calibration_notification_title" = "Kalibrointi";
 "calibration_notification_body" = "Kalibroi klikkaamalla notifikaatiota";
 "previousCalibrationPrefillMessage" = "Edellinen kalibrointiarvosi ajalta %@ on esitäytetty. Vertaa sitä mittarisi nykyiseen lukemaan ennen vahvistamista.";
+"singlePointCalibration" = "Tavallinen";
+"multiPointCalibration" = "Monipiste";

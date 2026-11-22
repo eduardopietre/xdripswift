@@ -1,4 +1,4 @@
-"address" = "Address";
+"address" = "Adress";
 "status" = "Status";
 "connected" = "Ansluten";
 "notConnected" = "Inte ansluten";
@@ -52,10 +52,10 @@
 "runningInCoexistenceMode" = "Körs i samexistensläge";
 "runningInPrimaryMode" = "Körs i primärt läge";
 /// cell text, sensor start time
-"sensorStartDate" = "Sensor Started";
+"sensorStartDate" = "Sensor startad";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "Sändare startad";
 
 "nfcScanFailedTitle" = "⚠️ Scanning av sensor misslyckades";
 
@@ -76,10 +76,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Flerpunktskalibrering är en avancerad funktion.\n\nAnvänd inte den här funktionen innan du har läst kalibreringsavsnittet i onlinehjälpen och förstår hur den fungerar.";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "NFC-skanning krävs";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Uppvärmning till";
@@ -117,7 +117,7 @@
 "readSuccessNow" = "Nu";
 "scanningForTransmitter" = "Söker...";
 "connecting" = "Ansluter";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Ansluter...";
 "reconnecting" = "Återansluter";
 "reconnectingToTransmitter" = "Återansluter...";
 "waiting" = "Väntar...";

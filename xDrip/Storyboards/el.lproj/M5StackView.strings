@@ -3,14 +3,14 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 "screenTitle" = "M5Stack";
-"authenticationFailureWarning" = "Authentication to M5Stack Failed, either set the pre-configured password in the Settings, or, if the M5Stack does not have a preconfigured password then reset the M5Stack. M5Stack will disconnect now. You can make a new attempt by clicking ";
-"blePasswordMissingWarning" = "You need to set the password in the Settings";
-"m5StackResetRequiredWarning" = "M5Stack must be reset in order to generate a new temporary password. When done click ";
-"m5StackSoftWhereHelpCellText" = "Where to find the M5Stack software?";
-"m5StickCSoftWhereHelpCellText" = "Where to find the M5StickC software?";
-"m5StackSoftWareHelpText" = "Go to";
+"authenticationFailureWarning" = "Η πιστοποίηση στο M5Stack απέτυχε. Ορίστε τον προρυθμισμένο κωδικό στις Ρυθμίσεις ή, αν το M5Stack δεν έχει προρυθμισμένο κωδικό, επαναφέρετε το M5Stack. Το M5Stack θα αποσυνδεθεί τώρα. Μπορείτε να κάνετε νέα προσπάθεια πατώντας ";
+"blePasswordMissingWarning" = "Πρέπει να ορίσετε τον κωδικό στις Ρυθμίσεις";
+"m5StackResetRequiredWarning" = "Το M5Stack πρέπει να επαναφερθεί ώστε να δημιουργηθεί νέος προσωρινός κωδικός. Όταν τελειώσετε πατήστε ";
+"m5StackSoftWhereHelpCellText" = "Πού θα βρω το λογισμικό του M5Stack;";
+"m5StickCSoftWhereHelpCellText" = "Πού θα βρω το λογισμικό του M5StickC;";
+"m5StackSoftWareHelpText" = "Μεταβείτε στο";
 "m5StackViewscreenTitle" = "M5Stack";
 "m5StickCViewscreenTitle" = "M5StickC";
-"deviceMustBeConnectedToPowerOff" = "M5Stack must be connected to be able to power it off";
-"powerOffConfirm" = "Are you sure you want to power off the M5Stack?";
-"powerOff" = "Power Off";
+"deviceMustBeConnectedToPowerOff" = "Το M5Stack πρέπει να είναι συνδεδεμένο για να μπορεί να απενεργοποιηθεί";
+"powerOffConfirm" = "Είστε βέβαιοι ότι θέλετε να απενεργοποιήσετε το M5Stack;";
+"powerOff" = "Απενεργοποίηση";

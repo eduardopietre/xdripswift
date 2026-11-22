@@ -3,3 +3,5 @@
 "calibration_notification_title" = "Βαθμονόμηση";
 "calibration_notification_body" = "Πατήστε στην Ειδοποίηση για βαθμονόμηση";
 "previousCalibrationPrefillMessage" = "Η προηγούμενη τιμή βαθμονόμησης από τις %@ έχει προσυμπληρωθεί. Συγκρίνετέ τη με την τρέχουσα ένδειξη του μετρητή σας πριν επιβεβαιώσετε.";
+"singlePointCalibration" = "Τυπική";
+"multiPointCalibration" = "Πολλαπλών σημείων";

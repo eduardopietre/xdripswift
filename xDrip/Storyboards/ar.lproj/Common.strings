@@ -59,10 +59,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "النطاق الضيق";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "نطاق المستخدم";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "الإنسولين النشط المقدّر";
@@ -89,3 +89,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "مفعّل";
+"common_report_period" = "فترة التقرير";
+"common_statistics_insufficientData" = "بيانات غير كافية";
+"common_statistics_title" = "الإحصائيات";
+"common_report_unableToPrepareTitle" = "تعذر إعداد التقرير";
+"common_report_patientIDPlaceholder" = "السجل الطبي / رقم المريض";
+"common_statistics_dailySummary" = "الملخص اليومي";
+"common_report_patientPeriodTitleFormat" = "%@ - %@";
+"common_statistics_averageTDD" = "متوسط TDD";
+"common_report_aidPeriod" = "بيانات Loop";
+"common_report_periodTitleFormat" = "تقرير %d يوم";
+"common_report_passwordProtectionOpenError" = "تعذر فتح ملف PDF للتقرير لحمايته بكلمة مرور.";
+"common_statistics_timeInRange" = "الوقت في النطاق";
+"common_statistics_dailyPatternFooter" = "تُظهر الأعمدة النسبة اليومية في نطاق %@. يشير الخط المتقطع إلى الهدف السريري 70%%.";
+"common_statistics_cvTrend" = "اتجاه CV";
+"common_report_none" = "لا شيء";
+"common_notRequired" = "غير مطلوب";
+"common_notAvailable" = "غير متاح";
+"common_report_passwordFieldPlaceholder" = "كلمة المرور لفتح PDF";
+"common_statistics_estimatedA1cTrend" = "اتجاه HbA1c المقدّر";
+"common_report_notIncluded" = "غير مضمّن";
+"common_statistics_report" = "التقرير";
+"common_statistics_averageGlucose" = "متوسط الجلوكوز";
+"common_report_language" = "اللغة";
+"common_disabled" = "معطّل";
+"common_report_patientFooter" = "تُخزَّن بيانات المريض محلياً على هذا الجهاز وتُطبع في ترويسة التقرير.";
+"common_statistics_targetGreaterThanOrEqual" = "الهدف >=%@";
+"common_report_periodFooter" = "يوصى بـ 90 يوماً لتقرير CGM سريري.";
+"common_report_passwordConfirmationPlaceholder" = "أدخل كلمة المرور مرة أخرى";
+"common_report_patientName" = "اسم المريض";
+"common_value" = "القيمة";
+"common_report_willBePasswordProtected" = "سيكون التقرير محمياً بكلمة مرور";
+"common_report_generatingStatus" = "جارٍ إنشاء التقرير السريري...";
+"common_report_notSet" = "غير محدد";
+"common_statistics_ambulatoryGlucoseProfile" = "ملف الجلوكوز المتنقل";
+"common_statistics_averageCarbs" = "متوسط الكربوهيدرات";
+"common_report_willNotBePasswordProtected" = "لن يكون التقرير محمياً بكلمة مرور";
+"common_report_aidPeriodFooter" = "يوصى بـ 7 أيام لبيانات Loop.";
+"common_statistics_bestDay" = "أفضل يوم";
+"common_statistics_period" = "الفترة";
+"common_report_passwordFooter" = "تُستخدم كلمة المرور هذه فقط لملف PDF التالي ولا تُحفظ.";
+"common_statistics_dailyPattern" = "النمط اليومي";
+"common_checking" = "جارٍ التحقق...";
+"common_statistics_summary" = "الملخص";
+"common_statistics_section" = "القسم";
+"common_report_patientNamePlaceholder" = "اسم المريض";
+"common_enterValue" = "أدخل القيمة";
+"common_statistics_waitingForGlucoseData" = "بانتظار بيانات الجلوكوز...";
+"common_statistics_mostHigh" = "الأكثر ارتفاعاً";
+"common_statistics_trends" = "الاتجاهات";
+"common_statistics_dataCapture" = "التقاط البيانات";
+"common_statistics_targetLessThanOrEqual" = "الهدف <=%@";
+"common_report_patientSection" = "المريض";
+"common_statistics_noDataTitle" = "لا توجد إحصائيات";
+"common_report_passwordToOpen" = "كلمة المرور للفتح";
+"common_report_paperSize" = "حجم الورق";
+"common_statistics_insufficientAGPData" = "بيانات غير كافية لمخطط النسب المئوية AGP";
+"common_statistics_averageFormat" = "المتوسط %@";
+"common_report_patientID" = "رقم المريض";
+"common_report_generateTitle" = "إنشاء تقرير";
+"common_statistics_noDataMessage" = "لا توجد بيانات CGM مخزّنة كافية لهذه الفترة.";
+"common_report_notEnoughData" = "بيانات غير كافية";
+"common_report_shareAccessibility" = "مشاركة التقرير";
+"common_report_generationFailedTitle" = "فشل إنشاء التقرير";
+"next" = "التالي";
+"common_statistics_mostLow" = "الأكثر انخفاضاً";
+"common_statistics_tempBasalDelta" = "فرق القاعدي المؤقت";
+"common_dismiss" = "إغلاق";
+"common_report_options" = "خيارات التقرير";
+"common_statistics_timeInTightRange" = "الوقت في النطاق الضيق";
+"common_report_passwordProtectionWriteError" = "تعذر إنشاء ملف PDF للتقرير المحمي بكلمة مرور.";
+"common_statistics_cgmEstimate" = "تقدير CGM";

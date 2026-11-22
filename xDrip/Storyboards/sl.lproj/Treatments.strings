@@ -4,27 +4,27 @@
 
 "treatments_title" = "Terapije";
 "treatments_new_button" = "New";
-"treatments_new_entry" = "New Treatment";
-"treatments_carbs_with_unit" = "Carbs (g)";
-"treatments_insulin_with_unit" = "Insulin (U)";
-"treatments_exercise_with_unit" = "Exercise (min)";
+"treatments_new_entry" = "Nova obravnava";
+"treatments_carbs_with_unit" = "Ogljikovi hidrati (g)";
+"treatments_insulin_with_unit" = "Insulin (E)";
+"treatments_exercise_with_unit" = "Vadba (min)";
 "treatments_carbs_unit" = "g";
 "treatments_insulin_unit" = "U";
 "treatments_exercise_unit" = "min";
-"treatments_carbs" = "Carbs";
+"treatments_carbs" = "Ogljikovi hidrati";
 "treatments_insulin" = "Bolus";
-"treatments_exercise" = "Exercise";
+"treatments_exercise" = "Vadba";
 "treatments_bgcheck" = "Kontrola Glykémie";
 "treatments_question_mark" = "?";
-"treatments_success" = "Success";
-"treatments_sync_complete" = "Synchronization complete.";
+"treatments_success" = "Uspešno";
+"treatments_sync_complete" = "Sinhronizacija končana.";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// warn about trying to set a future bg value
-"treatments_cannotStoreFutureBGCheck" = "You cannot store a BG Check in the future.\n\nIt will be stored at the actual time.";
+"treatments_cannotStoreFutureBGCheck" = "Meritve KS v prihodnosti ni mogoče shraniti.\n\nShranjena bo ob dejanskem času.";
 
 /// filter the treatments by type
 "treatments_filterTreatmentsLabel" = "Filter";

@@ -4,74 +4,74 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// text in status row, if ready to start scanning
-"readyToScan" = "Ready to Scan";
+"readyToScan" = "Готово до сканування";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "Трансмітер запущено";
 
 /// Confirm that the user wants to really disconnect the transmitter, title
-"confirmDisconnectMessage" = "Click 'Disconnect' to confirm that you really want to disconnect from the transmitter.";
+"confirmDisconnectMessage" = "Натисніть «Відключити», щоб підтвердити відключення від трансмітера.";
 
 /// BluetoothPeripheral view, this is a name of a BluetoothPeripheral assigned by the user, to recognize the device
-"bluetoothPeripheralAlias" = "Alias";
+"bluetoothPeripheralAlias" = "Псевдонім";
 
 /// cell text, if user needs to set the transmitter id
-"needsTransmitterId" = "Missing Transmitter ID";
+"needsTransmitterId" = "Відсутній ID трансмітера";
 
 /// cell text, shows when last reset was done, if known. Only for Dexcom
-"lastReset" = "Last Reset";
+"lastReset" = "Останнє скидання";
 
 /// Bluetooth Peripheral view, when user clicks alias field
-"selectAliasText" = "Choose an alias for this bluetooth device, the name will be shown in the app and is easier for you to recognize";
+"selectAliasText" = "Оберіть псевдонім для цього пристрою Bluetooth. Ім'я відображатиметься в застосунку, і вам буде легше його впізнати";
 
 /// row in bluetoothperipheral view, title
-"bootLoader" = "Bootloader";
+"bootLoader" = "Завантажувач";
 
 /// 
-"notConnected" = "Not Connected";
+"notConnected" = "Не підключено";
 
 /// cell text, where the disconnection timestamp is shown
-"disConnectedAt" = "Disconnected At";
+"disConnectedAt" = "Відключено о";
 
 /// when Bluetooth Peripheral is shown, connection status, connected
-"connected" = "Connected";
+"connected" = "Підключено";
 
 /// User tries to add a CGM or connect an already existing CGM, while in follower mode.
-"cannotActiveCGMInFollowerMode" = "You cannot activate or connect to a CGM whilst in Follower Mode.";
+"cannotActiveCGMInFollowerMode" = "Не можна активувати CGM або підключитися до нього в режимі Follower.";
 
 /// when Bluetooth Peripheral is shown, title of the cell with the status
-"status" = "Status";
+"status" = "Статус";
 
 /// Disconnect transmitter, title
-"confirmDisconnectTitle" = "Confirm Disconnect";
+"confirmDisconnectTitle" = "Підтвердьте відключення";
 
 /// BluetoothPeripheral view, text of the cell with the sensor type (only used for Libre)
-"sensorType" = "Sensor Type";
+"sensorType" = "Тип сенсора";
 
 /// when M5Stack is shown, title of the cell with the address
-"address" = "Address";
+"address" = "Адреса";
 
 /// text in status row, when not connected and app is not scanning
-"notTryingToConnect" = "Not Scanning";
+"notTryingToConnect" = "Не скануємо";
 
 /// cell text, where the connection timestamp is shown
-"connectedAt" = "Connected At";
+"connectedAt" = "Підключено о";
 
 /// BluetoothPeripheral view, text of the cell with the sensor serial number
-"SensorSerialNumber" = "Serial Number";
+"SensorSerialNumber" = "Серійний номер";
 
 /// 
-"battery" = "Battery";
+"battery" = "Батарея";
 "versionCode" = "Код версії";
 "voltageA" = "Напруга A";
 "voltageB" = "Напруга B";
 "waitingForData" = "Очікування даних...";
 
 /// button text, to disconnect
-"disconnect" = "Disconnect";
+"disconnect" = "Відключити";
 
 /// text in button to start scanning
-"scan" = "Scan";
+"scan" = "Сканувати";
 "medtrumNanoPumpScanNoticeTitle" = "Підключення до помпи Medtrum Nano";
 "medtrumNanoPumpScanNoticeMessage" = "Ця опція підключається до помпи Medtrum Nano, а не безпосередньо до передавача Nano CGM.\n\nПеред скануванням переконайтеся, що EasyPatch запущено, підключено до помпи й отримує актуальні значення CGM.\n\nEasyPatch має постійно працювати й продовжувати отримувати значення.";
 "libre2ScanNoticeTitle" = "Bluetooth застосунку Libre";
@@ -82,28 +82,28 @@
 "dexcomG7ScanNoticeMessage" = "Перед скануванням переконайтеся, що застосунок Dexcom G7 працює у фоновому режимі, підключений до сенсора й отримує актуальні значення глюкози.\n\nЗастосунок Dexcom G7 має постійно працювати й продовжувати отримувати значення.";
 
 /// cell text, where user can select to reset a transmitter at next connect. Only for Dexcom
-"resetRequired" = "Reset Transmitter";
+"resetRequired" = "Скинути трансмітер";
 
 /// cell text, shows when last reset was done, if known. Only for Dexcom
-"lastResetNotKnown" = "Last Reset Timestamp is not known";
+"lastResetNotKnown" = "Час останнього скидання невідомий";
 
 /// Bluetooth Peripheral view, when user clicks the trash button - this is not the complete sentence, it will be followed either by 'name' or 'alias', depending on the availability of an alias
-"confirmDeletionPeripheral" = "Do you want to delete bluetooth device: ";
+"confirmDeletionPeripheral" = "Видалити пристрій Bluetooth: ";
 
 /// button text, to connect
-"connect" = "Connect";
+"connect" = "Підключити";
 
 /// cell text, sensor start time
-"sensorStartDate" = "Sensor Started";
+"sensorStartDate" = "Сенсор запущено";
 
 /// text in status row, if scanning ongoing
-"scanning" = "Scanning";
+"scanning" = "Сканування";
 
 /// text in status rown, when not connect but app is trying to connect
-"tryingToConnect" = "Scanning";
+"tryingToConnect" = "Сканування";
 
 /// BluetoothPeripheral view, text of the cell with the serial number (this is not the sensor serial number
-"serialNumber" = "Serial Number";
+"serialNumber" = "Серійний номер";
 
 /// Dexcom bluetooth screen. Is another app used in parallel or not
 "useOtherDexcomAppCoexistenceFooter" = "Режим співіснування дозволяє нам працювати з іншою програмою, наприклад Dexcom або CamAPS. Ця програма має продовжувати працювати у фоновому режимі.";
@@ -112,47 +112,47 @@
 "runningInPrimaryMode" = "Працює в основному режимі";
 
 /// To give result about transitter result in notification body
-"transmitterResultResult" = "Transmitter Reset Result";
+"transmitterResultResult" = "Результат скидання трансмітера";
 
 /// text in button top right, this button will disable automatic connect
-"donotconnect" = "Stop Scanning";
+"donotconnect" = "Зупинити сканування";
 
 /// Bluetooth Peripheral view, when user clicks alias field
-"aliasAlreadyExists" = "There is already a bluetooth device with this alias";
+"aliasAlreadyExists" = "Пристрій Bluetooth з таким псевдонімом уже існує";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ Сенсор успішно скановано!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Багатоточкове калібрування — це розширена функція.\n\nНе використовуйте її, доки не прочитаєте розділ про калібрування в онлайн-довідці та не зрозумієте, як вона працює.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "Будь ласка, скануйте знову";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ Помилка сканування сенсора";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "Не вдалося просканувати сенсор";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "Потрібне NFC-сканування";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "Помилка сканування сенсора\n\nПовторна спроба... # ";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Прогрів до";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "Сканувати знову";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "Натисніть OK і зачекайте, поки сенсор Libre завершить підключення через Bluetooth.\n\nНезабаром статус зміниться на «Підключено».";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "Останні 24 години";
@@ -179,7 +179,7 @@
 "readSuccessNow" = "Зараз";
 "scanningForTransmitter" = "Пошук...";
 "connecting" = "Підключення";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Підключення...";
 "reconnecting" = "Повторне підключення";
 "reconnectingToTransmitter" = "Повторне підключення...";
 "waiting" = "Очікування...";
@@ -264,3 +264,10 @@
 "bluetoothAccessNotEnabled" = "Доступ до Bluetooth не ввімкнено";
 "bluetoothAccessInstructions" = "Щоб підключитися, відкрийте Параметри → Приватність і безпека → Bluetooth і дозвольте доступ для %@.";
 "bluetoothAccessRestrictedInstructions" = "Обмеження пристрою блокують доступ до Bluetooth. Перевірте параметри Екранного часу або зверніться до адміністратора пристрою, щоб увімкнути доступ.";
+"confirmAlgorithmChangeToTransmitterMessage" = "Підтвердьте повернення до рідного алгоритму трансмітера";
+"confirmAlgorithmChangeToxDripMessage" = "Підтвердьте перехід на алгоритм xDrip.\n\nПоказання на короткий час зупиняться, і коли все буде готово, потрібно буде ввести початкове значення калібрування.";
+"confirmCalibrationChangeToMultiPointMessage" = "Підтвердьте зміну типу калібрування на багатоточкове\n\n⚠️ Цей метод призначений лише для досвідчених користувачів і за неправильного калібрування може давати небезпечні результати.\n\nЯкщо ви не впевнені, як ним користуватися, натисніть «Скасувати».";
+"confirmCalibrationChangeToSinglePointMessage" = "Підтвердьте зміну типу калібрування на стандартне\n\nПоказання на короткий час зупиняться, і коли все буде готово, потрібно буде ввести початкове значення калібрування.";
+"nativeAlgorithm" = "Рідний алгоритм";
+"xDripAlgorithm" = "Алгоритм xDrip";
+"confirm" = "Підтвердити";

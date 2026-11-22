@@ -1,8 +1,8 @@
 "presnooze" = "Sluimer";
 "sensor" = "Sensor";
 "calibrate" = "Kalibreer";
-"lock" = "Lock";
-"unlock" = "Unlock";
+"lock" = "Vergrendel";
+"unlock" = "Ontgrendel";
 "screenlocktitle" = "Scherm Vergrendeld";
 "screenlockinfo" = "Deze optie houdt de app op de voorgrond tot je een andere app opent, of tot je je toestel lockt.\r\n\nHet is aan te raden je toestel aan de oplader te houden om de batterij opgeladen te houden.";
 "statusactiontitle" = "Status";
@@ -23,7 +23,7 @@
 // "ago" = "geleden" removed as "3 min geleden" is just too long to fit the iOS and WatchOS UI in most cases.
 // Just leave an empty string.
 "ago" = "";
-"licenseinfo" = "This program is free software distributed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.\r\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.\r\n\nSee http://www.gnu.org/licenses/gpl.txt for more details.\r\n\r\nInfo: ";
+"licenseinfo" = "Dit programma is vrije software, verspreid onder de voorwaarden van de GNU General Public License zoals gepubliceerd door de Free Software Foundation, versie 3 of een latere versie.\n\nDit programma wordt verspreid in de hoop dat het nuttig is, maar ZONDER ENIGE GARANTIE.\n\nZie http://www.gnu.org/licenses/gpl.txt voor meer details.\n\nInfo: ";
 "info" = "Lees Alstublieft";
 "transmitterinfo" = "Ga eerst naar het Bluetooth scherm waar je je transmitter kunt toevoegen en scannen.\r\n\nKom dan terug naar het Home scherm en start je sensor.";
 "startsensorbeforecalibration" = "Je kunt niet kalibreren voor je een sensor hebt gestart.";
@@ -43,7 +43,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When user clicks stop sensor, ask confirmation
-"stopSensorConfirmation" = "Are you sure you want to stop the sensor?";
+"stopSensorConfirmation" = "Weet je zeker dat je de sensor wilt stoppen?";
 
 /// When user needs to enter sensor code, to start firefly sensor
 "enterSensorCode" = "Scan het sensoretiket of kies een foto om de sensorcode te lezen.";
@@ -53,7 +53,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// status info : literally 'Sensor End'
-"sensorend" = "Sensor Ends";
+"sensorend" = "Sensor Eindigt";
 
 "calibrationNotNecessary" = "Indien het Libre algorithme wordt gebruikt is kalibratie van de sensor niet nodig.\n\nIndien je toch wil kalibreren, ga dan naar je CGM in het Bluetooth scherm en schakel 'Gebruik zender algoritme' uit";
 
@@ -62,31 +62,31 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout is uitgeschakeld";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "URL verbergen voor %@ s...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Geen sensordata";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Sensorduur";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL ontbreekt";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Verbreek de verbinding met de Libre sensor en verbind opnieuw";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Gebruikersnaam/wachtwoord ontbreekt";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Geen CGM-databron verbonden";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "Metingen per 5 minuten";
+"postProcessingAlgorithm" = "Algoritme";
 "sensorLifetimeRemainingFormat" = "%@ resterend";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -118,14 +118,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Grafiek met de sensorruisgeschiedenis";
 "pumpBattery" = "Batterij";
 "pumpReservoir" = "Reservoir";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Verstreken / Resterend";
+"sensorManagementSessionDetails" = "Sessiedetails";
+"sensorManagementCalibrationOpenTitle" = "Kalibratiedetails";
+"sensorManagementCGMType" = "CGM-type";
 "sensorManagementLastCalibration" = "Laatste";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Sensor Actief";
+"sensorManagementStarted" = "Gestart";
+"sensorManagementEnds" = "Eindigt";
 "sensorManagementCalibrationValue" = "Kalibratiewaarde";
 "sensorManagementCalibrationStableTrend" = "Stabiele trend";
 "sensorManagementCalibrationSlightlyLow" = "Enigszins laag";
@@ -240,3 +240,66 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "Aanpassing van de offset en vorm is niet beschikbaar omdat deze CGM een eigen kalibratie gebruikt.";
 
 "postProcessingWarningAgreement" = "Tik alleen op OK als je deze functie begrijpt en ermee instemt om deze in te schakelen.";
+"postProcessingShape" = "Nadruk";
+"snoozeAllTitle" = "Alles Sluimeren";
+"postProcessingUpdateAllReadingsLastPeriod" = "Overschrijf alle waarden van de afgelopen %@";
+"postProcessingEnterValue" = "Voer waarde in";
+"postProcessingStrong" = "Sterk";
+"snoozeUrgentAlarms" = "Alleen Urgente Alarmen";
+"showHideHomeScreenFooter" = "Toon of verberg de belangrijkste elementen van het Home scherm, handig bij een kleiner iPhone-scherm";
+"postProcessingSofterLowsDescription" = "Past het schaaleffect sterker toe bij lagere glucosewaarden en minder bij hogere waarden.";
+"postProcessingMasterNightscoutUploadDisabled" = "Uploaden naar Nightscout is uitgeschakeld";
+"postProcessingReadingFrequency" = "Meetfrequentie";
+"postProcessingOffset" = "Offset";
+"waitingForDataSource" = "CGM verbonden. Wachten op data...";
+"postProcessingOffsetBgCheckHint" = "Minstens één recente BG-controle aanbevolen";
+"noDataSourceConnectedWatch" = "Open iOS-app";
+"sensorNoiseHistoryFooter" = "De grafiek toont de 30-minuten jitter, de voortschrijdende 4-uurswaarde en de 12-uursmediaan die worden gebruikt voor waarschuwingen bij aanhoudende ruis. Lagere waarden zijn gladder. Het meet niet de nauwkeurigheid van glucose.";
+"postProcessingEnterGlucose" = "Voer Glucose in";
+"sensorHealthTestTransmitterFailure" = "Test Transmitterstoring over 5 Seconden";
+"postProcessingNow" = "Nu";
+"postProcessingOriginal" = "Origineel";
+"postProcessingSofterLows" = "Lage waarden";
+"postProcessingApplyFrom" = "Toepassen vanaf";
+"sensorHealthTestTemporaryIssue" = "Test Tijdelijk Probleem over 5 Seconden";
+"postProcessingScaleBgCheckHint" = "Minstens twee recente BG-controles aanbevolen";
+"postProcessingOriginalGlucose" = "Originele Glucose";
+"sensorNoiseHistoryPersistentCompact" = "12 u";
+"postProcessingNoCurrentValues" = "Geen huidige waarden";
+"postProcessingMedium" = "Gemiddeld";
+"showHideItemsTitle" = "Snel Tonen/Verbergen";
+"postProcessingAdjustedGlucose" = "Aangepaste glucose";
+"showHideStandByModeFooter" = "Wijzigt hoe de StandBy-modus wordt weergegeven als deze is geactiveerd in de iPhone-instellingen";
+"followerAccountCredentialsInvalid" = "Ongeldig Account";
+"postProcessingNightscoutDataNotUpdated" = "Nightscout-data wordt niet bijgewerkt";
+"sensorManagementNoisePersistent" = "Laatste 12 Uur";
+"sensorRemaining" = "Sensor Resterend";
+"showHideHomeScreenTitle" = "Home Scherm";
+"postProcessingSmoothed" = "Afgevlakt";
+"postProcessingApply" = "Toepassen";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "Aanpassing is uitgeschakeld omdat deze sensor al zijn eigen kalibratie gebruikt. Schakel over naar het native algoritme om glucose-aanpassingen toe te staan.";
+"postProcessingPreviewHours" = "Voorbeelduren";
+"snoozeAllSnoozed" = "Alle alarmen zijn gesluimerd!";
+"postProcessingAdjusted" = "Aangepast";
+"snoozeAllDisabled" = "Alles Sluimeren Uitgeschakeld";
+"showTreatments" = "Toon Behandelingen";
+"sensorHealthTestSensorFailure" = "Test Sensorstoring over 5 Seconden";
+"postProcessingScale" = "Schaal";
+"postProcessingTitle" = "Glucose-aanpassingen";
+"postProcessingSofterHighs" = "Hoge waarden";
+"postProcessingNeutralDescription" = "Past het schaaleffect gelijkmatig toe over het hele glucosebereik.";
+"postProcessingSofterHighsDescription" = "Past het schaaleffect sterker toe bij hogere glucosewaarden en minder bij lagere waarden.";
+"postProcessingValidGlucoseRange" = "Voer een waarde in tussen %@ en %@";
+"postProcessingStrength" = "Sterkte";
+"remaining" = "resterend";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay maakt de glucosecurve vlakker door korte lokale vensters te fitten, waarbij de algemene vorm van pieken en dalen behouden blijft.";
+"showHideStandByModeTitle" = "StandBy-modus";
+"postProcessingLight" = "Licht";
+"postProcessingNeutral" = "Normaal";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "Aanpassing is uitgeschakeld omdat deze sensor al zijn eigen kalibratie gebruikt.";
+"snoozeAllSnoozedUntil" = "Gesluimerd Tot %@";
+"sensorHealthTestPersistentNoise" = "Test Aanhoudende Ruis over 5 Seconden";
+"sensorHealthTestFlatline" = "Test Vlak Signaal over 5 Seconden";
+"postProcessingShapeExplanation" = "Nadruk verandert waar Schaal het meeste effect heeft op de curve. Dit kan helpen als een sensor hogere of lagere glucosewaarden lijkt te overdrijven ten opzichte van de rest van het bereik.";
+"postProcessingDexcomShareDataNotUpdated" = "Dexcom Share-data wordt niet bijgewerkt";
+"waitingForCGMConnection" = "Wachten op CGM-verbinding...";

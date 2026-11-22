@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "Data e hora";
 "backfilledAtFooterFormat" = "Preenchido retroativamente %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "Leitura de Glicose";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "Dados brutos";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "Sem leituras para mostrar...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "Valor calculado";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "Geral";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "Leituras de Glicose";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "Dados internos";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "Seta de tendência";
 
 "glucoseRange" = "Intervalo de glicose";
 "bgRangeUrgent" = "Urgente";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "Recebido via Watch às %@";
 "backfilledViaWatchAtFooterFormat" = "Recuperado via Watch às %@";
 "receivedViaWatch" = "Recebido via Watch";
+"finalGlucose" = "Valor de Glicose";
+"glucoseValueSectionHeader" = "Valor de Glicose";
+"backfilled" = "Preenchido";
+"rawValue" = "Valor Bruto";
+"smoothedValue" = "Valor Suavizado";
+"date" = "Data";
+"calibratedValue" = "Valor Calibrado";
+"adjustedValue" = "Valor Ajustado";
+"finalValue" = "Valor Final";

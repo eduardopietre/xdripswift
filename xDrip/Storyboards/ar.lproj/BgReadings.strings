@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "الطابع الزمني";
 "backfilledAtFooterFormat" = "تمت التعبئة الخلفية %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "قراءة الجلوكوز";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "البيانات الخام";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "لا توجد قراءات للعرض...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "القيمة المحسوبة";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "عام";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "قراءات الجلوكوز";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "البيانات الداخلية";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "سهم الاتجاه";
 
 "glucoseRange" = "نطاق الغلوكوز";
 "bgRangeUrgent" = "عاجل";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "استُلم عبر Watch في %@";
 "backfilledViaWatchAtFooterFormat" = "استُكمل عبر Watch في %@";
 "receivedViaWatch" = "استُلم عبر Watch";
+"finalGlucose" = "قيمة الجلوكوز";
+"glucoseValueSectionHeader" = "قيمة الجلوكوز";
+"backfilled" = "مملوءة لاحقاً";
+"rawValue" = "القيمة الخام";
+"smoothedValue" = "القيمة المنعّمة";
+"date" = "التاريخ";
+"calibratedValue" = "القيمة المعايرة";
+"adjustedValue" = "القيمة المعدّلة";
+"finalValue" = "القيمة النهائية";

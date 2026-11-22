@@ -2,12 +2,12 @@
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-"dexcomsharetestresult_verificationsuccessfulalerttitle" = "Verification Successful";
-"dexcomsharetestresult_verificationsuccessfulalertbody" = "Your Dexcom Share account was verified successfully";
-"dexcomsharetestresult_verificationerroralerttitle" = "Verification Error";
-"dexcomsharetestresult_SSO_AuthenticateMaxAttemptsExceeed" = "Maximum login attempts exceeded. Wait 10 minutes and try again.";
-"dexcomsharetestresult_uploadErrorWarning" = "Dexcom Share Upload Error";
-"dexcomsharetestresult_monitored_receiver_sn_doesnotmatch" = "The Dexcom Share Serial Number does not match the serial number for this account. Verify the Serial Number in the settings.";
-"dexcomsharetestresult_monitored_receiver_not_assigned_1" = "It seems that the Transmitter ID or serial number";
-"dexcomsharetestresult_monitored_receiver_not_assigned_2" = "is not assigned to";
-"dexcomsharetestresult_monitored_receiver_not_assigned_3" = "Use the official Dexcom app to register the Transmitter (G5) or Share receiver (G4)\r\n\r\nYou are possibly just using the wrong URL, verify the setting 'Use US URL?'";
+"dexcomsharetestresult_verificationsuccessfulalerttitle" = "Επιτυχής επαλήθευση";
+"dexcomsharetestresult_verificationsuccessfulalertbody" = "Ο λογαριασμός Dexcom Share επαληθεύτηκε με επιτυχία";
+"dexcomsharetestresult_verificationerroralerttitle" = "Σφάλμα επαλήθευσης";
+"dexcomsharetestresult_SSO_AuthenticateMaxAttemptsExceeed" = "Ξεπεράστηκε το μέγιστο πλήθος προσπαθειών σύνδεσης. Περιμένετε 10 λεπτά και δοκιμάστε ξανά.";
+"dexcomsharetestresult_uploadErrorWarning" = "Σφάλμα μεταφόρτωσης Dexcom Share";
+"dexcomsharetestresult_monitored_receiver_sn_doesnotmatch" = "Ο σειριακός αριθμός Dexcom Share δεν ταιριάζει με τον σειριακό αριθμό αυτού του λογαριασμού. Επαληθεύστε τον σειριακό αριθμό στις ρυθμίσεις.";
+"dexcomsharetestresult_monitored_receiver_not_assigned_1" = "Φαίνεται ότι το ID του πομπού ή ο σειριακός αριθμός";
+"dexcomsharetestresult_monitored_receiver_not_assigned_2" = "δεν έχει ανατεθεί στον";
+"dexcomsharetestresult_monitored_receiver_not_assigned_3" = "Χρησιμοποιήστε την επίσημη εφαρμογή Dexcom για να καταχωρίσετε τον πομπό (G5) ή τον δέκτη Share (G4)\n\nΊσως χρησιμοποιείτε λάθος URL, ελέγξτε τη ρύθμιση 'Χρήση US URL;'";

@@ -7,7 +7,7 @@
 "common_Ok" = "OK";
 
 /// blood glucose unit in short, for text field title
-"common_bloodglucoseunit_short" = "BG Unit";
+"common_bloodglucoseunit_short" = "Unità glicemia";
 
 /// for settings row, literally firmware
 "firmware" = "Firmware";
@@ -37,34 +37,34 @@
 "hardware" = "Hardware";
 
 /// literal translation needed
-"common_week" = "week";
+"common_week" = "settimana";
 
 /// to show the sensor status
-"sensorStatus" = "Sensor Status";
+"sensorStatus" = "Stato del sensore";
 
 /// can be used in several screens, just the words Bloodglucose unit
-"common_bloodglucoseunit" = "Blood Glucose Unit";
+"common_bloodglucoseunit" = "Unità di misura glicemia";
 
 /// literal translation needed
-"common_hours" = "hours";
+"common_hours" = "ore";
 
 /// literally default, will be the name of default alerttypes that will be created during initial app launch
-"common_default" = "Default";
+"common_default" = "Predefinito";
 
 /// literally add
 "add" = "Add";
 
 /// literal translation needed
-"common_hour" = "hour";
+"common_hour" = "ora";
 
 /// yellow
-"yellow" = "yellow";
+"yellow" = "giallo";
 
 /// literally update
-"update" = "Edit";
+"update" = "Modifica";
 
 /// 
-"delete" = "Delete";
+"delete" = "Elimina";
 
 /// literally password
 "common_password" = "Password";
@@ -73,56 +73,56 @@
 "no" = "No";
 
 /// green
-"green" = "green";
+"green" = "verde";
 
 /// name
-"name" = "Name";
+"name" = "Nome";
 
 /// literal translation needed
-"common_minutes" = "mins";
+"common_minutes" = "min";
 
 /// literally yes, without capital
 "yes" = "Sì";
 
 /// literally 'Cancel'
-"common_cancel" = "Cancel";
+"common_cancel" = "Annulla";
 "common_close" = "Chiudi";
 
 /// literally warning
-"warning" = "Warning!";
+"warning" = "Attenzione!";
 
 /// white
-"white" = "white";
+"white" = "bianco";
 
 
 /// mg/dl
 "common_mgdl" = "mg/dL";
 
 /// whenever invalid value is given by user somewhere in a field
-"invalidValue" = "Invalid Value";
+"invalidValue" = "Valore non valido";
 
 /// general usage
-"unknown" = "Unknown";
+"unknown" = "Sconosciuto";
 
 /// the word HIGH, in capitals
-"common_high" = "HIGH";
+"common_high" = "ALTO";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Where credentials need to be given, if either account or password is invalid (for the moment only applicable to Dexcom Share
-"invalidAccountOrPassword" = "Invalid account or password";
+"invalidAccountOrPassword" = "Account o password non validi";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the word today
-"common_todayshort" = "Today";
+"common_todayshort" = "Oggi";
 
 /// the word high
-"common_statistics_high" = "High";
+"common_statistics_high" = "Alto";
 
 /// phrase HbA1c
 
@@ -133,22 +133,22 @@
 "common_statistics_low" = "Low";
 
 /// literal translation needed
-"common_days" = "days";
+"common_days" = "giorni";
 "common_landscape_showAGPChartData" = "Mostra i dati del grafico AGP:";
 "common_landscape_comparisonDays" = "%d giorni";
 "common_landscape_comparisonNone" = "Nessuno";
 
 /// the word average
-"common_statistics_average" = "Average";
+"common_statistics_average" = "Media";
 
 /// literal translation needed
 "common_dayshort" = "d";
 
 /// the word today
-"common_today" = "Today";
+"common_today" = "Oggi";
 
 /// the words in range
-"common_statistics_inRange" = "In Range";
+"common_statistics_inRange" = "Nel range";
 
 /// literal translation needed
 "common_hourshort" = "h";
@@ -158,17 +158,17 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// don't show again
-"common_dontshowagain" = "Don't Show Again";
+"common_dontshowagain" = "Non mostrare più";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Intervallo ristretto";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Intervallo personalizzato";
 "common_statistics_title" = "Statistiche";
 "common_statistics_period" = "Periodo";
 "common_statistics_summary" = "Riepilogo";
@@ -260,3 +260,15 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Attivo";
+"common_report_aidPeriod" = "Dati Loop";
+"common_notRequired" = "Non richiesto";
+"common_notAvailable" = "Non disponibile";
+"common_report_notIncluded" = "Non incluso";
+"common_disabled" = "Disattivato";
+"common_report_periodFooter" = "Per un report CGM clinico si consigliano 90 giorni.";
+"common_value" = "Valore";
+"common_report_aidPeriodFooter" = "Per i dati Loop si consigliano 7 giorni.";
+"common_checking" = "Verifica in corso...";
+"common_enterValue" = "Inserisci valore";
+"next" = "Avanti";
+"common_dismiss" = "Chiudi";

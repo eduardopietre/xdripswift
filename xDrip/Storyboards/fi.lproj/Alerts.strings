@@ -30,3 +30,7 @@
 "sensorExpiry.hoursHelp" = "Anna kokonaisluku väliltä 1-48 tuntia.";
 "sensorExpiry.endingSoonBody" = "Sensorisi arvioitu käyttöikä päättyy %@.";
 "sensorExpiry.expectedExpiryBody" = "Sensorisi on saavuttanut arvioidun päättymisaikansa (%@).";
+"alertWhenAboveValue" = "Vain kun yli";
+"alertWhenBelowValue" = "Vain kun alle";
+"alerts_sensortransmitterfailure" = "Sensorin/lähettimen vika";
+"alerts_notloopingalerttitle" = "Ei looppaa";

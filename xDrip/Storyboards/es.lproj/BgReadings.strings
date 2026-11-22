@@ -22,3 +22,11 @@
 "receivedViaWatchAtFooterFormat" = "Recibido mediante Watch a las %@";
 "backfilledViaWatchAtFooterFormat" = "Recuperado mediante Watch a las %@";
 "receivedViaWatch" = "Recibido mediante Watch";
+"finalGlucose" = "Valor de glucosa";
+"glucoseValueSectionHeader" = "Valor de glucosa";
+"backfilled" = "Rellenado";
+"rawValue" = "Valor sin procesar";
+"smoothedValue" = "Valor suavizado";
+"calibratedValue" = "Valor calibrado";
+"adjustedValue" = "Valor ajustado";
+"finalValue" = "Valor final";

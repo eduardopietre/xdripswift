@@ -35,7 +35,7 @@
 "settingsviews_showStatistics" = "İstatistikler";
 "settingsviews_daysToUseStatisticsTitle" = "Hesaplanacak Günler";
 "settingsviews_daysToUseStatisticsMessage" = "İstatistikleri hesaplamak için kullanmaya çalışmamız gereken maksimum gün sayısı?\n\n(Gece yarısından itibaren bugünü hesaplamak için 0 girin)";
-"settingsviews_useIFCCGMI" = "GMI in mmols/mol";
+"settingsviews_useIFCCGMI" = "GMI (mmol/mol)";
 "settingsviews_sectiontitletransmitter" = "Verici";
 "settingsviews_transmittertype" = "Verici Tipi";
 "settingsviews_transmitterid" = "Verici Kimliği";
@@ -123,43 +123,43 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Settings screen for loop delay
-"Select Time" = "Select Time";
+"Select Time" = "Saat Seçin";
 
 /// transmitter settings, to explain that the reset option only works for certain transmitters
-"settingsviews_resetDexcomTransmitterMessage" = "This option will attempt to reset your Anubis transmitter on the next connection.";
+"settingsviews_resetDexcomTransmitterMessage" = "Bu seçenek, bir sonraki bağlantıda Anubis vericinizi sıfırlamayı deneyecektir.";
 
 /// data source settings, keep-alive mode is set to aggressive
 "settingsviews_followerKeepAliveTypeAggressiveMessage" = "Canlı tut is set to aggressive.\n\nWhen the app is not on screen, we will aggressively attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a very noticeable impact on the battery of your device and should only be used if absolutely necessary.";
 
 /// libre link up follower settings, no active sensor
-"settingsviews_libreLinkUpNoActiveSensor" = "No active sensor data";
+"settingsviews_libreLinkUpNoActiveSensor" = "Aktif sensör verisi yok";
 
 /// data source settings, keep-alive mode is set to disabled
 "settingsviews_followerKeepAliveTypeDisabledMessage" = "Canlı tut is disabled.\n\nWhen the app is not on screen, no alarms, app badges, notifications or BG updates will take place.\n\nThe app will remain sleeping until you open it again.\n\nThis mode has very little impact on the battery of your device.";
 
 /// Settings screen for loop delay, explanatory text for value
-"expanatoryTextSelectValue" = "Delay in minutes, applied to readings shared with OS-AID";
+"expanatoryTextSelectValue" = "OS-AID ile paylaşılan okumalara uygulanan gecikme (dakika)";
 
 /// statistics settings, prefer time in tight range
-"settingsviews_timeInRangeTypeTightRange" = "Tight Range";
+"settingsviews_timeInRangeTypeTightRange" = "Dar Aralık";
 
 /// data source settings, keep-alive mode is set to normal
 "settingsviews_followerKeepAliveTypeNormal" = "Normal";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressive" = "Aggressive";
+"settingsviews_followerKeepAliveTypeAggressive" = "Agresif";
 
 /// statistics settings, prefer standard time in range
 "settingsviews_timeInRangeTypeStandardRange" = "Standart";
 
 /// statistics settings, the type of time in range selected
-"settingsviews_labelTimeInRangeType" = "Time In Range";
+"settingsviews_labelTimeInRangeType" = "Hedef Aralıkta Süre";
 
 /// data source settings, enable background keep alive
 "settingsviews_labelfollowerKeepAliveType" = "Canlı tut";
 
 /// this setting is required
-"settingsviews_valueIsRequired" = "⚠️ Required";
+"settingsviews_valueIsRequired" = "⚠️ Gerekli";
 
 /// treatments settings, show the treatments on main chart
 "settingsviews_showTreatments" = "Tedavi";
@@ -167,7 +167,7 @@
 /// treatments settings, offset the carb treatments on main chart
 
 /// Housekeeper settings, section title
-"settingsviews_sectionTitleHousekeeper" = "Data Management";
+"settingsviews_sectionTitleHousekeeper" = "Veri Yönetimi";
 
 /// treatments settings, section title
 "settingsviews_sectiontitletreatments" = "Tedaviler";
@@ -175,20 +175,20 @@
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 
 /// When user creates new loopdelay, with a timestamp that already exists - this is the warning text
-"warningLoopDelayAlreadyExists" = "There is already a loopDelay for this time.";
+"warningLoopDelayAlreadyExists" = "Bu saat için zaten bir loopDelay var.";
 
 /// statistics settings, prefer user-defined range
-"settingsviews_timeInRangeTypeUserDefinedRange" = "User Range";
+"settingsviews_timeInRangeTypeUserDefinedRange" = "Kullanıcı Aralığı";
 
 /// CGM data source settings, section title
 "settingsviews_sectionTitleDataSource" = "Veri kaynağı";
 "settingsviews_dataSourceMasterDevicesFooter" = "Uyumlu aygıtları Aygıtlar sekmesinden ekleyin.";
 
 /// follower settings, pop up that asks user to enter their username
-"settingsviews_enterUsername" = "Enter your username";
+"settingsviews_enterUsername" = "Kullanıcı adınızı girin";
 
 /// data source settings, show that Nightscout is disabled
-"settingsviews_nightscoutNotEnabledRowText" = "Disabled";
+"settingsviews_nightscoutNotEnabledRowText" = "Devre Dışı";
 
 /// data source settings, keep-alive mode is set to use an external heartbeat
 "settingsviews_followerKeepAliveTypeHeartbeatMessage" = "Canlı tut is set to use an external heartbeat.\n\nWhen the app is not on screen, the external heartbeat will wake it up in the background so that BG updates are received and alarms can be triggered.\n\nMake sure you add a valid heartbeat device in the Bluetooth screen.\n\nThis mode has very little impact on the battery of your device but will only work if a valid heartbeat is running.";
@@ -199,69 +199,69 @@
 /// When clicking the event interval setting, a pop up asks for minimum number of minutes between two events, this is the pop up message - this is used for setting the interval between two calendar events
 
 /// data source settings, enable Nightscout in the Nightscout section
-"settingsviews_nightscoutNotEnabled" = "Nightscout is disabled\n\nTo upload BG values to Nightscout, you must enable it in the Nightscout section.";
+"settingsviews_nightscoutNotEnabled" = "Nightscout devre dışı\n\nKŞ değerlerini Nightscout'a yüklemek için Nightscout bölümünden etkinleştirmelisiniz.";
 
 /// screen dimming is disabled
-"settingsviews_screenLockDimmingTypeDisabled" = "Disabled";
+"settingsviews_screenLockDimmingTypeDisabled" = "Devre Dışı";
 
 /// When clicking the speak interval setting, a pop up asks for minimum number of minutes between two speech events, this is the pop up message - this is used for setting the interval between two spoken bg announcements
-"settingsviews_SpeakIntervalTitle" = "Speak Interval";
+"settingsviews_SpeakIntervalTitle" = "Konuşma Aralığı";
 
 /// libre link up follower settings, pop up that asks user to enter their region
-"settingsviews_libreLinkUpReAcceptNeeded" = "Need to accept terms";
+"settingsviews_libreLinkUpReAcceptNeeded" = "Şartların kabul edilmesi gerekiyor";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two bg announcements, this is the pop up message - this is used for setting the interval between two readings in BG announcements, Speak readings, Apple Watch
-"settingsviews_SpeakIntervalMessage" = "Minimum interval between two voice announcements";
+"settingsviews_SpeakIntervalMessage" = "İki sesli duyuru arasındaki minimum süre";
 
 /// home screen settings, should the mini-chart be shown
 "settingsviews_showMiniChart" = "Mini Grafik";
 "settingsviews_showSensorNoise" = "Sensör Gürültüsü";
 
 /// When clicking the threshold setting, a pop up asks for the number of units under which a bolus should be considered a micro-bolus
-"settingsviews_smallBolusTreatmentThresholdMessage" = "Below how many units should we consider a bolus as a micro-bolus?\n\n(Recommended value: 1.0U)";
+"settingsviews_smallBolusTreatmentThresholdMessage" = "Kaç ünitenin altındaki bolus mikro bolus olarak kabul edilsin?\n\n(Önerilen değer: 1.0U)";
 
 /// data source settings, the name of the person we are following
 "settingsviews_followerPatientName" = "Takma ad";
 
 /// Housekeeper retention period, for how long to store data
-"settingsviews_housekeeperRetentionPeriod" = "Retention Period";
+"settingsviews_housekeeperRetentionPeriod" = "Saklama Süresi";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabled" = "Disabled";
+"settingsviews_followerKeepAliveTypeDisabled" = "Devre Dışı";
 
 /// screen dimming is dark
-"settingsviews_screenLockDimmingTypeDark" = "Dark";
+"settingsviews_screenLockDimmingTypeDark" = "Karanlık";
 
 /// screen dimming is dimmed
-"settingsviews_screenLockDimmingTypeDimmed" = "Dimmed";
+"settingsviews_screenLockDimmingTypeDimmed" = "Loş";
 
 /// When clicking the retention setting, a pop up asks for how many days should data be stored
-"settingsviews_housekeeperRetentionPeriodMessage" = "For how many days should data be stored? (Min 90, Max 365)\n\n(Recommended: 90 days)";
+"settingsviews_housekeeperRetentionPeriodMessage" = "Veriler kaç gün saklansın? (En az 90, en çok 365)\n\n(Önerilen: 90 gün)";
 
 /// When enabled, then it should be possible to run xDrip4iOS/Libre 2 in parallel with other app(s)
-"suppressUnLockPayLoad" = "Suppress Unlock Payload";
+"suppressUnLockPayLoad" = "Kilit Açma Yükünü Bastır";
 
 /// Settings screen for loop delay
-"Select Value" = "Select Value";
+"Select Value" = "Değer Seçin";
 
 
 /// Settings screen for loop delay, explanatory text for time
-"expanatoryTextSelectTime" = "As of what time should the value apply";
+"expanatoryTextSelectTime" = "Değer hangi saatten itibaren geçerli olsun";
 
 /// data source settings, data source region
-"settingsviews_labelFollowerDataSourceRegion" = "Region";
+"settingsviews_labelFollowerDataSourceRegion" = "Bölge";
 
 /// data source settings, data source
 "settingsviews_labelFollowerDataSourceType" = "Veri kaynağı";
 
 /// data source settings, enable Nightscout upload
-"settingsviews_labelUploadDataToNightscout" = "Upload to Nightscout";
+"settingsviews_labelUploadDataToNightscout" = "Nightscout'a Yükle";
 
 /// data source settings, ask the user to enter the name of the person we are following if they want to - it's optional
-"settingsviews_followerPatientNameMessage" = "Here you can optionally write an alias for the person you are following.";
+"settingsviews_followerPatientNameMessage" = "Burada takip ettiğiniz kişi için isteğe bağlı bir takma ad yazabilirsiniz.";
 
 /// follower settings, pop up that asks user to enter their password
-"settingsviews_enterPassword" = "Enter your password";
+"settingsviews_enterPassword" = "Parolanızı girin";
 
 /// The user needs to update their calendar permissions
 
@@ -274,7 +274,7 @@
 /// Should loop data be shared only every 5 minutes
 
 /// screen dimming is very dark
-"settingsviews_screenLockDimmingTypeVeryDark" = "Very Dark";
+"settingsviews_screenLockDimmingTypeVeryDark" = "Çok Karanlık";
 
 // MARK: - Automatic Housekeeping
 "settingsviews_dataManagementStorageInfo" = "Depolama bilgisi";
@@ -456,17 +456,17 @@
 "settingsviews_backupCreatedWithAppVersion" = "Yedekleme, %@ uygulama sürümüyle oluşturuldu.";
 "settingsviews_backupErrorUnsupportedVersion" = "Yedekleme formatı sürümü %d, uygulamanın bu sürümü tarafından desteklenmiyor.";
 "settingsviews_backupErrorFinalValueMismatch" = "Saklanan glikoz değerleri, %@'in okunması için yedeklenen nihai değeri yeniden oluşturmaz.";
-"settingsviews_nightscoutImportBatchCount" = "%1$d of %2$d";
+"settingsviews_nightscoutImportBatchCount" = "%1$d / %2$d";
 "settingsviews_nightscoutImportBgAddedProgress" = "Kan şekeri okumaları eklendi: %@";
 "settingsviews_nightscoutImportTreatmentsAddedProgress" = "Eklenen tedaviler: %@";
 "settingsviews_nightscoutImportConfirmation" = "%2$@'in son %1$d günleri içe aktarılsın mı? Mevcut yerel kayıtlar tutulacak ve kopyalar atlanacak.";
 "settingsviews_nightscoutImportBatchProgress" = "%1$d toplu %2$d";
 "settingsviews_nightscoutImportErrorServer" = "Nightscout geçici bir sunucu hatası verdi (HTTP %d). İçe aktarmaya daha sonra devam edin.";
 "settingsviews_nightscoutImportErrorUnexpectedStatus" = "Nightscout beklenmedik bir yanıt verdi (HTTP %d).";
-"sensorNoiseSensitivity" = "Sensor Sensitivity";
-"sensorNoiseSensitivitySensitive" = "Sensitive";
+"sensorNoiseSensitivity" = "Sensör Hassasiyeti";
+"sensorNoiseSensitivitySensitive" = "Hassas";
 "sensorNoiseSensitivityNormal" = "Normal";
-"sensorNoiseSensitivityPermissive" = "Permissive";
+"sensorNoiseSensitivityPermissive" = "Toleranslı";
 "settingsviews_followerServiceStatus" = "Durum";
 "settingsviews_liveActivityDisabledInFollowerModeMessage" = "Live Activities are disabled in Follower Mode unless an external heartbeat is used for Canlı tut.";
 "settingsviews_infoContactsKeepAliveDisabled" = "You are using Follower mode with Canlı tut disabled.\n\nContact Image function cannot work without Canlı tut.";
@@ -552,7 +552,7 @@
 "therapy.smallCarbThreshold" = "Az karb.";
 "therapy.treatmentThresholdsExplanation" = "Eşik altındaki bolus ve karbonhidrat değerleri grafikte gizlenir. Bolus eşiği tedavi listesindeki küçük bolusları da tanımlar. «Yok» tüm değerleri gösterir.";
 
-"settingsviews_useIFCCA1C" = "HbA1c in mmols/mol";
+"settingsviews_useIFCCA1C" = "HbA1c (mmol/mol)";
 
 "settingsviews_statisticsEstimate" = "Glikoz Tahmini";
 
@@ -588,3 +588,73 @@
 "settingsviews_shareReport" = "Raporu Paylaş";
 "settingsviews_shareIssueReport" = "Sorun Raporunu Paylaş";
 "settingsviews_reportShareFailed" = "Günlük dosyaları hazırlanamadı. Lütfen tekrar deneyin.";
+"calendarShareStatusFooter" = "Geçmişi Dahil Et, takipçilerin kaçırılan değerleri doldurabilmesi için her yüke son 5 dakikalık okumaları ekler. Güvenilirliğe yardımcı olmak için iyi çalışan en düşük geçmiş miktarını seçin.";
+"settingsviews_highValueMessage" = "Yüksek eşik için glukoz değerini girin.";
+"calendarShareAliasMessage" = "Bu ad takipçi cihazlara gönderilir.";
+"settingsviews_shareUploadUnchecked" = "Kontrol edilmedi";
+"calendarShareLastValue" = "Son Değer";
+"calendarFollowHistoricalReadingsFooter" = "En son yükteki geçmiş okumalar yalnızca yerelde eksikse içe aktarılır.";
+"settingsviews_shareUploadReceiverNotAssigned" = "Bu alıcı Dexcom hesabınıza atanmamış. Resmi Dexcom uygulamasını kullanarak kaydedin.";
+"settingsviews_shareUploadFailed" = "Yükleme başarısız";
+"settingsviews_homeScreenScreenLockSectionTitle" = "Ekran Kilidi";
+"calendarShareConnectionFooter" = "Takipçi cihazların da erişebileceği paylaşılan bir takvim seçin. En iyi çalışma için iCloud paylaşımlı takvim önerilir.";
+"settingsviews_cleanDataDeviceStatus" = "Cihaz Durumu";
+"settingsviews_shareUploadAccountVerified" = "Hesap doğrulandı";
+"nightscoutToken" = "Token";
+"warningChangeToFollowerDexcomShare" = "Dexcom Share Takipçi moduna geçmek 'Dexcom Share'e Yükle' seçeneğini devre dışı bırakacaktır.";
+"calendarShareAlias" = "Takma Ad";
+"settingsviews_followerKeepAliveTypeContinuousMessage" = "Canlı tutma sürekli olarak ayarlandı.\n\nUygulama ekranda değilken, takipçi güncellemelerini ve alarmları çalışır durumda tutmak için en güçlü girişim olarak sessiz ses sürekli çalınır.\n\nBu mod iOS'un uygulamayı aktif tutacağını garanti edemez. Pil ömrü üzerinde en yüksek etkiye sahiptir ve yalnızca Agresif güvenilir değilse kullanılmalıdır.";
+"settingsviews_shareUploadLocalOnly" = "Dexcom Share'e yükleme yalnızca yerel bir glukoz kaynağıyla kullanılabilir.";
+"settingsviews_urgentHighValueMessage" = "Acil yüksek eşik için glukoz değerini girin.";
+"settingsviews_sensorHealthNotificationsFooter" = "Uzun süreli sensör gürültüsü, düz sinyal ve geçici sensör sorunları için isteğe bağlı sistem bildirimlerini kontrol eder. Sensör/Verici Arızası diğer alarmlarla birlikte yapılandırılır. Kapatılabilir Ana Ekran bannerı kullanılabilir kalır.";
+"settingsviews_nightscoutImportDeviceStatus" = "Cihaz Durumu";
+"settingsviews_issueReportSectionFooter" = "Bir xDrip4iOS geliştiricisi tarafından istenmedikçe Sorun Raporu göndermeyin, aksi halde raporunuz otomatik olarak silinecektir.";
+"settingsviews_infoContactsAccessRestricted" = "%@ uygulamasına kişilerinize erişim yetkisi veremezsiniz. Bunun nedeni muhtemelen ebeveyn denetimleri gibi etkin kısıtlamalardır.";
+"settingsviews_urgentLowValueMessage" = "Acil düşük eşik için glukoz değerini girin.";
+"calendarFollowCalendarFooter" = "Ana iPhone'un paylaştığı takvimi seçin. En iyi sonuç için paylaşımlı bir iCloud takvimi kullanın.";
+"settingsviews_homeScreenMainChartSectionFooter" = "Bu seçenekler glukoz verilerinin ana grafikte nasıl görüntüleneceğini kontrol eder.";
+"settingsviews_storeFrequentReadingsInHealthKitMessage" = "Bu seçenek 5 dakikalık yazma sınırlarını geçersiz kılar ve Apple Health'e çok daha sık veri eklenmesine izin verir. Örneğin 60 saniyelik Libre 2 Direct değerleri gibi.\n\nLütfen bu seçeneği yalnızca daha sık veriye gerçekten ihtiyaç duyuyorsanız/istiyorsanız etkinleştirin. Çoğu kullanıcı bu seçeneği devre dışı bırakmalıdır.";
+"enterNightscoutPortNumber" = "Port Numarasını Girin";
+"settingsviews_storeFrequentReadingsInNightscout" = "Sık Nightscout Yüklemeleri";
+"settingsviews_followerKeepAliveTypeContinuous" = "Sürekli";
+"settingsviews_contactImageSectionTitle" = "Kişi Resmi";
+"infoCalendarAccessWriteOnly" = "Takvim erişim iznini 'Yalnızca Etkinlik Ekle' seçeneğinden 'Tam Erişim' seçeneğine güncellemeden Takvim Paylaşımı'nı kullanamazsınız.\n\niPhone Ayarlar > Uygulamalar > %@ > Takvimler bölümüne gidin ve 'Tam Erişim'i seçin.";
+"warningChangeFromMasterToFollowerDexcomShare" = "Ana moddan Dexcom Share Takipçi moduna geçmek mevcut sensörünüzü durduracak ve ayrıca 'Dexcom Share'e Yükle' seçeneğini devre dışı bırakacaktır. Devam etmek istiyor musunuz?";
+"calendarEventPreview" = "Takvim Etkinliği";
+"settingsviews_labelCalibrationTitle" = "Sensör Kalibrasyonu";
+"settingsviews_shareUploadConfigurationRequired" = "Kullanıcı adınızı, parolanızı ve alıcı seri numarasını girin.";
+"settingsviews_shareUploadTooLarge" = "Dexcom Share aşırı büyük bir yüklemeyi reddetti.";
+"calendarShareStatus" = "Paylaşım Durumu";
+"settingsviews_nightscoutImportDeviceStatusAdded" = "Cihaz Durumu Eklendi";
+"settingsviews_shareUploadLastConnection" = "Son başarılı bağlantı";
+"settingsviews_lowValueMessage" = "Düşük eşik için glukoz değerini girin.";
+"settingsviews_contactImageCreatedByString" = "Kişi otomatik olarak şu tarafından oluşturuldu:";
+"settingsviews_targetValueMessage" = "Hedefi devre dışı bırakmak için 0 olarak ayarlayın";
+"settingsviews_labelCalibrationType" = "Kalibrasyon Türü";
+"settingsviews_medtrumSelectedPatient" = "Seçilen Hasta";
+"calendarFollowStatusFooter" = "Paylaşılan Takvim, arka plan güncellemeleri sırasında seçilen takvimdeki en son kodlanmış etkinlik notlarını okur.";
+"settingsviews_CalenderIntervalTitle" = "Etkinlik Aralığı";
+"settingsviews_shareUploadNever" = "Henüz değil";
+"calendarShareIncludeHistory" = "Geçmişi Dahil Et";
+"settingsviews_labelAlgorithmType" = "Algoritma Türü";
+"giveNightscoutToken" = "Token Girin";
+"settingsviews_shareUploadCheckFooter" = "Bağlantıyı Test Et hesabınızı doğrular. Alıcı seri numarası okumalar yüklenirken doğrulanır.";
+"settingsviews_medtrumSelectPatientFromList" = "Listeden Hasta Seçin";
+"settingsviews_homeScreenScreenLockSectionFooter" = "Bu seçenekler uygulama açık bırakıldığında veya kilitlendiğinde Ana ekranın nasıl davranacağını kontrol eder.";
+"settingsviews_displayVisualIndicatorInCalendarEvent" = "Görsel Gösterge";
+"calendarEventSettingsFooter" = "Bu seçenekler yalnızca görünen takvim etkinliği başlığını değiştirir.";
+"calendarFollowFirstHistoricalReading" = "İlk Okuma";
+"settingsviews_storeFrequentReadingsInHealthKit" = "Sık HealthKit Yazmaları";
+"calendarFollowNoHistoricalData" = "Geçmiş veri bulunamadı";
+"settingsviews_sensorHealthNotifications" = "Sensör Sağlık Uyarıları";
+"settingsviews_cleanDataDeviceStatusDeleted" = "Cihaz Durumu Silindi";
+"createCalendarEvent" = "Takvim Paylaşımı";
+"calendarFollowHistoricalReadings" = "Geçmiş Okumalar";
+"settingsviews_CalenderIntervalMessage" = "İki takvim etkinliği arasındaki minimum süre";
+"calendarFollowHistoricalCount" = "Sayı";
+"settingsviews_glucoseRangesSectionFooter" = "Glukoz Aralıkları yalnızca ana grafik görüntüsünün renklerini etkiler. Alarm değerleriyle ilgili değildir.";
+"settingsviews_shareUploadError" = "Yükleme hatası";
+"settingsviews_shareUploadPaused" = "Programa göre duraklatıldı";
+"calendarEventsSectionTitle" = "Takvim Paylaşımı";
+"settingsviews_shareUploadLastUpload" = "Son başarılı yükleme";
+"settingsviews_medtrumSelectPatient" = "Hasta Seçin";

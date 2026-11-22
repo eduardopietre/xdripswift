@@ -4,3 +4,6 @@
 "batteryLevel" = "مستوى البطارية";
 "noBluetoothPeripheralsConfigured" = "لم يتم إعداد أجهزة Bluetooth";
 "noMultipleActiveCGMsAllowed" = "لا يمكن أن يكون لديك أكثر من جهاز ارسال متصل.\nحدد أجهزة الارسال الأخرى وضغط على إيقاف البحث أو قطع الاتصال أو فقط قم بحذف الأجهزة الأخرى";
+"heartbeatDeviceFooter" = "جهاز النبض (heartbeat) لا يوفّر قراءات جلوكوز. يستخدم نشاط Bluetooth لإيقاظ التطبيق في الخلفية كي تستمر تحديثات المتابعة والتنبيهات والشارات والإشعارات في العمل.";
+"m5StackDeviceFooter" = "أجهزة M5Stack شاشات خارجية صغيرة مبنية على ESP32. يمكنها عرض قيم الجلوكوز المرسلة من xDrip4iOS عبر Bluetooth.";
+"noMultipleActiveCGMsAllowedFooter" = "لديك CGM متصل بالفعل.";

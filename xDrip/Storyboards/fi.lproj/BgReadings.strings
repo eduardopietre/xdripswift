@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "Aikaleima";
 "backfilledAtFooterFormat" = "Täydennetty %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "Verensokerilukema";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "Raakadata";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "Ei näytettäviä lukemia...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "Laskettu arvo";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "Yleiset";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "Verensokerilukemat";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "Sisäiset tiedot";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "Trendinuoli";
 
 "glucoseRange" = "Glukoosialue";
 "bgRangeUrgent" = "Kiireellinen";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "Vastaanotettu Watchin kautta klo %@";
 "backfilledViaWatchAtFooterFormat" = "Täydennetty Watchin kautta klo %@";
 "receivedViaWatch" = "Vastaanotettu Watchin kautta";
+"finalGlucose" = "Verensokeriarvo";
+"glucoseValueSectionHeader" = "Verensokeriarvo";
+"backfilled" = "Täytetty jälkikäteen";
+"rawValue" = "Raaka-arvo";
+"smoothedValue" = "Tasoitettu arvo";
+"date" = "Päivämäärä";
+"calibratedValue" = "Kalibroitu arvo";
+"adjustedValue" = "Säädetty arvo";
+"finalValue" = "Lopullinen arvo";

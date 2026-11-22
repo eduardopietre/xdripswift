@@ -69,3 +69,5 @@
 "sensorExpiry.hoursHelp" = "Gib eine ganze Zahl von 1 bis 48 Stunden ein.";
 "sensorExpiry.endingSoonBody" = "Die voraussichtliche Laufzeit deines Sensors endet am %@.";
 "sensorExpiry.expectedExpiryBody" = "Dein Sensor hat sein voraussichtliches Ende erreicht (%@).";
+"alerts_sensortransmitterfailure" = "Sensor-/Transmitter-Ausfall";
+"alerts_notloopingalerttitle" = "Kein Looping";

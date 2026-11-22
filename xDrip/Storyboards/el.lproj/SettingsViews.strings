@@ -41,7 +41,7 @@
 "settingsviews_showStatistics" = "Στατιστικά";
 "settingsviews_daysToUseStatisticsTitle" = "Μέρες για υπολογισμό;";
 "settingsviews_daysToUseStatisticsMessage" = "Μέγιστος αριθμός ημερών για στατιστικό υπολογισμό;\n\n(Εισαγάγετε 0 για υπολογισμό από σήμερα τα μεσάνυχτα)";
-"settingsviews_useIFCCGMI" = "GMI in mmols/mol";
+"settingsviews_useIFCCGMI" = "GMI σε mmol/mol";
 "settingsviews_sectiontitletransmitter" = "Πομπός";
 "settingsviews_transmittertype" = "Τύπος πομπού";
 "settingsviews_transmitterid" = "Αναγνωριστικό πομπού";
@@ -139,106 +139,106 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// transmitter settings, to explain that the reset option only works for certain transmitters
-"settingsviews_resetDexcomTransmitterMessage" = "This option will attempt to reset your Anubis transmitter on the next connection.";
+"settingsviews_resetDexcomTransmitterMessage" = "Αυτή η επιλογή θα προσπαθήσει να επαναφέρει τον πομπό Anubis στην επόμενη σύνδεση.";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressiveMessage" = "Keep-alive is set to aggressive.\n\nWhen the app is not on screen, we will aggressively attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a very noticeable impact on the battery of your device and should only be used if absolutely necessary.";
+"settingsviews_followerKeepAliveTypeAggressiveMessage" = "Το Keep-alive έχει οριστεί σε επιθετικό.\n\nΌταν η εφαρμογή δεν είναι στην οθόνη, θα προσπαθούμε επιθετικά να την κρατάμε ενεργή στο παρασκήνιο ώστε να λαμβάνονται ενημερώσεις BG και να ενεργοποιούνται ειδοποιήσεις.\n\nΑυτή η λειτουργία έχει πολύ αισθητή επίδραση στη μπαταρία της συσκευής σας και πρέπει να χρησιμοποιείται μόνο αν είναι απολύτως απαραίτητο.";
 
 /// libre link up follower settings, no active sensor
-"settingsviews_libreLinkUpNoActiveSensor" = "No active sensor data";
+"settingsviews_libreLinkUpNoActiveSensor" = "Δεν υπάρχουν δεδομένα ενεργού αισθητήρα";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabledMessage" = "Keep-alive is disabled.\n\nWhen the app is not on screen, no alarms, app badges, notifications or BG updates will take place.\n\nThe app will remain sleeping until you open it again.\n\nThis mode has very little impact on the battery of your device.";
+"settingsviews_followerKeepAliveTypeDisabledMessage" = "Το Keep-alive είναι απενεργοποιημένο.\n\nΌταν η εφαρμογή δεν είναι στην οθόνη, δεν θα γίνονται ειδοποιήσεις, εμβλήματα εφαρμογής, γνωστοποιήσεις ή ενημερώσεις BG.\n\nΗ εφαρμογή θα παραμείνει σε αναστολή μέχρι να την ανοίξετε ξανά.\n\nΑυτή η λειτουργία έχει πολύ μικρή επίδραση στη μπαταρία της συσκευής σας.";
 
 /// statistics settings, prefer time in tight range
-"settingsviews_timeInRangeTypeTightRange" = "Tight Range";
+"settingsviews_timeInRangeTypeTightRange" = "Στενό εύρος";
 
 /// data source settings, keep-alive mode is set to normal
-"settingsviews_followerKeepAliveTypeNormal" = "Normal";
+"settingsviews_followerKeepAliveTypeNormal" = "Κανονική";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressive" = "Aggressive";
+"settingsviews_followerKeepAliveTypeAggressive" = "Επιθετικό";
 
 /// statistics settings, prefer standard time in range
 "settingsviews_timeInRangeTypeStandardRange" = "Τυπικό";
 
 /// statistics settings, the type of time in range selected
-"settingsviews_labelTimeInRangeType" = "Time In Range";
+"settingsviews_labelTimeInRangeType" = "Χρόνος εντός στόχου";
 
 /// data source settings, enable background keep alive
 "settingsviews_labelfollowerKeepAliveType" = "Keep-alive";
 
 /// this setting is required
-"settingsviews_valueIsRequired" = "⚠️ Required";
+"settingsviews_valueIsRequired" = "⚠️ Απαιτείται";
 
 /// treatments settings, offset the carb treatments on main chart
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 
 /// statistics settings, prefer user-defined range
-"settingsviews_timeInRangeTypeUserDefinedRange" = "User Range";
+"settingsviews_timeInRangeTypeUserDefinedRange" = "Εύρος χρήστη";
 
 /// CGM data source settings, section title
 "settingsviews_sectionTitleDataSource" = "Πηγή δεδομένων";
 "settingsviews_dataSourceMasterDevicesFooter" = "Προσθέστε συμβατές συσκευές στην καρτέλα Συσκευές.";
 
 /// follower settings, pop up that asks user to enter their username
-"settingsviews_enterUsername" = "Enter your username";
+"settingsviews_enterUsername" = "Εισαγάγετε το όνομα χρήστη";
 
 /// data source settings, show that Nightscout is disabled
-"settingsviews_nightscoutNotEnabledRowText" = "Disabled";
+"settingsviews_nightscoutNotEnabledRowText" = "Απενεργοποιημένο";
 
 /// data source settings, keep-alive mode is set to use an external heartbeat
-"settingsviews_followerKeepAliveTypeHeartbeatMessage" = "Keep-alive is set to use an external heartbeat.\n\nWhen the app is not on screen, the external heartbeat will wake it up in the background so that BG updates are received and alarms can be triggered.\n\nMake sure you add a valid heartbeat device in the Bluetooth screen.\n\nThis mode has very little impact on the battery of your device but will only work if a valid heartbeat is running.";
+"settingsviews_followerKeepAliveTypeHeartbeatMessage" = "Το Keep-alive έχει οριστεί να χρησιμοποιεί εξωτερικό heartbeat.\n\nΌταν η εφαρμογή δεν είναι στην οθόνη, το εξωτερικό heartbeat θα την ξυπνά στο παρασκήνιο ώστε να λαμβάνονται ενημερώσεις BG και να ενεργοποιούνται ειδοποιήσεις.\n\nΒεβαιωθείτε ότι έχετε προσθέσει έγκυρη συσκευή heartbeat στην οθόνη Bluetooth.\n\nΑυτή η λειτουργία έχει πολύ μικρή επίδραση στη μπαταρία της συσκευής σας, αλλά λειτουργεί μόνο αν υπάρχει ενεργό έγκυρο heartbeat.";
 
 /// When clicking the event interval setting, a pop up asks for minimum number of minutes between two events, this is the pop up message - this is used for setting the interval between two calendar events
 
 /// data source settings, enable Nightscout in the Nightscout section
-"settingsviews_nightscoutNotEnabled" = "Nightscout is disabled\n\nTo upload BG values to Nightscout, you must enable it in the Nightscout section.";
+"settingsviews_nightscoutNotEnabled" = "Το Nightscout είναι απενεργοποιημένο\n\nΓια να μεταφορτώσετε τιμές BG στο Nightscout, πρέπει να το ενεργοποιήσετε στην ενότητα Nightscout.";
 
 /// screen dimming is disabled
-"settingsviews_screenLockDimmingTypeDisabled" = "Disabled";
+"settingsviews_screenLockDimmingTypeDisabled" = "Απενεργοποιημένο";
 
 /// When clicking the speak interval setting, a pop up asks for minimum number of minutes between two speech events, this is the pop up message - this is used for setting the interval between two spoken bg announcements
-"settingsviews_SpeakIntervalTitle" = "Speak Interval";
+"settingsviews_SpeakIntervalTitle" = "Διάστημα εκφώνησης";
 
 /// libre link up follower settings, pop up that asks user to enter their region
-"settingsviews_libreLinkUpReAcceptNeeded" = "Need to accept terms";
+"settingsviews_libreLinkUpReAcceptNeeded" = "Απαιτείται αποδοχή όρων";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two bg announcements, this is the pop up message - this is used for setting the interval between two readings in BG announcements, Speak readings, Apple Watch
-"settingsviews_SpeakIntervalMessage" = "Minimum interval between two voice announcements";
+"settingsviews_SpeakIntervalMessage" = "Ελάχιστο διάστημα μεταξύ δύο φωνητικών ανακοινώσεων";
 
 /// data source settings, the name of the person we are following
 "settingsviews_followerPatientName" = "Ψευδώνυμο";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabled" = "Disabled";
+"settingsviews_followerKeepAliveTypeDisabled" = "Απενεργοποιημένο";
 
 /// screen dimming is dark
-"settingsviews_screenLockDimmingTypeDark" = "Dark";
+"settingsviews_screenLockDimmingTypeDark" = "Σκούρα";
 
 /// screen dimming is dimmed
-"settingsviews_screenLockDimmingTypeDimmed" = "Dimmed";
+"settingsviews_screenLockDimmingTypeDimmed" = "Αμυδρή";
 
 /// data source settings, data source region
-"settingsviews_labelFollowerDataSourceRegion" = "Region";
+"settingsviews_labelFollowerDataSourceRegion" = "Περιοχή";
 
 /// data source settings, data source
 "settingsviews_labelFollowerDataSourceType" = "Πηγή δεδομένων";
 
 /// data source settings, enable Nightscout upload
-"settingsviews_labelUploadDataToNightscout" = "Upload to Nightscout";
+"settingsviews_labelUploadDataToNightscout" = "Μεταφόρτωση στο Nightscout";
 
 /// data source settings, ask the user to enter the name of the person we are following if they want to - it's optional
-"settingsviews_followerPatientNameMessage" = "Here you can optionally write an alias for the person you are following.";
+"settingsviews_followerPatientNameMessage" = "Εδώ μπορείτε προαιρετικά να γράψετε ένα ψευδώνυμο για το άτομο που παρακολουθείτε.";
 
 /// follower settings, pop up that asks user to enter their password
-"settingsviews_enterPassword" = "Enter your password";
+"settingsviews_enterPassword" = "Εισαγάγετε τον κωδικό σας";
 
 /// The user needs to update their calendar permissions
 
 /// data source settings, keep-alive mode is set to normal
-"settingsviews_followerKeepAliveTypeNormalMessage" = "Keep-alive is set to normal operation.\n\nWhen the app is not on screen, we will attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a noticeable impact on the battery of your device.";
+"settingsviews_followerKeepAliveTypeNormalMessage" = "Το Keep-alive έχει οριστεί σε κανονική λειτουργία.\n\nΌταν η εφαρμογή δεν είναι στην οθόνη, θα προσπαθούμε να την κρατάμε ενεργή στο παρασκήνιο ώστε να λαμβάνονται ενημερώσεις BG και να ενεργοποιούνται ειδοποιήσεις.\n\nΑυτή η λειτουργία έχει αισθητή επίδραση στη μπαταρία της συσκευής σας.";
 
 /// home screen settings, should the screen be dimmed when the screen is locked
 "settingsviews_screenLockDimmingTypeWhenScreenIsLocked" = "Σκοτείνιασμα";
@@ -246,7 +246,7 @@
 /// Should loop data be shared only every 5 minutes
 
 /// screen dimming is very dark
-"settingsviews_screenLockDimmingTypeVeryDark" = "Very Dark";
+"settingsviews_screenLockDimmingTypeVeryDark" = "Πολύ σκούρα";
 
 // MARK: - Automatic Housekeeping
 "settingsviews_dataManagementStorageInfo" = "Πληροφορίες αποθήκευσης";
@@ -374,7 +374,7 @@
 "settingsviews_backupRestoreAccounts" = "Επαναφορά λογαριασμών";
 "settingsviews_backupReplaceAndRestore" = "Αντικατάσταση και επαναφορά";
 "settingsviews_backupRestoreSummary" = "Επαναφορά περίληψης";
-"settingsviews_backupBgReadingsAppliedFrom" = "BG Readings Applied From";
+"settingsviews_backupBgReadingsAppliedFrom" = "Μετρήσεις BG εφαρμόστηκαν από";
 "settingsviews_backupBgReadingsAdded" = "Προστέθηκαν αναγνώσεις BG";
 "settingsviews_backupBgReadingsSkipped" = "Παράλειψη αναγνώσεων BG";
 "settingsviews_backupTreatmentsAdded" = "Προστέθηκαν θεραπείες";
@@ -435,13 +435,13 @@
 "settingsviews_nightscoutImportBatchProgress" = "Παρτίδα %1$d του %2$d";
 "settingsviews_nightscoutImportErrorServer" = "Το Nightscout επέστρεψε ένα προσωρινό σφάλμα διακομιστή (HTTP %d). Συνεχίστε την εισαγωγή αργότερα.";
 "settingsviews_nightscoutImportErrorUnexpectedStatus" = "Το Nightscout επέστρεψε μια απροσδόκητη απόκριση (HTTP %d).";
-"sensorNoiseSensitivity" = "Sensor Sensitivity";
-"sensorNoiseSensitivitySensitive" = "Sensitive";
-"sensorNoiseSensitivityNormal" = "Normal";
-"sensorNoiseSensitivityPermissive" = "Permissive";
+"sensorNoiseSensitivity" = "Ευαισθησία αισθητήρα";
+"sensorNoiseSensitivitySensitive" = "Ευαίσθητη";
+"sensorNoiseSensitivityNormal" = "Κανονική";
+"sensorNoiseSensitivityPermissive" = "Ανεκτική";
 "settingsviews_followerServiceStatus" = "Κατάσταση";
-"settingsviews_liveActivityDisabledInFollowerModeMessage" = "Live Activities are disabled in Follower Mode unless an external heartbeat is used for Keep-alive.";
-"settingsviews_infoContactsKeepAliveDisabled" = "You are using Follower mode with Keep-alive disabled.\n\nContact Image function cannot work without Keep-alive.";
+"settingsviews_liveActivityDisabledInFollowerModeMessage" = "Οι Live Activities είναι απενεργοποιημένες στη λειτουργία Ακολούθου, εκτός αν χρησιμοποιείται εξωτερικό heartbeat για το Keep-alive.";
+"settingsviews_infoContactsKeepAliveDisabled" = "Χρησιμοποιείτε τη λειτουργία Ακολούθου με απενεργοποιημένο το Keep-alive.\n\nΗ λειτουργία Εικόνα επαφής δεν μπορεί να λειτουργήσει χωρίς Keep-alive.";
 
 /// Προβολή αυτόματης βασικής χορήγησης CareLink
 "settingsviews_careLinkTherapyDisplay" = "Προβολή θεραπείας";
@@ -524,7 +524,7 @@
 "therapy.smallCarbThreshold" = "Λίγοι Υ/Α";
 "therapy.treatmentThresholdsExplanation" = "Οι τιμές bolus και υδατανθράκων κάτω από τα όρια κρύβονται στο γράφημα. Το όριο bolus ορίζει και τα μικρά bolus στη λίστα θεραπειών. Το «Όχι» δείχνει όλες.";
 
-"settingsviews_useIFCCA1C" = "HbA1c in mmols/mol";
+"settingsviews_useIFCCA1C" = "HbA1c σε mmol/mol";
 
 "settingsviews_statisticsEstimate" = "Εκτίμηση γλυκόζης";
 
@@ -560,3 +560,73 @@
 "settingsviews_shareReport" = "Κοινοποίηση αναφοράς";
 "settingsviews_shareIssueReport" = "Κοινοποίηση αναφοράς προβλήματος";
 "settingsviews_reportShareFailed" = "Δεν ήταν δυνατή η προετοιμασία των αρχείων καταγραφής. Δοκιμάστε ξανά.";
+"calendarShareStatusFooter" = "Το Συμπερίληψη ιστορικού προσθέτει πρόσφατες μετρήσεις 5 λεπτών σε κάθε payload, ώστε οι ακόλουθοι να συμπληρώνουν χαμένες τιμές. Για καλύτερη αξιοπιστία, επιλέξτε τη μικρότερη ποσότητα ιστορικού που λειτουργεί καλά.";
+"settingsviews_highValueMessage" = "Εισαγάγετε την τιμή γλυκόζης για το υψηλό όριο.";
+"calendarShareAliasMessage" = "Αυτό το όνομα αποστέλλεται στις συσκευές των ακολούθων.";
+"settingsviews_shareUploadUnchecked" = "Δεν έχει ελεγχθεί";
+"calendarShareLastValue" = "Τελευταία τιμή";
+"calendarFollowHistoricalReadingsFooter" = "Οι ιστορικές μετρήσεις από το τελευταίο payload εισάγονται μόνο όταν λείπουν τοπικά.";
+"settingsviews_shareUploadReceiverNotAssigned" = "Αυτός ο δέκτης δεν έχει ανατεθεί στον λογαριασμό σας Dexcom. Καταχωρίστε τον με την επίσημη εφαρμογή Dexcom.";
+"settingsviews_shareUploadFailed" = "Η μεταφόρτωση απέτυχε";
+"settingsviews_homeScreenScreenLockSectionTitle" = "Κλείδωμα οθόνης";
+"calendarShareConnectionFooter" = "Επιλέξτε ένα κοινόχρηστο ημερολόγιο στο οποίο έχουν πρόσβαση και οι συσκευές των ακολούθων. Για βέλτιστη λειτουργία συνιστάται κοινόχρηστο ημερολόγιο iCloud.";
+"settingsviews_cleanDataDeviceStatus" = "Κατάσταση συσκευής";
+"settingsviews_shareUploadAccountVerified" = "Ο λογαριασμός επαληθεύτηκε";
+"nightscoutToken" = "Token";
+"warningChangeToFollowerDexcomShare" = "Η αλλαγή σε λειτουργία Ακολούθου Dexcom Share θα απενεργοποιήσει τη 'Μεταφόρτωση στο Dexcom Share'.";
+"calendarShareAlias" = "Ψευδώνυμο";
+"settingsviews_followerKeepAliveTypeContinuousMessage" = "Το Keep-alive έχει οριστεί σε συνεχές.\n\nΌταν η εφαρμογή δεν είναι στην οθόνη, θα αναπαράγεται συνεχώς σιωπηλός ήχος, ώστε να γίνεται η μέγιστη δυνατή προσπάθεια να συνεχίσουν να λειτουργούν οι ενημερώσεις και οι ειδοποιήσεις του ακολούθου.\n\nΑυτή η λειτουργία δεν μπορεί να εγγυηθεί ότι το iOS θα κρατά την εφαρμογή ενεργή. Έχει τη μεγαλύτερη επίδραση στη μπαταρία και πρέπει να χρησιμοποιείται μόνο αν η Επιθετική δεν είναι αξιόπιστη.";
+"settingsviews_shareUploadLocalOnly" = "Η μεταφόρτωση στο Dexcom Share είναι διαθέσιμη μόνο με τοπική πηγή γλυκόζης.";
+"settingsviews_urgentHighValueMessage" = "Εισαγάγετε την τιμή γλυκόζης για το επείγον υψηλό όριο.";
+"settingsviews_sensorHealthNotificationsFooter" = "Ελέγχει τις προαιρετικές ειδοποιήσεις συστήματος για παρατεταμένο θόρυβο αισθητήρα, επίπεδο σήμα και προσωρινά προβλήματα αισθητήρα. Η Αποτυχία αισθητήρα/πομπού ρυθμίζεται μαζί με τις άλλες ειδοποιήσεις. Το banner της Αρχικής που μπορεί να κλείσει παραμένει διαθέσιμο.";
+"settingsviews_nightscoutImportDeviceStatus" = "Κατάσταση συσκευής";
+"settingsviews_issueReportSectionFooter" = "Μην στέλνετε Αναφορά προβλήματος αν δεν το ζητήσει προγραμματιστής του xDrip4iOS, διαφορετικά η αναφορά σας θα διαγραφεί αυτόματα.";
+"settingsviews_infoContactsAccessRestricted" = "Δεν μπορείτε να δώσετε στο %@ άδεια πρόσβασης στις επαφές σας. Πιθανώς οφείλεται σε ενεργούς περιορισμούς, όπως ο γονικός έλεγχος.";
+"settingsviews_urgentLowValueMessage" = "Εισαγάγετε την τιμή γλυκόζης για το επείγον χαμηλό όριο.";
+"calendarFollowCalendarFooter" = "Επιλέξτε το ημερολόγιο που κοινοποιείται από το κύριο iPhone. Για καλύτερα αποτελέσματα, χρησιμοποιήστε κοινόχρηστο ημερολόγιο iCloud.";
+"settingsviews_homeScreenMainChartSectionFooter" = "Αυτές οι επιλογές ελέγχουν πώς εμφανίζονται τα δεδομένα γλυκόζης στο κύριο γράφημα.";
+"settingsviews_storeFrequentReadingsInHealthKitMessage" = "Αυτή η επιλογή παρακάμπτει τα όρια εγγραφής των 5 λεπτών και επιτρέπει την προσθήκη πολύ συχνότερων δεδομένων στο Apple Health, π.χ. για τιμές 60 δευτερολέπτων Libre 2 Direct.\n\nΕνεργοποιήστε την μόνο αν πραγματικά χρειάζεστε/θέλετε συχνότερα δεδομένα. Οι περισσότεροι χρήστες πρέπει να την αφήνουν απενεργοποιημένη.";
+"enterNightscoutPortNumber" = "Εισαγάγετε αριθμό θύρας";
+"settingsviews_storeFrequentReadingsInNightscout" = "Συχνές μεταφορτώσεις Nightscout";
+"settingsviews_followerKeepAliveTypeContinuous" = "Συνεχές";
+"settingsviews_contactImageSectionTitle" = "Εικόνα επαφής";
+"infoCalendarAccessWriteOnly" = "Δεν μπορείτε να χρησιμοποιήσετε την Κοινοποίηση ημερολογίου μέχρι να αλλάξετε την άδεια πρόσβασης στο ημερολόγιο από 'Μόνο προσθήκη συμβάντων' σε 'Πλήρης πρόσβαση'.\n\nΜεταβείτε στις Ρυθμίσεις iPhone > Εφαρμογές > %@ > Ημερολόγια και επιλέξτε 'Πλήρης πρόσβαση'.";
+"warningChangeFromMasterToFollowerDexcomShare" = "Η αλλαγή από Κύριο σε Ακόλουθο Dexcom Share θα σταματήσει τον τρέχοντα αισθητήρα σας και θα απενεργοποιήσει τη 'Μεταφόρτωση στο Dexcom Share'. Θέλετε να συνεχίσετε;";
+"calendarEventPreview" = "Συμβάν ημερολογίου";
+"settingsviews_labelCalibrationTitle" = "Βαθμονόμηση αισθητήρα";
+"settingsviews_shareUploadConfigurationRequired" = "Εισαγάγετε το όνομα χρήστη, τον κωδικό και τον σειριακό αριθμό του δέκτη.";
+"settingsviews_shareUploadTooLarge" = "Το Dexcom Share απέρριψε υπερβολικά μεγάλη μεταφόρτωση.";
+"calendarShareStatus" = "Κατάσταση κοινοποίησης";
+"settingsviews_nightscoutImportDeviceStatusAdded" = "Η κατάσταση συσκευής προστέθηκε";
+"settingsviews_shareUploadLastConnection" = "Τελευταία επιτυχής σύνδεση";
+"settingsviews_lowValueMessage" = "Εισαγάγετε την τιμή γλυκόζης για το χαμηλό όριο.";
+"settingsviews_contactImageCreatedByString" = "Επαφή που δημιουργήθηκε αυτόματα από το";
+"settingsviews_targetValueMessage" = "Ορίστε 0 για απενεργοποίηση του στόχου";
+"settingsviews_labelCalibrationType" = "Τύπος βαθμονόμησης";
+"settingsviews_medtrumSelectedPatient" = "Επιλεγμένος ασθενής";
+"calendarFollowStatusFooter" = "Το Κοινόχρηστο ημερολόγιο διαβάζει τις τελευταίες κωδικοποιημένες σημειώσεις συμβάντων από το επιλεγμένο ημερολόγιο κατά τις ενημερώσεις στο παρασκήνιο.";
+"settingsviews_CalenderIntervalTitle" = "Διάστημα συμβάντων";
+"settingsviews_shareUploadNever" = "Όχι ακόμη";
+"calendarShareIncludeHistory" = "Συμπερίληψη ιστορικού";
+"settingsviews_labelAlgorithmType" = "Τύπος αλγορίθμου";
+"giveNightscoutToken" = "Εισαγάγετε token";
+"settingsviews_shareUploadCheckFooter" = "Η Δοκιμή σύνδεσης επαληθεύει τον λογαριασμό σας. Ο σειριακός αριθμός του δέκτη επαληθεύεται κατά τη μεταφόρτωση μετρήσεων.";
+"settingsviews_medtrumSelectPatientFromList" = "Επιλογή ασθενούς από λίστα";
+"settingsviews_homeScreenScreenLockSectionFooter" = "Αυτές οι επιλογές ελέγχουν τη συμπεριφορά της Αρχικής οθόνης όταν η εφαρμογή μένει ανοιχτή ή κλειδωμένη.";
+"settingsviews_displayVisualIndicatorInCalendarEvent" = "Οπτική ένδειξη";
+"calendarEventSettingsFooter" = "Αυτές οι επιλογές αλλάζουν μόνο τον ορατό τίτλο του συμβάντος ημερολογίου.";
+"calendarFollowFirstHistoricalReading" = "Πρώτη μέτρηση";
+"settingsviews_storeFrequentReadingsInHealthKit" = "Συχνές εγγραφές HealthKit";
+"calendarFollowNoHistoricalData" = "Δεν βρέθηκαν ιστορικά δεδομένα";
+"settingsviews_sensorHealthNotifications" = "Προειδοποιήσεις υγείας αισθητήρα";
+"settingsviews_cleanDataDeviceStatusDeleted" = "Η κατάσταση συσκευής διαγράφηκε";
+"createCalendarEvent" = "Κοινοποίηση μέσω ημερολογίου";
+"calendarFollowHistoricalReadings" = "Ιστορικές μετρήσεις";
+"settingsviews_CalenderIntervalMessage" = "Ελάχιστο διάστημα μεταξύ δύο συμβάντων ημερολογίου";
+"calendarFollowHistoricalCount" = "Πλήθος";
+"settingsviews_glucoseRangesSectionFooter" = "Τα Εύρη γλυκόζης επηρεάζουν μόνο τα χρώματα του κύριου γραφήματος. Δεν σχετίζονται με τις τιμές των ειδοποιήσεων.";
+"settingsviews_shareUploadError" = "Σφάλμα μεταφόρτωσης";
+"settingsviews_shareUploadPaused" = "Σε παύση λόγω προγράμματος";
+"calendarEventsSectionTitle" = "Κοινοποίηση μέσω ημερολογίου";
+"settingsviews_shareUploadLastUpload" = "Τελευταία επιτυχής μεταφόρτωση";
+"settingsviews_medtrumSelectPatient" = "Επιλογή ασθενούς";

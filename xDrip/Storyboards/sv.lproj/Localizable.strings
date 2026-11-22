@@ -19,7 +19,7 @@
 "directWatchPausedSinceFormat" = "Sedan %@";
 "directWatchConnecting" = "Väntar…";
 "directWatchCollectedReadings" = "Insamlade avläsningar";
-"directWatchReadingGapFormat" = "(%dm %ds)";
+"directWatchReadingGapFormat" = "(%d min %d s)";
 "directWatchNoCollectedReadings" = "Inga avläsningar insamlade via Watch ännu";
 
 "directWatchSessionStarted" = "Startad kl. %@";

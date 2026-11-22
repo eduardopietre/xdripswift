@@ -1,22 +1,22 @@
-"address" = "Address";
+"address" = "Adresse";
 "status" = "Status";
-"connected" = "Connected";
-"notConnected" = "Not Connected";
-"donotconnect" = "Stop Scanning";
-"selectAliasText" = "Choose an alias for this bluetooth device, the name will be shown in the app and is easier for you to recognize";
-"aliasAlreadyExists" = "There is already a bluetooth device with this alias";
-"confirmDeletionPeripheral" = "Do you want to delete bluetooth device: ";
+"connected" = "Forbundet";
+"notConnected" = "Ikke forbundet";
+"donotconnect" = "Stop søgning";
+"selectAliasText" = "Vælg et alias til denne Bluetooth-enhed. Navnet vises i appen og er nemmere for dig at genkende";
+"aliasAlreadyExists" = "Der findes allerede en Bluetooth-enhed med dette alias";
+"confirmDeletionPeripheral" = "Vil du slette Bluetooth-enheden: ";
 "bluetoothPeripheralAlias" = "Alias";
-"SensorSerialNumber" = "Serial Number";
-"sensorType" = "Sensor Type";
-"serialNumber" = "Serial Number";
-"battery" = "Battery";
+"SensorSerialNumber" = "Serienummer";
+"sensorType" = "Sensortype";
+"serialNumber" = "Serienummer";
+"battery" = "Batteri";
 "versionCode" = "Versionskode";
 "voltageA" = "Spænding A";
 "voltageB" = "Spænding B";
 "waitingForData" = "Venter på data...";
-"needsTransmitterId" = "Missing Transmitter ID";
-"scan" = "Scan";
+"needsTransmitterId" = "Transmitter-ID mangler";
+"scan" = "Søg";
 "medtrumNanoPumpScanNoticeTitle" = "Forbindelse til Medtrum Nano-pumpe";
 "medtrumNanoPumpScanNoticeMessage" = "Denne indstilling opretter forbindelse til Medtrum Nano-pumpen, ikke direkte til Nano CGM-senderen.\n\nFør scanning skal du sikre dig, at EasyPatch kører, er forbundet til pumpen og modtager aktuelle CGM-værdier.\n\nEasyPatch skal altid køre og fortsat modtage værdier.";
 "libre2ScanNoticeTitle" = "Bluetooth for Libre-appen";
@@ -25,24 +25,24 @@
 "dexcomG6ScanNoticeMessage" = "Før scanning skal du tvangslukke Dexcom-appen eller deaktivere dens Bluetooth-tilladelse.\n\nDexcom-appen må ikke være forbundet til senderen, mens denne app scanner eller modtager værdier.";
 "dexcomG7ScanNoticeTitle" = "Dexcom G7-appen er påkrævet";
 "dexcomG7ScanNoticeMessage" = "Før scanning skal du sikre dig, at Dexcom G7-appen kører i baggrunden, er forbundet til sensoren og modtager aktuelle glukoseværdier.\n\nDexcom G7-appen skal altid køre og fortsat modtage værdier.";
-"readyToScan" = "Ready to Scan";
-"scanning" = "Scanning";
-"disconnect" = "Disconnect";
-"tryingToConnect" = "Scanning";
-"notTryingToConnect" = "Not Scanning";
-"connect" = "Connect";
-"connectedAt" = "Connected At";
-"disConnectedAt" = "Disconnected At";
-"resetRequired" = "Reset Transmitter";
-"lastReset" = "Last Reset";
-"lastResetNotKnown" = "Last Reset Timestamp is not known";
-"transmitterResultResult" = "Transmitter Reset Result";
+"readyToScan" = "Klar til søgning";
+"scanning" = "Søger";
+"disconnect" = "Afbryd forbindelse";
+"tryingToConnect" = "Søger";
+"notTryingToConnect" = "Søger ikke";
+"connect" = "Forbind";
+"connectedAt" = "Forbundet kl.";
+"disConnectedAt" = "Afbrudt kl.";
+"resetRequired" = "Nulstil transmitter";
+"lastReset" = "Sidste nulstilling";
+"lastResetNotKnown" = "Tidspunkt for sidste nulstilling er ukendt";
+"transmitterResultResult" = "Resultat af nulstilling af transmitter";
 "bootLoader" = "Bootloader";
-"cannotActiveCGMInFollowerMode" = "You cannot activate or connect to a CGM whilst in Follower Mode.";
-"confirmDisconnectTitle" = "Confirm Disconnect";
-"confirmDisconnectMessage" = "Click 'Disconnect' to confirm that you really want to disconnect from the transmitter.";
-"transmittterStartDate" = "Transmitter Started";
-"sensorStartDate" = "Sensor Started";
+"cannotActiveCGMInFollowerMode" = "Du kan ikke aktivere eller forbinde til en CGM i følgertilstand.";
+"confirmDisconnectTitle" = "Bekræft afbrydelse";
+"confirmDisconnectMessage" = "Tryk på 'Afbryd forbindelse' for at bekræfte, at du vil afbryde forbindelsen til transmitteren.";
+"transmittterStartDate" = "Transmitter startet";
+"sensorStartDate" = "Sensor startet";
 "useOtherDexcomAppCoexistenceFooter" = "Sameksistenstilstand lader os arbejde sammen med en anden app, f.eks. Dexcom eller CamAPS. Den app skal fortsat køre i baggrunden.";
 "useOtherDexcomAppPrimaryFooter" = "Primær tilstand forbinder som hovedappen og styrer forbindelsen.";
 "runningInCoexistenceMode" = "Kører i sameksistenstilstand";
@@ -53,34 +53,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ Sensorscanning lykkedes!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Flerpunktskalibrering er en avanceret funktion.\n\nBrug ikke denne funktion, før du har læst afsnittet om kalibrering i onlinehjælpen og forstår, hvordan den fungerer.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "Scan venligst igen";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ Sensorscanning mislykkedes";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "Sensorscanningen mislykkedes";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "NFC-scanning påkrævet";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "Fejl ved scanning af sensor\n\nPrøver igen... # ";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Opvarmning til";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "Scan igen";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "Tryk OK og vent, mens Libre-sensoren færdiggør forbindelsen via Bluetooth.\n\nOm lidt tid skulle status ændres til 'Forbundet'.";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "Seneste 24 timer";
@@ -107,7 +107,7 @@
 "readSuccessNow" = "Nu";
 "scanningForTransmitter" = "Søger...";
 "connecting" = "Forbinder";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Forbinder...";
 "reconnecting" = "Genopretter forbindelse";
 "reconnectingToTransmitter" = "Genopretter forbindelse...";
 "waiting" = "Venter...";
@@ -192,3 +192,10 @@
 "bluetoothAccessNotEnabled" = "Bluetooth-adgang er ikke aktiveret";
 "bluetoothAccessInstructions" = "For at oprette forbindelse skal du åbne Indstillinger → Anonymitet & sikkerhed → Bluetooth og give %@ adgang.";
 "bluetoothAccessRestrictedInstructions" = "Enhedens begrænsninger forhindrer Bluetooth-adgang. Kontrollér Skærmtid, eller kontakt enhedens administrator for at aktivere adgang.";
+"confirmAlgorithmChangeToTransmitterMessage" = "Bekræft venligst, at du vil skifte tilbage til den indbyggede transmitteralgoritme";
+"confirmAlgorithmChangeToxDripMessage" = "Bekræft venligst, at du vil skifte til xDrip-algoritmen.\n\nDet stopper målingerne en kort tid og beder dig om en indledende kalibreringsværdi, når den er klar.";
+"confirmCalibrationChangeToMultiPointMessage" = "Bekræft venligst, at du vil skifte kalibreringstypen til flerpunkt\n\n⚠️ Bemærk, at denne metode kun er til avancerede brugere og kan give farlige resultater, hvis der ikke kalibreres korrekt.\n\nHvis du er i tvivl om, hvordan metoden bruges, så tryk Annuller.";
+"confirmCalibrationChangeToSinglePointMessage" = "Bekræft venligst, at du vil skifte kalibreringstypen til standardkalibrering\n\nDet stopper målingerne en kort tid og beder dig om en indledende kalibreringsværdi, når den er klar.";
+"nativeAlgorithm" = "Indbygget algoritme";
+"xDripAlgorithm" = "xDrip-algoritme";
+"confirm" = "Bekræft";

@@ -4,126 +4,126 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// for home view, Info how to start : set transmitter and id, then go back to home screen, start scanning
-"transmitterinfo" = "First go to the Bluetooth screen where you can add and scan for your transmitter.\r\n\nThen come back to the Home screen and start your sensor.";
+"transmitterinfo" = "Najprej pojdite na zaslon Bluetooth, kjer lahko dodate oddajnik in ga poiščete.\n\nNato se vrnite na začetni zaslon in zaženite senzor.";
 
 /// After clicking scan button, this message will appear
-"startScanningInfo" = "Scanning Started.\n\nKeep %@ open in the foreground until a connection is made.\n\n(There's no need to turn off Auto-Lock. Just don't press the home button and don't lock your iPhone)";
+"startScanningInfo" = "Iskanje se je začelo.\n\nDokler se povezava ne vzpostavi, naj bo %@ odprt v ospredju.\n\n(Samodejnega zaklepanja ni treba izklopiti. Samo ne pritiskajte gumba za domov in ne zaklepajte iPhona)";
 
 /// status info : literally 'Transmitter Battery Level', shows the battery level
-"transmitterbatterylevel" = "Transmitter Battery Level";
+"transmitterbatterylevel" = "Raven baterije oddajnika";
 
 /// for home view, title of pop up that gives info about how to select the transmitter. Simply the word Info
-"info" = "Please Read";
+"info" = "Prosimo, preberite";
 
 /// Text in button on home screen
-"calibrate" = "Calibrate";
+"calibrate" = "Kalibriraj";
 
 /// If transmitter needs pairing, user needs to click the notification
-"transmitternotpaired" = "The Transmitter is not paired with this iPhone. Open the application.";
+"transmitternotpaired" = "Oddajnik ni seznanjen s tem iPhonom. Odprite aplikacijo.";
 
 /// when user manually starts scanning, this is the message that scanning is ongoing
-"scanbluetoothdeviceongoing" = "Scanning for Transmitter...";
+"scanbluetoothdeviceongoing" = "Iskanje oddajnika ...";
 
 /// when user clicks transmitterButton, this is the action to start scanning
-"scanbluetoothdeviceactiontitle" = "Scan for Transmitter";
+"scanbluetoothdeviceactiontitle" = "Išči oddajnik";
 
 /// for home view, where it say how old the reading is, 'x minutes ago', literaly translation of 'ago'
 "ago" = "ago";
 
 /// when user starts scanning for bluetooth device, but bluetooth is not authorized
-"bluetoothIsNotAuthorized" = "You did not give bluetooth permission for %@. Go to the settings, find the %@ app, and enable Bluetooth.";
+"bluetoothIsNotAuthorized" = "Aplikaciji %@ niste dali dovoljenja za Bluetooth. Pojdite v nastavitve, poiščite aplikacijo %@ in omogočite Bluetooth.";
 
 /// for home view, license info
-"licenseinfo" = "This program is free software distributed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.\r\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.\r\n\nSee http://www.gnu.org/licenses/gpl.txt for more details.\r\n\r\nInfo: ";
+"licenseinfo" = "Ta program je prosta programska oprema, ki se distribuira pod pogoji splošne javne licence GNU (GNU General Public License), kot jo je objavila Free Software Foundation, različice 3 ali (po vaši izbiri) katere koli novejše različice.\n\nTa program se distribuira v upanju, da bo uporaben, vendar BREZ KAKRŠNEGA KOLI JAMSTVA.\n\nVeč podrobnosti najdete na http://www.gnu.org/licenses/gpl.txt.\n\nInfo: ";
 
 /// To give info to user that the transmitter pairing requeset timed out
-"transmitterpairingattempttimeout" = "Transmitter did not reply to pairing request.";
+"transmitterpairingattempttimeout" = "Oddajnik ni odgovoril na zahtevo za seznanitev.";
 
 /// for home view, user clicks calibrate but there's no sensor started yet
-"startsensorbeforecalibration" = "You cannot calibrate unless you have started a sensor.";
+"startsensorbeforecalibration" = "Kalibracija ni mogoča, dokler ne zaženete senzorja.";
 
 /// Text in button on home screen
-"presnooze" = "Snooze";
+"presnooze" = "Odlog";
 
 /// for home view, user clicks calibrate but there's no reading yet
-"theremustbeareadingbeforecalibration" = "There must be at least two readings before you can calibrate. You will be requested to calibrate as soon as there is another reading.";
+"theremustbeareadingbeforecalibration" = "Pred kalibracijo morata biti na voljo vsaj dva odčitka. Ko bo na voljo nov odčitek, boste pozvani k kalibraciji.";
 
 /// status info : literally 'Sensor Start'
-"sensorstart" = "Sensor Started";
+"sensorstart" = "Senzor zagnan";
 
 /// To give info to user that the transmitter is successfully paired
-"transmitterpairingsuccessful" = "The Transmitter was successfully paired.";
+"transmitterpairingsuccessful" = "Oddajnik je bil uspešno seznanjen.";
 
 /// When user has no CGM transmitter created with 'Always connect', and tries to calibrate, then this message is shown
-"theresNoCGMTransmitterActive" = "You cannot calibrate unless you have a transmitter connected.";
+"theresNoCGMTransmitterActive" = "Kalibracija ni mogoča, dokler nimate povezanega oddajnika.";
 
 /// for home view, miaomiao doesn't detect a sensor
-"sensornotdetected" = "The sensor was not detected. Check if the Transmitter is correctly placed on the sensor.";
+"sensornotdetected" = "Senzor ni bil zaznan. Preverite, ali je oddajnik pravilno nameščen na senzor.";
 
 /// If transmitter needs pairing, a notification was fired, user clicked it more than 60 seconds later, which is too late
-"transmitterpairingtoolate" = "Too late! The Transmitter has already been disconnected. You should get a new pairing request in a few minutes.";
+"transmitterpairingtoolate" = "Prepozno! Oddajnik je že bil odklopljen. Novo zahtevo za seznanitev bi morali prejeti čez nekaj minut.";
 
 /// Literally 'Sensor', used as name in the button in the home screen, but also in text in pop ups
-"sensor" = "Sensor";
+"sensor" = "Senzor";
 
 /// status info : literally 'not known', used if transmitter name is not known
-"notknown" = "Not Known";
+"notknown" = "Ni znano";
 
 /// when user clicks transmitterButton, this is the first action, to show the status
-"statusactiontitle" = "Status";
+"statusactiontitle" = "Stanje";
 
 /// To give result about transitter result in notification body, successful
-"success" = "Success";
+"success" = "Uspešno";
 
 /// when user clicks transmitterButton, this is the action to stop the sensor
-"stopsensor" = "Stop Sensor";
+"stopsensor" = "Ustavi senzor";
 
 /// when user manually starts sensor, this is the message that explains that time should be correct
-"startsensortimeinfo" = "In the next dialogs, you will need to set the date and time the sensor was inserted. It is important that you set the date and time as correct as possible.";
+"startsensortimeinfo" = "V naslednjih pogovornih oknih boste morali nastaviti datum in uro vstavitve senzorja. Pomembno je, da datum in uro nastavite čim bolj natančno.";
 
 /// when user clicks transmitterButton, this is the action to forget the device, so that user can scan for a new device, in case user switches device
-"forgetbluetoothdeviceactiontitle" = "Forget Transmitter";
+"forgetbluetoothdeviceactiontitle" = "Pozabi oddajnik";
 
 /// when user starts scanning but bluetooth is not on
-"bluetoothisnoton" = "Bluetooth is not on. Switch on bluetooth first and then try again.";
+"bluetoothisnoton" = "Bluetooth ni vklopljen. Najprej vklopite Bluetooth in poskusite znova.";
 
 /// when user clicks transmitterButton, this is the action to start the sensor
-"startsensor" = "Start Sensor";
+"startsensor" = "Zaženi senzor";
 
 /// Error message in case Dexcom G5 (and G6?) battery is too low. This is deteced by wrong G5 values 2096896
-"dexcomBatteryTooLow" = "The Transmitter battery is too low!";
+"dexcomBatteryTooLow" = "Baterija oddajnika je skoraj prazna!";
 
 /// status info : literally 'not started', used if sensor is not started
-"notstarted" = "Not Started";
+"notstarted" = "Ni zagnano";
 
 /// To give result about transitter result in notification body, failed
-"failed" = "Failed";
+"failed" = "Ni uspelo";
 
 /// status info : literally 'Last connection', shows when the last connection to a transmitter occured
-"lastconnection" = "Last Connection";
+"lastconnection" = "Zadnja povezava";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Text in button on home screen
-"unlock" = "Unlock";
+"unlock" = "Odkleni";
 
 /// Text in button on home screen
-"lock" = "Lock";
+"lock" = "Zakleni";
 
 /// Screen Lock Title
-"screenlocktitle" = "Screen Lock Enabled";
+"screenlocktitle" = "Zaklep zaslona vklopljen";
 
 /// Info message to explain screen lock function
-"screenlockinfo" = "This will keep the screen awake until you move to another app or click Unlock.\r\n\nIt is recommended that you keep the phone plugged into a charger to prevent battery drain.";
+"screenlockinfo" = "Zaslon bo ostal budan, dokler ne preklopite v drugo aplikacijo ali kliknete Odkleni.\n\nPriporočamo, da je telefon priključen na polnilnik, da se baterija ne izprazni.";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When user clicks stop sensor, ask confirmation
-"stopSensorConfirmation" = "Are you sure you want to stop the sensor?";
+"stopSensorConfirmation" = "Ali res želite ustaviti senzor?";
 
 /// When user needs to enter sensor code, to start firefly sensor
 "enterSensorCode" = "Optično preberite nalepko senzorja ali izberite fotografijo, da preberete kodo senzorja.";
@@ -133,41 +133,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// status info : literally 'Sensor End'
-"sensorend" = "Sensor Ends";
+"sensorend" = "Senzor poteče";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// if web oop enabled, and also if transmitter supports this, user clicks calibrate button, but calibration is not possible
-"calibrationNotNecessary" = "When using the native transmitter algorithm, manual calibration is not available.\n\nIf you want to calibrate, you can switch to the xDrip algorithm in the transmitter screen (if available).";
+"calibrationNotNecessary" = "Pri uporabi izvornega algoritma oddajnika ročna kalibracija ni na voljo.\n\nČe želite kalibrirati, lahko na zaslonu oddajnika preklopite na algoritem xDrip (če je na voljo).";
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout je onemogočen";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "Skrivanje URL za %@ s ...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Ni podatkov senzorja";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Trajanje senzorja";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "Manjka URL";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Odklopite in ponovno povežite senzor Libre";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Manjka uporabniško ime/geslo";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Noben vir podatkov CGM ni povezan";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "5-minutni odčitki";
+"postProcessingAlgorithm" = "Algoritem";
 "sensorLifetimeRemainingFormat" = "Preostalo %@";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -199,14 +199,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Graf zgodovine šuma senzorja";
 "pumpBattery" = "Baterija";
 "pumpReservoir" = "Rezervoar";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Preteklo / preostalo";
+"sensorManagementSessionDetails" = "Podrobnosti seje";
+"sensorManagementCalibrationOpenTitle" = "Podrobnosti kalibracije";
+"sensorManagementCGMType" = "Vrsta CGM";
 "sensorManagementLastCalibration" = "Zadnja";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Senzor aktiven";
+"sensorManagementStarted" = "Zagnan";
+"sensorManagementEnds" = "Poteče";
 "sensorHealthPersistentNoiseTitle" = "Zelo visok šum senzorja";
 "sensorHealthPersistentNoiseGuidance" = "Zelo visok šum že 12 ur. Če se nadaljuje, razmislite o zamenjavi senzorja.";
 "sensorHealthFlatlineTitle" = "Signal senzorja je raven";
@@ -298,3 +298,89 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "Prilagajanje odmika in oblike ni na voljo, ker ta CGM uporablja lastno kalibracijo.";
 
 "postProcessingWarningAgreement" = "Tapnite V redu samo, če razumete to funkcijo in se strinjate, da jo omogočite.";
+"postProcessingShape" = "Poudarek";
+"sensorManagementCalibrationSafetyFooter" = "Kalibrirajte samo, če razumete, kako to varno storiti.";
+"snoozeAllTitle" = "Odlog vseh";
+"postProcessingUpdateAllReadingsLastPeriod" = "Prepiši vse vrednosti v zadnjih %@";
+"postProcessingEnterValue" = "Vnesite vrednost";
+"postProcessingStrong" = "Močno";
+"sensorManagementCalibrationIntercept" = "Presečišče";
+"snoozeUrgentAlarms" = "Samo nujni alarmi";
+"showHideHomeScreenFooter" = "Pokažite ali skrijte glavne elemente začetnega zaslona; uporabno pri manjših zaslonih iPhona";
+"postProcessingSofterLowsDescription" = "Učinek merila se bolj uveljavi pri nižjih vrednostih glukoze in manj pri višjih.";
+"postProcessingMasterNightscoutUploadDisabled" = "Nalaganje v Nightscout je onemogočeno";
+"sensorManagementCalibrationSlope" = "Naklon";
+"postProcessingReadingFrequency" = "Pogostost odčitkov";
+"sensorManagementCalibrationFalling" = "Pada";
+"postProcessingOffset" = "Odmik";
+"waitingForDataSource" = "CGM je povezan. Čakanje na podatke ...";
+"sensorManagementCalibrationSlightlyHigh" = "Rahlo visoko";
+"sensorManagementCalibrationFallingFast" = "Hitro pada";
+"postProcessingOffsetBgCheckHint" = "Priporočena je vsaj ena nedavna meritev KS";
+"noDataSourceConnectedWatch" = "Odprite aplikacijo iOS";
+"sensorManagementCalibrationStableTrend" = "Stabilen trend";
+"sensorNoiseHistoryFooter" = "Grafikon prikazuje 30-minutni jitter, drseče 4-urno vrednost in 12-urno mediano, ki se uporabljata za opozorila o trajnem šumu. Nižje vrednosti pomenijo gladkejši signal. Ne meri natančnosti glukoze.";
+"sensorManagementCalibrationNoTrend" = "Brez trenda";
+"sensorManagementCalibrationNoReading" = "Brez odčitka";
+"postProcessingEnterGlucose" = "Vnesite glukozo";
+"sensorHealthTestTransmitterFailure" = "Preizkus okvare oddajnika čez 5 sekund";
+"postProcessingNow" = "Zdaj";
+"sensorManagementCalibrationReadinessBad" = "Kalibracija trenutno verjetno ne bo natančna. Prosimo, počakajte.";
+"postProcessingOriginal" = "Izvirno";
+"sensorManagementCalibrationReadinessCaution" = "Kalibracija je lahko manj zanesljiva. Bolje je počakati.";
+"postProcessingSofterLows" = "Nizke";
+"postProcessingApplyFrom" = "Uporabi od";
+"sensorManagementLargeCalibrationDifferenceWarningFormat" = "Možno je, da ta kalibracija ne bo delovala. Poskusite posamezno spremembo kalibracije omejiti na največ %@.";
+"sensorManagementCalibrationStable" = "Stabilno";
+"sensorHealthTestTemporaryIssue" = "Preizkus začasne težave čez 5 sekund";
+"postProcessingScaleBgCheckHint" = "Priporočeni sta vsaj dve nedavni meritvi KS";
+"postProcessingOriginalGlucose" = "Izvirna glukoza";
+"sensorManagementCalibrationGood" = "Dobro";
+"sensorNoiseHistoryPersistentCompact" = "12 ur";
+"postProcessingNoCurrentValues" = "Ni trenutnih vrednosti";
+"postProcessingMedium" = "Srednje";
+"showHideItemsTitle" = "Hitro prikaži/skrij";
+"postProcessingAdjustedGlucose" = "Prilagojena glukoza";
+"showHideStandByModeFooter" = "Spremeni prikaz načina StandBy, če je vklopljen v nastavitvah iPhona";
+"followerAccountCredentialsInvalid" = "Neveljaven račun";
+"postProcessingNightscoutDataNotUpdated" = "Podatki Nightscout ne bodo posodobljeni";
+"sensorManagementNoisePersistent" = "Zadnjih 12 ur";
+"sensorRemaining" = "Preostalo do konca senzorja";
+"sensorManagementCalibrationFlatline" = "Raven signal";
+"sensorManagementCalibrationStale" = "Zastarelo";
+"showHideHomeScreenTitle" = "Začetni zaslon";
+"postProcessingSmoothed" = "Zglajeno";
+"postProcessingApply" = "Uporabi";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "Prilagajanje je onemogočeno, ker ta senzor že uporablja lastno kalibracijo. Za prilagajanje glukoze preklopite na izvorni algoritem.";
+"sensorManagementCalibrationRaw" = "Neobdelano";
+"postProcessingPreviewHours" = "Ur predogleda";
+"snoozeAllSnoozed" = "Vsi alarmi so odloženi!";
+"postProcessingAdjusted" = "Prilagojeno";
+"snoozeAllDisabled" = "Odlog vseh onemogočen";
+"showTreatments" = "Pokaži obravnave";
+"sensorHealthTestSensorFailure" = "Preizkus okvare senzorja čez 5 sekund";
+"sensorManagementCalibrationReadinessGood" = "Zdaj je dober čas za kalibracijo.";
+"postProcessingScale" = "Merilo";
+"postProcessingTitle" = "Prilagoditve glukoze";
+"postProcessingSofterHighs" = "Visoke";
+"postProcessingNeutralDescription" = "Učinek merila se enakomerno uveljavi po celotnem območju glukoze.";
+"postProcessingSofterHighsDescription" = "Učinek merila se bolj uveljavi pri višjih vrednostih glukoze in manj pri nižjih.";
+"postProcessingValidGlucoseRange" = "Vnesite vrednost med %@ in %@";
+"postProcessingStrength" = "Jakost";
+"remaining" = "preostalo";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay zgladi krivuljo glukoze s prilagajanjem kratkih lokalnih oken, pri čemer ohrani splošno obliko vrhov in dolin.";
+"showHideStandByModeTitle" = "Način StandBy";
+"postProcessingLight" = "Rahlo";
+"sensorManagementCalibrationValue" = "Vrednost kalibracije";
+"postProcessingNeutral" = "Običajno";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "Prilagajanje je onemogočeno, ker ta senzor že uporablja lastno kalibracijo.";
+"sensorManagementCalibrationRising" = "Narašča";
+"snoozeAllSnoozedUntil" = "Odloženo do %@";
+"sensorManagementCalibrationSlightlyLow" = "Rahlo nizko";
+"sensorHealthTestPersistentNoise" = "Preizkus trajnega šuma čez 5 sekund";
+"sensorHealthTestFlatline" = "Preizkus ravnega signala čez 5 sekund";
+"postProcessingShapeExplanation" = "Poudarek spremeni, kje ima merilo največji učinek na krivuljo. To lahko pomaga, če senzor preveč pretirava z visokimi ali nizkimi vrednostmi glukoze v primerjavi z ostalim območjem.";
+"postProcessingDexcomShareDataNotUpdated" = "Podatki Dexcom Share ne bodo posodobljeni";
+"sensorManagementCalibrationBG" = "KS";
+"waitingForCGMConnection" = "Čakanje na povezavo CGM ...";
+"sensorManagementCalibrationRisingFast" = "Hitro narašča";

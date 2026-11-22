@@ -7,10 +7,10 @@
 "common_Ok" = "OK";
 
 /// blood glucose unit in short, for text field title
-"common_bloodglucoseunit_short" = "BG Unit";
+"common_bloodglucoseunit_short" = "Enota KS";
 
 /// for settings row, literally firmware
-"firmware" = "Firmware";
+"firmware" = "Vdelana programska oprema";
 
 /// literal translation needed
 "common_minute" = "min";
@@ -34,95 +34,95 @@
 "off" = "Off";
 
 /// for settings row, literally hardware
-"hardware" = "Hardware";
+"hardware" = "Strojna oprema";
 
 /// literal translation needed
-"common_week" = "week";
+"common_week" = "teden";
 
 /// to show the sensor status
-"sensorStatus" = "Sensor Status";
+"sensorStatus" = "Stanje senzorja";
 
 /// can be used in several screens, just the words Bloodglucose unit
-"common_bloodglucoseunit" = "Blood Glucose Unit";
+"common_bloodglucoseunit" = "Enota krvnega sladkorja";
 
 /// literal translation needed
-"common_hours" = "hours";
+"common_hours" = "ur";
 
 /// literally default, will be the name of default alerttypes that will be created during initial app launch
-"common_default" = "Default";
+"common_default" = "Privzeto";
 
 /// literally add
 "add" = "Add";
 
 /// literal translation needed
-"common_hour" = "hour";
+"common_hour" = "ura";
 
 /// yellow
-"yellow" = "yellow";
+"yellow" = "rumena";
 
 /// literally update
-"update" = "Edit";
+"update" = "Uredi";
 
 /// 
-"delete" = "Delete";
+"delete" = "Izbriši";
 
 /// literally password
-"common_password" = "Password";
+"common_password" = "Geslo";
 
 /// literally no, without capital
 "no" = "No";
 
 /// green
-"green" = "green";
+"green" = "zelena";
 
 /// name
-"name" = "Name";
+"name" = "Ime";
 
 /// literal translation needed
-"common_minutes" = "mins";
+"common_minutes" = "min";
 
 /// literally yes, without capital
 "yes" = "Da";
 
 /// literally 'Cancel'
-"common_cancel" = "Cancel";
+"common_cancel" = "Prekliči";
 "common_close" = "Zapri";
 
 /// literally warning
-"warning" = "Warning!";
+"warning" = "Opozorilo!";
 
 /// white
-"white" = "white";
+"white" = "bela";
 
 
 /// mg/dl
 "common_mgdl" = "mg/dL";
 
 /// whenever invalid value is given by user somewhere in a field
-"invalidValue" = "Invalid Value";
+"invalidValue" = "Neveljavna vrednost";
 
 /// general usage
-"unknown" = "Unknown";
+"unknown" = "Neznano";
 
 /// the word HIGH, in capitals
-"common_high" = "HIGH";
+"common_high" = "VISOKO";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Where credentials need to be given, if either account or password is invalid (for the moment only applicable to Dexcom Share
-"invalidAccountOrPassword" = "Invalid account or password";
+"invalidAccountOrPassword" = "Neveljaven račun ali geslo";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the word today
-"common_todayshort" = "Today";
+"common_todayshort" = "Danes";
 
 /// the word high
-"common_statistics_high" = "High";
+"common_statistics_high" = "Visoko";
 
 /// phrase HbA1c
 
@@ -138,22 +138,22 @@
 "common_statistics_low" = "Low";
 
 /// literal translation needed
-"common_days" = "days";
+"common_days" = "dni";
 "common_landscape_showAGPChartData" = "Prikaži podatke grafa AGP:";
 "common_landscape_comparisonDays" = "%d dni";
 "common_landscape_comparisonNone" = "Brez";
 
 /// the word average
-"common_statistics_average" = "Average";
+"common_statistics_average" = "Povprečje";
 
 /// literal translation needed
 "common_dayshort" = "d";
 
 /// the word today
-"common_today" = "Today";
+"common_today" = "Danes";
 
 /// the words in range
-"common_statistics_inRange" = "In Range";
+"common_statistics_inRange" = "V območju";
 
 /// literal translation needed
 "common_hourshort" = "h";
@@ -163,17 +163,17 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// don't show again
-"common_dontshowagain" = "Don't Show Again";
+"common_dontshowagain" = "Ne prikaži več";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Ozko območje";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Uporabnikovo območje";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "Ocenjeni aktivni inzulin";
@@ -200,3 +200,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Omogočeno";
+"common_report_period" = "Obdobje poročila";
+"common_statistics_insufficientData" = "Premalo podatkov";
+"common_statistics_title" = "Statistika";
+"common_report_unableToPrepareTitle" = "Poročila ni mogoče pripraviti";
+"common_report_patientIDPlaceholder" = "Številka kartona / ID bolnika";
+"common_statistics_dailySummary" = "Dnevni povzetek";
+"common_report_patientPeriodTitleFormat" = "%@: %@";
+"common_statistics_averageTDD" = "Povprečni TDD";
+"common_report_aidPeriod" = "Podatki sistema Loop";
+"common_report_periodTitleFormat" = "Poročilo za %d dni";
+"common_report_passwordProtectionOpenError" = "Poročila PDF ni bilo mogoče odpreti za zaščito z geslom.";
+"common_statistics_timeInRange" = "Čas v območju";
+"common_statistics_dailyPatternFooter" = "Stolpci prikazujejo dnevni delež v območju %@. Črtkana črta označuje klinični cilj 70%%.";
+"common_statistics_cvTrend" = "Trend CV";
+"common_report_none" = "Brez";
+"common_notRequired" = "Ni obvezno";
+"common_notAvailable" = "Ni na voljo";
+"common_report_passwordFieldPlaceholder" = "Geslo za odpiranje PDF";
+"common_statistics_estimatedA1cTrend" = "Trend ocenjenega HbA1c";
+"common_report_notIncluded" = "Ni vključeno";
+"common_statistics_report" = "Poročilo";
+"common_statistics_averageGlucose" = "Povprečna glukoza";
+"common_report_language" = "Jezik";
+"common_disabled" = "Onemogočeno";
+"common_report_patientFooter" = "Podatki o bolniku so shranjeni lokalno na tej napravi in natisnjeni v glavi poročila.";
+"common_statistics_targetGreaterThanOrEqual" = "Cilj >=%@";
+"common_report_periodFooter" = "Za klinično poročilo CGM je priporočeno 90 dni.";
+"common_report_passwordConfirmationPlaceholder" = "Ponovno vnesite geslo";
+"common_report_patientName" = "Ime bolnika";
+"common_value" = "Vrednost";
+"common_report_willBePasswordProtected" = "Poročilo bo zaščiteno z geslom";
+"common_report_generatingStatus" = "Ustvarjanje kliničnega poročila ...";
+"common_report_notSet" = "Ni nastavljeno";
+"common_statistics_ambulatoryGlucoseProfile" = "Ambulantni profil glukoze";
+"common_statistics_averageCarbs" = "Povprečni ogljikovi hidrati";
+"common_report_willNotBePasswordProtected" = "Poročilo ne bo zaščiteno z geslom";
+"common_report_aidPeriodFooter" = "Za podatke sistema Loop je priporočenih 7 dni.";
+"common_statistics_bestDay" = "Najboljši dan";
+"common_statistics_period" = "Obdobje";
+"common_report_passwordFooter" = "To geslo se uporabi samo za naslednji ustvarjeni PDF in se ne shrani.";
+"common_statistics_dailyPattern" = "Dnevni vzorec";
+"common_checking" = "Preverjanje ...";
+"common_statistics_summary" = "Povzetek";
+"common_statistics_section" = "Razdelek";
+"common_report_patientNamePlaceholder" = "Ime bolnika";
+"common_enterValue" = "Vnesite vrednost";
+"common_statistics_waitingForGlucoseData" = "Čakanje na podatke o glukozi ...";
+"common_statistics_mostHigh" = "Največ visokih";
+"common_statistics_trends" = "Trendi";
+"common_statistics_dataCapture" = "Zajem podatkov";
+"common_statistics_targetLessThanOrEqual" = "Cilj <=%@";
+"common_report_patientSection" = "Bolnik";
+"common_statistics_noDataTitle" = "Ni razpoložljive statistike";
+"common_report_passwordToOpen" = "Geslo za odpiranje";
+"common_report_paperSize" = "Velikost papirja";
+"common_statistics_insufficientAGPData" = "Premalo podatkov za grafikon percentilov AGP";
+"common_statistics_averageFormat" = "Povprečje %@";
+"common_report_patientID" = "ID bolnika";
+"common_report_generateTitle" = "Ustvari poročilo";
+"common_statistics_noDataMessage" = "Za to obdobje ni dovolj shranjenih podatkov CGM.";
+"common_report_notEnoughData" = "Premalo podatkov";
+"common_report_shareAccessibility" = "Deli poročilo";
+"common_report_generationFailedTitle" = "Ustvarjanje poročila ni uspelo";
+"next" = "Naprej";
+"common_statistics_mostLow" = "Največ nizkih";
+"common_statistics_tempBasalDelta" = "Razlika začasnega bazala";
+"common_dismiss" = "Opusti";
+"common_report_options" = "Možnosti poročila";
+"common_statistics_timeInTightRange" = "Čas v ozkem območju";
+"common_report_passwordProtectionWriteError" = "Poročila PDF, zaščitenega z geslom, ni bilo mogoče ustvariti.";
+"common_statistics_cgmEstimate" = "Ocena CGM";

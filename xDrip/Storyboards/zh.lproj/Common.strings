@@ -21,10 +21,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// for settings row, literally firmware
-"firmware" = "Firmware";
+"firmware" = "固件";
 
 /// for settings row, literally hardware
-"hardware" = "Hardware";
+"hardware" = "硬件";
 
 /// on
 "on" = "On";
@@ -36,39 +36,39 @@
 "off" = "Off";
 
 /// to show the sensor status
-"sensorStatus" = "Sensor Status";
+"sensorStatus" = "传感器状态";
 
 /// yellow
-"yellow" = "yellow";
+"yellow" = "黄色";
 
 /// 
-"delete" = "Delete";
+"delete" = "删除";
 
 /// literally no, without capital
 "no" = "No";
 
 /// green
-"green" = "green";
+"green" = "绿色";
 
 /// name
-"name" = "Name";
+"name" = "名称";
 
 /// literally yes, without capital
 "yes" = "是";
 
 /// literally 'Cancel'
-"common_cancel" = "Cancel";
+"common_cancel" = "取消";
 "common_close" = "关闭";
 
 /// white
-"white" = "white";
+"white" = "白色";
 
 
 /// whenever invalid value is given by user somewhere in a field
-"invalidValue" = "Invalid Value";
+"invalidValue" = "无效值";
 
 /// general usage
-"unknown" = "Unknown";
+"unknown" = "未知";
 
 /// literally 'OK'
 "common_Ok" = "OK";
@@ -78,17 +78,17 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Where credentials need to be given, if either account or password is invalid (for the moment only applicable to Dexcom Share
-"invalidAccountOrPassword" = "Invalid account or password";
+"invalidAccountOrPassword" = "账户或密码无效";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the word today
-"common_todayshort" = "Today";
+"common_todayshort" = "今天";
 
 /// the word high
-"common_statistics_high" = "High";
+"common_statistics_high" = "高";
 
 /// phrase HbA1c
 
@@ -104,22 +104,22 @@
 "common_statistics_low" = "Low";
 
 /// literal translation needed
-"common_days" = "days";
+"common_days" = "天";
 "common_landscape_showAGPChartData" = "显示 AGP 图表数据：";
 "common_landscape_comparisonDays" = "%d 天";
 "common_landscape_comparisonNone" = "无";
 
 /// the word average
-"common_statistics_average" = "Average";
+"common_statistics_average" = "平均";
 
 /// literal translation needed
 "common_dayshort" = "d";
 
 /// the word today
-"common_today" = "Today";
+"common_today" = "今天";
 
 /// the words in range
-"common_statistics_inRange" = "In Range";
+"common_statistics_inRange" = "范围内";
 
 /// literal translation needed
 "common_hourshort" = "h";
@@ -129,17 +129,17 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// don't show again
-"common_dontshowagain" = "Don't Show Again";
+"common_dontshowagain" = "不再显示";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "严格范围";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "用户范围";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "估算的活性胰岛素";
@@ -166,3 +166,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "已启用";
+"common_report_period" = "报告周期";
+"common_statistics_insufficientData" = "数据不足";
+"common_statistics_title" = "统计";
+"common_report_unableToPrepareTitle" = "无法准备报告";
+"common_report_patientIDPlaceholder" = "病历号 / 患者 ID";
+"common_statistics_dailySummary" = "每日摘要";
+"common_report_patientPeriodTitleFormat" = "%@的%@";
+"common_statistics_averageTDD" = "平均 TDD";
+"common_report_aidPeriod" = "闭环数据";
+"common_report_periodTitleFormat" = "%d 天报告";
+"common_report_passwordProtectionOpenError" = "无法打开报告 PDF 以设置密码保护。";
+"common_statistics_timeInRange" = "目标范围内时间";
+"common_statistics_dailyPatternFooter" = "柱状图显示每日处于 %@ 范围内的百分比。虚线标示 70%% 的临床目标。";
+"common_statistics_cvTrend" = "CV 趋势";
+"common_report_none" = "无";
+"common_notRequired" = "非必填";
+"common_notAvailable" = "不可用";
+"common_report_passwordFieldPlaceholder" = "打开 PDF 的密码";
+"common_statistics_estimatedA1cTrend" = "估算 HbA1c 趋势";
+"common_report_notIncluded" = "不包含";
+"common_statistics_report" = "报告";
+"common_statistics_averageGlucose" = "平均血糖";
+"common_report_language" = "语言";
+"common_disabled" = "已停用";
+"common_report_patientFooter" = "患者信息仅保存在此设备本地，并打印在报告页眉中。";
+"common_statistics_targetGreaterThanOrEqual" = "目标 >=%@";
+"common_report_periodFooter" = "临床 CGM 报告建议使用 90 天。";
+"common_report_passwordConfirmationPlaceholder" = "再次输入密码";
+"common_report_patientName" = "患者姓名";
+"common_value" = "数值";
+"common_report_willBePasswordProtected" = "报告将受密码保护";
+"common_report_generatingStatus" = "正在生成临床报告…";
+"common_report_notSet" = "未设置";
+"common_statistics_ambulatoryGlucoseProfile" = "动态血糖图谱";
+"common_statistics_averageCarbs" = "平均碳水";
+"common_report_willNotBePasswordProtected" = "报告不会受密码保护";
+"common_report_aidPeriodFooter" = "闭环数据建议使用 7 天。";
+"common_statistics_bestDay" = "最佳一天";
+"common_statistics_period" = "周期";
+"common_report_passwordFooter" = "此密码仅用于下一次生成的 PDF，不会被保存。";
+"common_statistics_dailyPattern" = "每日模式";
+"common_checking" = "正在检查…";
+"common_statistics_summary" = "摘要";
+"common_statistics_section" = "部分";
+"common_report_patientNamePlaceholder" = "患者姓名";
+"common_enterValue" = "输入数值";
+"common_statistics_waitingForGlucoseData" = "等待血糖数据…";
+"common_statistics_mostHigh" = "最高";
+"common_statistics_trends" = "趋势";
+"common_statistics_dataCapture" = "数据获取率";
+"common_statistics_targetLessThanOrEqual" = "目标 <=%@";
+"common_report_patientSection" = "患者";
+"common_statistics_noDataTitle" = "无可用统计";
+"common_report_passwordToOpen" = "打开密码";
+"common_report_paperSize" = "纸张大小";
+"common_statistics_insufficientAGPData" = "AGP 百分位图表数据不足";
+"common_statistics_averageFormat" = "平均 %@";
+"common_report_patientID" = "患者 ID";
+"common_report_generateTitle" = "生成报告";
+"common_statistics_noDataMessage" = "此周期内存储的 CGM 数据不足。";
+"common_report_notEnoughData" = "数据不足";
+"common_report_shareAccessibility" = "分享报告";
+"common_report_generationFailedTitle" = "报告生成失败";
+"next" = "下一步";
+"common_statistics_mostLow" = "最低";
+"common_statistics_tempBasalDelta" = "临时基础率变化";
+"common_dismiss" = "关闭";
+"common_report_options" = "报告选项";
+"common_statistics_timeInTightRange" = "严格目标范围内时间";
+"common_report_passwordProtectionWriteError" = "无法创建受密码保护的报告 PDF。";
+"common_statistics_cgmEstimate" = "CGM 估算值";

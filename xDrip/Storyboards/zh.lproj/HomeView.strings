@@ -27,60 +27,60 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// After clicking scan button, this message will appear
-"startScanningInfo" = "Scanning Started.\n\nKeep %@ open in the foreground until a connection is made.\n\n(There's no need to turn off Auto-Lock. Just don't press the home button and don't lock your iPhone)";
+"startScanningInfo" = "已开始扫描。\n\n请保持 %@ 在前台打开，直到连接完成。\n\n（无需关闭自动锁定。只需不要按主屏幕按钮，也不要锁定 iPhone）";
 
 /// If transmitter needs pairing, user needs to click the notification
-"transmitternotpaired" = "The Transmitter is not paired with this iPhone. Open the application.";
+"transmitternotpaired" = "发射器尚未与此 iPhone 配对。请打开应用。";
 
 /// when user starts scanning for bluetooth device, but bluetooth is not authorized
-"bluetoothIsNotAuthorized" = "You did not give bluetooth permission for %@. Go to the settings, find the %@ app, and enable Bluetooth.";
+"bluetoothIsNotAuthorized" = "您未授予 %@ 蓝牙权限。请前往设置，找到 %@ 应用并启用蓝牙。";
 
 /// To give info to user that the transmitter pairing requeset timed out
-"transmitterpairingattempttimeout" = "Transmitter did not reply to pairing request.";
+"transmitterpairingattempttimeout" = "发射器未响应配对请求。";
 
 /// To give info to user that the transmitter is successfully paired
-"transmitterpairingsuccessful" = "The Transmitter was successfully paired.";
+"transmitterpairingsuccessful" = "发射器配对成功。";
 
 /// When user has no CGM transmitter created with 'Always connect', and tries to calibrate, then this message is shown
-"theresNoCGMTransmitterActive" = "You cannot calibrate unless you have a transmitter connected.";
+"theresNoCGMTransmitterActive" = "未连接发射器时无法校准。";
 
 /// If transmitter needs pairing, a notification was fired, user clicked it more than 60 seconds later, which is too late
-"transmitterpairingtoolate" = "Too late! The Transmitter has already been disconnected. You should get a new pairing request in a few minutes.";
+"transmitterpairingtoolate" = "太晚了！发射器已断开连接。几分钟后您应会收到新的配对请求。";
 
 /// Literally 'Sensor', used as name in the button in the home screen, but also in text in pop ups
-"sensor" = "Sensor";
+"sensor" = "传感器";
 
 /// To give result about transitter result in notification body, successful
-"success" = "Success";
+"success" = "成功";
 
 /// Error message in case Dexcom G5 (and G6?) battery is too low. This is deteced by wrong G5 values 2096896
-"dexcomBatteryTooLow" = "The Transmitter battery is too low!";
+"dexcomBatteryTooLow" = "发射器电量过低！";
 
 /// To give result about transitter result in notification body, failed
-"failed" = "Failed";
+"failed" = "失败";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Text in button on home screen
-"unlock" = "Unlock";
+"unlock" = "解锁";
 
 /// Text in button on home screen
-"lock" = "Lock";
+"lock" = "锁定";
 
 /// Screen Lock Title
-"screenlocktitle" = "Screen Lock Enabled";
+"screenlocktitle" = "屏幕锁定已启用";
 
 /// Info message to explain screen lock function
-"screenlockinfo" = "This will keep the screen awake until you move to another app or click Unlock.\r\n\nIt is recommended that you keep the phone plugged into a charger to prevent battery drain.";
+"screenlockinfo" = "这将使屏幕保持常亮，直到您切换到其他应用或点击“解锁”。\n\n建议将手机连接充电器，以免耗电。";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When user clicks stop sensor, ask confirmation
-"stopSensorConfirmation" = "Are you sure you want to stop the sensor?";
+"stopSensorConfirmation" = "确定要停止传感器吗？";
 
 /// When user needs to enter sensor code, to start firefly sensor
 "enterSensorCode" = "扫描传感器标签或选择照片以读取传感器代码。";
@@ -90,41 +90,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// status info : literally 'Sensor End'
-"sensorend" = "Sensor Ends";
+"sensorend" = "传感器结束";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// if web oop enabled, and also if transmitter supports this, user clicks calibrate button, but calibration is not possible
-"calibrationNotNecessary" = "When using the native transmitter algorithm, manual calibration is not available.\n\nIf you want to calibrate, you can switch to the xDrip algorithm in the transmitter screen (if available).";
+"calibrationNotNecessary" = "使用原生发射器算法时，无法手动校准。\n\n如需校准，可在发射器页面切换到 xDrip 算法（如可用）。";
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout 已停用";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "%@ 秒后隐藏 URL…";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "无传感器数据";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "传感器时长";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "缺少 URL";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "断开并重新连接 Libre 传感器";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "缺少用户名/密码";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "未连接 CGM 数据源";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "5 分钟读数";
+"postProcessingAlgorithm" = "算法";
 "sensorLifetimeRemainingFormat" = "剩余 %@";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -156,14 +156,14 @@
 "sensorNoiseHistoryChartAccessibility" = "传感器噪声历史图表";
 "pumpBattery" = "电池";
 "pumpReservoir" = "储药器";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "已用 / 剩余";
+"sensorManagementSessionDetails" = "会话详情";
+"sensorManagementCalibrationOpenTitle" = "校准详情";
+"sensorManagementCGMType" = "CGM 类型";
 "sensorManagementLastCalibration" = "最近一次";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "传感器已启用";
+"sensorManagementStarted" = "开始于";
+"sensorManagementEnds" = "结束于";
 "sensorHealthPersistentNoiseTitle" = "传感器噪声非常高";
 "sensorHealthPersistentNoiseGuidance" = "噪声已持续非常高 12 小时。如果继续，请考虑更换传感器。";
 "sensorHealthFlatlineTitle" = "传感器信号无变化";
@@ -255,3 +255,89 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "此 CGM 使用原生校准，因此无法调整偏移量和曲线形状。";
 
 "postProcessingWarningAgreement" = "仅当您理解此功能并同意启用时，才轻点“好”。";
+"postProcessingShape" = "侧重";
+"sensorManagementCalibrationSafetyFooter" = "仅在了解如何安全校准时才进行校准。";
+"snoozeAllTitle" = "全部延后";
+"postProcessingUpdateAllReadingsLastPeriod" = "覆盖最近 %@ 内的所有数值";
+"postProcessingEnterValue" = "输入数值";
+"postProcessingStrong" = "强";
+"sensorManagementCalibrationIntercept" = "截距";
+"snoozeUrgentAlarms" = "仅紧急警报";
+"showHideHomeScreenFooter" = "显示或隐藏主屏幕的主要元素，适用于较小的 iPhone 屏幕";
+"postProcessingSofterLowsDescription" = "在较低血糖值处应用更多缩放效果，在较高值处应用较少。";
+"postProcessingMasterNightscoutUploadDisabled" = "Nightscout 上传已停用";
+"sensorManagementCalibrationSlope" = "斜率";
+"postProcessingReadingFrequency" = "读数频率";
+"sensorManagementCalibrationFalling" = "下降";
+"postProcessingOffset" = "偏移";
+"waitingForDataSource" = "CGM 已连接。等待数据…";
+"sensorManagementCalibrationSlightlyHigh" = "略高";
+"sensorManagementCalibrationFallingFast" = "快速下降";
+"postProcessingOffsetBgCheckHint" = "建议至少有一次近期指血检测";
+"noDataSourceConnectedWatch" = "打开 iOS 应用";
+"sensorManagementCalibrationStableTrend" = "趋势稳定";
+"sensorNoiseHistoryFooter" = "图表显示 30 分钟抖动、滚动 4 小时数值，以及用于持续噪声警告的 12 小时中位数。数值越低越平滑。它不衡量血糖准确性。";
+"sensorManagementCalibrationNoTrend" = "无趋势";
+"sensorManagementCalibrationNoReading" = "无读数";
+"postProcessingEnterGlucose" = "输入血糖";
+"sensorHealthTestTransmitterFailure" = "5 秒后测试发射器故障";
+"postProcessingNow" = "现在";
+"sensorManagementCalibrationReadinessBad" = "目前校准不太可能准确。请等待。";
+"postProcessingOriginal" = "原始";
+"sensorManagementCalibrationReadinessCaution" = "校准可能不够可靠。建议稍后再试。";
+"postProcessingSofterLows" = "低值";
+"postProcessingApplyFrom" = "应用起始";
+"sensorManagementLargeCalibrationDifferenceWarningFormat" = "此次校准可能无效。请尽量将每次校准的变化限制在最多 %@。";
+"sensorManagementCalibrationStable" = "稳定";
+"sensorHealthTestTemporaryIssue" = "5 秒后测试临时问题";
+"postProcessingScaleBgCheckHint" = "建议至少有两次近期指血检测";
+"postProcessingOriginalGlucose" = "原始血糖";
+"sensorManagementCalibrationGood" = "良好";
+"sensorNoiseHistoryPersistentCompact" = "12 小时";
+"postProcessingNoCurrentValues" = "无当前数值";
+"postProcessingMedium" = "中";
+"showHideItemsTitle" = "快速显示/隐藏";
+"postProcessingAdjustedGlucose" = "调整后血糖";
+"showHideStandByModeFooter" = "如果在 iPhone 设置中启用，将更改“待机显示”模式的显示方式";
+"followerAccountCredentialsInvalid" = "账户无效";
+"postProcessingNightscoutDataNotUpdated" = "Nightscout 数据不会更新";
+"sensorManagementNoisePersistent" = "最近 12 小时";
+"sensorRemaining" = "传感器剩余";
+"sensorManagementCalibrationFlatline" = "信号持平";
+"sensorManagementCalibrationStale" = "已过期";
+"showHideHomeScreenTitle" = "主屏幕";
+"postProcessingSmoothed" = "已平滑";
+"postProcessingApply" = "应用";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "由于此传感器已使用自身校准，调整功能已停用。请切换到原生算法以允许调整血糖。";
+"sensorManagementCalibrationRaw" = "原始";
+"postProcessingPreviewHours" = "预览小时数";
+"snoozeAllSnoozed" = "所有警报已延后！";
+"postProcessingAdjusted" = "已调整";
+"snoozeAllDisabled" = "已停用全部延后";
+"showTreatments" = "显示治疗";
+"sensorHealthTestSensorFailure" = "5 秒后测试传感器故障";
+"sensorManagementCalibrationReadinessGood" = "现在是校准的好时机。";
+"postProcessingScale" = "缩放";
+"postProcessingTitle" = "血糖调整";
+"postProcessingSofterHighs" = "高值";
+"postProcessingNeutralDescription" = "在整个血糖范围内均匀应用缩放效果。";
+"postProcessingSofterHighsDescription" = "在较高血糖值处应用更多缩放效果，在较低值处应用较少。";
+"postProcessingValidGlucoseRange" = "请输入介于 %@ 和 %@ 之间的值";
+"postProcessingStrength" = "强度";
+"remaining" = "剩余";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay 通过拟合短的局部窗口来平滑血糖曲线，同时保留峰值和谷值的总体形状。";
+"showHideStandByModeTitle" = "待机显示模式";
+"postProcessingLight" = "轻";
+"sensorManagementCalibrationValue" = "校准值";
+"postProcessingNeutral" = "正常";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "由于此传感器已使用自身校准，调整功能已停用。";
+"sensorManagementCalibrationRising" = "上升";
+"snoozeAllSnoozedUntil" = "延后至 %@";
+"sensorManagementCalibrationSlightlyLow" = "略低";
+"sensorHealthTestPersistentNoise" = "5 秒后测试持续噪声";
+"sensorHealthTestFlatline" = "5 秒后测试信号持平";
+"postProcessingShapeExplanation" = "“侧重”用于改变缩放对曲线影响最大的位置。如果某个传感器似乎比其他范围更夸大较高或较低的血糖值，这会有所帮助。";
+"postProcessingDexcomShareDataNotUpdated" = "Dexcom Share 数据不会更新";
+"sensorManagementCalibrationBG" = "血糖";
+"waitingForCGMConnection" = "等待 CGM 连接…";
+"sensorManagementCalibrationRisingFast" = "快速上升";

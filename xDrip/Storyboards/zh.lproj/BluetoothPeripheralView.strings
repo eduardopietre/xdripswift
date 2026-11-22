@@ -4,80 +4,80 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// text in button top right, this button will disable automatic connect
-"donotconnect" = "Stop Scanning";
+"donotconnect" = "停止扫描";
 
 /// BluetoothPeripheral view, this is a name of a BluetoothPeripheral assigned by the user, to recognize the device
-"bluetoothPeripheralAlias" = "Alias";
+"bluetoothPeripheralAlias" = "别名";
 
 /// 
-"battery" = "Battery";
+"battery" = "电池";
 "versionCode" = "版本代码";
 "voltageA" = "电压 A";
 "voltageB" = "电压 B";
 "waitingForData" = "正在等待数据...";
 
 /// cell text, shows when last reset was done, if known. Only for Dexcom
-"lastReset" = "Last Reset";
+"lastReset" = "上次重置";
 
 /// button text, to connect
-"connect" = "Connect";
+"connect" = "连接";
 
 /// when M5Stack is shown, title of the cell with the address
-"address" = "Address";
+"address" = "地址";
 
 /// User tries to add a CGM or connect an already existing CGM, while in follower mode.
-"cannotActiveCGMInFollowerMode" = "You cannot activate or connect to a CGM whilst in Follower Mode.";
+"cannotActiveCGMInFollowerMode" = "在关注者模式下，无法激活或连接 CGM。";
 
 /// Bluetooth Peripheral view, when user clicks alias field
-"selectAliasText" = "Choose an alias for this bluetooth device, the name will be shown in the app and is easier for you to recognize";
+"selectAliasText" = "为此蓝牙设备选择一个别名，该名称将显示在应用中，便于您识别";
 
 /// Bluetooth Peripheral view, when user clicks the trash button - this is not the complete sentence, it will be followed either by 'name' or 'alias', depending on the availability of an alias
-"confirmDeletionPeripheral" = "Do you want to delete bluetooth device: ";
+"confirmDeletionPeripheral" = "是否删除蓝牙设备：";
 
 /// BluetoothPeripheral view, text of the cell with the sensor type (only used for Libre)
-"sensorType" = "Sensor Type";
+"sensorType" = "传感器类型";
 
 /// BluetoothPeripheral view, text of the cell with the serial number (this is not the sensor serial number
-"serialNumber" = "Serial Number";
+"serialNumber" = "序列号";
 
 /// BluetoothPeripheral view, text of the cell with the sensor serial number
 "SensorSerialNumber" = "Sensor Serial Number";
 
 /// Bluetooth Peripheral view, when user clicks alias field
-"aliasAlreadyExists" = "There is already a bluetooth device with this alias";
+"aliasAlreadyExists" = "已存在使用此别名的蓝牙设备";
 
 /// 
-"notConnected" = "Not Connected";
+"notConnected" = "未连接";
 
 /// To give result about transitter result in notification body
-"transmitterResultResult" = "Transmitter Reset Result";
+"transmitterResultResult" = "发射器重置结果";
 
 /// row in bluetoothperipheral view, title
-"bootLoader" = "Bootloader";
+"bootLoader" = "引导程序";
 
 /// when Bluetooth Peripheral is shown, connection status, connected
-"connected" = "Connected";
+"connected" = "已连接";
 
 /// text in status row, if scanning ongoing
-"scanning" = "Scanning";
+"scanning" = "正在扫描";
 
 /// cell text, if user needs to set the transmitter id
-"needsTransmitterId" = "Missing Transmitter ID";
+"needsTransmitterId" = "缺少发射器 ID";
 
 /// cell text, shows when last reset was done, if known. Only for Dexcom
-"lastResetNotKnown" = "Last Reset Timestamp is not known";
+"lastResetNotKnown" = "上次重置时间未知";
 
 /// text in status rown, when not connect but app is trying to connect
-"tryingToConnect" = "Scanning";
+"tryingToConnect" = "正在扫描";
 
 /// button text, to disconnect
-"disconnect" = "Disconnect";
+"disconnect" = "断开连接";
 
 /// text in status row, if ready to start scanning
-"readyToScan" = "Ready to Scan";
+"readyToScan" = "准备扫描";
 
 /// text in button to start scanning
-"scan" = "Scan";
+"scan" = "扫描";
 "medtrumNanoPumpScanNoticeTitle" = "连接 Medtrum Nano 胰岛素泵";
 "medtrumNanoPumpScanNoticeMessage" = "此选项连接 Medtrum Nano 胰岛素泵，而不是直接连接 Nano CGM 发射器。\n\n扫描前，请确保 EasyPatch 正在运行、已连接到胰岛素泵并正在接收当前 CGM 数值。\n\nEasyPatch 必须始终保持运行并持续接收数值。";
 "libre2ScanNoticeTitle" = "Libre 应用的蓝牙权限";
@@ -88,19 +88,19 @@
 "dexcomG7ScanNoticeMessage" = "扫描前，请确保 Dexcom G7 应用正在后台运行、已连接到传感器并正在接收当前血糖值。\n\nDexcom G7 应用必须始终保持运行并持续接收数值。";
 
 /// cell text, where the disconnection timestamp is shown
-"disConnectedAt" = "Disconnected At";
+"disConnectedAt" = "断开时间";
 
 /// text in status row, when not connected and app is not scanning
-"notTryingToConnect" = "Not Scanning";
+"notTryingToConnect" = "未在扫描";
 
 /// when Bluetooth Peripheral is shown, title of the cell with the status
-"status" = "Status";
+"status" = "状态";
 
 /// cell text, where the connection timestamp is shown
-"connectedAt" = "Connected At";
+"connectedAt" = "连接时间";
 
 /// cell text, where user can select to reset a transmitter at next connect. Only for Dexcom
-"resetRequired" = "Reset Transmitter";
+"resetRequired" = "重置发射器";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -113,50 +113,50 @@
 "runningInPrimaryMode" = "正在主模式下运行";
 
 /// Disconnect transmitter, title
-"confirmDisconnectTitle" = "Confirm Disconnect";
+"confirmDisconnectTitle" = "确认断开连接";
 
 /// Confirm that the user wants to really disconnect the transmitter, title
-"confirmDisconnectMessage" = "Click 'Disconnect' to confirm that you really want to disconnect from the transmitter.";
+"confirmDisconnectMessage" = "点击“断开连接”以确认断开与发射器的连接。";
 
 /// cell text, sensor start time
-"sensorStartDate" = "Sensor Started";
+"sensorStartDate" = "传感器启动时间";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "发射器启动时间";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ 传感器扫描成功！";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "多点校准是高级功能。\n\n请先阅读在线帮助中的校准部分并理解其工作原理，再使用此功能。";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "请重新扫描";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ 传感器扫描失败";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "传感器扫描失败";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "需要 NFC 扫描";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "传感器扫描出错\n\n正在重试… # ";
 
 /// sensor warm-up text
 "warmingUpUntil" = "预热至";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "再次扫描";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "点击“好”，然后稍等，让 Libre 传感器通过蓝牙完成连接。\n\n稍后状态应变为“已连接”。";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "过去 24 小时";
@@ -183,7 +183,7 @@
 "readSuccessNow" = "现在";
 "scanningForTransmitter" = "正在搜索...";
 "connecting" = "正在连接";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "正在连接…";
 "reconnecting" = "正在重新连接";
 "reconnectingToTransmitter" = "正在重新连接...";
 "waiting" = "等待中...";
@@ -268,3 +268,10 @@
 "bluetoothAccessNotEnabled" = "蓝牙访问未启用";
 "bluetoothAccessInstructions" = "要连接，请打开“设置” → “隐私与安全性” → “蓝牙”，并允许 %@ 访问蓝牙。";
 "bluetoothAccessRestrictedInstructions" = "设备限制阻止了蓝牙访问。请检查“屏幕使用时间”，或联系设备管理员以启用访问。";
+"confirmAlgorithmChangeToTransmitterMessage" = "请确认要切换回原生/发射器算法";
+"confirmAlgorithmChangeToxDripMessage" = "请确认要切换到 xDrip 算法。\n\n这将暂时停止读数，并在就绪后要求您输入初始校准值。";
+"confirmCalibrationChangeToMultiPointMessage" = "请确认要将校准类型更改为多点校准\n\n⚠️ 请注意，此方法仅适用于高级用户，如果校准不当，可能产生危险的结果。\n\n如果不确定如何使用此方法，请点击“取消”。";
+"confirmCalibrationChangeToSinglePointMessage" = "请确认要将校准类型更改为标准校准\n\n这将暂时停止读数，并在就绪后要求您输入初始校准值。";
+"nativeAlgorithm" = "原生算法";
+"xDripAlgorithm" = "xDrip 算法";
+"confirm" = "确认";

@@ -17,7 +17,7 @@
 "alerts_batterylow" = "Transmitter Batterij Laag";
 "alertstart" = "Toepassen vanaf";
 "alertvalue" = "Waarde";
-"alerttype" = "Alarm Type";
+"alerttype" = "Alarmtype";
 "changealertvalue" = "Wijzig Alarm Waarde";
 "confirmdeletionalert" = "Alarm Verwijderen?";
 "alerts_fastdrop" = "Snelle Daling Alarm";
@@ -32,3 +32,5 @@
 "sensorExpiry.hoursHelp" = "Voer een geheel aantal uren in van 1 tot 48.";
 "sensorExpiry.endingSoonBody" = "De verwachte levensduur van je sensor eindigt op %@.";
 "sensorExpiry.expectedExpiryBody" = "Je sensor heeft zijn verwachte eindtijd bereikt (%@).";
+"alerts_sensortransmitterfailure" = "Sensor/Transmitter Storing";
+"alerts_notloopingalerttitle" = "Loop Niet Actief";

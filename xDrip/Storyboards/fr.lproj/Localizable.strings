@@ -19,7 +19,7 @@
 "directWatchPausedSinceFormat" = "Depuis %@";
 "directWatchConnecting" = "En attente…";
 "directWatchCollectedReadings" = "Mesures collectées";
-"directWatchReadingGapFormat" = "(%dm %ds)";
+"directWatchReadingGapFormat" = "(%d min %d s)";
 "directWatchNoCollectedReadings" = "Aucune mesure collectée par la Watch pour le moment";
 
 "directWatchSessionStarted" = "Démarré à %@";

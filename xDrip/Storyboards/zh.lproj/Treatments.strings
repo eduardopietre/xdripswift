@@ -4,30 +4,30 @@
 
 "treatments_title" = "治疗";
 "treatments_new_button" = "New";
-"treatments_new_entry" = "New Treatment";
-"treatments_carbs_with_unit" = "Carbs (g)";
-"treatments_insulin_with_unit" = "Insulin (U)";
-"treatments_exercise_with_unit" = "Exercise (min)";
+"treatments_new_entry" = "新建治疗";
+"treatments_carbs_with_unit" = "碳水（g）";
+"treatments_insulin_with_unit" = "胰岛素（U）";
+"treatments_exercise_with_unit" = "运动（分钟）";
 "treatments_carbs_unit" = "g";
 "treatments_insulin_unit" = "U";
 "treatments_exercise_unit" = "min";
-"treatments_carbs" = "Carbs";
-"treatments_insulin" = "Bolus";
-"treatments_exercise" = "Exercise";
-"treatments_bgcheck" = "BG Check";
+"treatments_carbs" = "碳水";
+"treatments_insulin" = "大剂量";
+"treatments_exercise" = "运动";
+"treatments_bgcheck" = "指血检测";
 "treatments_question_mark" = "?";
-"treatments_success" = "Success";
-"treatments_sync_complete" = "Synchronization complete.";
+"treatments_success" = "成功";
+"treatments_sync_complete" = "同步完成。";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// warn about trying to set a future bg value
-"treatments_cannotStoreFutureBGCheck" = "You cannot store a BG Check in the future.\n\nIt will be stored at the actual time.";
+"treatments_cannotStoreFutureBGCheck" = "无法存储未来时间的指血检测。\n\n将按实际时间存储。";
 
 /// filter the treatments by type
-"treatments_filterTreatmentsLabel" = "Filter";
+"treatments_filterTreatmentsLabel" = "筛选";
 "treatments_automaticBasal" = "自动基础输注";
 
 /* Section heading when choosing a new treatment type. */

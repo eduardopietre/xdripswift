@@ -41,7 +41,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When user clicks stop sensor, ask confirmation
-"stopSensorConfirmation" = "Are you sure you want to stop the sensor?";
+"stopSensorConfirmation" = "Är du säker på att du vill stoppa sensorn?";
 
 /// When user needs to enter sensor code, to start firefly sensor
 "enterSensorCode" = "Skanna sensorns etikett eller välj ett foto för att läsa sensorkoden.";
@@ -51,7 +51,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// status info : literally 'Sensor End'
-"sensorend" = "Sensor Ends";
+"sensorend" = "Sensorn slutar";
 
 "calibrationNotNecessary" = "När du använder sändarens inbyggda algoritm går det inte att kalibrera.\n\nFör att kunna kalibrera behöver du byta till xDrip-algoritmen in sändarinställningarna.";
 
@@ -60,31 +60,31 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout är inaktiverat";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "Döljer URL i %@ s...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Inga sensordata";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Sensorns livslängd";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL saknas";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Koppla från och anslut Libre-sensorn igen";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Användarnamn/lösenord saknas";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Ingen CGM-datakälla ansluten";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "5-minutersavläsningar";
+"postProcessingAlgorithm" = "Algoritm";
 "sensorLifetimeRemainingFormat" = "%@ kvar";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -116,14 +116,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Diagram över sensorbrusets historik";
 "pumpBattery" = "Batteri";
 "pumpReservoir" = "Reservoar";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Förfluten / Återstående";
+"sensorManagementSessionDetails" = "Sessionsdetaljer";
+"sensorManagementCalibrationOpenTitle" = "Kalibreringsdetaljer";
+"sensorManagementCGMType" = "CGM-typ";
 "sensorManagementLastCalibration" = "Senaste";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Sensor aktiv";
+"sensorManagementStarted" = "Startad";
+"sensorManagementEnds" = "Slutar";
 "sensorHealthPersistentNoiseTitle" = "Mycket högt sensorbrus";
 "sensorHealthPersistentNoiseGuidance" = "Mycket högt brus i 12 timmar. Överväg att byta sensorn om det fortsätter.";
 "sensorHealthFlatlineTitle" = "Sensorsignalen är platt";
@@ -215,3 +215,89 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "Justering av offset och form är inte tillgänglig eftersom den här CGM:en använder egen kalibrering.";
 
 "postProcessingWarningAgreement" = "Tryck på OK endast om du förstår funktionen och samtycker till att aktivera den.";
+"postProcessingShape" = "Betoning";
+"sensorManagementCalibrationSafetyFooter" = "Kalibrera bara om du förstår hur det görs på ett säkert sätt.";
+"snoozeAllTitle" = "Snooza alla";
+"postProcessingUpdateAllReadingsLastPeriod" = "Skriv över alla värden under de senaste %@";
+"postProcessingEnterValue" = "Ange värde";
+"postProcessingStrong" = "Stark";
+"sensorManagementCalibrationIntercept" = "Skärningspunkt";
+"snoozeUrgentAlarms" = "Endast brådskande larm";
+"showHideHomeScreenFooter" = "Visa eller dölj huvudelement på startskärmen, användbart på iPhones med mindre skärm";
+"postProcessingSofterLowsDescription" = "Tillämpar mer av skaleffekten vid låga glukosvärden och mindre vid höga värden.";
+"postProcessingMasterNightscoutUploadDisabled" = "Uppladdning till Nightscout är inaktiverad";
+"sensorManagementCalibrationSlope" = "Lutning";
+"postProcessingReadingFrequency" = "Avläsningsfrekvens";
+"sensorManagementCalibrationFalling" = "Sjunkande";
+"postProcessingOffset" = "Förskjutning";
+"waitingForDataSource" = "CGM ansluten. Väntar på data...";
+"sensorManagementCalibrationSlightlyHigh" = "Något högt";
+"sensorManagementCalibrationFallingFast" = "Sjunker snabbt";
+"postProcessingOffsetBgCheckHint" = "Minst en nylig blodsockermätning rekommenderas";
+"noDataSourceConnectedWatch" = "Öppna iOS-appen";
+"sensorManagementCalibrationStableTrend" = "Stabil trend";
+"sensorNoiseHistoryFooter" = "Diagrammet visar 30-minuters variation, det rullande 4-timmarsvärdet och 12-timmarsmedianen som används för varningar om ihållande brus. Lägre värden är jämnare. Det mäter inte glukosets noggrannhet.";
+"sensorManagementCalibrationNoTrend" = "Ingen trend";
+"sensorManagementCalibrationNoReading" = "Ingen avläsning";
+"postProcessingEnterGlucose" = "Ange glukos";
+"sensorHealthTestTransmitterFailure" = "Testa sändarfel om 5 sekunder";
+"postProcessingNow" = "Nu";
+"sensorManagementCalibrationReadinessBad" = "Kalibreringen blir sannolikt inte exakt just nu. Vänta.";
+"postProcessingOriginal" = "Original";
+"sensorManagementCalibrationReadinessCaution" = "Kalibreringen kan vara mindre tillförlitlig. Det kan vara bättre att vänta.";
+"postProcessingSofterLows" = "Låga";
+"postProcessingApplyFrom" = "Tillämpa från";
+"sensorManagementLargeCalibrationDifferenceWarningFormat" = "Det är möjligt att den här kalibreringen inte fungerar. Försök begränsa varje kalibreringsändring till högst %@ åt gången.";
+"sensorManagementCalibrationStable" = "Stabil";
+"sensorHealthTestTemporaryIssue" = "Testa tillfälligt problem om 5 sekunder";
+"postProcessingScaleBgCheckHint" = "Minst två nyliga blodsockermätningar rekommenderas";
+"postProcessingOriginalGlucose" = "Ursprungligt glukos";
+"sensorManagementCalibrationGood" = "Bra";
+"sensorNoiseHistoryPersistentCompact" = "12 h";
+"postProcessingNoCurrentValues" = "Inga aktuella värden";
+"postProcessingMedium" = "Medel";
+"showHideItemsTitle" = "Snabbval visa/dölj";
+"postProcessingAdjustedGlucose" = "Justerat glukos";
+"showHideStandByModeFooter" = "Ändrar hur StandBy-läget visas om det är aktiverat i iPhones inställningar";
+"followerAccountCredentialsInvalid" = "Ogiltigt konto";
+"postProcessingNightscoutDataNotUpdated" = "Nightscout-data uppdateras inte";
+"sensorManagementNoisePersistent" = "Senaste 12 timmarna";
+"sensorRemaining" = "Sensor återstår";
+"sensorManagementCalibrationFlatline" = "Platt linje";
+"sensorManagementCalibrationStale" = "Inaktuell";
+"showHideHomeScreenTitle" = "Startskärm";
+"postProcessingSmoothed" = "Utjämnat";
+"postProcessingApply" = "Tillämpa";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "Justering är inaktiverad eftersom den här sensorn redan använder sin egen kalibrering. Byt till den inbyggda algoritmen för att tillåta glukosjusteringar.";
+"sensorManagementCalibrationRaw" = "Rå";
+"postProcessingPreviewHours" = "Förhandsvisningstimmar";
+"snoozeAllSnoozed" = "Alla larm är snoozade!";
+"postProcessingAdjusted" = "Justerat";
+"snoozeAllDisabled" = "Snooza alla inaktiverat";
+"showTreatments" = "Visa behandlingar";
+"sensorHealthTestSensorFailure" = "Testa sensorfel om 5 sekunder";
+"sensorManagementCalibrationReadinessGood" = "Nu är det en bra tidpunkt att kalibrera.";
+"postProcessingScale" = "Skala";
+"postProcessingTitle" = "Glukosjusteringar";
+"postProcessingSofterHighs" = "Höga";
+"postProcessingNeutralDescription" = "Tillämpar skaleffekten jämnt över hela glukosintervallet.";
+"postProcessingSofterHighsDescription" = "Tillämpar mer av skaleffekten vid höga glukosvärden och mindre vid låga värden.";
+"postProcessingValidGlucoseRange" = "Ange ett värde mellan %@ och %@";
+"postProcessingStrength" = "Styrka";
+"remaining" = "återstår";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "Savitzky-Golay jämnar ut glukoskurvan genom att anpassa korta lokala fönster samtidigt som den övergripande formen på toppar och dalar bevaras.";
+"showHideStandByModeTitle" = "StandBy-läge";
+"postProcessingLight" = "Lätt";
+"sensorManagementCalibrationValue" = "Kalibreringsvärde";
+"postProcessingNeutral" = "Normal";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "Justering är inaktiverad eftersom den här sensorn redan använder sin egen kalibrering.";
+"sensorManagementCalibrationRising" = "Stigande";
+"snoozeAllSnoozedUntil" = "Snoozat till %@";
+"sensorManagementCalibrationSlightlyLow" = "Något lågt";
+"sensorHealthTestPersistentNoise" = "Testa ihållande brus om 5 sekunder";
+"sensorHealthTestFlatline" = "Testa platt signal om 5 sekunder";
+"postProcessingShapeExplanation" = "Betoningen ändrar var Skala har störst effekt på kurvan. Det kan hjälpa om en sensor verkar överdriva högre eller lägre glukosvärden mer än resten av intervallet.";
+"postProcessingDexcomShareDataNotUpdated" = "Dexcom Share-data uppdateras inte";
+"sensorManagementCalibrationBG" = "BG";
+"waitingForCGMConnection" = "Väntar på CGM-anslutning...";
+"sensorManagementCalibrationRisingFast" = "Stiger snabbt";

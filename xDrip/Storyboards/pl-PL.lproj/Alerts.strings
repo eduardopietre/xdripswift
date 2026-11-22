@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// an alentry is applicable as of a certain value (eg low alert as of 70 mg/dl), this is the name of the field in the settings screen that allows to modify this valule
-"alertvalue" = "Value";
+"alertvalue" = "Wartość";
 "alerts_snooze_high_title" = "Wysoki poziom";
 "alerts_snooze_very_high_title" = "Bardzo wysoki poziom";
 "alerts_snooze_low_title" = "Niski poziom";
@@ -14,55 +14,55 @@
 "alerts_snooze_fast_rise_title" = "Szybki wzrost";
 
 /// When very low alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_lowalerttitle" = "Low Alarm";
+"alerts_lowalerttitle" = "Alarm niskiej glikemii";
 
 /// shown on top of the screen that allows user to edit an alert
-"alertsettingsview_screentitle" = "Alarms";
+"alertsettingsview_screentitle" = "Alarmy";
 
 /// an alentry is applicable as of a certain value (eg low alert as of 70 mg/dl), this is the name of the field in the settings screen that allows to modify this valule
-"alerttype" = "Alarm Type";
+"alerttype" = "Typ alarmu";
 
 /// an alentry is applicable as of a certain timestamp in the day, this is the text in the field in the settings screen that allows to modify this timestamp
-"alertstart" = "Apply from";
+"alertstart" = "Zastosuj od";
 
 /// When fast drop alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_fastrise" = "Fast Rise Alarm";
+"alerts_fastrise" = "Alarm szybkiego wzrostu";
 
 /// shown on top of the screen that allows user to view all the alerts in one table
-"alertssettingsview_screentitle" = "Edit Alarm";
+"alertssettingsview_screentitle" = "Edytuj alarm";
 
 /// When Missed reading alert happens, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_missedreadingalerttitle" = "Missed Readings";
+"alerts_missedreadingalerttitle" = "Brakujące odczyty";
 
 /// when editing an alert value, a pop is shown, this is the explanation message in the pop up
-"changealertvalue" = "Change Alarm Value";
+"changealertvalue" = "Zmień wartość alarmu";
 
 /// when calibration is needed, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_calibrationneeded" = "Calibration Reminder";
+"alerts_calibrationneeded" = "Przypomnienie o kalibracji";
 
 /// transmitter battery low, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_batterylow" = "Transmitter Battery Low";
+"alerts_batterylow" = "Niski poziom baterii transmitera";
 
 /// When fast drop alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_fastdrop" = "Fast Drop Alarm";
+"alerts_fastdrop" = "Alarm szybkiego spadku";
 
 /// When pop up is shown to let user pick the snooze time, this is the title of this pop up
-"alerts_select_snooze_time" = "Select Snooze Time";
+"alerts_select_snooze_time" = "Wybierz czas drzemki";
 
 /// When very low alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_verylowalerttitle" = "Very Low Alarm";
+"alerts_verylowalerttitle" = "Alarm bardzo niskiej glikemii";
 
 /// when trying to delete an alert, user needs to confirm first, this is the message
-"confirmdeletionalert" = "Delete Alarm?";
+"confirmdeletionalert" = "Usunąć alarm?";
 
 /// Action text for alerts. This is the button that allows to snooze the alert
-"alerts_snooze" = "Snooze";
+"alerts_snooze" = "Drzemka";
 
 /// When very high alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_veryhighalerttitle" = "Very High Alarm";
+"alerts_veryhighalerttitle" = "Alarm bardzo wysokiej glikemii";
 
 /// When high alarm rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alarm
-"alerts_highalerttitle" = "High Alarm";
+"alerts_highalerttitle" = "Alarm wysokiej glikemii";
 
 /* Optional one-off sensor expiry reminders. */
 "sensorExpiry.endingSoon" = "Sensor wkrótce zakończy pracę";
@@ -71,3 +71,7 @@
 "sensorExpiry.hoursHelp" = "Wpisz liczbę całkowitą od 1 do 48 godzin.";
 "sensorExpiry.endingSoonBody" = "Przewidywany czas pracy sensora kończy się %@.";
 "sensorExpiry.expectedExpiryBody" = "Sensor osiągnął przewidywany koniec pracy (%@).";
+"alertWhenAboveValue" = "Tylko powyżej";
+"alertWhenBelowValue" = "Tylko poniżej";
+"alerts_sensortransmitterfailure" = "Awaria sensora/transmitera";
+"alerts_notloopingalerttitle" = "Brak pętli";

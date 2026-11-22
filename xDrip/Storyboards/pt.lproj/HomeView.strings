@@ -41,7 +41,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When user clicks stop sensor, ask confirmation
-"stopSensorConfirmation" = "Are you sure you want to stop the sensor?";
+"stopSensorConfirmation" = "Tem a certeza de que pretende parar o sensor?";
 
 /// When user needs to enter sensor code, to start firefly sensor
 "enterSensorCode" = "Leia a etiqueta do sensor com a câmara ou escolha uma fotografia para ler o código do sensor.";
@@ -51,7 +51,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// status info : literally 'Sensor End'
-"sensorend" = "Sensor Ends";
+"sensorend" = "Fim do Sensor";
 
 "calibrationNotNecessary" = "Quando em utilização do algoritmo nativo do transmissor, calibração manual não está disponível.\n\nSe pretende calibrar, terá que alterar para o algoritmo xDrip no menu do transmissor.";
 
@@ -60,31 +60,31 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "O Nightscout está desativado";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "A ocultar o URL durante %@s...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "Sem dados do sensor";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "Duração do Sensor";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL em falta";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "Desligue e volte a ligar o sensor Libre";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "Nome de utilizador/palavra-passe em falta";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "Nenhuma fonte de dados CGM ligada";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "Leituras de 5 minutos";
+"postProcessingAlgorithm" = "Algoritmo";
 "sensorLifetimeRemainingFormat" = "%@ restantes";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -116,14 +116,14 @@
 "sensorNoiseHistoryChartAccessibility" = "Gráfico do histórico de ruído do sensor";
 "pumpBattery" = "Bateria";
 "pumpReservoir" = "Reservatório";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "Decorrido / Restante";
+"sensorManagementSessionDetails" = "Detalhes da Sessão";
+"sensorManagementCalibrationOpenTitle" = "Detalhes da Calibração";
+"sensorManagementCGMType" = "Tipo de CGM";
 "sensorManagementLastCalibration" = "Última";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "Sensor Ativo";
+"sensorManagementStarted" = "Iniciado";
+"sensorManagementEnds" = "Termina";
 "sensorManagementCalibrationValue" = "Valor de calibração";
 "sensorManagementCalibrationStableTrend" = "Tendência estável";
 "sensorManagementCalibrationSlightlyLow" = "Ligeiramente baixo";
@@ -238,3 +238,66 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "O ajuste do desvio e da forma não está disponível porque este CGM usa calibração própria.";
 
 "postProcessingWarningAgreement" = "Toque em OK apenas se compreender esta funcionalidade e concordar em ativá-la.";
+"postProcessingShape" = "Ênfase";
+"snoozeAllTitle" = "Silenciar Tudo";
+"postProcessingUpdateAllReadingsLastPeriod" = "Substituir todos os valores nos últimos %@";
+"postProcessingEnterValue" = "Introduzir valor";
+"postProcessingStrong" = "Forte";
+"snoozeUrgentAlarms" = "Apenas Alarmes Urgentes";
+"showHideHomeScreenFooter" = "Mostrar ou ocultar elementos principais do ecrã inicial, útil em iPhones com ecrã mais pequeno";
+"postProcessingSofterLowsDescription" = "Aplica mais o efeito de escala nos valores de glicose baixos e menos nos valores altos.";
+"postProcessingMasterNightscoutUploadDisabled" = "O envio para o Nightscout está desativado";
+"postProcessingReadingFrequency" = "Frequência de Leitura";
+"postProcessingOffset" = "Desvio";
+"waitingForDataSource" = "CGM ligado. A aguardar dados...";
+"postProcessingOffsetBgCheckHint" = "Recomenda-se pelo menos uma medição de glicemia recente";
+"noDataSourceConnectedWatch" = "Abra a app iOS";
+"sensorNoiseHistoryFooter" = "O gráfico mostra a variação de 30 minutos, o valor móvel de 4 horas e a mediana de 12 horas usada nos avisos de ruído persistente. Valores mais baixos são mais suaves. Não mede a precisão da glicose.";
+"postProcessingEnterGlucose" = "Introduzir Glicose";
+"sensorHealthTestTransmitterFailure" = "Testar Falha do Transmissor em 5 Segundos";
+"postProcessingNow" = "Agora";
+"postProcessingOriginal" = "Original";
+"postProcessingSofterLows" = "Baixos";
+"postProcessingApplyFrom" = "Aplicar a Partir de";
+"sensorHealthTestTemporaryIssue" = "Testar Problema Temporário em 5 Segundos";
+"postProcessingScaleBgCheckHint" = "Recomendam-se pelo menos duas medições de glicemia recentes";
+"postProcessingOriginalGlucose" = "Glicose Original";
+"sensorNoiseHistoryPersistentCompact" = "12 h";
+"postProcessingNoCurrentValues" = "Sem valores atuais";
+"postProcessingMedium" = "Médio";
+"showHideItemsTitle" = "Mostrar/Ocultar Rápido";
+"postProcessingAdjustedGlucose" = "Glicose ajustada";
+"showHideStandByModeFooter" = "Altera a forma como o modo StandBy é apresentado, se ativado nas definições do iPhone";
+"followerAccountCredentialsInvalid" = "Conta Inválida";
+"postProcessingNightscoutDataNotUpdated" = "Os dados do Nightscout não serão atualizados";
+"sensorManagementNoisePersistent" = "Últimas 12 Horas";
+"sensorRemaining" = "Sensor Restante";
+"showHideHomeScreenTitle" = "Ecrã Inicial";
+"postProcessingSmoothed" = "Suavizado";
+"postProcessingApply" = "Aplicar";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "O ajuste está desativado porque este sensor já utiliza a sua própria calibração. Mude para o algoritmo nativo para permitir ajustes de glicose.";
+"postProcessingPreviewHours" = "Horas de Pré-visualização";
+"snoozeAllSnoozed" = "Todos os alarmes estão silenciados!";
+"postProcessingAdjusted" = "Ajustado";
+"snoozeAllDisabled" = "Silenciar Tudo Desativado";
+"showTreatments" = "Mostrar Tratamentos";
+"sensorHealthTestSensorFailure" = "Testar Falha do Sensor em 5 Segundos";
+"postProcessingScale" = "Escala";
+"postProcessingTitle" = "Ajustes de Glicose";
+"postProcessingSofterHighs" = "Altos";
+"postProcessingNeutralDescription" = "Aplica o efeito de escala de forma uniforme em todo o intervalo de glicose.";
+"postProcessingSofterHighsDescription" = "Aplica mais o efeito de escala nos valores de glicose altos e menos nos valores baixos.";
+"postProcessingValidGlucoseRange" = "Introduza um valor entre %@ e %@";
+"postProcessingStrength" = "Intensidade";
+"remaining" = "restantes";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "O Savitzky-Golay suaviza a curva de glicose ajustando pequenas janelas locais, preservando a forma geral dos picos e vales.";
+"showHideStandByModeTitle" = "Modo StandBy";
+"postProcessingLight" = "Ligeiro";
+"postProcessingNeutral" = "Normal";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "O ajuste está desativado porque este sensor já utiliza a sua própria calibração.";
+"snoozeAllSnoozedUntil" = "Silenciado Até %@";
+"sensorHealthTestPersistentNoise" = "Testar Ruído Persistente em 5 Segundos";
+"sensorHealthTestFlatline" = "Testar Sinal Plano em 5 Segundos";
+"postProcessingShapeExplanation" = "A ênfase altera onde a Escala tem mais efeito na curva. Pode ajudar se um sensor parecer exagerar os valores de glicose mais altos ou mais baixos do que o resto do intervalo.";
+"postProcessingDexcomShareDataNotUpdated" = "Os dados do Dexcom Share não serão atualizados";
+"waitingForCGMConnection" = "A aguardar ligação do CGM...";

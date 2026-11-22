@@ -122,7 +122,7 @@
 "settingsviews_sectiontitlestatistics" = "Tilastot";
 
 /// statistics settings, use IFCC method for HbA1c?
-"settingsviews_useIFCCGMI" = "GMI in mmols/mol";
+"settingsviews_useIFCCGMI" = "GMI yksikössä mmol/mol";
 
 /// statistics settings, show statistics on home screen
 "settingsviews_showStatistics" = "Tilastot";
@@ -180,66 +180,66 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Settings screen for loop delay
-"Select Time" = "Select Time";
+"Select Time" = "Valitse aika";
 
 /// transmitter settings, to explain that the reset option only works for certain transmitters
-"settingsviews_resetDexcomTransmitterMessage" = "This option will attempt to reset your Anubis transmitter on the next connection.";
+"settingsviews_resetDexcomTransmitterMessage" = "Tämä valinta yrittää nollata Anubis-lähettimesi seuraavan yhteyden yhteydessä.";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressiveMessage" = "Keep-alive is set to aggressive.\n\nWhen the app is not on screen, we will aggressively attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a very noticeable impact on the battery of your device and should only be used if absolutely necessary.";
+"settingsviews_followerKeepAliveTypeAggressiveMessage" = "Keep-alive on asetettu aggressiiviseksi.\n\nKun sovellus ei ole näytöllä, yritämme aggressiivisesti pitää sen käynnissä taustalla, jotta verensokeripäivitykset vastaanotetaan ja hälytykset voidaan laukaista.\n\nTällä tilalla on erittäin huomattava vaikutus laitteen akun kestoon, ja sitä tulee käyttää vain, jos se on ehdottoman välttämätöntä.";
 
 /// libre link up follower settings, no active sensor
-"settingsviews_libreLinkUpNoActiveSensor" = "No active sensor data";
+"settingsviews_libreLinkUpNoActiveSensor" = "Ei aktiivista sensoritietoa";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabledMessage" = "Keep-alive is disabled.\n\nWhen the app is not on screen, no alarms, app badges, notifications or BG updates will take place.\n\nThe app will remain sleeping until you open it again.\n\nThis mode has very little impact on the battery of your device.";
+"settingsviews_followerKeepAliveTypeDisabledMessage" = "Keep-alive on pois käytöstä.\n\nKun sovellus ei ole näytöllä, hälytyksiä, sovelluksen merkkejä, ilmoituksia tai verensokeripäivityksiä ei tule.\n\nSovellus pysyy lepotilassa, kunnes avaat sen uudelleen.\n\nTällä tilalla on hyvin vähän vaikutusta laitteen akun kestoon.";
 
 /// Settings screen for loop delay, explanatory text for value
-"expanatoryTextSelectValue" = "Delay in minutes, applied to readings shared with OS-AID";
+"expanatoryTextSelectValue" = "Viive minuutteina, käytetään OS-AID:n kanssa jaettuihin lukemiin";
 
 /// statistics settings, prefer time in tight range
-"settingsviews_timeInRangeTypeTightRange" = "Tight Range";
+"settingsviews_timeInRangeTypeTightRange" = "Tiukka alue";
 
 /// data source settings, keep-alive mode is set to normal
-"settingsviews_followerKeepAliveTypeNormal" = "Normal";
+"settingsviews_followerKeepAliveTypeNormal" = "Normaali";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressive" = "Aggressive";
+"settingsviews_followerKeepAliveTypeAggressive" = "Aggressiivinen";
 
 /// statistics settings, prefer standard time in range
 "settingsviews_timeInRangeTypeStandardRange" = "Vakio";
 
 /// statistics settings, the type of time in range selected
-"settingsviews_labelTimeInRangeType" = "Time In Range";
+"settingsviews_labelTimeInRangeType" = "Aika alueella";
 
 /// data source settings, enable background keep alive
 "settingsviews_labelfollowerKeepAliveType" = "Keep-alive";
 
 /// this setting is required
-"settingsviews_valueIsRequired" = "⚠️ Required";
+"settingsviews_valueIsRequired" = "⚠️ Pakollinen";
 
 /// treatments settings, offset the carb treatments on main chart
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 
 /// When user creates new loopdelay, with a timestamp that already exists - this is the warning text
-"warningLoopDelayAlreadyExists" = "There is already a loopDelay for this time.";
+"warningLoopDelayAlreadyExists" = "Tälle ajalle on jo loopDelay.";
 
 /// statistics settings, prefer user-defined range
-"settingsviews_timeInRangeTypeUserDefinedRange" = "User Range";
+"settingsviews_timeInRangeTypeUserDefinedRange" = "Käyttäjän alue";
 
 /// CGM data source settings, section title
 "settingsviews_sectionTitleDataSource" = "Tietolähde";
 "settingsviews_dataSourceMasterDevicesFooter" = "Lisää yhteensopivia laitteita Laitteet-välilehdellä.";
 
 /// follower settings, pop up that asks user to enter their username
-"settingsviews_enterUsername" = "Enter your username";
+"settingsviews_enterUsername" = "Anna käyttäjätunnus";
 
 /// data source settings, show that Nightscout is disabled
-"settingsviews_nightscoutNotEnabledRowText" = "Disabled";
+"settingsviews_nightscoutNotEnabledRowText" = "Pois käytöstä";
 
 /// data source settings, keep-alive mode is set to use an external heartbeat
-"settingsviews_followerKeepAliveTypeHeartbeatMessage" = "Keep-alive is set to use an external heartbeat.\n\nWhen the app is not on screen, the external heartbeat will wake it up in the background so that BG updates are received and alarms can be triggered.\n\nMake sure you add a valid heartbeat device in the Bluetooth screen.\n\nThis mode has very little impact on the battery of your device but will only work if a valid heartbeat is running.";
+"settingsviews_followerKeepAliveTypeHeartbeatMessage" = "Keep-alive on asetettu käyttämään ulkoista heartbeatia.\n\nKun sovellus ei ole näytöllä, ulkoinen heartbeat herättää sen taustalla, jotta verensokeripäivitykset vastaanotetaan ja hälytykset voidaan laukaista.\n\nVarmista, että olet lisännyt toimivan heartbeat-laitteen Bluetooth-näytössä.\n\nTämä tila kuluttaa laitteen akkua hyvin vähän, mutta toimii vain, jos toimiva heartbeat on käynnissä.";
 
 /// When enabled, readings will not be reading to shared user defaults (for loop)
 "suppressLoopShare" = "Suppress Loop Share";
@@ -247,19 +247,19 @@
 /// When clicking the event interval setting, a pop up asks for minimum number of minutes between two events, this is the pop up message - this is used for setting the interval between two calendar events
 
 /// data source settings, enable Nightscout in the Nightscout section
-"settingsviews_nightscoutNotEnabled" = "Nightscout is disabled\n\nTo upload BG values to Nightscout, you must enable it in the Nightscout section.";
+"settingsviews_nightscoutNotEnabled" = "Nightscout ei ole käytössä\n\nVoit lähettää verensokeriarvoja Nightscoutiin vain, jos otat sen käyttöön Nightscout-osiossa.";
 
 /// screen dimming is disabled
-"settingsviews_screenLockDimmingTypeDisabled" = "Disabled";
+"settingsviews_screenLockDimmingTypeDisabled" = "Pois käytöstä";
 
 /// When clicking the speak interval setting, a pop up asks for minimum number of minutes between two speech events, this is the pop up message - this is used for setting the interval between two spoken bg announcements
-"settingsviews_SpeakIntervalTitle" = "Speak Interval";
+"settingsviews_SpeakIntervalTitle" = "Puheen väli";
 
 /// libre link up follower settings, pop up that asks user to enter their region
-"settingsviews_libreLinkUpReAcceptNeeded" = "Need to accept terms";
+"settingsviews_libreLinkUpReAcceptNeeded" = "Ehdot on hyväksyttävä";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two bg announcements, this is the pop up message - this is used for setting the interval between two readings in BG announcements, Speak readings, Apple Watch
-"settingsviews_SpeakIntervalMessage" = "Minimum interval between two voice announcements";
+"settingsviews_SpeakIntervalMessage" = "Puheilmoitusten vähimmäisväli";
 
 /// home screen settings, should the mini-chart be shown
 "settingsviews_showMiniChart" = "Pienoiskaavio";
@@ -269,42 +269,42 @@
 "settingsviews_followerPatientName" = "Alias";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabled" = "Disabled";
+"settingsviews_followerKeepAliveTypeDisabled" = "Pois käytöstä";
 
 /// screen dimming is dark
-"settingsviews_screenLockDimmingTypeDark" = "Dark";
+"settingsviews_screenLockDimmingTypeDark" = "Tumma";
 
 /// screen dimming is dimmed
-"settingsviews_screenLockDimmingTypeDimmed" = "Dimmed";
+"settingsviews_screenLockDimmingTypeDimmed" = "Himmennetty";
 
 /// When enabled, then it should be possible to run xDrip4iOS/Libre 2 in parallel with other app(s)
-"suppressUnLockPayLoad" = "Suppress Unlock Payload";
+"suppressUnLockPayLoad" = "Estä lukituksen avauksen payload";
 
 /// Settings screen for loop delay
-"Select Value" = "Select Value";
+"Select Value" = "Valitse arvo";
 
 /// Settings screen for loop delay, explanatory text for time
-"expanatoryTextSelectTime" = "As of what time should the value apply";
+"expanatoryTextSelectTime" = "Mistä kellonajasta alkaen arvo on voimassa";
 
 /// data source settings, data source region
-"settingsviews_labelFollowerDataSourceRegion" = "Region";
+"settingsviews_labelFollowerDataSourceRegion" = "Alue";
 
 /// data source settings, data source
 "settingsviews_labelFollowerDataSourceType" = "Tietolähde";
 
 /// data source settings, enable Nightscout upload
-"settingsviews_labelUploadDataToNightscout" = "Upload to Nightscout";
+"settingsviews_labelUploadDataToNightscout" = "Lähetä Nightscoutiin";
 
 /// data source settings, ask the user to enter the name of the person we are following if they want to - it's optional
-"settingsviews_followerPatientNameMessage" = "Here you can optionally write an alias for the person you are following.";
+"settingsviews_followerPatientNameMessage" = "Voit halutessasi kirjoittaa tähän aliaksen seuraamallesi henkilölle.";
 
 /// follower settings, pop up that asks user to enter their password
-"settingsviews_enterPassword" = "Enter your password";
+"settingsviews_enterPassword" = "Anna salasana";
 
 /// The user needs to update their calendar permissions
 
 /// data source settings, keep-alive mode is set to normal
-"settingsviews_followerKeepAliveTypeNormalMessage" = "Keep-alive is set to normal operation.\n\nWhen the app is not on screen, we will attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a noticeable impact on the battery of your device.";
+"settingsviews_followerKeepAliveTypeNormalMessage" = "Keep-alive on asetettu normaaliin toimintaan.\n\nKun sovellus ei ole näytöllä, yritämme pitää sen käynnissä taustalla, jotta verensokeripäivitykset vastaanotetaan ja hälytykset voidaan laukaista.\n\nTällä tilalla on huomattava vaikutus laitteen akun kestoon.";
 
 /// home screen settings, should the screen be dimmed when the screen is locked
 "settingsviews_screenLockDimmingTypeWhenScreenIsLocked" = "Himmennys";
@@ -312,7 +312,7 @@
 /// Should loop data be shared only every 5 minutes
 
 /// screen dimming is very dark
-"settingsviews_screenLockDimmingTypeVeryDark" = "Very Dark";
+"settingsviews_screenLockDimmingTypeVeryDark" = "Hyvin tumma";
 
 // MARK: - Automatic Housekeeping
 "settingsviews_dataManagementStorageInfo" = "Tallennustiedot";
@@ -501,13 +501,13 @@
 "settingsviews_nightscoutImportBatchProgress" = "Erä %1$d/%2$d";
 "settingsviews_nightscoutImportErrorServer" = "Nightscout palautti väliaikaisen palvelinvirheen (HTTP %d). Jatka tuontia myöhemmin.";
 "settingsviews_nightscoutImportErrorUnexpectedStatus" = "Nightscout palautti odottamattoman vastauksen (HTTP %d).";
-"sensorNoiseSensitivity" = "Sensor Sensitivity";
-"sensorNoiseSensitivitySensitive" = "Sensitive";
-"sensorNoiseSensitivityNormal" = "Normal";
-"sensorNoiseSensitivityPermissive" = "Permissive";
+"sensorNoiseSensitivity" = "Sensorin herkkyys";
+"sensorNoiseSensitivitySensitive" = "Herkkä";
+"sensorNoiseSensitivityNormal" = "Normaali";
+"sensorNoiseSensitivityPermissive" = "Salliva";
 "settingsviews_followerServiceStatus" = "Tila";
-"settingsviews_liveActivityDisabledInFollowerModeMessage" = "Live Activities are disabled in Follower Mode unless an external heartbeat is used for Keep-alive.";
-"settingsviews_infoContactsKeepAliveDisabled" = "You are using Follower mode with Keep-alive disabled.\n\nContact Image function cannot work without Keep-alive.";
+"settingsviews_liveActivityDisabledInFollowerModeMessage" = "Live Activity -toiminnot on poistettu käytöstä seuraajatilassa, ellei Keep-alive-toimintoon käytetä ulkoista heartbeatia.";
+"settingsviews_infoContactsKeepAliveDisabled" = "Käytät seuraajatilaa, jossa Keep-alive on pois käytöstä.\n\nYhteystiedon kuva -toiminto ei toimi ilman Keep-alivea.";
 
 /// CareLinkin automaattisen basaalin näyttö
 "settingsviews_careLinkTherapyDisplay" = "Hoidon näyttö";
@@ -590,7 +590,7 @@
 "therapy.smallCarbThreshold" = "Vähän HH";
 "therapy.treatmentThresholdsExplanation" = "Rajat alittavat bolus- ja hiilihydraattiarvot piilotetaan kaaviosta. Bolusraja määrittää myös pienet bolukset hoitoluettelossa. «Ei» näyttää kaikki arvot.";
 
-"settingsviews_useIFCCA1C" = "HbA1c in mmols/mol";
+"settingsviews_useIFCCA1C" = "HbA1c yksikössä mmol/mol";
 
 "settingsviews_statisticsEstimate" = "Glukoosiarvio";
 
@@ -626,3 +626,73 @@
 "settingsviews_shareReport" = "Jaa raportti";
 "settingsviews_shareIssueReport" = "Jaa ongelmaraportti";
 "settingsviews_reportShareFailed" = "Lokitiedostojen valmistelu epäonnistui. Yritä uudelleen.";
+"calendarShareStatusFooter" = "Sisällytä historia lisää kuhunkin payloadiin viimeisimmät 5 minuutin lukemat, jotta seuraajat voivat täyttää puuttuvat arvot. Valitse luotettavuuden parantamiseksi pienin toimiva historian määrä.";
+"settingsviews_highValueMessage" = "Anna korkean rajan verensokeriarvo.";
+"calendarShareAliasMessage" = "Tämä nimi lähetetään seuraajien laitteille.";
+"settingsviews_shareUploadUnchecked" = "Ei tarkistettu";
+"calendarShareLastValue" = "Viimeisin arvo";
+"calendarFollowHistoricalReadingsFooter" = "Viimeisimmän payloadin historialliset lukemat tuodaan vain, jos ne puuttuvat paikallisesti.";
+"settingsviews_shareUploadReceiverNotAssigned" = "Tätä vastaanotinta ei ole liitetty Dexcom-tiliisi. Rekisteröi se Dexcomin virallisella sovelluksella.";
+"settingsviews_shareUploadFailed" = "Lähetys epäonnistui";
+"settingsviews_homeScreenScreenLockSectionTitle" = "Näytön lukitus";
+"calendarShareConnectionFooter" = "Valitse jaettu kalenteri, johon seuraajien laitteet pääsevät myös käsiksi. Parhaan toiminnan varmistamiseksi suositellaan iCloud-jaettua kalenteria.";
+"settingsviews_cleanDataDeviceStatus" = "Laitteen tila";
+"settingsviews_shareUploadAccountVerified" = "Tili vahvistettu";
+"nightscoutToken" = "Token";
+"warningChangeToFollowerDexcomShare" = "Dexcom Share -seuraajatilaan siirtyminen poistaa käytöstä toiminnon 'Lähetä Dexcom Shareen'.";
+"calendarShareAlias" = "Alias";
+"settingsviews_followerKeepAliveTypeContinuousMessage" = "Keep-alive on asetettu jatkuvaksi.\n\nKun sovellus ei ole näytöllä, hiljaista ääntä toistetaan jatkuvasti, jotta seuraajapäivitykset ja hälytykset pysyvät käynnissä mahdollisimman tehokkaasti.\n\nTämä tila ei voi taata, että iOS pitää sovelluksen aktiivisena. Sillä on suurin vaikutus akun kestoon, ja sitä tulee käyttää vain, jos Aggressiivinen ei ole luotettava.";
+"settingsviews_shareUploadLocalOnly" = "Dexcom Shareen lähettäminen on mahdollista vain paikallisella verensokerilähteellä.";
+"settingsviews_urgentHighValueMessage" = "Anna kiireellisen korkean rajan verensokeriarvo.";
+"settingsviews_sensorHealthNotificationsFooter" = "Hallitsee valinnaisia järjestelmäilmoituksia pitkittyneestä sensorin kohinasta, tasaisesta signaalista ja tilapäisistä sensorin ongelmista. Sensorin/lähettimen vika määritetään muiden hälytysten kanssa. Suljettava kotinäytön banneri on edelleen käytettävissä.";
+"settingsviews_nightscoutImportDeviceStatus" = "Laitteen tila";
+"settingsviews_issueReportSectionFooter" = "Älä lähetä ongelmaraporttia, ellei xDrip4iOS-kehittäjä pyydä sitä, tai raporttisi poistetaan automaattisesti.";
+"settingsviews_infoContactsAccessRestricted" = "Et voi antaa sovellukselle %@ oikeutta käyttää yhteystietojasi. Tämä johtuu mahdollisesti käytössä olevista rajoituksista, kuten lapsilukosta.";
+"settingsviews_urgentLowValueMessage" = "Anna kiireellisen matalan rajan verensokeriarvo.";
+"calendarFollowCalendarFooter" = "Valitse isäntä-iPhonen jakama kalenteri. Parhaan tuloksen saat käyttämällä jaettua iCloud-kalenteria.";
+"settingsviews_homeScreenMainChartSectionFooter" = "Nämä asetukset ohjaavat, miten verensokeritiedot näytetään pääkaaviossa.";
+"settingsviews_storeFrequentReadingsInHealthKitMessage" = "Tämä asetus ohittaa 5 minuutin kirjoitusrajoitukset ja sallii huomattavasti tiheämmän datan lisäämisen Apple Healthiin, esimerkiksi Libre 2 Directin 60 sekunnin arvot.\n\nOta tämä käyttöön vain, jos todella tarvitset/haluat tiheämpää dataa. Useimpien käyttäjien tulee jättää tämä pois käytöstä.";
+"enterNightscoutPortNumber" = "Anna portin numero";
+"settingsviews_storeFrequentReadingsInNightscout" = "Tiheät Nightscout-lähetykset";
+"settingsviews_followerKeepAliveTypeContinuous" = "Jatkuva";
+"settingsviews_contactImageSectionTitle" = "Yhteystiedon kuva";
+"infoCalendarAccessWriteOnly" = "Et voi käyttää Kalenterin jakoa, ennen kuin päivität kalenterin käyttöoikeuden tilasta 'Vain tapahtumien lisäys' tilaan 'Täysi käyttöoikeus'.\n\nSiirry iPhonen Asetukset > Apit > %@ > Kalenterit ja valitse 'Täysi käyttöoikeus'.";
+"warningChangeFromMasterToFollowerDexcomShare" = "Siirtyminen isäntätilasta Dexcom Share -seuraajatilaan pysäyttää nykyisen sensorin ja poistaa käytöstä toiminnon 'Lähetä Dexcom Shareen'. Haluatko jatkaa?";
+"calendarEventPreview" = "Kalenteritapahtuma";
+"settingsviews_labelCalibrationTitle" = "Sensorin kalibrointi";
+"settingsviews_shareUploadConfigurationRequired" = "Anna käyttäjätunnus, salasana ja vastaanottimen sarjanumero.";
+"settingsviews_shareUploadTooLarge" = "Dexcom Share hylkäsi liian suuren lähetyksen.";
+"calendarShareStatus" = "Jaon tila";
+"settingsviews_nightscoutImportDeviceStatusAdded" = "Laitteen tila lisätty";
+"settingsviews_shareUploadLastConnection" = "Viimeisin onnistunut yhteys";
+"settingsviews_lowValueMessage" = "Anna matalan rajan verensokeriarvo.";
+"settingsviews_contactImageCreatedByString" = "Yhteystieto luotu automaattisesti: ";
+"settingsviews_targetValueMessage" = "Aseta 0 poistaaksesi tavoitteen käytöstä";
+"settingsviews_labelCalibrationType" = "Kalibroinnin tyyppi";
+"settingsviews_medtrumSelectedPatient" = "Valittu potilas";
+"calendarFollowStatusFooter" = "Jaettu kalenteri lukee viimeisimmät koodatut tapahtumahuomautukset valitusta kalenterista taustapäivitysten aikana.";
+"settingsviews_CalenderIntervalTitle" = "Tapahtumien väli";
+"settingsviews_shareUploadNever" = "Ei vielä";
+"calendarShareIncludeHistory" = "Sisällytä historia";
+"settingsviews_labelAlgorithmType" = "Algoritmin tyyppi";
+"giveNightscoutToken" = "Anna token";
+"settingsviews_shareUploadCheckFooter" = "Yhteyden testaus vahvistaa tilisi. Vastaanottimen sarjanumero vahvistetaan lukemien lähetyksen yhteydessä.";
+"settingsviews_medtrumSelectPatientFromList" = "Valitse potilas luettelosta";
+"settingsviews_homeScreenScreenLockSectionFooter" = "Nämä asetukset ohjaavat kotinäytön toimintaa, kun sovellus jätetään auki tai lukitaan.";
+"settingsviews_displayVisualIndicatorInCalendarEvent" = "Visuaalinen ilmaisin";
+"calendarEventSettingsFooter" = "Nämä asetukset muuttavat vain kalenteritapahtuman näkyvää otsikkoa.";
+"calendarFollowFirstHistoricalReading" = "Ensimmäinen lukema";
+"settingsviews_storeFrequentReadingsInHealthKit" = "Tiheät HealthKit-kirjoitukset";
+"calendarFollowNoHistoricalData" = "Historiatietoja ei löytynyt";
+"settingsviews_sensorHealthNotifications" = "Sensorin tilavaroitukset";
+"settingsviews_cleanDataDeviceStatusDeleted" = "Laitteen tila poistettu";
+"createCalendarEvent" = "Kalenterin jako";
+"calendarFollowHistoricalReadings" = "Historialliset lukemat";
+"settingsviews_CalenderIntervalMessage" = "Kalenteritapahtumien vähimmäisväli";
+"calendarFollowHistoricalCount" = "Määrä";
+"settingsviews_glucoseRangesSectionFooter" = "Verensokerialueet vaikuttavat vain pääkaavion värien näyttöön. Ne eivät liity hälytysarvoihin.";
+"settingsviews_shareUploadError" = "Lähetysvirhe";
+"settingsviews_shareUploadPaused" = "Keskeytetty aikataulun mukaan";
+"calendarEventsSectionTitle" = "Kalenterin jako";
+"settingsviews_shareUploadLastUpload" = "Viimeisin onnistunut lähetys";
+"settingsviews_medtrumSelectPatient" = "Valitse potilas";

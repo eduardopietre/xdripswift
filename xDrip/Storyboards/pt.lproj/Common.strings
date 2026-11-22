@@ -11,7 +11,7 @@
 "common_low" = "HIPO";
 "common_hour" = "hora";
 "common_hours" = "horas";
-"common_minutes" = "mins";
+"common_minutes" = "min";
 "common_minute" = "min";
 "common_day" = "dia";
 "common_days" = "dias";
@@ -54,10 +54,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Intervalo Estreito";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Intervalo Definido";
 "common_statistics_title" = "Estatísticas";
 "common_statistics_period" = "Período";
 "common_statistics_summary" = "Resumo";
@@ -149,3 +149,15 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Ativado";
+"common_report_aidPeriod" = "Dados de Loop";
+"common_notRequired" = "Não necessário";
+"common_notAvailable" = "Não Disponível";
+"common_report_notIncluded" = "Não Incluído";
+"common_disabled" = "Desativado";
+"common_report_periodFooter" = "Recomendam-se 90 dias para um relatório clínico de CGM.";
+"common_value" = "Valor";
+"common_report_aidPeriodFooter" = "Recomendam-se 7 dias para os Dados de Loop.";
+"common_checking" = "A verificar...";
+"common_enterValue" = "Introduzir Valor";
+"next" = "Seguinte";
+"common_dismiss" = "Dispensar";

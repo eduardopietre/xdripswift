@@ -59,10 +59,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Узкий диапазон";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Диапазон пользователя";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "Расчётный активный инсулин";
@@ -89,3 +89,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Включено";
+"common_report_period" = "Период отчёта";
+"common_statistics_insufficientData" = "Недостаточно данных";
+"common_statistics_title" = "Статистика";
+"common_report_unableToPrepareTitle" = "Не удалось подготовить отчёт";
+"common_report_patientIDPlaceholder" = "Номер карты / ID пациента";
+"common_statistics_dailySummary" = "Сводка за день";
+"common_report_patientPeriodTitleFormat" = "%@: %@";
+"common_statistics_averageTDD" = "Средний TDD";
+"common_report_aidPeriod" = "Данные Loop";
+"common_report_periodTitleFormat" = "Отчёт за %d дн.";
+"common_report_passwordProtectionOpenError" = "Не удалось открыть PDF-отчёт для защиты паролем.";
+"common_statistics_timeInRange" = "Время в диапазоне";
+"common_statistics_dailyPatternFooter" = "Столбцы показывают дневной процент в диапазоне %@. Пунктирная линия отмечает клиническую цель 70%%.";
+"common_statistics_cvTrend" = "Тренд CV";
+"common_report_none" = "Нет";
+"common_notRequired" = "Не требуется";
+"common_notAvailable" = "Недоступно";
+"common_report_passwordFieldPlaceholder" = "Пароль для открытия PDF";
+"common_statistics_estimatedA1cTrend" = "Тренд расчётного HbA1c";
+"common_report_notIncluded" = "Не включено";
+"common_statistics_report" = "Отчёт";
+"common_statistics_averageGlucose" = "Средняя глюкоза";
+"common_report_language" = "Язык";
+"common_disabled" = "Отключено";
+"common_report_patientFooter" = "Данные пациента хранятся локально на этом устройстве и печатаются в заголовке отчёта.";
+"common_statistics_targetGreaterThanOrEqual" = "Цель >=%@";
+"common_report_periodFooter" = "Для клинического отчёта CGM рекомендуется 90 дней.";
+"common_report_passwordConfirmationPlaceholder" = "Введите пароль ещё раз";
+"common_report_patientName" = "Имя пациента";
+"common_value" = "Значение";
+"common_report_willBePasswordProtected" = "Отчёт будет защищён паролем";
+"common_report_generatingStatus" = "Создание клинического отчёта...";
+"common_report_notSet" = "Не задано";
+"common_statistics_ambulatoryGlucoseProfile" = "Амбулаторный профиль глюкозы";
+"common_statistics_averageCarbs" = "Средние углеводы";
+"common_report_willNotBePasswordProtected" = "Отчёт не будет защищён паролем";
+"common_report_aidPeriodFooter" = "Для данных Loop рекомендуется 7 дней.";
+"common_statistics_bestDay" = "Лучший день";
+"common_statistics_period" = "Период";
+"common_report_passwordFooter" = "Этот пароль используется только для следующего созданного PDF и не сохраняется.";
+"common_statistics_dailyPattern" = "Суточный профиль";
+"common_checking" = "Проверка...";
+"common_statistics_summary" = "Сводка";
+"common_statistics_section" = "Раздел";
+"common_report_patientNamePlaceholder" = "Имя пациента";
+"common_enterValue" = "Введите значение";
+"common_statistics_waitingForGlucoseData" = "Ожидание данных о глюкозе...";
+"common_statistics_mostHigh" = "Больше всего высоких";
+"common_statistics_trends" = "Тренды";
+"common_statistics_dataCapture" = "Полнота данных";
+"common_statistics_targetLessThanOrEqual" = "Цель <=%@";
+"common_report_patientSection" = "Пациент";
+"common_statistics_noDataTitle" = "Статистика недоступна";
+"common_report_passwordToOpen" = "Пароль для открытия";
+"common_report_paperSize" = "Размер бумаги";
+"common_statistics_insufficientAGPData" = "Недостаточно данных для графика процентилей AGP";
+"common_statistics_averageFormat" = "Среднее %@";
+"common_report_patientID" = "ID пациента";
+"common_report_generateTitle" = "Создать отчёт";
+"common_statistics_noDataMessage" = "Для этого периода недостаточно сохранённых данных CGM.";
+"common_report_notEnoughData" = "Недостаточно данных";
+"common_report_shareAccessibility" = "Поделиться отчётом";
+"common_report_generationFailedTitle" = "Не удалось создать отчёт";
+"next" = "Далее";
+"common_statistics_mostLow" = "Больше всего низких";
+"common_statistics_tempBasalDelta" = "Разница врем. базала";
+"common_dismiss" = "Закрыть";
+"common_report_options" = "Параметры отчёта";
+"common_statistics_timeInTightRange" = "Время в узком диапазоне";
+"common_report_passwordProtectionWriteError" = "Не удалось создать PDF-отчёт, защищённый паролем.";
+"common_statistics_cgmEstimate" = "Оценка CGM";

@@ -53,34 +53,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Sensor scan successful, title
-"nfcScanSuccessfulTitle" = "✅ Sensor Scan Successful!";
+"nfcScanSuccessfulTitle" = "✅ Επιτυχής σάρωση αισθητήρα!";
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Η βαθμονόμηση πολλαπλών σημείων είναι προηγμένη λειτουργία.\n\nΜην τη χρησιμοποιήσετε αν δεν έχετε διαβάσει την ενότητα βαθμονόμησης της online βοήθειας και δεν καταλαβαίνετε πώς λειτουργεί.";
 
 /// Ask if the user wants to try and scan the sensor again
-"nfcScanFailedMessage" = "Please scan again";
+"nfcScanFailedMessage" = "Παρακαλώ σαρώστε ξανά";
 
 /// Sensor scan error, title
-"nfcScanFailedTitle" = "⚠️ Sensor Scan Failed";
+"nfcScanFailedTitle" = "⚠️ Η σάρωση αισθητήρα απέτυχε";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanFailed" = "Sensor scan has failed";
+"nfcErrorMessageScanFailed" = "Η σάρωση του αισθητήρα απέτυχε";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "Απαιτείται σάρωση NFC";
 
 /// Tell the user the scan has failed and we're retrying several times
-"nfcErrorMessageScanErrorRetrying" = "Sensor scan error\n\nRetrying... # ";
+"nfcErrorMessageScanErrorRetrying" = "Σφάλμα σάρωσης αισθητήρα\n\nΕπανάληψη... # ";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Προθέρμ. έως";
 
 /// Scan again button
-"nfcScanFailedScanAgainButton" = "Scan Again";
+"nfcScanFailedScanAgainButton" = "Σάρωση ξανά";
 
 /// Tell the user the scan was successful and to just wait now for connection
-"nfcScanSuccessfulMessage" = "Click OK and just wait to allow the Libre sensor to finish connecting via bluetooth.\n\nIn a short while the status should change to 'Connected'.";
+"nfcScanSuccessfulMessage" = "Πατήστε OK και περιμένετε να ολοκληρωθεί η σύνδεση του αισθητήρα Libre μέσω Bluetooth.\n\nΣε λίγο η κατάσταση θα αλλάξει σε 'Συνδέθηκε'.";
 
 /// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
 "readSuccessLast24Hours" = "Τελευταίες 24 ώρες";
@@ -107,7 +107,7 @@
 "readSuccessNow" = "Τώρα";
 "scanningForTransmitter" = "Αναζήτηση...";
 "connecting" = "Σύνδεση";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Σύνδεση...";
 "reconnecting" = "Επανασύνδεση";
 "reconnectingToTransmitter" = "Επανασύνδεση...";
 "waiting" = "Αναμονή...";
@@ -192,3 +192,10 @@
 "bluetoothAccessNotEnabled" = "Η πρόσβαση στο Bluetooth δεν είναι ενεργοποιημένη";
 "bluetoothAccessInstructions" = "Για σύνδεση, ανοίξτε Ρυθμίσεις → Απόρρητο και ασφάλεια → Bluetooth και επιτρέψτε την πρόσβαση για το %@.";
 "bluetoothAccessRestrictedInstructions" = "Οι περιορισμοί της συσκευής εμποδίζουν την πρόσβαση στο Bluetooth. Ελέγξτε τον Χρόνο επί οθόνης ή επικοινωνήστε με τον διαχειριστή της συσκευής για να ενεργοποιήσετε την πρόσβαση.";
+"confirmAlgorithmChangeToTransmitterMessage" = "Παρακαλώ επιβεβαιώστε ότι θέλετε να επιστρέψετε στον εγγενή αλγόριθμο/αλγόριθμο του πομπού";
+"confirmAlgorithmChangeToxDripMessage" = "Παρακαλώ επιβεβαιώστε ότι θέλετε να αλλάξετε στον αλγόριθμο xDrip.\n\nΟι μετρήσεις θα σταματήσουν για λίγο και θα σας ζητηθεί αρχική τιμή βαθμονόμησης όταν είναι έτοιμο.";
+"confirmCalibrationChangeToMultiPointMessage" = "Παρακαλώ επιβεβαιώστε ότι θέλετε να αλλάξετε τον τύπο βαθμονόμησης σε πολλαπλών σημείων\n\n⚠️ Σημειώστε ότι αυτή η μέθοδος είναι μόνο για προχωρημένους χρήστες και μπορεί να δώσει επικίνδυνα αποτελέσματα αν δεν βαθμονομηθεί σωστά.\n\nΑν δεν είστε σίγουροι πώς να τη χρησιμοποιήσετε, πατήστε Ακύρωση.";
+"confirmCalibrationChangeToSinglePointMessage" = "Παρακαλώ επιβεβαιώστε ότι θέλετε να αλλάξετε τον τύπο βαθμονόμησης στην τυπική βαθμονόμηση\n\nΟι μετρήσεις θα σταματήσουν για λίγο και θα σας ζητηθεί αρχική τιμή βαθμονόμησης όταν είναι έτοιμο.";
+"nativeAlgorithm" = "Εγγενής αλγόριθμος";
+"xDripAlgorithm" = "Αλγόριθμος xDrip";
+"confirm" = "Επιβεβαίωση";

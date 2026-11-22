@@ -10,7 +10,7 @@
 "alerts_veryhighalerttitle" = "Valeur très haute";
 "alerts_lowalerttitle" = "Valeur faible ";
 "alerts_verylowalerttitle" = "Valeur très faible ";
-"alerts_snooze" = "Snooze";
+"alerts_snooze" = "Répéter";
 "alerts_select_snooze_time" = "Choix de l'heure Snooze";
 "alerts_missedreadingalerttitle" = "Lecture manquante";
 "alerts_calibrationneeded" = "Rappel de calibration";
@@ -32,3 +32,5 @@
 "sensorExpiry.hoursHelp" = "Saisissez un nombre entier de 1 à 48 heures.";
 "sensorExpiry.endingSoonBody" = "Votre capteur devrait atteindre la fin de sa durée de vie le %@.";
 "sensorExpiry.expectedExpiryBody" = "Votre capteur a atteint son expiration prévue (%@).";
+"alerts_sensortransmitterfailure" = "Défaillance capteur/transmetteur";
+"alerts_notloopingalerttitle" = "Boucle inactive";

@@ -4,14 +4,16 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// 
-"calibration_title" = "Calibration";
+"calibration_title" = "Kalibracja";
 
 /// If user must calibrate, this is the title of the notification
-"calibration_notification_title" = "Calibration";
+"calibration_notification_title" = "Kalibracja";
 
 /// If user must calibrate, this is the body of the notification
-"calibration_notification_body" = "Click the Notification to Calibrate";
+"calibration_notification_body" = "Kliknij powiadomienie, aby skalibrować";
 
 /// When calibration alert goess off, user clicks the notification, app opens, dialog pops up, this is the text in the dialog
-"enter_calibration_value" = "Enter Calibration Value";
+"enter_calibration_value" = "Wprowadź wartość kalibracji";
 "previousCalibrationPrefillMessage" = "Wstępnie wpisano wartość poprzedniej kalibracji z godziny %@. Przed potwierdzeniem porównaj ją z aktualnym odczytem glukometru.";
+"singlePointCalibration" = "Standardowa";
+"multiPointCalibration" = "Wielopunktowa";

@@ -1,6 +1,6 @@
-"nightscouttestresult_verificationsuccessfulalerttitle" = "Verification Successful";
-"nightscouttestresult_verificationsuccessfulalertbody" = "Your Nightscout site was verified successfully";
-"nightscouttestresult_verificationerroralerttitle" = "Verification Error";
-"warningAPIKeyOrURLIsnil" = "Your Nightscout URL (and optionally API_SECRET or Token) must be set before you can run the test";
-"nightscoutAPIKeyAndURLStartedTitle" = "Verifying...";
-"nightscoutAPIKeyAndURLStartedBody" = "Nightscout Verification Test Started\n\nThis message should automatically disappear shortly";
+"nightscouttestresult_verificationsuccessfulalerttitle" = "Bekræftelse lykkedes";
+"nightscouttestresult_verificationsuccessfulalertbody" = "Dit Nightscout-site blev bekræftet";
+"nightscouttestresult_verificationerroralerttitle" = "Bekræftelsesfejl";
+"warningAPIKeyOrURLIsnil" = "Din Nightscout-URL (og eventuelt API_SECRET eller Token) skal angives, før du kan køre testen";
+"nightscoutAPIKeyAndURLStartedTitle" = "Bekræfter...";
+"nightscoutAPIKeyAndURLStartedBody" = "Nightscout-bekræftelsestest startet\n\nDenne besked forsvinder automatisk om lidt";

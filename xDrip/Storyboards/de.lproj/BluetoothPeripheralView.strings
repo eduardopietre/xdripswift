@@ -111,10 +111,10 @@
 "runningInCoexistenceMode" = "Läuft im Koexistenzmodus";
 "runningInPrimaryMode" = "Läuft im Primärmodus";
 /// cell text, sensor start time
-"sensorStartDate" = "Sensor Started";
+"sensorStartDate" = "Sensor gestartet";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "Transmitter gestartet";
 
 "nfcScanFailedTitle" = "⚠️ Scan gescheitert";
 
@@ -135,10 +135,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Die Mehrpunkt-Kalibrierung ist eine erweiterte Funktion.\n\nBitte verwende diese Funktion erst, wenn du den Abschnitt zur Kalibrierung in der Online-Hilfe gelesen hast und verstehst, wie sie funktioniert.";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "NFC-Scan erforderlich";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Aufwärmen bis";
@@ -176,7 +176,7 @@
 "readSuccessNow" = "Jetzt";
 "scanningForTransmitter" = "Suche...";
 "connecting" = "Verbinden";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Verbinde…";
 "reconnecting" = "Erneut verbinden";
 "reconnectingToTransmitter" = "Erneute Verbindung...";
 "waiting" = "Warten...";

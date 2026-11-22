@@ -55,19 +55,19 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When creating schedule for Nightscout or Dexcom Share upload, this is the top label text
-"timeScheduleViewTitle" = "On/Off Time Schedule";
+"timeScheduleViewTitle" = "开/关时间计划";
 
 /// In Settings, Alerts section, there's an option to test the volume of ios sound, this is the title of the row
 "volumeTestiOSSound" = "静音模式关闭时";
 
 /// nightscout settings, port to use
-"nightscoutPort" = "Port";
+"nightscoutPort" = "端口";
 
 /// home screen settings, urgent high value
-"settingsviews_urgentHighValue" = "Urgent High Value";
+"settingsviews_urgentHighValue" = "紧急高值";
 
 /// In Settings, Alerts section, there's an option to test the volume settings, this is text explaining the test when clicking the row - this is for ios sound volume test
-"volumeTestiOSSoundExplanation" = "An alarm sound is now being played with the same volume that will be used for an Alarm Type with 'Override Mute' = Off\n\n(Also used always for Missed Reading alarms which use the iOS volume.)\n\nPress one of the volume buttons to stop the sound, then change the volume with the volume buttons to the desired volume and test again.";
+"volumeTestiOSSoundExplanation" = "现在正以与“覆盖静音”= 关闭 的警报类型相同的音量播放警报声音\n\n（也始终用于使用 iOS 音量的读数缺失警报。）\n\n按音量键停止声音，然后用音量键调到所需音量，再次测试。";
 
 /// non fixed calibration slopes settings in bluetooth peripheral view : enabled or not
 "settingsviews_nonfixedtransmitter" = "多点校准";
@@ -76,15 +76,15 @@
 "displayUnitInCalendarEvent" = "单位";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two readings, this is the pop up message - this is used for setting the interval between two readings in BG notifications, Speak readings, Apple Watch
-"settingsviews_IntervalMessage" = "Minimum interval between two notifications";
+"settingsviews_IntervalMessage" = "两次通知之间的最短间隔";
 
 /// Apple Watch Settings - text in row where create event is enabled or disabled 
 
 /// in Settings, section title for Trace
-"sectionTitleTrace" = "Issue Reporting";
+"sectionTitleTrace" = "问题报告";
 
 /// user tries to send trace file but there's no native email account configured
-"emailNotConfigured" = "You must configure an e-mail account on your iOS device.";
+"emailNotConfigured" = "您必须在 iOS 设备上配置电子邮件账户。";
 
 /// in Settings, to enable debug level in trace file
 "debugLevel" = "使用调试级别";
@@ -93,28 +93,28 @@
 "displayDeltaInCalendarEvent" = "变化量";
 
 /// about settings, section title
-"settingsviews_sectiontitleAbout" = "About %@";
+"settingsviews_sectiontitleAbout" = "关于 %@";
 
 /// general settings, should reading be shown in notification yes or no
 "settingsviews_showReadingInNotification" = "葡萄糖通知";
 
 /// 
-"settingsviews_urgentLowValue" = "Urgent Low Value";
+"settingsviews_urgentLowValue" = "紧急低值";
 
 /// nightscout or dexcom share settings, where user can select to edit the schedule
-"schedule" = "Schedule";
+"schedule" = "计划";
 
 /// In case user tries to send trace file via email but error occurs.
-"failedToSendEmail" = "Failed to Send Email";
+"failedToSendEmail" = "发送电子邮件失败";
 
 /// shown on top of the first settings screen
-"m5stack_settingsviews_settingstitle" = "M5 Stack Settings";
+"m5stack_settingsviews_settingstitle" = "M5 Stack 设置";
 
 /// M5 stack bluetooth  settings, pop up that asks user to enter the password
-"m5stack_settingsviews_giveBluetoothPassword" = "Enter Bluetooth Password";
+"m5stack_settingsviews_giveBluetoothPassword" = "输入蓝牙密码";
 
 /// used in settings, section Info, title of the version setting
-"settingsviews_Version" = "Version";
+"settingsviews_Version" = "版本";
 
 /// used in settings, section Info, title of the build setting
 
@@ -122,26 +122,26 @@
 "settingsviews_enableSchedule" = "启用时间表";
 
 /// home screen settings, target value
-"settingsviews_targetValue" = "Target Value";
+"settingsviews_targetValue" = "目标值";
 
 /// home screen settings, show target line
 "settingsviews_showtarget" = "目标线";
 
 /// used in settings, section Info, title of the license setting
-"settingsviews_license" = "License";
+"settingsviews_license" = "许可证";
 
 /// M5 stack setting, brightness
-"m5stack_settingsviews_brightness" = "Screen Brightness";
+"m5stack_settingsviews_brightness" = "屏幕亮度";
 
 /// in Settings, row title to send settings
 "sendTraceFile" = "通过邮件发送";
 "settingsviews_issueReportTitle" = "问题报告";
 
 /// nightscout settings, title of row
-"uploadSensorStartTime" = "Upload Sensor Start Time";
+"uploadSensorStartTime" = "上传传感器启动时间";
 
 /// name of setting for text color
-"m5stack_settingsviews_textColor" = "Text Color";
+"m5stack_settingsviews_textColor" = "文字颜色";
 
 /// transmitter settings, to explain that settings is about resetting the transmitter
 
@@ -149,7 +149,7 @@
 "settingsviews_multipleAppBadgeValueWith10" = "App 标记 x10";
 
 /// non fixed settings, title of the section
-"settingsviews_labelNonFixed" = "Multi-point Calibration";
+"settingsviews_labelNonFixed" = "多点校准";
 
 /// nightscout settings, when clicking the cell, test the url and api key
 "testUrlAndAPIKey" = "测试连接";
@@ -157,13 +157,13 @@
 /// If user is not allowed to give any app access to the Calendar, due to restrictions. And then tries to activate creation of events in calendar, this message will be shown
 
 /// default text in email body, when user wants to send trace file.
-"emailbodyText" = "Problem Description: ";
+"emailbodyText" = "问题描述：";
 
 /// speak settings, where user can select the language
-"settingsviews_speakBgReadingslanguage" = "Language";
+"settingsviews_speakBgReadingslanguage" = "语言";
 
 /// speak reading settings, text in pop up where user can select the language
-"settingsviews_speakreadingslanguageselection" = "Select Language";
+"settingsviews_speakreadingslanguageselection" = "选择语言";
 
 /// general settings, should reading be shown in app badge yes or no
 "settingsviews_labelShowReadingInAppBadge" = "App 标记";
@@ -174,25 +174,25 @@
 /// healthkit settings, literally 'healthkit'
 
 /// bluetooth settings, section title - also used in bluetooth peripheral view, eg when viewing M5Stack details. This is the title of the first section
-"m5stack_settingsviews_sectiontitlebluetooth" = "Bluetooth";
+"m5stack_settingsviews_sectiontitlebluetooth" = "蓝牙";
 
 
 
 /// general settings, when switching from master to follower, if confirmation is asked, this message will be shown.
-"warningChangeFromMasterToFollower" = "Switching from Master to Follower will stop your current sensor. Do you want to continue?";
+"warningChangeFromMasterToFollower" = "从主模式切换到关注者模式将停止当前传感器。是否继续？";
 
 /// used for editing schedule for Nightscout upload and Dexcom Share upload
-"editScheduleTimePickerSubtitle" = "Change: ";
+"editScheduleTimePickerSubtitle" = "更改：";
 
 /// Apple Watch Settings - text in row where user needs to select a calendar
 
 /// name of setting for back ground color
-"m5stack_settingsviews_backGroundColor" = "Background Color";
+"m5stack_settingsviews_backGroundColor" = "背景颜色";
 
 /// If user has earlier denied access to calendar, and then tries to activate creation of events in calendar, this message will be shown
 
 /// In Settings, Alerts section, there's an option to test the volume settings, this is text explaining the test when clicking the row - this is for sound player volume test
-"volumeTestSoundPlayerExplanation" = "An alarm sound is now being played with the same volume that will be used for an Alarm Type with 'Override Mute' = On\n\n(Used for all alarms except Missed Reading alerts which always use the iOS volume.)\n\nChange the volume with the volume buttons and press OK when done.";
+"volumeTestSoundPlayerExplanation" = "现在正以与“覆盖静音”= 开启 的警报类型相同的音量播放警报声音\n\n（用于除读数缺失提醒外的所有警报，读数缺失提醒始终使用 iOS 音量。）\n\n用音量键调节音量，完成后点击“好”。";
 
 /// Apple Watch Settings - text in row where user needs to say if trend should be displayed or not
 "settingsviews_displayTrendInCalendarEvent" = "趋势";
@@ -224,7 +224,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// home screen settings, section title
-"settingsviews_sectiontitlehomescreen" = "Home Screen";
+"settingsviews_sectiontitlehomescreen" = "主屏幕";
 "settingsviews_mainChartHours" = "时间范围";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -232,19 +232,19 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// statistics settings, how many days to use for calculations
-"settingsviews_daysToUseStatisticsMessage" = "Maximum days we should try to use to calculate the statistics?\n\n(Enter 0 to calculate today since midnight)";
+"settingsviews_daysToUseStatisticsMessage" = "计算统计时最多使用多少天的数据？\n\n（输入 0 表示计算从今天午夜起的数据）";
 
 /// statistics settings, section title
-"settingsviews_sectiontitlestatistics" = "Statistics";
+"settingsviews_sectiontitlestatistics" = "统计";
 
 /// statistics settings, use IFCC method for HbA1c?
-"settingsviews_useIFCCGMI" = "GMI in mmols/mol";
+"settingsviews_useIFCCGMI" = "GMI 使用 mmol/mol";
 
 /// statistics settings, show statistics on home screen
 "settingsviews_showStatistics" = "统计";
 
 /// statistics settings, how many days to use for calculations
-"settingsviews_daysToUseStatisticsTitle" = "Days to Calculate";
+"settingsviews_daysToUseStatisticsTitle" = "计算天数";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -268,7 +268,7 @@
 
 
 /// help settings, open the online help
-"settingsviews_showOnlineHelp" = "Open Online Help";
+"settingsviews_showOnlineHelp" = "打开在线帮助";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -278,7 +278,7 @@
 "settingsviews_webooptransmitter" = "发射器算法";
 
 /// weboop settings, title of the dialogs where user can select between xdrip or transmitter algorithm
-"settingsviews_labelWebOOP" = "xDrip or Transmitter Algorithm";
+"settingsviews_labelWebOOP" = "xDrip 或发射器算法";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -294,7 +294,7 @@
 "settingsviews_sectiontitletreatments" = "治疗";
 
 /// When clicking the threshold setting, a pop up asks for the number of units under which a bolus should be considered a micro-bolus
-"settingsviews_smallBolusTreatmentThresholdMessage" = "Below how many units should we consider a bolus as a micro-bolus?\n\n(Recommended value: 1.0U)";
+"settingsviews_smallBolusTreatmentThresholdMessage" = "低于多少单位的大剂量应视为微量大剂量？\n\n（建议值：1.0U）";
 
 /// treatments settings, show the treatments on main chart
 "settingsviews_showTreatments" = "治疗";
@@ -305,76 +305,76 @@
 
 
 /// Housekeeper settings, section title
-"settingsviews_sectionTitleHousekeeper" = "Data Management";
+"settingsviews_sectionTitleHousekeeper" = "数据管理";
 
 /// When clicking the retention setting, a pop up asks for how many days should data be stored
-"settingsviews_housekeeperRetentionPeriodMessage" = "For how many days should data be stored? (Min 90, Max 365)\n\n(Recommended: 90 days)";
+"settingsviews_housekeeperRetentionPeriodMessage" = "数据应保存多少天？（最少 90，最多 365）\n\n（建议：90 天）";
 
 /// Housekeeper retention period, for how long to store data
-"settingsviews_housekeeperRetentionPeriod" = "Retention Period";
+"settingsviews_housekeeperRetentionPeriod" = "保留期限";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Settings screen for loop delay
-"Select Time" = "Select Time";
+"Select Time" = "选择时间";
 
 /// transmitter settings, to explain that the reset option only works for certain transmitters
-"settingsviews_resetDexcomTransmitterMessage" = "This option will attempt to reset your Anubis transmitter on the next connection.";
+"settingsviews_resetDexcomTransmitterMessage" = "此选项将在下次连接时尝试重置您的 Anubis 发射器。";
 
 /// data source settings, keep-alive mode is set to aggressive
 "settingsviews_followerKeepAliveTypeAggressiveMessage" = "保持活动 is set to aggressive.\n\nWhen the app is not on screen, we will aggressively attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a very noticeable impact on the battery of your device and should only be used if absolutely necessary.";
 
 /// libre link up follower settings, no active sensor
-"settingsviews_libreLinkUpNoActiveSensor" = "No active sensor data";
+"settingsviews_libreLinkUpNoActiveSensor" = "无有效传感器数据";
 
 /// data source settings, keep-alive mode is set to disabled
 "settingsviews_followerKeepAliveTypeDisabledMessage" = "保持活动 is disabled.\n\nWhen the app is not on screen, no alarms, app badges, notifications or BG updates will take place.\n\nThe app will remain sleeping until you open it again.\n\nThis mode has very little impact on the battery of your device.";
 
 /// Settings screen for loop delay, explanatory text for value
-"expanatoryTextSelectValue" = "Delay in minutes, applied to readings shared with OS-AID";
+"expanatoryTextSelectValue" = "延迟分钟数，应用于与 OS-AID 共享的读数";
 
 /// statistics settings, prefer time in tight range
-"settingsviews_timeInRangeTypeTightRange" = "Tight Range";
+"settingsviews_timeInRangeTypeTightRange" = "严格范围";
 
 /// data source settings, keep-alive mode is set to normal
-"settingsviews_followerKeepAliveTypeNormal" = "Normal";
+"settingsviews_followerKeepAliveTypeNormal" = "正常";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressive" = "Aggressive";
+"settingsviews_followerKeepAliveTypeAggressive" = "积极";
 
 /// statistics settings, prefer standard time in range
 "settingsviews_timeInRangeTypeStandardRange" = "标准";
 
 /// statistics settings, the type of time in range selected
-"settingsviews_labelTimeInRangeType" = "Time In Range";
+"settingsviews_labelTimeInRangeType" = "目标范围内时间";
 
 /// data source settings, enable background keep alive
 "settingsviews_labelfollowerKeepAliveType" = "保持活动";
 
 /// this setting is required
-"settingsviews_valueIsRequired" = "⚠️ Required";
+"settingsviews_valueIsRequired" = "⚠️ 必填";
 
 /// treatments settings, offset the carb treatments on main chart
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 
 /// When user creates new loopdelay, with a timestamp that already exists - this is the warning text
-"warningLoopDelayAlreadyExists" = "There is already a loopDelay for this time.";
+"warningLoopDelayAlreadyExists" = "此时间已存在 loopDelay。";
 
 /// statistics settings, prefer user-defined range
-"settingsviews_timeInRangeTypeUserDefinedRange" = "User Range";
+"settingsviews_timeInRangeTypeUserDefinedRange" = "用户范围";
 
 /// CGM data source settings, section title
 "settingsviews_sectionTitleDataSource" = "数据来源";
 "settingsviews_dataSourceMasterDevicesFooter" = "前往“设备”标签页添加兼容设备。";
 
 /// follower settings, pop up that asks user to enter their username
-"settingsviews_enterUsername" = "Enter your username";
+"settingsviews_enterUsername" = "输入您的用户名";
 
 /// data source settings, show that Nightscout is disabled
-"settingsviews_nightscoutNotEnabledRowText" = "Disabled";
+"settingsviews_nightscoutNotEnabledRowText" = "已停用";
 
 /// data source settings, keep-alive mode is set to use an external heartbeat
 "settingsviews_followerKeepAliveTypeHeartbeatMessage" = "保持活动 is set to use an external heartbeat.\n\nWhen the app is not on screen, the external heartbeat will wake it up in the background so that BG updates are received and alarms can be triggered.\n\nMake sure you add a valid heartbeat device in the Bluetooth screen.\n\nThis mode has very little impact on the battery of your device but will only work if a valid heartbeat is running.";
@@ -385,19 +385,19 @@
 /// When clicking the event interval setting, a pop up asks for minimum number of minutes between two events, this is the pop up message - this is used for setting the interval between two calendar events
 
 /// data source settings, enable Nightscout in the Nightscout section
-"settingsviews_nightscoutNotEnabled" = "Nightscout is disabled\n\nTo upload BG values to Nightscout, you must enable it in the Nightscout section.";
+"settingsviews_nightscoutNotEnabled" = "Nightscout 已停用\n\n要将血糖值上传到 Nightscout，必须在 Nightscout 部分启用它。";
 
 /// screen dimming is disabled
-"settingsviews_screenLockDimmingTypeDisabled" = "Disabled";
+"settingsviews_screenLockDimmingTypeDisabled" = "已停用";
 
 /// When clicking the speak interval setting, a pop up asks for minimum number of minutes between two speech events, this is the pop up message - this is used for setting the interval between two spoken bg announcements
-"settingsviews_SpeakIntervalTitle" = "Speak Interval";
+"settingsviews_SpeakIntervalTitle" = "播报间隔";
 
 /// libre link up follower settings, pop up that asks user to enter their region
-"settingsviews_libreLinkUpReAcceptNeeded" = "Need to accept terms";
+"settingsviews_libreLinkUpReAcceptNeeded" = "需要接受条款";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two bg announcements, this is the pop up message - this is used for setting the interval between two readings in BG announcements, Speak readings, Apple Watch
-"settingsviews_SpeakIntervalMessage" = "Minimum interval between two voice announcements";
+"settingsviews_SpeakIntervalMessage" = "两次语音播报之间的最短间隔";
 
 /// home screen settings, should the mini-chart be shown
 "settingsviews_showMiniChart" = "迷你图表";
@@ -407,37 +407,37 @@
 "settingsviews_followerPatientName" = "别名";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabled" = "Disabled";
+"settingsviews_followerKeepAliveTypeDisabled" = "已停用";
 
 /// screen dimming is dark
-"settingsviews_screenLockDimmingTypeDark" = "Dark";
+"settingsviews_screenLockDimmingTypeDark" = "暗";
 
 /// screen dimming is dimmed
-"settingsviews_screenLockDimmingTypeDimmed" = "Dimmed";
+"settingsviews_screenLockDimmingTypeDimmed" = "调暗";
 
 /// When enabled, then it should be possible to run xDrip4iOS/Libre 2 in parallel with other app(s)
-"suppressUnLockPayLoad" = "Suppress Unlock Payload";
+"suppressUnLockPayLoad" = "抑制解锁载荷";
 
 /// Settings screen for loop delay
-"Select Value" = "Select Value";
+"Select Value" = "选择数值";
 
 /// Settings screen for loop delay, explanatory text for time
-"expanatoryTextSelectTime" = "As of what time should the value apply";
+"expanatoryTextSelectTime" = "该数值从几点开始生效";
 
 /// data source settings, data source region
-"settingsviews_labelFollowerDataSourceRegion" = "Region";
+"settingsviews_labelFollowerDataSourceRegion" = "地区";
 
 /// data source settings, data source
 "settingsviews_labelFollowerDataSourceType" = "数据来源";
 
 /// data source settings, enable Nightscout upload
-"settingsviews_labelUploadDataToNightscout" = "Upload to Nightscout";
+"settingsviews_labelUploadDataToNightscout" = "上传到 Nightscout";
 
 /// data source settings, ask the user to enter the name of the person we are following if they want to - it's optional
-"settingsviews_followerPatientNameMessage" = "Here you can optionally write an alias for the person you are following.";
+"settingsviews_followerPatientNameMessage" = "您可以在此为所关注的人选填一个别名。";
 
 /// follower settings, pop up that asks user to enter their password
-"settingsviews_enterPassword" = "Enter your password";
+"settingsviews_enterPassword" = "输入您的密码";
 
 /// The user needs to update their calendar permissions
 
@@ -450,7 +450,7 @@
 /// Should loop data be shared only every 5 minutes
 
 /// screen dimming is very dark
-"settingsviews_screenLockDimmingTypeVeryDark" = "Very Dark";
+"settingsviews_screenLockDimmingTypeVeryDark" = "非常暗";
 
 // MARK: - Automatic Housekeeping
 "settingsviews_dataManagementStorageInfo" = "存储信息";
@@ -639,10 +639,10 @@
 "settingsviews_nightscoutImportBatchProgress" = "批量 %1$d 或 %2$d";
 "settingsviews_nightscoutImportErrorServer" = "Nightscout 返回临时服务器错误 (HTTP %d)。稍后恢复导入。";
 "settingsviews_nightscoutImportErrorUnexpectedStatus" = "Nightscout 返回了意外响应 (HTTP %d)。";
-"sensorNoiseSensitivity" = "Sensor Sensitivity";
-"sensorNoiseSensitivitySensitive" = "Sensitive";
-"sensorNoiseSensitivityNormal" = "Normal";
-"sensorNoiseSensitivityPermissive" = "Permissive";
+"sensorNoiseSensitivity" = "传感器灵敏度";
+"sensorNoiseSensitivitySensitive" = "敏感";
+"sensorNoiseSensitivityNormal" = "正常";
+"sensorNoiseSensitivityPermissive" = "宽松";
 "settingsviews_followerServiceStatus" = "状态";
 "settingsviews_liveActivityDisabledInFollowerModeMessage" = "Live Activities are disabled in Follower Mode unless an external heartbeat is used for 保持活动.";
 "settingsviews_infoContactsKeepAliveDisabled" = "You are using Follower mode with 保持活动 disabled.\n\nContact Image function cannot work without 保持活动.";
@@ -728,7 +728,7 @@
 "therapy.smallCarbThreshold" = "少量碳水";
 "therapy.treatmentThresholdsExplanation" = "图表隐藏低于相应阈值的推注和碳水数值。推注阈值也用于定义治疗列表中的小剂量推注。选择无可显示所有数值。";
 
-"settingsviews_useIFCCA1C" = "HbA1c in mmols/mol";
+"settingsviews_useIFCCA1C" = "HbA1c 使用 mmol/mol";
 
 "settingsviews_statisticsEstimate" = "血糖估算";
 
@@ -764,3 +764,76 @@
 "settingsviews_shareReport" = "分享报告";
 "settingsviews_shareIssueReport" = "分享问题报告";
 "settingsviews_reportShareFailed" = "无法准备日志文件。请重试。";
+"infoCalendarAccessDeniedByUser" = "需要对您的日历拥有“完全访问”权限。\n\n前往 iPhone 设置 > 应用 > %@ > 日历，并启用“完全访问”。";
+"calendarShareStatusFooter" = "“包含历史记录”会在每条载荷中添加最近的 5 分钟读数，以便关注者补全缺失的数值。为提高可靠性，请选择效果良好的最小历史记录量。";
+"settingsviews_highValueMessage" = "输入高值阈值对应的血糖值。";
+"calendarShareAliasMessage" = "此名称将发送到关注者设备。";
+"settingsviews_shareUploadUnchecked" = "未检查";
+"calendarShareLastValue" = "最近的值";
+"calendarFollowHistoricalReadingsFooter" = "仅当本地缺少最新载荷中的历史读数时，才会导入这些读数。";
+"settingsviews_shareUploadReceiverNotAssigned" = "此接收器未分配给您的 Dexcom 账户。请使用官方 Dexcom 应用注册它。";
+"settingsviews_shareUploadFailed" = "上传失败";
+"settingsviews_homeScreenScreenLockSectionTitle" = "屏幕锁定";
+"calendarShareConnectionFooter" = "选择关注者设备也可访问的共享日历。为获得最佳效果，建议使用 iCloud 共享日历。";
+"settingsviews_cleanDataDeviceStatus" = "设备状态";
+"settingsviews_shareUploadAccountVerified" = "账户已验证";
+"nightscoutToken" = "令牌";
+"warningChangeToFollowerDexcomShare" = "切换到 Dexcom Share 关注者模式将停用“上传到 Dexcom Share”。";
+"infoCalendarAccessRestricted" = "您无法授权 %@ 访问您的日历。这可能是由于已启用家长控制等限制。";
+"calendarShareAlias" = "别名";
+"settingsviews_followerKeepAliveTypeContinuousMessage" = "保活设置为持续。\n\n当应用不在屏幕上时，将持续播放静音音频，以最大限度地保持关注者更新和警报正常运行。\n\n此模式无法保证 iOS 会让应用保持活动。它对电池续航影响最大，仅应在“积极”不可靠时使用。";
+"settingsviews_shareUploadLocalOnly" = "仅在使用本地血糖来源时才能上传到 Dexcom Share。";
+"settingsviews_urgentHighValueMessage" = "输入紧急高值阈值对应的血糖值。";
+"settingsviews_sensorHealthNotificationsFooter" = "控制针对长时间传感器噪声、信号持平和临时传感器问题的可选系统通知。传感器/发射器故障与其他警报一同配置。可关闭的主页横幅仍然可用。";
+"settingsviews_nightscoutImportDeviceStatus" = "设备状态";
+"settingsviews_issueReportSectionFooter" = "除非 xDrip4iOS 开发者要求，否则请勿发送问题报告，否则您的报告将被自动删除。";
+"settingsviews_infoContactsAccessRestricted" = "您无法授权 %@ 访问您的通讯录。这可能是由于已启用家长控制等限制。";
+"settingsviews_urgentLowValueMessage" = "输入紧急低值阈值对应的血糖值。";
+"calendarFollowCalendarFooter" = "选择主 iPhone 共享的日历。为获得最佳效果，请使用 iCloud 共享日历。";
+"settingsviews_homeScreenMainChartSectionFooter" = "这些选项控制血糖数据在主图表上的显示方式。";
+"settingsviews_storeFrequentReadingsInHealthKitMessage" = "此选项将覆盖 5 分钟的写入限制，允许向 Apple Health 添加更频繁的数据，例如 Libre 2 Direct 的 60 秒数值。\n\n仅在确实需要/想要更频繁的数据时才启用此选项。大多数用户应保持此选项关闭。";
+"enterNightscoutPortNumber" = "输入端口号";
+"settingsviews_storeFrequentReadingsInNightscout" = "频繁上传到 Nightscout";
+"settingsviews_followerKeepAliveTypeContinuous" = "持续";
+"settingsviews_contactImageSectionTitle" = "联系人图像";
+"infoCalendarAccessWriteOnly" = "在将日历访问权限从“仅添加事件”更新为“完全访问”之前，您无法使用日历共享。\n\n前往 iPhone 设置 > 应用 > %@ > 日历，并选择“完全访问”。";
+"warningChangeFromMasterToFollowerDexcomShare" = "从主模式切换到 Dexcom Share 关注者模式将停止当前传感器，并停用“上传到 Dexcom Share”。是否继续？";
+"calendarEventPreview" = "日历事件";
+"settingsviews_labelCalibrationTitle" = "传感器校准";
+"settingsviews_shareUploadConfigurationRequired" = "请输入您的用户名、密码和接收器序列号。";
+"settingsviews_shareUploadTooLarge" = "Dexcom Share 拒绝了过大的上传。";
+"calendarShareStatus" = "分享状态";
+"settingsviews_nightscoutImportDeviceStatusAdded" = "已添加设备状态";
+"settingsviews_shareUploadLastConnection" = "上次成功连接";
+"calenderId" = "使用的日历";
+"settingsviews_lowValueMessage" = "输入低值阈值对应的血糖值。";
+"settingsviews_contactImageCreatedByString" = "联系人由以下应用自动创建：";
+"settingsviews_targetValueMessage" = "设为 0 可停用目标";
+"settingsviews_labelCalibrationType" = "校准类型";
+"settingsviews_medtrumSelectedPatient" = "已选患者";
+"calendarFollowStatusFooter" = "共享日历会在后台更新期间从所选日历中读取最新的已编码事件备注。";
+"settingsviews_CalenderIntervalTitle" = "事件间隔";
+"settingsviews_shareUploadNever" = "尚未";
+"calendarShareIncludeHistory" = "包含历史记录";
+"settingsviews_labelAlgorithmType" = "算法类型";
+"giveNightscoutToken" = "输入令牌";
+"settingsviews_shareUploadCheckFooter" = "“测试连接”会验证您的账户。接收器序列号将在上传读数时验证。";
+"settingsviews_medtrumSelectPatientFromList" = "从列表中选择患者";
+"settingsviews_homeScreenScreenLockSectionFooter" = "这些选项控制应用保持打开或锁定时主屏幕的行为。";
+"settingsviews_displayVisualIndicatorInCalendarEvent" = "视觉指示器";
+"calendarEventSettingsFooter" = "这些选项仅更改日历事件中可见的标题。";
+"calendarFollowFirstHistoricalReading" = "第一条读数";
+"settingsviews_storeFrequentReadingsInHealthKit" = "频繁写入 HealthKit";
+"calendarFollowNoHistoricalData" = "未找到历史数据";
+"settingsviews_sensorHealthNotifications" = "传感器健康警告";
+"settingsviews_cleanDataDeviceStatusDeleted" = "设备状态已删除";
+"createCalendarEvent" = "日历分享";
+"calendarFollowHistoricalReadings" = "历史读数";
+"settingsviews_CalenderIntervalMessage" = "两次日历事件之间的最短间隔";
+"calendarFollowHistoricalCount" = "数量";
+"settingsviews_glucoseRangesSectionFooter" = "血糖范围仅影响主图表的显示颜色，与警报值无关。";
+"settingsviews_shareUploadError" = "上传错误";
+"settingsviews_shareUploadPaused" = "已按计划暂停";
+"calendarEventsSectionTitle" = "日历分享";
+"settingsviews_shareUploadLastUpload" = "上次成功上传";
+"settingsviews_medtrumSelectPatient" = "选择患者";

@@ -19,7 +19,7 @@
 "directWatchPausedSinceFormat" = "Alkaen %@";
 "directWatchConnecting" = "Odotetaan…";
 "directWatchCollectedReadings" = "Kerätyt lukemat";
-"directWatchReadingGapFormat" = "(%dm %ds)";
+"directWatchReadingGapFormat" = "(%d min %d s)";
 "directWatchNoCollectedReadings" = "Watch ei ole vielä kerännyt lukemia";
 
 "directWatchSessionStarted" = "Aloitettu klo %@";

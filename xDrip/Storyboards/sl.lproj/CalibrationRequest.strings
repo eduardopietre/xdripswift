@@ -4,14 +4,16 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// 
-"calibration_title" = "Calibration";
+"calibration_title" = "Kalibracija";
 
 /// If user must calibrate, this is the title of the notification
-"calibration_notification_title" = "Calibration";
+"calibration_notification_title" = "Kalibracija";
 
 /// If user must calibrate, this is the body of the notification
-"calibration_notification_body" = "Click the Notification to Calibrate";
+"calibration_notification_body" = "Kliknite obvestilo za kalibracijo";
 
 /// When calibration alert goess off, user clicks the notification, app opens, dialog pops up, this is the text in the dialog
-"enter_calibration_value" = "Enter Calibration Value";
+"enter_calibration_value" = "Vnesite vrednost kalibracije";
 "previousCalibrationPrefillMessage" = "Vrednost prejšnjega umerjanja ob %@ je že vnesena. Pred potrditvijo jo primerjajte s trenutno meritvijo merilnika.";
+"singlePointCalibration" = "Standardna";
+"multiPointCalibration" = "Večtočkovna";

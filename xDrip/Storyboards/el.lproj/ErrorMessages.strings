@@ -2,6 +2,6 @@
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-"error_message_Dexcom_transmitter_id_invalid_characters" = "The Transmitter ID should only contain characters a-z, A-Z or 0-9";
-"error_message_transmitter_id_should_have_length_6" = "The Transmitter ID should be 6 characters long";
-"error_message_transmitter_id_should_have_length_5" = "The Transmitter ID should be 5 characters long";
+"error_message_Dexcom_transmitter_id_invalid_characters" = "Το ID του πομπού πρέπει να περιέχει μόνο χαρακτήρες a-z, A-Z ή 0-9";
+"error_message_transmitter_id_should_have_length_6" = "Το ID του πομπού πρέπει να έχει 6 χαρακτήρες";
+"error_message_transmitter_id_should_have_length_5" = "Το ID του πομπού πρέπει να έχει 5 χαρακτήρες";

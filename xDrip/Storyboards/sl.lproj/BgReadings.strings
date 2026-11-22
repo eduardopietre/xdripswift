@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "Časovni žig";
 "backfilledAtFooterFormat" = "Zapolnjeno za nazaj %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "Odčitek glukoze";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "Neobdelani podatki";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "Ni odčitkov za prikaz ...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "Izračunana vrednost";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "Splošno";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "Odčitki glukoze";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "Notranji podatki";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "Puščica trenda";
 
 "glucoseRange" = "Območje glukoze";
 "bgRangeUrgent" = "Nujno";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "Prejeto prek Watch ob %@";
 "backfilledViaWatchAtFooterFormat" = "Dopolnjeno prek Watch ob %@";
 "receivedViaWatch" = "Prejeto prek Watch";
+"finalGlucose" = "Vrednost glukoze";
+"glucoseValueSectionHeader" = "Vrednost glukoze";
+"backfilled" = "Naknadno dopolnjeno";
+"rawValue" = "Neobdelana vrednost";
+"smoothedValue" = "Zglajena vrednost";
+"date" = "Datum";
+"calibratedValue" = "Kalibrirana vrednost";
+"adjustedValue" = "Prilagojena vrednost";
+"finalValue" = "Končna vrednost";

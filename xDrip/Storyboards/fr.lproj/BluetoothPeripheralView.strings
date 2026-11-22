@@ -15,7 +15,7 @@
 "voltageB" = "Tension B";
 "waitingForData" = "En attente de données...";
 "needsTransmitterId" = "ID du transmetteur manquant";
-"scan" = "Scan";
+"scan" = "Rechercher";
 "medtrumNanoPumpScanNoticeTitle" = "Connexion à la pompe Medtrum Nano";
 "medtrumNanoPumpScanNoticeMessage" = "Cette option se connecte à la pompe Medtrum Nano, et non directement au transmetteur Nano CGM.\n\nAvant de lancer le scan, vérifiez qu'EasyPatch est en cours d'exécution, connecté à la pompe et reçoit des valeurs CGM actuelles.\n\nEasyPatch doit rester en cours d'exécution et continuer à recevoir des valeurs en permanence.";
 "libre2ScanNoticeTitle" = "Bluetooth de l'app Libre";
@@ -53,10 +53,10 @@
 "runningInCoexistenceMode" = "Fonctionne en mode de coexistence";
 "runningInPrimaryMode" = "Fonctionne en mode principal";
 /// cell text, sensor start time
-"sensorStartDate" = "Sensor Started";
+"sensorStartDate" = "Capteur démarré";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "Transmetteur démarré";
 
 "nfcScanFailedTitle" = "⚠️ Echec du scan capteur";
 
@@ -77,10 +77,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "Le calibrage multipoint est une fonction avancée.\n\nN'utilisez pas cette fonction avant d'avoir lu la section sur le calibrage de l'aide en ligne et d'en avoir compris le fonctionnement.";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "Scan NFC requis";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Chauffe jusqu’à";
@@ -117,7 +117,7 @@
 "readSuccessNow" = "Maintenant";
 "scanningForTransmitter" = "Recherche...";
 "connecting" = "Connexion";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "Connexion...";
 "reconnecting" = "Reconnexion";
 "reconnectingToTransmitter" = "Reconnexion...";
 "waiting" = "En attente...";
@@ -202,3 +202,4 @@
 "bluetoothAccessNotEnabled" = "L’accès au Bluetooth n’est pas activé";
 "bluetoothAccessInstructions" = "Pour vous connecter, ouvrez Réglages → Confidentialité et sécurité → Bluetooth et autorisez l’accès pour %@.";
 "bluetoothAccessRestrictedInstructions" = "Les restrictions de l’appareil empêchent l’accès au Bluetooth. Vérifiez Temps d’écran ou contactez l’administrateur de l’appareil pour activer l’accès.";
+"confirm" = "Confirmer";

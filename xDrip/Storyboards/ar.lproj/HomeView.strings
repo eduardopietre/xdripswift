@@ -46,34 +46,34 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// if web oop enabled, and also if transmitter supports this, user clicks calibrate button, but calibration is not possible
-"calibrationNotNecessary" = "When using the native transmitter algorithm, manual calibration is not available.\n\nIf you want to calibrate, you can switch to the xDrip algorithm in the transmitter screen (if available).";
+"calibrationNotNecessary" = "عند استخدام الخوارزمية الأصلية لجهاز الإرسال، لا تتوفر المعايرة اليدوية.\n\nإذا أردت المعايرة، يمكنك التبديل إلى خوارزمية xDrip في شاشة جهاز الإرسال (إن توفرت).";
 
 /// nightscout is not enabled
-"nightscoutNotEnabled" = "Nightscout is disabled";
+"nightscoutNotEnabled" = "Nightscout معطّل";
 
 /// After clicking scan button, this message will appear
-"hidingUrlForXSeconds" = "Hiding URL for %@s...";
+"hidingUrlForXSeconds" = "إخفاء URL لمدة %@ ثانية...";
 
 /// no sensor data is available
-"noSensorData" = "No sensor data";
+"noSensorData" = "لا توجد بيانات من الحساس";
 
 /// status info : literally 'Sensor Duration'
-"sensorDuration" = "Sensor Duration";
+"sensorDuration" = "مدة الحساس";
 
 /// nightscout is not enabled
-"nightscoutURLMissing" = "URL missing";
+"nightscoutURLMissing" = "URL مفقود";
 
 /// ask the user to disconnect and reconnect the sensor
-"reconnectLibreDataSource" = "Disconnect and reconnect Libre sensor";
+"reconnectLibreDataSource" = "افصل حساس Libre ثم أعد توصيله";
 
 /// username and/or password is missing for librelinkup
-"followerAccountCredentialsMissing" = "Username/password missing";
+"followerAccountCredentialsMissing" = "اسم المستخدم/كلمة المرور مفقود";
 
 /// no data source is enabled or connected
-"noDataSourceConnected" = "No CGM data source connected";
+"noDataSourceConnected" = "لا يوجد مصدر بيانات CGM متصل";
 
-"postProcessingFiveMinuteReadings" = "5-minute readings";
-"postProcessingAlgorithm" = "Algorithm";
+"postProcessingFiveMinuteReadings" = "قراءات كل 5 دقائق";
+"postProcessingAlgorithm" = "الخوارزمية";
 "sensorLifetimeRemainingFormat" = "متبقي %@";
 "postProcessingAlgorithmSavitzkyGolay" = "Savitzky-Golay";
 
@@ -105,14 +105,14 @@
 "sensorNoiseHistoryChartAccessibility" = "مخطط سجل ضوضاء المستشعر";
 "pumpBattery" = "البطارية";
 "pumpReservoir" = "الخزان";
-"sensorManagementSessionLifetime" = "Elapsed / Remaining";
-"sensorManagementSessionDetails" = "Session Details";
-"sensorManagementCalibrationOpenTitle" = "Calibration Details";
-"sensorManagementCGMType" = "CGM Type";
+"sensorManagementSessionLifetime" = "المنقضي / المتبقي";
+"sensorManagementSessionDetails" = "تفاصيل الجلسة";
+"sensorManagementCalibrationOpenTitle" = "تفاصيل المعايرة";
+"sensorManagementCGMType" = "نوع CGM";
 "sensorManagementLastCalibration" = "الأخيرة";
-"sensorManagementStatusActive" = "Sensor Active";
-"sensorManagementStarted" = "Started";
-"sensorManagementEnds" = "Ends";
+"sensorManagementStatusActive" = "الحساس نشط";
+"sensorManagementStarted" = "بدأ";
+"sensorManagementEnds" = "ينتهي";
 "sensorHealthPersistentNoiseTitle" = "تشويش المستشعر مرتفع جدًا";
 "sensorHealthPersistentNoiseGuidance" = "تشويش مرتفع جدًا لمدة 12 ساعة. فكّر في استبدال المستشعر إذا استمر.";
 "sensorHealthFlatlineTitle" = "إشارة المستشعر ثابتة";
@@ -204,3 +204,89 @@
 "postProcessingAdjustmentUnavailableNativeCalibration" = "يتعذر ضبط الإزاحة والشكل لأن جهاز CGM هذا يستخدم المعايرة الأصلية.";
 
 "postProcessingWarningAgreement" = "اضغط على «موافق» فقط إذا كنت تفهم هذه الميزة وتوافق على تفعيلها.";
+"postProcessingShape" = "التركيز";
+"sensorManagementCalibrationSafetyFooter" = "عايِر فقط إذا كنت تفهم كيفية القيام بذلك بأمان.";
+"snoozeAllTitle" = "غفوة للكل";
+"postProcessingUpdateAllReadingsLastPeriod" = "استبدال جميع القيم في آخر %@";
+"postProcessingEnterValue" = "أدخل القيمة";
+"postProcessingStrong" = "قوي";
+"sensorManagementCalibrationIntercept" = "التقاطع (Intercept)";
+"snoozeUrgentAlarms" = "التنبيهات العاجلة فقط";
+"showHideHomeScreenFooter" = "إظهار أو إخفاء عناصر الشاشة الرئيسية، مفيد مع شاشات iPhone الأصغر";
+"postProcessingSofterLowsDescription" = "يطبّق تأثير المقياس أكثر عند قيم الجلوكوز المنخفضة وأقل عند المرتفعة.";
+"postProcessingMasterNightscoutUploadDisabled" = "الرفع إلى Nightscout معطّل";
+"sensorManagementCalibrationSlope" = "الميل (Slope)";
+"postProcessingReadingFrequency" = "تكرار القراءة";
+"sensorManagementCalibrationFalling" = "ينخفض";
+"postProcessingOffset" = "الإزاحة";
+"waitingForDataSource" = "CGM متصل. بانتظار البيانات...";
+"sensorManagementCalibrationSlightlyHigh" = "مرتفع قليلاً";
+"sensorManagementCalibrationFallingFast" = "ينخفض بسرعة";
+"postProcessingOffsetBgCheckHint" = "يوصى بفحص سكر واحد حديث على الأقل";
+"noDataSourceConnectedWatch" = "افتح تطبيق iOS";
+"sensorManagementCalibrationStableTrend" = "اتجاه مستقر";
+"sensorNoiseHistoryFooter" = "يعرض المخطط التذبذب خلال 30 دقيقة، والقيمة المتحركة لـ 4 ساعات، والوسيط لـ 12 ساعة المستخدم لتحذيرات الضوضاء المستمرة. القيم الأقل تعني منحنى أنعم. لا يقيس هذا دقة الجلوكوز.";
+"sensorManagementCalibrationNoTrend" = "لا اتجاه";
+"sensorManagementCalibrationNoReading" = "لا قراءة";
+"postProcessingEnterGlucose" = "أدخل الجلوكوز";
+"sensorHealthTestTransmitterFailure" = "اختبار عطل جهاز الإرسال بعد 5 ثوانٍ";
+"postProcessingNow" = "الآن";
+"sensorManagementCalibrationReadinessBad" = "من غير المرجح أن تكون المعايرة دقيقة الآن. يرجى الانتظار.";
+"postProcessingOriginal" = "الأصلي";
+"sensorManagementCalibrationReadinessCaution" = "قد تكون المعايرة أقل موثوقية. قد يكون الانتظار أفضل.";
+"postProcessingSofterLows" = "المنخفضة";
+"postProcessingApplyFrom" = "تطبيق من";
+"sensorManagementLargeCalibrationDifferenceWarningFormat" = "من المحتمل ألا تنجح هذه المعايرة. حاول ألا يتجاوز كل تغيير في المعايرة %@ في المرة الواحدة.";
+"sensorManagementCalibrationStable" = "مستقر";
+"sensorHealthTestTemporaryIssue" = "اختبار مشكلة مؤقتة بعد 5 ثوانٍ";
+"postProcessingScaleBgCheckHint" = "يوصى بفحصَي سكر حديثين على الأقل";
+"postProcessingOriginalGlucose" = "الجلوكوز الأصلي";
+"sensorManagementCalibrationGood" = "جيد";
+"sensorNoiseHistoryPersistentCompact" = "12 س";
+"postProcessingNoCurrentValues" = "لا توجد قيم حالية";
+"postProcessingMedium" = "متوسط";
+"showHideItemsTitle" = "إظهار/إخفاء سريع";
+"postProcessingAdjustedGlucose" = "الجلوكوز المعدّل";
+"showHideStandByModeFooter" = "يغيّر طريقة عرض وضع StandBy إذا كان مفعّلاً في إعدادات iPhone";
+"followerAccountCredentialsInvalid" = "حساب غير صالح";
+"postProcessingNightscoutDataNotUpdated" = "لن يتم تحديث بيانات Nightscout";
+"sensorManagementNoisePersistent" = "آخر 12 ساعة";
+"sensorRemaining" = "المتبقي من الحساس";
+"sensorManagementCalibrationFlatline" = "خط مسطح";
+"sensorManagementCalibrationStale" = "قديمة";
+"showHideHomeScreenTitle" = "الشاشة الرئيسية";
+"postProcessingSmoothed" = "منعّم";
+"postProcessingApply" = "تطبيق";
+"postProcessingAdjustmentDisabledUseNativeAlgorithm" = "التعديل معطّل لأن هذا الحساس يستخدم معايرته الخاصة. بدّل إلى الخوارزمية الأصلية للسماح بتعديل الجلوكوز.";
+"sensorManagementCalibrationRaw" = "خام";
+"postProcessingPreviewHours" = "ساعات المعاينة";
+"snoozeAllSnoozed" = "جميع التنبيهات في وضع الغفوة!";
+"postProcessingAdjusted" = "معدّل";
+"snoozeAllDisabled" = "غفوة الكل معطّلة";
+"showTreatments" = "إظهار العلاجات";
+"sensorHealthTestSensorFailure" = "اختبار عطل الحساس بعد 5 ثوانٍ";
+"sensorManagementCalibrationReadinessGood" = "الوقت مناسب الآن للمعايرة.";
+"postProcessingScale" = "المقياس";
+"postProcessingTitle" = "تعديلات الجلوكوز";
+"postProcessingSofterHighs" = "المرتفعة";
+"postProcessingNeutralDescription" = "يطبّق تأثير المقياس بالتساوي على كامل نطاق الجلوكوز.";
+"postProcessingSofterHighsDescription" = "يطبّق تأثير المقياس أكثر عند قيم الجلوكوز المرتفعة وأقل عند المنخفضة.";
+"postProcessingValidGlucoseRange" = "أدخل قيمة بين %@ و %@";
+"postProcessingStrength" = "القوة";
+"remaining" = "متبقٍ";
+"postProcessingAlgorithmSavitzkyGolayDescription" = "تنعّم خوارزمية Savitzky-Golay منحنى الجلوكوز بملاءمة نوافذ محلية قصيرة مع الحفاظ على الشكل العام للقمم والقيعان.";
+"showHideStandByModeTitle" = "وضع StandBy";
+"postProcessingLight" = "خفيف";
+"sensorManagementCalibrationValue" = "قيمة المعايرة";
+"postProcessingNeutral" = "عادي";
+"postProcessingAdjustmentDisabledBecauseSensorIsCalibrated" = "التعديل معطّل لأن هذا الحساس يستخدم معايرته الخاصة.";
+"sensorManagementCalibrationRising" = "يرتفع";
+"snoozeAllSnoozedUntil" = "غفوة حتى %@";
+"sensorManagementCalibrationSlightlyLow" = "منخفض قليلاً";
+"sensorHealthTestPersistentNoise" = "اختبار الضوضاء المستمرة بعد 5 ثوانٍ";
+"sensorHealthTestFlatline" = "اختبار الإشارة المسطحة بعد 5 ثوانٍ";
+"postProcessingShapeExplanation" = "يغيّر التركيز الموضع الذي يكون فيه للمقياس أكبر تأثير على المنحنى. قد يفيد ذلك إذا بدا أن الحساس يبالغ في قيم الجلوكوز المرتفعة أو المنخفضة أكثر من بقية النطاق.";
+"postProcessingDexcomShareDataNotUpdated" = "لن يتم تحديث بيانات Dexcom Share";
+"sensorManagementCalibrationBG" = "سكر الدم";
+"waitingForCGMConnection" = "بانتظار اتصال CGM...";
+"sensorManagementCalibrationRisingFast" = "يرتفع بسرعة";

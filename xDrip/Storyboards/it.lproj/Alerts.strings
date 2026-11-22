@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// an alentry is applicable as of a certain value (eg low alert as of 70 mg/dl), this is the name of the field in the settings screen that allows to modify this valule
-"alertvalue" = "Value";
+"alertvalue" = "Valore";
 "alerts_snooze_high_title" = "Alta";
 "alerts_snooze_very_high_title" = "Molto alta";
 "alerts_snooze_low_title" = "Bassa";
@@ -14,55 +14,55 @@
 "alerts_snooze_fast_rise_title" = "Salita rapida";
 
 /// When very low alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_lowalerttitle" = "Low Alarm";
+"alerts_lowalerttitle" = "Allarme basso";
 
 /// shown on top of the screen that allows user to edit an alert
-"alertsettingsview_screentitle" = "Alarms";
+"alertsettingsview_screentitle" = "Allarmi";
 
 /// an alentry is applicable as of a certain value (eg low alert as of 70 mg/dl), this is the name of the field in the settings screen that allows to modify this valule
-"alerttype" = "Alarm Type";
+"alerttype" = "Tipo di allarme";
 
 /// an alentry is applicable as of a certain timestamp in the day, this is the text in the field in the settings screen that allows to modify this timestamp
-"alertstart" = "Apply from";
+"alertstart" = "Applica da";
 
 /// When fast drop alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_fastrise" = "Fast Rise Alarm";
+"alerts_fastrise" = "Allarme rialzo rapido";
 
 /// shown on top of the screen that allows user to view all the alerts in one table
-"alertssettingsview_screentitle" = "Edit Alarm";
+"alertssettingsview_screentitle" = "Modifica allarme";
 
 /// When Missed reading alert happens, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_missedreadingalerttitle" = "Missed Readings";
+"alerts_missedreadingalerttitle" = "Letture mancanti";
 
 /// when editing an alert value, a pop is shown, this is the explanation message in the pop up
-"changealertvalue" = "Change Alarm Value";
+"changealertvalue" = "Modifica valore allarme";
 
 /// when calibration is needed, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_calibrationneeded" = "Calibration Reminder";
+"alerts_calibrationneeded" = "Promemoria di calibrazione";
 
 /// transmitter battery low, this is the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_batterylow" = "Transmitter Battery Low";
+"alerts_batterylow" = "Batteria del trasmettitore scarica";
 
 /// When fast drop alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_fastdrop" = "Fast Drop Alarm";
+"alerts_fastdrop" = "Allarme calo rapido";
 
 /// When pop up is shown to let user pick the snooze time, this is the title of this pop up
-"alerts_select_snooze_time" = "Select Snooze Time";
+"alerts_select_snooze_time" = "Seleziona tempo di posticipo";
 
 /// When very low alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_verylowalerttitle" = "Very Low Alarm";
+"alerts_verylowalerttitle" = "Allarme molto basso";
 
 /// when trying to delete an alert, user needs to confirm first, this is the message
-"confirmdeletionalert" = "Delete Alarm?";
+"confirmdeletionalert" = "Eliminare l'allarme?";
 
 /// Action text for alerts. This is the button that allows to snooze the alert
-"alerts_snooze" = "Snooze";
+"alerts_snooze" = "Posticipa";
 
 /// When very high alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_veryhighalerttitle" = "Very High Alarm";
+"alerts_veryhighalerttitle" = "Allarme molto alto";
 
 /// When high alarm rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alarm
-"alerts_highalerttitle" = "High Alarm";
+"alerts_highalerttitle" = "Allarme alto";
 
 /* Optional one-off sensor expiry reminders. */
 "sensorExpiry.endingSoon" = "Il sensore sta per scadere";
@@ -71,3 +71,7 @@
 "sensorExpiry.hoursHelp" = "Inserisci un numero intero da 1 a 48 ore.";
 "sensorExpiry.endingSoonBody" = "La durata del sensore dovrebbe terminare il %@.";
 "sensorExpiry.expectedExpiryBody" = "Il sensore ha raggiunto la scadenza prevista (%@).";
+"alertWhenAboveValue" = "Solo se sopra";
+"alertWhenBelowValue" = "Solo se sotto";
+"alerts_sensortransmitterfailure" = "Guasto sensore/trasmettitore";
+"alerts_notloopingalerttitle" = "Loop non attivo";

@@ -4,41 +4,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// timestamp of glucose reading
-"timestamp" = "Timestamp";
+"timestamp" = "Мітка часу";
 "backfilledAtFooterFormat" = "Заповнено заднім числом %@";
 
 /// glucose reading
-"glucoseReadingTitle" = "Glucose Reading";
+"glucoseReadingTitle" = "Показання глюкози";
 
 /// which date should be selected
 "selectDate" = "Date";
 
 /// the raw data value of the glucose reading
-"rawData" = "Raw data";
+"rawData" = "Необроблені дані";
 
 /// no readings are found for the selected date
-"noReadingsToShow" = "No readings to show...";
+"noReadingsToShow" = "Немає показань...";
 
 /// device name of the transmitter used to send the glucose reading
 "deviceName" = "Device name";
 
 /// calculated value of the glucose readings
-"calculatedValue" = "Calculated value";
+"calculatedValue" = "Розраховане значення";
 
 /// general glucose reading section header
-"generalSectionHeader" = "General";
+"generalSectionHeader" = "Загальне";
 
 /// glucose reading
-"glucoseReadingsTitle" = "Glucose Readings";
+"glucoseReadingsTitle" = "Показання глюкози";
 
 /// id of the glucose reading
 "id" = "ID";
 
 /// internal glucose reading data
-"internalDataSectionHeader" = "Internal data";
+"internalDataSectionHeader" = "Внутрішні дані";
 
 /// the slope arrow of the glucose reading
-"slopeArrow" = "Slope arrow";
+"slopeArrow" = "Стрілка тренду";
 
 "glucoseRange" = "Діапазон глюкози";
 "bgRangeUrgent" = "Терміново";
@@ -51,3 +51,12 @@
 "receivedViaWatchAtFooterFormat" = "Отримано через Watch о %@";
 "backfilledViaWatchAtFooterFormat" = "Відновлено через Watch о %@";
 "receivedViaWatch" = "Отримано через Watch";
+"finalGlucose" = "Значення глюкози";
+"glucoseValueSectionHeader" = "Значення глюкози";
+"backfilled" = "Заповнено заднім числом";
+"rawValue" = "Необроблене значення";
+"smoothedValue" = "Згладжене значення";
+"date" = "Дата";
+"calibratedValue" = "Каліброване значення";
+"adjustedValue" = "Скориговане значення";
+"finalValue" = "Кінцеве значення";

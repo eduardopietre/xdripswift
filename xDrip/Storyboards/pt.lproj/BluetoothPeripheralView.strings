@@ -52,10 +52,10 @@
 "runningInCoexistenceMode" = "A funcionar em modo de coexistência";
 "runningInPrimaryMode" = "A funcionar em modo principal";
 /// cell text, sensor start time
-"sensorStartDate" = "Sensor Started";
+"sensorStartDate" = "Sensor Iniciado";
 
 /// cell text, transmitter start time
-"transmittterStartDate" = "Transmitter Started";
+"transmittterStartDate" = "Transmissor Iniciado";
 
 "nfcScanFailedTitle" = "⚠️ Pesquisa de Sensor Falhou";
 
@@ -76,10 +76,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// text to inform the user that multi-point calibration is an advanced option and could be dangerous if used incorrectly
-"nonFixedSlopeWarning" = "Multi-point calibration is an advanced feature.\n\nPlease do not use this feature until you have read the calibration section of the online help and understand how it works.";
+"nonFixedSlopeWarning" = "A calibração multiponto é uma funcionalidade avançada.\n\nNão utilize esta funcionalidade sem antes ler a secção de calibração da ajuda online e perceber como funciona.";
 
 /// text in status row, when waiting for a successful NFC scan before starting bluetooth scanning
-"nfcScanNeeded" = "NFC scan needed";
+"nfcScanNeeded" = "Leitura NFC necessária";
 
 /// sensor warm-up text
 "warmingUpUntil" = "Aquec. até";
@@ -109,7 +109,7 @@
 "readSuccessNow" = "Agora";
 "scanningForTransmitter" = "A procurar...";
 "connecting" = "A ligar";
-"connectingToTransmitter" = "Connecting...";
+"connectingToTransmitter" = "A ligar...";
 "reconnecting" = "A restabelecer ligação";
 "reconnectingToTransmitter" = "A restabelecer ligação...";
 "waiting" = "A aguardar...";
@@ -194,3 +194,10 @@
 "bluetoothAccessNotEnabled" = "O acesso ao Bluetooth não está ativado";
 "bluetoothAccessInstructions" = "Para estabelecer ligação, abre Definições → Privacidade e segurança → Bluetooth e permite o acesso à aplicação %@.";
 "bluetoothAccessRestrictedInstructions" = "As restrições do dispositivo impedem o acesso ao Bluetooth. Verifica o Tempo de ecrã ou contacta o administrador do dispositivo para ativar o acesso.";
+"confirmAlgorithmChangeToTransmitterMessage" = "Confirme que pretende voltar ao algoritmo nativo/do transmissor";
+"confirmAlgorithmChangeToxDripMessage" = "Confirme que pretende mudar para o algoritmo xDrip.\n\nIsto irá interromper as leituras durante um curto período e pedirá um valor de calibração inicial quando estiver pronto.";
+"confirmCalibrationChangeToMultiPointMessage" = "Confirme que pretende alterar o tipo de calibração para multiponto\n\n⚠️ Tenha em atenção que este método destina-se apenas a utilizadores avançados e pode dar resultados perigosos se não for calibrado corretamente.\n\nSe não tiver a certeza de como utilizar este método, prima Cancelar.";
+"confirmCalibrationChangeToSinglePointMessage" = "Confirme que pretende alterar o tipo de calibração para a calibração padrão\n\nIsto irá interromper as leituras durante um curto período e pedirá um valor de calibração inicial quando estiver pronto.";
+"nativeAlgorithm" = "Algoritmo nativo";
+"xDripAlgorithm" = "Algoritmo xDrip";
+"confirm" = "Confirmar";

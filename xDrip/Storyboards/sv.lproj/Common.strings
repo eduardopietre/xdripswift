@@ -60,10 +60,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Snävt intervall";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Eget intervall";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "Uppskattat aktivt insulin";
@@ -90,3 +90,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Aktiverat";
+"common_report_period" = "Rapportperiod";
+"common_statistics_insufficientData" = "Otillräckligt med data";
+"common_statistics_title" = "Statistik";
+"common_report_unableToPrepareTitle" = "Rapporten kunde inte förberedas";
+"common_report_patientIDPlaceholder" = "Journalnummer / patient-ID";
+"common_statistics_dailySummary" = "Daglig sammanfattning";
+"common_report_patientPeriodTitleFormat" = "%@s %@";
+"common_statistics_averageTDD" = "Genomsnittlig TDD";
+"common_report_aidPeriod" = "Loopdata";
+"common_report_periodTitleFormat" = "Rapport för %d dagar";
+"common_report_passwordProtectionOpenError" = "Rapport-PDF:en kunde inte öppnas för lösenordsskydd.";
+"common_statistics_timeInRange" = "Tid i intervall";
+"common_statistics_dailyPatternFooter" = "Staplarna visar daglig procentandel i intervallet %@. Den streckade linjen markerar det kliniska målet på 70%%.";
+"common_statistics_cvTrend" = "CV-trend";
+"common_report_none" = "Ingen";
+"common_notRequired" = "Krävs inte";
+"common_notAvailable" = "Inte tillgängligt";
+"common_report_passwordFieldPlaceholder" = "Lösenord för att öppna PDF";
+"common_statistics_estimatedA1cTrend" = "Trend för uppskattat HbA1c";
+"common_report_notIncluded" = "Ingår inte";
+"common_statistics_report" = "Rapport";
+"common_statistics_averageGlucose" = "Genomsnittligt glukos";
+"common_report_language" = "Språk";
+"common_disabled" = "Inaktiverad";
+"common_report_patientFooter" = "Patientuppgifter lagras lokalt på den här enheten och skrivs ut i rapportens sidhuvud.";
+"common_statistics_targetGreaterThanOrEqual" = "Mål >=%@";
+"common_report_periodFooter" = "90 dagar rekommenderas för en klinisk CGM-rapport.";
+"common_report_passwordConfirmationPlaceholder" = "Ange lösenordet igen";
+"common_report_patientName" = "Patientnamn";
+"common_value" = "Värde";
+"common_report_willBePasswordProtected" = "Rapporten blir lösenordsskyddad";
+"common_report_generatingStatus" = "Skapar klinisk rapport...";
+"common_report_notSet" = "Inte angivet";
+"common_statistics_ambulatoryGlucoseProfile" = "Ambulatorisk glukosprofil";
+"common_statistics_averageCarbs" = "Genomsnittliga kolhydrater";
+"common_report_willNotBePasswordProtected" = "Rapporten blir inte lösenordsskyddad";
+"common_report_aidPeriodFooter" = "7 dagar rekommenderas för Loopdata.";
+"common_statistics_bestDay" = "Bästa dagen";
+"common_statistics_period" = "Period";
+"common_report_passwordFooter" = "Lösenordet används bara för nästa PDF som skapas och sparas inte.";
+"common_statistics_dailyPattern" = "Dagligt mönster";
+"common_checking" = "Kontrollerar...";
+"common_statistics_summary" = "Sammanfattning";
+"common_statistics_section" = "Avsnitt";
+"common_report_patientNamePlaceholder" = "Patientnamn";
+"common_enterValue" = "Ange värde";
+"common_statistics_waitingForGlucoseData" = "Väntar på glukosdata...";
+"common_statistics_mostHigh" = "Mest högt";
+"common_statistics_trends" = "Trender";
+"common_statistics_dataCapture" = "Datainsamling";
+"common_statistics_targetLessThanOrEqual" = "Mål <=%@";
+"common_report_patientSection" = "Patient";
+"common_statistics_noDataTitle" = "Ingen statistik tillgänglig";
+"common_report_passwordToOpen" = "Lösenord för att öppna";
+"common_report_paperSize" = "Pappersstorlek";
+"common_statistics_insufficientAGPData" = "Otillräckligt med data för AGP-percentildiagram";
+"common_statistics_averageFormat" = "Genomsnitt %@";
+"common_report_patientID" = "Patient-ID";
+"common_report_generateTitle" = "Skapa rapport";
+"common_statistics_noDataMessage" = "Det finns inte tillräckligt med lagrad CGM-data för den här perioden.";
+"common_report_notEnoughData" = "Inte tillräckligt med data";
+"common_report_shareAccessibility" = "Dela rapport";
+"common_report_generationFailedTitle" = "Rapporten kunde inte skapas";
+"next" = "Nästa";
+"common_statistics_mostLow" = "Mest lågt";
+"common_statistics_tempBasalDelta" = "Skillnad i temp. basal";
+"common_dismiss" = "Stäng";
+"common_report_options" = "Rapportalternativ";
+"common_statistics_timeInTightRange" = "Tid i snävt intervall";
+"common_report_passwordProtectionWriteError" = "Den lösenordsskyddade rapport-PDF:en kunde inte skapas.";
+"common_statistics_cgmEstimate" = "CGM-uppskattning";

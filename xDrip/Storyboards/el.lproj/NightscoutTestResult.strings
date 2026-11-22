@@ -2,9 +2,9 @@
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-"nightscouttestresult_verificationsuccessfulalerttitle" = "Verification Successful";
-"nightscouttestresult_verificationsuccessfulalertbody" = "Your Nightscout site was verified successfully";
-"nightscouttestresult_verificationerroralerttitle" = "Verification Error";
-"warningAPIKeyOrURLIsnil" = "Your Nightscout URL (and optionally API_SECRET or Token) must be set before you can run the test";
-"nightscoutAPIKeyAndURLStartedTitle" = "Verifying...";
-"nightscoutAPIKeyAndURLStartedBody" = "Nightscout Verification Test Started\n\nThis message should automatically disappear shortly";
+"nightscouttestresult_verificationsuccessfulalerttitle" = "Επιτυχής επαλήθευση";
+"nightscouttestresult_verificationsuccessfulalertbody" = "Ο ιστότοπος Nightscout επαληθεύτηκε με επιτυχία";
+"nightscouttestresult_verificationerroralerttitle" = "Σφάλμα επαλήθευσης";
+"warningAPIKeyOrURLIsnil" = "Πρέπει να ορίσετε το URL του Nightscout (και προαιρετικά API_SECRET ή Token) πριν εκτελέσετε τη δοκιμή";
+"nightscoutAPIKeyAndURLStartedTitle" = "Επαλήθευση...";
+"nightscoutAPIKeyAndURLStartedBody" = "Ξεκίνησε η δοκιμή επαλήθευσης Nightscout\n\nΑυτό το μήνυμα θα εξαφανιστεί αυτόματα σε λίγο";

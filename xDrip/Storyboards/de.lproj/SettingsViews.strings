@@ -27,7 +27,7 @@
 "volumeTestiOSSound" = "Wenn der Stummmodus deaktiviert ist";
 
 /// transmitter settings, just the words that explain that the settings is about transmitter id
-"settingsviews_transmitterid" = "Transmitter ID";
+"settingsviews_transmitterid" = "Transmitter-ID";
 
 /// nightscout settings, title of row
 "uploadSensorStartTime" = "Sensor Startzeit hochladen";
@@ -174,7 +174,7 @@
 /// nightscout settings, where user can enable or disable nightscout
 
 /// alerting settings, section title
-"settingsviews_sectiontitlealerting" = "Alarms";
+"settingsviews_sectiontitlealerting" = "Alarme";
 "settingsviews_prefer_large_snooze_screen" = "Großer Schlummerbildschirm";
 
 /// speak settings, where user can enable or disable speak readings
@@ -184,7 +184,7 @@
 "settingsviews_urgentHighValue" = "Hohe Werte dringend";
 
 /// name of setting for text color
-"m5stack_settingsviews_textColor" = "Text Color";
+"m5stack_settingsviews_textColor" = "Textfarbe";
 
 /// nightscout settings, where user can set the nightscout api key
 "settingsviews_nightscoutAPIKey" = "API_SECRET";
@@ -267,7 +267,7 @@
 "settingsviews_useUSDexcomShareurl" = "US-Server";
 
 /// general settings, master or follower
-"settingsviews_masterorfollower" = "Master or Follower";
+"settingsviews_masterorfollower" = "Master oder Follower";
 
 /// dexcom share settings settings, where user can set dexcom serial number to be used for dexcom share upload
 "settingsviews_dexcomShareUploadSerialNumber" = "Empfänger Seriennummer";
@@ -288,18 +288,18 @@
 "settingsviews_homeScreenSensorLifetimeSectionFooter" = "Legt fest, ob die Sensorlaufzeit auf iPhone und Apple Watch als verstrichene Zeit oder als Countdown angezeigt wird.";
 
 /// home screen settings, section title
-"settingsviews_sectiontitlehomescreen" = "Home Screen";
+"settingsviews_sectiontitlehomescreen" = "Hauptbildschirm";
 "settingsviews_mainChartHours" = "Zeitraum";
 
 /// transmitter settings, this is for the button, when clicked then user will be requested to give transmitter id. The only difference with settingsviews_transmitterid is that ':' is not added
-"settingsviews_transmitterid_text_for_button" = "Transmitter ID";
+"settingsviews_transmitterid_text_for_button" = "Transmitter-ID";
 
 
 "settingsviews_sectiontitlestatistics" = "Statistik";
 "settingsviews_showStatistics" = "Statistik";
 "settingsviews_daysToUseStatisticsTitle" = "Tage zum berechnen";
 "settingsviews_daysToUseStatisticsMessage" = "Maximale Tage anhand dessen versucht wird den Verlauf zu berechnen?\n\n(Bei 0 wird heute ab Mitternacht berechnet)";
-"settingsviews_useIFCCGMI" = "GMI in mmols/mol";
+"settingsviews_useIFCCGMI" = "GMI in mmol/mol";
 
 "settingsviews_showClockWhenScreenIsLocked" = "Uhr";
 
@@ -317,7 +317,7 @@
 
 
 /// help settings, open the online help
-"settingsviews_showOnlineHelp" = "Open Online Help";
+"settingsviews_showOnlineHelp" = "Online-Hilfe öffnen";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -338,7 +338,7 @@
 "settingsviews_sectiontitletreatments" = "Therapie";
 
 /// When clicking the threshold setting, a pop up asks for the number of units under which a bolus should be considered a micro-bolus
-"settingsviews_smallBolusTreatmentThresholdMessage" = "Below how many units should we consider a bolus as a micro-bolus?\n\n(Recommended value: 1.0U)";
+"settingsviews_smallBolusTreatmentThresholdMessage" = "Unterhalb wie vieler Einheiten soll ein Bolus als Mikrobolus gelten?\n\n(Empfohlener Wert: 1,0 E)";
 
 /// treatments settings, show the treatments on main chart
 "settingsviews_showTreatments" = "Therapie";
@@ -349,76 +349,76 @@
 
 
 /// Housekeeper settings, section title
-"settingsviews_sectionTitleHousekeeper" = "Data Management";
+"settingsviews_sectionTitleHousekeeper" = "Datenverwaltung";
 
 /// When clicking the retention setting, a pop up asks for how many days should data be stored
-"settingsviews_housekeeperRetentionPeriodMessage" = "For how many days should data be stored? (Min 90, Max 365)\n\n(Recommended: 90 days)";
+"settingsviews_housekeeperRetentionPeriodMessage" = "Für wie viele Tage sollen Daten gespeichert werden? (Min. 90, Max. 365)\n\n(Empfohlen: 90 Tage)";
 
 /// Housekeeper retention period, for how long to store data
-"settingsviews_housekeeperRetentionPeriod" = "Retention Period";
+"settingsviews_housekeeperRetentionPeriod" = "Aufbewahrungsdauer";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Settings screen for loop delay
-"Select Time" = "Select Time";
+"Select Time" = "Zeit auswählen";
 
 /// transmitter settings, to explain that the reset option only works for certain transmitters
-"settingsviews_resetDexcomTransmitterMessage" = "This option will attempt to reset your Anubis transmitter on the next connection.";
+"settingsviews_resetDexcomTransmitterMessage" = "Diese Option versucht, deinen Anubis-Transmitter bei der nächsten Verbindung zurückzusetzen.";
 
 /// data source settings, keep-alive mode is set to aggressive
 "settingsviews_followerKeepAliveTypeAggressiveMessage" = "Aktiv halten is set to aggressive.\n\nWhen the app is not on screen, we will aggressively attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a very noticeable impact on the battery of your device and should only be used if absolutely necessary.";
 
 /// libre link up follower settings, no active sensor
-"settingsviews_libreLinkUpNoActiveSensor" = "No active sensor data";
+"settingsviews_libreLinkUpNoActiveSensor" = "Keine aktiven Sensordaten";
 
 /// data source settings, keep-alive mode is set to disabled
 "settingsviews_followerKeepAliveTypeDisabledMessage" = "Aktiv halten is disabled.\n\nWhen the app is not on screen, no alarms, app badges, notifications or BG updates will take place.\n\nThe app will remain sleeping until you open it again.\n\nThis mode has very little impact on the battery of your device.";
 
 /// Settings screen for loop delay, explanatory text for value
-"expanatoryTextSelectValue" = "Delay in minutes, applied to readings shared with OS-AID";
+"expanatoryTextSelectValue" = "Verzögerung in Minuten, angewendet auf mit OS-AID geteilte Messwerte";
 
 /// statistics settings, prefer time in tight range
-"settingsviews_timeInRangeTypeTightRange" = "Tight Range";
+"settingsviews_timeInRangeTypeTightRange" = "Enger Bereich";
 
 /// data source settings, keep-alive mode is set to normal
 "settingsviews_followerKeepAliveTypeNormal" = "Normal";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressive" = "Aggressive";
+"settingsviews_followerKeepAliveTypeAggressive" = "Aggressiv";
 
 /// statistics settings, prefer standard time in range
 "settingsviews_timeInRangeTypeStandardRange" = "Standard";
 
 /// statistics settings, the type of time in range selected
-"settingsviews_labelTimeInRangeType" = "Time In Range";
+"settingsviews_labelTimeInRangeType" = "Zeit im Zielbereich";
 
 /// data source settings, enable background keep alive
 "settingsviews_labelfollowerKeepAliveType" = "Aktiv halten";
 
 /// this setting is required
-"settingsviews_valueIsRequired" = "⚠️ Required";
+"settingsviews_valueIsRequired" = "⚠️ Erforderlich";
 
 /// treatments settings, offset the carb treatments on main chart
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 
 /// When user creates new loopdelay, with a timestamp that already exists - this is the warning text
-"warningLoopDelayAlreadyExists" = "There is already a loopDelay for this time.";
+"warningLoopDelayAlreadyExists" = "Für diese Zeit existiert bereits eine loopDelay.";
 
 /// statistics settings, prefer user-defined range
-"settingsviews_timeInRangeTypeUserDefinedRange" = "User Range";
+"settingsviews_timeInRangeTypeUserDefinedRange" = "Benutzerbereich";
 
 /// CGM data source settings, section title
 "settingsviews_sectionTitleDataSource" = "Datenquelle";
 "settingsviews_dataSourceMasterDevicesFooter" = "Füge kompatible Geräte im Tab Geräte hinzu.";
 
 /// follower settings, pop up that asks user to enter their username
-"settingsviews_enterUsername" = "Enter your username";
+"settingsviews_enterUsername" = "Benutzernamen eingeben";
 
 /// data source settings, show that Nightscout is disabled
-"settingsviews_nightscoutNotEnabledRowText" = "Disabled";
+"settingsviews_nightscoutNotEnabledRowText" = "Deaktiviert";
 
 /// data source settings, keep-alive mode is set to use an external heartbeat
 "settingsviews_followerKeepAliveTypeHeartbeatMessage" = "Aktiv halten is set to use an external heartbeat.\n\nWhen the app is not on screen, the external heartbeat will wake it up in the background so that BG updates are received and alarms can be triggered.\n\nMake sure you add a valid heartbeat device in the Bluetooth screen.\n\nThis mode has very little impact on the battery of your device but will only work if a valid heartbeat is running.";
@@ -429,19 +429,19 @@
 /// When clicking the event interval setting, a pop up asks for minimum number of minutes between two events, this is the pop up message - this is used for setting the interval between two calendar events
 
 /// data source settings, enable Nightscout in the Nightscout section
-"settingsviews_nightscoutNotEnabled" = "Nightscout is disabled\n\nTo upload BG values to Nightscout, you must enable it in the Nightscout section.";
+"settingsviews_nightscoutNotEnabled" = "Nightscout ist deaktiviert\n\nUm BZ-Werte zu Nightscout hochzuladen, musst du es im Abschnitt Nightscout aktivieren.";
 
 /// screen dimming is disabled
-"settingsviews_screenLockDimmingTypeDisabled" = "Disabled";
+"settingsviews_screenLockDimmingTypeDisabled" = "Deaktiviert";
 
 /// When clicking the speak interval setting, a pop up asks for minimum number of minutes between two speech events, this is the pop up message - this is used for setting the interval between two spoken bg announcements
-"settingsviews_SpeakIntervalTitle" = "Speak Interval";
+"settingsviews_SpeakIntervalTitle" = "Ansageintervall";
 
 /// libre link up follower settings, pop up that asks user to enter their region
-"settingsviews_libreLinkUpReAcceptNeeded" = "Need to accept terms";
+"settingsviews_libreLinkUpReAcceptNeeded" = "Bedingungen müssen akzeptiert werden";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two bg announcements, this is the pop up message - this is used for setting the interval between two readings in BG announcements, Speak readings, Apple Watch
-"settingsviews_SpeakIntervalMessage" = "Minimum interval between two voice announcements";
+"settingsviews_SpeakIntervalMessage" = "Mindestabstand zwischen zwei Sprachansagen";
 
 /// home screen settings, should the mini-chart be shown
 "settingsviews_showMiniChart" = "Minidiagramm";
@@ -451,22 +451,22 @@
 "settingsviews_followerPatientName" = "Alias";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabled" = "Disabled";
+"settingsviews_followerKeepAliveTypeDisabled" = "Deaktiviert";
 
 /// screen dimming is dark
-"settingsviews_screenLockDimmingTypeDark" = "Dark";
+"settingsviews_screenLockDimmingTypeDark" = "Dunkel";
 
 /// screen dimming is dimmed
-"settingsviews_screenLockDimmingTypeDimmed" = "Dimmed";
+"settingsviews_screenLockDimmingTypeDimmed" = "Gedimmt";
 
 /// When enabled, then it should be possible to run xDrip4iOS/Libre 2 in parallel with other app(s)
-"suppressUnLockPayLoad" = "Suppress Unlock Payload";
+"suppressUnLockPayLoad" = "Entsperr-Payload unterdrücken";
 
 /// Settings screen for loop delay
-"Select Value" = "Select Value";
+"Select Value" = "Wert auswählen";
 
 /// Settings screen for loop delay, explanatory text for time
-"expanatoryTextSelectTime" = "As of what time should the value apply";
+"expanatoryTextSelectTime" = "Ab welcher Uhrzeit der Wert gelten soll";
 
 /// data source settings, data source region
 "settingsviews_labelFollowerDataSourceRegion" = "Region";
@@ -475,13 +475,13 @@
 "settingsviews_labelFollowerDataSourceType" = "Datenquelle";
 
 /// data source settings, enable Nightscout upload
-"settingsviews_labelUploadDataToNightscout" = "Upload to Nightscout";
+"settingsviews_labelUploadDataToNightscout" = "Upload zu Nightscout";
 
 /// data source settings, ask the user to enter the name of the person we are following if they want to - it's optional
-"settingsviews_followerPatientNameMessage" = "Here you can optionally write an alias for the person you are following.";
+"settingsviews_followerPatientNameMessage" = "Hier kannst du optional einen Alias für die Person eingeben, der du folgst.";
 
 /// follower settings, pop up that asks user to enter their password
-"settingsviews_enterPassword" = "Enter your password";
+"settingsviews_enterPassword" = "Passwort eingeben";
 
 /// The user needs to update their calendar permissions
 
@@ -494,7 +494,7 @@
 /// Should loop data be shared only every 5 minutes
 
 /// screen dimming is very dark
-"settingsviews_screenLockDimmingTypeVeryDark" = "Very Dark";
+"settingsviews_screenLockDimmingTypeVeryDark" = "Sehr dunkel";
 
 // MARK: - Automatic Housekeeping
 "settingsviews_dataManagementStorageInfo" = "Speicherinfo";
@@ -688,7 +688,7 @@
 "settingsviews_nightscoutImportBatchProgress" = "Batch %1$d von %2$d";
 "settingsviews_nightscoutImportErrorServer" = "Nightscout hat einen vorübergehenden Serverfehler (HTTP %d) zurückgegeben. Setzen Sie den Import später fort.";
 "settingsviews_nightscoutImportErrorUnexpectedStatus" = "Nightscout hat eine unerwartete Antwort zurückgegeben (HTTP %d).";
-"sensorNoiseSensitivity" = "Sensor Sensitivity";
+"sensorNoiseSensitivity" = "Sensorempfindlichkeit";
 "sensorNoiseSensitivitySensitive" = "Empfindlich";
 "sensorNoiseSensitivityNormal" = "Normal";
 "sensorNoiseSensitivityPermissive" = "Tolerant";
@@ -776,7 +776,7 @@
 "therapy.smallCarbThreshold" = "Kleine KH";
 "therapy.treatmentThresholdsExplanation" = "Bolus- und KH-Werte unter den Schwellen sind im Diagramm verborgen. Die Bolusschwelle definiert auch kleine Boli in der Behandlungsliste. «Kein» zeigt alle Werte.";
 
-"settingsviews_useIFCCA1C" = "HbA1c in mmols/mol";
+"settingsviews_useIFCCA1C" = "HbA1c in mmol/mol";
 
 "settingsviews_statisticsEstimate" = "Glukoseschätzung";
 
@@ -812,3 +812,66 @@
 "settingsviews_shareReport" = "Bericht teilen";
 "settingsviews_shareIssueReport" = "Problembericht teilen";
 "settingsviews_reportShareFailed" = "Die Protokolldateien konnten nicht vorbereitet werden. Bitte erneut versuchen.";
+"calendarShareStatusFooter" = "„Verlauf einbeziehen“ fügt jeder Nutzlast aktuelle 5-Minuten-Messwerte hinzu, damit Follower verpasste Werte auffüllen können. Wähle für mehr Zuverlässigkeit die kleinste Verlaufsmenge, die gut funktioniert.";
+"settingsviews_highValueMessage" = "Gib den Glukosewert für die obere Grenze ein.";
+"calendarShareAliasMessage" = "Dieser Name wird an Follower-Geräte gesendet.";
+"settingsviews_shareUploadUnchecked" = "Nicht geprüft";
+"calendarShareLastValue" = "Letzter Wert";
+"calendarFollowHistoricalReadingsFooter" = "Historische Messwerte der neuesten Nutzlast werden nur importiert, wenn sie lokal fehlen.";
+"settingsviews_shareUploadReceiverNotAssigned" = "Dieser Empfänger ist deinem Dexcom-Konto nicht zugewiesen. Registriere ihn mit der offiziellen Dexcom-App.";
+"settingsviews_shareUploadFailed" = "Upload fehlgeschlagen";
+"settingsviews_homeScreenScreenLockSectionTitle" = "Bildschirmsperre";
+"calendarShareConnectionFooter" = "Wähle einen geteilten Kalender, auf den auch Follower-Geräte zugreifen können. Für den besten Betrieb wird ein geteilter iCloud-Kalender empfohlen.";
+"settingsviews_cleanDataDeviceStatus" = "Gerätestatus";
+"settingsviews_shareUploadAccountVerified" = "Konto verifiziert";
+"nightscoutToken" = "Token";
+"warningChangeToFollowerDexcomShare" = "Der Wechsel in den Dexcom-Share-Follower-Modus deaktiviert „Upload zu Dexcom Share“.";
+"calendarShareAlias" = "Alias";
+"settingsviews_followerKeepAliveTypeContinuousMessage" = "Keep-Alive ist auf „Kontinuierlich“ gesetzt.\n\nSolange die App nicht im Vordergrund ist, wird kontinuierlich stummes Audio abgespielt, um Follower-Updates und Alarme bestmöglich am Laufen zu halten.\n\nDieser Modus kann nicht garantieren, dass iOS die App aktiv hält. Er hat den größten Einfluss auf die Akkulaufzeit und sollte nur verwendet werden, wenn „Aggressiv“ nicht zuverlässig ist.";
+"settingsviews_shareUploadLocalOnly" = "Der Upload zu Dexcom Share ist nur mit einer lokalen Glukosequelle verfügbar.";
+"settingsviews_urgentHighValueMessage" = "Gib den Glukosewert für die dringende obere Grenze ein.";
+"settingsviews_sensorHealthNotificationsFooter" = "Steuert optionale Systembenachrichtigungen bei längerem Sensorrauschen, flachem Signal und vorübergehenden Sensorproblemen. Sensor-/Transmitter-Ausfall wird zusammen mit den anderen Alarmen konfiguriert. Das ausblendbare Banner auf dem Hauptbildschirm bleibt verfügbar.";
+"settingsviews_nightscoutImportDeviceStatus" = "Gerätestatus";
+"settingsviews_issueReportSectionFooter" = "Sende keinen Problembericht, es sei denn, ein xDrip4iOS-Entwickler fordert ihn an, sonst wird dein Bericht automatisch gelöscht.";
+"settingsviews_urgentLowValueMessage" = "Gib den Glukosewert für die dringende untere Grenze ein.";
+"calendarFollowCalendarFooter" = "Wähle den vom Master-iPhone geteilten Kalender. Für beste Ergebnisse verwende einen geteilten iCloud-Kalender.";
+"settingsviews_homeScreenMainChartSectionFooter" = "Diese Optionen steuern, wie Glukosedaten im Hauptdiagramm angezeigt werden.";
+"settingsviews_storeFrequentReadingsInHealthKitMessage" = "Diese Option hebt die 5-Minuten-Schreibbegrenzung auf und erlaubt es, deutlich häufiger Daten zu Apple Health hinzuzufügen, z. B. bei den 60-Sekunden-Werten von Libre 2 Direct.\n\nAktiviere diese Option nur, wenn du wirklich häufigere Daten benötigst. Die meisten Nutzer sollten sie deaktiviert lassen.";
+"enterNightscoutPortNumber" = "Portnummer eingeben";
+"settingsviews_storeFrequentReadingsInNightscout" = "Häufige Nightscout-Uploads";
+"settingsviews_followerKeepAliveTypeContinuous" = "Kontinuierlich";
+"infoCalendarAccessWriteOnly" = "Du kannst „Kalender teilen“ erst verwenden, wenn du die Kalenderzugriffsberechtigung von „Nur Termine hinzufügen“ auf „Voller Zugriff“ änderst.\n\nGehe zu iPhone-Einstellungen > Apps > %@ > Kalender und wähle „Voller Zugriff“.";
+"warningChangeFromMasterToFollowerDexcomShare" = "Der Wechsel von Master zu Dexcom-Share-Follower stoppt deinen aktuellen Sensor und deaktiviert auch „Upload zu Dexcom Share“. Möchtest du fortfahren?";
+"calendarEventPreview" = "Kalendertermin";
+"settingsviews_shareUploadConfigurationRequired" = "Gib deinen Benutzernamen, dein Passwort und die Seriennummer des Empfängers ein.";
+"settingsviews_shareUploadTooLarge" = "Dexcom Share hat einen zu großen Upload abgelehnt.";
+"calendarShareStatus" = "Freigabestatus";
+"settingsviews_nightscoutImportDeviceStatusAdded" = "Gerätestatus hinzugefügt";
+"settingsviews_shareUploadLastConnection" = "Letzte erfolgreiche Verbindung";
+"settingsviews_lowValueMessage" = "Gib den Glukosewert für die untere Grenze ein.";
+"settingsviews_medtrumSelectedPatient" = "Ausgewählter Patient";
+"calendarFollowStatusFooter" = "Der geteilte Kalender liest bei Hintergrundaktualisierungen die neuesten codierten Terminnotizen aus dem ausgewählten Kalender.";
+"settingsviews_CalenderIntervalTitle" = "Terminintervall";
+"settingsviews_shareUploadNever" = "Noch nicht";
+"calendarShareIncludeHistory" = "Verlauf einbeziehen";
+"giveNightscoutToken" = "Token eingeben";
+"settingsviews_shareUploadCheckFooter" = "„Verbindung testen“ prüft dein Konto. Die Seriennummer des Empfängers wird beim Hochladen von Messwerten geprüft.";
+"settingsviews_medtrumSelectPatientFromList" = "Patient aus Liste auswählen";
+"settingsviews_homeScreenScreenLockSectionFooter" = "Diese Optionen steuern das Verhalten des Hauptbildschirms, wenn die App geöffnet bleibt oder gesperrt ist.";
+"settingsviews_displayVisualIndicatorInCalendarEvent" = "Visuelle Anzeige";
+"calendarEventSettingsFooter" = "Diese Optionen ändern nur den sichtbaren Titel des Kalendertermins.";
+"calendarFollowFirstHistoricalReading" = "Erster Messwert";
+"settingsviews_storeFrequentReadingsInHealthKit" = "Häufige HealthKit-Einträge";
+"calendarFollowNoHistoricalData" = "Keine historischen Daten gefunden";
+"settingsviews_sensorHealthNotifications" = "Sensorzustandswarnungen";
+"settingsviews_cleanDataDeviceStatusDeleted" = "Gerätestatus gelöscht";
+"createCalendarEvent" = "Kalender teilen";
+"calendarFollowHistoricalReadings" = "Historische Messwerte";
+"settingsviews_CalenderIntervalMessage" = "Mindestabstand zwischen zwei Kalenderterminen";
+"calendarFollowHistoricalCount" = "Anzahl";
+"settingsviews_glucoseRangesSectionFooter" = "Glukosebereiche betreffen nur die Farben im Hauptdiagramm. Sie stehen nicht im Zusammenhang mit Alarmwerten.";
+"settingsviews_shareUploadError" = "Upload-Fehler";
+"settingsviews_shareUploadPaused" = "Durch Zeitplan pausiert";
+"calendarEventsSectionTitle" = "Kalender teilen";
+"settingsviews_shareUploadLastUpload" = "Letzter erfolgreicher Upload";
+"settingsviews_medtrumSelectPatient" = "Patient auswählen";

@@ -26,10 +26,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When fast drop alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_fastrise" = "Fast Rise Alarm";
+"alerts_fastrise" = "快速上升警报";
 
 /// When fast drop alert rises, this is the start of the text shown in the title of the alert notification, also in alert settings list, for the name of the alert
-"alerts_fastdrop" = "Fast Drop Alarm";
+"alerts_fastdrop" = "快速下降警报";
 
 /* Optional one-off sensor expiry reminders. */
 "sensorExpiry.endingSoon" = "传感器即将到期";
@@ -38,3 +38,7 @@
 "sensorExpiry.hoursHelp" = "请输入 1 到 48 之间的整数小时数。";
 "sensorExpiry.endingSoonBody" = "您的传感器预计将于 %@ 达到使用寿命。";
 "sensorExpiry.expectedExpiryBody" = "您的传感器已达到预计到期时间（%@）。";
+"alertWhenAboveValue" = "仅在高于时";
+"alertWhenBelowValue" = "仅在低于时";
+"alerts_sensortransmitterfailure" = "传感器/发射器故障";
+"alerts_notloopingalerttitle" = "未在闭环运行";

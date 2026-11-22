@@ -12,7 +12,7 @@
 "delete" = "Löschen";
 
 /// to show the sensor status
-"sensorStatus" = "Sensor Status";
+"sensorStatus" = "Sensorstatus";
 
 /// yellow
 "yellow" = "gelb";
@@ -129,10 +129,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Enger Bereich";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Benutzerbereich";
 
 "common_notRequired" = "Nicht Erforderlich";
 "common_statistics_title" = "Statistiken";
@@ -226,3 +226,14 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Aktiviert";
+"common_report_aidPeriod" = "Looping-Daten";
+"common_notAvailable" = "Nicht verfügbar";
+"common_report_notIncluded" = "Nicht enthalten";
+"common_disabled" = "Deaktiviert";
+"common_report_periodFooter" = "Für einen klinischen CGM-Bericht werden 90 Tage empfohlen.";
+"common_value" = "Wert";
+"common_report_aidPeriodFooter" = "Für Looping-Daten werden 7 Tage empfohlen.";
+"common_checking" = "Prüfe…";
+"common_enterValue" = "Wert eingeben";
+"next" = "Weiter";
+"common_dismiss" = "Schließen";

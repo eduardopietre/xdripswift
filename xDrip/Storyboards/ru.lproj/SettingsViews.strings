@@ -41,7 +41,7 @@
 "settingsviews_showStatistics" = "Статистика";
 "settingsviews_daysToUseStatisticsTitle" = "Дней для расчета";
 "settingsviews_daysToUseStatisticsMessage" = "Максимальное количество дней, которые мы должны попытаться использовать для расчета статистики?\n\n(Введите 0, чтобы рассчитать сегодня с полуночи)";
-"settingsviews_useIFCCGMI" = "GMI in mmols/mol";
+"settingsviews_useIFCCGMI" = "GMI в ммоль/моль";
 "settingsviews_sectiontitletransmitter" = "Транисмиттер";
 "settingsviews_transmittertype" = "Тип трансмиттера";
 "settingsviews_transmitterid" = "Идентификатор трансмиттера";
@@ -139,54 +139,54 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// transmitter settings, to explain that the reset option only works for certain transmitters
-"settingsviews_resetDexcomTransmitterMessage" = "This option will attempt to reset your Anubis transmitter on the next connection.";
+"settingsviews_resetDexcomTransmitterMessage" = "Эта опция попытается сбросить ваш передатчик Anubis при следующем подключении.";
 
 /// data source settings, keep-alive mode is set to aggressive
 "settingsviews_followerKeepAliveTypeAggressiveMessage" = "Поддержание активности is set to aggressive.\n\nWhen the app is not on screen, we will aggressively attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a very noticeable impact on the battery of your device and should only be used if absolutely necessary.";
 
 /// libre link up follower settings, no active sensor
-"settingsviews_libreLinkUpNoActiveSensor" = "No active sensor data";
+"settingsviews_libreLinkUpNoActiveSensor" = "Нет данных активного сенсора";
 
 /// data source settings, keep-alive mode is set to disabled
 "settingsviews_followerKeepAliveTypeDisabledMessage" = "Поддержание активности is disabled.\n\nWhen the app is not on screen, no alarms, app badges, notifications or BG updates will take place.\n\nThe app will remain sleeping until you open it again.\n\nThis mode has very little impact on the battery of your device.";
 
 /// statistics settings, prefer time in tight range
-"settingsviews_timeInRangeTypeTightRange" = "Tight Range";
+"settingsviews_timeInRangeTypeTightRange" = "Узкий диапазон";
 
 /// data source settings, keep-alive mode is set to normal
-"settingsviews_followerKeepAliveTypeNormal" = "Normal";
+"settingsviews_followerKeepAliveTypeNormal" = "Обычный";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressive" = "Aggressive";
+"settingsviews_followerKeepAliveTypeAggressive" = "Агрессивный";
 
 /// statistics settings, prefer standard time in range
 "settingsviews_timeInRangeTypeStandardRange" = "Стандартный";
 
 /// statistics settings, the type of time in range selected
-"settingsviews_labelTimeInRangeType" = "Time In Range";
+"settingsviews_labelTimeInRangeType" = "Время в диапазоне";
 
 /// data source settings, enable background keep alive
 "settingsviews_labelfollowerKeepAliveType" = "Поддержание активности";
 
 /// this setting is required
-"settingsviews_valueIsRequired" = "⚠️ Required";
+"settingsviews_valueIsRequired" = "⚠️ Обязательно";
 
 /// treatments settings, offset the carb treatments on main chart
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 
 /// statistics settings, prefer user-defined range
-"settingsviews_timeInRangeTypeUserDefinedRange" = "User Range";
+"settingsviews_timeInRangeTypeUserDefinedRange" = "Диапазон пользователя";
 
 /// CGM data source settings, section title
 "settingsviews_sectionTitleDataSource" = "Источник данных";
 "settingsviews_dataSourceMasterDevicesFooter" = "Добавьте совместимые устройства на вкладке «Устройства».";
 
 /// follower settings, pop up that asks user to enter their username
-"settingsviews_enterUsername" = "Enter your username";
+"settingsviews_enterUsername" = "Введите имя пользователя";
 
 /// data source settings, show that Nightscout is disabled
-"settingsviews_nightscoutNotEnabledRowText" = "Disabled";
+"settingsviews_nightscoutNotEnabledRowText" = "Отключено";
 
 /// data source settings, keep-alive mode is set to use an external heartbeat
 "settingsviews_followerKeepAliveTypeHeartbeatMessage" = "Поддержание активности is set to use an external heartbeat.\n\nWhen the app is not on screen, the external heartbeat will wake it up in the background so that BG updates are received and alarms can be triggered.\n\nMake sure you add a valid heartbeat device in the Bluetooth screen.\n\nThis mode has very little impact on the battery of your device but will only work if a valid heartbeat is running.";
@@ -194,46 +194,46 @@
 /// When clicking the event interval setting, a pop up asks for minimum number of minutes between two events, this is the pop up message - this is used for setting the interval between two calendar events
 
 /// data source settings, enable Nightscout in the Nightscout section
-"settingsviews_nightscoutNotEnabled" = "Nightscout is disabled\n\nTo upload BG values to Nightscout, you must enable it in the Nightscout section.";
+"settingsviews_nightscoutNotEnabled" = "Nightscout отключён\n\nЧтобы выгружать значения ГК в Nightscout, включите его в разделе Nightscout.";
 
 /// screen dimming is disabled
-"settingsviews_screenLockDimmingTypeDisabled" = "Disabled";
+"settingsviews_screenLockDimmingTypeDisabled" = "Отключён";
 
 /// When clicking the speak interval setting, a pop up asks for minimum number of minutes between two speech events, this is the pop up message - this is used for setting the interval between two spoken bg announcements
-"settingsviews_SpeakIntervalTitle" = "Speak Interval";
+"settingsviews_SpeakIntervalTitle" = "Интервал озвучивания";
 
 /// libre link up follower settings, pop up that asks user to enter their region
-"settingsviews_libreLinkUpReAcceptNeeded" = "Need to accept terms";
+"settingsviews_libreLinkUpReAcceptNeeded" = "Требуется принять условия";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two bg announcements, this is the pop up message - this is used for setting the interval between two readings in BG announcements, Speak readings, Apple Watch
-"settingsviews_SpeakIntervalMessage" = "Minimum interval between two voice announcements";
+"settingsviews_SpeakIntervalMessage" = "Минимальный интервал между двумя голосовыми оповещениями";
 
 /// data source settings, the name of the person we are following
 "settingsviews_followerPatientName" = "Псевдоним";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabled" = "Disabled";
+"settingsviews_followerKeepAliveTypeDisabled" = "Отключён";
 
 /// screen dimming is dark
-"settingsviews_screenLockDimmingTypeDark" = "Dark";
+"settingsviews_screenLockDimmingTypeDark" = "Тёмный";
 
 /// screen dimming is dimmed
-"settingsviews_screenLockDimmingTypeDimmed" = "Dimmed";
+"settingsviews_screenLockDimmingTypeDimmed" = "Приглушённый";
 
 /// data source settings, data source region
-"settingsviews_labelFollowerDataSourceRegion" = "Region";
+"settingsviews_labelFollowerDataSourceRegion" = "Регион";
 
 /// data source settings, data source
 "settingsviews_labelFollowerDataSourceType" = "Источник данных";
 
 /// data source settings, enable Nightscout upload
-"settingsviews_labelUploadDataToNightscout" = "Upload to Nightscout";
+"settingsviews_labelUploadDataToNightscout" = "Выгрузка в Nightscout";
 
 /// data source settings, ask the user to enter the name of the person we are following if they want to - it's optional
-"settingsviews_followerPatientNameMessage" = "Here you can optionally write an alias for the person you are following.";
+"settingsviews_followerPatientNameMessage" = "Здесь можно по желанию указать псевдоним человека, за которым вы наблюдаете.";
 
 /// follower settings, pop up that asks user to enter their password
-"settingsviews_enterPassword" = "Enter your password";
+"settingsviews_enterPassword" = "Введите пароль";
 
 /// The user needs to update their calendar permissions
 
@@ -246,7 +246,7 @@
 /// Should loop data be shared only every 5 minutes
 
 /// screen dimming is very dark
-"settingsviews_screenLockDimmingTypeVeryDark" = "Very Dark";
+"settingsviews_screenLockDimmingTypeVeryDark" = "Очень тёмный";
 
 // MARK: - Automatic Housekeeping
 "settingsviews_dataManagementStorageInfo" = "Хранилище";
@@ -435,7 +435,7 @@
 "settingsviews_nightscoutImportBatchProgress" = "Пакетный %1$d из %2$d";
 "settingsviews_nightscoutImportErrorServer" = "Nightscout вернул временную ошибку сервера (HTTP %d). Возобновите импорт позже.";
 "settingsviews_nightscoutImportErrorUnexpectedStatus" = "Nightscout вернул неожиданный ответ (HTTP %d).";
-"sensorNoiseSensitivity" = "Sensor Sensitivity";
+"sensorNoiseSensitivity" = "Чувствительность сенсора";
 "sensorNoiseSensitivitySensitive" = "Чувствительно";
 "sensorNoiseSensitivityNormal" = "Нормально";
 "sensorNoiseSensitivityPermissive" = "Допустимо";
@@ -524,7 +524,7 @@
 "therapy.smallCarbThreshold" = "Мало угл.";
 "therapy.treatmentThresholdsExplanation" = "Значения болюсов и углеводов ниже порогов скрыты на графике. Порог болюса также определяет малые болюсы в списке терапии. «Нет» показывает все значения.";
 
-"settingsviews_useIFCCA1C" = "HbA1c in mmols/mol";
+"settingsviews_useIFCCA1C" = "HbA1c в ммоль/моль";
 
 "settingsviews_statisticsEstimate" = "Оценка глюкозы";
 
@@ -560,3 +560,73 @@
 "settingsviews_shareReport" = "Поделиться отчётом";
 "settingsviews_shareIssueReport" = "Поделиться отчётом о проблеме";
 "settingsviews_reportShareFailed" = "Не удалось подготовить файлы журналов. Попробуйте ещё раз.";
+"calendarShareStatusFooter" = "«Включить историю» добавляет в каждую передачу недавние 5-минутные показания, чтобы подписчики могли заполнить пропущенные значения. Для надёжности выберите наименьший объём истории, при котором всё работает хорошо.";
+"settingsviews_highValueMessage" = "Введите значение глюкозы для верхнего порога.";
+"calendarShareAliasMessage" = "Это имя отправляется на устройства подписчиков.";
+"settingsviews_shareUploadUnchecked" = "Не проверено";
+"calendarShareLastValue" = "Последнее значение";
+"calendarFollowHistoricalReadingsFooter" = "Исторические показания из последней передачи импортируются, только если их нет локально.";
+"settingsviews_shareUploadReceiverNotAssigned" = "Этот приёмник не привязан к вашей учётной записи Dexcom. Зарегистрируйте его в официальном приложении Dexcom.";
+"settingsviews_shareUploadFailed" = "Не удалось выгрузить";
+"settingsviews_homeScreenScreenLockSectionTitle" = "Блокировка экрана";
+"calendarShareConnectionFooter" = "Выберите общий календарь, к которому также имеют доступ устройства подписчиков. Для наилучшей работы рекомендуется общий календарь iCloud.";
+"settingsviews_cleanDataDeviceStatus" = "Статус устройства";
+"settingsviews_shareUploadAccountVerified" = "Учётная запись подтверждена";
+"nightscoutToken" = "Токен";
+"warningChangeToFollowerDexcomShare" = "Переключение в режим подписчика Dexcom Share отключит «Выгрузку в Dexcom Share».";
+"calendarShareAlias" = "Псевдоним";
+"settingsviews_followerKeepAliveTypeContinuousMessage" = "Режим поддержания работы установлен на непрерывный.\n\nКогда приложение не на экране, будет непрерывно воспроизводиться беззвучное аудио, чтобы максимально надёжно поддерживать обновления подписчика и сигналы.\n\nЭтот режим не гарантирует, что iOS оставит приложение активным. Он сильнее всего влияет на заряд батареи, используйте его, только если «Агрессивный» ненадёжен.";
+"settingsviews_shareUploadLocalOnly" = "Выгрузка в Dexcom Share доступна только при локальном источнике глюкозы.";
+"settingsviews_urgentHighValueMessage" = "Введите значение глюкозы для порога срочно высокого.";
+"settingsviews_sensorHealthNotificationsFooter" = "Управляет необязательными системными уведомлениями о длительном шуме сенсора, плоском сигнале и временных проблемах сенсора. Сбой сенсора/передатчика настраивается вместе с остальными сигналами. Закрываемый баннер на главном экране остаётся доступным.";
+"settingsviews_nightscoutImportDeviceStatus" = "Статус устройства";
+"settingsviews_issueReportSectionFooter" = "Не отправляйте отчёт о проблеме, если его не запросил разработчик xDrip4iOS, иначе ваш отчёт будет автоматически удалён.";
+"settingsviews_infoContactsAccessRestricted" = "Вы не можете разрешить %@ доступ к вашим контактам. Возможно, это связано с активными ограничениями, такими как родительский контроль.";
+"settingsviews_urgentLowValueMessage" = "Введите значение глюкозы для порога срочно низкого.";
+"calendarFollowCalendarFooter" = "Выберите календарь, общий с главным iPhone. Для наилучших результатов используйте общий календарь iCloud.";
+"settingsviews_homeScreenMainChartSectionFooter" = "Эти параметры управляют отображением данных глюкозы на главном графике.";
+"settingsviews_storeFrequentReadingsInHealthKitMessage" = "Эта опция отменяет 5-минутные ограничения записи и позволяет добавлять в Apple Health гораздо более частые данные, например 60-секундные значения Libre 2 Direct.\n\nВключайте её, только если действительно нужны более частые данные. Большинству пользователей лучше оставить её выключенной.";
+"enterNightscoutPortNumber" = "Введите номер порта";
+"settingsviews_storeFrequentReadingsInNightscout" = "Частые выгрузки в Nightscout";
+"settingsviews_followerKeepAliveTypeContinuous" = "Непрерывный";
+"settingsviews_contactImageSectionTitle" = "Изображение контакта";
+"infoCalendarAccessWriteOnly" = "Вы не сможете использовать «Общий календарь», пока не измените разрешение доступа к календарю с «Только добавление событий» на «Полный доступ».\n\nПерейдите в Настройки iPhone > Приложения > %@ > Календари и выберите «Полный доступ».";
+"warningChangeFromMasterToFollowerDexcomShare" = "Переключение из режима главного в режим подписчика Dexcom Share остановит текущий сенсор и отключит «Выгрузку в Dexcom Share». Продолжить?";
+"calendarEventPreview" = "Событие календаря";
+"settingsviews_labelCalibrationTitle" = "Калибровка сенсора";
+"settingsviews_shareUploadConfigurationRequired" = "Введите имя пользователя, пароль и серийный номер приёмника.";
+"settingsviews_shareUploadTooLarge" = "Dexcom Share отклонил слишком большую выгрузку.";
+"calendarShareStatus" = "Статус передачи";
+"settingsviews_nightscoutImportDeviceStatusAdded" = "Статус устройства добавлен";
+"settingsviews_shareUploadLastConnection" = "Последнее успешное подключение";
+"settingsviews_lowValueMessage" = "Введите значение глюкозы для нижнего порога.";
+"settingsviews_contactImageCreatedByString" = "Контакт автоматически создан";
+"settingsviews_targetValueMessage" = "Установите 0, чтобы отключить цель";
+"settingsviews_labelCalibrationType" = "Тип калибровки";
+"settingsviews_medtrumSelectedPatient" = "Выбранный пациент";
+"calendarFollowStatusFooter" = "Общий календарь во время фоновых обновлений считывает последние закодированные заметки событий из выбранного календаря.";
+"settingsviews_CalenderIntervalTitle" = "Интервал событий";
+"settingsviews_shareUploadNever" = "Ещё нет";
+"calendarShareIncludeHistory" = "Включить историю";
+"settingsviews_labelAlgorithmType" = "Тип алгоритма";
+"giveNightscoutToken" = "Введите токен";
+"settingsviews_shareUploadCheckFooter" = "«Проверить соединение» проверяет вашу учётную запись. Серийный номер приёмника проверяется при выгрузке показаний.";
+"settingsviews_medtrumSelectPatientFromList" = "Выберите пациента из списка";
+"settingsviews_homeScreenScreenLockSectionFooter" = "Эти параметры управляют поведением главного экрана, когда приложение остаётся открытым или заблокированным.";
+"settingsviews_displayVisualIndicatorInCalendarEvent" = "Визуальный индикатор";
+"calendarEventSettingsFooter" = "Эти параметры меняют только видимый заголовок события календаря.";
+"calendarFollowFirstHistoricalReading" = "Первое показание";
+"settingsviews_storeFrequentReadingsInHealthKit" = "Частая запись в HealthKit";
+"calendarFollowNoHistoricalData" = "Исторические данные не найдены";
+"settingsviews_sensorHealthNotifications" = "Предупреждения о состоянии сенсора";
+"settingsviews_cleanDataDeviceStatusDeleted" = "Статус устройства удалён";
+"createCalendarEvent" = "Общий календарь";
+"calendarFollowHistoricalReadings" = "Исторические показания";
+"settingsviews_CalenderIntervalMessage" = "Минимальный интервал между двумя событиями календаря";
+"calendarFollowHistoricalCount" = "Количество";
+"settingsviews_glucoseRangesSectionFooter" = "Диапазоны глюкозы влияют только на цвета отображения на главном графике. Они не связаны со значениями сигналов.";
+"settingsviews_shareUploadError" = "Ошибка выгрузки";
+"settingsviews_shareUploadPaused" = "Приостановлено по расписанию";
+"calendarEventsSectionTitle" = "Общий календарь";
+"settingsviews_shareUploadLastUpload" = "Последняя успешная выгрузка";
+"settingsviews_medtrumSelectPatient" = "Выберите пациента";

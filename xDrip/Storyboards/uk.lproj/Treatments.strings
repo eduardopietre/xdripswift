@@ -7,46 +7,46 @@
 "treatments_new_button" = "New";
 
 /// New entry view title.
-"treatments_new_entry" = "New Treatment";
+"treatments_new_entry" = "Нове лікування";
 
 /// Exercise unit.
 "treatments_exercise_unit" = "min";
 
 /// Insulin.
-"treatments_insulin" = "Bolus";
+"treatments_insulin" = "Болюс";
 
 /// 
-"treatments_sync_complete" = "Synchronization complete.";
+"treatments_sync_complete" = "Синхронізацію завершено.";
 
 /// 
-"treatments_carbs_with_unit" = "Carbs (g)";
+"treatments_carbs_with_unit" = "Вуглеводи (г)";
 
 /// Insulin unit.
 "treatments_insulin_unit" = "U";
 
 /// 
-"treatments_success" = "Success";
+"treatments_success" = "Успішно";
 
 /// Carbs unit.
 "treatments_carbs_unit" = "g";
 
 /// Carbs.
-"treatments_carbs" = "Carbs";
+"treatments_carbs" = "Вуглеводи";
 
 /// 
-"treatments_exercise_with_unit" = "Exercise (min)";
+"treatments_exercise_with_unit" = "Фізичне навантаження (хв)";
 
 /// 
-"treatments_insulin_with_unit" = "Insulin (U)";
+"treatments_insulin_with_unit" = "Інсулін (U)";
 
 /// Exercise.
-"treatments_exercise" = "Exercise";
+"treatments_exercise" = "Фізичне навантаження";
 
 /// Title of treatments view.
 "treatments_title" = "Терапія";
 
 /// Blood Glucose Check
-"treatments_bgcheck" = "BG Check";
+"treatments_bgcheck" = "Вимірювання ГК";
 
 /// Literally a question mark, used as unknown abbreviation.
 "treatments_question_mark" = "?";
@@ -56,10 +56,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// warn about trying to set a future bg value
-"treatments_cannotStoreFutureBGCheck" = "You cannot store a BG Check in the future.\n\nIt will be stored at the actual time.";
+"treatments_cannotStoreFutureBGCheck" = "Не можна зберегти вимірювання ГК у майбутньому.\n\nЙого буде збережено з поточним часом.";
 
 /// filter the treatments by type
-"treatments_filterTreatmentsLabel" = "Filter";
+"treatments_filterTreatmentsLabel" = "Фільтр";
 "treatments_automaticBasal" = "Автоматична базальна подача";
 
 /* Section heading when choosing a new treatment type. */

@@ -4,37 +4,37 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// When creating schedule for Nightscout or Dexcom Share upload, this is the top label text
-"timeScheduleViewTitle" = "On/Off Time Schedule";
+"timeScheduleViewTitle" = "Urnik vklopa/izklopa";
 
 /// In Settings, Alerts section, there's an option to test the volume of ios sound, this is the title of the row
 "volumeTestiOSSound" = "Ko je tihi način onemogočen";
 
 /// nightscout settings, port to use
-"nightscoutPort" = "Port";
+"nightscoutPort" = "Vrata";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two readings, this is the pop up message - this is used for setting the interval between two readings in BG notifications, Speak readings, Apple Watch
-"settingsviews_IntervalTitle" = "Notification Interval";
+"settingsviews_IntervalTitle" = "Razmik obvestil";
 
 /// home screen settings, urgent high value
-"settingsviews_urgentHighValue" = "Urgent High Value";
+"settingsviews_urgentHighValue" = "Vrednost za nujno visoko";
 
 /// nightscout settings, pop up that asks user to enter nightscout api key
 "settingsviews_giveNightscoutAPIKey" = "Enter your API_SECRET";
 
 /// alerting settings, row alerts
-"settingsviews_row_alerts" = "Alarms";
+"settingsviews_row_alerts" = "Alarmi";
 "settingsviews_volume_tests_section_title" = "Preizkus glasnosti alarma";
 "settingsviews_alert_types_section_footer" = "Vrste alarmov določajo, kako se alarmi obnašajo, vključno z zvokom, vibriranjem, dremežem in preglasitvijo tihega načina.";
 "settingsviews_alerts_section_footer" = "Alarmi določajo, kdaj naj aplikacija obvesti o ravneh glukoze, manjkajočih odčitkih in drugih pogojih.";
 
 /// In Settings, Alerts section, there's an option to test the volume settings, this is text explaining the test when clicking the row - this is for ios sound volume test
-"volumeTestiOSSoundExplanation" = "An alarm sound is now being played with the same volume that will be used for an Alarm Type with 'Override Mute' = Off\n\n(Also used always for Missed Reading alarms which use the iOS volume.)\n\nPress one of the volume buttons to stop the sound, then change the volume with the volume buttons to the desired volume and test again.";
+"volumeTestiOSSoundExplanation" = "Zdaj se predvaja zvok alarma z enako glasnostjo, ki bo uporabljena za vrsto alarma z »Preglasi utišanje« = Izklopljeno\n\n(Vedno se uporablja tudi za alarme za manjkajoče odčitke, ki uporabljajo glasnost iOS.)\n\nZa ustavitev zvoka pritisnite eno od tipk za glasnost, nato z njimi nastavite želeno glasnost in poskusite znova.";
 
 /// non fixed calibration slopes settings in bluetooth peripheral view : enabled or not
 "settingsviews_nonfixedtransmitter" = "Večtočkovna kalibracija";
 
 /// speak settings, where enable or disable speak trend
-"settingsviews_speakTrend" = "Speak Trend";
+"settingsviews_speakTrend" = "Izgovori trend";
 
 /// nightscout settings, where user can set the nightscout api key
 "settingsviews_nightscoutAPIKey" = "API_SECRET";
@@ -43,7 +43,7 @@
 "settingsviews_nightscoutUrl" = "URL";
 
 /// shown on top of the first settings screen, literally 'Settings'
-"settingsviews_settingstitle" = "Settings";
+"settingsviews_settingstitle" = "Nastavitve";
 "settingsviews_glucoseDisplaySectionTitle" = "Splošno";
 "settingsviews_glucoseRangesSectionTitle" = "Razponi glukoze";
 "settingsviews_alertsAndNotificationsSectionTitle" = "Alarmi in obvestila";
@@ -59,7 +59,7 @@
 "settingsviews_appInstalledSince" = "Nameščeno";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two readings, this is the pop up message - this is used for setting the interval between two readings in BG notifications, Speak readings, Apple Watch
-"settingsviews_IntervalMessage" = "Minimum interval between two notifications";
+"settingsviews_IntervalMessage" = "Najmanjši razmik med dvema obvestiloma";
 
 /// Apple Watch Settings - text in row where create event is enabled or disabled 
 
@@ -67,16 +67,16 @@
 "displayUnitInCalendarEvent" = "Enota";
 
 /// about settings, section title
-"settingsviews_sectiontitleAbout" = "About %@";
+"settingsviews_sectiontitleAbout" = "O aplikaciji %@";
 
 /// Apple Watch Settings - text in row where user needs to say if delta should be displayed or not
 "displayDeltaInCalendarEvent" = "Delta";
 
 /// dexcom share settings, pop up that asks user to enter dexcom share account name
-"settingsviews_giveDexcomShareAccountName" = "Enter Dexcom Share Account Name";
+"settingsviews_giveDexcomShareAccountName" = "Vnesite ime računa Dexcom Share";
 
 /// home screen settings, high value
-"settingsviews_highValue" = "High Value";
+"settingsviews_highValue" = "Visoka vrednost";
 
 /// speak settings, section title
 
@@ -84,93 +84,93 @@
 "settingsviews_showReadingInNotification" = "Obvestila glukoze";
 
 /// 
-"settingsviews_urgentLowValue" = "Urgent Low Value";
+"settingsviews_urgentLowValue" = "Vrednost za nujno nizko";
 
 /// speak settings, where user can enable or disable speak delta
-"settingsviews_speakDelta" = "Speak Delta";
+"settingsviews_speakDelta" = "Izgovori delto";
 
 /// nightscout or dexcom share settings, where user can select to edit the schedule
-"schedule" = "Schedule";
+"schedule" = "Urnik";
 
 /// in Settings, section title for Trace
-"sectionTitleTrace" = "Issue Reporting";
+"sectionTitleTrace" = "Poročanje o težavah";
 
 /// nightscout settings, where user can enable or disable nightscout
 
 /// user tries to send trace file but there's no native email account configured
-"emailNotConfigured" = "You must configure an e-mail account on your iOS device.";
+"emailNotConfigured" = "Na napravi iOS morate nastaviti e-poštni račun.";
 
 /// In case user tries to send trace file via email but error occurs.
-"failedToSendEmail" = "Failed to Send Email";
+"failedToSendEmail" = "Pošiljanje e-pošte ni uspelo";
 
 /// in Settings, to enable debug level in trace file
 "debugLevel" = "Uporabi raven razhroščevanja";
 
 /// shown on top of the first settings screen
-"m5stack_settingsviews_settingstitle" = "M5 Stack Settings";
+"m5stack_settingsviews_settingstitle" = "Nastavitve M5 Stack";
 
 /// alerting settings, section title
-"settingsviews_sectiontitlealerting" = "Alarms";
+"settingsviews_sectiontitlealerting" = "Alarmi";
 "settingsviews_prefer_large_snooze_screen" = "Velik zaslon za dremež";
 
 /// used in settings, section Info, title of the version setting
-"settingsviews_Version" = "Version";
+"settingsviews_Version" = "Različica";
 
 /// dexcom share settings settings, where user can set dexcom serial number to be used for dexcom share upload
-"settingsviews_dexcomShareUploadSerialNumber" = "Receiver Serial Number";
+"settingsviews_dexcomShareUploadSerialNumber" = "Serijska številka sprejemnika";
 
 /// used in settings, section Info, title of the build setting
 
 /// dexcom share settings, where user can set the dexcom share account name
-"settingsviews_dexcomShareAccountName" = "Account Name";
+"settingsviews_dexcomShareAccountName" = "Ime računa";
 
 /// M5 stack bluetooth  settings, pop up that asks user to enter the password
-"m5stack_settingsviews_giveBluetoothPassword" = "Enter Bluetooth Password";
+"m5stack_settingsviews_giveBluetoothPassword" = "Vnesite geslo Bluetooth";
 
 /* Enable the configured time schedule for uploads or spoken glucose readings. Does not enable the underlying feature; its master switch remains separate. */
 "settingsviews_enableSchedule" = "Omogoči urnik";
 
 /// transmitter settings, just the words that explain that the settings is about transmitter type
-"settingsviews_transmittertype" = "Transmitter Type";
+"settingsviews_transmittertype" = "Vrsta oddajnika";
 
 /// home screen settings, target value
-"settingsviews_targetValue" = "Target Value";
+"settingsviews_targetValue" = "Ciljna vrednost";
 
 /// dexcom share settings, pop up that asks user to enter dexcom share password
-"settingsviews_giveDexcomSharePassword" = "Give Dexcom Share Password";
+"settingsviews_giveDexcomSharePassword" = "Vnesite geslo Dexcom Share";
 
 /// alerting settings, row alert types
-"settingsviews_row_alert_types" = "Alarm Types";
+"settingsviews_row_alert_types" = "Vrste alarmov";
 
 /// nightscout  settings, pop up that asks user to enter nightscout url
-"settingsviews_giveNightscoutUrl" = "Enter your Nightscout URL";
+"settingsviews_giveNightscoutUrl" = "Vnesite svoj URL Nightscout";
 
 /// home screen settings, show target line
 "settingsviews_showtarget" = "Ciljna črta";
 
 /// transmitter settings, just the words that explain that the settings is about transmitter id
-"settingsviews_transmitterid" = "Transmitter ID";
+"settingsviews_transmitterid" = "ID oddajnika";
 
 /// transmitter settings, pop up that asks user to inter transmitter id
-"settingsviews_givetransmitterid" = "Enter Transmitter ID";
+"settingsviews_givetransmitterid" = "Vnesite ID oddajnika";
 
 /// used in settings, section Info, title of the license setting
-"settingsviews_license" = "License";
+"settingsviews_license" = "Licenca";
 
 /// M5 stack setting, brightness
-"m5stack_settingsviews_brightness" = "Screen Brightness";
+"m5stack_settingsviews_brightness" = "Svetlost zaslona";
 
 /// transmitter settings, section title
-"settingsviews_sectiontitletransmitter" = "Transmitter";
+"settingsviews_sectiontitletransmitter" = "Oddajnik";
 
 /// nightscout settings, title of row
-"uploadSensorStartTime" = "Upload Sensor Start Time";
+"uploadSensorStartTime" = "Naloži čas zagona senzorja";
 
 /// name of setting for text color
-"m5stack_settingsviews_textColor" = "Text Color";
+"m5stack_settingsviews_textColor" = "Barva besedila";
 
 /// general settings, section title
-"settingsviews_sectiontitleNotifications" = "Notifications";
+"settingsviews_sectiontitleNotifications" = "Obvestila";
 
 /// in Settings, row title to send settings
 "sendTraceFile" = "Pošlji po e-pošti";
@@ -182,10 +182,10 @@
 "settingsviews_multipleAppBadgeValueWith10" = "Značka aplikacije x10";
 
 /// non fixed settings, title of the section
-"settingsviews_labelNonFixed" = "Multi-point Calibration";
+"settingsviews_labelNonFixed" = "Večtočkovna kalibracija";
 
 /// dexcom share settings, pop up that asks user to enter dexcom share serial number
-"settingsviews_givedexcomShareUploadSerialNumber" = "Enter the Dexcom Receiver Serial Number";
+"settingsviews_givedexcomShareUploadSerialNumber" = "Vnesite serijsko številko sprejemnika Dexcom";
 
 /// nightscout settings, when clicking the cell, test the url and api key
 "testUrlAndAPIKey" = "Preizkusi povezavo";
@@ -193,16 +193,16 @@
 /// If user is not allowed to give any app access to the Calendar, due to restrictions. And then tries to activate creation of events in calendar, this message will be shown
 
 /// default text in email body, when user wants to send trace file.
-"emailbodyText" = "Problem Description: ";
+"emailbodyText" = "Opis težave: ";
 
 /// speak settings, where user can select the language
-"settingsviews_speakBgReadingslanguage" = "Language";
+"settingsviews_speakBgReadingslanguage" = "Jezik";
 
 /// speak reading settings, text in pop up where user can select the language
-"settingsviews_speakreadingslanguageselection" = "Select Language";
+"settingsviews_speakreadingslanguageselection" = "Izberite jezik";
 
 /// general settings, literally follower
-"settingsviews_follower" = "Follower";
+"settingsviews_follower" = "Sledilec";
 
 /// general settings, should reading be shown in app badge yes or no
 "settingsviews_labelShowReadingInAppBadge" = "Značka aplikacije";
@@ -210,13 +210,13 @@
 /// healthkit settings, literally 'healthkit'
 
 /// general settings, literally master
-"settingsviews_master" = "Master";
+"settingsviews_master" = "Glavni";
 
 /// home screen settings, low value
-"settingsviews_lowValue" = "Low Value";
+"settingsviews_lowValue" = "Nizka vrednost";
 
 /// general settings, master or follower
-"settingsviews_masterorfollower" = "Master or Follower";
+"settingsviews_masterorfollower" = "Glavni ali sledilec";
 
 /// In Settings, Alerts section, there's an option to test the volume of the sound player, this is the title of the row
 "volumeTestSoundPlayer" = "Ko je tihi način omogočen";
@@ -230,10 +230,10 @@
 
 
 /// general settings, when switching from master to follower, if confirmation is asked, this message will be shown.
-"warningChangeFromMasterToFollower" = "Switching from Master to Follower will stop your current sensor. Do you want to continue?";
+"warningChangeFromMasterToFollower" = "Preklop iz glavnega načina v način sledilca bo ustavil vaš trenutni senzor. Ali želite nadaljevati?";
 
 /// for text in pop up where user can select bg unit
-"settingsviews_selectbgunit" = "Blood Glucose Units";
+"settingsviews_selectbgunit" = "Enote krvnega sladkorja";
 
 /// speak settings, where user can enable or disable speak readings
 "settingsviews_speakBgReadings" = "Izgovori glukozo";
@@ -246,12 +246,12 @@
 "settingsviews_useUSDexcomShareurl" = "US-strežniki";
 
 /// used for editing schedule for Nightscout upload and Dexcom Share upload
-"editScheduleTimePickerSubtitle" = "Change: ";
+"editScheduleTimePickerSubtitle" = "Spremeni: ";
 
 /// Apple Watch Settings - text in row where user needs to select a calendar
 
 /// name of setting for back ground color
-"m5stack_settingsviews_backGroundColor" = "Background Color";
+"m5stack_settingsviews_backGroundColor" = "Barva ozadja";
 
 /// If user has earlier denied access to calendar, and then tries to activate creation of events in calendar, this message will be shown
 
@@ -259,7 +259,7 @@
 "settingsviews_sectiontitlehealthkit" = "Apple Health";
 
 /// In Settings, Alerts section, there's an option to test the volume settings, this is text explaining the test when clicking the row - this is for sound player volume test
-"volumeTestSoundPlayerExplanation" = "An alarm sound is now being played with the same volume that will be used for an Alarm Type with 'Override Mute' = On\n\n(Used for all alarms except Missed Reading alerts which always use the iOS volume.)\n\nChange the volume with the volume buttons and press OK when done.";
+"volumeTestSoundPlayerExplanation" = "Zdaj se predvaja zvok alarma z enako glasnostjo, ki bo uporabljena za vrsto alarma z »Preglasi utišanje« = Vklopljeno\n\n(Uporablja se za vse alarme razen alarmov za manjkajoče odčitke, ki vedno uporabljajo glasnost iOS.)\n\nGlasnost nastavite s tipkama za glasnost in ob koncu pritisnite V redu.";
 
 /// dexcom share settings, where user can select if readings should be uploaded to dexcom share yes or no
 
@@ -293,7 +293,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// home screen settings, section title
-"settingsviews_sectiontitlehomescreen" = "Home Screen";
+"settingsviews_sectiontitlehomescreen" = "Začetni zaslon";
 "settingsviews_mainChartHours" = "Časovni razpon";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -301,26 +301,26 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// transmitter settings, this is for the button, when clicked then user will be requested to give transmitter id. The only difference with settingsviews_transmitterid is that ':' is not added
-"settingsviews_transmitterid_text_for_button" = "Transmitter ID";
+"settingsviews_transmitterid_text_for_button" = "ID oddajnika";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// statistics settings, how many days to use for calculations
-"settingsviews_daysToUseStatisticsMessage" = "Maximum days we should try to use to calculate the statistics?\n\n(Enter 0 to calculate today since midnight)";
+"settingsviews_daysToUseStatisticsMessage" = "Največ koliko dni naj poskusimo uporabiti za izračun statistike?\n\n(Vnesite 0 za izračun od polnoči danes)";
 
 /// statistics settings, section title
-"settingsviews_sectiontitlestatistics" = "Statistics";
+"settingsviews_sectiontitlestatistics" = "Statistika";
 
 /// statistics settings, use IFCC method for HbA1c?
-"settingsviews_useIFCCGMI" = "GMI in mmols/mol";
+"settingsviews_useIFCCGMI" = "GMI v mmol/mol";
 
 /// statistics settings, show statistics on home screen
 "settingsviews_showStatistics" = "Statistika";
 
 /// statistics settings, how many days to use for calculations
-"settingsviews_daysToUseStatisticsTitle" = "Days to Calculate";
+"settingsviews_daysToUseStatisticsTitle" = "Dni za izračun";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -343,7 +343,7 @@
 
 
 /// help settings, open the online help
-"settingsviews_showOnlineHelp" = "Open Online Help";
+"settingsviews_showOnlineHelp" = "Odpri spletno pomoč";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -353,7 +353,7 @@
 "settingsviews_webooptransmitter" = "Algoritem oddajnika";
 
 /// weboop settings, title of the dialogs where user can select between xdrip or transmitter algorithm
-"settingsviews_labelWebOOP" = "xDrip or Transmitter Algorithm";
+"settingsviews_labelWebOOP" = "Algoritem xDrip ali oddajnika";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
@@ -369,7 +369,7 @@
 "settingsviews_sectiontitletreatments" = "Terapije";
 
 /// When clicking the threshold setting, a pop up asks for the number of units under which a bolus should be considered a micro-bolus
-"settingsviews_smallBolusTreatmentThresholdMessage" = "Below how many units should we consider a bolus as a micro-bolus?\n\n(Recommended value: 1.0U)";
+"settingsviews_smallBolusTreatmentThresholdMessage" = "Pod koliko enot naj bolus štejemo za mikrobolus?\n\n(Priporočena vrednost: 1,0 E)";
 
 /// treatments settings, show the treatments on main chart
 "settingsviews_showTreatments" = "Terapija";
@@ -380,76 +380,76 @@
 
 
 /// Housekeeper settings, section title
-"settingsviews_sectionTitleHousekeeper" = "Data Management";
+"settingsviews_sectionTitleHousekeeper" = "Upravljanje podatkov";
 
 /// When clicking the retention setting, a pop up asks for how many days should data be stored
-"settingsviews_housekeeperRetentionPeriodMessage" = "For how many days should data be stored? (Min 90, Max 365)\n\n(Recommended: 90 days)";
+"settingsviews_housekeeperRetentionPeriodMessage" = "Koliko dni naj se podatki hranijo? (najmanj 90, največ 365)\n\n(Priporočeno: 90 dni)";
 
 /// Housekeeper retention period, for how long to store data
-"settingsviews_housekeeperRetentionPeriod" = "Retention Period";
+"settingsviews_housekeeperRetentionPeriod" = "Obdobje hrambe";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Settings screen for loop delay
-"Select Time" = "Select Time";
+"Select Time" = "Izberite čas";
 
 /// transmitter settings, to explain that the reset option only works for certain transmitters
-"settingsviews_resetDexcomTransmitterMessage" = "This option will attempt to reset your Anubis transmitter on the next connection.";
+"settingsviews_resetDexcomTransmitterMessage" = "Ta možnost bo ob naslednji povezavi poskusila ponastaviti vaš oddajnik Anubis.";
 
 /// data source settings, keep-alive mode is set to aggressive
 "settingsviews_followerKeepAliveTypeAggressiveMessage" = "Ohranjanje aktivnosti is set to aggressive.\n\nWhen the app is not on screen, we will aggressively attempt to keep it running for you in the background so that BG updates are received and alarms can be triggered.\n\nThis mode has a very noticeable impact on the battery of your device and should only be used if absolutely necessary.";
 
 /// libre link up follower settings, no active sensor
-"settingsviews_libreLinkUpNoActiveSensor" = "No active sensor data";
+"settingsviews_libreLinkUpNoActiveSensor" = "Ni podatkov aktivnega senzorja";
 
 /// data source settings, keep-alive mode is set to disabled
 "settingsviews_followerKeepAliveTypeDisabledMessage" = "Ohranjanje aktivnosti is disabled.\n\nWhen the app is not on screen, no alarms, app badges, notifications or BG updates will take place.\n\nThe app will remain sleeping until you open it again.\n\nThis mode has very little impact on the battery of your device.";
 
 /// Settings screen for loop delay, explanatory text for value
-"expanatoryTextSelectValue" = "Delay in minutes, applied to readings shared with OS-AID";
+"expanatoryTextSelectValue" = "Zakasnitev v minutah, uporabljena pri odčitkih, deljenih z OS-AID";
 
 /// statistics settings, prefer time in tight range
-"settingsviews_timeInRangeTypeTightRange" = "Tight Range";
+"settingsviews_timeInRangeTypeTightRange" = "Ozko območje";
 
 /// data source settings, keep-alive mode is set to normal
-"settingsviews_followerKeepAliveTypeNormal" = "Normal";
+"settingsviews_followerKeepAliveTypeNormal" = "Običajno";
 
 /// data source settings, keep-alive mode is set to aggressive
-"settingsviews_followerKeepAliveTypeAggressive" = "Aggressive";
+"settingsviews_followerKeepAliveTypeAggressive" = "Agresivno";
 
 /// statistics settings, prefer standard time in range
 "settingsviews_timeInRangeTypeStandardRange" = "Standardno";
 
 /// statistics settings, the type of time in range selected
-"settingsviews_labelTimeInRangeType" = "Time In Range";
+"settingsviews_labelTimeInRangeType" = "Čas v območju";
 
 /// data source settings, enable background keep alive
 "settingsviews_labelfollowerKeepAliveType" = "Ohranjanje aktivnosti";
 
 /// this setting is required
-"settingsviews_valueIsRequired" = "⚠️ Required";
+"settingsviews_valueIsRequired" = "⚠️ Obvezno";
 
 /// treatments settings, offset the carb treatments on main chart
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two calendar events, this is the pop up message - this is used for setting the interval between two calendar events, Speak readings, Apple Watch
 
 /// When user creates new loopdelay, with a timestamp that already exists - this is the warning text
-"warningLoopDelayAlreadyExists" = "There is already a loopDelay for this time.";
+"warningLoopDelayAlreadyExists" = "Za ta čas že obstaja zakasnitev loopDelay.";
 
 /// statistics settings, prefer user-defined range
-"settingsviews_timeInRangeTypeUserDefinedRange" = "User Range";
+"settingsviews_timeInRangeTypeUserDefinedRange" = "Uporabnikovo območje";
 
 /// CGM data source settings, section title
 "settingsviews_sectionTitleDataSource" = "Vir podatkov";
 "settingsviews_dataSourceMasterDevicesFooter" = "Združljive naprave dodajte na zavihku Naprave.";
 
 /// follower settings, pop up that asks user to enter their username
-"settingsviews_enterUsername" = "Enter your username";
+"settingsviews_enterUsername" = "Vnesite uporabniško ime";
 
 /// data source settings, show that Nightscout is disabled
-"settingsviews_nightscoutNotEnabledRowText" = "Disabled";
+"settingsviews_nightscoutNotEnabledRowText" = "Onemogočeno";
 
 /// data source settings, keep-alive mode is set to use an external heartbeat
 "settingsviews_followerKeepAliveTypeHeartbeatMessage" = "Ohranjanje aktivnosti is set to use an external heartbeat.\n\nWhen the app is not on screen, the external heartbeat will wake it up in the background so that BG updates are received and alarms can be triggered.\n\nMake sure you add a valid heartbeat device in the Bluetooth screen.\n\nThis mode has very little impact on the battery of your device but will only work if a valid heartbeat is running.";
@@ -460,19 +460,19 @@
 /// When clicking the event interval setting, a pop up asks for minimum number of minutes between two events, this is the pop up message - this is used for setting the interval between two calendar events
 
 /// data source settings, enable Nightscout in the Nightscout section
-"settingsviews_nightscoutNotEnabled" = "Nightscout is disabled\n\nTo upload BG values to Nightscout, you must enable it in the Nightscout section.";
+"settingsviews_nightscoutNotEnabled" = "Nightscout je onemogočen\n\nČe želite vrednosti KS nalagati v Nightscout, ga morate omogočiti v razdelku Nightscout.";
 
 /// screen dimming is disabled
-"settingsviews_screenLockDimmingTypeDisabled" = "Disabled";
+"settingsviews_screenLockDimmingTypeDisabled" = "Onemogočeno";
 
 /// When clicking the speak interval setting, a pop up asks for minimum number of minutes between two speech events, this is the pop up message - this is used for setting the interval between two spoken bg announcements
-"settingsviews_SpeakIntervalTitle" = "Speak Interval";
+"settingsviews_SpeakIntervalTitle" = "Razmik izgovarjanja";
 
 /// libre link up follower settings, pop up that asks user to enter their region
-"settingsviews_libreLinkUpReAcceptNeeded" = "Need to accept terms";
+"settingsviews_libreLinkUpReAcceptNeeded" = "Treba je sprejeti pogoje";
 
 /// When clicking the interval setting, a pop up asks for minimum number of minutes between two bg announcements, this is the pop up message - this is used for setting the interval between two readings in BG announcements, Speak readings, Apple Watch
-"settingsviews_SpeakIntervalMessage" = "Minimum interval between two voice announcements";
+"settingsviews_SpeakIntervalMessage" = "Najmanjši razmik med dvema glasovnima objavama";
 
 /// home screen settings, should the mini-chart be shown
 "settingsviews_showMiniChart" = "Mini graf";
@@ -482,37 +482,37 @@
 "settingsviews_followerPatientName" = "Vzdevek";
 
 /// data source settings, keep-alive mode is set to disabled
-"settingsviews_followerKeepAliveTypeDisabled" = "Disabled";
+"settingsviews_followerKeepAliveTypeDisabled" = "Onemogočeno";
 
 /// screen dimming is dark
-"settingsviews_screenLockDimmingTypeDark" = "Dark";
+"settingsviews_screenLockDimmingTypeDark" = "Temno";
 
 /// screen dimming is dimmed
-"settingsviews_screenLockDimmingTypeDimmed" = "Dimmed";
+"settingsviews_screenLockDimmingTypeDimmed" = "Zatemnjeno";
 
 /// When enabled, then it should be possible to run xDrip4iOS/Libre 2 in parallel with other app(s)
-"suppressUnLockPayLoad" = "Suppress Unlock Payload";
+"suppressUnLockPayLoad" = "Zatri vsebino odklepa";
 
 /// Settings screen for loop delay
-"Select Value" = "Select Value";
+"Select Value" = "Izberite vrednost";
 
 /// Settings screen for loop delay, explanatory text for time
-"expanatoryTextSelectTime" = "As of what time should the value apply";
+"expanatoryTextSelectTime" = "Od katere ure naj vrednost velja";
 
 /// data source settings, data source region
-"settingsviews_labelFollowerDataSourceRegion" = "Region";
+"settingsviews_labelFollowerDataSourceRegion" = "Regija";
 
 /// data source settings, data source
 "settingsviews_labelFollowerDataSourceType" = "Vir podatkov";
 
 /// data source settings, enable Nightscout upload
-"settingsviews_labelUploadDataToNightscout" = "Upload to Nightscout";
+"settingsviews_labelUploadDataToNightscout" = "Nalaganje v Nightscout";
 
 /// data source settings, ask the user to enter the name of the person we are following if they want to - it's optional
-"settingsviews_followerPatientNameMessage" = "Here you can optionally write an alias for the person you are following.";
+"settingsviews_followerPatientNameMessage" = "Tu lahko po želji vpišete vzdevek osebe, ki jo spremljate.";
 
 /// follower settings, pop up that asks user to enter their password
-"settingsviews_enterPassword" = "Enter your password";
+"settingsviews_enterPassword" = "Vnesite geslo";
 
 /// The user needs to update their calendar permissions
 
@@ -525,7 +525,7 @@
 /// Should loop data be shared only every 5 minutes
 
 /// screen dimming is very dark
-"settingsviews_screenLockDimmingTypeVeryDark" = "Very Dark";
+"settingsviews_screenLockDimmingTypeVeryDark" = "Zelo temno";
 
 // MARK: - Automatic Housekeeping
 "settingsviews_dataManagementStorageInfo" = "Podatki o shrambi";
@@ -714,10 +714,10 @@
 "settingsviews_nightscoutImportBatchProgress" = "Paket %1$d od %2$d";
 "settingsviews_nightscoutImportErrorServer" = "Nightscout je vrnil začasno napako strežnika (HTTP %d). Uvoz nadaljujte pozneje.";
 "settingsviews_nightscoutImportErrorUnexpectedStatus" = "Nightscout je vrnil nepričakovan odgovor (HTTP %d).";
-"sensorNoiseSensitivity" = "Sensor Sensitivity";
-"sensorNoiseSensitivitySensitive" = "Sensitive";
-"sensorNoiseSensitivityNormal" = "Normal";
-"sensorNoiseSensitivityPermissive" = "Permissive";
+"sensorNoiseSensitivity" = "Občutljivost senzorja";
+"sensorNoiseSensitivitySensitive" = "Občutljivo";
+"sensorNoiseSensitivityNormal" = "Običajno";
+"sensorNoiseSensitivityPermissive" = "Dovoljujoče";
 "settingsviews_followerServiceStatus" = "Stanje";
 "settingsviews_liveActivityDisabledInFollowerModeMessage" = "Live Activities are disabled in Follower Mode unless an external heartbeat is used for Ohranjanje aktivnosti.";
 "settingsviews_infoContactsKeepAliveDisabled" = "You are using Follower mode with Ohranjanje aktivnosti disabled.\n\nContact Image function cannot work without Ohranjanje aktivnosti.";
@@ -803,7 +803,7 @@
 "therapy.smallCarbThreshold" = "Malo OH";
 "therapy.treatmentThresholdsExplanation" = "Vrednosti bolusov in OH pod pragovi so na grafu skrite. Prag bolusa določa tudi male boluse na seznamu terapij. «Brez» prikaže vse vrednosti.";
 
-"settingsviews_useIFCCA1C" = "HbA1c in mmols/mol";
+"settingsviews_useIFCCA1C" = "HbA1c v mmol/mol";
 
 "settingsviews_statisticsEstimate" = "Ocena glukoze";
 
@@ -839,3 +839,76 @@
 "settingsviews_shareReport" = "Deli poročilo";
 "settingsviews_shareIssueReport" = "Deli poročilo o težavi";
 "settingsviews_reportShareFailed" = "Dnevniških datotek ni bilo mogoče pripraviti. Poskusite znova.";
+"infoCalendarAccessDeniedByUser" = "Potreben je poln dostop do vaših koledarjev.\n\nPojdite v Nastavitve iPhona > Aplikacije > %@ > Koledarji in omogočite Poln dostop.";
+"calendarShareStatusFooter" = "»Vključi zgodovino« vsakemu paketu doda nedavne 5-minutne odčitke, da lahko sledilci dopolnijo manjkajoče vrednosti. Za boljšo zanesljivost izberite najmanjšo količino zgodovine, ki dobro deluje.";
+"settingsviews_highValueMessage" = "Vnesite vrednost glukoze za zgornjo mejo.";
+"calendarShareAliasMessage" = "To ime se pošlje napravam sledilcev.";
+"settingsviews_shareUploadUnchecked" = "Ni preverjeno";
+"calendarShareLastValue" = "Zadnja vrednost";
+"calendarFollowHistoricalReadingsFooter" = "Pretekli odčitki iz zadnjega paketa se uvozijo samo, če jih lokalno ni.";
+"settingsviews_shareUploadReceiverNotAssigned" = "Ta sprejemnik ni dodeljen vašemu računu Dexcom. Registrirajte ga z uradno aplikacijo Dexcom.";
+"settingsviews_shareUploadFailed" = "Nalaganje ni uspelo";
+"settingsviews_homeScreenScreenLockSectionTitle" = "Zaklep zaslona";
+"calendarShareConnectionFooter" = "Izberite skupni koledar, do katerega lahko dostopajo tudi naprave sledilcev. Za najboljše delovanje je priporočen skupni koledar iCloud.";
+"settingsviews_cleanDataDeviceStatus" = "Stanje naprave";
+"settingsviews_shareUploadAccountVerified" = "Račun preverjen";
+"nightscoutToken" = "Žeton";
+"warningChangeToFollowerDexcomShare" = "Preklop v način sledilca Dexcom Share bo onemogočil »Nalaganje v Dexcom Share«.";
+"infoCalendarAccessRestricted" = "Aplikaciji %@ ne morete dati dovoljenja za dostop do koledarja. Vzrok so verjetno aktivne omejitve, na primer starševski nadzor.";
+"calendarShareAlias" = "Vzdevek";
+"settingsviews_followerKeepAliveTypeContinuousMessage" = "Ohranjanje delovanja je nastavljeno na neprekinjeno.\n\nKo aplikacija ni na zaslonu, se bo neprekinjeno predvajal tihi zvok, da se kar najbolj poskuša ohraniti posodobitve sledilca in alarme.\n\nTa način ne more zagotoviti, da bo iOS aplikacijo ohranil aktivno. Najbolj obremenjuje baterijo in ga uporabite le, če Agresivno ni zanesljivo.";
+"settingsviews_shareUploadLocalOnly" = "Nalaganje v Dexcom Share je na voljo samo z lokalnim virom glukoze.";
+"settingsviews_urgentHighValueMessage" = "Vnesite vrednost glukoze za mejo nujno visoko.";
+"settingsviews_sensorHealthNotificationsFooter" = "Nadzoruje izbirna sistemska obvestila o dolgotrajnem šumu senzorja, ravnem signalu in začasnih težavah senzorja. Okvara senzorja/oddajnika se nastavi skupaj z drugimi alarmi. Opusljiva pasica na začetnem zaslonu ostane na voljo.";
+"settingsviews_nightscoutImportDeviceStatus" = "Stanje naprave";
+"settingsviews_issueReportSectionFooter" = "Poročila o težavi ne pošiljajte, razen če ga zahteva razvijalec xDrip4iOS, sicer bo vaše poročilo samodejno izbrisano.";
+"settingsviews_infoContactsAccessRestricted" = "Aplikaciji %@ ne morete dati dovoljenja za dostop do stikov. Vzrok so verjetno aktivne omejitve, na primer starševski nadzor.";
+"settingsviews_urgentLowValueMessage" = "Vnesite vrednost glukoze za mejo nujno nizko.";
+"calendarFollowCalendarFooter" = "Izberite koledar, ki ga deli glavni iPhone. Za najboljše rezultate uporabite skupni koledar iCloud.";
+"settingsviews_homeScreenMainChartSectionFooter" = "Te možnosti nadzorujejo prikaz podatkov o glukozi na glavnem grafikonu.";
+"settingsviews_storeFrequentReadingsInHealthKitMessage" = "Ta možnost preglasi 5-minutne omejitve zapisovanja in omogoča dodajanje precej pogostejših podatkov v Apple Health, na primer 60-sekundnih vrednosti Libre 2 Direct.\n\nTo možnost vklopite samo, če res potrebujete/želite pogostejše podatke. Večina uporabnikov naj jo pusti izklopljeno.";
+"enterNightscoutPortNumber" = "Vnesite številko vrat";
+"settingsviews_storeFrequentReadingsInNightscout" = "Pogosta nalaganja v Nightscout";
+"settingsviews_followerKeepAliveTypeContinuous" = "Neprekinjeno";
+"settingsviews_contactImageSectionTitle" = "Slika stika";
+"infoCalendarAccessWriteOnly" = "Skupne rabe koledarja ne morete uporabljati, dokler dovoljenja za dostop do koledarja ne spremenite iz »Samo dodajanje dogodkov« v »Poln dostop«.\n\nPojdite v Nastavitve iPhona > Aplikacije > %@ > Koledarji in izberite »Poln dostop«.";
+"warningChangeFromMasterToFollowerDexcomShare" = "Preklop iz glavnega načina v način sledilca Dexcom Share bo ustavil vaš trenutni senzor in onemogočil »Nalaganje v Dexcom Share«. Ali želite nadaljevati?";
+"calendarEventPreview" = "Dogodek v koledarju";
+"settingsviews_labelCalibrationTitle" = "Kalibracija senzorja";
+"settingsviews_shareUploadConfigurationRequired" = "Vnesite uporabniško ime, geslo in serijsko številko sprejemnika.";
+"settingsviews_shareUploadTooLarge" = "Dexcom Share je zavrnil prevelik prenos.";
+"calendarShareStatus" = "Stanje deljenja";
+"settingsviews_nightscoutImportDeviceStatusAdded" = "Stanje naprave dodano";
+"settingsviews_shareUploadLastConnection" = "Zadnja uspešna povezava";
+"calenderId" = "Uporabljen koledar";
+"settingsviews_lowValueMessage" = "Vnesite vrednost glukoze za spodnjo mejo.";
+"settingsviews_contactImageCreatedByString" = "Stik samodejno ustvaril";
+"settingsviews_targetValueMessage" = "Nastavite na 0, da onemogočite cilj";
+"settingsviews_labelCalibrationType" = "Vrsta kalibracije";
+"settingsviews_medtrumSelectedPatient" = "Izbrani bolnik";
+"calendarFollowStatusFooter" = "Skupni koledar med posodobitvami v ozadju prebere najnovejše kodirane opombe dogodkov iz izbranega koledarja.";
+"settingsviews_CalenderIntervalTitle" = "Razmik dogodkov";
+"settingsviews_shareUploadNever" = "Še ne";
+"calendarShareIncludeHistory" = "Vključi zgodovino";
+"settingsviews_labelAlgorithmType" = "Vrsta algoritma";
+"giveNightscoutToken" = "Vnesite žeton";
+"settingsviews_shareUploadCheckFooter" = "»Preizkusi povezavo« preveri vaš račun. Serijska številka sprejemnika se preveri ob nalaganju odčitkov.";
+"settingsviews_medtrumSelectPatientFromList" = "Izberite bolnika s seznama";
+"settingsviews_homeScreenScreenLockSectionFooter" = "Te možnosti nadzorujejo obnašanje začetnega zaslona, ko je aplikacija pustena odprta ali zaklenjena.";
+"settingsviews_displayVisualIndicatorInCalendarEvent" = "Vizualni indikator";
+"calendarEventSettingsFooter" = "Te možnosti spremenijo samo vidni naslov dogodka v koledarju.";
+"calendarFollowFirstHistoricalReading" = "Prvi odčitek";
+"settingsviews_storeFrequentReadingsInHealthKit" = "Pogosti zapisi v HealthKit";
+"calendarFollowNoHistoricalData" = "Zgodovinskih podatkov ni";
+"settingsviews_sensorHealthNotifications" = "Opozorila o stanju senzorja";
+"settingsviews_cleanDataDeviceStatusDeleted" = "Stanje naprave izbrisano";
+"createCalendarEvent" = "Deljenje prek koledarja";
+"calendarFollowHistoricalReadings" = "Pretekli odčitki";
+"settingsviews_CalenderIntervalMessage" = "Najmanjši razmik med dvema dogodkoma v koledarju";
+"calendarFollowHistoricalCount" = "Število";
+"settingsviews_glucoseRangesSectionFooter" = "Območja glukoze vplivajo samo na barve prikaza na glavnem grafikonu. Niso povezana z vrednostmi alarmov.";
+"settingsviews_shareUploadError" = "Napaka pri nalaganju";
+"settingsviews_shareUploadPaused" = "Zaustavljeno po urniku";
+"calendarEventsSectionTitle" = "Deljenje prek koledarja";
+"settingsviews_shareUploadLastUpload" = "Zadnje uspešno nalaganje";
+"settingsviews_medtrumSelectPatient" = "Izberite bolnika";

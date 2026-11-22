@@ -59,10 +59,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Dar Aralıkta";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Kullanıcı Aralığı";
 
 // Local therapy accessibility
 "therapy.estimatedIOB" = "Tahmini aktif insülin";
@@ -89,3 +89,74 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Etkin";
+"common_report_period" = "Rapor Dönemi";
+"common_statistics_insufficientData" = "Yetersiz veri";
+"common_statistics_title" = "İstatistikler";
+"common_report_unableToPrepareTitle" = "Rapor hazırlanamadı";
+"common_report_patientIDPlaceholder" = "Tıbbi kayıt / hasta kimliği";
+"common_statistics_dailySummary" = "Günlük Özet";
+"common_report_patientPeriodTitleFormat" = "%@ - %@";
+"common_statistics_averageTDD" = "Ortalama TDD";
+"common_report_aidPeriod" = "Loop Verileri";
+"common_report_periodTitleFormat" = "%d günlük Rapor";
+"common_report_passwordProtectionOpenError" = "Rapor PDF'i parola koruması için açılamadı.";
+"common_statistics_timeInRange" = "Hedef Aralıkta Süre";
+"common_statistics_dailyPatternFooter" = "Çubuklar günlük %@ aralığındaki yüzdeyi gösterir. Kesikli çizgi %%70 klinik hedefi işaret eder.";
+"common_statistics_cvTrend" = "CV eğilimi";
+"common_report_none" = "Yok";
+"common_notRequired" = "Gerekli değil";
+"common_notAvailable" = "Mevcut Değil";
+"common_report_passwordFieldPlaceholder" = "PDF'i açmak için parola";
+"common_statistics_estimatedA1cTrend" = "Tahmini HbA1c eğilimi";
+"common_report_notIncluded" = "Dahil Değil";
+"common_statistics_report" = "Rapor";
+"common_statistics_averageGlucose" = "Ortalama Glukoz";
+"common_report_language" = "Dil";
+"common_disabled" = "Devre Dışı";
+"common_report_patientFooter" = "Hasta bilgileri bu cihazda yerel olarak saklanır ve rapor başlığına yazdırılır.";
+"common_statistics_targetGreaterThanOrEqual" = "Hedef >=%@";
+"common_report_periodFooter" = "Klinik CGM raporu için 90 gün önerilir.";
+"common_report_passwordConfirmationPlaceholder" = "Parolayı tekrar girin";
+"common_report_patientName" = "Hasta Adı";
+"common_value" = "Değer";
+"common_report_willBePasswordProtected" = "Rapor parola ile korunacak";
+"common_report_generatingStatus" = "Klinik rapor oluşturuluyor...";
+"common_report_notSet" = "Ayarlanmadı";
+"common_statistics_ambulatoryGlucoseProfile" = "Ambulatuvar Glukoz Profili";
+"common_statistics_averageCarbs" = "Ortalama Karbonhidrat";
+"common_report_willNotBePasswordProtected" = "Rapor parola ile korunmayacak";
+"common_report_aidPeriodFooter" = "Loop Verileri için 7 gün önerilir.";
+"common_statistics_bestDay" = "En İyi Gün";
+"common_statistics_period" = "Dönem";
+"common_report_passwordFooter" = "Bu parola yalnızca oluşturulacak bir sonraki PDF için kullanılır ve saklanmaz.";
+"common_statistics_dailyPattern" = "Günlük Örüntü";
+"common_checking" = "Kontrol ediliyor...";
+"common_statistics_summary" = "Özet";
+"common_statistics_section" = "Bölüm";
+"common_report_patientNamePlaceholder" = "Hasta adı";
+"common_enterValue" = "Değer Girin";
+"common_statistics_waitingForGlucoseData" = "Glukoz verisi bekleniyor...";
+"common_statistics_mostHigh" = "En Yüksek";
+"common_statistics_trends" = "Eğilimler";
+"common_statistics_dataCapture" = "Veri Yakalama";
+"common_statistics_targetLessThanOrEqual" = "Hedef <=%@";
+"common_report_patientSection" = "Hasta";
+"common_statistics_noDataTitle" = "İstatistik Mevcut Değil";
+"common_report_passwordToOpen" = "Açmak İçin Parola";
+"common_report_paperSize" = "Kağıt Boyutu";
+"common_statistics_insufficientAGPData" = "AGP persentil grafiği için yetersiz veri";
+"common_statistics_averageFormat" = "Ortalama %@";
+"common_report_patientID" = "Hasta Kimliği";
+"common_report_generateTitle" = "Rapor Oluştur";
+"common_statistics_noDataMessage" = "Bu dönem için yeterli kayıtlı CGM verisi yok.";
+"common_report_notEnoughData" = "Yeterli veri yok";
+"common_report_shareAccessibility" = "Raporu Paylaş";
+"common_report_generationFailedTitle" = "Rapor oluşturulamadı";
+"next" = "İleri";
+"common_statistics_mostLow" = "En Düşük";
+"common_statistics_tempBasalDelta" = "Geçici Bazal Farkı";
+"common_dismiss" = "Kapat";
+"common_report_options" = "Rapor Seçenekleri";
+"common_statistics_timeInTightRange" = "Dar Aralıkta Süre";
+"common_report_passwordProtectionWriteError" = "Parola korumalı rapor PDF'i oluşturulamadı.";
+"common_statistics_cgmEstimate" = "CGM tahmini";

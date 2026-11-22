@@ -7,14 +7,14 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// in settings screen, user tries to test url and API Key but one of them is not set
-"warningAPIKeyOrURLIsnil" = "Your Nightscout URL (and optionally API_SECRET or Token) must be set before you can run the test";
+"warningAPIKeyOrURLIsnil" = "运行测试前，必须设置您的 Nightscout URL（以及可选的 API_SECRET 或令牌）";
 
 /// in settings screen, user clicked test button for nightscout url and apikey
-"nightscoutAPIKeyAndURLStartedBody" = "Nightscout Verification Test Started\n\nThis message should automatically disappear shortly";
+"nightscoutAPIKeyAndURLStartedBody" = "Nightscout 验证测试已开始\n\n此消息将很快自动消失";
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////   Translation needed - remove this header after translation                       /////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// in settings screen, user clicked test button for nightscout url and apikey - this is the title
-"nightscoutAPIKeyAndURLStartedTitle" = "Verifying...";
+"nightscoutAPIKeyAndURLStartedTitle" = "正在验证…";

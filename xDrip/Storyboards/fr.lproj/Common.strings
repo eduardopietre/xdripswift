@@ -1,5 +1,5 @@
 "common_Ok" = "OK";
-"common_cancel" = "Cancel";
+"common_cancel" = "Annuler";
 "common_close" = "Fermer";
 "common_mgdl" = "mg/dL";
 "common_mmol" = "mmol/L";
@@ -11,7 +11,7 @@
 "common_low" = "BAS";
 "common_hour" = "heure";
 "common_hours" = "heures";
-"common_minutes" = "mins";
+"common_minutes" = "min";
 "common_minute" = "min";
 "common_day" = "jour";
 "common_days" = "jours";
@@ -38,7 +38,7 @@
 "delete" = "Supprimer";
 "invalidValue" = "Valeur invalide";
 "firmware" = "Firmware";
-"hardware" = "Hardware";
+"hardware" = "Matériel";
 "unknown" = "Inconnu";
 
 /// to show the sensor status
@@ -49,7 +49,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// Where credentials need to be given, if either account or password is invalid (for the moment only applicable to Dexcom Share
-"invalidAccountOrPassword" = "Invalid account or password";
+"invalidAccountOrPassword" = "Compte ou mot de passe invalide";
 
 "common_statistics_low" = "Basse";
 "common_statistics_inRange" = "En gamme";
@@ -64,10 +64,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /// the words in tight range
-"common_statistics_inTightRange" = "Tight Range";
+"common_statistics_inTightRange" = "Plage étroite";
 
 /// the words in user range
-"common_statistics_userRange" = "User Range";
+"common_statistics_userRange" = "Plage personnalisée";
 "common_statistics_title" = "Statistiques";
 "common_statistics_period" = "Période";
 "common_statistics_summary" = "Résumé";
@@ -159,3 +159,15 @@
 
 /* Status label, including Direct to Watch in Advanced Settings. */
 "common_enabled" = "Activé";
+"common_report_aidPeriod" = "Données de boucle";
+"common_notRequired" = "Non requis";
+"common_notAvailable" = "Non disponible";
+"common_report_notIncluded" = "Non inclus";
+"common_disabled" = "Désactivé";
+"common_report_periodFooter" = "90 jours sont recommandés pour un rapport CGM clinique.";
+"common_value" = "Valeur";
+"common_report_aidPeriodFooter" = "7 jours sont recommandés pour les données de boucle.";
+"common_checking" = "Vérification...";
+"common_enterValue" = "Saisir une valeur";
+"next" = "Suivant";
+"common_dismiss" = "Ignorer";
