@@ -1246,6 +1246,13 @@ final class CareLinkTests: XCTestCase {
             }
         }
         let end = Date(timeIntervalSince1970: Date().timeIntervalSince1970.rounded(.down))
+        // The repair needs a clock shift confirmed by three events on the same UTC day. When the
+        // run ends between 22:00 and 23:50 UTC, the oldest synthetic hour falls alone before UTC
+        // midnight and is rightly left alone, so the totals cannot match. The analytics below
+        // count back from now, so the dates cannot simply be moved; skip that window instead.
+        let secondsIntoUTCDay = end.timeIntervalSince1970.truncatingRemainder(dividingBy: 86400)
+        try XCTSkipIf(secondsIntoUTCDay >= 22 * 3600 && secondsIntoUTCDay < 23 * 3600 + 50 * 60,
+                      "Synthetic history would start alone just before UTC midnight")
         let core = try CoreDataManager(testModelName: ConstantsCoreData.modelName, persistentStoreURL: beforeURL)
         var incoming = [CareLinkTherapyRecord]()
         for day in 0..<7 {
