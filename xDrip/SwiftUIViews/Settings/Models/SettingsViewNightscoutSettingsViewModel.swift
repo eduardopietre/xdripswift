@@ -246,135 +246,117 @@ class SettingsViewNightscoutSettingsViewModel {
     /// test the nightscout url and api key and send result to messageHandler
     private func testNightscoutCredentials() {
         
-        // unwrap siteUrl and apiKey
-        guard var siteUrl = UserDefaults.standard.nightscoutUrl else {return}
-        
-        // add port number if it exists
-        if UserDefaults.standard.nightscoutPort != 0 {
-            siteUrl += ":" + UserDefaults.standard.nightscoutPort.description
-        }
-                
-        if let url = URL(string: siteUrl) {
+        // unwrap siteUrl and build the request with the configured authentication
+        guard let siteUrl = UserDefaults.standard.nightscoutUrl,
+              let request = NightscoutCredentialsCheck.request(
+                siteURL: siteUrl,
+                port: UserDefaults.standard.nightscoutPort,
+                hashedAPISecret: UserDefaults.standard.nightscoutAPIKey?.sha1(),
+                token: UserDefaults.standard.nightscoutToken,
+                path: nightscoutAuthTestPath
+              ) else { return }
+
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             
-            let testURL = url.appendingPathComponent(nightscoutAuthTestPath)
+            trace("in testNightscoutCredentials, finished task", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
             
-            var request = URLRequest(url: testURL)
-            request.setValue("application/json", forHTTPHeaderField:"Content-Type")
-            request.setValue("application/json", forHTTPHeaderField:"Accept")
-            
-            // if the API_SECRET is present, then hash it and pass it via http header. If it's missing but there is a token, then send this as plain text to allow the authentication check.
-            if let apiKey = UserDefaults.standard.nightscoutAPIKey {
+            if let error = error {
                 
-                request.setValue(apiKey.sha1(), forHTTPHeaderField:"api-secret")
+                if error.localizedDescription.hasPrefix("A server with the specified hostname could not be found") {
                 
-            } else if let token = UserDefaults.standard.nightscoutToken {
-                
-                request.setValue(token, forHTTPHeaderField:"api-secret")
-                
+                    print("in testNightscoutCredentials, error = URL/Hostname not found!")
+                    
+                    trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, error.localizedDescription)
+                    
+                    self.callMessageHandlerInMainThread(title: "URL/Hostname not found!", message: error.localizedDescription)
+                    
+                    return
+                    
+                } else {
+                    
+                    trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, error.localizedDescription)
+                    
+                    self.callMessageHandlerInMainThread(title: TextsNightscout.verificationErrorAlertTitle, message: error.localizedDescription)
+                    
+                    return
+                    
+                }
             }
             
-            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+            if let httpResponse = response as? HTTPURLResponse, let data = data {
                 
-                trace("in testNightscoutCredentials, finished task", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
+                let errorMessage = String(data: data, encoding: .utf8)
+                    ?? HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode)
                 
-                if let error = error {
+                switch httpResponse.statusCode {
                     
-                    if error.localizedDescription.hasPrefix("A server with the specified hostname could not be found") {
+                case (200...299):
                     
-                        print("in testNightscoutCredentials, error = URL/Hostname not found!")
+                    trace("in testNightscoutCredentials, successful", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
+
+                    // A successful manual check proves that the current
+                    // Nightscout URL/authentication settings are valid, so
+                    // we can use the shared follower connection timestamp as
+                    // the row's last-known-good connection value.
+                    UserDefaults.standard.timeStampOfLastFollowerConnection = Date()
+                    self.callSectionReloadClosureInMainThread()
+                    
+                    self.callMessageHandlerInMainThread(title: TextsNightscout.verificationSuccessfulAlertTitle, message: TextsNightscout.verificationSuccessfulAlertBody)
+                    
+                case (400):
+                    
+                    trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
+                    
+                    self.callMessageHandlerInMainThread(title: "400: Bad Request", message: errorMessage)
+                    
+                case (401):
+                    
+                    if UserDefaults.standard.nightscoutAPIKey != nil {
                         
-                        trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, error.localizedDescription)
+                        trace("in testNightscoutCredentials, API_SECRET is not valid, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
                         
-                        self.callMessageHandlerInMainThread(title: "URL/Hostname not found!", message: error.localizedDescription)
+                        self.callMessageHandlerInMainThread(title: "API_SECRET is not valid", message: errorMessage)
                         
-                        return
+                    } else if UserDefaults.standard.nightscoutAPIKey == nil && UserDefaults.standard.nightscoutToken != nil {
+                        
+                        trace("in testNightscoutCredentials, Token is not valid, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
+                        
+                        self.callMessageHandlerInMainThread(title: "Token is not valid", message: errorMessage)
                         
                     } else {
                         
-                        trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, error.localizedDescription)
+                        trace("in testNightscoutCredentials, URL responds OK but authentication method is missing and cannot be checked", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
                         
-                        self.callMessageHandlerInMainThread(title: TextsNightscout.verificationErrorAlertTitle, message: error.localizedDescription)
-                        
-                        return
+                        self.callMessageHandlerInMainThread(title: TextsNightscout.verificationSuccessfulAlertTitle, message: "URL responds OK but authentication method is missing and cannot be checked!")
                         
                     }
-                }
                 
-                if let httpResponse = response as? HTTPURLResponse, let data = data {
+                case (403):
                     
-                    let errorMessage = String(data: data, encoding: .utf8)
-                        ?? HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode)
+                    trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
                     
-                    switch httpResponse.statusCode {
-                        
-                    case (200...299):
-                        
-                        trace("in testNightscoutCredentials, successful", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
-
-                        // A successful manual check proves that the current
-                        // Nightscout URL/authentication settings are valid, so
-                        // we can use the shared follower connection timestamp as
-                        // the row's last-known-good connection value.
-                        UserDefaults.standard.timeStampOfLastFollowerConnection = Date()
-                        self.callSectionReloadClosureInMainThread()
-                        
-                        self.callMessageHandlerInMainThread(title: TextsNightscout.verificationSuccessfulAlertTitle, message: TextsNightscout.verificationSuccessfulAlertBody)
-                        
-                    case (400):
-                        
-                        trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
-                        
-                        self.callMessageHandlerInMainThread(title: "400: Bad Request", message: errorMessage)
-                        
-                    case (401):
-                        
-                        if UserDefaults.standard.nightscoutAPIKey != nil {
-                            
-                            trace("in testNightscoutCredentials, API_SECRET is not valid, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
-                            
-                            self.callMessageHandlerInMainThread(title: "API_SECRET is not valid", message: errorMessage)
-                            
-                        } else if UserDefaults.standard.nightscoutAPIKey == nil && UserDefaults.standard.nightscoutToken != nil {
-                            
-                            trace("in testNightscoutCredentials, Token is not valid, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
-                            
-                            self.callMessageHandlerInMainThread(title: "Token is not valid", message: errorMessage)
-                            
-                        } else {
-                            
-                            trace("in testNightscoutCredentials, URL responds OK but authentication method is missing and cannot be checked", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
-                            
-                            self.callMessageHandlerInMainThread(title: TextsNightscout.verificationSuccessfulAlertTitle, message: "URL responds OK but authentication method is missing and cannot be checked!")
-                            
-                        }
+                    self.callMessageHandlerInMainThread(title: "403: Forbidden Request", message: errorMessage)
                     
-                    case (403):
-                        
-                        trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
-                        
-                        self.callMessageHandlerInMainThread(title: "403: Forbidden Request", message: errorMessage)
-                        
-                    case (404):
-                        
-                        trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
-                        
-                        self.callMessageHandlerInMainThread(title: "404: Page Not Found", message: errorMessage)
-                        
-                    default:
-                        
-                        trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
-                        
-                        self.callMessageHandlerInMainThread(title: TextsNightscout.verificationErrorAlertTitle, message: errorMessage)
-                        
-                    }
+                case (404):
+                    
+                    trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
+                    
+                    self.callMessageHandlerInMainThread(title: "404: Page Not Found", message: errorMessage)
+                    
+                default:
+                    
+                    trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
+                    
+                    self.callMessageHandlerInMainThread(title: TextsNightscout.verificationErrorAlertTitle, message: errorMessage)
                     
                 }
                 
-            })
+            }
             
-            trace("in testNightscoutCredentials, calling task.resume", log: log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
-            task.resume()
-        }
+        })
+        
+        trace("in testNightscoutCredentials, calling task.resume", log: log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
+        task.resume()
     }
     
     private func callMessageHandlerInMainThread(title: String, message: String) {
@@ -799,4 +781,38 @@ extension SettingsViewNightscoutSettingsViewModel: TimeSchedule {
     }
     
     
+}
+
+/// Builds the request of the "verify" action in the Nightscout settings.
+///
+/// Kept separate from the view model so the authentication it sends can be tested without a server.
+enum NightscoutCredentialsCheck {
+    /// - parameters:
+    ///     - siteURL: the Nightscout URL as configured, without port
+    ///     - port: the configured port, 0 when none
+    ///     - hashedAPISecret: SHA1 of the API_SECRET, nil when none is configured
+    ///     - token: the access token, nil when none is configured
+    ///     - path: the API path used to check the authentication
+    static func request(siteURL: String, port: Int, hashedAPISecret: String?, token: String?, path: String) -> URLRequest? {
+        var siteURL = siteURL
+        // add port number if it exists
+        if port != 0 {
+            siteURL += ":" + port.description
+        }
+
+        guard let url = URL(string: siteURL) else { return nil }
+
+        var request = URLRequest(url: url.appendingPathComponent(path))
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        // if the API_SECRET is present, then pass its hash via http header. If it's missing but there is a token, then send this as plain text to allow the authentication check.
+        if let hashedAPISecret {
+            request.setValue(hashedAPISecret, forHTTPHeaderField: "api-secret")
+        } else if let token {
+            request.setValue(token, forHTTPHeaderField: "api-secret")
+        }
+
+        return request
+    }
 }
