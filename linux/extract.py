@@ -14,7 +14,7 @@ Usage:
     extract.py members <file> <Type> <member>[,<member>...]
         A copy of the declaration line of <Type> containing only the listed members, e.g. a
         handful of strings from a large `Texts_*` class. A member is a `static let`, `static var`,
-        `let`, `var`, `func` or a nested type; its body ends at the matching brace (for closures `}()`).
+        `let`, `var`, `func` (all overloads) or a nested type; its body ends at the matching brace (for closures `}()`).
         The special member name `cases` copies all enum cases, e.g. to use an enum whose methods
         need CoreData. For an extension (e.g. `extension Swift.Double: RawRepresentable`) the conformances are
         dropped, as the members they require are not copied.
@@ -137,11 +137,15 @@ def members(lines, type_name, names):
             depth += brace_delta(lines[i])
     for name in (n for n in names if n != 'cases'):
         pattern = re.compile(rf'^\s*{MEMBER_MODIFIERS}(?:let|var|func|enum|struct|class|typealias)\s+{re.escape(name)}\b')
-        for i in range(start + 1, end):
+        # Every overload with this name is copied: a call may need any of them.
+        i = start + 1
+        while i < end:
             if pattern.match(lines[i]):
-                out.extend(lines[leading_comments(lines, i):block_end(lines, i) + 1])
+                last = block_end(lines, i)
+                out.extend(lines[leading_comments(lines, i):last + 1])
                 found.add(name)
-                break
+                i = last
+            i += 1
     out.append('}')
     return out, found
 
