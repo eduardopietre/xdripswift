@@ -306,6 +306,11 @@ final class SystemTimeZoneChangeObserver {
     init(notificationCenter: NotificationCenter = .default, resetSystemTimeZone: @escaping () -> Void = { NSTimeZone.resetSystemTimeZone() }) {
         self.notificationCenter = notificationCenter
         self.resetSystemTimeZone = resetSystemTimeZone
+        // Clear the cache as soon as the system reports a new time zone, so formatters created
+        // afterwards use it (#405).
+        observer = notificationCenter.addObserver(forName: .NSSystemTimeZoneDidChange, object: nil, queue: nil) { _ in
+            resetSystemTimeZone()
+        }
     }
 
     deinit {

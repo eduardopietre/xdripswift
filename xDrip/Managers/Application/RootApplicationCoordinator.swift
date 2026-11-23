@@ -254,6 +254,9 @@ import AppIntents
     }
 
     /// Starts application services once the SwiftUI root state is available.
+    /// Keeps dates shown in the current time zone after it changes while the app runs (#405).
+    private let systemTimeZoneChangeObserver = SystemTimeZoneChangeObserver()
+
     func start(rootTabStateModel: RootTabStateModel) {
         guard !hasStarted else { return }
 
