@@ -17,7 +17,13 @@ private final class ShareUploadURLProtocol: URLProtocol {
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
-        let result = Self.handler(request)
+        // tearDown clears the handler. A request of a finished test can still arrive afterwards; it
+        // fails instead of stopping the whole test process on the nil handler.
+        guard let handler = Self.handler else {
+            client?.urlProtocol(self, didFailWithError: URLError(.cancelled))
+            return
+        }
+        let result = handler(request)
         let finish = {
             self.client?.urlProtocol(self, didReceive: HTTPURLResponse(url: self.request.url!, statusCode: result.0, httpVersion: nil, headerFields: nil)!, cacheStoragePolicy: .notAllowed)
             self.client?.urlProtocol(self, didLoad: result.1)
