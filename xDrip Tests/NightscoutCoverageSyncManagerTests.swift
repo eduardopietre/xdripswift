@@ -187,11 +187,10 @@ private final class SyncStubProtocol: URLProtocol {
         XCTAssertEqual(queryValues(requests[0].url, "find[type]"), ["sgv"])
         XCTAssertEqual(queryValues(requests[0].url, "find[date][$in][]"), [millis(hidden.timeStamp)])
         XCTAssertEqual(requests[1].url.path, "/api/v1/entries")
-        if let body = requests[1].body, !body.isEmpty {
-            let uploaded = try XCTUnwrap(JSONSerialization.jsonObject(with: body) as? [[String: Any]])
-            XCTAssertEqual(uploaded.compactMap { $0["sgv"] as? Int }, [120, 130])
-            XCTAssertTrue(uploaded.allSatisfy { $0["_id"] == nil })
-        }
+        let body = try XCTUnwrap(requests[1].body)
+        let uploaded = try XCTUnwrap(JSONSerialization.jsonObject(with: body) as? [[String: Any]])
+        XCTAssertEqual(uploaded.compactMap { $0["sgv"] as? Int }.sorted(), [120, 130])
+        XCTAssertTrue(uploaded.allSatisfy { $0["_id"] == nil })
     }
 
     func testReplacementHandoffNeverMovesBackwards() async {

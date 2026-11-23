@@ -206,10 +206,8 @@ private final class ShareKeepAliveSpy: FollowerBackgroundKeepAliveManaging {
         let requests = ShareFollowStubProtocol.requests
         XCTAssertEqual(requests.map(\.host), ["share2.dexcom.com", "shareous1.dexcom.com", "shareous1.dexcom.com", "shareous1.dexcom.com"])
         XCTAssertEqual(requests.map(\.path), ["AuthenticatePublisherAccount", "AuthenticatePublisherAccount", "LoginPublisherAccountById", "ReadPublisherLatestGlucoseValues"])
-        if !requests[1].body.isEmpty {
-            XCTAssertEqual(requests[1].body, ["accountName": "follower", "password": "secret", "applicationId": ConstantsDexcomShare.applicationId])
-            XCTAssertEqual(requests[2].body["accountId"], accountID)
-        }
+        XCTAssertEqual(requests[1].body, ["accountName": "follower", "password": "secret", "applicationId": ConstantsDexcomShare.applicationId])
+        XCTAssertEqual(requests[2].body["accountId"], accountID)
         XCTAssertEqual(requests[3].query, ["sessionId": sessionID, "minutes": "1440", "maxCount": "288"])
         await waitUntil { FollowerSessionState.shared.status(for: .dexcomShare) == .loggedIn }
         XCTAssertEqual(FollowerSessionState.shared.status(for: .dexcomShare), .loggedIn)
@@ -223,9 +221,7 @@ private final class ShareKeepAliveSpy: FollowerBackgroundKeepAliveManaging {
         await waitUntil { !self.delegate.received.isEmpty }
         let requests = ShareFollowStubProtocol.requests
         XCTAssertEqual(Set(requests.map(\.host)), ["share.dexcom.jp"])
-        if let body = requests.first?.body, !body.isEmpty {
-            XCTAssertEqual(body["applicationId"], ConstantsDexcomShare.applicationIdJapan)
-        }
+        XCTAssertEqual(requests.first?.body["applicationId"], ConstantsDexcomShare.applicationIdJapan)
         XCTAssertEqual(UserDefaults.standard.dexcomShareRegion, .jp)
     }
 

@@ -1661,8 +1661,11 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
                         request.setValue(apiKey.sha1(), forHTTPHeaderField: "api-secret")
                     }
                     
-                    // Create upload Task
-                    let urlSessionUploadTask = URLSession.shared.uploadTask(with: request, from: dataToUploadAsJSON, completionHandler: { [weak self] data, response, error in
+                    // The body is part of the request, sent with a data task: the same HTTP request as an
+                    // upload task, but a URLProtocol (as used by the unit tests) can read the body, which
+                    // it cannot for an upload task.
+                    request.httpBody = dataToUploadAsJSON
+                    let urlSessionUploadTask = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] data, response, error in
                         guard let self = self else {
                             completionHandler(data, .failed)
                             return

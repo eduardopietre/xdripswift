@@ -156,10 +156,8 @@ private final class UploadStubProtocol: URLProtocol {
         await waitUntil { UserDefaults.standard.timeStampLatestNightscoutUploadedBgReading == newest.timeStamp }
         XCTAssertEqual(UserDefaults.standard.timeStampLatestNightscoutUploadedBgReading, newest.timeStamp)
         XCTAssertEqual(posts(to: "/api/v1/entries").count, 1)
-        let entries = uploadedEntries()
-        if !entries.isEmpty {
-            XCTAssertEqual(entries.compactMap { $0["sgv"] as? Int }, [100, 110, 120])
-        }
+        // the body must be visible: an empty list would mean nothing is checked
+        XCTAssertEqual(uploadedEntries().compactMap { $0["sgv"] as? Int }.sorted(), [100, 110, 120])
     }
 
     func testOnlyReadingsAfterCursorAreUploaded() async {
@@ -170,12 +168,9 @@ private final class UploadStubProtocol: URLProtocol {
         manager.uploadLatestBgReadings(lastConnectionStatusChangeTimeStamp: nil)
         await waitUntil { UserDefaults.standard.timeStampLatestNightscoutUploadedBgReading == newest.timeStamp }
         XCTAssertEqual(UserDefaults.standard.timeStampLatestNightscoutUploadedBgReading, newest.timeStamp)
-        let entries = uploadedEntries()
-        if !entries.isEmpty {
-            let values = entries.compactMap { $0["sgv"] as? Int }
-            XCTAssertEqual(values.last, 120)
-            XCTAssertFalse(values.contains(100))
-        }
+        let values = uploadedEntries().compactMap { $0["sgv"] as? Int }
+        XCTAssertTrue(values.contains(120))
+        XCTAssertFalse(values.contains(100))
     }
 
     func testImportedReadingsAreNeverEchoedBack() async {
@@ -209,9 +204,7 @@ private final class UploadStubProtocol: URLProtocol {
         await waitUntil { UserDefaults.standard.timeStampLatestNightscoutUploadedCalibration != nil }
         XCTAssertEqual(UserDefaults.standard.timeStampLatestNightscoutUploadedCalibration, timeStamp)
         let types = uploadedEntries().compactMap { $0["type"] as? String }
-        if !types.isEmpty {
-            XCTAssertEqual(Set(types), ["cal", "mbg"])
-        }
+        XCTAssertEqual(Set(types), ["cal", "mbg"])
     }
 
     func testTransmitterBatteryIsUploadedAsDeviceStatus() async throws {
@@ -219,11 +212,10 @@ private final class UploadStubProtocol: URLProtocol {
         manager.uploadLatestBgReadings(lastConnectionStatusChangeTimeStamp: nil)
         await waitUntil { !self.posts(to: "/api/v1/devicestatus").isEmpty }
         let request = try XCTUnwrap(posts(to: "/api/v1/devicestatus").first)
-        if let json = try? JSONSerialization.jsonObject(with: request.body) as? [String: Any] {
-            let uploader = json["uploader"] as? [String: Any]
-            XCTAssertEqual(uploader?["name"] as? String, "transmitter")
-            XCTAssertEqual(uploader?["battery"] as? Int, 80)
-        }
+        let json = try XCTUnwrap(JSONSerialization.jsonObject(with: request.body) as? [String: Any])
+        let uploader = json["uploader"] as? [String: Any]
+        XCTAssertEqual(uploader?["name"] as? String, "transmitter")
+        XCTAssertEqual(uploader?["battery"] as? Int, 80)
     }
 
     func testMasterActiveSensorStartIsUploadedOnce() async throws {
@@ -234,10 +226,9 @@ private final class UploadStubProtocol: URLProtocol {
         await waitUntil { sensor.uploadedToNS }
         XCTAssertTrue(sensor.uploadedToNS)
         let request = try XCTUnwrap(posts(to: "/api/v1/treatments").first)
-        if let json = try? JSONSerialization.jsonObject(with: request.body) as? [String: Any] {
-            XCTAssertEqual(json["eventType"] as? String, "Sensor Start")
-            XCTAssertEqual(json["_id"] as? String, sensor.id)
-        }
+        let json = try XCTUnwrap(JSONSerialization.jsonObject(with: request.body) as? [String: Any])
+        XCTAssertEqual(json["eventType"] as? String, "Sensor Start")
+        XCTAssertEqual(json["_id"] as? String, sensor.id)
         UploadStubProtocol.reset()
         manager.uploadLatestBgReadings(lastConnectionStatusChangeTimeStamp: nil)
         try? await Task.sleep(nanoseconds: 300_000_000)
@@ -256,10 +247,9 @@ private final class UploadStubProtocol: URLProtocol {
         await waitUntil { UserDefaults.standard.libreLinkUpSensorStartDateUploadedToNS == start }
         XCTAssertEqual(UserDefaults.standard.libreLinkUpSensorStartDateUploadedToNS, start)
         let request = try XCTUnwrap(posts(to: "/api/v1/treatments").first)
-        if let json = try? JSONSerialization.jsonObject(with: request.body) as? [String: Any] {
-            XCTAssertEqual(json["_id"] as? String, String(format: "6c6c75000000%012llx", UInt64(1_799_000_000_000)))
-            XCTAssertEqual(json["eventType"] as? String, "Sensor Start")
-        }
+        let json = try XCTUnwrap(JSONSerialization.jsonObject(with: request.body) as? [String: Any])
+        XCTAssertEqual(json["_id"] as? String, String(format: "6c6c75000000%012llx", UInt64(1_799_000_000_000)))
+        XCTAssertEqual(json["eventType"] as? String, "Sensor Start")
         UserDefaults.standard.isMaster = true
     }
 }
