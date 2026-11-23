@@ -652,6 +652,10 @@ class Texts_SettingsView {
     static let preferLargeSnoozeScreen: String = {
         return NSLocalizedString("settingsviews_prefer_large_snooze_screen", tableName: filename, bundle: Bundle.main, value: "Large Snooze Screen", comment: "alarm setting that uses an oversized snooze picker when an alarm is raised")
     }()
+
+    static let suppressHighAlertsWhileFalling: String = {
+        return NSLocalizedString("settingsviews_suppress_high_alerts_while_falling", tableName: filename, bundle: Bundle.main, value: "Skip High Alerts While Falling", comment: "alarm setting that skips high and very high alerts while the glucose is falling; low alerts are never skipped")
+    }()
     
     // MARK: - Section Healthkit
     
