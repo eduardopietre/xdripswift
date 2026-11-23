@@ -1,0 +1,6 @@
+# Height at which glucose readings are plotted, in mg/dL and mmol/L (#560).
+module  SwiftUI
+decl    xDrip/SwiftUIViews/GlucoseChart/GlucoseChartState.swift | GlucoseChartPlotValue
+members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol, mmolToMgdl
+src     xDrip/Constants/ConstantsBloodGlucose.swift
+test    xDrip Tests/GlucoseChartPlotValueTests.swift
