@@ -335,4 +335,22 @@ enum SpeakReadingAudioPolicy {
     static func categoryOptions(whileSpeaking: Bool, duckOtherAudio: Bool) -> AVAudioSession.CategoryOptions {
         whileSpeaking && duckOtherAudio ? [.mixWithOthers, .duckOthers] : .mixWithOthers
     }
+
+    /// What to do with the audio session when a reading that lowered other audio has been spoken.
+    enum AfterSpeakingAction: Equatable {
+        /// another reading that lowers other audio is still being spoken
+        case nothing
+        /// only remove the option that lowers other audio
+        case restoreOptions
+        /// deactivate the session so other audio returns to full volume, then activate it again
+        /// with the options the app always uses
+        case deactivateAndReactivate
+    }
+
+    /// - parameters:
+    ///     - duckedUtterancesLeft: readings that lowered other audio and are still being spoken
+    ///     - appSoundIsPlaying: whether the app itself is playing a sound, such as an alarm
+    static func afterSpeaking(duckedUtterancesLeft: Int, appSoundIsPlaying: Bool) -> AfterSpeakingAction {
+        .restoreOptions
+    }
 }
