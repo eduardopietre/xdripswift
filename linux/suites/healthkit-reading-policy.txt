@@ -1,0 +1,4 @@
+# Which readings are written to Apple Health (#283). HealthKitManager itself needs HealthKit.
+decl xDrip/Managers/HealthKit/HealthKitManager.swift | HealthKitReadingPolicy
+src  xDrip/Constants/ConstantsCalibrationAlgorithms.swift
+test xDrip Tests/HealthKitReadingPolicyTests.swift
