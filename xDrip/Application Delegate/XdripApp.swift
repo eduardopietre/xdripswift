@@ -20,6 +20,12 @@ import SwiftUI
     private let applicationCoordinator: RootApplicationCoordinator
     private let tabTitles: RootTabTitles
 
+    /// True when the app only hosts the unit tests. The tests run inside this process and change the
+    /// same UserDefaults keys that the app's follow, sync, Bluetooth and housekeeping services observe,
+    /// so those services, and the views that drive them, are not started then: they would react to
+    /// the tests' settings, log in or upload, and make the tests depend on timing.
+    static let isHostingUnitTests = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+
     init() {
         let applicationCoordinator = RootApplicationCoordinator()
         let stateModel = RootTabStateModel()
@@ -34,24 +40,30 @@ import SwiftUI
         )
         _stateModel = StateObject(wrappedValue: stateModel)
 
-        applicationCoordinator.start(rootTabStateModel: stateModel)
+        if !Self.isHostingUnitTests {
+            applicationCoordinator.start(rootTabStateModel: stateModel)
+        }
     }
 
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                // Keep rotation resizes on the app palette instead of exposing the system window.
-                ConstantsAppColors.background
-                    .ignoresSafeArea()
+            if Self.isHostingUnitTests {
+                Color.clear
+            } else {
+                ZStack {
+                    // Keep rotation resizes on the app palette instead of exposing the system window.
+                    ConstantsAppColors.background
+                        .ignoresSafeArea()
 
-                RootTabView(
-                    stateModel: stateModel,
-                    applicationCoordinator: applicationCoordinator,
-                    tabTitles: tabTitles
-                )
+                    RootTabView(
+                        stateModel: stateModel,
+                        applicationCoordinator: applicationCoordinator,
+                        tabTitles: tabTitles
+                    )
+                }
+                .background(ConstantsAppColors.background)
+                .onOpenURL(perform: stateModel.receiveIncomingBackup)
             }
-            .background(ConstantsAppColors.background)
-            .onOpenURL(perform: stateModel.receiveIncomingBackup)
         }
     }
 }
