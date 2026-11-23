@@ -114,8 +114,18 @@ final class CareLinkKeychainTokenStore: CareLinkTokenStoring {
 }
 
 /// Non-persistent test double used to exercise rotation and concurrency without Keychain state.
-final class CareLinkMemoryTokenStore: CareLinkTokenStoring {
-    var token: CareLinkToken?
+final class CareLinkMemoryTokenStore: CareLinkTokenStoring, @unchecked Sendable {
+    // The client reads, saves and clears the token from concurrent tasks (a logout can run while a
+    // request refreshes the token), so every access holds the lock. Unguarded, a load during a
+    // clear could read a token while it was being released.
+    private let lock = NSLock()
+    private var storedToken: CareLinkToken?
+
+    var token: CareLinkToken? {
+        get { lock.withLock { storedToken } }
+        set { lock.withLock { storedToken = newValue } }
+    }
+
     func load() throws -> CareLinkToken? { token }
     func save(_ token: CareLinkToken) throws { self.token = token }
     func clear() throws { token = nil }
