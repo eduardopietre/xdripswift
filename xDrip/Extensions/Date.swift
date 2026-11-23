@@ -302,8 +302,9 @@ final class SystemTimeZoneChangeObserver {
 
     /// - parameters:
     ///     - notificationCenter: where the time zone change is posted
+    ///     - notificationNames: the notifications after which the time zone may have changed
     ///     - resetSystemTimeZone: clears Foundation's cached system time zone
-    init(notificationCenter: NotificationCenter = .default, resetSystemTimeZone: @escaping () -> Void = { NSTimeZone.resetSystemTimeZone() }) {
+    init(notificationCenter: NotificationCenter = .default, notificationNames: [Notification.Name] = [.NSSystemTimeZoneDidChange], resetSystemTimeZone: @escaping () -> Void = { NSTimeZone.resetSystemTimeZone() }) {
         self.notificationCenter = notificationCenter
         self.resetSystemTimeZone = resetSystemTimeZone
         // Clear the cache as soon as the system reports a new time zone, so formatters created

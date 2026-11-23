@@ -39,4 +39,22 @@ final class SystemTimeZoneChangeObserverTests: XCTestCase {
         XCTAssertEqual(resets, 0)
         withExtendedLifetime(observer) {}
     }
+
+    // MARK: - app suspended while travelling (#405)
+
+    /// While the app is suspended (for example in flight mode, when no sensor keeps it running) it
+    /// misses the time zone notification. UIKit queues its significant time change notification
+    /// until the app runs again, so that one must reset the cached time zone as well.
+    func testCachedSystemTimeZoneIsResetByEveryGivenNotification() {
+        let notificationCenter = NotificationCenter()
+        let significantTimeChange = Notification.Name("SignificantTimeChange")
+        var resets = 0
+        let observer = SystemTimeZoneChangeObserver(notificationCenter: notificationCenter, notificationNames: [.NSSystemTimeZoneDidChange, significantTimeChange], resetSystemTimeZone: { resets += 1 })
+
+        notificationCenter.post(name: significantTimeChange, object: nil)
+        notificationCenter.post(name: .NSSystemTimeZoneDidChange, object: nil)
+
+        XCTAssertEqual(resets, 2)
+        withExtendedLifetime(observer) {}
+    }
 }
