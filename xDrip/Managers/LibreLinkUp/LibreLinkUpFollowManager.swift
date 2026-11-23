@@ -710,6 +710,12 @@ class LibreLinkUpFollowManager: NSObject {
         
         trace("in scheduleNewDownload", log: self.log, category: ConstantsLog.categoryLibreLinkUpFollowManager, type: .info)
         
+        // cancel the pending timer first. download() is also called outside the timer (when the
+        // app returns to the foreground, on a manual refresh or a login) and every download ends
+        // here. Without this, each of those calls left one more timer rescheduling itself, so the
+        // number of downloads per minute kept growing until the app was restarted.
+        invalidateDownLoadTimerClosure?()
+        
         // schedule a timer for 60 seconds and assign it to a let property
         let downloadTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.download), userInfo: nil, repeats: false)
         
