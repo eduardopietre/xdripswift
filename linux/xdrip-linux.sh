@@ -74,17 +74,17 @@ add_suite() { # <suite> <library dir> <tests dir>
                     add_suite "$rest" "$lib" "$tests"
                 fi ;;
             module) add_module "$rest" "$lib/.." ;;
-            src)  place "$rest" "$lib" ;;
-            test)
-                # `test <path> | without a, b` leaves out members that cannot run on Linux.
+            src|test)
+                # `<src|test> <path> | without a, b` leaves out members that cannot build on Linux.
+                local dest="$lib"; [[ "$kind" == test ]] && dest="$tests"
                 IFS='|' read -r path names <<< "$rest"; path="$(trim "$path")"; names="$(trim "${names:-}")"
                 if [[ -z "$names" ]]; then
-                    place "$path" "$tests"
+                    place "$path" "$dest"
                 else
                     [[ "$names" == without* ]] || die "$suite.txt: expected 'without' after '|' in: $line"
                     [[ -f "$ROOT/$path" ]] || die "missing file: $path"
                     python3 "$ROOT/linux/extract.py" without "$ROOT/$path" "${names#without}" \
-                        > "$tests/$(flat "$path")" || die "$suite.txt: test without failed"
+                        > "$dest/$(flat "$path")" || die "$suite.txt: $kind without failed"
                 fi ;;
             extract)
                 IFS='|' read -r path start end <<< "$rest"; path="$(trim "$path")"

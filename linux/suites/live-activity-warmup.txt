@@ -1,0 +1,24 @@
+# Live Activity / widget payloads: sensor warm-up presentation, payload encoding compatibility,
+# publication de-duplication and the Live Activity style setting.
+module  ActivityKit
+module  WidgetKit
+module  SwiftUI
+# deviceStatusIconImage returns a SwiftUI view.
+src     xDrip Widget/DataModels/XDripWidgetAttributes.swift | without deviceStatusIconImage
+src     xDrip Widget/Constants/ConstantsWidgetExtension.swift
+src     xDrip/Managers/Widgets/WidgetSharedUserDefaultsModel.swift
+src     xDrip/Managers/LiveActivity/LiveActivityType.swift
+src     xDrip/Constants/TherapyMetrics.swift
+decl    xDrip/Constants/ConstantsHomeView.swift | AIDStatus, AIDStatusCondition, AIDStatusStyle, AIDStatusSymbol, AIDStatusPresentation, LoopStatusState
+members xDrip/Constants/ConstantsHomeView.swift | ConstantsHomeView | aidStatusFutureTolerance, loopShowNoDataAfterMinutes, loopShowWarningAfterMinutes
+members xDrip/Constants/ConstantsGlucoseChartSwiftUI.swift | ConstantsGlucoseChartSwiftUI | therapyPlotCarbsPerInsulinUnit, therapyPlotHeightMultiplier, therapyPlotMaximumCOB, therapyPlotMaximumIOB, therapyPlotReferenceHeightInMgDl
+members xDrip/Texts/TextsSettingsView.swift | Texts_SettingsView | filename, carPlayLiveActivityTypeBasic, carPlayLiveActivityTypeChart, liveActivityTypeLarge, liveActivityTypeMinimal, liveActivityTypeNormal
+members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mmolToString, mgDlToMmol
+src     xDrip/Texts/TextsCommon.swift
+include _texts-home-view
+include _app-colors
+include _foundation-extensions
+src     xDrip/Constants/ConstantsBloodGlucose.swift
+members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key, liveActivitiesEnabled, liveActivityType, migrateLiveActivitySettingsIfNeeded
+# KVO on UserDefaults needs the Objective-C runtime.
+test    xDrip Tests/LiveActivityWarmupTests.swift | without testEnablementChangesNotifySettingsObservers

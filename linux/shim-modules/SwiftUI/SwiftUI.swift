@@ -85,3 +85,20 @@ public struct Color: Equatable, Hashable {
     public static let secondary = Color(white: 0.24, opacity: 0.6)
 }
 
+
+/// Minimal stand-in for SwiftUI's `Font`: only the weights, which some models choose for symbols.
+public struct Font: Equatable, Hashable {
+    public struct Weight: Equatable, Hashable {
+        private let value: Int
+
+        public static let ultraLight = Weight(value: 1)
+        public static let thin = Weight(value: 2)
+        public static let light = Weight(value: 3)
+        public static let regular = Weight(value: 4)
+        public static let medium = Weight(value: 5)
+        public static let semibold = Weight(value: 6)
+        public static let bold = Weight(value: 7)
+        public static let heavy = Weight(value: 8)
+        public static let black = Weight(value: 9)
+    }
+}
