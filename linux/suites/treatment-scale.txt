@@ -1,0 +1,5 @@
+# Treatment marker scales of the glucose chart (#781).
+module  SwiftUI
+decl    xDrip/SwiftUIViews/GlucoseChart/GlucoseChartState.swift | GlucoseChartTreatmentScale, GlucoseChartTreatmentSizeRange
+members xDrip/SwiftUIViews/GlucoseChart/GlucoseChartState.swift | GlucoseChartTreatmentStyle | bolusSymbolSizing, carbsSymbolSizing, smallDoseBolusSymbolSizing, smallDoseCarbsSymbolSizing
+test    xDrip Tests/TreatmentScaleTests.swift
