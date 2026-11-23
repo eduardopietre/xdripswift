@@ -1358,7 +1358,10 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
         let grouped = Dictionary(grouping: candidates) { treatment in
             String(treatment.id.dropLast(treatment.treatmentType.idExtension().count))
         }
-        let remoteIDs = grouped.keys.filter { !$0.isEmpty }.sorted()
+        // Limit the requests of one sync, newest first; the remaining ones are checked at the next syncs.
+        let remoteIDs = RemoteTreatmentDeletionLookupPolicy.remoteIDsToLookUp(
+            newestDateByRemoteID: grouped.mapValues { treatments in treatments.map(\.date).max() ?? .distantPast }
+        )
         var deletedCount = 0
 
         // Run lookups one at a time rather than starting a request for every missing entry at once.
@@ -2356,6 +2359,11 @@ enum RemoteTreatmentDeletionLookupPolicy {
     ///     - limit: the most ids to return
     /// - returns: the Nightscout ids to look up, in the order to look them up
     static func remoteIDsToLookUp(newestDateByRemoteID: [String: Date], limit: Int = maximumLookupsPerSync) -> [String] {
-        newestDateByRemoteID.keys.filter { !$0.isEmpty }.sorted()
+        let lookups = newestDateByRemoteID
+            .filter { !$0.key.isEmpty }
+            // newest first; the id keeps the order stable for equal dates
+            .sorted { $0.value != $1.value ? $0.value > $1.value : $0.key < $1.key }
+            .prefix(max(limit, 0))
+        return lookups.map(\.key)
     }
 }
