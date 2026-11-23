@@ -1328,11 +1328,18 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
         return nil
     }
     
-    /// The local treatments checked for deletion at Nightscout after a treatment download.
+    /// The local treatments checked for deletion at Nightscout after a treatment download: all of
+    /// them within the download window, not only the latest 50 used for uploading. With an AID that
+    /// records a temp basal every few minutes those 50 cover only a few hours, so a meal edited in
+    /// iAPS (which deletes and re-uploads it) later than that stayed in the list twice (#624).
     /// - parameters:
     ///     - treatmentsToSync: the latest treatments used for uploading during this sync
     func treatmentsForRemoteDeletionCheck(treatmentsToSync: [TreatmentEntry]) -> [TreatmentEntry] {
-        treatmentsToSync
+        let downloadWindow = TimeInterval(hours: ConstantsNightscout.maxHoursTreatmentsToDownload)
+        let windowTreatments = treatmentEntryAccessor.getLatestTreatments(limit: nil, howOld: downloadWindow)
+        // Keep any treatment of this sync that the window query does not return.
+        let windowIDs = Set(windowTreatments.map(\.objectID))
+        return windowTreatments + treatmentsToSync.filter { !windowIDs.contains($0.objectID) }
     }
 
     /// A missing bulk result is only a candidate for deletion. An exact-id GET must return an
