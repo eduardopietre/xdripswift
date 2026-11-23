@@ -126,13 +126,32 @@ final class NightscoutCoverageDeviceStatusModelTests: XCTestCase {
         XCTAssertEqual(iAPSTypo.lastLoopDate, date("2026-01-01T10:07:00Z"))
     }
 
-    func testSuggestedCOBAndIOBTakePrecedenceOverEnacted() throws {
-        let status = try status("""
+    /// COB and IOB come from the newer of enacted and suggested. An older suggestion used to win,
+    /// so a stale COB and IOB were shown next to a newer enacted temp basal.
+    func testCOBAndIOBComeFromTheNewerOfEnactedAndSuggested() throws {
+        let olderSuggestion = try status("""
         {"device":"Trio","openaps":{"enacted":{"timestamp":"2026-01-01T10:10:00Z","COB":1,"IOB":1},
         "suggested":{"timestamp":"2026-01-01T10:00:00Z","COB":9,"IOB":3}}}
         """)
-        XCTAssertEqual(status.cob, 9)
-        XCTAssertEqual(status.iob, 3)
+        XCTAssertEqual(olderSuggestion.cob, 1)
+        XCTAssertEqual(olderSuggestion.iob, 1)
+
+        let newerSuggestion = try status("""
+        {"device":"Trio","openaps":{"enacted":{"timestamp":"2026-01-01T10:00:00Z","COB":1,"IOB":1},
+        "suggested":{"timestamp":"2026-01-01T10:10:00Z","COB":9,"IOB":3}}}
+        """)
+        XCTAssertEqual(newerSuggestion.cob, 9, "valid also when the suggested temp basal was not received")
+        XCTAssertEqual(newerSuggestion.iob, 3)
+    }
+
+    /// The timestamps are compared as dates: as text, "10:05:00Z" sorts after "10:05:00.500Z".
+    func testSuggestedAndEnactedWithDifferentTimestampFormatsAreComparedAsDates() throws {
+        let status = try status("""
+        {"device":"openaps://phone","openaps":{
+        "enacted":{"timestamp":"2026-01-01T10:05:00.500Z","rate":0.5},
+        "suggested":{"timestamp":"2026-01-01T10:05:00Z","rate":0.8}}}
+        """)
+        XCTAssertEqual(status.rate, 0.5)
     }
 
     func testLoopPayloadIsParsed() throws {
@@ -452,6 +471,29 @@ final class NightscoutCoverageDeviceStatusModelTests: XCTestCase {
         XCTAssertEqual(newest.uploaderBatteryPercent, 18)
         XCTAssertEqual(newest.uploaderIsCharging, true)
         XCTAssertEqual(newest.lastLoopDate, Date(timeIntervalSince1970: 4))
+    }
+
+    /// Loop leaves failureReason out when a run succeeds. The error of an older run used to be copied
+    /// onto the newest, successful status, so a resolved "Pump error" kept showing.
+    func testFillMissingDoesNotTakeTheErrorOfAnotherLoopRun() {
+        var newest = NightscoutDeviceStatus()
+        newest.lastLoopDate = Date(timeIntervalSince1970: 200)
+        var olderRun = NightscoutDeviceStatus()
+        olderRun.lastLoopDate = Date(timeIntervalSince1970: 100)
+        olderRun.error = "Pump error"
+        olderRun.reason = "old reason"
+        olderRun.iob = 1.5
+
+        newest.fillMissingDisplayValues(from: olderRun)
+        XCTAssertNil(newest.error)
+        XCTAssertNil(newest.reason)
+        XCTAssertEqual(newest.iob, 1.5, "other missing values are still filled")
+
+        var sameRun = NightscoutDeviceStatus()
+        sameRun.lastLoopDate = Date(timeIntervalSince1970: 200)
+        sameRun.error = "Pump error"
+        newest.fillMissingDisplayValues(from: sameRun)
+        XCTAssertEqual(newest.error, "Pump error")
     }
 
     func testFillMissingKeepsExistingLastLoopDate() {

@@ -253,7 +253,7 @@ final class NightscoutDeviceStatusDecodingTests: XCTestCase {
           "suggested":{"timestamp":"2024-11-23T10:00:00Z","received":false,"rate":0.6}}}
         """)
         XCTAssertEqual(status.systemName(), "Trio")
-        XCTAssertEqual(status.rate, 0.6, "the newest algorithm output is still displayed")
+        XCTAssertEqual(status.rate, 0.4, "a suggestion Trio did not receive is not running; the enacted temp basal is")
         XCTAssertEqual(status.lastLoopDate, date("2024-11-23T09:55:00Z"))
     }
 
