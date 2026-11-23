@@ -47,6 +47,9 @@ class BGReadingSpeaker:NSObject {
         
         // call super.init
         super.init()
+
+        // to restore the audio session options once a reading has been spoken
+        syn.delegate = self
         
         // set languageCode in Texts_SpeakReading to value stored in defaults
         Texts_SpeakReading.setLanguageCode(code: UserDefaults.standard.speakReadingLanguageCode)
@@ -197,6 +200,7 @@ class BGReadingSpeaker:NSObject {
         utterance.rate = 0.51
         utterance.pitchMultiplier = 1
         utterance.voice = AVSpeechSynthesisVoice(language: language)
+        applyAudioSessionOptions(whileSpeaking: true)
         syn.speak(utterance)
 
     }
@@ -294,4 +298,38 @@ class BGReadingSpeaker:NSObject {
     }
     
 
+}
+
+extension BGReadingSpeaker: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        applyAudioSessionOptions(whileSpeaking: false)
+    }
+
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        applyAudioSessionOptions(whileSpeaking: false)
+    }
+
+    /// Sets the category options for speaking or for after speaking. The session is never
+    /// deactivated, because alarms and background keep-alive audio share it. Nothing is changed
+    /// when the options are the ones the app always uses.
+    func applyAudioSessionOptions(whileSpeaking: Bool) {
+        let options = SpeakReadingAudioPolicy.categoryOptions(whileSpeaking: whileSpeaking, duckOtherAudio: UserDefaults.standard.speakDucksOtherAudio)
+        let session = AVAudioSession.sharedInstance()
+        guard session.categoryOptions != options else { return }
+        do {
+            try session.setCategory(.playback, options: options)
+        } catch {
+            trace("in applyAudioSessionOptions, failed to set category options, error = %{public}@", log: OSLog(subsystem: ConstantsLog.subSystem, category: ConstantsLog.categoryBGReadingSpeaker), category: ConstantsLog.categoryBGReadingSpeaker, type: .error, error.localizedDescription)
+        }
+    }
+}
+
+/// The audio session options used while a reading is spoken and afterwards.
+enum SpeakReadingAudioPolicy {
+    /// - parameters:
+    ///     - whileSpeaking: true while a reading is being spoken
+    ///     - duckOtherAudio: the user's setting to lower other audio while speaking, off by default
+    static func categoryOptions(whileSpeaking: Bool, duckOtherAudio: Bool) -> AVAudioSession.CategoryOptions {
+        .mixWithOthers
+    }
 }

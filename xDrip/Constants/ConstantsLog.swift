@@ -129,6 +129,9 @@ enum ConstantsLog {
     /// SettingsViewSpeakSettingsViewModel
     static let categorySettingsViewSpeakSettingsViewModel = "SpeakSettingsViewModel        "
 
+    /// BGReadingSpeaker
+    static let categoryBGReadingSpeaker = "BGReadingSpeaker              "
+
     /// advanced settings, including follower protocol version overrides
     static let categorySettingsViewDevelopmentSettingsViewModel =
                                                             "DevelopmentSettingsViewModel  "

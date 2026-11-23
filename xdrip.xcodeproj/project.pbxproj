@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		BBF0AD54E4BE224F02B21A99 /* SpeakReadingAudioPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A718E7BB89D05987DA1F2 /* SpeakReadingAudioPolicyTests.swift */; };
 		2E0ECE7DF8FD0699AB8AA0B7 /* HighAlertTrendPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D04EC729A781A48742C4 /* HighAlertTrendPolicyTests.swift */; };
 		4132C7BE8D4822AF3726FF9A /* SystemTimeZoneChangeObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DCFF9BEF765F9E08D1AA98 /* SystemTimeZoneChangeObserverTests.swift */; };
 		BD5506BFDEAFBD554CAB21F9 /* LoopShareSensorSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD9D30848DC1A06973938F /* LoopShareSensorSessionTests.swift */; };
@@ -1015,6 +1016,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		136A718E7BB89D05987DA1F2 /* SpeakReadingAudioPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakReadingAudioPolicyTests.swift; sourceTree = "<group>"; };
 		E5D9D04EC729A781A48742C4 /* HighAlertTrendPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighAlertTrendPolicyTests.swift; sourceTree = "<group>"; };
 		49DCFF9BEF765F9E08D1AA98 /* SystemTimeZoneChangeObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTimeZoneChangeObserverTests.swift; sourceTree = "<group>"; };
 		7DFD9D30848DC1A06973938F /* LoopShareSensorSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopShareSensorSessionTests.swift; sourceTree = "<group>"; };
@@ -2895,6 +2897,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				136A718E7BB89D05987DA1F2 /* SpeakReadingAudioPolicyTests.swift */,
 				E5D9D04EC729A781A48742C4 /* HighAlertTrendPolicyTests.swift */,
 				49DCFF9BEF765F9E08D1AA98 /* SystemTimeZoneChangeObserverTests.swift */,
 				7DFD9D30848DC1A06973938F /* LoopShareSensorSessionTests.swift */,
@@ -4827,6 +4830,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				BBF0AD54E4BE224F02B21A99 /* SpeakReadingAudioPolicyTests.swift in Sources */,
 				2E0ECE7DF8FD0699AB8AA0B7 /* HighAlertTrendPolicyTests.swift in Sources */,
 				4132C7BE8D4822AF3726FF9A /* SystemTimeZoneChangeObserverTests.swift in Sources */,
 				BD5506BFDEAFBD554CAB21F9 /* LoopShareSensorSessionTests.swift in Sources */,
