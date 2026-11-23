@@ -289,3 +289,28 @@ extension Date {
         return daysAndHoursRemainingString
     }
 }
+
+/// Keeps dates shown in the device's current time zone after it changes while the app is running.
+///
+/// Foundation caches the system time zone for the lifetime of the process. Every `DateFormatter`
+/// created without an explicit time zone uses that cache, so after travelling to another time zone
+/// without restarting the app, times would still be shown in the old one.
+final class SystemTimeZoneChangeObserver {
+    private let notificationCenter: NotificationCenter
+    private let resetSystemTimeZone: () -> Void
+    private var observer: NSObjectProtocol?
+
+    /// - parameters:
+    ///     - notificationCenter: where the time zone change is posted
+    ///     - resetSystemTimeZone: clears Foundation's cached system time zone
+    init(notificationCenter: NotificationCenter = .default, resetSystemTimeZone: @escaping () -> Void = { NSTimeZone.resetSystemTimeZone() }) {
+        self.notificationCenter = notificationCenter
+        self.resetSystemTimeZone = resetSystemTimeZone
+    }
+
+    deinit {
+        if let observer {
+            notificationCenter.removeObserver(observer)
+        }
+    }
+}

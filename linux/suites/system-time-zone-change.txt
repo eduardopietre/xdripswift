@@ -1,0 +1,3 @@
+# Resetting the cached system time zone when it changes (#405).
+decl xDrip/Extensions/Date.swift | SystemTimeZoneChangeObserver
+test xDrip Tests/SystemTimeZoneChangeObserverTests.swift
