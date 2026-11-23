@@ -1,0 +1,28 @@
+# Libre 3 BLE protocol: AES-CCM, framing, data plane decoding, NFC activation and receiver ID.
+# Not ported: Libre3IntegrationTests (CoreData, CoreNFC) and Libre3Phase6ResponseTests (CryptoKit).
+module CommonCrypto
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/BLE/Libre3FrameAssembler.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/Crypto/Libre3AESCCM.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3ClinicalReadingRecord.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3DataFrame.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3DataPlaneCrypto.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3DataPlaneDecoder.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3DataPlaneState.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3HistoricalBackfill.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3HistoricalReadingPage.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3PatchControlCommand.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3PatchStatus.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3RealtimeGlucoseReading.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/DataPlane/Libre3SensorLifecycle.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/Pairing/Libre3NFCActivationCommand.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/Pairing/Libre3NFCActivationModels.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/Pairing/Libre3ChallengeMessage.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/Pairing/Libre3Phase6Response.swift
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre3/Protocol/Pairing/Libre3ReceiverID.swift
+src  xDrip/Texts/TextsLibre3.swift
+test xDrip Tests/Libre3/Libre3TestHelpers.swift
+test xDrip Tests/Libre3/Libre3AESCCMTests.swift
+test xDrip Tests/Libre3/Libre3BleFramingTests.swift
+test xDrip Tests/Libre3/Libre3DataPlaneTests.swift
+test xDrip Tests/Libre3/Libre3NFCActivationCommandTests.swift
+test xDrip Tests/Libre3/Libre3ReceiverIDTests.swift

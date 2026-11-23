@@ -1,0 +1,4 @@
+# RSSI smoothing, history and gauge levels (the value types at the end of BluetoothTransmitter.swift).
+decl xDrip/BluetoothTransmitter/Generic/BluetoothTransmitter.swift | BluetoothSignalStrength, BluetoothSignalStrengthHistory, BluetoothSignalStrengthGauge, BluetoothSignalStrengthTraceCadence
+test xDrip Tests/BluetoothSignalStrengthTests.swift
+include _foundation-extensions

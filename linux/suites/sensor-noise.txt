@@ -1,0 +1,6 @@
+# Sensor noise calculation and persistence of the noise state.
+src  xDrip/Managers/SensorNoise/SensorNoiseCalculator.swift
+test xDrip Tests/SensorNoisePersistenceTests.swift
+src  xDrip/Constants/ConstantsCalibrationAlgorithms.swift
+members xDrip/Texts/TextsSettingsView.swift | Texts_SettingsView | filename, sensorNoiseSensitivitySensitive, sensorNoiseSensitivityNormal, sensorNoiseSensitivityPermissive
+include _foundation-extensions
