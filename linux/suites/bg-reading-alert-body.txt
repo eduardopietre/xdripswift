@@ -1,0 +1,3 @@
+# Text of the glucose value alerts (#337). AlertKind itself needs CoreData readings.
+decl xDrip/Managers/Alerts/AlertKind.swift | BgReadingAlertBody
+test xDrip Tests/BgReadingAlertBodyTests.swift

@@ -800,17 +800,32 @@ private func createAlertTitleForBgReadingAlerts(alertKind: AlertKind) -> String 
     }
 }
 
-// specifically for high, low, very high, very low because these need to show an alert body with the BG value etc
+// specifically for high, low, very high, very low, fast drop and fast rise because these need to show an alert body with the BG value etc
 private func createAlertBodyForBgReadingAlerts(bgReading: BgReading, alertKind: AlertKind) -> String {
-    var returnValue = ""
-    
-    // add unit
-    returnValue = returnValue + " " + bgReading.finalValue.mgDlToMmolAndToString(mgDl: UserDefaults.standard.bloodGlucoseUnitIsMgDl)
-    
-    // add slopeArrow
-    if !bgReading.hideSlope {
-        returnValue = returnValue + " " + bgReading.slopeArrow()
+    BgReadingAlertBody.text(
+        value: bgReading.finalValue.mgDlToMmolAndToString(mgDl: UserDefaults.standard.bloodGlucoseUnitIsMgDl),
+        slopeArrow: bgReading.hideSlope ? nil : bgReading.slopeArrow(),
+        delta: nil
+    )
+}
+
+/// The body of the alerts about a glucose value: low, high, very low, very high, fast drop and fast rise.
+enum BgReadingAlertBody {
+    /// - parameters:
+    ///     - value: the glucose value in the user's unit
+    ///     - slopeArrow: the trend arrow, nil when the slope is hidden
+    ///     - delta: the change since the previous reading in the user's unit, nil when not shown
+    static func text(value: String, slopeArrow: String?, delta: String?) -> String {
+        var returnValue = ""
+
+        // add value
+        returnValue = returnValue + " " + value
+
+        // add slopeArrow
+        if let slopeArrow {
+            returnValue = returnValue + " " + slopeArrow
+        }
+
+        return returnValue
     }
-    
-    return returnValue
 }
