@@ -60,8 +60,10 @@ final class DoubleGlucoseConversionTests: XCTestCase {
         XCTAssertEqual(250.0.mgDlToMmolAndToString(mgDl: false), "13.9")
     }
 
-    /// `100 * 0.0555` is stored as 5.5499999..., so it is shown as 5.5 and not 5.6. This matches the
-    /// exact conversion (100 / 18.018 = 5.4999...) and must stay that way.
+    /// Describes the current behaviour: the app converts with the factor 0.0555 (1 / 18.018) and
+    /// `100 * 0.0555` is stored as 5.5499999..., so 100 mg/dL is shown as 5.5. With the molar mass of
+    /// glucose (180.16 g/mol, factor 1 / 18.016) it would be 5.5506 and shown as 5.6. Changing the
+    /// factor changes this label.
     func testValuesJustBelowAHalfStepRoundDownInMmol() {
         XCTAssertEqual(100.0.mgDlToMmolAndToString(mgDl: false), "5.5")
         XCTAssertEqual(100.0.mgDlToMmol().bgValueToString(mgDl: false), "5.5")

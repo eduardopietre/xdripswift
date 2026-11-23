@@ -12,8 +12,9 @@ import XCTest
 /// Covers the report value formatting with pinned locales.
 ///
 /// The report is generated in a language chosen in the report screen, which can differ from the
-/// device locale. GMI must be converted to IFCC before it is rounded, decimal separators must follow
-/// the passed locale, and the per-day durations of the range buckets must be printed from the
+/// device locale. GMI must be converted to IFCC before it is rounded, GMI and numbers follow the
+/// decimal separator of the passed locale (glucose values and axis labels currently always use "."),
+/// and the per-day durations of the range buckets must be printed from the
 /// jointly allocated minutes so the three of them add up to 24 hours.
 final class GlucoseReportFormattingTests: XCTestCase {
 
@@ -37,7 +38,8 @@ final class GlucoseReportFormattingTests: XCTestCase {
         XCTAssertEqual(GlucoseReportFormatting.gmi(-1, usesIFCC: true), "-")
     }
 
-    /// Glucose values carry their unit; axis labels do not.
+    /// Glucose values carry their unit; axis labels do not. They use "." whatever the locale, unlike GMI
+    /// and numbers: this describes the current behaviour, which mixes separators in a German report.
     func testGlucoseFormattingAddsTheUnitOnlyForValues() {
         XCTAssertEqual(GlucoseReportFormatting.glucose(70, usesMgDl: true), "70 mg/dL")
         XCTAssertEqual(GlucoseReportFormatting.glucose(70, usesMgDl: false), "3.9 mmol/L")

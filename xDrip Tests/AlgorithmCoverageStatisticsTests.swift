@@ -220,7 +220,7 @@ final class AlgorithmCoverageStatisticsTests: XCTestCase {
         XCTAssertEqual(mgDl.estimatedHbA1cPercentage, (117.5 + 46.7) / 28.7, accuracy: 0.000_001)
         XCTAssertEqual(mgDl.lowLimitForTIR, 70)
         XCTAssertEqual(mgDl.highLimitForTIR, 180)
-        XCTAssertEqual(mgDl.numberOfDaysUsed, Calendar.current.dateComponents([.day], from: Date().addingTimeInterval(-2 * 3600 - 300), to: Date()).day)
+        XCTAssertEqual(mgDl.numberOfDaysUsed, 0, "two hours of readings are less than one full day")
         UserDefaults.standard.bloodGlucoseUnitIsMgDl = false
         let mmol = await rootStatistics(manager)
         XCTAssertEqual(mmol.averageStatisticValue, 117.5 * ConstantsBloodGlucose.mgDlToMmoll, accuracy: 0.000_001)

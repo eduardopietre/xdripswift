@@ -59,6 +59,8 @@ final class LibreCoverageRealDataTests: XCTestCase {
         }
     }
 
+    /// Output recorded from the current implementation for a captured frame. The CRC check of every
+    /// decrypted frame above is the independent check; this one detects any change of the output.
     func testDecryptBLEOfFirstCapturedFrame() throws {
         XCTAssertEqual(try decrypted(0).hexEncodedString(), "8802ee85a082f485ab420086bac21786c80217860903e38529c3b78121c3b781e8c2af812643b2851b03168b")
     }
@@ -134,6 +136,9 @@ final class LibreCoverageRealDataTests: XCTestCase {
         XCTAssertEqual(parsed.bleGlucose.first?.glucoseLevelRaw ?? 0, 100 * multiplier, accuracy: 1e-6)
     }
 
+    /// Describes the current behaviour, not a requirement: the derived parameters are calculated
+    /// without a temperature adjustment and the adjustment bits of a reading are not used. Whether they
+    /// should be is an open question about accuracy.
     func testDerivedResultIgnoresTemperatureAdjustmentBits() {
         let parameters = Libre1DerivedAlgorithmParameters(slope_slope: 0.0001, slope_offset: 0.001, offset_slope: 0.1, offset_offset: 1, isValidForFooterWithReverseCRCs: 0, extraSlope: 1, extraOffset: 0, sensorSerialNumber: "S")
         let positive = parse(frame(raw: [500, 500, 500, 500, 500, 500, 500], adjustment: 10), parameters: parameters).bleGlucose.first?.glucoseLevelRaw
@@ -202,7 +207,9 @@ final class LibreCoverageRealDataTests: XCTestCase {
 
     // MARK: - streaming unlock
 
-    func testStreamingUnlockPayloadMatchesKnownVector() {
+    /// Output recorded from the current implementation. The UID and the patch info come from two
+    /// different sensors, so this is not a real unlock; it only detects changes of the calculation.
+    func testStreamingUnlockPayloadMatchesRecordedOutput() {
         let payload = Libre2BLEUtilities.streamingUnlockPayload(sensorUID: uid, info: LibreCoverageBytes.data(hex: LibreCoverageSamples.miaoMiaoPatchInfo), enableTime: 42, unlockCount: 1)
         XCTAssertEqual(Data(payload).hexEncodedString(), "2b000000fc0c79c72c2d2bcf")
     }

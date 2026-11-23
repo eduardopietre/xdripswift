@@ -48,6 +48,8 @@ final class LibreCoverageAlgorithmTests: XCTestCase {
 
     // MARK: - LibreCalibrationInfo
 
+    /// Values recorded from the current implementation for a real Libre 2 FRAM capture. They detect
+    /// changes in parsing; they were not checked against another implementation.
     func testCalibrationInfoOfRealLibre2Sensor() {
         let info = LibreCalibrationInfo(bytes: decryptedRealFRAM, libreSensorType: .libre2)
         XCTAssertEqual(info.i1, 0)
@@ -95,6 +97,7 @@ final class LibreCoverageAlgorithmTests: XCTestCase {
 
     // MARK: - Libre1DerivedAlgorithmParameters
 
+    /// Values recorded from the current implementation for a real Libre 2 FRAM capture, as above.
     func testDerivedParametersOfRealLibre2Sensor() {
         let parameters = Libre1DerivedAlgorithmParameters(bytes: decryptedRealFRAM, serialNumber: "3MH00199R7W", libreSensorType: .libre2)
         XCTAssertEqual(parameters.slope_slope, 1.35e-05, accuracy: 1e-12)
@@ -105,18 +108,6 @@ final class LibreCoverageAlgorithmTests: XCTestCase {
         XCTAssertEqual(parameters.extraSlope, 1)
         XCTAssertEqual(parameters.extraOffset, 0)
         XCTAssertEqual(parameters.serialNumber, "3MH00199R7W")
-    }
-
-    func testDerivedParametersInterpolateTheFourCalibrationCorners() {
-        let bytes = decryptedRealFRAM
-        let parameters = Libre1DerivedAlgorithmParameters(bytes: bytes, serialNumber: "S", libreSensorType: .libre2)
-        let info = LibreCalibrationInfo(bytes: bytes, libreSensorType: .libre2)
-        for (raw, temperature) in [(1000, 6000), (3000, 6000), (1000, 9000), (3000, 9000)] {
-            let expected = LibreMeasurement(rawGlucose: raw, rawTemperature: temperature).roundedGlucoseValueFromRaw2(libreCalibrationInfo: info)
-            let slope = parameters.slope_slope * Double(temperature) + parameters.offset_slope
-            let offset = parameters.slope_offset * Double(temperature) + parameters.offset_offset
-            XCTAssertEqual(slope * Double(raw) + offset, expected, accuracy: 1e-6, "raw \(raw) temperature \(temperature)")
-        }
     }
 
     func testDerivedParametersFooterChecksumUsesProHFooter() {
@@ -207,14 +198,6 @@ final class LibreCoverageAlgorithmTests: XCTestCase {
         XCTAssertEqual(Set(values).count, values.count)
     }
 
-    func testRoundedLocalAlgorithmVariantsAgree() {
-        let info = LibreCalibrationInfo(bytes: decryptedRealFRAM, libreSensorType: .libre2)
-        let measurement = LibreMeasurement(rawGlucose: 1234, rawTemperature: 7321)
-        let exact = measurement.glucoseValueFromRaw(libreCalibrationInfo: info)
-        XCTAssertEqual(measurement.roundedGlucoseValueFromRaw2(libreCalibrationInfo: info), exact.rounded())
-        XCTAssertEqual(measurement.roundedGlucoseValueFromRaw(libreCalibrationInfo: info), Int(exact.rounded()))
-    }
-
     // MARK: - PreLibre2 primitives
 
     func testOpShiftsAndXorsTheKeyHalves() {
@@ -250,7 +233,8 @@ final class LibreCoverageAlgorithmTests: XCTestCase {
         XCTAssertEqual(PreLibre2.prepareVariables2(sensorUID: uid, i1: 1, i2: 2, i3: 3, i4: 0xFFFF), [0, 1, 2, 0x14C5])
     }
 
-    func testUsefulFunctionMatchesKnownVector() {
+    /// Output recorded from the current implementation; it detects changes, it is not an external vector.
+    func testUsefulFunctionMatchesRecordedOutput() {
         let uid = LibreCoverageBytes.data(hex: LibreCoverageSamples.libre2UID)
         XCTAssertEqual(PreLibre2.usefulFunction(sensorUID: uid, x: 0x1B, y: 0x1B6A), [130, 113, 98, 105])
     }

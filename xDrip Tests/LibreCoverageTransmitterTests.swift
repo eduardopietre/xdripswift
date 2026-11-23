@@ -200,8 +200,8 @@ final class LibreCoverageTransmitterTests: XCTestCase {
         transmitter.testRange()
         XCTAssertNotNil(transmitter.repeatingTimer)
         XCTAssertNil(UserDefaults.standard.previousRawGlucoseValues)
+        // stop the replay timer so it does not fire during later tests
         transmitter.repeatingTimer = nil
-        XCTAssertNil(transmitter.repeatingTimer)
     }
 
     // MARK: - CGMLibre2Transmitter BLE frames

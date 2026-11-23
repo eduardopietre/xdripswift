@@ -81,7 +81,9 @@ final class AppCoverageAlertKindTests: XCTestCase {
     }
 
     func testMmolModeComparesStoredValuesWithDecimalPrecision() {
-        // mg/dL rounds to whole numbers, mmol/L keeps one decimal of the stored mg/dL value.
+        // Describes the current behaviour, not a requirement: in mmol/L mode the stored mg/dL value is
+        // rounded to one decimal without converting it, so 69.6 mg/dL is below a 70 mg/dL low limit for
+        // mmol/L users but not for mg/dL users, although both are shown at the limit.
         let reading = AppCoverageFactory.reading(69.6, at: Date(), in: core)
         XCTAssertFalse(check(.low, entry: entry(.low, value: 70), last: reading).alertNeeded)
         UserDefaults.standard.bloodGlucoseUnitIsMgDl = false

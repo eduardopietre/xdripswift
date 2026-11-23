@@ -41,6 +41,8 @@ final class AlgorithmCoverageSensorNoiseTests: XCTestCase {
         let expectation = expectation(forNotification: .sensorNoiseHistoryDidChange, object: sensor.id)
         manager.update(activeSensor: sensor, now: now)
         wait(for: [expectation], timeout: 2)
+        // The calculation itself is checked with hand-computed values in SensorNoiseClassificationTests;
+        // this test checks that the manager stores the calculator's result on the sensor.
         let expected = SensorNoiseCalculator().calculate(readings: zigzagReadings(count: 12, endingAt: now))
         XCTAssertEqual(sensor.shortTermNoise?.doubleValue ?? -1, try XCTUnwrap(expected.shortTermNoise), accuracy: 0.000_001)
         XCTAssertNil(sensor.longTermNoise)
