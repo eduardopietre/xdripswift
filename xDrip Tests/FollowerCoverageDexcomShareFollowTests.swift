@@ -169,8 +169,10 @@ private final class ShareKeepAliveSpy: FollowerBackgroundKeepAliveManaging {
         }
     }
 
+    /// Readings in the shape Dexcom Share sends: ST and WT carry only the UTC milliseconds, DT also
+    /// carries the offset of the uploader's local time, which is "+" east of UTC.
     private func egvJSON(_ readings: [(Int64, Int)]) -> String {
-        "[" + readings.map { #"{"DT":"/Date(\#($0.0))/","ST":"/Date(\#($0.0)-0700)/","WT":"Date(\#($0.0))","Value":\#($0.1)}"# }.joined(separator: ",") + "]"
+        "[" + readings.map { #"{"DT":"Date(\#($0.0)+0100)","ST":"Date(\#($0.0))","WT":"Date(\#($0.0))","Value":\#($0.1)}"# }.joined(separator: ",") + "]"
     }
 
     private func waitUntil(timeout: TimeInterval = 5, _ condition: () -> Bool) async {
@@ -285,6 +287,18 @@ private final class ShareKeepAliveSpy: FollowerBackgroundKeepAliveManaging {
         await waitUntil { !ShareFollowStubProtocol.requests.isEmpty }
         try? await Task.sleep(nanoseconds: 300_000_000)
         XCTAssertTrue(delegate.received.isEmpty)
+    }
+
+    /// The display time DT is the fallback when ST cannot be read. Its offset is "+0100" east of UTC;
+    /// it was glued onto the milliseconds, which gave a date many thousands of years ahead.
+    func testDisplayTimeWithOffsetEastOfUTCIsReadAsTheSameInstant() async {
+        UserDefaults.standard.dexcomShareRegion = .us
+        serve(egvs: [#"[{"DT":"Date(1800000000000+0100)","ST":"nope","WT":"","Value":101},{"DT":"/Date(1800000300000-0700)/","ST":"nope","WT":"","Value":102}]"#])
+        let manager = makeManager()
+        manager.download()
+        await waitUntil { !self.delegate.received.isEmpty }
+        let readings = delegate.received.first ?? []
+        XCTAssertEqual(Set(readings.map(\.timeStamp)), [Date(timeIntervalSince1970: 1_800_000_000), Date(timeIntervalSince1970: 1_800_000_300)])
     }
 
     func testManualLogoutBlocksDownloadsAndLoginReenables() async {
