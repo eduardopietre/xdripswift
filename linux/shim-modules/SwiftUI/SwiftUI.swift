@@ -9,6 +9,8 @@
 import Foundation
 // SwiftUI on iOS makes UIKit visible too, so files importing only SwiftUI can use UIColor.
 @_exported import UIKit
+// SwiftUI on iOS also re-exports Combine (ObservableObject, @Published).
+@_exported import Combine
 
 // Minimal stand-in for SwiftUI on Linux: only the value types that app models and constants
 // hold (`Color`), never views. Files that use views cannot be compiled on Linux at all.
@@ -101,4 +103,23 @@ public struct Font: Equatable, Hashable {
         public static let heavy = Weight(value: 8)
         public static let black = Weight(value: 9)
     }
+}
+
+/// Minimal stand-in for SwiftUI's `Animation`. Animations have no effect on Linux.
+public struct Animation: Equatable, Hashable {
+    public static let `default` = Animation()
+    public static let linear = Animation()
+    public static let easeIn = Animation()
+    public static let easeOut = Animation()
+    public static let easeInOut = Animation()
+
+    public static func linear(duration: Double) -> Animation { Animation() }
+    public static func easeIn(duration: Double) -> Animation { Animation() }
+    public static func easeOut(duration: Double) -> Animation { Animation() }
+    public static func easeInOut(duration: Double) -> Animation { Animation() }
+}
+
+/// Runs `body` immediately, as there is nothing to animate on Linux.
+public func withAnimation<Result>(_ animation: Animation? = .default, _ body: () throws -> Result) rethrows -> Result {
+    try body()
 }

@@ -1,0 +1,6 @@
+# Glucose chart presentation state: y-axis retention, basal layout direction and delayed state.
+module  SwiftUI
+decl    xDrip/SwiftUIViews/GlucoseChart/GlucoseChartView.swift | ChartDelayedState, GlucoseChartYAxisRetentionState, GlucoseChartBasalLayout
+members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key, renderBasalDownwards
+# The cleanup tests drive GlucoseChartStateManager, which loads chart data from CoreData.
+test    xDrip Tests/GlucoseChartYAxisRetentionTests.swift | without testCleanupRejectsAlreadyQueuedPublication, testCleanupResetsCacheBeforeFollowingLoad

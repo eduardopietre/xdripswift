@@ -8,8 +8,8 @@
 
 // Example snippet: exercises real app code from a plain script on Linux.
 //
-// Run with `linux/xdrip-linux.sh snippet linux/snippets/libre2-assembler-demo.swift` (all suites,
-// because it uses both the Libre 2 assembler and the Dexcom G6 authentication request).
+// Run with `linux/xdrip-linux.sh snippet linux/snippets/libre2-assembler-demo.swift libre2-frame-assembler
+// dexcom-g6-bluetooth-slot` (it uses the Libre 2 assembler and the Dexcom G6 authentication request).
 
 import Foundation
 @testable import xdrip

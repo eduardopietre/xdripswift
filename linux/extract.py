@@ -19,6 +19,9 @@ Usage:
         need CoreData. For an extension (e.g. `extension Swift.Double: RawRepresentable`) the conformances are
         dropped, as the members they require are not copied.
 
+    extract.py copy <file>
+        The whole file, with the same Linux adjustments as the other modes (see linux_compatible).
+
     extract.py without <file> <member>[,<member>...]
         The whole file except the listed members (at any depth), e.g. the test methods that need
         UIKit or CoreData, so the rest of a test file can still run. The file's imports are kept.
@@ -168,11 +171,16 @@ def linux_compatible(line):
 
 
 def main():
-    if len(sys.argv) < 4:
+    if len(sys.argv) < 3:
         sys.exit(__doc__)
     mode, path = sys.argv[1], sys.argv[2]
     with open(path, encoding='utf-8') as f:
         lines = f.read().split('\n')
+    if mode == 'copy':
+        print('\n'.join(linux_compatible(line) for line in lines), end='')
+        return
+    if len(sys.argv) < 4:
+        sys.exit(__doc__)
     if mode == 'decl':
         names = [n.strip() for n in sys.argv[3].split(',') if n.strip()]
         out, found = decl(lines, names)

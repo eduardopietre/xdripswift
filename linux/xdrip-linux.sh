@@ -34,10 +34,11 @@ flat() { printf '%s' "$1" | tr '/ ' '__'; }
 
 all_suites() { for f in "$SUITES_DIR"/[!_]*.txt; do basename "$f" .txt; done; }
 
-# Copies one source into the package, flattening its path into a unique file name.
+# Copies one source into the package, flattening its path into a unique file name. Goes through
+# extract.py so that Objective-C-only attributes are dropped like in extracted pieces.
 place() { # <repo-relative path> <destination dir>
     [[ -f "$ROOT/$1" ]] || die "missing file: $1"
-    cp "$ROOT/$1" "$2/$(flat "$1")"
+    python3 "$ROOT/linux/extract.py" copy "$ROOT/$1" > "$2/$(flat "$1")" || die "copy failed: $1"
 }
 
 # Copies the lines from the first match of <start-regex> up to, not including, the first later
