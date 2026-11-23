@@ -115,7 +115,7 @@ A module's `DEPENDENCIES` file lists the shim modules it imports.
    `git checkout --` the file.
 5. When a test fails, find out whether it fails on iOS too before blaming Linux (see below).
 
-### Current suites (264 tests on `linux_experiments`, based on `fixes-and-etc`)
+### Current suites (276 tests on `linux_experiments`, based on `fixes-and-etc`)
 
 | Suite | Test file (tests run on Linux) | Left out |
 |---|---|---|
@@ -142,8 +142,12 @@ A module's `DEPENDENCIES` file lists the shim modules it imports.
 | `add-device-screen-lock` | AddDeviceScreenLockPolicyTests (4), #418 | |
 | `dexcom-session-stop-detection` | DexcomSessionStopDetectionTests (4), #775 | |
 | `calendar-share-event-location` | CalendarShareEventLocationTests (3), #269 | |
+| `loop-share-sensor-session` | LoopShareSensorSessionTests (2), #329 | |
+| `system-time-zone-change` | SystemTimeZoneChangeObserverTests (2), #405 | |
+| `high-alert-trend-policy` | HighAlertTrendPolicyTests (4), #694 | |
 
-NightscoutTreatmentEditSyncTests (#624) needs CoreData and only runs on macOS.
+NightscoutTreatmentEditSyncTests (#624) needs CoreData and SpeakReadingAudioPolicyTests (#741)
+needs AVFoundation; both only run on macOS.
 
 Not ported (cost outweighs value; they are mostly CoreData, UIKit, notifications or networking
 managers): FollowerSettings, LibreLinkUpDownloadChain, BasalInjection, BatteryHistory,
@@ -182,6 +186,23 @@ SensorHealthIssueManager, TroubleshootingLog.
   that commit without changing behaviour, so the test compiles and fails), then one commit with
   the fix and `#<issue>` in the message. Add a Linux suite for the test when possible and show it
   failing before and passing after.
+
+### Upstream issue status (`linux_experiments`)
+
+Fixed with a regression test commit followed by a fix commit: #283, #329 (fields shared; iAPS
+and Trio must adopt them), #337, #405, #418, #560, #624, #636, #694 (opt-in, high alerts only),
+#741 (opt-in), #775, #781, #269. #795 has only a fix commit (layout-only, no unit test possible).
+
+Recorded without commits, by decision:
+- #762: solved by the open upstream PR #763 (by the reporter, with tests); skipped until it is merged.
+- #540: already done, contact images use the app's semantic colours since 8e13e50.
+- #111: already done, Speak Glucose can say only the value since 9ef9b98.
+- #246 / #190: the delta is per 5 minutes by definition; "use five minute readings" exists.
+- #708, #628: not reproducible in the current code (reported before the v7 rewrites), no sample data.
+- #621: asks for a UX design, no defined behaviour to implement.
+- #695: a new alarm type (carbs required), a large feature left for a product decision.
+- #509: a question about logs, answered by the v7 Troubleshooting Log.
+- #493: adopting a third-party build script that cannot be tested without macOS.
 
 ## Git
 
