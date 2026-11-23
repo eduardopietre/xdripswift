@@ -377,10 +377,10 @@ extension NightscoutDeviceStatus {
     /// enacted can use different formats (with or without fractional seconds or an offset); compared as
     /// text only when one of them cannot be parsed.
     static func isTimestamp(_ timestamp: String?, newerThan other: String?) -> Bool {
-        func date(_ text: String?) -> Date? {
+        func parse(_ text: String?) -> Date? {
             text.flatMap { ISO8601DateFormatter.withFractionalSeconds.date(from: $0) ?? ISO8601DateFormatter.withoutFractionalSeconds.date(from: $0) }
         }
-        if let date = date(timestamp), let otherDate = date(other) {
+        if let date = parse(timestamp), let otherDate = parse(other) {
             return date > otherDate
         }
         return (timestamp ?? "") > (other ?? "")
