@@ -999,11 +999,29 @@ public class LoopManager: NSObject {
 }
 
 /// Sensor session details added to each reading shared with OS-AID apps.
+///
+/// With the session start and transmitter ID on each reading, an AID app that uploads to
+/// Nightscout can create the sensor change (SAGE) automatically, as FreeAPS X did with the Dexcom
+/// app's data (#329). The keys and date format match that data. Unknown details are left out.
 enum LoopShareSensorSession {
+    private static let dateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }()
+
     /// - parameters:
     ///     - sessionStartDate: start of the active sensor session, nil if unknown
     ///     - transmitterID: ID of the active transmitter, nil if unknown
     static func fields(sessionStartDate: Date?, transmitterID: String?) -> [String: Any] {
-        [:]
+        var fields: [String: Any] = [:]
+        if let sessionStartDate {
+            fields["sessionStartDate"] = dateFormatter.string(from: sessionStartDate)
+        }
+        if let transmitterID, !transmitterID.isEmpty {
+            fields["transmitterID"] = transmitterID
+        }
+        return fields
     }
 }
