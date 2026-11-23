@@ -1,0 +1,14 @@
+# Glucose unit conversion and formatting (Double), TimeInterval helpers and Date helpers.
+# `round(toDecimalPlaces:)` calls `Darwin.round`, which does not exist on Linux, so it and
+# `bgValueRounded`, which uses it, are left out; their tests run on macOS only.
+src     xDrip/Extensions/Double.swift | without round, bgValueRounded
+src     xDrip/Constants/ConstantsBloodGlucose.swift
+# `toStringInUserLocale` needs ConstantsUI (SwiftUI colours and AM/PM symbols); it is covered on macOS.
+src     xDrip/Extensions/Date.swift | without toStringInUserLocale
+src     xDrip/Texts/TextsCommon.swift
+include _texts-home-view
+include _foundation-extensions
+# Rounding tests call `round(toDecimalPlaces:)` (Darwin.round, see above).
+test    xDrip Tests/DoubleGlucoseConversionTests.swift | without testRoundToDecimalPlacesRoundsHalfAwayFromZero, testBgValueRoundedUsesUnitPrecision
+test    xDrip Tests/TimeIntervalExtensionTests.swift
+test    xDrip Tests/DateExtensionTests.swift

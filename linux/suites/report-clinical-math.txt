@@ -1,0 +1,19 @@
+# Clinical report math (GMI, estimated HbA1c, IFCC conversion, chart domains), AGP display
+# smoothing, Loopalyzer bucket geometry, report range labels and the Home chart range steps.
+# ReportModels.swift is SwiftUI; only its value types are needed (colours come from the shim).
+decl    xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportPeriod, GlucoseReportLanguage, GlucoseReportText, GlucoseReportClinicalConstants, GlucoseReportClinicalMath, GlucoseReportAGPDisplayPoints, GlucoseReportAGPPoint, GlucoseReportTrendPoint, GlucoseReportTrendInterval, GlucoseReportLoopalyzerPoint, GlucoseReportRangeDistribution, GlucoseReportRangeBucket
+members xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportColors | low, target, high
+src     xDrip/Managers/Statistics/GlucoseRangeDistribution.swift
+members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol, minutesToDaysAndHours
+# ReportFormatting is Foundation-only, but `percentage(_:decimals:)` calls `round(toDecimalPlaces:)`
+# (Darwin.round, not on Linux), so the members that do not need it are copied.
+members xDrip/SwiftUIViews/Reports/ReportFormatting.swift | GlucoseReportFormatting | glucose, axisGlucose, gmi, number, compactDuration, hoursPerDay
+src     xDrip/Constants/ConstantsBloodGlucose.swift
+src     xDrip/SwiftUIViews/RootHome/RootHomeChartRange.swift
+src     xDrip/Texts/TextsCommon.swift
+include _app-colors
+include _foundation-extensions
+module  SwiftUI
+test    xDrip Tests/GlucoseReportClinicalMathTests.swift
+test    xDrip Tests/RootHomeChartRangeTests.swift
+test    xDrip Tests/GlucoseReportFormattingTests.swift

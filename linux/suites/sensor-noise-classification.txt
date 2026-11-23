@@ -1,0 +1,5 @@
+# Sensor noise classification thresholds, display state, calibration boundaries, long-term
+# percentile and history cadence of SensorNoiseCalculator.
+include _sensor-noise-calculator
+include _foundation-extensions
+test    xDrip Tests/SensorNoiseClassificationTests.swift

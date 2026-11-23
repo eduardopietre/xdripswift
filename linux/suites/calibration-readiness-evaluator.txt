@@ -1,0 +1,10 @@
+# Calibration readiness thresholds: entered value bands, trend slope limits, reading age and
+# lookback rules, sensor noise mapping and the combined evaluation level.
+decl xDrip/SwiftUIViews/Sensor/CalibrationReadiness.swift | CalibrationReadinessReading, CalibrationReadinessEvaluator, CalibrationReadinessLevel, CalibrationReadinessCheck, CalibrationReadiness, CalibrationReadinessEvaluation, CalibrationSubmission, TroubleshootingCalibrationReadinessLevel, TroubleshootingCalibrationReadiness, CalibrationReadinessConstants
+decl xDrip/Utilities/TroubleshootingLog.swift | TroubleshootingCalibrationReadinessLevel, TroubleshootingCalibrationReadiness
+src  xDrip/Texts/TextsCommon.swift
+include _texts-home-view
+include _sensor-noise-calculator
+include _foundation-extensions
+module SwiftUI
+test xDrip Tests/CalibrationReadinessEvaluatorTests.swift
