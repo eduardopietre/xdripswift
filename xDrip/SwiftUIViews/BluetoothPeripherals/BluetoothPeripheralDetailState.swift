@@ -3345,7 +3345,9 @@ extension BluetoothPeripheralDetailState: BluetoothTransmitterDelegate {
 
 /// Whether the screen is kept awake while a CGM or other Bluetooth device is being added.
 ///
-/// Scanning, connecting and pairing must not be interrupted by the screen locking.
+/// Scanning, connecting and pairing must not be interrupted by the screen locking. Finding the
+/// device is not the end: it still has to connect and, for a Libre 2, be unlocked, which fails if
+/// the screen locks in between (#418). The screen therefore stays awake until the connection.
 enum AddDeviceScreenLockPolicy {
     enum Event {
         case scanningStarted
@@ -3360,10 +3362,10 @@ enum AddDeviceScreenLockPolicy {
         switch event {
         case .scanningStarted:
             return true
-        case .scanningFailed, .deviceFound, .screenClosed:
-            return false
-        case .connected:
+        case .deviceFound:
             return nil
+        case .scanningFailed, .connected, .screenClosed:
+            return false
         }
     }
 }
