@@ -1,0 +1,3 @@
+# Keeping the screen awake while a CGM is added (#418). The detail state itself needs UIKit and BLE.
+decl xDrip/SwiftUIViews/BluetoothPeripherals/BluetoothPeripheralDetailState.swift | AddDeviceScreenLockPolicy
+test xDrip Tests/AddDeviceScreenLockPolicyTests.swift
