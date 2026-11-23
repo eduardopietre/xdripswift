@@ -58,7 +58,7 @@ final class M5StackPacketRoundTripTests: XCTestCase {
     }
 
     func testTextsWithMultiByteCharactersRoundTripInAnyOrder() throws {
-        var generator = SystemRandomNumberGenerator()
+        var generator = SplitMix64(seed: 0x4D35)
         for text in Self.texts {
             let packets = try XCTUnwrap(M5StackUtilities.splitTextInBLEPackets(text: text, maxBytesInOneBLEPacket: 20, opCode: 0x0E))
             XCTAssertEqual(Self.assemble(packets), text)

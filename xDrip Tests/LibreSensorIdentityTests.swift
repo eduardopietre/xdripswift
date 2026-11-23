@@ -84,7 +84,7 @@ final class LibreSensorIdentityTests: XCTestCase {
     }
 
     func testRandomSerialNumbersRoundTripThroughTheUID() {
-        var generator = SystemRandomNumberGenerator()
+        var generator = SplitMix64(seed: 0x5345)
         for _ in 0..<500 {
             var characters = (0..<9).map { _ in Self.alphabet.randomElement(using: &generator)! }
             // the last character only carries 3 bits, its two lowest bits are always zero

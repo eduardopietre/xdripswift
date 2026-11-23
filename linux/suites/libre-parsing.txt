@@ -18,6 +18,7 @@ src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/Libre1DerivedAlgorithmPar
 # take an OSLog parameter). Only the cases and the patch info decoding are taken; the tests call
 # Crc.LibreCrc directly.
 members xDrip/BluetoothTransmitter/CGM/Libre/Utilities/LibreSensorType.swift | LibreSensorType | cases, type
+test    xDrip Tests/SplitMix64.swift
 test    xDrip Tests/LibreFRAMCrcTests.swift
 test    xDrip Tests/LibreSensorIdentityTests.swift
 test    xDrip Tests/LibreRawMeasurementTests.swift

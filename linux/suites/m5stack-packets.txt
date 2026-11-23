@@ -6,4 +6,5 @@ include _foundation-extensions
 members xDrip/Constants/ConstantsM5Stack.swift | ConstantsM5Stack | maximumTimeBetweenTwoPacketsInMs
 # Date.swift formats dates with UI texts; the packet timeout only needs milliseconds since 1970.
 members xDrip/Extensions/Date.swift | Date | toMillisecondsAsInt64
+test    xDrip Tests/SplitMix64.swift
 test    xDrip Tests/M5StackPacketRoundTripTests.swift

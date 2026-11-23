@@ -93,7 +93,7 @@ final class LibreRawMeasurementTests: XCTestCase {
     }
 
     func testBitFieldWriteAndReadRoundTripWithoutTouchingOtherBits() {
-        var generator = SystemRandomNumberGenerator()
+        var generator = SplitMix64(seed: 0x524101)
         for _ in 0..<500 {
             let original = Data((0..<12).map { _ in UInt8.random(in: 0...255, using: &generator) })
             let byteOffset = Int.random(in: 0...3, using: &generator)
@@ -200,7 +200,7 @@ final class LibreRawMeasurementTests: XCTestCase {
         let reference = Libre1DerivedAlgorithmParameters(bytes: fram, serialNumber: "0M00009DHCR", libreSensorType: .libre1)
 
         var otherReadings = fram
-        var generator = SystemRandomNumberGenerator()
+        var generator = SplitMix64(seed: 0x524102)
         for index in Array(0..<2) + Array(4..<320) + Array(322..<0x150) {
             otherReadings[index] = UInt8.random(in: 0...255, using: &generator)
         }

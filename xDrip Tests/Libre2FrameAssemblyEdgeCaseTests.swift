@@ -26,7 +26,7 @@ final class Libre2FrameAssemblyEdgeCaseTests: XCTestCase {
     // MARK: - tests
 
     func testAnySplitOfA46ByteFrameCompletesOnTheLastFragment() {
-        var generator = SystemRandomNumberGenerator()
+        var generator = SplitMix64(seed: 0x4632)
         var splits: [[Int]] = [[20, 20, 6], [46], Array(repeating: 1, count: 46)]
         for _ in 0..<50 {
             var sizes = [Int]()

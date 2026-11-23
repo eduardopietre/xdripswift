@@ -97,7 +97,7 @@ final class Libre2DecryptionTests: XCTestCase {
 
     func testFRAMKeyStreamDoesNotDependOnTheData() {
         // decryptFRAM is a pure XOR with a key stream, so the same function also encrypts.
-        var generator = SystemRandomNumberGenerator()
+        var generator = SplitMix64(seed: 0x4C3201)
         let a = (0..<344).map { _ in UInt8.random(in: 0...255, using: &generator) }
         let b = (0..<344).map { _ in UInt8.random(in: 0...255, using: &generator) }
         let decryptedA = PreLibre2.decryptFRAM(Self.miaoMiaoUID, Self.miaoMiaoPatchInfo, a)
@@ -175,7 +175,7 @@ final class Libre2DecryptionTests: XCTestCase {
     func testAnyPayloadWithValidCrcRoundTripsUnderTheSameNonce() throws {
         // The key stream depends on the sensor UID and the 2 byte nonce only, so a payload
         // encrypted with the stream of a captured frame decrypts to exactly that payload.
-        var generator = SystemRandomNumberGenerator()
+        var generator = SplitMix64(seed: 0x4C3202)
         for _ in 0..<20 {
             let payload = (0..<42).map { _ in UInt8.random(in: 0...255, using: &generator) }
             let frame = try Self.encrypt(payload, likeFrame: Self.capturedFrames[0])
