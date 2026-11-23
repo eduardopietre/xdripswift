@@ -47,7 +47,11 @@ linux/xdrip-linux.sh test libre2-frame-assembler   # selected suites
 SWIFT_TEST_ARGS="--filter testAnubis" linux/xdrip-linux.sh test dexcom-g6-bluetooth-slot
 linux/xdrip-linux.sh snippet linux/snippets/libre2-assembler-demo.swift libre2-frame-assembler dexcom-g6-bluetooth-slot
 linux/find-type.sh SomeType OtherType              # where a type lives and what its file imports
+linux/add-test-to-xcodeproj.py NewTests.swift      # register a new file of xDrip Tests in the Xcode test target
 ```
+
+**New test files must be registered in `xdrip.xcodeproj`** or they never run on macOS: there is no
+Xcode here, so run `linux/add-test-to-xcodeproj.py <FileName.swift>` after creating one.
 
 `snippet` runs any Swift script against the real app sources (use `@testable import xdrip`),
 handy to probe behaviour or reproduce an issue quickly. It merges the given suites into one module,
@@ -59,7 +63,7 @@ so pick suites that do not extract the same declarations (default: all, which ma
 `/tmp/xdrip-linux/<suite>`) with a library module named **`xdrip`**, so the original test files
 with `@testable import xdrip` compile unchanged. Real files are **copied**, never edited; the
 Xcode project is untouched. Every copy goes through `linux/extract.py`, which also drops `@objc`
-and `dynamic` (no Objective-C runtime). Each suite builds separately (builds are cached per suite);
+and `dynamic` (no Objective-C runtime) and imports `FoundationNetworking` (URLRequest on Linux). Each suite builds separately (builds are cached per suite);
 the exit code is non-zero when any suite fails.
 
 Each `linux/suites/<name>.txt` lists what goes in (`#` comments allowed, paths relative to the
@@ -111,7 +115,7 @@ A module's `DEPENDENCIES` file lists the shim modules it imports.
    `git checkout --` the file.
 5. When a test fails, find out whether it fails on iOS too before blaming Linux (see below).
 
-### Current suites (229 tests on `linux_experiments`, based on `fixes-and-etc`)
+### Current suites (264 tests on `linux_experiments`, based on `fixes-and-etc`)
 
 | Suite | Test file (tests run on Linux) | Left out |
 |---|---|---|
@@ -130,6 +134,16 @@ A module's `DEPENDENCIES` file lists the shim modules it imports.
 | `glucose-chart-y-axis-retention` | GlucoseChartYAxisRetentionTests (10) | 2 (GlucoseChartStateManager/CoreData) |
 | `bg-reading-downstream-policy` | BgReadingDownstreamPolicyTests (3) | BgReadingTrendTests (CoreData) |
 | `therapy-metrics` | TherapyMetricsTests (35) | 13 (CoreData, rendering, settings view models, UserDefaults bridging) |
+| `healthkit-reading-policy` | HealthKitReadingPolicyTests (3), #283 | |
+| `treatment-scale` | TreatmentScaleTests (5), #781 | |
+| `nightscout-credentials-check` | NightscoutCredentialsCheckTests (4), #636 | |
+| `glucose-chart-plot-value` | GlucoseChartPlotValueTests (4), #560 | |
+| `bg-reading-alert-body` | BgReadingAlertBodyTests (4), #337 | |
+| `add-device-screen-lock` | AddDeviceScreenLockPolicyTests (4), #418 | |
+| `dexcom-session-stop-detection` | DexcomSessionStopDetectionTests (4), #775 | |
+| `calendar-share-event-location` | CalendarShareEventLocationTests (3), #269 | |
+
+NightscoutTreatmentEditSyncTests (#624) needs CoreData and only runs on macOS.
 
 Not ported (cost outweighs value; they are mostly CoreData, UIKit, notifications or networking
 managers): FollowerSettings, LibreLinkUpDownloadChain, BasalInjection, BatteryHistory,
@@ -154,6 +168,20 @@ SensorHealthIssueManager, TroubleshootingLog.
 - A Linux pass validates logic only; BLE, UI, CoreData, notifications and background execution
   still need a macOS run. Tests that are flaky only when run in parallel on the simulator
   are mostly CoreData-based and are not covered here.
+
+## Working on upstream issues
+
+- Issues live in `JohanDegraeve/xdripswift`. Its REST endpoints are blocked in cloud sessions;
+  read issues with the search API instead, e.g.
+  `gh api -X GET search/issues -f q='repo:JohanDegraeve/xdripswift is:issue 624 in:number'`
+  (gives title, body and comment count, not the comments). Upstream PR heads can be fetched with
+  `git fetch https://github.com/JohanDegraeve/xdripswift refs/pull/<n>/head:refs/remotes/upstream-pr/<n>`.
+- Public projects the app talks to (Nightscout, iAPS, Trio) can be cloned into the scratchpad to
+  check their real behaviour before deciding a fix.
+- Per issue: one commit with a regression test (if the code needs a seam to be testable, add it in
+  that commit without changing behaviour, so the test compiles and fails), then one commit with
+  the fix and `#<issue>` in the message. Add a Linux suite for the test when possible and show it
+  failing before and passing after.
 
 ## Git
 
