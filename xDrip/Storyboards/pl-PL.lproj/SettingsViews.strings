@@ -811,7 +811,8 @@
 "therapy.treatmentScale" = "Skala terapii";
 "therapy.scaleStandard" = "Standard";
 "therapy.scaleSmallDoses" = "Małe dawki";
-"therapy.treatmentScaleExplanation" = "Małe dawki ułatwiają dostrzeżenie małych znaczników. Bolusy: 0.1–2.0U; węglowodany: 1–50g. Większe ilości mają największy znacznik.";
+"therapy.scaleExtraSmallDoses" = "Bardzo małe";
+"therapy.treatmentScaleExplanation" = "Małe dawki ułatwiają dostrzeżenie małych znaczników. Bolusy: 0.1–2.0U; węglowodany: 1–50g. Większe ilości mają największy znacznik. Bardzo małe dawki: bolusy 0.05–1.0U; węglowodany 0.5–20g, z większymi znacznikami.";
 
 /* Live Activity styles */
 "settingsviews_liveActivityTypeMinimal" = "Minimalny";

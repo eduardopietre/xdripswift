@@ -568,7 +568,8 @@
 "therapy.treatmentScale" = "مقياس العلاجات";
 "therapy.scaleStandard" = "عادي";
 "therapy.scaleSmallDoses" = "جرعة صغيرة";
-"therapy.treatmentScaleExplanation" = "الجرعات الصغيرة أوضح بعلامات أكبر. تتدرج علامات البلعة من 0.1–2.0U والكربوهيدرات من 1–50g. الكميات الأعلى تستخدم أكبر علامة.";
+"therapy.scaleExtraSmallDoses" = "جرعة صغيرة جدًا";
+"therapy.treatmentScaleExplanation" = "الجرعات الصغيرة أوضح بعلامات أكبر. تتدرج علامات البلعة من 0.1–2.0U والكربوهيدرات من 1–50g. الكميات الأعلى تستخدم أكبر علامة. الجرعات الصغيرة جدًا: البلعة 0.05–1.0U والكربوهيدرات 0.5–20g بعلامات أكبر.";
 
 /* Live Activity styles */
 "settingsviews_liveActivityTypeMinimal" = "الحد الأدنى";

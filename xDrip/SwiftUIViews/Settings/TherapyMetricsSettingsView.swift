@@ -78,14 +78,13 @@ struct TreatmentSettingsViewModel: SettingsNativeSectionProvider {
         if group == .scale {
             return [SettingsRow(id: "treatments.scale", title: TherapyTexts.text("treatmentScale"),
                 accessory: .none, control: .menu(options: {
-                    let usesSmallDoses = UserDefaults.standard.useSmallDoseTreatmentScale
-                    return [
-                        SettingsMenuOption(title: TherapyTexts.text("scaleStandard"), isSelected: !usesSmallDoses),
-                        SettingsMenuOption(title: TherapyTexts.text("scaleSmallDoses"), isSelected: usesSmallDoses)
-                    ]
+                    let selected = UserDefaults.standard.treatmentScale
+                    return zip(GlucoseChartTreatmentScale.allCases, ["scaleStandard", "scaleSmallDoses", "scaleExtraSmallDoses"]).map {
+                        SettingsMenuOption(title: TherapyTexts.text($0.1), isSelected: $0.0 == selected)
+                    }
                 }, selectOption: { index in
-                    guard (0...1).contains(index) else { return }
-                    UserDefaults.standard.useSmallDoseTreatmentScale = index == 1
+                    guard let scale = GlucoseChartTreatmentScale(rawValue: index) else { return }
+                    UserDefaults.standard.treatmentScale = scale
                 }))]
         }
         let isInsulin = group == .insulin
