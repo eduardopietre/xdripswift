@@ -1,0 +1,3 @@
+# Optionally skipping high alerts while the glucose is falling (#694). AlertKind itself needs CoreData.
+decl xDrip/Managers/Alerts/AlertKind.swift | HighAlertTrendPolicy
+test xDrip Tests/HighAlertTrendPolicyTests.swift
