@@ -374,7 +374,7 @@ public enum AlertKind: Int, CaseIterable {
                     if lastBgReading.finalValue == 0.0 || lastButOneBgReading.finalValue == 0.0 { return (false, nil, nil, nil) }
                     // now do the actual check if alert is applicable or not. As this is fast drop, we'll only fire when *under* the trigger value
                     if (lastButOneBgReading.finalValue.bgValueRounded(mgDl: isMgDl) - lastBgReading.finalValue.bgValueRounded(mgDl: isMgDl) > Double(currentAlertEntry.value).bgValueRounded(mgDl: isMgDl)) && (lastBgReading.finalValue.bgValueRounded(mgDl: isMgDl) < Double(currentAlertEntry.triggerValue).bgValueRounded(mgDl: isMgDl)) {
-                            return (true, createAlertBodyForBgReadingAlerts(bgReading: lastBgReading, alertKind: self), createAlertTitleForBgReadingAlerts(alertKind: self), nil)
+                            return (true, createAlertBodyForBgReadingAlerts(bgReading: lastBgReading, alertKind: self, previousBgReading: lastButOneBgReading), createAlertTitleForBgReadingAlerts(alertKind: self), nil)
                     } else { return (false, nil, nil, nil) }
                 } else { return (false, nil, nil, nil) }
             } else { return (false, nil, nil, nil) }
@@ -390,7 +390,7 @@ public enum AlertKind: Int, CaseIterable {
                     if lastBgReading.finalValue == 0.0 || lastButOneBgReading.finalValue == 0.0 { return (false, nil, nil, nil) }
                     // now do the actual check if alert is applicable or not. As this is fast rise, we'll only fire when *over* the trigger value
                     if lastBgReading.finalValue.bgValueRounded(mgDl: isMgDl) - lastButOneBgReading.finalValue.bgValueRounded(mgDl: isMgDl) > Double(currentAlertEntry.value).bgValueRounded(mgDl: isMgDl) && (lastBgReading.finalValue.bgValueRounded(mgDl: isMgDl) > Double(currentAlertEntry.triggerValue).bgValueRounded(mgDl: isMgDl)) {
-                            return (true, createAlertBodyForBgReadingAlerts(bgReading: lastBgReading, alertKind: self), createAlertTitleForBgReadingAlerts(alertKind: self), nil)
+                            return (true, createAlertBodyForBgReadingAlerts(bgReading: lastBgReading, alertKind: self, previousBgReading: lastButOneBgReading), createAlertTitleForBgReadingAlerts(alertKind: self), nil)
                         } else { return (false, nil, nil, nil) }
                 } else { return (false, nil, nil, nil) }
             } else { return (false, nil, nil, nil) }
@@ -801,11 +801,15 @@ private func createAlertTitleForBgReadingAlerts(alertKind: AlertKind) -> String 
 }
 
 // specifically for high, low, very high, very low, fast drop and fast rise because these need to show an alert body with the BG value etc
-private func createAlertBodyForBgReadingAlerts(bgReading: BgReading, alertKind: AlertKind) -> String {
-    BgReadingAlertBody.text(
-        value: bgReading.finalValue.mgDlToMmolAndToString(mgDl: UserDefaults.standard.bloodGlucoseUnitIsMgDl),
+///
+/// Fast drop and fast rise alerts pass the previous reading so the alert also says how big the
+/// change that triggered it is (#337).
+private func createAlertBodyForBgReadingAlerts(bgReading: BgReading, alertKind: AlertKind, previousBgReading: BgReading? = nil) -> String {
+    let isMgDl = UserDefaults.standard.bloodGlucoseUnitIsMgDl
+    return BgReadingAlertBody.text(
+        value: bgReading.finalValue.mgDlToMmolAndToString(mgDl: isMgDl),
         slopeArrow: bgReading.hideSlope ? nil : bgReading.slopeArrow(),
-        delta: nil
+        delta: previousBgReading.map { bgReading.unitizedDeltaString(previousBgReading: $0, showUnit: true, highGranularity: true, mgDl: isMgDl) }
     )
 }
 
@@ -824,6 +828,11 @@ enum BgReadingAlertBody {
         // add slopeArrow
         if let slopeArrow {
             returnValue = returnValue + " " + slopeArrow
+        }
+
+        // add delta, unless it is unknown ("???" when there is no usable previous reading)
+        if let delta, !delta.isEmpty, delta != "???" {
+            returnValue = returnValue + " " + delta
         }
 
         return returnValue
