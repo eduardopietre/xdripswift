@@ -951,6 +951,13 @@
 		FBF34E081100804892C2ED0D /* Libre3EphemeralExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2AC649F4810090B27021F7 /* Libre3EphemeralExchange.swift */; };
 		FC15B84699D93DCF467C1888 /* Libre3ReceiverID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEA1ADD2CF92F8ADB019B9E /* Libre3ReceiverID.swift */; };
 		FD21BFADEF60DD266BF89CCF /* Libre3AESCCMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA21BE60D595114D6A698215 /* Libre3AESCCMTests.swift */; };
+		D55E67AAD35CC2EE743B85DD /* Libre3RealtimeGlucoseReadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE46D9531C70035E5515A1 /* Libre3RealtimeGlucoseReadingTests.swift */; };
+		FCD5ED8B72DFCC4D2F4C16BB /* Libre3ProtocolTestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A79D7C091E04EA7104E4DD /* Libre3ProtocolTestFixtures.swift */; };
+		9BB6DFA072E405E3962498A7 /* Libre3PatchStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538CF932A85B0D8282796FFF /* Libre3PatchStatusTests.swift */; };
+		E1FD24C3B5074806DA990B1F /* Libre3PairingMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1AC60CE87EF82EACB1B154 /* Libre3PairingMessagesTests.swift */; };
+		93549FE162146CD2287F6445 /* Libre3NFCActivationModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99C55AA1747D8085D96B88C /* Libre3NFCActivationModelsTests.swift */; };
+		4561ADA5B41F68B401BF5FCA /* Libre3DataPlaneStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB419C72D320AED408F84B74 /* Libre3DataPlaneStateTests.swift */; };
+		DEC6011AA1753141018A1095 /* Libre3ClinicalReadingRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F952ABC5B88E7033F9427 /* Libre3ClinicalReadingRecordTests.swift */; };
 		FFB2114DEBE326EE7730D9C3 /* Libre3SensorLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC95CEE9854B691243696072 /* Libre3SensorLifecycle.swift */; };
 		418A9FA9C56A427D28DDEA55 /* Libre3IdentityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6F1833098A8258F63E643 /* Libre3IdentityStore.swift */; };
 		A64583BE4591F44B20B79957 /* Libre3CredentialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7349BC700B9B66A7346F41 /* Libre3CredentialsView.swift */; };
@@ -1599,6 +1606,13 @@
 		D4FD899627772F9100689788 /* TreatmentEntryAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatmentEntryAccessor.swift; sourceTree = "<group>"; };
 		D9C75EA5D78E3497AC44D3C8 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DA21BE60D595114D6A698215 /* Libre3AESCCMTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3AESCCMTests.swift; path = Libre3AESCCMTests.swift; sourceTree = "<group>"; };
+		B7CE46D9531C70035E5515A1 /* Libre3RealtimeGlucoseReadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3RealtimeGlucoseReadingTests.swift; sourceTree = "<group>"; };
+		C6A79D7C091E04EA7104E4DD /* Libre3ProtocolTestFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3ProtocolTestFixtures.swift; sourceTree = "<group>"; };
+		538CF932A85B0D8282796FFF /* Libre3PatchStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3PatchStatusTests.swift; sourceTree = "<group>"; };
+		5C1AC60CE87EF82EACB1B154 /* Libre3PairingMessagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3PairingMessagesTests.swift; sourceTree = "<group>"; };
+		A99C55AA1747D8085D96B88C /* Libre3NFCActivationModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3NFCActivationModelsTests.swift; sourceTree = "<group>"; };
+		BB419C72D320AED408F84B74 /* Libre3DataPlaneStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3DataPlaneStateTests.swift; sourceTree = "<group>"; };
+		1D6F952ABC5B88E7033F9427 /* Libre3ClinicalReadingRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3ClinicalReadingRecordTests.swift; sourceTree = "<group>"; };
 		DAF100022E7A000100000001 /* DataFlowPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFlowPolicy.swift; sourceTree = "<group>"; };
 		DB94A2D461B70758B5A7076D /* Libre3PatchStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3PatchStatus.swift; path = Libre3PatchStatus.swift; sourceTree = "<group>"; };
 		DC95CEE9854B691243696072 /* Libre3SensorLifecycle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3SensorLifecycle.swift; path = Libre3SensorLifecycle.swift; sourceTree = "<group>"; };
@@ -3102,6 +3116,13 @@
 			isa = PBXGroup;
 			children = (
 				DA21BE60D595114D6A698215 /* Libre3AESCCMTests.swift */,
+				B7CE46D9531C70035E5515A1 /* Libre3RealtimeGlucoseReadingTests.swift */,
+				C6A79D7C091E04EA7104E4DD /* Libre3ProtocolTestFixtures.swift */,
+				538CF932A85B0D8282796FFF /* Libre3PatchStatusTests.swift */,
+				5C1AC60CE87EF82EACB1B154 /* Libre3PairingMessagesTests.swift */,
+				A99C55AA1747D8085D96B88C /* Libre3NFCActivationModelsTests.swift */,
+				BB419C72D320AED408F84B74 /* Libre3DataPlaneStateTests.swift */,
+				1D6F952ABC5B88E7033F9427 /* Libre3ClinicalReadingRecordTests.swift */,
 				197D49EDB06F0DFE03707591 /* Libre3BleFramingTests.swift */,
 				9765C9E56F9AA7343AA09463 /* Libre3DataPlaneTests.swift */,
 				34D9952479A5C8B9A161631A /* Libre3NFCActivationCommandTests.swift */,
@@ -5011,6 +5032,13 @@
 				377EBC0A484BFC8EA77C623C /* CareLinkTests.swift in Sources */,
 				0A51F9C534B04BD682E1EF4D /* xDrip Tests/TherapyMetricsTests.swift in Sources */,
 				FD21BFADEF60DD266BF89CCF /* Libre3AESCCMTests.swift in Sources */,
+				D55E67AAD35CC2EE743B85DD /* Libre3RealtimeGlucoseReadingTests.swift in Sources */,
+				FCD5ED8B72DFCC4D2F4C16BB /* Libre3ProtocolTestFixtures.swift in Sources */,
+				9BB6DFA072E405E3962498A7 /* Libre3PatchStatusTests.swift in Sources */,
+				E1FD24C3B5074806DA990B1F /* Libre3PairingMessagesTests.swift in Sources */,
+				93549FE162146CD2287F6445 /* Libre3NFCActivationModelsTests.swift in Sources */,
+				4561ADA5B41F68B401BF5FCA /* Libre3DataPlaneStateTests.swift in Sources */,
+				DEC6011AA1753141018A1095 /* Libre3ClinicalReadingRecordTests.swift in Sources */,
 				0A0C4A524F9EC9425BDBA231 /* Libre3BleFramingTests.swift in Sources */,
 				F9924DB546D8D367F37CE666 /* Libre3DataPlaneTests.swift in Sources */,
 				C859C6C1B4CE6B335D4C86E6 /* Libre3NFCActivationCommandTests.swift in Sources */,

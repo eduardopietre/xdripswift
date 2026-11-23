@@ -26,3 +26,10 @@ test xDrip Tests/Libre3/Libre3BleFramingTests.swift
 test xDrip Tests/Libre3/Libre3DataPlaneTests.swift
 test xDrip Tests/Libre3/Libre3NFCActivationCommandTests.swift
 test xDrip Tests/Libre3/Libre3ReceiverIDTests.swift
+test xDrip Tests/Libre3/Libre3ProtocolTestFixtures.swift
+test xDrip Tests/Libre3/Libre3RealtimeGlucoseReadingTests.swift
+test xDrip Tests/Libre3/Libre3DataPlaneStateTests.swift
+test xDrip Tests/Libre3/Libre3NFCActivationModelsTests.swift
+test xDrip Tests/Libre3/Libre3PairingMessagesTests.swift
+test xDrip Tests/Libre3/Libre3ClinicalReadingRecordTests.swift
+test xDrip Tests/Libre3/Libre3PatchStatusTests.swift
