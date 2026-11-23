@@ -1,0 +1,9 @@
+# M5Stack text framing: splitting a text into BLE packets and reassembling received packets.
+src     xDrip/BluetoothTransmitter/M5Stack/Utilities/M5StackPacket.swift
+src     xDrip/BluetoothTransmitter/M5Stack/Utilities/M5StackUtilities.swift
+include _foundation-extensions
+# ConstantsM5Stack.swift also holds defaults of UI types (colours); only the packet timeout is used.
+members xDrip/Constants/ConstantsM5Stack.swift | ConstantsM5Stack | maximumTimeBetweenTwoPacketsInMs
+# Date.swift formats dates with UI texts; the packet timeout only needs milliseconds since 1970.
+members xDrip/Extensions/Date.swift | Date | toMillisecondsAsInt64
+test    xDrip Tests/M5StackPacketRoundTripTests.swift

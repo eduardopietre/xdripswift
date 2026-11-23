@@ -411,6 +411,12 @@
 		57FED30744046A2D826B81B7 /* DirectWatchCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7970B360C99EBC27912166 /* DirectWatchCompatibility.swift */; };
 		5A0100023015000100000001 /* GlucoseRangeDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0100013015000100000001 /* GlucoseRangeDistribution.swift */; };
 		5A0100043015000100000001 /* GlucoseRangeDistributionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */; };
+		5A03911BAC31439E44790D24 /* M5StackPacketRoundTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF147B467027A244CBAE3DF /* M5StackPacketRoundTripTests.swift */; };
+		EEABD835913741170A50DE93 /* LibreSensorIdentityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */; };
+		900AFAA5DAFBDD603F8F6974 /* LibreRawMeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */; };
+		17151D554B51C98CC41DDD83 /* LibreFRAMCrcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD9D1C532477F21A35B744B /* LibreFRAMCrcTests.swift */; };
+		A49DE910346CC1785A66E9D3 /* Libre2FrameAssemblyEdgeCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66E3DA763E90105AC24294 /* Libre2FrameAssemblyEdgeCaseTests.swift */; };
+		23B2B348B9A8F3D865DCEB59 /* Libre2DecryptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566E241B555E031E97C80D7 /* Libre2DecryptionTests.swift */; };
 		1EC47BA1DCECD7E1A18681A6 /* SensorNoiseClassificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */; };
 		3A57F69751805187BFEDC71F /* CalibrationReadinessEvaluatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72FA8A6C1FBD89DE073078 /* CalibrationReadinessEvaluatorTests.swift */; };
 		5E726C56695476D74062AB85 /* RootHomeChartRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */; };
@@ -1502,6 +1508,12 @@
 		530FF1F30166612F05E55CF6 /* Libre3NFCActivationCommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3NFCActivationCommand.swift; path = Libre3NFCActivationCommand.swift; sourceTree = "<group>"; };
 		5A0100013015000100000001 /* GlucoseRangeDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseRangeDistribution.swift; sourceTree = "<group>"; };
 		5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseRangeDistributionTests.swift; sourceTree = "<group>"; };
+		9FF147B467027A244CBAE3DF /* M5StackPacketRoundTripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M5StackPacketRoundTripTests.swift; sourceTree = "<group>"; };
+		CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreSensorIdentityTests.swift; sourceTree = "<group>"; };
+		BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreRawMeasurementTests.swift; sourceTree = "<group>"; };
+		FAD9D1C532477F21A35B744B /* LibreFRAMCrcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreFRAMCrcTests.swift; sourceTree = "<group>"; };
+		FA66E3DA763E90105AC24294 /* Libre2FrameAssemblyEdgeCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre2FrameAssemblyEdgeCaseTests.swift; sourceTree = "<group>"; };
+		7566E241B555E031E97C80D7 /* Libre2DecryptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre2DecryptionTests.swift; sourceTree = "<group>"; };
 		ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorNoiseClassificationTests.swift; sourceTree = "<group>"; };
 		EA72FA8A6C1FBD89DE073078 /* CalibrationReadinessEvaluatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationReadinessEvaluatorTests.swift; sourceTree = "<group>"; };
 		18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeChartRangeTests.swift; sourceTree = "<group>"; };
@@ -3002,6 +3014,12 @@
 				A41000020000000000000001 /* DexcomShareUploadTests.swift */,
 				4F2800123004000100000001 /* GlucoseChartYAxisRetentionTests.swift */,
 				5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */,
+				9FF147B467027A244CBAE3DF /* M5StackPacketRoundTripTests.swift */,
+				CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */,
+				BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */,
+				FAD9D1C532477F21A35B744B /* LibreFRAMCrcTests.swift */,
+				FA66E3DA763E90105AC24294 /* Libre2FrameAssemblyEdgeCaseTests.swift */,
+				7566E241B555E031E97C80D7 /* Libre2DecryptionTests.swift */,
 				ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */,
 				EA72FA8A6C1FBD89DE073078 /* CalibrationReadinessEvaluatorTests.swift */,
 				18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */,
@@ -5056,6 +5074,12 @@
 				C0FE5B0DA97C91FE3D71F069 /* LibreCoverageAlgorithmTests.swift in Sources */,
 				4F3200013008000100000001 /* BgReadingTrendTests.swift in Sources */,
 				5A0100043015000100000001 /* GlucoseRangeDistributionTests.swift in Sources */,
+				5A03911BAC31439E44790D24 /* M5StackPacketRoundTripTests.swift in Sources */,
+				EEABD835913741170A50DE93 /* LibreSensorIdentityTests.swift in Sources */,
+				900AFAA5DAFBDD603F8F6974 /* LibreRawMeasurementTests.swift in Sources */,
+				17151D554B51C98CC41DDD83 /* LibreFRAMCrcTests.swift in Sources */,
+				A49DE910346CC1785A66E9D3 /* Libre2FrameAssemblyEdgeCaseTests.swift in Sources */,
+				23B2B348B9A8F3D865DCEB59 /* Libre2DecryptionTests.swift in Sources */,
 				1EC47BA1DCECD7E1A18681A6 /* SensorNoiseClassificationTests.swift in Sources */,
 				3A57F69751805187BFEDC71F /* CalibrationReadinessEvaluatorTests.swift in Sources */,
 				5E726C56695476D74062AB85 /* RootHomeChartRangeTests.swift in Sources */,

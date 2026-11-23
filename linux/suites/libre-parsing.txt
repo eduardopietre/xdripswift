@@ -1,0 +1,28 @@
+# Libre 1/2 FRAM decoding: CRC16 of the three FRAM sections, sensor type detection from patch info,
+# serial number encoding, raw measurement and calibration bit fields and the derived local
+# algorithm parameters. All of it is Foundation-only arithmetic on byte arrays.
+#
+# Not ported: PreLibre2 (Libre 2 FRAM decryption) and Libre2BLEUtilities (Libre 2 BLE decryption
+# and parsing, which calls PreLibre2), so Libre2DecryptionTests only runs on macOS. PreLibre2
+# declares an OSLog logger inside the class and Linux has no OSLog module; `members` cannot cut it
+# out either, because the names `key` and `op` are also used by a local constant and a nested
+# function, which `members` would copy as class members.
+include _foundation-extensions
+src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/CRC.swift
+src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/LibreSensorSerialNumber.swift
+src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/LibreCalibrationInfo.swift
+src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/LibreMeasurement.swift
+src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/LibreAlgorithmThresholds.swift
+src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/Libre1DerivedAlgorithmParameters.swift
+# LibreSensorType.swift imports os for the logging in decryptIfPossibleAndNeeded and crcIsOk (both
+# take an OSLog parameter). Only the cases and the patch info decoding are taken; the tests call
+# Crc.LibreCrc directly.
+members xDrip/BluetoothTransmitter/CGM/Libre/Utilities/LibreSensorType.swift | LibreSensorType | cases, type
+test    xDrip Tests/LibreFRAMCrcTests.swift
+test    xDrip Tests/LibreSensorIdentityTests.swift
+test    xDrip Tests/LibreRawMeasurementTests.swift
+# Libre 2 BLE frame reassembly edge cases (the original tests are in suite libre2-frame-assembler).
+src     xDrip/BluetoothTransmitter/CGM/Libre/Libre2/Libre2FrameAssembler.swift
+test    xDrip Tests/Libre2FrameAssemblyEdgeCaseTests.swift
+# Derived algorithm parameters are persisted as a JSON string in UserDefaults.
+members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key, libre1DerivedAlgorithmParameters
