@@ -1,0 +1,3 @@
+# Location text of the Calendar Share event (#269). CalendarManager itself needs EventKit.
+decl xDrip/Managers/Calendar/CalendarManager.swift | CalendarShareEventLocation
+test xDrip Tests/CalendarShareEventLocationTests.swift
