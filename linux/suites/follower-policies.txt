@@ -1,0 +1,10 @@
+# Follower data source selection, therapy/glucose ownership (DataFlowPolicy) and the Nightscout
+# follow type. All three are Foundation-only enums and structs; only the settings texts are trimmed.
+src     xDrip/Managers/Followers/FollowerDataSourceType.swift
+src     xDrip/Managers/Followers/DataFlowPolicy.swift
+src     xDrip/Managers/Nightscout/NightscoutFollowType.swift
+src     xDrip/Constants/ConstantsFollower.swift
+members xDrip/Texts/TextsSettingsView.swift | Texts_SettingsView | filename, therapyDataSourceAutomatic, therapyDataSourceNone, nightscoutFollowTypeNone, nightscoutFollowTypeLoop, nightscoutFollowTypeOpenAPS, nightscoutFollowTypeNoneExpanded, nightscoutFollowTypeLoopExpanded, nightscoutFollowTypeOpenAPSExpanded
+test    xDrip Tests/FollowerDataSourceTypeTests.swift
+test    xDrip Tests/DataFlowPolicyTests.swift
+test    xDrip Tests/NightscoutFollowTypeTests.swift

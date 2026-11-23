@@ -1,0 +1,13 @@
+# Nightscout devicestatus (Loop, AAPS, Trio, iAPS) and profile decoding into the internal models.
+# _widget-payload brings AIDStatus (built from the device status) and the SwiftUI shim.
+include _widget-payload
+# These members return SwiftUI Image views, UIColor conversions of SwiftUI colours or status-bar
+# symbols; they are presentation only and covered by the macOS tests.
+src     xDrip/Managers/Nightscout/NightscoutDeviceStatusModels.swift | without systemIcon, batteryImage, uploaderBatteryImageRVCStatusView, uploaderBatteryStatusStyle, uploaderBatteryChargingImage, deviceStatusColor, deviceStatusBannerBackgroundColor, deviceStatusUIColor, deviceStatusTitle, deviceStatusIconImage, pumpReservoirColor, pumpReservoirUIColor, pumpBatteryPercentColor, pumpBatteryPercentUIColor
+src     xDrip/Managers/Nightscout/NightscoutProfileModels.swift
+# ConstantsNightscout.swift has no Foundation import of its own (it relies on the app module).
+members xDrip/Constants/ConstantsNightscout.swift | ConstantsNightscout | omniPodReservoirFlagNumber
+# String.swift imports CryptoKit (sha1), so only the two helpers used for device names are copied.
+members xDrip/Extensions/String.swift | String | startsWith, capitalizedSentence
+test    xDrip Tests/NightscoutDeviceStatusDecodingTests.swift
+test    xDrip Tests/NightscoutProfileModelsTests.swift

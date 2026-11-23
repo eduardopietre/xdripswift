@@ -1,0 +1,12 @@
+# LibreLinkUp and Dexcom Share response models and region routing, the Watch payload dictionaries
+# and the Live Activity style values. The follow managers themselves need networking and CoreData.
+include _widget-payload
+src     xDrip/Managers/Watch/WatchState.swift
+src     xDrip/Managers/LibreLinkUp/LibreLinkUpModels.swift
+src     xDrip/Managers/DexcomShare/DexcomShareModels.swift
+src     xDrip/Constants/ConstantsDexcomShare.swift
+src     xDrip/Managers/Followers/FollowerDataSourceType.swift
+src     xDrip/Constants/ConstantsFollower.swift
+members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key, followerDataSourceType
+test    xDrip Tests/FollowerServiceModelsTests.swift
+test    xDrip Tests/WatchPayloadTests.swift
