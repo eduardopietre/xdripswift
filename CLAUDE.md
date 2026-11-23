@@ -115,7 +115,7 @@ A module's `DEPENDENCIES` file lists the shim modules it imports.
    `git checkout --` the file.
 5. When a test fails, find out whether it fails on iOS too before blaming Linux (see below).
 
-### Current suites (276 tests on `linux_experiments`, based on `fixes-and-etc`)
+### Current suites (280 tests on `linux_experiments`, based on `fixes-and-etc`)
 
 | Suite | Test file (tests run on Linux) | Left out |
 |---|---|---|
@@ -143,7 +143,8 @@ A module's `DEPENDENCIES` file lists the shim modules it imports.
 | `dexcom-session-stop-detection` | DexcomSessionStopDetectionTests (4), #775 | |
 | `calendar-share-event-location` | CalendarShareEventLocationTests (3), #269 | |
 | `loop-share-sensor-session` | LoopShareSensorSessionTests (2), #329 | |
-| `system-time-zone-change` | SystemTimeZoneChangeObserverTests (2), #405 | |
+| `system-time-zone-change` | SystemTimeZoneChangeObserverTests (3), #405 | |
+| `remote-treatment-deletion-lookup` | RemoteTreatmentDeletionLookupPolicyTests (3), #624 | |
 | `high-alert-trend-policy` | HighAlertTrendPolicyTests (4), #694 | |
 
 NightscoutTreatmentEditSyncTests (#624) needs CoreData and SpeakReadingAudioPolicyTests (#741)
