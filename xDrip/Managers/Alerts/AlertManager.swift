@@ -18,6 +18,19 @@ extension UNUserNotificationCenter: AlertNotificationScheduling {}
 ///
 /// has all the logic but should be not or almost not aware of the kind of alerts that exists. The logic that is different per type of alert is defined in type AlertKind.
 public class AlertManager: NSObject {
+
+    /// Whether a delayed alert fires in the time range of the next alert entry, so that entry's alert type applies.
+    /// - parameters:
+    ///     - currentEntryStart: start of the current alert entry, in minutes since midnight
+    ///     - nextEntryStart: start of the next alert entry, in minutes since midnight
+    ///     - minutesSinceMidnightNow: the current time, in minutes since midnight
+    ///     - delayInSeconds: when the alert will fire, from now
+    static func delayedAlertFallsInNextEntry(currentEntryStart: Int, nextEntryStart: Int, minutesSinceMidnightNow: Int, delayInSeconds: Int) -> Bool {
+        // a next entry that starts before the current one is the one of the day after, so add 24 hours
+        let nextEntryStartToUse = nextEntryStart < currentEntryStart ? nextEntryStart + 24 * 60 : nextEntryStart
+        // check if current time + delayInSeconds falls within the time range of the next entry
+        return minutesSinceMidnightNow + delayInSeconds / 60 > nextEntryStartToUse
+    }
     // MARK: - private properties
   
     /// snoozeActionIdentifier for alert notification
@@ -971,17 +984,9 @@ public class AlertManager: NSObject {
             var applicableAlertType = currentAlertEntry.alertType
             
             // if delayInSecondsToUse > 0, then possibly we need to use another alertType
-            if delayInSecondsToUse > 0, let nextAlertEntry = nextAlertEntry {
-                // if start of nextAlertEntry < start of currentAlertEntry, then ad 24 hours, because it means the nextAlertEntry is actually the one of the day after
-                var nextAlertEntryStartValueToUse = nextAlertEntry.start
-                if nextAlertEntry.start < currentAlertEntry.start {
-                    nextAlertEntryStartValueToUse += 24 * 60
-                }
-
-                // check if current time + delayInSeconds falls within timezone of nextAlertEntry
-                if Date().minutesSinceMidNightLocalTime() + delayInSecondsToUse / 60 > nextAlertEntryStartValueToUse {
-                    applicableAlertType = nextAlertEntry.alertType
-                }
+            if delayInSecondsToUse > 0, let nextAlertEntry = nextAlertEntry,
+               Self.delayedAlertFallsInNextEntry(currentEntryStart: Int(currentAlertEntry.start), nextEntryStart: Int(nextAlertEntry.start), minutesSinceMidnightNow: Date().minutesSinceMidNightLocalTime(), delayInSeconds: delayInSecondsToUse) {
+                applicableAlertType = nextAlertEntry.alertType
             }
 
             // create the content for the alert notification, set body and text, category and also attachments and userInfo dict if available

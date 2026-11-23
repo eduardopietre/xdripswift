@@ -320,6 +320,8 @@ final class AlgorithmCoverageCalibratorTests: XCTestCase {
         XCTAssertEqual(last.calculatedValue, 114, accuracy: 0.000_01)
         XCTAssertTrue(list.first === calibration)
         XCTAssertTrue(list.contains { $0 === c1 } && list.contains { $0 === c2 })
+        // the new calibration is inserted once: it used to be inserted once per older calibration
+        XCTAssertEqual(list.count, 3)
     }
 
     func testThirdCalibrationWithShallowSlopeUsesDefaultLowSlope() throws {
