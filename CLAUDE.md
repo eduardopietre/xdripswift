@@ -3,6 +3,27 @@
 xDrip4iOS (`xdrip.xcodeproj` / `xdrip.xcworkspace`): iOS + watchOS CGM app in Swift. Fork of
 `JohanDegraeve/xdripswift`; upstream issues are tracked there, not in this fork.
 
+## Language and code style
+
+- Everything written to the repository is in **English**: code, comments, tests, scripts,
+  commit messages and this file (even when the conversation is in another language).
+- Mimic the existing style of the surrounding code and tests:
+  - New Swift files start with the standard header:
+    ```swift
+    //
+    //  FileName.swift
+    //  xdrip            (xdripTests for files in `xDrip Tests/`)
+    //
+    //  Created by eduardopietre on dd/mm/yy.
+    //  Copyright © 2026 Johan Degraeve. All rights reserved.
+    //
+    ```
+  - `///` doc comments on types, properties and functions, explaining *why* as well as what.
+  - `// MARK: -` sections as used in the file being edited (e.g. `// MARK: - private functions`).
+  - Regression tests get a type-level `///` comment describing the bug they guard against
+    (see `xDrip Tests/LibreLinkUpDownloadChainTests.swift`).
+- Shell scripts start with a comment block describing purpose and usage.
+
 ## Running code and tests on Linux (cloud sessions)
 
 There is no Xcode, simulator, UIKit, CoreBluetooth, CoreData, HealthKit, etc. on Linux, so the

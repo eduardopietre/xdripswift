@@ -1,5 +1,16 @@
-// Example snippet: exercises real app code from a plain script.
-// Run: linux/xdrip-linux.sh snippet linux/snippets/libre2-assembler-demo.swift   (all suites)
+//
+//  libre2-assembler-demo.swift
+//  xdrip Linux snippets
+//
+//  Created by eduardopietre on 23/11/26.
+//  Copyright © 2026 Johan Degraeve. All rights reserved.
+//
+
+// Example snippet: exercises real app code from a plain script on Linux.
+//
+// Run with `linux/xdrip-linux.sh snippet linux/snippets/libre2-assembler-demo.swift` (all suites,
+// because it uses both the Libre 2 assembler and the Dexcom G6 authentication request).
+
 import Foundation
 @testable import xdrip
 
