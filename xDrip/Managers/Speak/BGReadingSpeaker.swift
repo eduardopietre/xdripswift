@@ -325,11 +325,14 @@ extension BGReadingSpeaker: AVSpeechSynthesizerDelegate {
 }
 
 /// The audio session options used while a reading is spoken and afterwards.
+///
+/// With the option on, other audio such as music is lowered while a reading is spoken, so the
+/// reading can be heard (#741), and is restored to full volume afterwards.
 enum SpeakReadingAudioPolicy {
     /// - parameters:
     ///     - whileSpeaking: true while a reading is being spoken
     ///     - duckOtherAudio: the user's setting to lower other audio while speaking, off by default
     static func categoryOptions(whileSpeaking: Bool, duckOtherAudio: Bool) -> AVAudioSession.CategoryOptions {
-        .mixWithOthers
+        whileSpeaking && duckOtherAudio ? [.mixWithOthers, .duckOthers] : .mixWithOthers
     }
 }

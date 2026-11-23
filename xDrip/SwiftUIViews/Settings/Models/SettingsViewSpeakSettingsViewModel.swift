@@ -109,6 +109,15 @@ class SettingsViewSpeakSettingsViewModel: NSObject, SettingsViewModelProtocol {
                 ),
                 isVisible: UserDefaults.standard.speakReadings
             ),
+            SettingsRow(
+                id: "speak.ducksOtherAudio",
+                title: Texts_SettingsView.labelSpeakDucksOtherAudio,
+                control: .toggle(
+                    isOn: { UserDefaults.standard.speakDucksOtherAudio },
+                    setIsOn: { UserDefaults.standard.speakDucksOtherAudio = $0 }
+                ),
+                isVisible: UserDefaults.standard.speakReadings
+            ),
             nativeSettingsRow(
                 id: "speak.speakTrend",
                 index: Setting.speakTrend.rawValue,
