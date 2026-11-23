@@ -7,5 +7,5 @@ decl    xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportRangeDistri
 members xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportColors | low, target, high
 members xDrip/Constants/ConstantsAppColors.swift | ConstantsAppColors | statisticsLow, statisticsInRange, statisticsHigh
 members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol
-shim    SwiftUIColor.swift
+shim    Colors.swift
 src     xDrip/Constants/ConstantsBloodGlucose.swift

@@ -1,0 +1,9 @@
+# Calibration readiness evaluation (value, trend and noise checks) and its troubleshooting snapshot.
+decl xDrip/SwiftUIViews/Sensor/CalibrationReadiness.swift | CalibrationReadinessReading, CalibrationReadinessEvaluator, CalibrationReadinessLevel, CalibrationReadinessCheck, CalibrationReadiness, CalibrationReadinessEvaluation, CalibrationSubmission, TroubleshootingCalibrationReadinessLevel, TroubleshootingCalibrationReadiness, CalibrationReadinessConstants
+decl xDrip/Utilities/TroubleshootingLog.swift | TroubleshootingCalibrationReadinessLevel, TroubleshootingCalibrationReadiness
+src  xDrip/Texts/TextsCommon.swift
+src  xDrip/Texts/TextsHomeView.swift
+members xDrip/Constants/ConstantsHomeView.swift | ConstantsHomeView | applicationName, hideUrlDuringTimeInSeconds
+include _sensor-noise-calculator
+shim Colors.swift
+test xDrip Tests/CalibrationReadinessTests.swift

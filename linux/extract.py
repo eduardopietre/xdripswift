@@ -14,8 +14,9 @@ Usage:
     extract.py members <file> <Type> <member>[,<member>...]
         A copy of the declaration line of <Type> containing only the listed members, e.g. a
         handful of strings from a large `Texts_*` class. A member is a `static let`, `static var`,
-        `let`, `var` or `func`; its body ends at the matching brace (for closures `}()`).
-        For an extension (e.g. `extension Swift.Double: RawRepresentable`) the conformances are
+        `let`, `var`, `func` or a nested type; its body ends at the matching brace (for closures `}()`).
+        The special member name `cases` copies all enum cases, e.g. to use an enum whose methods
+        need CoreData. For an extension (e.g. `extension Swift.Double: RawRepresentable`) the conformances are
         dropped, as the members they require are not copied.
 """
 
@@ -23,39 +24,57 @@ import re
 import sys
 
 
-def brace_delta(line):
-    """Net brace count of a line, ignoring braces inside string literals and line comments."""
-    delta, in_string, i = 0, False, 0
+def strip_strings_and_comments(line):
+    """The code of a line without string literal contents and line comments, for bracket counting."""
+    out, in_string, i = [], False, 0
     while i < len(line):
         c = line[i]
-        if c == '\\' and in_string:
-            i += 2
-            continue
-        if c == '"':
-            in_string = not in_string
-        elif not in_string:
-            if line.startswith('//', i):
-                break
-            if c == '{':
-                delta += 1
-            elif c == '}':
-                delta -= 1
+        if in_string:
+            if c == '\\':
+                i += 2
+                continue
+            if c == '"':
+                in_string = False
+                out.append(c)
+        elif line.startswith('//', i):
+            break
+        else:
+            if c == '"':
+                in_string = True
+            out.append(c)
         i += 1
-    return delta
+    return ''.join(out)
+
+
+def brace_delta(line):
+    """Net brace count of a line, ignoring braces inside string literals and line comments."""
+    code = strip_strings_and_comments(line)
+    return code.count('{') - code.count('}')
 
 
 def block_end(lines, start):
-    """Index of the last line of the block that opens at `start` (single line if no brace opens)."""
-    depth, opened = 0, False
+    """Index of the last line of the declaration that starts at `start`.
+
+    A declaration with a body ends at the brace that closes it; signatures may span several lines.
+    One without a body (`let x = 1`, `case a`) ends at the first line where its brackets are
+    balanced and the next line does not continue the expression.
+    """
+    depth, parens, opened = 0, 0, False
     for i in range(start, len(lines)):
-        delta = brace_delta(lines[i])
-        if '{' in lines[i]:
+        code = strip_strings_and_comments(lines[i])
+        parens += code.count('(') + code.count('[') - code.count(')') - code.count(']')
+        if '{' in code:
             opened = True
-        depth += delta
-        if opened and depth <= 0:
+        depth += code.count('{') - code.count('}')
+        if opened:
+            if depth <= 0:
+                return i
+            continue
+        following = lines[i + 1].strip() if i + 1 < len(lines) else ''
+        continues = code.rstrip().endswith((',', '(', '[', '=', '->', ':')) or \
+            following.startswith(('.', '->', 'where', '{', '?', ':', '&&', '||', '+', '-', '*'))
+        if parens <= 0 and not continues:
             return i
-        if not opened and i > start and not lines[i].strip().startswith(('.', 'where', '->')):
-            return i - 1
     return len(lines) - 1
 
 
@@ -70,7 +89,7 @@ KEYWORDS = r'(?:struct|enum|class|protocol|actor|extension|typealias|func)'
 MODIFIER = r'(?:public|internal|fileprivate|private|final|indirect|nonisolated|@\w+(?:\([^)]*\))?)'
 MODIFIERS = rf'(?:{MODIFIER}\s+)*'
 # Member modifiers may appear in any order, e.g. `static private let`.
-MEMBER_MODIFIERS = rf'(?:(?:{MODIFIER}|static|class|lazy|override)\s+)*'
+MEMBER_MODIFIERS = rf'(?:(?:{MODIFIER}|static|class|lazy|override|dynamic|mutating|weak|unowned)\s+)*'
 
 
 def decl(lines, names):
@@ -95,8 +114,16 @@ def members(lines, type_name, names):
     # An extension's conformances would require members that are not copied, so they are dropped.
     first = f'extension {match.group(2)} {{' if match.group(1) == 'extension' else lines[start]
     out, found = [first], set()
-    for name in names:
-        pattern = re.compile(rf'^\s*{MEMBER_MODIFIERS}(?:let|var|func)\s+{re.escape(name)}\b')
+    if 'cases' in names:
+        # The enum cases only (direct children of the type), without the members that use them.
+        depth = 0
+        for i in range(start, end):
+            if depth == 1 and re.match(r'^\s*case\s', lines[i]):
+                out.append(lines[i])
+                found.add('cases')
+            depth += brace_delta(lines[i])
+    for name in (n for n in names if n != 'cases'):
+        pattern = re.compile(rf'^\s*{MEMBER_MODIFIERS}(?:let|var|func|enum|struct|class|typealias)\s+{re.escape(name)}\b')
         for i in range(start + 1, end):
             if pattern.match(lines[i]):
                 out.extend(lines[leading_comments(lines, i):block_end(lines, i) + 1])
@@ -104,6 +131,12 @@ def members(lines, type_name, names):
                 break
     out.append('}')
     return out, found
+
+
+def linux_compatible(line):
+    """Drops `@objc` and `dynamic`: there is no Objective-C runtime on Linux. Used for KVO-observable
+    `UserDefaults` properties, which behave as plain computed properties without it."""
+    return re.sub(r'@objc(?:\([^)]*\))?\s+|\bdynamic\s+(?=(?:var|func)\b)', '', line)
 
 
 def main():
@@ -124,7 +157,7 @@ def main():
     if missing:
         sys.exit(f'extract.py: not found in {path}: {", ".join(missing)}')
     print('import Foundation\n')
-    print('\n'.join(out))
+    print('\n'.join(linux_compatible(line) for line in out))
 
 
 if __name__ == '__main__':
