@@ -1,0 +1,5 @@
+# When a stopped session reported by a Dexcom G5/G6/ONE transmitter stops the app's sensor (#775).
+decl    xDrip/BluetoothTransmitter/CGM/Dexcom/G5/CGMG5Transmitter.swift | DexcomSessionStopDetectionPolicy
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomAlgorithmState.swift
+include _sensor-health-models
+test    xDrip Tests/DexcomSessionStopDetectionTests.swift
