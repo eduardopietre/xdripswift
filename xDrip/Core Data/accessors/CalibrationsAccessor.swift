@@ -100,13 +100,13 @@ class CalibrationsAccessor {
         
         // create predicate
         if let from = from, to == nil {
-            let predicate = NSPredicate(format: "timeStamp > %@", NSDate(timeIntervalSince1970: from.timeIntervalSince1970))
+            let predicate = NSPredicate(format: "timeStamp > %@", from as NSDate)
             fetchRequest.predicate = predicate
         } else if let to = to, from == nil {
-            let predicate = NSPredicate(format: "timeStamp < %@", NSDate(timeIntervalSince1970: to.timeIntervalSince1970))
+            let predicate = NSPredicate(format: "timeStamp < %@", to as NSDate)
             fetchRequest.predicate = predicate
         } else if let to = to, let from = from {
-            let predicate = NSPredicate(format: "timeStamp < %@ AND timeStamp > %@", NSDate(timeIntervalSince1970: to.timeIntervalSince1970), NSDate(timeIntervalSince1970: from.timeIntervalSince1970))
+            let predicate = NSPredicate(format: "timeStamp < %@ AND timeStamp > %@", to as NSDate, from as NSDate)
             fetchRequest.predicate = predicate
         }
         

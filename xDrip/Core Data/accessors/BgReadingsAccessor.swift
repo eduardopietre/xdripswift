@@ -112,7 +112,7 @@ class BgReadingsAccessor: ObservableObject {
             var subPredicates = [NSPredicate]()
 
             if let fromDate = fromDate {
-                subPredicates.append(NSPredicate(format: "timeStamp > %@", NSDate(timeIntervalSince1970: fromDate.timeIntervalSince1970)))
+                subPredicates.append(NSPredicate(format: "timeStamp > %@", fromDate as NSDate))
             }
 
             if !includingSuppressed {
@@ -180,7 +180,7 @@ class BgReadingsAccessor: ObservableObject {
             var subPredicates = [NSPredicate]()
 
             if let fromDate = fromDate {
-                subPredicates.append(NSPredicate(format: "timeStamp > %@", NSDate(timeIntervalSince1970: fromDate.timeIntervalSince1970)))
+                subPredicates.append(NSPredicate(format: "timeStamp > %@", fromDate as NSDate))
             }
 
             if !includingSuppressed {
@@ -264,7 +264,7 @@ class BgReadingsAccessor: ObservableObject {
                 NSPredicate(format: "rawData != 0.0")
             ]))
             // Time window
-            subpredicates.append(NSPredicate(format: "timeStamp >= %@ AND timeStamp <= %@", NSDate(timeIntervalSince1970: fromDate.timeIntervalSince1970), NSDate(timeIntervalSince1970: toDate.timeIntervalSince1970)))
+            subpredicates.append(NSPredicate(format: "timeStamp >= %@ AND timeStamp <= %@", fromDate as NSDate, toDate as NSDate))
             // Sensor filter if provided
             if let sensorId = sensor?.id {
                 subpredicates.append(NSPredicate(format: "sensor.id == %@", sensorId as CVarArg))
@@ -323,11 +323,11 @@ class BgReadingsAccessor: ObservableObject {
         var subPredicates = [NSPredicate]()
 
         if let from = from, to == nil {
-            subPredicates.append(NSPredicate(format: "timeStamp > %@", NSDate(timeIntervalSince1970: from.timeIntervalSince1970)))
+            subPredicates.append(NSPredicate(format: "timeStamp > %@", from as NSDate))
         } else if let to = to, from == nil {
-            subPredicates.append(NSPredicate(format: "timeStamp < %@", NSDate(timeIntervalSince1970: to.timeIntervalSince1970)))
+            subPredicates.append(NSPredicate(format: "timeStamp < %@", to as NSDate))
         } else if let to = to, let from = from {
-            subPredicates.append(NSPredicate(format: "timeStamp < %@ AND timeStamp > %@", NSDate(timeIntervalSince1970: to.timeIntervalSince1970), NSDate(timeIntervalSince1970: from.timeIntervalSince1970)))
+            subPredicates.append(NSPredicate(format: "timeStamp < %@ AND timeStamp > %@", to as NSDate, from as NSDate))
         }
 
         if !includingSuppressed {
@@ -379,10 +379,10 @@ class BgReadingsAccessor: ObservableObject {
             subpredicates.append(NSPredicate(format: "sensor.id == %@", sensorId as CVarArg))
         }
         if let from = fromDate {
-            subpredicates.append(NSPredicate(format: "timeStamp >= %@", NSDate(timeIntervalSince1970: from.timeIntervalSince1970)))
+            subpredicates.append(NSPredicate(format: "timeStamp >= %@", from as NSDate))
         }
         if let to = toDate {
-            subpredicates.append(NSPredicate(format: "timeStamp <= %@", NSDate(timeIntervalSince1970: to.timeIntervalSince1970)))
+            subpredicates.append(NSPredicate(format: "timeStamp <= %@", to as NSDate))
         }
         let fullPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: subpredicates)
 
@@ -525,7 +525,7 @@ class BgReadingsAccessor: ObservableObject {
 
         // if fromDate specified then create predicate
         if let fromDate = fromDate {
-            let predicate = NSPredicate(format: "timeStamp > %@", NSDate(timeIntervalSince1970: fromDate.timeIntervalSince1970))
+            let predicate = NSPredicate(format: "timeStamp > %@", fromDate as NSDate)
             fetchRequest.predicate = predicate
         }
 
