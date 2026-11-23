@@ -1,0 +1,52 @@
+# Dexcom G5/G6/G7 transmitter message parsing and encoding: Rx decoders, Tx encoders, CRC,
+# opcodes, algorithm states, calibration codes and the backfill stream. All Foundation-only.
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/AuthChallengeRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/AuthChallengeTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/AuthRequestRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/AuthRequestTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/BatteryStatusRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/BatteryStatusTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomAlgorithmState.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomBackfillStream.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomBackfillTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomCalibrationParameters.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomCalibrationResponseType.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomCalibrationRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomCalibrationTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomG6GlucoseDataRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomG7BackfillMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomG7CalibrationMessages.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomG7DiagnosticMessages.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomG7ExtendedVersionMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomG7GlucoseDataRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomGlucoseDataTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomSessionStartResponse.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomSessionStartRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomSessionStartTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomSessionStopResponse.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomSessionStopRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomSessionStopTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomTransmitterOpCode.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomTransmitterTimeRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomTransmitterTimeTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/FirmwareVersionTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/GlucoseBackfillRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/GlucoseDataRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/KeepAliveTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/NSData+CRC.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/PairRequestTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/ResetMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/SensorDataRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/SensorDataTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/TransmitterMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/TransmitterVersionRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/TransmitterVersionTxMessage.swift
+# DexcomG7WatchProtocol needs DirectWatchConfiguration from the Watch bridge (WatchConnectivity
+# managers); only the G6 checksum/authentication helpers are taken.
+decl    xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomWatchProtocol.swift | DexcomWatchProtocol, DexcomG6WatchProtocol
+module  CommonCrypto
+src     xDrip/Constants/ConstantsDexcomG7.swift
+include _foundation-extensions
+include _sensor-health-models
+test    xDrip Tests/DexcomRxMessageTests.swift
+test    xDrip Tests/DexcomTxMessageTests.swift

@@ -1,0 +1,4 @@
+# Byte helpers of Data.swift (hex conversion, little-endian reads/appends, hex dumps) that
+# every transmitter parser depends on.
+include _foundation-extensions
+test    xDrip Tests/DataExtensionTests.swift

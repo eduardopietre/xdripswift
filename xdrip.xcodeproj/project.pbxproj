@@ -411,6 +411,9 @@
 		57FED30744046A2D826B81B7 /* DirectWatchCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7970B360C99EBC27912166 /* DirectWatchCompatibility.swift */; };
 		5A0100023015000100000001 /* GlucoseRangeDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0100013015000100000001 /* GlucoseRangeDistribution.swift */; };
 		5A0100043015000100000001 /* GlucoseRangeDistributionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */; };
+		46C7105BCE3DBB30CF0C8BD9 /* DataExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */; };
+		A7CD7586E6E2ABBC1BA12E40 /* DexcomTxMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F570D36E98124F35D9D95 /* DexcomTxMessageTests.swift */; };
+		7D28F8BCCEFC112FA7B89F73 /* DexcomRxMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7AD22DC4435BFF5FEA31A4 /* DexcomRxMessageTests.swift */; };
 		872BC0936AD11E530CDC2F69 /* WatchPayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C706004E213679ACDFA12 /* WatchPayloadTests.swift */; };
 		8484BC65DB8C1F950093A115 /* FollowerServiceModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D85018FE8B0570F961FA7C /* FollowerServiceModelsTests.swift */; };
 		1FF705BD921026E55859EF33 /* NightscoutProfileModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A537E406C6E986F15404E /* NightscoutProfileModelsTests.swift */; };
@@ -1491,6 +1494,9 @@
 		530FF1F30166612F05E55CF6 /* Libre3NFCActivationCommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3NFCActivationCommand.swift; path = Libre3NFCActivationCommand.swift; sourceTree = "<group>"; };
 		5A0100013015000100000001 /* GlucoseRangeDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseRangeDistribution.swift; sourceTree = "<group>"; };
 		5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseRangeDistributionTests.swift; sourceTree = "<group>"; };
+		1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensionTests.swift; sourceTree = "<group>"; };
+		8E8F570D36E98124F35D9D95 /* DexcomTxMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomTxMessageTests.swift; sourceTree = "<group>"; };
+		3C7AD22DC4435BFF5FEA31A4 /* DexcomRxMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomRxMessageTests.swift; sourceTree = "<group>"; };
 		907C706004E213679ACDFA12 /* WatchPayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPayloadTests.swift; sourceTree = "<group>"; };
 		39D85018FE8B0570F961FA7C /* FollowerServiceModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerServiceModelsTests.swift; sourceTree = "<group>"; };
 		BE0A537E406C6E986F15404E /* NightscoutProfileModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutProfileModelsTests.swift; sourceTree = "<group>"; };
@@ -2980,6 +2986,9 @@
 				A41000020000000000000001 /* DexcomShareUploadTests.swift */,
 				4F2800123004000100000001 /* GlucoseChartYAxisRetentionTests.swift */,
 				5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */,
+				1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */,
+				8E8F570D36E98124F35D9D95 /* DexcomTxMessageTests.swift */,
+				3C7AD22DC4435BFF5FEA31A4 /* DexcomRxMessageTests.swift */,
 				907C706004E213679ACDFA12 /* WatchPayloadTests.swift */,
 				39D85018FE8B0570F961FA7C /* FollowerServiceModelsTests.swift */,
 				BE0A537E406C6E986F15404E /* NightscoutProfileModelsTests.swift */,
@@ -5023,6 +5032,9 @@
 				C0FE5B0DA97C91FE3D71F069 /* LibreCoverageAlgorithmTests.swift in Sources */,
 				4F3200013008000100000001 /* BgReadingTrendTests.swift in Sources */,
 				5A0100043015000100000001 /* GlucoseRangeDistributionTests.swift in Sources */,
+				46C7105BCE3DBB30CF0C8BD9 /* DataExtensionTests.swift in Sources */,
+				A7CD7586E6E2ABBC1BA12E40 /* DexcomTxMessageTests.swift in Sources */,
+				7D28F8BCCEFC112FA7B89F73 /* DexcomRxMessageTests.swift in Sources */,
 				872BC0936AD11E530CDC2F69 /* WatchPayloadTests.swift in Sources */,
 				8484BC65DB8C1F950093A115 /* FollowerServiceModelsTests.swift in Sources */,
 				1FF705BD921026E55859EF33 /* NightscoutProfileModelsTests.swift in Sources */,
