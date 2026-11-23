@@ -18,6 +18,10 @@ Usage:
         The special member name `cases` copies all enum cases, e.g. to use an enum whose methods
         need CoreData. For an extension (e.g. `extension Swift.Double: RawRepresentable`) the conformances are
         dropped, as the members they require are not copied.
+
+    extract.py without <file> <member>[,<member>...]
+        The whole file except the listed members (at any depth), e.g. the test methods that need
+        UIKit or CoreData, so the rest of a test file can still run. The file's imports are kept.
 """
 
 import re
@@ -111,8 +115,14 @@ def members(lines, type_name, names):
         sys.exit(f'extract.py: type {type_name} not found')
     end = block_end(lines, start)
     match = header.match(lines[start])
-    # An extension's conformances would require members that are not copied, so they are dropped.
-    first = f'extension {match.group(2)} {{' if match.group(1) == 'extension' else lines[start]
+    # Conformances of an extension, and the superclass and protocols of a class, would require
+    # members that are not copied, so they are dropped. Enums and structs keep theirs (raw types).
+    if match.group(1) == 'extension':
+        first = f'extension {match.group(2)} {{'
+    elif match.group(1) == 'class':
+        first = re.sub(r'\s*:[^{]*', ' ', lines[start], count=1)
+    else:
+        first = lines[start]
     out, found = [first], set()
     if 'cases' in names:
         # The enum cases only (direct children of the type), without the members that use them.
@@ -133,6 +143,24 @@ def members(lines, type_name, names):
     return out, found
 
 
+def without(lines, names):
+    out, found, skip_until = [], set(), -1
+    patterns = {name: re.compile(rf'^\s*{MEMBER_MODIFIERS}(?:let|var|func|enum|struct|class)\s+{re.escape(name)}\b')
+                for name in names}
+    for i, line in enumerate(lines):
+        if i <= skip_until:
+            continue
+        name = next((n for n, p in patterns.items() if p.match(line)), None)
+        if name:
+            start = leading_comments(lines, i)
+            del out[len(out) - (i - start):]
+            skip_until = block_end(lines, i)
+            found.add(name)
+            continue
+        out.append(line)
+    return out, found
+
+
 def linux_compatible(line):
     """Drops `@objc` and `dynamic`: there is no Objective-C runtime on Linux. Used for KVO-observable
     `UserDefaults` properties, which behave as plain computed properties without it."""
@@ -148,6 +176,9 @@ def main():
     if mode == 'decl':
         names = [n.strip() for n in sys.argv[3].split(',') if n.strip()]
         out, found = decl(lines, names)
+    elif mode == 'without':
+        names = [n.strip() for n in sys.argv[3].split(',') if n.strip()]
+        out, found = without(lines, names)
     elif mode == 'members' and len(sys.argv) == 5:
         names = [n.strip() for n in sys.argv[4].split(',') if n.strip()]
         out, found = members(lines, sys.argv[3].strip(), names)
@@ -156,7 +187,8 @@ def main():
     missing = [n for n in names if n not in found]
     if missing:
         sys.exit(f'extract.py: not found in {path}: {", ".join(missing)}')
-    print('import Foundation\n')
+    if mode != 'without':
+        print('import Foundation\n')
     print('\n'.join(linux_compatible(line) for line in out))
 
 

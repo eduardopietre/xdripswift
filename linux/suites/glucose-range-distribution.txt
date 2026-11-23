@@ -5,7 +5,7 @@ test xDrip Tests/GlucoseRangeDistributionTests.swift
 extract xDrip/SwiftUIViews/Reports/ReportModels.swift | ^enum GlucoseReportClinicalConstants | ^enum GlucoseReportClinicalMath
 decl    xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportRangeDistribution, GlucoseReportRangeBucket, GlucoseReportText, GlucoseReportLanguage
 members xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportColors | low, target, high
-members xDrip/Constants/ConstantsAppColors.swift | ConstantsAppColors | statisticsLow, statisticsInRange, statisticsHigh
+include _app-colors
 members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol
-shim    Colors.swift
+module SwiftUI
 src     xDrip/Constants/ConstantsBloodGlucose.swift

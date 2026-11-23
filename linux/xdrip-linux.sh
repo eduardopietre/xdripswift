@@ -21,7 +21,6 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SUITES_DIR="$ROOT/linux/suites"
-SHIMS_DIR="$ROOT/linux/shims"
 SHIM_MODULES_DIR="$ROOT/linux/shim-modules"
 BUILD="${XDRIP_LINUX_BUILD:-/tmp/xdrip-linux}"
 
@@ -68,19 +67,25 @@ add_suite() { # <suite> <library dir> <tests dir>
         kind="${line%%[[:space:]]*}"; rest="$(trim "${line#"$kind"}")"
         PIECES=$((PIECES + 1))
         case "$kind" in
-            include) add_suite "$rest" "$lib" "$tests" ;;
-            module)
-                # A stand-in for an Apple module, so files keep their `import <Name>` unchanged.
-                [[ -d "$SHIM_MODULES_DIR/$rest" ]] || die "missing shim module: $rest"
-                if [[ " $MODULES " != *" $rest "* ]]; then
-                    cp -r "$SHIM_MODULES_DIR/$rest" "$lib/../$rest"
-                    MODULES="$MODULES $rest"
+            include)
+                # Each fragment is added once, however many suites or fragments include it.
+                if [[ " $INCLUDED " != *" $rest "* ]]; then
+                    INCLUDED="$INCLUDED $rest"
+                    add_suite "$rest" "$lib" "$tests"
                 fi ;;
+            module) add_module "$rest" "$lib/.." ;;
             src)  place "$rest" "$lib" ;;
-            test) place "$rest" "$tests" ;;
-            shim)
-                [[ -f "$SHIMS_DIR/$rest" ]] || die "missing shim: $rest"
-                cp "$SHIMS_DIR/$rest" "$lib/shim_$rest" ;;
+            test)
+                # `test <path> | without a, b` leaves out members that cannot run on Linux.
+                IFS='|' read -r path names <<< "$rest"; path="$(trim "$path")"; names="$(trim "${names:-}")"
+                if [[ -z "$names" ]]; then
+                    place "$path" "$tests"
+                else
+                    [[ "$names" == without* ]] || die "$suite.txt: expected 'without' after '|' in: $line"
+                    [[ -f "$ROOT/$path" ]] || die "missing file: $path"
+                    python3 "$ROOT/linux/extract.py" without "$ROOT/$path" "${names#without}" \
+                        > "$tests/$(flat "$path")" || die "$suite.txt: test without failed"
+                fi ;;
             extract)
                 IFS='|' read -r path start end <<< "$rest"; path="$(trim "$path")"
                 extract "$path" "$(trim "$start")" "$(trim "$end")" "$lib/extract_${PIECES}_$(flat "$path")" ;;
@@ -94,13 +99,30 @@ add_suite() { # <suite> <library dir> <tests dir>
                     { echo "import XCTest"; echo "@testable import xdrip"; cat "$out"; } > "$out.tmp" && mv "$out.tmp" "$out"
                 fi ;;
             members)
-                IFS='|' read -r path type names <<< "$rest"; path="$(trim "$path")"
+                # Collected and written once per type in generate(), so several suites and
+                # fragments can each ask for the members they need from the same type.
+                IFS='|' read -r path type names <<< "$rest"; path="$(trim "$path")"; type="$(trim "$type")"
                 [[ -f "$ROOT/$path" ]] || die "missing file: $path"
-                python3 "$ROOT/linux/extract.py" members "$ROOT/$path" "$type" "$names" \
-                    > "$lib/members_${PIECES}_$(flat "$path")" || die "$suite.txt: members failed" ;;
+                MEMBERS["$path|$type"]="${MEMBERS["$path|$type"]:-}${MEMBERS["$path|$type"]:+,}$names" ;;
             *) die "$suite.txt: unknown directive '$kind'" ;;
         esac
     done < "$file"
+}
+
+declare -A MEMBERS
+
+# Adds a stand-in for an Apple module (linux/shim-modules/<Name>), so files keep their
+# `import <Name>` unchanged. A DEPENDENCIES file lists other shim modules it builds on.
+add_module() { # <name> <sources dir>
+    local name="$1" sources="$2" dependency
+    [[ -d "$SHIM_MODULES_DIR/$name" ]] || die "missing shim module: $name"
+    [[ " $MODULES " == *" $name "* ]] && return 0
+    if [[ -f "$SHIM_MODULES_DIR/$name/DEPENDENCIES" ]]; then
+        for dependency in $(cat "$SHIM_MODULES_DIR/$name/DEPENDENCIES"); do add_module "$dependency" "$sources"; done
+    fi
+    mkdir -p "$sources/$name"
+    cp "$SHIM_MODULES_DIR/$name"/*.swift "$sources/$name/"
+    MODULES="$MODULES $name"
 }
 
 # Writes the package for the given suites into <dir>.
@@ -109,15 +131,32 @@ generate() { # <dir> <suite ...>
     rm -rf "$dir/Sources" "$dir/Tests" "$dir/Package.swift"
     mkdir -p "$dir/Sources/xdrip" "$dir/Tests/xdripTests" "$dir/Sources/snippet"
     local lib="$dir/Sources/xdrip" tests="$dir/Tests/xdripTests"
-    PIECES=0 MODULES=""
-    local suite
+    PIECES=0 MODULES="" INCLUDED=""
+    MEMBERS=()
+    local suite key
     for suite in "$@"; do add_suite "$suite" "$lib" "$tests"; done
+    for key in "${!MEMBERS[@]}"; do
+        PIECES=$((PIECES + 1))
+        python3 "$ROOT/linux/extract.py" members "$ROOT/${key%%|*}" "${key#*|}" \
+            "$(printf '%s' "${MEMBERS[$key]}" | tr ',' '\n' | sed 's/^ *//; s/ *$//' | sort -u | paste -sd,)" \
+            > "$lib/members_${PIECES}_$(flat "${key%%|*}")" || die "members of ${key#*|} failed"
+    done
+    # Extracted pieces only import Foundation; let them see the shim modules like the originals did.
+    local module piece
+    for piece in "$lib"/decl_* "$lib"/members_* "$lib"/extract_*; do
+        [[ -f "$piece" ]] || continue
+        for module in $MODULES; do sed -i "1i import $module" "$piece"; done
+    done
     # A placeholder so the snippet target always exists; replaced by `snippet`.
     echo 'import xdrip' > "$dir/Sources/snippet/main.swift"
 
-    local module module_targets="" module_names=""
+    local module_targets="" module_names="" dependencies
     for module in $MODULES; do
-        module_targets+="        .target(name: \"$module\", path: \"Sources/$module\"),"$'\n'
+        dependencies=""
+        if [[ -f "$SHIM_MODULES_DIR/$module/DEPENDENCIES" ]]; then
+            dependencies="$(sed 's/.*/"&"/' "$SHIM_MODULES_DIR/$module/DEPENDENCIES" | paste -sd, | sed 's/,/, /g')"
+        fi
+        module_targets+="        .target(name: \"$module\", dependencies: [$dependencies], path: \"Sources/$module\"),"$'\n'
         module_names+=", \"$module\""
     done
     cat > "$dir/Package.swift" <<EOF

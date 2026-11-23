@@ -1,0 +1,4 @@
+# The app colour palette (SwiftUI Color values via the SwiftUI shim module).
+module SwiftUI
+src    xDrip/Constants/ConstantsAppColors.swift
+decl   xDrip/Constants/ConstantsHomeView.swift | DexcomConnectionMode

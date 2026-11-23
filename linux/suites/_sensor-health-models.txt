@@ -1,0 +1,3 @@
+# Sensor health value types (the notification scheduling protocols need UserNotifications).
+decl xDrip/Managers/SensorHealth/SensorHealthModels.swift | SensorHealthSeverity, SensorHealthIssueKind, SensorHealthSource, SensorHealthDestination, SensorHealthReason, SensorHealthIssue, CGMSensorHealthEvent, SensorHealthTestIssueValues, SensorHealthTestKind
+include _texts-home-view

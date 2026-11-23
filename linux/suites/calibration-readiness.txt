@@ -2,8 +2,7 @@
 decl xDrip/SwiftUIViews/Sensor/CalibrationReadiness.swift | CalibrationReadinessReading, CalibrationReadinessEvaluator, CalibrationReadinessLevel, CalibrationReadinessCheck, CalibrationReadiness, CalibrationReadinessEvaluation, CalibrationSubmission, TroubleshootingCalibrationReadinessLevel, TroubleshootingCalibrationReadiness, CalibrationReadinessConstants
 decl xDrip/Utilities/TroubleshootingLog.swift | TroubleshootingCalibrationReadinessLevel, TroubleshootingCalibrationReadiness
 src  xDrip/Texts/TextsCommon.swift
-src  xDrip/Texts/TextsHomeView.swift
-members xDrip/Constants/ConstantsHomeView.swift | ConstantsHomeView | applicationName, hideUrlDuringTimeInSeconds
+include _texts-home-view
 include _sensor-noise-calculator
-shim Colors.swift
+module SwiftUI
 test xDrip Tests/CalibrationReadinessTests.swift

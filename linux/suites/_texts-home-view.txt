@@ -1,0 +1,3 @@
+# Texts_HomeView and the two app constants its strings interpolate.
+src     xDrip/Texts/TextsHomeView.swift
+members xDrip/Constants/ConstantsHomeView.swift | ConstantsHomeView | applicationName, hideUrlDuringTimeInSeconds
