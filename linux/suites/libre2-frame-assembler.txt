@@ -1,0 +1,3 @@
+# Libre 2 BLE frame reassembly (pure Foundation logic).
+src  xDrip/BluetoothTransmitter/CGM/Libre/Libre2/Libre2FrameAssembler.swift
+test xDrip Tests/Libre2FrameAssemblerTests.swift

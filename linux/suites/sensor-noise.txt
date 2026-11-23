@@ -1,0 +1,4 @@
+# Sensor noise calculation and persistence of the noise state.
+include _sensor-noise-calculator
+include _foundation-extensions
+test    xDrip Tests/SensorNoisePersistenceTests.swift

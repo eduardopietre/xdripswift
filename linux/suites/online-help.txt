@@ -1,0 +1,9 @@
+# Online help topics and documentation URLs (with Google Translate proxy URLs).
+decl    xDrip/Utilities/OnlineHelp.swift | OnlineHelpTopic, OnlineHelp, FollowerDataSourceType, BluetoothPeripheralType, BluetoothPeripheralCategory
+src     xDrip/Managers/Followers/FollowerDataSourceType.swift
+src     xDrip/BluetoothPeripheral/Generic/BluetoothPeripheralCategory.swift
+# The rest of BluetoothPeripheralType creates CoreData peripherals.
+members xDrip/BluetoothPeripheral/Generic/BluetoothPeripheralType.swift | BluetoothPeripheralType | cases, category
+test    xDrip Tests/OnlineHelpTests.swift
+src     xDrip/Constants/ConstantsFollower.swift
+members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key, translateOnlineHelp

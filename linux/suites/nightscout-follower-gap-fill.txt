@@ -1,0 +1,8 @@
+# Nightscout follower gap fill: audit windows, coverage migration, recovery plans and gap detection.
+# The service itself drives URLSession, UIApplication and CoreData; only its static planning logic is copied.
+members xDrip/Managers/Nightscout/NightscoutFollowerGapFillService.swift | NightscoutFollowerGapFillService | initialAuditDuration, auditOverlap, minimumIncrementalAdvance, minimumGapDuration, Resource, AuditWindow, CoverageState, RecoveryPlan, auditWindow, migratedCoverage, recoveryPlan, gapFillIntervals
+test    xDrip Tests/NightscoutFollowerGapFillTests.swift
+include _foundation-extensions
+src     xDrip/Managers/Nightscout/NightscoutProfileModels.swift
+members xDrip/Managers/Nightscout/NightscoutImportService.swift | NightscoutImportService | profilesForFollowerRecovery
+members xDrip/Managers/Nightscout/NightscoutDeviceStatusModels.swift | ISO8601DateFormatter | withFractionalSeconds, withoutFractionalSeconds

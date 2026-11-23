@@ -1,0 +1,11 @@
+# Time-in-range distribution and proportional rounding of the percentages.
+src  xDrip/Managers/Statistics/GlucoseRangeDistribution.swift
+test xDrip Tests/GlucoseRangeDistributionTests.swift
+# ReportModels.swift is SwiftUI; only the clinical constants are needed.
+extract xDrip/SwiftUIViews/Reports/ReportModels.swift | ^enum GlucoseReportClinicalConstants | ^enum GlucoseReportClinicalMath
+decl    xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportRangeDistribution, GlucoseReportRangeBucket, GlucoseReportText, GlucoseReportLanguage
+members xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportColors | low, target, high
+include _app-colors
+members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol
+module SwiftUI
+src     xDrip/Constants/ConstantsBloodGlucose.swift

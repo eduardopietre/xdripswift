@@ -1,0 +1,12 @@
+# Dexcom G5/G6 sensor session detection, session identity across relaunches and the
+# initial calibration prompt policy.
+members xDrip/BluetoothTransmitter/CGM/Dexcom/G5/CGMG5Transmitter.swift | CGMG5Transmitter | sensorStartDateTolerance, shouldReportDetectedSensor, shouldReportConfirmedSensorSession
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomTransmitterTimeRxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomG6InitialCalibrationPolicy.swift
+# RootTabStateModel is SwiftUI state and BackupService needs CoreData.
+test    xDrip Tests/CGMG5SensorSessionDetectionTests.swift | without testPrefilledCalibrationRemainsEditableAndRequiresExplicitSubmission, testSessionIdentityIsExcludedFromPortableBackups
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomAlgorithmState.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomTransmitterOpCode.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/TransmitterMessage.swift
+include _foundation-extensions
+include _sensor-health-models

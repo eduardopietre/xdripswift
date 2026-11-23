@@ -1,0 +1,15 @@
+# Root home screen logic: iPad layout class, chart range stepping, statistics periods, sensor and
+# battery indicators and the statistics easter egg policy.
+decl    xDrip/SwiftUIViews/RootTabView.swift | IPadLayoutClass
+src     xDrip/SwiftUIViews/RootHome/RootHomeChartRange.swift
+decl    xDrip/SwiftUIViews/RootHomeState.swift | RootHomeStatisticsContext, RootHomeStatisticsEasterEgg, RootHomeStatisticsEasterEggPolicy, RootHomeStatisticsPeriod
+members xDrip/Constants/ConstantsHomeView.swift | ConstantsHomeView | batteryIndicator, careLinkSensorIndicator, sensorProgressViewUrgentInMinutes, sensorProgressViewWarningInMinutes
+include _texts-home-view
+module SwiftUI
+# Orientation masks are UIKit; RootHomeStateModel is a SwiftUI ObservableObject fed by CoreData statistics.
+test    xDrip Tests/RootHomeInteractionTests.swift | without testIPadOrientationPolicyAllowsAllTabsToRotate, testLoadingClearsEasterEggAndTimeRefreshDoesNotRestoreIt, testTimeRefreshHandlesForegroundReturnAndSeasonChange
+decl    xDrip/Constants/ConstantsHomeView.swift | StatusSymbolPresentation
+src     xDrip/Constants/ConstantsStatistics.swift
+src     xDrip/Texts/TextsCommon.swift
+include _foundation-extensions
+include _app-colors

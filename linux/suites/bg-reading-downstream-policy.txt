@@ -1,0 +1,4 @@
+# Which new BG readings enter downstream processing (alerts, uploads, widgets).
+decl xDrip/Managers/PostProcessing/BgPostProcessingManager.swift | BgReadingDownstreamPolicy, BgPostProcessingDownstreamGate
+# BgReadingTrendTests and the suppressed-reading test need CoreData BgReading objects.
+test xDrip Tests/BgReadingTrendTests.swift | without BgReadingTrendTests, testSuppressedMinuteReadingsDoNotEnterDownstreamProcessing, reading

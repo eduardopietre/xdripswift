@@ -1,0 +1,18 @@
+# Therapy metrics: insulin and carbs on board, chart series, external (Nightscout/CareLink) data.
+include _widget-payload
+src     xDrip/Managers/Followers/DataFlowPolicy.swift
+decl    xDrip/Managers/Therapy/TherapyMetricsManager.swift | DataFlowPolicy, TherapyTreatment, TherapyStatusHistoryCache, TherapyChartCancellation
+src     xDrip/Managers/Watch/WatchState.swift
+members xDrip/Constants/ConstantsGlucoseChartSwiftUI.swift | ConstantsGlucoseChartSwiftUI | xAxisDates, minimumChartValueWithBottomSpace, minimumChartValueWithBasal, minimumChartValueWithBasal24Hours
+members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key, liveActivityShowIOBCOB
+members xDrip/Managers/Therapy/TherapyMetricsManager.swift | TherapyMetricsManager | resolve, localMetric, chartSeries, externalChartPoints
+# These tests need CoreData treatments, SwiftUI rendering, settings view models or the JS reference model.
+# testNamedInsulinAndSimpleCarbSettingsResolveLegacyPreferences reads an Int with
+# `object(forKey:) as? Double`, which bridges through NSNumber on iOS but returns nil on Linux.
+test    xDrip Tests/TherapyMetricsTests.swift | without readInputs, testNamedInsulinAndSimpleCarbSettingsResolveLegacyPreferences, testImportedSourceSelectionAndLocallyNamedUploadRoundTrip, testLiveActivityMetricsVisibilityPreservesStatusAndOldPayloads, testMainThreadColdReadReturnsImmediatelyThenPublishesCachedInputs, testPendingWriterChangesAreNotPublishedBeforeStoreSave, testPumpCageRequiresSiteChangeButNotFreshDeviceStatus, testRenderTherapyInsideGlucoseChartWithAndWithoutBasal, testRenderTreatmentLabelsAtDifferentChartSizes, testStoredInputSelectionExcludesBasalAndDeletedEntriesAndPreservesDuplicates, testTherapyLocalizationsHaveMatchingKeysAndFormatArguments, testTreatmentMasterPreservesSummaryAndCurvePreferences, testTreatmentSettingsDisableOnlyExternallyOwnedOptions, testTreatmentSettingsIgnoreInvalidRowIndices
+src     xDrip/Managers/Nightscout/NightscoutFollowType.swift
+src     xDrip/Managers/Followers/FollowerDataSourceType.swift
+src     xDrip/Constants/ConstantsFollower.swift
+# Only the snapshot struct; its extension builds it from the NightscoutDeviceStatus model.
+extract xDrip/Core Data/accessors/NightscoutDeviceStatusAccessor.swift | ^struct NightscoutDeviceStatusSnapshot | ^/// Owns persistence
+members xDrip/Texts/TextsSettingsView.swift | Texts_SettingsView | therapyDataSourceAutomatic, therapyDataSourceNone, nightscoutFollowTypeNone, nightscoutFollowTypeLoop, nightscoutFollowTypeOpenAPS, nightscoutFollowTypeNoneExpanded, nightscoutFollowTypeLoopExpanded, nightscoutFollowTypeOpenAPSExpanded

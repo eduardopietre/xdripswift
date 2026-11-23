@@ -1,0 +1,3 @@
+# Foundation-only extensions used throughout the app and its tests.
+src xDrip/Extensions/TimeInterval.swift
+src xDrip/Extensions/Data.swift

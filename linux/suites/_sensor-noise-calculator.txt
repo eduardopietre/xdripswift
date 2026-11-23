@@ -1,0 +1,4 @@
+# SensorNoiseCalculator and what it needs, shared by every suite that touches sensor noise.
+src     xDrip/Managers/SensorNoise/SensorNoiseCalculator.swift
+src     xDrip/Constants/ConstantsCalibrationAlgorithms.swift
+members xDrip/Texts/TextsSettingsView.swift | Texts_SettingsView | filename, sensorNoiseSensitivitySensitive, sensorNoiseSensitivityNormal, sensorNoiseSensitivityPermissive

@@ -1,0 +1,7 @@
+# Dexcom G6 authentication slot byte and its persistence rules.
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/AuthRequestTxMessage.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/DexcomTransmitterOpCode.swift
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/TransmitterMessage.swift
+# The rest of this file is the CoreData DexcomG5 entity; only the protocol part is pure Swift.
+extract xDrip/Core Data/classes/DexcomG5+CoreDataProperties.swift | ^protocol DexcomBluetoothSlotPersisting | ^extension DexcomG5: DexcomBluetoothSlotPersisting
+test    xDrip Tests/DexcomG6BluetoothSlotTests.swift

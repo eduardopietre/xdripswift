@@ -1,0 +1,6 @@
+# Live Activity / widget payloads: sensor warm-up presentation, payload encoding compatibility,
+# publication de-duplication and the Live Activity style setting.
+include _widget-payload
+members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key, liveActivitiesEnabled, liveActivityType, migrateLiveActivitySettingsIfNeeded
+# KVO on UserDefaults needs the Objective-C runtime.
+test    xDrip Tests/LiveActivityWarmupTests.swift | without testEnablementChangesNotifySettingsObservers
