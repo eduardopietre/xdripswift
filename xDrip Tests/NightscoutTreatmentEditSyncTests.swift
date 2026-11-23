@@ -63,6 +63,26 @@ final class NightscoutTreatmentEditSyncTests: XCTestCase {
         }
     }
 
+    /// Meals edited hours later must be checked too. OpenAPS and Trio record a temp basal every
+    /// few minutes, so the latest 50 treatments, used for uploading, cover only a few hours: an
+    /// older edited meal was never checked for deletion and stayed in the list twice.
+    @MainActor func testMealOlderThanTheLatestFiftyTreatmentsIsCheckedForDeletion() async throws {
+        try await withNightscoutTreatmentImport { coreDataManager, manager in
+            let context = coreDataManager.mainManagedObjectContext
+            let meal = TreatmentEntry(id: "6741a1f0c2a3b40012a1b2c3" + TreatmentType.Carbs.idExtension(), date: Date().addingTimeInterval(-6 * 3600), value: 20, treatmentType: .Carbs, nightscoutEventType: "Carb Correction", enteredBy: "iAPS", nsManagedObjectContext: context)
+            // A temp basal every 5 minutes after the meal, as uploaded by an oref-based AID.
+            for index in 0..<70 {
+                _ = TreatmentEntry(id: "basal\(index)" + TreatmentType.Basal.idExtension(), date: Date().addingTimeInterval(-Double(index) * 300), value: 0.8, valueSecondary: 30, treatmentType: .Basal, nightscoutEventType: "Temp Basal", enteredBy: "openaps", nsManagedObjectContext: context)
+            }
+            XCTAssertTrue(coreDataManager.saveChangesSynchronously())
+
+            let treatmentsToSync = TreatmentEntryAccessor(coreDataManager: coreDataManager).getLatestTreatments(limit: ConstantsNightscout.maxTreatmentsToUpload)
+            XCTAssertFalse(treatmentsToSync.contains(meal), "precondition: the meal is not among the latest 50 treatments")
+
+            XCTAssertTrue(manager.treatmentsForRemoteDeletionCheck(treatmentsToSync: treatmentsToSync).contains(meal))
+        }
+    }
+
     // MARK: - private functions
 
     /// A carbs treatment as iAPS uploads it to Nightscout.

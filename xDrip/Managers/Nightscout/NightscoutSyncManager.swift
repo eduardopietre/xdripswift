@@ -1220,7 +1220,7 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
                         
                             let siteURL = UserDefaults.standard.nightscoutUrl
                             let sitePort = UserDefaults.standard.nightscoutPort
-                            self.reconcileRemoteTreatmentDeletions(treatments: treatmentsToSync, downloaded: treatmentNSResponses, lookup: { remoteID, finished in
+                            self.reconcileRemoteTreatmentDeletions(treatments: self.treatmentsForRemoteDeletionCheck(treatmentsToSync: treatmentsToSync), downloaded: treatmentNSResponses, lookup: { remoteID, finished in
                                 let queries = [URLQueryItem(name: "find[_id]", value: remoteID), URLQueryItem(name: "count", value: "1")]
                                 self.performHTTPRequest(path: self.nightscoutTreatmentPath, queries: queries, httpMethod: "GET") { data, result in
                                     // A response from a previous source must not remove current local data.
@@ -1328,6 +1328,13 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
         return nil
     }
     
+    /// The local treatments checked for deletion at Nightscout after a treatment download.
+    /// - parameters:
+    ///     - treatmentsToSync: the latest treatments used for uploading during this sync
+    func treatmentsForRemoteDeletionCheck(treatmentsToSync: [TreatmentEntry]) -> [TreatmentEntry] {
+        treatmentsToSync
+    }
+
     /// A missing bulk result is only a candidate for deletion. An exact-id GET must return an
     /// empty array before we hide it locally. Keep failed lookups and pending local edits intact.
     /// The lookup closure lets tests exercise reconciliation without contacting a real server.
