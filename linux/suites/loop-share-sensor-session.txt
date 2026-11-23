@@ -1,0 +1,3 @@
+# Sensor session details shared with OS-AID apps (#329). LoopManager itself needs CoreData.
+decl xDrip/Managers/Loop/LoopManager.swift | LoopShareSensorSession
+test xDrip Tests/LoopShareSensorSessionTests.swift
