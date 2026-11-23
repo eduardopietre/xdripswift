@@ -329,10 +329,14 @@ final class DexcomG6SensorLabelTests: XCTestCase {
         )
         let sourceContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         sourceContext.persistentStoreCoordinator = sourceCoordinator
-        let sourceSensor = NSEntityDescription.insertNewObject(forEntityName: "Sensor", into: sourceContext)
-        sourceSensor.setValue(sensorID, forKey: "id")
-        sourceSensor.setValue(startDate, forKey: "startDate")
-        try sourceContext.save()
+        // Private queue contexts are only used inside perform: the scheme enables Core Data's
+        // concurrency assertions, which stop the test process on any access outside its queue.
+        try sourceContext.performAndWait {
+            let sourceSensor = NSEntityDescription.insertNewObject(forEntityName: "Sensor", into: sourceContext)
+            sourceSensor.setValue(sensorID, forKey: "id")
+            sourceSensor.setValue(startDate, forKey: "startDate")
+            try sourceContext.save()
+        }
         try sourceCoordinator.remove(sourceStore)
 
         let destinationCoordinator = NSPersistentStoreCoordinator(managedObjectModel: v27)
@@ -348,14 +352,23 @@ final class DexcomG6SensorLabelTests: XCTestCase {
         )
         let destinationContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         destinationContext.persistentStoreCoordinator = destinationCoordinator
-        let request = NSFetchRequest<NSManagedObject>(entityName: "Sensor")
-        let migratedSensor = try XCTUnwrap(destinationContext.fetch(request).first)
+        let migrated: (id: String?, startDate: Date?, requestedSensorCode: Any?, origin: Int16?, calibrationMode: Int16?)? = try destinationContext.performAndWait {
+            let request = NSFetchRequest<NSManagedObject>(entityName: "Sensor")
+            return try destinationContext.fetch(request).first.map { sensor in
+                (sensor.value(forKey: "id") as? String,
+                 sensor.value(forKey: "startDate") as? Date,
+                 sensor.value(forKey: "requestedSensorCode"),
+                 (sensor.value(forKey: "sensorSessionOriginRaw") as? NSNumber)?.int16Value,
+                 (sensor.value(forKey: "sensorCalibrationModeRaw") as? NSNumber)?.int16Value)
+            }
+        }
+        let migratedSensor = try XCTUnwrap(migrated)
 
-        XCTAssertEqual(migratedSensor.value(forKey: "id") as? String, sensorID)
-        XCTAssertEqual(migratedSensor.value(forKey: "startDate") as? Date, startDate)
-        XCTAssertNil(migratedSensor.value(forKey: "requestedSensorCode"))
-        XCTAssertEqual((migratedSensor.value(forKey: "sensorSessionOriginRaw") as? NSNumber)?.int16Value, 0)
-        XCTAssertEqual((migratedSensor.value(forKey: "sensorCalibrationModeRaw") as? NSNumber)?.int16Value, 0)
+        XCTAssertEqual(migratedSensor.id, sensorID)
+        XCTAssertEqual(migratedSensor.startDate, startDate)
+        XCTAssertNil(migratedSensor.requestedSensorCode)
+        XCTAssertEqual(migratedSensor.origin, 0)
+        XCTAssertEqual(migratedSensor.calibrationMode, 0)
     }
 
     func testCopiesStartMetadataWhenExistingSessionIsAdopted() {
