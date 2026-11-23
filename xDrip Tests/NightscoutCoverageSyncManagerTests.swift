@@ -249,7 +249,9 @@ private final class SyncStubProtocol: URLProtocol {
         let entryRequests = { SyncStubProtocol.requests.filter { $0.url.path.hasPrefix("/api/v1/entries") } }
         await waitUntil { entryRequests().count >= 2 }
         let requests = entryRequests()
-        XCTAssertEqual(requests.count, 2)
+        // At least the DELETE and the POST of the replacement. The host app's own sync manager can
+        // react to the changed port and token with an upload of its own, which carries them as well.
+        XCTAssertEqual(Set(requests.map(\.method)).isSuperset(of: ["DELETE", "POST"]), true)
         for request in requests {
             XCTAssertEqual(request.url.port, 8443)
             XCTAssertEqual(queryValues(request.url, "token"), ["abc"])
