@@ -176,6 +176,8 @@ def main():
     mode, path = sys.argv[1], sys.argv[2]
     with open(path, encoding='utf-8') as f:
         lines = f.read().split('\n')
+    # On Linux URLRequest, URLSession etc. live in FoundationNetworking; Apple platforms have no such module.
+    print('#if canImport(FoundationNetworking)\nimport FoundationNetworking\n#endif')
     if mode == 'copy':
         print('\n'.join(linux_compatible(line) for line in lines), end='')
         return
