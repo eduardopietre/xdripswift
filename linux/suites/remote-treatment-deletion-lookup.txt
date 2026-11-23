@@ -1,0 +1,4 @@
+# Limit and order of the exact-id requests that confirm deletions at Nightscout (#624).
+# Only the policy: NightscoutSyncManager itself needs CoreData and UIKit.
+decl    xDrip/Managers/Nightscout/NightscoutSyncManager.swift | RemoteTreatmentDeletionLookupPolicy
+test    xDrip Tests/RemoteTreatmentDeletionLookupPolicyTests.swift
