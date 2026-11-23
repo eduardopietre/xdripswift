@@ -298,7 +298,7 @@ extension Date {
 final class SystemTimeZoneChangeObserver {
     private let notificationCenter: NotificationCenter
     private let resetSystemTimeZone: () -> Void
-    private var observer: NSObjectProtocol?
+    private var observers: [NSObjectProtocol] = []
 
     /// - parameters:
     ///     - notificationCenter: where the time zone change is posted
@@ -308,15 +308,16 @@ final class SystemTimeZoneChangeObserver {
         self.notificationCenter = notificationCenter
         self.resetSystemTimeZone = resetSystemTimeZone
         // Clear the cache as soon as the system reports a new time zone, so formatters created
-        // afterwards use it (#405).
-        observer = notificationCenter.addObserver(forName: .NSSystemTimeZoneDidChange, object: nil, queue: nil) { _ in
-            resetSystemTimeZone()
+        // afterwards use it (#405). A suspended app misses the time zone notification, so the
+        // caller also passes notifications that are delivered when the app runs again.
+        observers = notificationNames.map { name in
+            notificationCenter.addObserver(forName: name, object: nil, queue: nil) { _ in
+                resetSystemTimeZone()
+            }
         }
     }
 
     deinit {
-        if let observer {
-            notificationCenter.removeObserver(observer)
-        }
+        observers.forEach(notificationCenter.removeObserver)
     }
 }
