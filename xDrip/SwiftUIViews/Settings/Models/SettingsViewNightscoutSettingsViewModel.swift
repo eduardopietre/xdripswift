@@ -800,17 +800,25 @@ enum NightscoutCredentialsCheck {
             siteURL += ":" + port.description
         }
 
-        guard let url = URL(string: siteURL) else { return nil }
+        guard let url = URL(string: siteURL),
+              var components = URLComponents(url: url.appendingPathComponent(path), resolvingAgainstBaseURL: false) else { return nil }
 
-        var request = URLRequest(url: url.appendingPathComponent(path))
+        // An access token goes in the token query parameter, as when syncing. Nightscout reads the
+        // api-secret header as an API_SECRET hash; only recent versions also accept a token there,
+        // so a valid token failed verification on older servers (#636).
+        if hashedAPISecret == nil, let token {
+            components.queryItems = [URLQueryItem(name: "token", value: token)]
+        }
+
+        guard let requestURL = components.url else { return nil }
+
+        var request = URLRequest(url: requestURL)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 
-        // if the API_SECRET is present, then pass its hash via http header. If it's missing but there is a token, then send this as plain text to allow the authentication check.
+        // if the API_SECRET is present, then pass its hash via http header; it takes precedence over a token
         if let hashedAPISecret {
             request.setValue(hashedAPISecret, forHTTPHeaderField: "api-secret")
-        } else if let token {
-            request.setValue(token, forHTTPHeaderField: "api-secret")
         }
 
         return request
