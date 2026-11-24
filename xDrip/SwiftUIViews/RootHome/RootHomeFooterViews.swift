@@ -33,11 +33,12 @@ struct SensorHealthBannerView: View {
                             .foregroundStyle(.white)
                             .lineLimit(1)
                             .minimumScaleFactor(0.85)
+                        // The banner is the only place the guidance is shown, so it must never be
+                        // truncated: let it wrap over as many lines as it needs (#795).
                         Text(issue.guidance)
                             .font(.subheadline)
                             .foregroundStyle(.white)
-                            .lineLimit(3)
-                            .minimumScaleFactor(0.9)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
 
