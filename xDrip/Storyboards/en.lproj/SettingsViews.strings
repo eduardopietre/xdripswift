@@ -525,7 +525,8 @@
 "therapy.treatmentScale" = "Treatment Scale";
 "therapy.scaleStandard" = "Standard";
 "therapy.scaleSmallDoses" = "Small Doses";
-"therapy.treatmentScaleExplanation" = "Small Doses makes small treatment markers easier to see. Bolus markers scale from 0.1–2.0U and carb markers from 1–50g. Higher amounts use the largest marker.";
+"therapy.scaleExtraSmallDoses" = "Extra Small Doses";
+"therapy.treatmentScaleExplanation" = "Small Doses makes small treatment markers easier to see. Bolus markers scale from 0.1–2.0U and carb markers from 1–50g. Higher amounts use the largest marker. Extra Small Doses scales bolus markers from 0.05–1.0U and carb markers from 0.5–20g, with larger markers.";
 
 /* Dexcom Share upload connection and activity */
 "settingsviews_dexcomShareUploadSectionTitle" = "Dexcom Share Upload";

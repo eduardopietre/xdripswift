@@ -766,7 +766,8 @@
 "therapy.treatmentScale" = "Шкала терапії";
 "therapy.scaleStandard" = "Типова";
 "therapy.scaleSmallDoses" = "Малі дози";
-"therapy.treatmentScaleExplanation" = "Малі дози роблять малі маркери помітнішими. Болюси: 0.1–2.0U; вуглеводи: 1–50g. Більші кількості використовують найбільший маркер.";
+"therapy.scaleExtraSmallDoses" = "Дуже малі дози";
+"therapy.treatmentScaleExplanation" = "Малі дози роблять малі маркери помітнішими. Болюси: 0.1–2.0U; вуглеводи: 1–50g. Більші кількості використовують найбільший маркер. Дуже малі дози: болюси 0.05–1.0U; вуглеводи 0.5–20g, з більшими маркерами.";
 
 /* Live Activity styles */
 "settingsviews_liveActivityTypeMinimal" = "Мінімальний";
