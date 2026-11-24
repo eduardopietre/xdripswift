@@ -1864,6 +1864,69 @@ final class CareLinkTests: XCTestCase {
         XCTAssertEqual(maximumConcurrentImports, 1)
     }
 
+    func testAutomaticPatientSelectionDoesNotStartASecondPoll() async throws {
+        let (manager, delegate, cleanUp) = makeSelectionTestManager()
+        defer { cleanUp() }
+
+        let firstDeliveryCompleted = await waitUntil { delegate.deliveryCount == 1 }
+        XCTAssertTrue(firstDeliveryCompleted)
+        XCTAssertNotNil(UserDefaults.standard.careLinkSelectedPatientID)
+
+        // The first poll saves the patient it resolved. That save must not schedule another poll:
+        // the poll that made it already fetched that patient's data.
+        try? await Task.sleep(nanoseconds: 300_000_000)
+        XCTAssertEqual(URLProtocolStub.lock.withLock { URLProtocolStub.usersMeCount }, 1)
+        XCTAssertEqual(delegate.deliveryCount, 1)
+        _ = manager
+    }
+
+    func testSelectingAPatientPollsOnce() async throws {
+        let (manager, delegate, cleanUp) = makeSelectionTestManager()
+        defer { cleanUp() }
+
+        let firstDeliveryCompleted = await waitUntil { delegate.deliveryCount == 1 }
+        XCTAssertTrue(firstDeliveryCompleted)
+        try? await Task.sleep(nanoseconds: 300_000_000)
+        let pollsBeforeSelection = URLProtocolStub.lock.withLock { URLProtocolStub.usersMeCount }
+        let selectedID = try XCTUnwrap(UserDefaults.standard.careLinkSelectedPatientID)
+
+        manager.selectPatient(selectedID)
+
+        let selectionPollCompleted = await waitUntil { delegate.deliveryCount == 2 }
+        XCTAssertTrue(selectionPollCompleted)
+        try? await Task.sleep(nanoseconds: 300_000_000)
+        XCTAssertEqual(URLProtocolStub.lock.withLock { URLProtocolStub.usersMeCount }, pollsBeforeSelection + 1)
+        XCTAssertEqual(delegate.deliveryCount, 2)
+    }
+
+    /// An authenticated follower with no saved patient, so its first poll resolves one.
+    private func makeSelectionTestManager() -> (CareLinkFollowManager, FollowerDelegateSpy, () -> Void) {
+        URLProtocolStub.usesCurrentGlucoseTime = true
+        let defaultsSnapshot = CareLinkDefaultsSnapshot(keys: [
+            .isMaster,
+            .followerDataSourceType,
+            .followerBackgroundKeepAliveType,
+            .careLinkRegion,
+            .careLinkSelectedPatientID,
+        ])
+        let defaults = UserDefaults.standard
+        defaults.isMaster = false
+        defaults.followerDataSourceType = .careLink
+        defaults.followerBackgroundKeepAliveType = .heartbeat
+        defaults.careLinkRegion = CareLinkRegion.outsideUnitedStates.rawValue
+        defaults.careLinkSelectedPatientID = nil
+
+        let delegate = FollowerDelegateSpy()
+        let manager = CareLinkFollowManager(
+            coreDataManager: CoreDataManager(inMemoryModelName: ConstantsCoreData.modelName),
+            followerDelegate: delegate,
+            backgroundKeepAliveManager: CareLinkNoOpKeepAliveManager(),
+            client: makeClient(),
+            pollingSchedulerFactory: { _, _ in CareLinkNoOpTimer() }
+        )
+        return (manager, delegate, { defaultsSnapshot.restore() })
+    }
+
     func testLifecyclePolicyRequiresSelectionAndOAuthSessionForPolling() {
         XCTAssertEqual(
             CareLinkLifecyclePolicy.state(isSelected: false, hasSession: true),
