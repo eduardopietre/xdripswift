@@ -89,14 +89,14 @@ class BgReadingsAccessor: ObservableObject {
     ///
     /// - parameters:
     ///     - limit : maximum amount of readings to return, if nil then no limit in amount
-    ///     - fromDate : reading must have date > fromDate
+    ///     - fromDate : reading must have date > fromDate, or >= fromDate when includingFromDate is true
     ///     - forSensor : if not nil, then only readings for the given sensor will be returned - if nil, then sensor is ignored
     ///     - if ignoreRawData = true, then value of rawdata will be ignored
     ///     - if ignoreCalculatedValue = true, then value of calculatedValue will be ignored
     /// - returns: an array with readings, can be empty array.
     ///     Order by timestamp, descending meaning the reading at index 0 is the youngest
 
-    func getLatestBgReadings(limit: Int?, fromDate: Date?, forSensor sensor: Sensor?, ignoreRawData: Bool, ignoreCalculatedValue: Bool, includingSuppressed: Bool = false) -> [BgReading] {
+    func getLatestBgReadings(limit: Int?, fromDate: Date?, forSensor sensor: Sensor?, ignoreRawData: Bool, ignoreCalculatedValue: Bool, includingSuppressed: Bool = false, includingFromDate: Bool = false) -> [BgReading] {
 
         var returnValue: [BgReading] = []
 
@@ -112,7 +112,9 @@ class BgReadingsAccessor: ObservableObject {
             var subPredicates = [NSPredicate]()
 
             if let fromDate = fromDate {
-                subPredicates.append(NSPredicate(format: "timeStamp > %@", NSDate(timeIntervalSince1970: fromDate.timeIntervalSince1970)))
+                // Pass the date itself. Rebuilding it from timeIntervalSince1970 moved it by a rounding
+                // step, so a reading exactly at fromDate was kept or dropped depending on the time.
+                subPredicates.append(NSPredicate(format: includingFromDate ? "timeStamp >= %@" : "timeStamp > %@", fromDate as NSDate))
             }
 
             if !includingSuppressed {

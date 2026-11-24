@@ -172,6 +172,8 @@ class BgPostProcessingManager {
         // through the readings without needing to constantly look backwards. In master mode,
         // the sensor session's time window is authoritative. Do not filter by the current
         // Sensor relationship because that relationship can change during one physical session.
+        // The window includes its start: "Apply from now" starts at the latest reading's timestamp,
+        // and an adjustment applies to readings at or after its apply-from time.
         let bgReadings = Array(
             bgReadingsAccessor.getLatestBgReadings(
                 limit: nil,
@@ -179,7 +181,8 @@ class BgPostProcessingManager {
                 forSensor: nil,
                 ignoreRawData: true,
                 ignoreCalculatedValue: true,
-                includingSuppressed: true
+                includingSuppressed: true,
+                includingFromDate: true
             ).reversed()
         )
 
@@ -797,13 +800,15 @@ class BgPostProcessingManager {
         let configuredStartDate = UserDefaults.standard.postProcessingApplyFromTimeStamp ?? UserDefaults.standard.postProcessingStartTimeStamp
         let sourceWindowStartDate = startDateClampedToCurrentSensorSession(configuredStartDate, currentSensor: currentSensor)
 
+        // Inclusive, like the processing window: a reading exactly at the start belongs to it.
         guard let latestBgReading = bgReadingsAccessor.getLatestBgReadings(
             limit: 1,
             fromDate: sourceWindowStartDate,
             forSensor: nil,
             ignoreRawData: true,
             ignoreCalculatedValue: true,
-            includingSuppressed: true
+            includingSuppressed: true,
+            includingFromDate: true
         ).first else {
             return sourceWindowStartDate
         }
