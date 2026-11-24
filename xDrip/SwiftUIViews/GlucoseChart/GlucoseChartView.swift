@@ -828,7 +828,7 @@ struct GlucoseChartView: View {
                         let strokeStyle = StrokeStyle(lineWidth: dataSet.lineWidth, dash: dataSet.dash)
 
                         LineMark(x: .value("Time", bgReadingDate),
-                                 y: .value("BG", bgReadingValue),
+                                 y: .value("BG", GlucoseChartPlotValue.plotted(bgReadingValue, isMgDl: isMgDl)),
                                  series: .value("Series", dataSet.seriesIdentifier))
                         .lineStyle(strokeStyle)
                         .foregroundStyle(lineColor)
@@ -846,7 +846,7 @@ struct GlucoseChartView: View {
                         let pointColor = dataSet.pointColor ?? dataSet.lineColor ?? .clear
 
                         PointMark(x: .value("Time", bgReadingDate),
-                                  y: .value("BG", bgReadingValue))
+                                  y: .value("BG", GlucoseChartPlotValue.plotted(bgReadingValue, isMgDl: isMgDl)))
                         .symbol(Circle())
                         .symbolSize(glucosePointSymbolSize(scale: dataSet.pointSizeMultiplier))
                         .foregroundStyle(pointColor)
@@ -857,10 +857,11 @@ struct GlucoseChartView: View {
             // Main glucose points.
             ForEach(bgReadingValues.indices, id: \.self) { index in
                 PointMark(x: .value("Time", bgReadingDates[index]),
-                          y: .value("BG", bgReadingValues[index]))
+                          y: .value("BG", GlucoseChartPlotValue.plotted(bgReadingValues[index], isMgDl: isMgDl)))
                     .symbol(Circle())
                     .symbolSize(glucosePointSymbolSize())
-                    .foregroundStyle(bgColor(bgValueInMgDl: bgReadingValues[index]))
+                    // colored by the value it is drawn at, so its color matches its place against the limit lines
+                    .foregroundStyle(bgColor(bgValueInMgDl: GlucoseChartPlotValue.plotted(bgReadingValues[index], isMgDl: isMgDl)))
             }
 
             // Calibration and BG check markers sit above glucose points.
@@ -880,13 +881,13 @@ struct GlucoseChartView: View {
                         let pointColor = dataSet.pointColor ?? dataSet.lineColor ?? .clear
 
                         PointMark(x: .value("Time", bgReadingDate),
-                                  y: .value("BG", bgReadingValue))
+                                  y: .value("BG", GlucoseChartPlotValue.plotted(bgReadingValue, isMgDl: isMgDl)))
                         .symbol(Circle())
                         .symbolSize(glucosePointSymbolSize(scale: pointBorderSizeMultiplier))
                         .foregroundStyle(pointBorderColor)
 
                         PointMark(x: .value("Time", bgReadingDate),
-                                  y: .value("BG", bgReadingValue))
+                                  y: .value("BG", GlucoseChartPlotValue.plotted(bgReadingValue, isMgDl: isMgDl)))
                         .symbol(Circle())
                         .symbolSize(glucosePointSymbolSize(scale: dataSet.pointSizeMultiplier))
                         .foregroundStyle(pointColor)
