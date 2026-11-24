@@ -16,6 +16,7 @@
 		9EF8670ABEF2E9D783871B79 /* BgReadingAlertBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAEA3EAFB9A0F4133FCA7AC /* BgReadingAlertBodyTests.swift */; };
 		16A91EC2E36667A22250472A /* AddDeviceScreenLockPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CF8B68567785333C70A51 /* AddDeviceScreenLockPolicyTests.swift */; };
 		ADA0F121131388D24B3D9DD1 /* DexcomSessionStopDetectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E956AB9EB03284B31502D87 /* DexcomSessionStopDetectionTests.swift */; };
+		D5719F510628BE04BEC32054 /* CalendarShareEventLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7592E5C0ABDB49C4098FB5 /* CalendarShareEventLocationTests.swift */; };
 		7E7760013000000100000001 /* SensorExpiryReminderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000002 /* SensorExpiryReminderManager.swift */; };
 		7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */; };
 		07ECB18D91AE096E637D1393 /* AlertsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EFF5D128BB4E856D0EB5A /* AlertsSettingsView.swift */; };
@@ -1018,6 +1019,7 @@
 		EAAEA3EAFB9A0F4133FCA7AC /* BgReadingAlertBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgReadingAlertBodyTests.swift; sourceTree = "<group>"; };
 		143CF8B68567785333C70A51 /* AddDeviceScreenLockPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceScreenLockPolicyTests.swift; sourceTree = "<group>"; };
 		2E956AB9EB03284B31502D87 /* DexcomSessionStopDetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomSessionStopDetectionTests.swift; sourceTree = "<group>"; };
+		0A7592E5C0ABDB49C4098FB5 /* CalendarShareEventLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarShareEventLocationTests.swift; sourceTree = "<group>"; };
 		7E7760013000000100000002 /* SensorExpiryReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManager.swift; sourceTree = "<group>"; };
 		7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManagerTests.swift; sourceTree = "<group>"; };
 		008DD8362C3D359B7EA1B6BD /* Libre3PairingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3PairingFlow.swift; path = Libre3PairingFlow.swift; sourceTree = "<group>"; };
@@ -2886,6 +2888,7 @@
 				EAAEA3EAFB9A0F4133FCA7AC /* BgReadingAlertBodyTests.swift */,
 				143CF8B68567785333C70A51 /* AddDeviceScreenLockPolicyTests.swift */,
 				2E956AB9EB03284B31502D87 /* DexcomSessionStopDetectionTests.swift */,
+				0A7592E5C0ABDB49C4098FB5 /* CalendarShareEventLocationTests.swift */,
 				4F2800113004000100000001 /* RootHomeInteractionTests.swift */,
 				4F2600123002000200000001 /* SensorHealthIssueManagerTests.swift */,
 				7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */,
@@ -4842,6 +4845,7 @@
 				9EF8670ABEF2E9D783871B79 /* BgReadingAlertBodyTests.swift in Sources */,
 				16A91EC2E36667A22250472A /* AddDeviceScreenLockPolicyTests.swift in Sources */,
 				ADA0F121131388D24B3D9DD1 /* DexcomSessionStopDetectionTests.swift in Sources */,
+				D5719F510628BE04BEC32054 /* CalendarShareEventLocationTests.swift in Sources */,
 				7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */,
 				4F2800023004000100000001 /* GlucoseChartYAxisRetentionTests.swift in Sources */,
 				4F2800013004000100000001 /* RootHomeInteractionTests.swift in Sources */,
