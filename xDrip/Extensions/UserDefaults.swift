@@ -213,6 +213,8 @@ extension UserDefaults {
         case smallCarbTreatmentThreshold = "smallCarbTreatmentThreshold"
         /// use larger minimum chart markers and narrower dose ranges
         case useSmallDoseTreatmentScale = "useSmallDoseTreatmentScale"
+        /// skip high and very high alerts while the glucose is falling, off by default
+        case suppressHighAlertsWhileFalling = "suppressHighAlertsWhileFalling"
         /// should the micro-boluses be listed in the treatment list/table?
         case showSmallBolusTreatmentsInList = "showSmallBolusTreatmentsInList"
         /// should the normal boluses be listed in the treatment list/table?
@@ -1792,6 +1794,12 @@ extension UserDefaults {
         set {
             set(newValue, forKey: Key.smallCarbTreatmentThreshold.rawValue)
         }
+    }
+
+    /// should high and very high alerts be skipped while the glucose is falling? Off by default.
+    @objc dynamic var suppressHighAlertsWhileFalling: Bool {
+        get { bool(forKey: Key.suppressHighAlertsWhileFalling.rawValue) }
+        set { set(newValue, forKey: Key.suppressHighAlertsWhileFalling.rawValue) }
     }
 
     /// Standard is the default. Small Doses changes chart marker sizing without changing labels or treatments.
