@@ -469,6 +469,8 @@ extension UserDefaults {
 
         /// alias sent to Calendar Follow devices
         case calendarShareAlias = "calendarShareAlias"
+        /// optional text shown as the location of the Calendar Share event
+        case calendarEventLocation = "calendarEventLocation"
 
         /// last Calendar Share write status
         case calendarShareStatus = "calendarShareStatus"
@@ -2699,6 +2701,12 @@ extension UserDefaults {
     }
 
     // MARK: - Calendar Share
+
+    /// optional text shown as the location of the Calendar Share event, nil for none
+    @objc dynamic var calendarEventLocation: String? {
+        get { string(forKey: Key.calendarEventLocation.rawValue) }
+        set { set(newValue, forKey: Key.calendarEventLocation.rawValue) }
+    }
 
     /// alias sent to Calendar Follow devices
     @objc dynamic var calendarShareAlias: String {

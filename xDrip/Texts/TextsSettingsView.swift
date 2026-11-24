@@ -926,6 +926,14 @@ class Texts_SettingsView {
         return NSLocalizedString("calendarShareAliasMessage", tableName: filename, bundle: Bundle.main, value: "This name is sent to follower devices.", comment: "Calendar Share Settings - alias editor description")
     }()
 
+    static let calendarEventLocation: String = {
+        return NSLocalizedString("calendarEventLocation", tableName: filename, bundle: Bundle.main, value: "Event Location", comment: "Calendar Share Settings - optional location text of the calendar event")
+    }()
+
+    static let calendarEventLocationMessage: String = {
+        return NSLocalizedString("calendarEventLocationMessage", tableName: filename, bundle: Bundle.main, value: "Optional text shown as the location of the calendar event, for example on Apple Watch faces. Leave empty for none.", comment: "Calendar Share Settings - event location editor description")
+    }()
+
     static let calendarShareConnectionFooter: String = {
         return NSLocalizedString("calendarShareConnectionFooter", tableName: filename, bundle: Bundle.main, value: "Select a shared calendar that follower devices can also access. An iCloud shared calendar is recommended for best operation.", comment: "Calendar Share Settings - connection section footer")
     }()

@@ -49,6 +49,9 @@ fileprivate enum Setting:Int, CaseIterable {
     /// minimum time between two readings, for which event should be created (in minutes)
     case calendarInterval = 11
 
+    /// optional text shown as the location of the calendar event
+    case eventLocation = 12
+
 }
 
 enum CalendarEventsRowGroup {
@@ -137,6 +140,7 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
                 nativeSettingsRow(id: "calendarEvents.displayDelta", index: Setting.displayDelta.rawValue, sectionID: sectionID, isVisible: calendarRowsVisible),
                 nativeSettingsRow(id: "calendarEvents.displayUnits", index: Setting.displayUnits.rawValue, sectionID: sectionID, isVisible: calendarRowsVisible),
                 nativeSettingsRow(id: "calendarEvents.displayVisualIndicator", index: Setting.displayVisualIndicator.rawValue, sectionID: sectionID, isVisible: calendarRowsVisible),
+                nativeSettingsRow(id: "calendarEvents.eventLocation", index: Setting.eventLocation.rawValue, sectionID: sectionID, isVisible: calendarRowsVisible),
                 nativeSettingsRow(id: "calendarEvents.calendarInterval", index: Setting.calendarInterval.rawValue, sectionID: sectionID, isVisible: calendarRowsVisible)
             ]
         }
@@ -189,6 +193,9 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
 
         case .alias:
             return Texts_SettingsView.calendarShareAlias
+
+        case .eventLocation:
+            return Texts_SettingsView.calendarEventLocation
 
         case .status:
             return Texts_SettingsView.calendarShareStatus
@@ -261,7 +268,7 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
                 
             }
             
-        case .calenderId, .alias:
+        case .calenderId, .alias, .eventLocation:
             return SettingsAccessory.disclosure
             
         case .displayTrend, .displayDelta, .displayUnits, .displayVisualIndicator, .status, .lastValue, .timestamp:
@@ -284,6 +291,9 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
 
         case .alias:
             return UserDefaults.standard.calendarShareAlias
+
+        case .eventLocation:
+            return CalendarShareEventLocation.location(customText: UserDefaults.standard.calendarEventLocation)
 
         case .status:
             return calendarShareStatus.description
@@ -356,7 +366,7 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
                     UserDefaults.standard.displayVisualIndicatorInCalendarEvent = isOn
                 }
             )
-        case .calenderId, .alias, .status, .lastValue, .timestamp, .includeHistory, .calendarInterval:
+        case .calenderId, .alias, .eventLocation, .status, .lastValue, .timestamp, .includeHistory, .calendarInterval:
             return nil
         }
     }
@@ -507,7 +517,7 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
         case .preview:
             return UserDefaults.standard.createCalendarEvent && calendarAccessIsAuthorized ? 1 : 0
         case .settings:
-            return UserDefaults.standard.createCalendarEvent && calendarAccessIsAuthorized ? 5 : 0
+            return UserDefaults.standard.createCalendarEvent && calendarAccessIsAuthorized ? 6 : 0
         }
     }
 
@@ -666,6 +676,13 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
                 }
             }, cancelHandler: nil, inputValidator: nil)
 
+        case .eventLocation:
+            return .askText(title: Texts_SettingsView.calendarEventLocation, message: Texts_SettingsView.calendarEventLocationMessage, keyboardType: .default, text: UserDefaults.standard.calendarEventLocation, placeHolder: nil, actionTitle: nil, cancelTitle: nil, actionHandler: { location in
+                // An empty text removes the location.
+                UserDefaults.standard.calendarEventLocation = CalendarShareEventLocation.location(customText: location)
+                UserDefaults.standard.calendarShareStatus = CalendarShareStatus.waiting.rawValue
+            }, cancelHandler: nil, inputValidator: nil)
+
         case .includeHistory:
             let options = [0, 30, 60, 120, 240]
             let data = options.map { $0.description + " " + Texts_Common.minutes }
@@ -695,7 +712,7 @@ class SettingsViewCalendarEventsSettingsViewModel: SettingsViewModelProtocol {
         switch setting {
         case .displayTrend, .displayDelta, .displayUnits, .displayVisualIndicator, .calendarInterval:
             return true
-        case .createCalendarEvent, .calenderId, .alias, .status, .lastValue, .timestamp, .includeHistory:
+        case .createCalendarEvent, .calenderId, .alias, .eventLocation, .status, .lastValue, .timestamp, .includeHistory:
             return false
         }
     }
