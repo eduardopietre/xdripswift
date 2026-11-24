@@ -140,6 +140,7 @@ public class HealthKitManager: NSObject {
         let bgReadingsToStore = bgReadingsAccessor.getLatestBgReadingSnapshots(limit: 2016, fromDate: UserDefaults.standard.timeStampLatestHealthKitStoreBgReading, forSensor: nil, ignoreRawData: true, ignoreCalculatedValue: false).filter(minimumTimeBetweenTwoReadingsInMinutes: storeFrequentReadingsInHealthKit ? 0 : ConstantsHealthKit.minimiumTimeBetweenTwoReadingsInMinutes, lastConnectionStatusChangeTimeStamp: nil, timeStampLastProcessedBgReading: UserDefaults.standard.timeStampLatestHealthKitStoreBgReading)
         
         let bgReadingsToStoreAfterApplyingStrictBoundaryAndInFlightExclusion = bgReadingsToStore.filter {
+            guard HealthKitReadingPolicy.shouldStore(calculatedValue: $0.calculatedValue) else { return false }
             let isAfterStrictBoundary = $0.timeStamp > strictLatestHealthKitStoredTimeStamp
             let respectsFrequentWriteSpacing = !storeFrequentReadingsInHealthKit || ($0.timeStamp.timeIntervalSince(strictLatestHealthKitStoredTimeStamp) > 50)
             let isNotInFlight = !timeStampsCurrentlyInFlight.contains($0.timeStamp)
@@ -158,7 +159,7 @@ public class HealthKitManager: NSObject {
             // Reload current values, not stale smoothed snapshots saved before a restart.
             // Deleted/suppressed readings must not be resurrected by a delayed retry.
             let request = BgReading.fetchRequest()
-            request.predicate = NSPredicate(format: "id IN %@ AND calculatedValue > 0 AND isSuppressedByFiveMinuteCadence == NO", Array(pendingHealthKitReplacements.keys))
+            request.predicate = NSPredicate(format: "id IN %@ AND calculatedValue >= %@ AND isSuppressedByFiveMinuteCadence == NO", Array(pendingHealthKitReplacements.keys), NSNumber(value: HealthKitReadingPolicy.minimumStoredCalculatedValue))
             do {
                 let readings = try coreDataManager.mainManagedObjectContext.fetch(request)
                 let readingIDs = Set(readings.map { $0.id })
@@ -193,6 +194,9 @@ public class HealthKitManager: NSObject {
         guard let bloodGlucoseType = bloodGlucoseType else { return }
         
         let bloodGlucoseUnit = HKUnit(from: "mg/dL")
+
+        // Post processing rewrites the recent readings here, on every cycle when smoothing is on.
+        let bgReadings = HealthKitReadingPolicy.storableReadings(bgReadings, calculatedValue: { $0.calculatedValue })
 
         var pendingReplacements = pendingHealthKitReplacements
         for bgReading in bgReadings {
@@ -375,5 +379,23 @@ public class HealthKitManager: NSObject {
                     }
                 }
         })
+    }
+}
+
+/// Decides which readings may be written to Apple Health.
+///
+/// Apple Health is a long-term record that other apps read, so it should only contain readings
+/// that represent a glucose value.
+enum HealthKitReadingPolicy {
+    /// Lowest calculated value written to Apple Health. Readings without a calculated value are 0.
+    static let minimumStoredCalculatedValue: Double = .leastNonzeroMagnitude
+
+    static func shouldStore(calculatedValue: Double) -> Bool {
+        calculatedValue >= minimumStoredCalculatedValue
+    }
+
+    /// The readings of a replacement to write to Apple Health.
+    static func storableReadings<Reading>(_ readings: [Reading], calculatedValue: (Reading) -> Double) -> [Reading] {
+        readings
     }
 }
