@@ -825,7 +825,12 @@ private func createAlertBodyForBgReadingAlerts(bgReading: BgReading, alertKind: 
 /// Decides whether a high or very high alert is skipped because the glucose is already falling.
 ///
 /// Only high alerts can be skipped: a low alert always fires, also when the glucose is rising.
+/// With the option on, a high alert is skipped when the latest reading is lower than the previous
+/// one, at most 5 minutes (plus margin) earlier, as for fast drop alerts (#694).
 enum HighAlertTrendPolicy {
+    /// Longest time between the two readings for their difference to count as the trend.
+    static let maximumTimeBetweenReadings: TimeInterval = 5 * 60 + 10
+
     /// - parameters:
     ///     - isEnabled: the user's setting, off by default
     ///     - currentValue: the latest reading in mg/dL
@@ -833,6 +838,8 @@ enum HighAlertTrendPolicy {
     ///     - previousValue: the reading before it in mg/dL, nil if none
     ///     - previousTimeStamp: when that reading was taken, nil if none
     static func suppresses(isEnabled: Bool, currentValue: Double, currentTimeStamp: Date, previousValue: Double?, previousTimeStamp: Date?) -> Bool {
-        false
+        guard isEnabled, let previousValue, let previousTimeStamp,
+              currentTimeStamp.timeIntervalSince(previousTimeStamp) <= maximumTimeBetweenReadings else { return false }
+        return currentValue < previousValue
     }
 }

@@ -21,6 +21,9 @@ fileprivate enum Setting:Int, CaseIterable {
 
     /// Selects the oversized picker for snoozing an active alarm.
     case preferLargeSnoozeScreen = 5
+
+    /// Skips high and very high alerts while the glucose is falling. Low alerts are never skipped.
+    case suppressHighAlertsWhileFalling = 6
     
 }
 
@@ -80,6 +83,11 @@ struct SettingsViewAlertSettingsViewModel:SettingsViewModelProtocol {
                     id: "alerts.preferLargeSnoozeScreen",
                     index: Setting.preferLargeSnoozeScreen.rawValue,
                     sectionID: sectionID
+                ),
+                nativeSettingsRow(
+                    id: "alerts.suppressHighAlertsWhileFalling",
+                    index: Setting.suppressHighAlertsWhileFalling.rawValue,
+                    sectionID: sectionID
                 )
             ]
         case .sensorHealth:
@@ -128,6 +136,11 @@ struct SettingsViewAlertSettingsViewModel:SettingsViewModelProtocol {
                 isOn: { UserDefaults.standard.sensorHealthNotificationsEnabled },
                 setIsOn: { UserDefaults.standard.sensorHealthNotificationsEnabled = $0 }
             )
+        case .suppressHighAlertsWhileFalling:
+            return SettingsToggleControl(
+                isOn: { UserDefaults.standard.suppressHighAlertsWhileFalling },
+                setIsOn: { UserDefaults.standard.suppressHighAlertsWhileFalling = $0 }
+            )
         case .preferLargeSnoozeScreen:
             return SettingsToggleControl(
                 isOn: { UserDefaults.standard.preferLargeSnoozeScreen },
@@ -148,7 +161,7 @@ struct SettingsViewAlertSettingsViewModel:SettingsViewModelProtocol {
             return .performSegue(withIdentifier: SettingsSegueIdentifier.settingsToAlertSettings.rawValue, sender: nil)
         case .sensorHealthNotifications:
             return .nothing
-        case .preferLargeSnoozeScreen:
+        case .preferLargeSnoozeScreen, .suppressHighAlertsWhileFalling:
             return .nothing
             
         case .volumeTestSoundPlayer:
@@ -218,6 +231,8 @@ struct SettingsViewAlertSettingsViewModel:SettingsViewModelProtocol {
             return Texts_SettingsView.sensorHealthNotifications
         case .preferLargeSnoozeScreen:
             return Texts_SettingsView.preferLargeSnoozeScreen
+        case .suppressHighAlertsWhileFalling:
+            return Texts_SettingsView.suppressHighAlertsWhileFalling
             
         case .volumeTestSoundPlayer:
             return Texts_SettingsView.volumeTestSoundPlayer
@@ -238,7 +253,7 @@ struct SettingsViewAlertSettingsViewModel:SettingsViewModelProtocol {
             
             return .disclosure
 
-        case .sensorHealthNotifications, .preferLargeSnoozeScreen:
+        case .sensorHealthNotifications, .preferLargeSnoozeScreen, .suppressHighAlertsWhileFalling:
             return .none
             
         case .volumeTestSoundPlayer, .volumeTestiOSSound:
