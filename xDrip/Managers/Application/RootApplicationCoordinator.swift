@@ -253,6 +253,11 @@ import AppIntents
         IntentDonationManager.shared.donate(intent: GlucoseIntent())
     }
 
+    /// Keeps dates shown in the current time zone after it changes while the app runs (#405).
+    /// UIKit queues the significant time change notification while the app is suspended, so a
+    /// time zone change during a flight is also picked up when the app runs again.
+    private let systemTimeZoneChangeObserver = SystemTimeZoneChangeObserver(notificationNames: [.NSSystemTimeZoneDidChange, UIApplication.significantTimeChangeNotification])
+
     /// Starts application services once the SwiftUI root state is available.
     func start(rootTabStateModel: RootTabStateModel) {
         guard !hasStarted else { return }
