@@ -105,12 +105,16 @@ struct CalendarSharePayload: Codable {
 }
 
 /// The location shown with the Calendar Share event, for example by Apple Watch faces.
+///
+/// Watch faces that show the next event look bare without a location, so the user can enter their
+/// own text, such as "Blood glucose" or an emoji (#269). Without text the event has no location.
 enum CalendarShareEventLocation {
     /// - parameters:
     ///     - customText: the location text entered by the user
     /// - returns: the event location, nil for none
     static func location(customText: String?) -> String? {
-        nil
+        guard let text = customText?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty else { return nil }
+        return text
     }
 }
 
@@ -321,7 +325,7 @@ class CalendarManager: NSObject {
             return
         }
         event.notes = notes
-        event.location = CalendarShareEventLocation.location(customText: nil)
+        event.location = CalendarShareEventLocation.location(customText: UserDefaults.standard.calendarEventLocation)
         event.startDate = Date()
         event.endDate = Date(timeIntervalSinceNow: 60 * 10)
         event.calendar = calendar
