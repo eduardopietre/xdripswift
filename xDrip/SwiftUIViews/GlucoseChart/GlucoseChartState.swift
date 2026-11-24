@@ -306,14 +306,19 @@ enum GlucoseChartTreatmentStyle {
 
 /// The height at which a glucose value is plotted.
 ///
-/// Readings are stored and passed to the chart in mg/dL.
+/// Readings are stored and passed to the chart in mg/dL. In mmol/L a reading is plotted at the
+/// value it is shown as, rounded to one decimal like every mmol/L label, so readings shown with
+/// the same value line up instead of sitting at the slightly different heights of their exact
+/// mg/dL values (#560).
 enum GlucoseChartPlotValue {
     /// - parameters:
     ///     - valueInMgDl: the glucose value in mg/dL
     ///     - isMgDl: whether the user's unit is mg/dL
     /// - returns: the value to plot, in mg/dL
     static func plotted(_ valueInMgDl: Double, isMgDl: Bool) -> Double {
-        valueInMgDl
+        guard !isMgDl, valueInMgDl.isFinite,
+              let shownInMmol = Double(valueInMgDl.mgDlToMmolAndToString(mgDl: false)) else { return valueInMgDl }
+        return shownInMmol.mmolToMgdl()
     }
 }
 
