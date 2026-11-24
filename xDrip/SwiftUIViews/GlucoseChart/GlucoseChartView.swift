@@ -105,6 +105,7 @@ struct GlucoseChartView: View {
     @AppStorage("smallBolusTreatmentThreshold") private var smallBolusTreatmentThreshold = 1.0
     @AppStorage("smallCarbTreatmentThreshold") private var smallCarbTreatmentThreshold = 5.0
     @AppStorage("useSmallDoseTreatmentScale") private var useSmallDoseTreatmentScale = false
+    @AppStorage("useExtraSmallDoseTreatmentScale") private var useExtraSmallDoseTreatmentScale = false
 
     private var therapySeries = TherapyChartSeries()
     private var renderBasalDownwards = false
@@ -1213,7 +1214,7 @@ struct GlucoseChartView: View {
 
     /// Resolve marker ranges at render time so cached treatments respond immediately to scale changes.
     private var treatmentScale: GlucoseChartTreatmentScale {
-        GlucoseChartTreatmentScale.resolve(useSmallDoses: useSmallDoseTreatmentScale, useExtraSmallDoses: false)
+        GlucoseChartTreatmentScale.resolve(useSmallDoses: useSmallDoseTreatmentScale, useExtraSmallDoses: useExtraSmallDoseTreatmentScale)
     }
 
     private var bolusSymbolSizing: GlucoseChartTreatmentSizeRange {

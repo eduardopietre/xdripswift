@@ -586,7 +586,8 @@
 "therapy.treatmentScale" = "Terapiskala";
 "therapy.scaleStandard" = "Standard";
 "therapy.scaleSmallDoses" = "Små doser";
-"therapy.treatmentScaleExplanation" = "Små doser gör små markörer tydligare. Bolusmarkörer skalas från 0.1–2.0U och kolhydratmarkörer från 1–50g. Större mängder använder den största markören.";
+"therapy.scaleExtraSmallDoses" = "Mycket små";
+"therapy.treatmentScaleExplanation" = "Små doser gör små markörer tydligare. Bolusmarkörer skalas från 0.1–2.0U och kolhydratmarkörer från 1–50g. Större mängder använder den största markören. Mycket små doser: bolus 0.05–1.0U och kolhydrater 0.5–20g med större markörer.";
 
 /* Live Activity styles */
 "settingsviews_liveActivityTypeMinimal" = "Minimal";

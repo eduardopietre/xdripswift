@@ -250,6 +250,11 @@ enum GlucoseChartTreatmentStyle {
     static let smallDoseBolusSymbolSizing = GlucoseChartTreatmentSizeRange(minimumValue: 0.1, maximumValue: 2.0, minimumSize: 14, maximumSize: 26)
     static let smallDoseCarbsSymbolSizing = GlucoseChartTreatmentSizeRange(minimumValue: 1, maximumValue: 50, minimumSize: 14, maximumSize: 28)
 
+    /// Extra Small Doses sizes from 0.05U and 0.5g, so doses below 0.1U and 1g are told apart,
+    /// and uses the largest minimum markers for readability (#781).
+    static let extraSmallDoseBolusSymbolSizing = GlucoseChartTreatmentSizeRange(minimumValue: 0.05, maximumValue: 1.0, minimumSize: 18, maximumSize: 30)
+    static let extraSmallDoseCarbsSymbolSizing = GlucoseChartTreatmentSizeRange(minimumValue: 0.5, maximumValue: 20, minimumSize: 18, maximumSize: 30)
+
     static let treatmentSymbolSize3h = 18.0
     static let treatmentSymbolSize6h = 15.5
     static let treatmentSymbolSize12h = 13.5
@@ -306,16 +311,21 @@ enum GlucoseChartTreatmentStyle {
 enum GlucoseChartTreatmentScale: Int, CaseIterable {
     case standard = 0
     case smallDoses = 1
+    /// For young children, whose boluses are often below 0.5U and carbs only a few grams (#781).
+    case extraSmallDoses = 2
 
-    /// The scale stored in the user's settings.
+    /// The scale stored in the user's settings. Extra Small Doses has its own setting so that the
+    /// existing Small Doses setting keeps its meaning for users who chose it before.
     static func resolve(useSmallDoses: Bool, useExtraSmallDoses: Bool) -> GlucoseChartTreatmentScale {
-        useSmallDoses ? .smallDoses : .standard
+        if useExtraSmallDoses { return .extraSmallDoses }
+        return useSmallDoses ? .smallDoses : .standard
     }
 
     var bolusSymbolSizing: GlucoseChartTreatmentSizeRange {
         switch self {
         case .standard: return GlucoseChartTreatmentStyle.bolusSymbolSizing
         case .smallDoses: return GlucoseChartTreatmentStyle.smallDoseBolusSymbolSizing
+        case .extraSmallDoses: return GlucoseChartTreatmentStyle.extraSmallDoseBolusSymbolSizing
         }
     }
 
@@ -323,6 +333,7 @@ enum GlucoseChartTreatmentScale: Int, CaseIterable {
         switch self {
         case .standard: return GlucoseChartTreatmentStyle.carbsSymbolSizing
         case .smallDoses: return GlucoseChartTreatmentStyle.smallDoseCarbsSymbolSizing
+        case .extraSmallDoses: return GlucoseChartTreatmentStyle.extraSmallDoseCarbsSymbolSizing
         }
     }
 }

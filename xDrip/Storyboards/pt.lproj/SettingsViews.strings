@@ -572,7 +572,8 @@
 "therapy.treatmentScale" = "Escala terapia";
 "therapy.scaleStandard" = "Padrão";
 "therapy.scaleSmallDoses" = "Doses peq.";
-"therapy.treatmentScaleExplanation" = "«Doses peq.» torna os marcadores pequenos mais visíveis. Bolus: 0.1–2.0U; hidratos: 1–50g. Valores maiores usam o marcador maior.";
+"therapy.scaleExtraSmallDoses" = "Doses muito peq.";
+"therapy.treatmentScaleExplanation" = "«Doses peq.» torna os marcadores pequenos mais visíveis. Bolus: 0.1–2.0U; hidratos: 1–50g. Valores maiores usam o marcador maior. «Doses muito peq.»: bolus 0.05–1.0U; hidratos 0.5–20g, com marcadores maiores.";
 
 /* Live Activity styles */
 "settingsviews_liveActivityTypeMinimal" = "Mínimo";

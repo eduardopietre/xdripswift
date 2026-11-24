@@ -598,7 +598,8 @@
 "therapy.treatmentScale" = "Hoidon asteikko";
 "therapy.scaleStandard" = "Vakio";
 "therapy.scaleSmallDoses" = "Pienet ann.";
-"therapy.treatmentScaleExplanation" = "Pienet annokset näkyvät selvemmin. Bolusmerkit skaalautuvat välillä 0.1–2.0U, HH-merkit välillä 1–50g. Suuremmat määrät käyttävät suurinta merkkiä.";
+"therapy.scaleExtraSmallDoses" = "Hyvin pienet";
+"therapy.treatmentScaleExplanation" = "Pienet annokset näkyvät selvemmin. Bolusmerkit skaalautuvat välillä 0.1–2.0U, HH-merkit välillä 1–50g. Suuremmat määrät käyttävät suurinta merkkiä. Hyvin pienet annokset: bolus 0.05–1.0U ja HH 0.5–20g suuremmilla merkeillä.";
 
 /* Live Activity styles */
 "settingsviews_liveActivityTypeMinimal" = "Minimaalinen";

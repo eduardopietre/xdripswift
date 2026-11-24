@@ -213,6 +213,8 @@ extension UserDefaults {
         case smallCarbTreatmentThreshold = "smallCarbTreatmentThreshold"
         /// use larger minimum chart markers and narrower dose ranges
         case useSmallDoseTreatmentScale = "useSmallDoseTreatmentScale"
+        /// use the largest minimum chart markers, sized from 0.05U and 0.5g; takes precedence over Small Doses
+        case useExtraSmallDoseTreatmentScale = "useExtraSmallDoseTreatmentScale"
         /// should the micro-boluses be listed in the treatment list/table?
         case showSmallBolusTreatmentsInList = "showSmallBolusTreatmentsInList"
         /// should the normal boluses be listed in the treatment list/table?
@@ -1798,6 +1800,22 @@ extension UserDefaults {
     @objc dynamic var useSmallDoseTreatmentScale: Bool {
         get { bool(forKey: Key.useSmallDoseTreatmentScale.rawValue) }
         set { set(newValue, forKey: Key.useSmallDoseTreatmentScale.rawValue) }
+    }
+
+    /// Extra Small Doses changes chart marker sizing for very small boluses and carbs. Kept apart
+    /// from `useSmallDoseTreatmentScale` so that setting keeps its meaning.
+    @objc dynamic var useExtraSmallDoseTreatmentScale: Bool {
+        get { bool(forKey: Key.useExtraSmallDoseTreatmentScale.rawValue) }
+        set { set(newValue, forKey: Key.useExtraSmallDoseTreatmentScale.rawValue) }
+    }
+
+    /// The treatment marker scale chosen in the treatment settings.
+    var treatmentScale: GlucoseChartTreatmentScale {
+        get { GlucoseChartTreatmentScale.resolve(useSmallDoses: useSmallDoseTreatmentScale, useExtraSmallDoses: useExtraSmallDoseTreatmentScale) }
+        set {
+            useSmallDoseTreatmentScale = newValue == .smallDoses
+            useExtraSmallDoseTreatmentScale = newValue == .extraSmallDoses
+        }
     }
 
     /// max canula age (CAGE) as Int - if nil, return default value

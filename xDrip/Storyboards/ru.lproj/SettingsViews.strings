@@ -532,7 +532,8 @@
 "therapy.treatmentScale" = "Шкала терапии";
 "therapy.scaleStandard" = "Обыч.";
 "therapy.scaleSmallDoses" = "Мал. дозы";
-"therapy.treatmentScaleExplanation" = "Малые дозы делают малые маркеры заметнее. Болюсы: 0.1–2.0U; углеводы: 1–50g. Большие количества используют самый большой маркер.";
+"therapy.scaleExtraSmallDoses" = "Оч. мал. дозы";
+"therapy.treatmentScaleExplanation" = "Малые дозы делают малые маркеры заметнее. Болюсы: 0.1–2.0U; углеводы: 1–50g. Большие количества используют самый большой маркер. Очень малые дозы: болюсы 0.05–1.0U; углеводы 0.5–20g, с более крупными маркерами.";
 
 /* Live Activity styles */
 "settingsviews_liveActivityTypeMinimal" = "Минимальный";
