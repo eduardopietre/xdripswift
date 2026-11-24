@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A19A00370000000000000001 /* RepeatingAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A00370000000000000002 /* RepeatingAlarmTests.swift */; };
+		ADA0F121131388D24B3D9DD1 /* DexcomSessionStopDetectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E956AB9EB03284B31502D87 /* DexcomSessionStopDetectionTests.swift */; };
 		7E7760013000000100000001 /* SensorExpiryReminderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000002 /* SensorExpiryReminderManager.swift */; };
 		7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */; };
 		07ECB18D91AE096E637D1393 /* AlertsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EFF5D128BB4E856D0EB5A /* AlertsSettingsView.swift */; };
@@ -1002,6 +1003,7 @@
 
 /* Begin PBXFileReference section */
 		A19A00370000000000000002 /* RepeatingAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingAlarmTests.swift; sourceTree = "<group>"; };
+		2E956AB9EB03284B31502D87 /* DexcomSessionStopDetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomSessionStopDetectionTests.swift; sourceTree = "<group>"; };
 		7E7760013000000100000002 /* SensorExpiryReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManager.swift; sourceTree = "<group>"; };
 		7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManagerTests.swift; sourceTree = "<group>"; };
 		008DD8362C3D359B7EA1B6BD /* Libre3PairingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3PairingFlow.swift; path = Libre3PairingFlow.swift; sourceTree = "<group>"; };
@@ -2863,6 +2865,7 @@
 				BA0000020000000000000012 /* NightscoutFollowerGapFillTests.swift */,
 				A50000040000000000000001 /* OnlineHelpTests.swift */,
 				A19A00370000000000000002 /* RepeatingAlarmTests.swift */,
+				2E956AB9EB03284B31502D87 /* DexcomSessionStopDetectionTests.swift */,
 				4F2800113004000100000001 /* RootHomeInteractionTests.swift */,
 				4F2600123002000200000001 /* SensorHealthIssueManagerTests.swift */,
 				7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */,
@@ -4810,6 +4813,7 @@
 				BA0709260000000000000001 /* BasalInjectionTests.swift in Sources */,
 				4F2600023002000200000001 /* SensorHealthIssueManagerTests.swift in Sources */,
 				A19A00370000000000000001 /* RepeatingAlarmTests.swift in Sources */,
+				ADA0F121131388D24B3D9DD1 /* DexcomSessionStopDetectionTests.swift in Sources */,
 				7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */,
 				4F2800023004000100000001 /* GlucoseChartYAxisRetentionTests.swift in Sources */,
 				4F2800013004000100000001 /* RootHomeInteractionTests.swift in Sources */,
