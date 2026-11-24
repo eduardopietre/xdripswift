@@ -1865,6 +1865,74 @@ final class CareLinkTests: XCTestCase {
         XCTAssertEqual(maximumConcurrentImports, 1)
     }
 
+    func testAutomaticPatientSelectionDoesNotStartASecondPoll() async throws {
+        let (manager, delegate, cleanUp) = makeSelectionTestManager()
+        defer { cleanUp() }
+
+        let firstDeliveryCompleted = await waitUntil { delegate.deliveryCount == 1 }
+        XCTAssertTrue(firstDeliveryCompleted)
+        XCTAssertNotNil(UserDefaults.standard.careLinkSelectedPatientID)
+
+        // The first poll saves the patient it resolved. That save must not schedule another poll:
+        // the poll that made it already fetched that patient's data.
+        try? await Task.sleep(nanoseconds: 300_000_000)
+        XCTAssertEqual(URLProtocolStub.lock.withLock { URLProtocolStub.usersMeCount }, 1)
+        XCTAssertEqual(delegate.deliveryCount, 1)
+        _ = manager
+    }
+
+    func testSelectingAPatientPollsOnce() async throws {
+        let (manager, delegate, cleanUp) = makeSelectionTestManager()
+        defer { cleanUp() }
+
+        let firstDeliveryCompleted = await waitUntil { delegate.deliveryCount == 1 }
+        XCTAssertTrue(firstDeliveryCompleted)
+        try? await Task.sleep(nanoseconds: 300_000_000)
+        let pollsBeforeSelection = URLProtocolStub.lock.withLock { URLProtocolStub.usersMeCount }
+        let selectedID = try XCTUnwrap(UserDefaults.standard.careLinkSelectedPatientID)
+
+        manager.selectPatient(selectedID)
+
+        let selectionPollCompleted = await waitUntil { delegate.deliveryCount == 2 }
+        XCTAssertTrue(selectionPollCompleted)
+        try? await Task.sleep(nanoseconds: 300_000_000)
+        XCTAssertEqual(URLProtocolStub.lock.withLock { URLProtocolStub.usersMeCount }, pollsBeforeSelection + 1)
+        XCTAssertEqual(delegate.deliveryCount, 2)
+    }
+
+    /// An authenticated follower with no saved patient, so its first poll resolves one.
+    private func makeSelectionTestManager() -> (CareLinkFollowManager, FollowerDelegateSpy, () -> Void) {
+        URLProtocolStub.usesCurrentGlucoseTime = true
+        let defaultsSnapshot = CareLinkDefaultsSnapshot(keys: [
+            .isMaster,
+            .followerDataSourceType,
+            .followerBackgroundKeepAliveType,
+            .careLinkRegion,
+            .careLinkSelectedPatientID,
+        ])
+        let defaults = UserDefaults.standard
+        defaults.isMaster = false
+        defaults.followerDataSourceType = .careLink
+        defaults.followerBackgroundKeepAliveType = .heartbeat
+        defaults.careLinkRegion = CareLinkRegion.outsideUnitedStates.rawValue
+        defaults.careLinkSelectedPatientID = nil
+
+        let delegate = FollowerDelegateSpy()
+        // Its own account state and background-execution spy: no shared singleton is changed.
+        let manager = CareLinkFollowManager(
+            coreDataManager: CoreDataManager(inMemoryModelName: ConstantsCoreData.modelName),
+            followerDelegate: delegate,
+            backgroundKeepAliveManager: CareLinkNoOpKeepAliveManager(),
+            client: makeClient(),
+            state: CareLinkAccountState(),
+            pollingSchedulerFactory: { _, _ in CareLinkNoOpTimer() },
+            backgroundExecutionManager: CareLinkBackgroundExecutionSpy()
+        )
+        // The snapshot restores isMaster and the data source before the selected patient, so the
+        // manager, still alive at that point, is no longer active when the selection changes back.
+        return (manager, delegate, { defaultsSnapshot.restore() })
+    }
+
     func testLifecyclePolicyRequiresSelectionAndOAuthSessionForPolling() {
         XCTAssertEqual(
             CareLinkLifecyclePolicy.state(isSelected: false, hasSession: true),
@@ -2843,7 +2911,9 @@ private final class CareLinkDefaultsSnapshot {
     private var missingKeys = Set<String>()
 
     init(keys: [UserDefaults.Key]) {
-        self.keys = Array(Set((keys + [.careLinkPatientAliases, .careLinkTimestampRepairCompleted]).map(\.rawValue)))
+        // In the given order, without duplicates: restore() writes them back in that order.
+        var seen = Set<String>()
+        self.keys = (keys + [.careLinkPatientAliases, .careLinkTimestampRepairCompleted]).map(\.rawValue).filter { seen.insert($0).inserted }
         for key in self.keys {
             if let value = defaults.object(forKey: key) {
                 values[key] = value
