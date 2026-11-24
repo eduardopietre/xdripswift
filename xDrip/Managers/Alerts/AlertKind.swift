@@ -358,7 +358,14 @@ public enum AlertKind: Int, CaseIterable {
                 // first check if calculatedValue > 0.0, never know that it's not been checked by caller
                 if lastBgReading.finalValue == 0.0 { return (false, nil, nil, nil) }
                 // now do the actual check if alert is applicable or not
-                if lastBgReading.finalValue.bgValueRounded(mgDl: isMgDl) > Double(currentAlertEntry.value).bgValueRounded(mgDl: isMgDl) {
+                if lastBgReading.finalValue.bgValueRounded(mgDl: isMgDl) > Double(currentAlertEntry.value).bgValueRounded(mgDl: isMgDl),
+                   !HighAlertTrendPolicy.suppresses(
+                    isEnabled: UserDefaults.standard.suppressHighAlertsWhileFalling,
+                    currentValue: lastBgReading.finalValue,
+                    currentTimeStamp: lastBgReading.timeStamp,
+                    previousValue: lastButOneBgReading?.finalValue,
+                    previousTimeStamp: lastButOneBgReading?.timeStamp
+                   ) {
                     return (true, createAlertBodyForBgReadingAlerts(bgReading: lastBgReading, alertKind: self), createAlertTitleForBgReadingAlerts(alertKind: self), nil)
                 } else { return (false, nil, nil, nil) }
             } else { return (false, nil, nil, nil) }
@@ -837,5 +844,20 @@ enum BgReadingAlertBody {
         }
 
         return returnValue
+    }
+}
+
+/// Decides whether a high or very high alert is skipped because the glucose is already falling.
+///
+/// Only high alerts can be skipped: a low alert always fires, also when the glucose is rising.
+enum HighAlertTrendPolicy {
+    /// - parameters:
+    ///     - isEnabled: the user's setting, off by default
+    ///     - currentValue: the latest reading in mg/dL
+    ///     - currentTimeStamp: when the latest reading was taken
+    ///     - previousValue: the reading before it in mg/dL, nil if none
+    ///     - previousTimeStamp: when that reading was taken, nil if none
+    static func suppresses(isEnabled: Bool, currentValue: Double, currentTimeStamp: Date, previousValue: Double?, previousTimeStamp: Date?) -> Bool {
+        false
     }
 }
