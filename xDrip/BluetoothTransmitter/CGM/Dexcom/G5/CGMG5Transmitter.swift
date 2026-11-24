@@ -203,8 +203,10 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
     /// used to send stop session to transmitter
     private var dexcomSessionStopTxMessageToSendToTransmitter: DexcomSessionStopTxMessage?
 
-    /// when the user last started a sensor session that the transmitter has not reported yet.
-    /// Cleared as soon as the transmitter reports any state other than a stopped session.
+    /// when the user last started a sensor session that the transmitter has not reported yet, moved
+    /// to the moment the start is actually sent, which can be many connections later when the
+    /// transmitter is out of reach. Cleared as soon as the transmitter reports any state other than a
+    /// stopped session, and when the user stops the sensor.
     private var sessionStartRequestedAt: Date?
     
     private var timeStampLastConnection = Date(timeIntervalSince1970: 0)
@@ -1142,6 +1144,9 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
         trace("in stopsensor, storing sensor stop  info, will be sent to transmitter at next connect", log: log, category: ConstantsLog.categoryCGMG5, type: .info)
         
         dexcomSessionStopTxMessageToSendToTransmitter = DexcomSessionStopTxMessage(stopDate: stopDate, transmitterStartDate: transmitterStartDate)
+
+        // a stopped state reported from now on is this stop, not a leftover of the previous session
+        sessionStartRequestedAt = nil
         
         // set it to nil
         calibrationToSendToTransmitter = nil
@@ -1306,6 +1311,9 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
             trace("in sendSessionStartTxMessage, sending sessionStartTxMessage with startDate %{public}@", log: log, category: ConstantsLog.categoryCGMG5, type: .info, sensorStartToSendToTransmitter.startDate.toStringForTrace(timeStyle: .long, dateStyle: .long))
             
             _ = super.writeDataToPeripheral(data: sessionStartTxMessage.data, characteristicToWriteTo: writeControlCharacteristic, type: .withResponse)
+
+            // the transmitter reports the previous, stopped session until it has processed this start
+            sessionStartRequestedAt = Date()
             
         } else {
             
@@ -2266,6 +2274,10 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
 }
 
 /// Decides when a stopped session reported by a Dexcom G5/G6/ONE transmitter stops the app's sensor.
+///
+/// A session start is only sent at the next connection, and until the transmitter has processed
+/// it, it still reports the previous session as stopped. That state must not stop the session the
+/// user has just started (#775).
 enum DexcomSessionStopDetectionPolicy {
     /// How long after the user starts a session a stopped state is still attributed to the
     /// previous session. Covers a few transmitter connections, which happen every 5 minutes.
@@ -2276,6 +2288,8 @@ enum DexcomSessionStopDetectionPolicy {
     ///     - sessionStartRequestedAt: when the user started a session the transmitter has not reported yet, nil if none
     ///     - now: when the state was received
     static func reportsSensorStop(algorithmStatus: DexcomAlgorithmState, sessionStartRequestedAt: Date?, now: Date) -> Bool {
-        algorithmStatus == .SessionStopped
+        guard algorithmStatus == .SessionStopped else { return false }
+        guard let sessionStartRequestedAt else { return true }
+        return now.timeIntervalSince(sessionStartRequestedAt) > sessionStartGracePeriod
     }
 }
