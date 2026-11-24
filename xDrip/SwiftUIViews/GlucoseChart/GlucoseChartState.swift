@@ -301,6 +301,34 @@ enum GlucoseChartTreatmentStyle {
 
 /// Linear interpolation of symbol side length in points, rather than area or dose buckets.
 /// This is a small, allocation-free calculation shared by bolus and carbohydrate chart markers.
+/// The treatment marker scale chosen in the treatment settings.
+///
+/// Each scale maps bolus and carb amounts to marker sizes. Smaller scales start sizing at smaller
+/// amounts and use larger minimum markers, so small doses stay visible.
+enum GlucoseChartTreatmentScale: Int, CaseIterable {
+    case standard = 0
+    case smallDoses = 1
+
+    /// The scale stored in the user's settings.
+    static func resolve(useSmallDoses: Bool, useExtraSmallDoses: Bool) -> GlucoseChartTreatmentScale {
+        useSmallDoses ? .smallDoses : .standard
+    }
+
+    var bolusSymbolSizing: GlucoseChartTreatmentSizeRange {
+        switch self {
+        case .standard: return GlucoseChartTreatmentStyle.bolusSymbolSizing
+        case .smallDoses: return GlucoseChartTreatmentStyle.smallDoseBolusSymbolSizing
+        }
+    }
+
+    var carbsSymbolSizing: GlucoseChartTreatmentSizeRange {
+        switch self {
+        case .standard: return GlucoseChartTreatmentStyle.carbsSymbolSizing
+        case .smallDoses: return GlucoseChartTreatmentStyle.smallDoseCarbsSymbolSizing
+        }
+    }
+}
+
 struct GlucoseChartTreatmentSizeRange {
     let minimumValue: Double
     let maximumValue: Double
