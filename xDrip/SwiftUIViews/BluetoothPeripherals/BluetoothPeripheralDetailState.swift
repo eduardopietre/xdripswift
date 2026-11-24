@@ -303,7 +303,7 @@ final class BluetoothPeripheralDetailState: NSObject, ObservableObject {
         stopTransmitterReadSuccessTimer()
         removeObserversIfNeeded()
         bluetoothPeripheralManager?.stopScanningForNewDevice()
-        UIApplication.shared.isIdleTimerDisabled = false
+        applyScreenLock(after: .screenClosed)
     }
 
     func refresh() {
@@ -1401,7 +1401,7 @@ private extension BluetoothPeripheralDetailState {
             // Show the pending handoff immediately and prevent duplicate transmitter creation.
             isScanning = true
             explicitlyStartedScanAt = Date()
-            UIApplication.shared.isIdleTimerDisabled = true
+            applyScreenLock(after: .scanningStarted)
             refresh()
         }
         previousScanningResult = nil
@@ -1446,7 +1446,7 @@ private extension BluetoothPeripheralDetailState {
         trace("in BluetoothPeripheralDetailState, callback. bluetoothPeripheral address = %{public}@, name = %{public}@", log: log, category: ConstantsLog.categoryBluetoothPeripheralViewController, type: .info, bluetoothPeripheral.blePeripheral.address, bluetoothPeripheral.blePeripheral.name)
 
         isScanning = false
-        UIApplication.shared.isIdleTimerDisabled = false
+        applyScreenLock(after: .deviceFound)
 
         self.bluetoothPeripheral = bluetoothPeripheral
         bluetoothPeripheral.blePeripheral.transmitterId = transmitterIdTempValue
@@ -1475,6 +1475,13 @@ private extension BluetoothPeripheralDetailState {
         refresh()
     }
 
+    /// Lets the screen lock, or keeps it awake, as decided by `AddDeviceScreenLockPolicy`.
+    private func applyScreenLock(after event: AddDeviceScreenLockPolicy.Event) {
+        if let keepsScreenAwake = AddDeviceScreenLockPolicy.keepsScreenAwake(after: event) {
+            UIApplication.shared.isIdleTimerDisabled = keepsScreenAwake
+        }
+    }
+
     func handleScanningResult(startScanningResult: BluetoothTransmitter.startScanningResult) {
         guard startScanningResult != previousScanningResult else { return }
 
@@ -1484,7 +1491,7 @@ private extension BluetoothPeripheralDetailState {
             switch startScanningResult {
             case .poweredOff, .unauthorized, .other:
                 isScanning = false
-                UIApplication.shared.isIdleTimerDisabled = false
+                applyScreenLock(after: .scanningFailed)
             default: break
             }
         }
@@ -1493,7 +1500,7 @@ private extension BluetoothPeripheralDetailState {
         case .success:
             isScanning = true
             explicitlyStartedScanAt = explicitlyStartedScanAt ?? Date()
-            UIApplication.shared.isIdleTimerDisabled = true
+            applyScreenLock(after: .scanningStarted)
 
             if !expectedBluetoothPeripheralType.needsNFCScanToConnect() && !startLibre3AfterNFC {
                 pendingAlert = BluetoothPeripheralDetailAlert(title: Texts_HomeView.info, message: Texts_HomeView.startScanningInfo)
@@ -1506,7 +1513,7 @@ private extension BluetoothPeripheralDetailState {
             isScanning = expectedBluetoothPeripheralType == .Libre3Type && bluetoothPeripheral == nil
             if isScanning {
                 explicitlyStartedScanAt = explicitlyStartedScanAt ?? Date()
-                UIApplication.shared.isIdleTimerDisabled = true
+                applyScreenLock(after: .scanningStarted)
             }
 
         case .poweredOff:
@@ -3295,6 +3302,9 @@ extension BluetoothPeripheralDetailState: BluetoothTransmitterDelegate {
 
     func didConnectTo(bluetoothTransmitter: BluetoothTransmitter) {
         bluetoothPeripheralManager?.didConnectTo(bluetoothTransmitter: bluetoothTransmitter)
+        DispatchQueue.main.async { [weak self] in
+            self?.applyScreenLock(after: .connected)
+        }
         refreshOnMain()
     }
 
@@ -3330,6 +3340,31 @@ extension BluetoothPeripheralDetailState: BluetoothTransmitterDelegate {
 
     func heartBeat() {
         bluetoothPeripheralManager?.heartBeat()
+    }
+}
+
+/// Whether the screen is kept awake while a CGM or other Bluetooth device is being added.
+///
+/// Scanning, connecting and pairing must not be interrupted by the screen locking.
+enum AddDeviceScreenLockPolicy {
+    enum Event {
+        case scanningStarted
+        case scanningFailed
+        case deviceFound
+        case connected
+        case screenClosed
+    }
+
+    /// - returns: true to keep the screen awake, false to let it lock, nil to leave it unchanged
+    static func keepsScreenAwake(after event: Event) -> Bool? {
+        switch event {
+        case .scanningStarted:
+            return true
+        case .scanningFailed, .deviceFound, .screenClosed:
+            return false
+        case .connected:
+            return nil
+        }
     }
 }
 
