@@ -307,6 +307,14 @@ final class SystemTimeZoneChangeObserver {
     init(notificationCenter: NotificationCenter = .default, notificationNames: [Notification.Name] = [.NSSystemTimeZoneDidChange], resetSystemTimeZone: @escaping () -> Void = { NSTimeZone.resetSystemTimeZone() }) {
         self.notificationCenter = notificationCenter
         self.resetSystemTimeZone = resetSystemTimeZone
+        // Clear the cache as soon as the system reports a new time zone, so formatters created
+        // afterwards use it (#405). A suspended app misses the time zone notification, so the
+        // caller also passes notifications that are delivered when the app runs again.
+        observers = notificationNames.map { name in
+            notificationCenter.addObserver(forName: name, object: nil, queue: nil) { _ in
+                resetSystemTimeZone()
+            }
+        }
     }
 
     deinit {
