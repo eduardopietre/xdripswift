@@ -1212,12 +1212,16 @@ struct GlucoseChartView: View {
     }
 
     /// Resolve marker ranges at render time so cached treatments respond immediately to scale changes.
+    private var treatmentScale: GlucoseChartTreatmentScale {
+        GlucoseChartTreatmentScale.resolve(useSmallDoses: useSmallDoseTreatmentScale, useExtraSmallDoses: false)
+    }
+
     private var bolusSymbolSizing: GlucoseChartTreatmentSizeRange {
-        useSmallDoseTreatmentScale ? GlucoseChartTreatmentStyle.smallDoseBolusSymbolSizing : GlucoseChartTreatmentStyle.bolusSymbolSizing
+        treatmentScale.bolusSymbolSizing
     }
 
     private var carbsSymbolSizing: GlucoseChartTreatmentSizeRange {
-        useSmallDoseTreatmentScale ? GlucoseChartTreatmentStyle.smallDoseCarbsSymbolSizing : GlucoseChartTreatmentStyle.carbsSymbolSizing
+        treatmentScale.carbsSymbolSizing
     }
 
     /// Basal injection and BG check symbols follow the visible time range.
