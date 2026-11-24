@@ -412,6 +412,8 @@ extension UserDefaults {
         case speakDelta = "speakDelta"
         /// speak the opening phrase
         case speakIntroduction = "speakIntroduction"
+        /// lower other audio, such as music, while a reading is spoken; off by default
+        case speakDucksOtherAudio = "speakDucksOtherAudio"
         /// speak trend
         case speakTrend = "speakTrend"
         /// speak interval
@@ -2479,6 +2481,12 @@ extension UserDefaults {
         set {
             set(newValue, forKey: Key.speakReadingLanguageCode.rawValue)
         }
+    }
+
+    /// should other audio, such as music, be lowered while a reading is spoken? Off by default.
+    @objc dynamic var speakDucksOtherAudio: Bool {
+        get { bool(forKey: Key.speakDucksOtherAudio.rawValue) }
+        set { set(newValue, forKey: Key.speakDucksOtherAudio.rawValue) }
     }
 
     /// Include the opening phrase unless the user explicitly disables it.

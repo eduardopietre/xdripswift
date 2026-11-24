@@ -31,6 +31,12 @@ class BGReadingSpeaker:NSObject {
     /// this must be created here instead of locally in the say() function for it to work correctly in iOS16
     /// https://developer.apple.com/forums/thread/714984
     private let syn = AVSpeechSynthesizer.init()
+
+    /// readings being spoken that lowered other audio, to return it to full volume after the last one (#741). Main thread only.
+    private var duckedUtterances = Set<ObjectIdentifier>()
+
+    /// changes to the audio session are synchronous and can block while iOS negotiates the audio route, so they run here instead of on the main thread
+    private static let audioSessionQueue = DispatchQueue(label: "xDrip.BGReadingSpeaker.audioSession", qos: .userInitiated)
     
     // MARK: - initializer
     
@@ -47,6 +53,9 @@ class BGReadingSpeaker:NSObject {
         
         // call super.init
         super.init()
+
+        // to restore the audio session options once a reading has been spoken
+        syn.delegate = self
         
         // set languageCode in Texts_SpeakReading to value stored in defaults
         Texts_SpeakReading.setLanguageCode(code: UserDefaults.standard.speakReadingLanguageCode)
@@ -197,7 +206,20 @@ class BGReadingSpeaker:NSObject {
         utterance.rate = 0.51
         utterance.pitchMultiplier = 1
         utterance.voice = AVSpeechSynthesisVoice(language: language)
-        syn.speak(utterance)
+
+        guard UserDefaults.standard.speakDucksOtherAudio else {
+            syn.speak(utterance)
+            return
+        }
+
+        // lower other audio first, then speak (#741)
+        duckedUtterances.insert(ObjectIdentifier(utterance))
+        Self.audioSessionQueue.async { [weak self] in
+            Self.configureAudioSession(options: SpeakReadingAudioPolicy.categoryOptions(whileSpeaking: true, duckOtherAudio: true), deactivateFirst: false)
+            DispatchQueue.main.async {
+                self?.syn.speak(utterance)
+            }
+        }
 
     }
 
@@ -296,15 +318,63 @@ class BGReadingSpeaker:NSObject {
 
 }
 
+extension BGReadingSpeaker: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        DispatchQueue.main.async { self.didEndSpeaking(utterance) }
+    }
+
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        DispatchQueue.main.async { self.didEndSpeaking(utterance) }
+    }
+
+    /// Returns other audio to full volume once the last reading that lowered it has been spoken.
+    /// Readings spoken without lowering other audio leave the audio session untouched.
+    private func didEndSpeaking(_ utterance: AVSpeechUtterance) {
+        guard duckedUtterances.remove(ObjectIdentifier(utterance)) != nil else { return }
+
+        let action = SpeakReadingAudioPolicy.afterSpeaking(duckedUtterancesLeft: duckedUtterances.count, appSoundIsPlaying: sharedSoundPlayer.isPlaying())
+        guard action != .nothing else { return }
+
+        Self.audioSessionQueue.async {
+            Self.configureAudioSession(options: SpeakReadingAudioPolicy.categoryOptions(whileSpeaking: false, duckOtherAudio: true), deactivateFirst: action == .deactivateAndReactivate)
+        }
+    }
+
+    /// Sets the playback category with the given options and activates the session, as the app always keeps it.
+    /// - parameters:
+    ///     - options: the category options
+    ///     - deactivateFirst: deactivate the session first, which is what returns ducked audio of other apps to full volume
+    private static func configureAudioSession(options: AVAudioSession.CategoryOptions, deactivateFirst: Bool) {
+        let session = AVAudioSession.sharedInstance()
+        if deactivateFirst {
+            do {
+                try session.setActive(false, options: .notifyOthersOnDeactivation)
+            } catch {
+                // still restore the options below, so other audio is at least no longer lowered for the next sounds
+                trace("in configureAudioSession, failed to deactivate the audio session, error = %{public}@", log: OSLog(subsystem: ConstantsLog.subSystem, category: ConstantsLog.categoryBGReadingSpeaker), category: ConstantsLog.categoryBGReadingSpeaker, type: .error, error.localizedDescription)
+            }
+        }
+        do {
+            try session.setCategory(.playback, options: options)
+            try session.setActive(true)
+        } catch {
+            trace("in configureAudioSession, failed to set category options, error = %{public}@", log: OSLog(subsystem: ConstantsLog.subSystem, category: ConstantsLog.categoryBGReadingSpeaker), category: ConstantsLog.categoryBGReadingSpeaker, type: .error, error.localizedDescription)
+        }
+    }
+}
+
 /// The audio session options used while a reading is spoken and afterwards.
 ///
-/// Today other audio is never lowered while a reading is spoken (#741).
+/// With the option on, other audio such as music is lowered while a reading is spoken, so the
+/// reading can be heard (#741), and is restored to full volume afterwards. iOS only restores other
+/// audio when the session that lowered it is deactivated, so after the last reading the session is
+/// deactivated and activated again with the options the app always uses.
 enum SpeakReadingAudioPolicy {
     /// - parameters:
     ///     - whileSpeaking: true while a reading is being spoken
     ///     - duckOtherAudio: the user's setting to lower other audio while speaking, off by default
     static func categoryOptions(whileSpeaking: Bool, duckOtherAudio: Bool) -> AVAudioSession.CategoryOptions {
-        .mixWithOthers
+        whileSpeaking && duckOtherAudio ? [.mixWithOthers, .duckOthers] : .mixWithOthers
     }
 
     /// What to do with the audio session when a reading that lowered other audio has been spoken.
@@ -322,6 +392,9 @@ enum SpeakReadingAudioPolicy {
     ///     - duckedUtterancesLeft: readings that lowered other audio and are still being spoken
     ///     - appSoundIsPlaying: whether the app itself is playing a sound, such as an alarm
     static func afterSpeaking(duckedUtterancesLeft: Int, appSoundIsPlaying: Bool) -> AfterSpeakingAction {
-        .restoreOptions
+        // keep other audio lowered until the last queued reading has been spoken
+        guard duckedUtterancesLeft == 0 else { return .nothing }
+        // deactivating the session would stop an app sound such as an alarm
+        return appSoundIsPlaying ? .restoreOptions : .deactivateAndReactivate
     }
 }
