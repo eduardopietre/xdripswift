@@ -13,6 +13,7 @@
 		9EDE1BC0B3FB5339589F2E28 /* TreatmentScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD08375C304CB7CF7EDE4776 /* TreatmentScaleTests.swift */; };
 		B9560704926F3BBC69619E81 /* NightscoutCredentialsCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4198EF175EBCA457473FB06 /* NightscoutCredentialsCheckTests.swift */; };
 		6F21412AE1CCC68A6C2C7437 /* GlucoseChartPlotValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5AE1354E74488AE81459C4 /* GlucoseChartPlotValueTests.swift */; };
+		9EF8670ABEF2E9D783871B79 /* BgReadingAlertBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAEA3EAFB9A0F4133FCA7AC /* BgReadingAlertBodyTests.swift */; };
 		7E7760013000000100000001 /* SensorExpiryReminderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000002 /* SensorExpiryReminderManager.swift */; };
 		7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */; };
 		07ECB18D91AE096E637D1393 /* AlertsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EFF5D128BB4E856D0EB5A /* AlertsSettingsView.swift */; };
@@ -1012,6 +1013,7 @@
 		DD08375C304CB7CF7EDE4776 /* TreatmentScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentScaleTests.swift; sourceTree = "<group>"; };
 		A4198EF175EBCA457473FB06 /* NightscoutCredentialsCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCredentialsCheckTests.swift; sourceTree = "<group>"; };
 		DD5AE1354E74488AE81459C4 /* GlucoseChartPlotValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseChartPlotValueTests.swift; sourceTree = "<group>"; };
+		EAAEA3EAFB9A0F4133FCA7AC /* BgReadingAlertBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgReadingAlertBodyTests.swift; sourceTree = "<group>"; };
 		7E7760013000000100000002 /* SensorExpiryReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManager.swift; sourceTree = "<group>"; };
 		7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManagerTests.swift; sourceTree = "<group>"; };
 		008DD8362C3D359B7EA1B6BD /* Libre3PairingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3PairingFlow.swift; path = Libre3PairingFlow.swift; sourceTree = "<group>"; };
@@ -2877,6 +2879,7 @@
 				DD08375C304CB7CF7EDE4776 /* TreatmentScaleTests.swift */,
 				A4198EF175EBCA457473FB06 /* NightscoutCredentialsCheckTests.swift */,
 				DD5AE1354E74488AE81459C4 /* GlucoseChartPlotValueTests.swift */,
+				EAAEA3EAFB9A0F4133FCA7AC /* BgReadingAlertBodyTests.swift */,
 				4F2800113004000100000001 /* RootHomeInteractionTests.swift */,
 				4F2600123002000200000001 /* SensorHealthIssueManagerTests.swift */,
 				7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */,
@@ -4830,6 +4833,7 @@
 				9EDE1BC0B3FB5339589F2E28 /* TreatmentScaleTests.swift in Sources */,
 				B9560704926F3BBC69619E81 /* NightscoutCredentialsCheckTests.swift in Sources */,
 				6F21412AE1CCC68A6C2C7437 /* GlucoseChartPlotValueTests.swift in Sources */,
+				9EF8670ABEF2E9D783871B79 /* BgReadingAlertBodyTests.swift in Sources */,
 				7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */,
 				4F2800023004000100000001 /* GlucoseChartYAxisRetentionTests.swift in Sources */,
 				4F2800013004000100000001 /* RootHomeInteractionTests.swift in Sources */,
