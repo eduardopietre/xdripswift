@@ -11,13 +11,29 @@ import SwiftUI
 @testable import xdrip
 
 private final class ShareUploadURLProtocol: URLProtocol {
-    static var handler: ((URLRequest) -> (Int, Data))!
-    static var delay: TimeInterval = 0
+    // A request from a test that already finished (a delayed retry, say) can start after
+    // tearDown cleared the handler, on a URL-loading thread. Guard both values with a lock and
+    // fail that request instead of crashing the test process on a nil handler.
+    private static let lock = NSLock()
+    nonisolated(unsafe) private static var storedHandler: ((URLRequest) -> (Int, Data))?
+    nonisolated(unsafe) private static var storedDelay: TimeInterval = 0
+    static var handler: ((URLRequest) -> (Int, Data))? {
+        get { lock.withLock { storedHandler } }
+        set { lock.withLock { storedHandler = newValue } }
+    }
+    static var delay: TimeInterval {
+        get { lock.withLock { storedDelay } }
+        set { lock.withLock { storedDelay = newValue } }
+    }
 
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
-        let result = Self.handler(request)
+        guard let handler = Self.handler else {
+            client?.urlProtocol(self, didFailWithError: URLError(.cancelled))
+            return
+        }
+        let result = handler(request)
         let finish = {
             self.client?.urlProtocol(self, didReceive: HTTPURLResponse(url: self.request.url!, statusCode: result.0, httpVersion: nil, headerFields: nil)!, cacheStoragePolicy: .notAllowed)
             self.client?.urlProtocol(self, didLoad: result.1)
