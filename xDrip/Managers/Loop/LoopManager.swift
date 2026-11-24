@@ -503,6 +503,13 @@ public class LoopManager: NSObject {
         // convert to json Dexcom Share format
         var dictionary = [Dictionary<String, Any>]()
 
+        let sensorSessionFields = LoopShareSensorSession.fields(
+            sessionStartDate: UserDefaults.standard.isMaster ? UserDefaults.standard.activeSensorStartDate : nil,
+            transmitterID: UserDefaults.standard.isMaster
+                ? LoopShareSensorSession.sharedTransmitterID(storedTransmitterID: UserDefaults.standard.activeSensorTransmitterId, activeTransmitterType: metadataContextProvider().transmitter?.cgmTransmitterType())
+                : nil
+        )
+
         if loopDelay > 0 {
 
             for reading in glucoseData {
@@ -511,6 +518,7 @@ public class LoopManager: NSObject {
 
                 // Adding "from" field to be able to use multiple BG sources with the same shared group in FreeAPS X
                 representation["from"] = "xDrip"
+                representation.merge(sensorSessionFields) { current, _ in current }
                 dictionary.append(representation)
             }
 
@@ -531,6 +539,7 @@ public class LoopManager: NSObject {
 
                 // Adding "from" field to be able to use multiple BG sources with the same shared group in FreeAPS X
                 representation["from"] = "xDrip"
+                representation.merge(sensorSessionFields) { current, _ in current }
                 dictionary.append(representation)
             }
 
@@ -989,4 +998,22 @@ public class LoopManager: NSObject {
         UserDefaults.standard.canPublishOSAidData
     }
 
+}
+
+/// Sensor session details added to each reading shared with OS-AID apps.
+enum LoopShareSensorSession {
+    /// - parameters:
+    ///     - sessionStartDate: start of the active sensor session, nil if unknown
+    ///     - transmitterID: ID of the active transmitter, nil if unknown
+    static func fields(sessionStartDate: Date?, transmitterID: String?) -> [String: Any] {
+        [:]
+    }
+
+    /// The transmitter ID to share.
+    /// - parameters:
+    ///     - storedTransmitterID: the transmitter ID last stored by a Dexcom transmitter
+    ///     - activeTransmitterType: the type of the active CGM transmitter, nil if none
+    static func sharedTransmitterID(storedTransmitterID: String?, activeTransmitterType: CGMTransmitterType?) -> String? {
+        storedTransmitterID
+    }
 }
