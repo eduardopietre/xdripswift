@@ -1220,7 +1220,7 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
                         
                             let siteURL = UserDefaults.standard.nightscoutUrl
                             let sitePort = UserDefaults.standard.nightscoutPort
-                            self.reconcileRemoteTreatmentDeletions(treatments: treatmentsToSync, downloaded: treatmentNSResponses, lookup: { remoteID, finished in
+                            self.reconcileRemoteTreatmentDeletions(treatments: self.treatmentsForRemoteDeletionCheck(treatmentsToSync: treatmentsToSync), downloaded: treatmentNSResponses, lookup: { remoteID, finished in
                                 let queries = [URLQueryItem(name: "find[_id]", value: remoteID), URLQueryItem(name: "count", value: "1")]
                                 self.performHTTPRequest(path: self.nightscoutTreatmentPath, queries: queries, httpMethod: "GET") { data, result in
                                     // A response from a previous source must not remove current local data.
@@ -1328,6 +1328,13 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
         return nil
     }
     
+    /// The local treatments checked for deletion at Nightscout after a treatment download (#624).
+    /// - parameters:
+    ///     - treatmentsToSync: the latest treatments used for uploading during this sync
+    func treatmentsForRemoteDeletionCheck(treatmentsToSync: [TreatmentEntry]) -> [TreatmentEntry] {
+        treatmentsToSync
+    }
+
     /// A missing bulk result is only a candidate for deletion. An exact-id GET must return an
     /// empty array before we hide it locally. Keep failed lookups and pending local edits intact.
     /// The lookup closure lets tests exercise reconciliation without contacting a real server.
@@ -1344,7 +1351,9 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
         let grouped = Dictionary(grouping: candidates) { treatment in
             String(treatment.id.dropLast(treatment.treatmentType.idExtension().count))
         }
-        let remoteIDs = grouped.keys.filter { !$0.isEmpty }.sorted()
+        let remoteIDs = RemoteTreatmentDeletionLookupPolicy.remoteIDsToLookUp(
+            newestDateByRemoteID: grouped.mapValues { treatments in treatments.map(\.date).max() ?? .distantPast }
+        )
         var deletedCount = 0
 
         // Run lookups one at a time rather than starting a request for every missing entry at once.
@@ -2321,5 +2330,21 @@ extension NightscoutSyncError: CustomStringConvertible {
         case .missingPayLoad:
             return "Either the user id or the authentication payload was missing or invalid"
         }
+    }
+}
+
+/// Decides which treatments missing from a Nightscout download are looked up one by one to
+/// confirm that they were deleted at Nightscout (#624).
+enum RemoteTreatmentDeletionLookupPolicy {
+    /// Most exact-id requests during one sync.
+    static let maximumLookupsPerSync = 50
+
+    /// - parameters:
+    ///     - newestDateByRemoteID: for each Nightscout id missing from the download, the date of its newest local treatment
+    ///     - lastLookupByRemoteID: when each id was last looked up, by an earlier sync
+    ///     - limit: the most ids to return
+    /// - returns: the Nightscout ids to look up, in the order to look them up
+    static func remoteIDsToLookUp(newestDateByRemoteID: [String: Date], lastLookupByRemoteID: [String: Date] = [:], limit: Int = maximumLookupsPerSync) -> [String] {
+        newestDateByRemoteID.keys.filter { !$0.isEmpty }.sorted()
     }
 }
