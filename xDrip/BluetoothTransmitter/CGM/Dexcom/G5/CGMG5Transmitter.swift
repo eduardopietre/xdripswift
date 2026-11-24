@@ -202,6 +202,10 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
     
     /// used to send stop session to transmitter
     private var dexcomSessionStopTxMessageToSendToTransmitter: DexcomSessionStopTxMessage?
+
+    /// when the user last started a sensor session that the transmitter has not reported yet.
+    /// Cleared as soon as the transmitter reports any state other than a stopped session.
+    private var sessionStartRequestedAt: Date?
     
     private var timeStampLastConnection = Date(timeIntervalSince1970: 0)
 
@@ -1120,6 +1124,7 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
         
         // assign sensorStartToSendToTransmitter
         sensorStartToSendToTransmitter = (startDate, dexcomCalibrationParameters)
+        sessionStartRequestedAt = Date()
     }
 
     func stopSensor(stopDate: Date) {
@@ -1573,6 +1578,11 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
             self.cgmTransmitterDelegate?.sensorHealthEventOccurred(algorithmStatus.sensorHealthEvent)
         }
 
+        // Any state other than a stopped session means the transmitter has taken the requested start.
+        if algorithmStatus != .SessionStopped {
+            sessionStartRequestedAt = nil
+        }
+
         switch algorithmStatus {
         case .okay, .needsCalibration:
             lastGlucoseInSensorDataRxReading = GlucoseData(timeStamp: timeStamp, glucoseLevelRaw: calculatedValue)
@@ -1580,7 +1590,7 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
             glucoseTxSent = true
         case .SensorWarmup, .SessionStopped:
             lastGlucoseInSensorDataRxReading = nil
-            if algorithmStatus == .SessionStopped {
+            if DexcomSessionStopDetectionPolicy.reportsSensorStop(algorithmStatus: algorithmStatus, sessionStartRequestedAt: sessionStartRequestedAt, now: statusReceivedAt) {
                 reportedConfirmedSensorStartDate = nil
                 DispatchQueue.main.async { [weak self] in
                     self?.cgmTransmitterDelegate?.sensorStopDetected()
@@ -2252,5 +2262,20 @@ class CGMG5Transmitter:BluetoothTransmitter, CGMTransmitter {
     private func useFireFlyFlow() -> Bool {
         if !nonWebOOPAllowed() { return true }
         return webOOPEnabled
+    }
+}
+
+/// Decides when a stopped session reported by a Dexcom G5/G6/ONE transmitter stops the app's sensor.
+enum DexcomSessionStopDetectionPolicy {
+    /// How long after the user starts a session a stopped state is still attributed to the
+    /// previous session. Covers a few transmitter connections, which happen every 5 minutes.
+    static let sessionStartGracePeriod: TimeInterval = 15 * 60
+
+    /// - parameters:
+    ///     - algorithmStatus: the state reported with the glucose packet
+    ///     - sessionStartRequestedAt: when the user started a session the transmitter has not reported yet, nil if none
+    ///     - now: when the state was received
+    static func reportsSensorStop(algorithmStatus: DexcomAlgorithmState, sessionStartRequestedAt: Date?, now: Date) -> Bool {
+        algorithmStatus == .SessionStopped
     }
 }
