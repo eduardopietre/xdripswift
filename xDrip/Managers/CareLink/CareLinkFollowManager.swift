@@ -125,6 +125,10 @@ final class CareLinkFollowManager: NSObject, CareLinkControlling {
     private let backgroundExecutionManager: CareLinkBackgroundExecutionManaging
     private let log = OSLog(subsystem: ConstantsLog.subSystem, category: ConstantsLog.categoryCareLinkFollowManager)
     private let keyValueObserverTimeKeeper = KeyValueObserverTimeKeeper()
+    /// Set while this manager saves the selected patient itself. The save already comes with the
+    /// poll it needs, so the change notification it causes must not request another one.
+    private let ownSelectionSaveLock = NSLock()
+    private var ownSelectionSaveDepth = 0
     /// One persistent scheduler checks the retained deadline outside heartbeat mode.
     private var pollingScheduler: FollowerBackgroundTimer?
     private var pollingSchedulerIsRunning = false
@@ -442,8 +446,19 @@ final class CareLinkFollowManager: NSObject, CareLinkControlling {
 
     /// Retains the selection hook used by Settings and polls the selected patient.
     func selectPatient(_ id: String) {
-        UserDefaults.standard.careLinkSelectedPatientID = id
+        saveSelectedPatientID(id)
         refreshNow()
+    }
+
+    /// Saves the selection without the change notification starting a poll of its own.
+    private func saveSelectedPatientID(_ id: String?) {
+        ownSelectionSaveLock.withLock { ownSelectionSaveDepth += 1 }
+        defer { ownSelectionSaveLock.withLock { ownSelectionSaveDepth -= 1 } }
+        UserDefaults.standard.careLinkSelectedPatientID = id
+    }
+
+    private var isSavingOwnSelection: Bool {
+        ownSelectionSaveLock.withLock { ownSelectionSaveDepth > 0 }
     }
 
     /// Computes activation from current settings rather than maintaining a second source of truth.
@@ -583,10 +598,10 @@ final class CareLinkFollowManager: NSObject, CareLinkControlling {
             let selectedID = CareLinkPatientSelection.resolve(patients: account.patients, savedID: previousSelection)
             // Clear a stale saved identifier instead of silently redirecting it.
             if previousSelection != nil, selectedID == nil {
-                UserDefaults.standard.careLinkSelectedPatientID = nil
+                saveSelectedPatientID(nil)
             }
             if selectedID != previousSelection {
-                UserDefaults.standard.careLinkSelectedPatientID = selectedID
+                saveSelectedPatientID(selectedID)
             }
             await updateState(generation: generation) { snapshot in
                 snapshot.patients = account.patients
@@ -1070,7 +1085,7 @@ final class CareLinkFollowManager: NSObject, CareLinkControlling {
         backgroundKeepAliveManager.stop(for: .careLink)
         lifecycleState = .invalidatingSession
         if UserDefaults.standard.careLinkSelectedPatientID != nil {
-            UserDefaults.standard.careLinkSelectedPatientID = nil
+            saveSelectedPatientID(nil)
         }
         publishLoginRequired(detail: nil)
 
@@ -1150,6 +1165,8 @@ final class CareLinkFollowManager: NSObject, CareLinkControlling {
             guard keyValueObserverTimeKeeper.verifyKey(forKey: keyPath, withMinimumDelayMilliSeconds: 200) else { return }
             Task { @MainActor [weak self] in self?.reconcileLifecycle() }
         case .careLinkSelectedPatientID:
+            // Only a change made elsewhere, such as a restored backup, needs a refresh here.
+            guard !isSavingOwnSelection else { return }
             refreshNow()
         case .careLinkVersion:
             // Apply a validated protocol override immediately rather than waiting for the current
