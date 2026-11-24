@@ -23,6 +23,7 @@
 		BD5506BFDEAFBD554CAB21F9 /* LoopShareSensorSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFD9D30848DC1A06973938F /* LoopShareSensorSessionTests.swift */; };
 		2E0ECE7DF8FD0699AB8AA0B7 /* HighAlertTrendPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D04EC729A781A48742C4 /* HighAlertTrendPolicyTests.swift */; };
 		BBF0AD54E4BE224F02B21A99 /* SpeakReadingAudioPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A718E7BB89D05987DA1F2 /* SpeakReadingAudioPolicyTests.swift */; };
+		5164F6AA48538530FFBBD942 /* SensorHealthBannerLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B524DE18470CE72E20DF84A /* SensorHealthBannerLayoutTests.swift */; };
 		7E7760013000000100000001 /* SensorExpiryReminderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000002 /* SensorExpiryReminderManager.swift */; };
 		7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */; };
 		07ECB18D91AE096E637D1393 /* AlertsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763EFF5D128BB4E856D0EB5A /* AlertsSettingsView.swift */; };
@@ -1032,6 +1033,7 @@
 		7DFD9D30848DC1A06973938F /* LoopShareSensorSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopShareSensorSessionTests.swift; sourceTree = "<group>"; };
 		E5D9D04EC729A781A48742C4 /* HighAlertTrendPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighAlertTrendPolicyTests.swift; sourceTree = "<group>"; };
 		136A718E7BB89D05987DA1F2 /* SpeakReadingAudioPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakReadingAudioPolicyTests.swift; sourceTree = "<group>"; };
+		3B524DE18470CE72E20DF84A /* SensorHealthBannerLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorHealthBannerLayoutTests.swift; sourceTree = "<group>"; };
 		7E7760013000000100000002 /* SensorExpiryReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManager.swift; sourceTree = "<group>"; };
 		7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorExpiryReminderManagerTests.swift; sourceTree = "<group>"; };
 		008DD8362C3D359B7EA1B6BD /* Libre3PairingFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3PairingFlow.swift; path = Libre3PairingFlow.swift; sourceTree = "<group>"; };
@@ -2907,6 +2909,7 @@
 				7DFD9D30848DC1A06973938F /* LoopShareSensorSessionTests.swift */,
 				E5D9D04EC729A781A48742C4 /* HighAlertTrendPolicyTests.swift */,
 				136A718E7BB89D05987DA1F2 /* SpeakReadingAudioPolicyTests.swift */,
+				3B524DE18470CE72E20DF84A /* SensorHealthBannerLayoutTests.swift */,
 				4F2800113004000100000001 /* RootHomeInteractionTests.swift */,
 				4F2600123002000200000001 /* SensorHealthIssueManagerTests.swift */,
 				7E7760013000000100000004 /* SensorExpiryReminderManagerTests.swift */,
@@ -4870,6 +4873,7 @@
 				BD5506BFDEAFBD554CAB21F9 /* LoopShareSensorSessionTests.swift in Sources */,
 				2E0ECE7DF8FD0699AB8AA0B7 /* HighAlertTrendPolicyTests.swift in Sources */,
 				BBF0AD54E4BE224F02B21A99 /* SpeakReadingAudioPolicyTests.swift in Sources */,
+				5164F6AA48538530FFBBD942 /* SensorHealthBannerLayoutTests.swift in Sources */,
 				7E7760013000000100000003 /* SensorExpiryReminderManagerTests.swift in Sources */,
 				4F2800023004000100000001 /* GlucoseChartYAxisRetentionTests.swift in Sources */,
 				4F2800013004000100000001 /* RootHomeInteractionTests.swift in Sources */,
