@@ -125,7 +125,10 @@ final class GlucoseAdjustmentTests: XCTestCase {
         defaults.isMaster = true
         defaults.cgmTransmitterTypeAsString = CGMTransmitterType.dexcomG7.rawValue
         let core = CoreDataManager(inMemoryModelName: ConstantsCoreData.modelName)
-        let start = Date().addingTimeInterval(-60)
+        // A whole second, so the result cannot depend on sub-second rounding of the current time.
+        // "Apply from now" uses the latest reading's timestamp as its start, so readings exactly
+        // at the start, as in testRepeatedApplyDoesNotAccumulateOffsets, must be processed.
+        let start = Date(timeIntervalSinceReferenceDate: (Date().timeIntervalSinceReferenceDate - 60).rounded(.down))
         _ = Sensor(startDate: start, nsManagedObjectContext: core.mainManagedObjectContext)
         XCTAssertTrue(core.saveChangesSynchronously())
         let manager = BgPostProcessingManager(coreDataManager: core, nightscoutSyncManager: nil, healthKitManager: nil)
