@@ -17,10 +17,31 @@ extension AVAudioPlayer: AlarmAudioPlaying {}
 class SoundPlayer: NSObject, AVAudioPlayerDelegate {
     private let log = OSLog(subsystem: ConstantsLog.subSystem, category: ConstantsLog.categoryPlaySound)
     // Audio route negotiation must not block the main thread.
-    private static let activationQueue = DispatchQueue(label: "SoundPlayer.audioSessionActivation")
+    /// Serial queue for changes to the shared audio session. The reading speaker uses it too, so that
+    /// it cannot deactivate the session while an alarm is activating it.
+    static let activationQueue = DispatchQueue(label: "SoundPlayer.audioSessionActivation")
+
+    /// The sound players that are playing, of every instance: the app's own and the ones of the
+    /// alert settings. Lets the reading speaker know whether deactivating the shared audio session
+    /// would stop an app sound.
+    private static var playingInstances = Set<ObjectIdentifier>()
+    private static let playingInstancesLock = NSLock()
+
+    /// Whether any sound player of the app is playing.
+    static var anyIsPlaying: Bool {
+        playingInstancesLock.withLock { !playingInstances.isEmpty }
+    }
 
     private var audioPlayer: AlarmAudioPlaying?
-    private var playbackID: UUID?
+    private var playbackID: UUID? {
+        didSet {
+            let isPlaying = playbackID != nil
+            let instance = ObjectIdentifier(self)
+            Self.playingInstancesLock.withLock {
+                if isPlaying { Self.playingInstances.insert(instance) } else { Self.playingInstances.remove(instance) }
+            }
+        }
+    }
     private var activationID: UUID?
     private var repeats = false
     private var interrupted = false
@@ -242,5 +263,7 @@ class SoundPlayer: NSObject, AVAudioPlayerDelegate {
         cancelVibration?()
         observers.forEach(NotificationCenter.default.removeObserver)
         audioPlayer?.stop()
+        let instance = ObjectIdentifier(self)
+        Self.playingInstancesLock.withLock { _ = Self.playingInstances.remove(instance) }
     }
 }

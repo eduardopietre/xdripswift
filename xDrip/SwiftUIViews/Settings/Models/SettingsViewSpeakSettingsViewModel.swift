@@ -31,17 +31,23 @@ class SettingsViewSpeakSettingsViewModel: NSObject, SettingsViewModelProtocol {
     /// Retain the synthesizer for the lifetime of the settings screen.
     private let previewSynthesizer = AVSpeechSynthesizer()
 
-    /// Audio-session configuration can block while negotiating the output route.
-    private static let previewActivationQueue = DispatchQueue(label: "SpeakGlucose.previewActivation")
+    /// Audio-session configuration can block while negotiating the output route. It runs on the queue
+    /// the sound player and the reading speaker use, so the preview cannot change the session in the
+    /// middle of their changes.
+    private static var previewActivationQueue: DispatchQueue { SoundPlayer.activationQueue }
 
     /// Accessed only on main, including while activation is pending.
     private var previewActivationPending = false
+
+    /// Whether the preview being spoken lowered other audio, so it is returned to full volume afterwards. Main thread only.
+    private var previewLowersOtherAudio = false
 
     private let coreDataManager: CoreDataManager?
 
     init(coreDataManager: CoreDataManager? = nil) {
         self.coreDataManager = coreDataManager
         super.init()
+        previewSynthesizer.delegate = self
     }
 
     private func previewRow() -> SettingsRow {
@@ -61,11 +67,18 @@ class SettingsViewSpeakSettingsViewModel: NSObject, SettingsViewModelProtocol {
         previewActivationPending = true
         let log = log
 
+        // The preview lowers other audio the way spoken readings do, so the option can be tried here.
+        let lowersOtherAudio = SpeakReadingAudioPolicy.lowersOtherAudio(
+            optionIsOn: UserDefaults.standard.speakDucksOtherAudio,
+            keepAliveAudioMayPlay: SpeakReadingAudioPolicy.keepAliveAudioMayPlay(isMaster: UserDefaults.standard.isMaster, keepAliveType: UserDefaults.standard.followerBackgroundKeepAliveType)
+        )
+        previewLowersOtherAudio = lowersOtherAudio
+
         Self.previewActivationQueue.async { [weak self] in
             let didActivate: Bool
             do {
                 let session = AVAudioSession.sharedInstance()
-                try session.setCategory(.playback, options: .mixWithOthers)
+                try session.setCategory(.playback, options: SpeakReadingAudioPolicy.categoryOptions(whileSpeaking: true, duckOtherAudio: lowersOtherAudio))
                 try session.setActive(true)
                 didActivate = true
             } catch {
@@ -76,7 +89,10 @@ class SettingsViewSpeakSettingsViewModel: NSObject, SettingsViewModelProtocol {
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
                 self.previewActivationPending = false
-                guard didActivate else { return }
+                guard didActivate else {
+                    self.previewLowersOtherAudio = false
+                    return
+                }
 
                 // Keep Core Data access and speech synthesis on main.
                 Texts_SpeakReading.setLanguageCode(code: UserDefaults.standard.speakReadingLanguageCode)
@@ -106,6 +122,15 @@ class SettingsViewSpeakSettingsViewModel: NSObject, SettingsViewModelProtocol {
                 control: .toggle(
                     isOn: { UserDefaults.standard.speakIntroduction },
                     setIsOn: { UserDefaults.standard.speakIntroduction = $0 }
+                ),
+                isVisible: UserDefaults.standard.speakReadings
+            ),
+            SettingsRow(
+                id: "speak.ducksOtherAudio",
+                title: Texts_SettingsView.labelSpeakDucksOtherAudio,
+                control: .toggle(
+                    isOn: { UserDefaults.standard.speakDucksOtherAudio },
+                    setIsOn: { UserDefaults.standard.speakDucksOtherAudio = $0 }
                 ),
                 isVisible: UserDefaults.standard.speakReadings
             ),
@@ -402,5 +427,25 @@ struct SpeakReadingsSettingsRefresh: ViewModifier {
                     refresh()
                 }
             }
+    }
+}
+
+extension SettingsViewSpeakSettingsViewModel: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        DispatchQueue.main.async { self.previewDidEnd() }
+    }
+
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
+        DispatchQueue.main.async { self.previewDidEnd() }
+    }
+
+    /// Returns other audio to full volume after a preview that lowered it, as after a spoken reading.
+    private func previewDidEnd() {
+        guard previewLowersOtherAudio else { return }
+        previewLowersOtherAudio = false
+        let action = SpeakReadingAudioPolicy.afterSpeaking(duckedUtterancesLeft: 0, appSoundIsPlaying: SoundPlayer.anyIsPlaying)
+        Self.previewActivationQueue.async {
+            BGReadingSpeaker.configureAudioSession(options: SpeakReadingAudioPolicy.categoryOptions(whileSpeaking: false, duckOtherAudio: true), deactivateFirst: action == .deactivateAndReactivate)
+        }
     }
 }
