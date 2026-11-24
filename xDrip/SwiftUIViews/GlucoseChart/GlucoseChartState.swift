@@ -299,6 +299,19 @@ enum GlucoseChartTreatmentStyle {
 
 }
 
+/// The height at which a glucose value is plotted.
+///
+/// Readings are stored and passed to the chart in mg/dL.
+enum GlucoseChartPlotValue {
+    /// - parameters:
+    ///     - valueInMgDl: the glucose value in mg/dL
+    ///     - isMgDl: whether the user's unit is mg/dL
+    /// - returns: the value to plot, in mg/dL
+    static func plotted(_ valueInMgDl: Double, isMgDl: Bool) -> Double {
+        valueInMgDl
+    }
+}
+
 /// Linear interpolation of symbol side length in points, rather than area or dose buckets.
 /// This is a small, allocation-free calculation shared by bolus and carbohydrate chart markers.
 struct GlucoseChartTreatmentSizeRange {
