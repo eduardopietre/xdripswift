@@ -385,17 +385,19 @@ public class HealthKitManager: NSObject {
 /// Decides which readings may be written to Apple Health.
 ///
 /// Apple Health is a long-term record that other apps read, so it should only contain readings
-/// that represent a glucose value.
+/// that represent a glucose value. Sensor errors are stored by the calibrator as
+/// `bgReadingErrorValue` (38 mg/dL), below the lowest valid reading, and must not be saved as a
+/// hypo (#283). Readings without a calculated value are 0 and are skipped as well.
 enum HealthKitReadingPolicy {
-    /// Lowest calculated value written to Apple Health. Readings without a calculated value are 0.
-    static let minimumStoredCalculatedValue: Double = .leastNonzeroMagnitude
+    /// Lowest calculated value written to Apple Health: the lowest valid reading.
+    static let minimumStoredCalculatedValue = ConstantsCalibrationAlgorithms.minimumBgReadingCalculatedValue
 
     static func shouldStore(calculatedValue: Double) -> Bool {
         calculatedValue >= minimumStoredCalculatedValue
     }
 
-    /// The readings of a replacement to write to Apple Health.
+    /// The readings of a replacement to write to Apple Health: those that `shouldStore` accepts.
     static func storableReadings<Reading>(_ readings: [Reading], calculatedValue: (Reading) -> Double) -> [Reading] {
-        readings
+        readings.filter { shouldStore(calculatedValue: calculatedValue($0)) }
     }
 }
