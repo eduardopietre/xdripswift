@@ -104,6 +104,16 @@ struct CalendarSharePayload: Codable {
     }
 }
 
+/// The location shown with the Calendar Share event, for example by Apple Watch faces.
+enum CalendarShareEventLocation {
+    /// - parameters:
+    ///     - customText: the location text entered by the user
+    /// - returns: the event location, nil for none
+    static func location(customText: String?) -> String? {
+        nil
+    }
+}
+
 /// Builds the human-visible Calendar Share event title from the current settings.
 enum CalendarShareEventTitleFormatter {
     private static let previewValueMgDl = 123.0
@@ -311,6 +321,7 @@ class CalendarManager: NSObject {
             return
         }
         event.notes = notes
+        event.location = CalendarShareEventLocation.location(customText: nil)
         event.startDate = Date()
         event.endDate = Date(timeIntervalSinceNow: 60 * 10)
         event.calendar = calendar
