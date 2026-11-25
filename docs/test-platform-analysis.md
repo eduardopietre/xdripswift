@@ -6,6 +6,50 @@ them **as fast as possible** and **more robust**, ordered by return on effort. E
 *measured* comes from this container (4 vCPU, 15 GB RAM, Swift 6.2.1, Ubuntu 24.04). The macOS
 side could not be run here (no Xcode), so its items are based on reading the code and project.
 
+## 0. Status on this branch
+
+| Item | Done in | Result |
+|---|---|---|
+| L1 write only changed files, L2 parallel suites, L6 coverage scratch path, L7 snippet target only for `snippet` | `linux/xdrip-linux.sh`, `linux/sync-tree.py` | cold 303 s → **104 s**, no change 74 s → **8 s**, after editing one test **7 s** *measured* |
+| R4 registration check | `linux/check-test-registration.py` | parses `project.pbxproj`; 123/123 test files compiled by `xdripTests` |
+| M1 minimal test host | `XdripApp.isHostingUnitTests` | services are not started when XCTest hosts unit tests |
+| M2/M3/M4 test doubles for globals | `xDrip Tests/UserDefaultsSandbox.swift`, `NetworkStub.swift`, `AsyncTestConditions.swift` | 20 tests, Linux suite `test-support` |
+| M2 fixed setUp/tearDown sleeps (≈20 s) | the six classes of §4.2 | replaced by `waitUntilStable` on the stub's request count |
+| CI | `.github/workflows/tests_linux.yml`, `tests_macos.yml` | Linux on every push/PR, macOS on PRs and on demand |
+
+Still open: L3 (single generator), L4 (merged package), R1 (`extract.py` tokenizer), R2/R3
+(expected counts, macOS-only inventory), M5 (test plan), M6 (core package), and moving the six
+classes' private `URLProtocol` stubs to `NetworkStub`.
+
+### Writing tests against the app's globals
+
+```swift
+@MainActor final class SomeManagerTests: XCTestCase {
+    func testUploadsTheNewReading() async throws {
+        isolateUserDefaults()                       // no key list; undone in teardown, even after a crash
+        UserDefaults.standard.nightscoutUrl = "https://ns.test"
+
+        let network = installNetworkStub()          // URLSession.shared never reaches the internet
+        network.on("POST", host: "ns.test", path: "/api/v1/entries") { _ in .json("[]") }
+
+        manager.uploadLatestBgReadings(lastConnectionStatusChangeTimeStamp: nil)
+
+        await waitForCondition { !network.requests(path: "/api/v1/entries").isEmpty }   // no sleep
+        let body = try XCTUnwrap(network.requests(path: "/api/v1/entries").first?.jsonBody as? [[String: Any]])
+        XCTAssertEqual(body.count, 1)
+    }
+}
+```
+
+- `isolateUserDefaults(alsoSuites:)` protects the standard defaults (and any suite listed).
+- `installNetworkStub()` routes by method/host/path; unanswered requests fail with
+  `notConnectedToInternet` and are listed in `unexpectedRequests`
+  (`installNetworkStub(failOnUnexpectedRequests: true)` turns them into test failures).
+  `waitUntilIdle()` waits for a chain of requests to finish.
+- `waitForCondition` fails the test on timeout; `waitUntilStable` (for setUp/tearDown) and
+  `drainPendingWork` never fail.
+- Fixed sleeps stay only where a test proves that something does **not** happen.
+
 ## 1. Where the tests are today
 
 | | macOS (Xcode, `xdripTests`) | Linux (`linux/xdrip-linux.sh`) |
