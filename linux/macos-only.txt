@@ -36,7 +36,6 @@ xDrip Tests/DataCoverageUserDefaultsTests.swift             # app types not yet 
 xDrip Tests/DexcomCoverageG5TransmitterTests.swift          # CoreData, CoreBluetooth
 xDrip Tests/DexcomCoverageG7AuthTests.swift                 # CoreBluetooth, CryptoKit
 xDrip Tests/DexcomCoverageG7TransmitterTests.swift          # CoreData, CoreBluetooth
-xDrip Tests/DexcomCoverageMessageTests.swift                # app types not yet ported to a Linux suite
 xDrip Tests/DexcomG6SensorLabelTests.swift                  # CoreData
 xDrip Tests/DexcomG7CalibrationTests.swift                  # CoreData
 xDrip Tests/DexcomShareUploadTests.swift                    # SwiftUI

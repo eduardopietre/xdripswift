@@ -10,6 +10,11 @@ import Foundation
 import XCTest
 
 /// The polling behind `waitForCondition`, kept free of XCTest so it can be tested on every platform.
+///
+/// Main-actor isolated, so the condition is read on the main actor between checks, like the state of
+/// the managers and Core Data contexts the tests look at. A nonisolated async function would run the
+/// condition on the generic executor, off the main actor, racing with that state.
+@MainActor
 enum AsyncTestConditions {
 
     /// Checks `condition` every `interval` seconds until it holds (true) or `timeout` passes (false).
@@ -55,6 +60,7 @@ extension XCTestCase {
     ///
     /// - Returns: whether the condition held before the timeout, for tests that continue either way.
     @discardableResult
+    @MainActor
     func waitForCondition(_ message: @autoclosure () -> String = "condition not met",
                           timeout: TimeInterval = 5,
                           pollInterval: TimeInterval = 0.005,
@@ -73,6 +79,7 @@ extension XCTestCase {
     /// restores settings. Returns early when nothing happens, unlike a fixed sleep; does not fail
     /// the test on timeout, because it is meant for setUp and tearDown.
     @discardableResult
+    @MainActor
     func waitUntilStable<Value: Equatable>(quietPeriod: TimeInterval = 0.05, timeout: TimeInterval = 2,
                                            _ value: () -> Value) async -> Bool {
         await AsyncTestConditions.stable(quietPeriod: quietPeriod, timeout: timeout, value)
@@ -83,6 +90,7 @@ extension XCTestCase {
     /// Use it where a test needs the effects of a `DispatchQueue.main.async` or an unstructured
     /// `Task` started by the code under test, and nothing observable says when it is done. It
     /// replaces sleeps of a few hundred milliseconds with a few yields.
+    @MainActor
     func drainPendingWork(iterations: Int = 3) async {
         for _ in 0..<iterations {
             await withCheckedContinuation { continuation in

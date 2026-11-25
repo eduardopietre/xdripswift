@@ -30,7 +30,10 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  XDRIP_LINUX_BUILD: ${{ github.workspace }}/.linux-build
+  # Relative on purpose: in a container job `github.workspace` is the host path, not the path the
+  # container sees, so the build would land outside the checkout and the cache would stay empty.
+  # xdrip-linux.sh makes it absolute from the working directory (the checkout).
+  XDRIP_LINUX_BUILD: .linux-build
 
 jobs:
   tests:

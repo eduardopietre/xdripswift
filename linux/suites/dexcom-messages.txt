@@ -52,3 +52,10 @@ test    xDrip Tests/DexcomRxMessageTests.swift
 test    xDrip Tests/DexcomTxMessageTests.swift
 test    xDrip Tests/ByteFuzz.swift
 test    xDrip Tests/DexcomMessageFuzzTests.swift
+# DexcomCoverageMessageTests: the two proof signer tests need CryptoKit (P256), which Linux lacks.
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/Generic/String+Dexcom.swift
+members xDrip/Extensions/String.swift | String | startsWith
+src     xDrip/BluetoothTransmitter/CGM/Dexcom/DexcomError.swift
+src     xDrip/Utilities/Errors/XdripError.swift
+include _texts-home-view
+test    xDrip Tests/DexcomCoverageMessageTests.swift | without testProofSignerProducesVerifiableP256Signature, testProofSignerReportsErrorForInvalidKey

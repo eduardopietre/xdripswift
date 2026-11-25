@@ -66,7 +66,11 @@ check_test_count() { # <package dir> <log>
     local expected executed
     expected="$(cat "$1/expected-tests" 2>/dev/null || echo '?')"
     executed="$(grep -A1 "Test Suite 'All tests'" "$2" | grep -oE 'Executed [0-9]+' | tail -1 | grep -oE '[0-9]+' || true)"
-    [[ -n "$executed" ]] || return 0   # the build or the run failed; that is reported already
+    if [[ -z "$executed" ]]; then
+        # No summary: the build or the run failed (reported by its exit status), or nothing ran.
+        [[ -d "$1/Tests/xdripTests" ]] && grep -q "Build complete" "$2" && { echo "error: $(basename "$1"): no test summary in the output" >&2; return 1; }
+        return 0
+    fi
     if [[ "$executed" != "$expected" ]]; then
         echo "error: $(basename "$1"): $expected tests declared but $executed executed; a test is not run" >&2
         return 1

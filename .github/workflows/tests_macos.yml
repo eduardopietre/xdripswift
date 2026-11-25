@@ -55,20 +55,24 @@ jobs:
       # from a compile failure at a glance.
       - name: Build for testing
         run: |
-          set -o pipefail
+          set +e
           xcodebuild build-for-testing \
             -project xdrip.xcodeproj -scheme xdrip \
             -destination "platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}" \
             -derivedDataPath DerivedData \
             CODE_SIGNING_ALLOWED=NO COMPILER_INDEX_STORE_ENABLE=NO \
-            | tee build.log | grep -E '(error|warning: unable|BUILD)' || true
-          grep -q 'TEST BUILD SUCCEEDED' build.log
+            2>&1 | tee build.log | grep -E '(error|warning: unable|BUILD)'
+          # The exit status of xcodebuild itself, not of the filter.
+          exit "${PIPESTATUS[0]}"
 
       - name: Run tests
+        env:
+          # Passed through the environment, not pasted into the script, so the input cannot inject commands.
+          ITERATIONS: ${{ github.event.inputs.iterations || '1' }}
         run: |
-          set -o pipefail
-          ITERATIONS="${{ github.event.inputs.iterations || '1' }}"
+          set +e
           EXTRA=()
+          [[ "$ITERATIONS" =~ ^[0-9]+$ ]] || { echo "iterations must be a number"; exit 1; }
           if [[ "$ITERATIONS" -gt 1 ]]; then EXTRA=(-test-iterations "$ITERATIONS" -run-tests-until-failure); fi
           xcodebuild test-without-building \
             -project xdrip.xcodeproj -scheme xdrip \
@@ -77,8 +81,8 @@ jobs:
             -resultBundlePath TestResults.xcresult \
             -test-timeouts-enabled YES -default-test-execution-time-allowance 120 \
             "${EXTRA[@]}" \
-            | tee test.log | grep -E '(error:|failed|Executed [0-9]+ tests|TEST (SUCCEEDED|FAILED))' || true
-          grep -q 'TEST EXECUTE SUCCEEDED\|TEST SUCCEEDED' test.log
+            2>&1 | tee test.log | grep -E '(error:|failed|Executed [0-9]+ tests|TEST (EXECUTE )?(SUCCEEDED|FAILED))'
+          exit "${PIPESTATUS[0]}"
 
       - name: Slowest tests
         if: always()

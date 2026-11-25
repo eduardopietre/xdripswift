@@ -106,8 +106,9 @@ private final class SyncStubProtocol: URLProtocol {
 
     override func tearDown() async throws {
         manager = nil
-        // Returns once the requests started by the managers have stopped coming, instead of a fixed sleep.
-        await waitUntilStable { SyncStubProtocol.requests.count }
+        // Waits until no request has arrived for 0.6 s: the managers schedule follow-up work up to
+        // 0.5 s later (NightscoutSyncManager, NightscoutFollowManager), which must not leak into the next test.
+        await waitUntilStable(quietPeriod: 0.6, timeout: 3) { SyncStubProtocol.requests.count }
         for key in keys {
             if let value = saved[key.rawValue] {
                 UserDefaults.standard.set(value, forKey: key.rawValue)
