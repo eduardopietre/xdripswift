@@ -51,6 +51,8 @@ struct Libre3NFCPatchInfo: Sendable, Equatable {
 
 private extension Libre3NFCPatchInfo {
     static func normalizeResponse(_ raw: Data) -> Data {
+        // Re-based so the fixed offsets below also hold for a slice of a larger buffer.
+        let raw = Data([UInt8](raw))
         var frame = raw
         if frame.first == 0xa5 {
             frame = Data([0x00]) + frame
@@ -127,6 +129,8 @@ struct Libre3NFCActivationResponse: Sendable, Equatable {
 
 private extension Libre3NFCActivationResponse {
     static func normalizeResponse(_ raw: Data) -> Data {
+        // Re-based so the fixed offsets in init(raw:) also hold for a slice of a larger buffer.
+        let raw = Data([UInt8](raw))
         if raw.count >= 2, raw[0] == 0x00, raw[1] == 0xa5 {
             return raw
         }

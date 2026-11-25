@@ -26,3 +26,5 @@ src     xDrip/BluetoothTransmitter/CGM/Libre/Libre2/Libre2FrameAssembler.swift
 test    xDrip Tests/Libre2FrameAssemblyEdgeCaseTests.swift
 # Derived algorithm parameters are persisted as a JSON string in UserDefaults.
 members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key, libre1DerivedAlgorithmParameters
+test    xDrip Tests/ByteFuzz.swift
+test    xDrip Tests/LibreByteParserFuzzTests.swift

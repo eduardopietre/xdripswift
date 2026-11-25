@@ -10,3 +10,5 @@ members xDrip/BluetoothTransmitter/CGM/Libre/Utilities/Libre2BLEUtilities.swift 
 members xDrip/Constants/ConstantsLog.swift | ConstantsLog | subSystem, categoryRootView
 members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key
 test    xDrip Tests/Libre2DecryptionTests.swift | without testEncryptedFrameDecodesToTheReadingsItWasBuiltFrom
+test    xDrip Tests/ByteFuzz.swift
+test    xDrip Tests/Libre2DecryptionFuzzTests.swift

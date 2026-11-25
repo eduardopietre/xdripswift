@@ -59,4 +59,48 @@ final class Libre3DataSliceTests: XCTestCase {
         XCTAssertThrowsError(try Libre3HistoricalReadingPage(plaintext: slice(bytes)))
         XCTAssertThrowsError(try Libre3ClinicalReadingRecord(plaintext: slice(bytes)))
     }
+
+    /// Regression (found by Libre3ProtocolFuzzTests): the NFC answers were checked with
+    /// `frame[0]` and cut with `subdata(in: 3..<9)`, which crash or read the wrong bytes for a slice.
+    func testNFCActivationResponseDecodesASlice() throws {
+        let bytes = Data([0x00, 0xA5, 0x00]) + Data(1...6) + Data([0xAA, 0xBB, 0xCC, 0xDD]) + Data([1, 2, 3, 4]) + Data([0xEE, 0xFF])
+        XCTAssertEqual(bytes.count, 19)
+
+        let response = try Libre3NFCActivationResponse(raw: slice(bytes))
+
+        XCTAssertEqual(response, try Libre3NFCActivationResponse(raw: bytes))
+        XCTAssertEqual(response.blePIN, Data([0xAA, 0xBB, 0xCC, 0xDD]))
+    }
+
+    func testNFCPatchInfoDecodesASlice() throws {
+        var bytes = [UInt8](repeating: 0, count: 29)
+        bytes[1] = 0xA5
+        bytes[9] = 0x60; bytes[10] = 0x54   // wear duration 21600 minutes
+        bytes[16] = 12                      // warm-up 60 minutes
+        for (index, character) in "3MH00ABCD".utf8.enumerated() { bytes[18 + index] = character }
+
+        let info = try Libre3NFCPatchInfo(raw: slice(Data(bytes)))
+
+        XCTAssertEqual(info.wearDurationMinutes, 21_600)
+        XCTAssertEqual(info.warmupMinutes, 60)
+        XCTAssertEqual(info.serialNumber, "3MH00ABCD")
+    }
+
+    /// Regression (found by Libre3ProtocolFuzzTests): the pairing answers were cut with
+    /// `subdata(in: 0..<36)`, which reads the wrong bytes or crashes for a slice.
+    func testPairingMessagesDecodeASlice() throws {
+        let challenge = Data(0..<40)
+        XCTAssertEqual(try Libre3Phase5Challenge.decode(slice(challenge)), try Libre3Phase5Challenge.decode(challenge))
+
+        let response = Data((0..<67).map { UInt8($0) })
+        XCTAssertEqual(try Libre3Phase6Response.decode(slice(response)), try Libre3Phase6Response.decode(response))
+    }
+
+    func testNotifyReassemblerRejectsANegativeLength() throws {
+        let reassembler = Libre3BleFraming.NotifyReassembler()
+        try reassembler.feed(Data([0x00, 0x01, 0x02]))
+
+        XCTAssertThrowsError(try reassembler.take(-1))
+        XCTAssertEqual(try reassembler.take(2), Data([0x01, 0x02]))
+    }
 }

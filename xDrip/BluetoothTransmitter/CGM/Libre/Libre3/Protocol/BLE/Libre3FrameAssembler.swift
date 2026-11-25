@@ -57,10 +57,12 @@ enum Libre3BleFraming {
     /// Inverse of `fragmentForWrite`, used in tests + for any future write-back path.
     static func reassembleWrite(_ fragments: [Data]) throws -> Data {
         // Sort by offset, then concatenate. Validate continuity.
-        let parsed: [(offset: Int, body: Data)] = try fragments.map { f in
+        let parsed: [(offset: Int, body: Data)] = try fragments.map { fragment in
+            // An array, so the offsets also hold for a slice of a larger buffer.
+            let f = [UInt8](fragment)
             guard f.count >= 2 else { throw Libre3BleFramingError.fragmentTooShort }
             let offset = Int(f[0]) | (Int(f[1]) << 8)
-            return (offset, f.subdata(in: 2..<f.count))
+            return (offset, Data(f[2...]))
         }.sorted { $0.offset < $1.offset }
         var out = Data()
         for piece in parsed {
@@ -100,7 +102,7 @@ enum Libre3BleFraming {
         /// Consume the first `n` bytes of the reassembled stream. Throws if
         /// fewer than `n` bytes have been received.
         func take(_ n: Int) throws -> Data {
-            guard buffer.count >= n else { throw Libre3BleFramingError.notEnoughBytes(have: buffer.count, want: n) }
+            guard n >= 0, buffer.count >= n else { throw Libre3BleFramingError.notEnoughBytes(have: buffer.count, want: n) }
             let head = buffer.prefix(n)
             buffer.removeSubrange(0..<n)
             return Data(head)

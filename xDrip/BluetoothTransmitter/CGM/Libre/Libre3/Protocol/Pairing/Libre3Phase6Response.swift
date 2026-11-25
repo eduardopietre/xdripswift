@@ -62,6 +62,8 @@ struct Libre3Phase6Response: Equatable, Sendable {
 
     static func decode(_ raw: Data) throws -> Libre3Phase6Response {
         guard raw.count == Self.wireSize else { throw Libre3ChallengeError.wrongWireSize(raw.count) }
+        // Re-based so the offsets also hold for a slice of a larger buffer.
+        let raw = Data([UInt8](raw))
         return try Libre3Phase6Response(
             ciphertext: raw.subdata(in: 0..<Self.ciphertextSize),
             tag: raw.subdata(in: Self.ciphertextSize..<Self.logicalSize),

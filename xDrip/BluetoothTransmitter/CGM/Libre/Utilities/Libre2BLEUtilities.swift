@@ -94,6 +94,9 @@ class Libre2BLEUtilities {
         // array so the offsets also hold when `data` is a slice of a larger buffer.
         let data = [UInt8](data)
         guard data.count == 46 else { throw DecryptBLEError() }
+        // The key is derived from bytes 0-5 of the sensor UID (normally 8 bytes from the NFC scan).
+        let sensorUID = Data([UInt8](sensorUID))
+        guard sensorUID.count >= 6 else { throw DecryptBLEError() }
 
         let d = PreLibre2.usefulFunction(sensorUID: sensorUID, x: 0x1b, y: 0x1b6a)
         let x = UInt16(d[1], d[0]) ^ UInt16(d[3], d[2]) | 0x63

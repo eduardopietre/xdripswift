@@ -321,6 +321,18 @@ final class DexcomTxMessageTests: XCTestCase {
         XCTAssertEqual(stream.decode().map(\.glucose), [120])
     }
 
+    /// Regression (found by DexcomMessageFuzzTests): a one byte packet with the expected sequence
+    /// number built the range 2..<1 and crashed the app. It now advances the sequence and adds no
+    /// data; a slice of a larger buffer is read from its own first byte.
+    func testBackfillStreamAcceptsAOneBytePacketAndSlices() {
+        let stream = DexcomBackfillStream()
+
+        stream.push(Data([0x01]))
+        stream.push((Data([0xFF, 0xFF]) + packet([0x02, 0x00, 0, 0, 0, 0], record(time: 600, glucose: 130, state: 0x06, trend: 0))).dropFirst(2))
+
+        XCTAssertEqual(stream.decode().map(\.glucose), [130])
+    }
+
     // MARK: - Watch helpers
 
     /// Little-endian reads are bounds checked so a short notification cannot crash the Watch.

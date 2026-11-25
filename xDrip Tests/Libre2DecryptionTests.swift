@@ -247,6 +247,25 @@ final class Libre2DecryptionTests: XCTestCase {
                        try Libre2BLEUtilities.decryptBLE(sensorUID: Self.directUID, data: frame))
     }
 
+    /// Regression (found by Libre2DecryptionFuzzTests): a sensor UID shorter than 6 bytes crashed
+    /// the key derivation. It is rejected like a frame with a bad CRC.
+    func testShortSensorUIDIsRejectedInsteadOfCrashing() {
+        for length in 0..<6 {
+            XCTAssertThrowsError(try Libre2BLEUtilities.decryptBLE(sensorUID: Data(Self.directUID.prefix(length)), data: Self.capturedFrames[0]), "length \(length)")
+        }
+    }
+
+    /// Regression (found by Libre2DecryptionFuzzTests): patch info shorter than 6 bytes, which a
+    /// transmitter box can send as text, crashed the FRAM decryption. The data is now returned
+    /// unchanged, so the CRC check that follows rejects it.
+    func testShortPatchInfoOrUIDLeavesTheFRAMUnchanged() {
+        let fram = (0..<344).map { UInt8($0 & 0xFF) }
+        XCTAssertEqual(PreLibre2.decryptFRAM(Self.miaoMiaoUID, Array(Self.miaoMiaoPatchInfo.prefix(5)), fram), fram)
+        XCTAssertEqual(PreLibre2.decryptFRAM(Array(Self.miaoMiaoUID.prefix(5)), Self.miaoMiaoPatchInfo, fram), fram)
+        XCTAssertEqual(PreLibre2.decryptFRAM(Self.miaoMiaoUID, Self.miaoMiaoPatchInfo, Array(fram.prefix(100))), Array(fram.prefix(100)))
+        XCTAssertNotEqual(PreLibre2.decryptFRAM(Self.miaoMiaoUID, Self.miaoMiaoPatchInfo, fram), fram)
+    }
+
     func testUnlockPayloadUsesOnlyPatchInfoBytes4And5() {
         let info = Data(Self.miaoMiaoPatchInfo)
         let reference = Libre2BLEUtilities.streamingUnlockPayload(sensorUID: Self.directUID, info: info, enableTime: 1_000, unlockCount: 3)

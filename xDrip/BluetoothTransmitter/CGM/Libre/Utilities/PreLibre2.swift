@@ -34,7 +34,16 @@ class PreLibre2 {
         return (UInt64(high) << 8) + UInt64(low & 0xff)
     }
     
+    ///
+    /// The key uses bytes 0-5 of the sensor UID and of the patch info, and the FRAM has 43 blocks
+    /// of 8 bytes. Both inputs come from the NFC read or the transmitter box (which sends the patch
+    /// info as text), so with fewer bytes the data is returned unchanged instead of crashing; its
+    /// CRC check then fails and the reading is rejected like any unreadable FRAM.
     public static func decryptFRAM(_ sensorId: [UInt8], _ sensorInfo: [UInt8], _ FRAMData: [UInt8]) -> [UInt8] {
+        guard sensorId.count >= 6, sensorInfo.count >= 6, FRAMData.count >= 344 else {
+            return FRAMData
+        }
+
         let l1: UInt16 = 0xa0c5
         let l2: UInt16 = 0x6860
         let l3: UInt16 = 0x14c6

@@ -20,23 +20,24 @@ final class DexcomBackfillStream {
     private var idx = 4
     
     
+    /// Adds the data bytes of a packet (all but its sequence number and the unused second byte) if
+    /// it is the next packet in sequence. Short packets and slices of a larger buffer are fine: a
+    /// one byte packet used to build the range 2..<1 and crash.
     func push(_ packet: Data) {
-        guard !packet.isEmpty else { return }
-        
-        let thisSequence = packet[0]
-        
-        if thisSequence == lastSequence + 1 {
+        let bytes = [UInt8](packet)
+        guard let thisSequence = bytes.first else { return }
+
+        if Int(thisSequence) == lastSequence + 1 {
             lastSequence += 1
-            
-            for idx in 2 ..< packet.count {
+            for byte in bytes.dropFirst(2) {
                 guard data.count < 1000 else {
                     return
                 }
-                data.append(packet[idx])
+                data.append(byte)
             }
         }
     }
-    
+
     /// Returns the records completed since the last call and drops their bytes from `data`.
     ///
     /// The first 4 bytes of the stream are a header. Each record is 8 bytes: little-endian time

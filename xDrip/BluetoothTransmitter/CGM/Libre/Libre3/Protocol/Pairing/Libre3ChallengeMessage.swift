@@ -88,6 +88,8 @@ struct Libre3Phase5Challenge: Equatable, Sendable {
         guard raw.count == wireSize || raw.count == logicalSize else {
             throw Libre3ChallengeError.wrongWireSize(raw.count)
         }
+        // Re-based so the offsets also hold for a slice of a larger buffer.
+        let raw = Data([UInt8](raw))
         return try Libre3Phase5Challenge(
             ciphertext: raw.subdata(in: 0..<36),
             tag: raw.subdata(in: 36..<40)

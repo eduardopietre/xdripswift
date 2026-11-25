@@ -50,3 +50,5 @@ include _foundation-extensions
 include _sensor-health-models
 test    xDrip Tests/DexcomRxMessageTests.swift
 test    xDrip Tests/DexcomTxMessageTests.swift
+test    xDrip Tests/ByteFuzz.swift
+test    xDrip Tests/DexcomMessageFuzzTests.swift
