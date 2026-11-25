@@ -11,3 +11,4 @@ members xDrip/Constants/ConstantsNightscout.swift | ConstantsNightscout | omniPo
 members xDrip/Extensions/String.swift | String | startsWith, capitalizedSentence
 test    xDrip Tests/NightscoutDeviceStatusDecodingTests.swift
 test    xDrip Tests/NightscoutProfileModelsTests.swift
+test    xDrip Tests/NightscoutDeviceStatusRegressionTests.swift

@@ -443,6 +443,21 @@ extension NightscoutDeviceStatus {
         if let timestamp, timestamp > maximumAllowedDate { self.timestamp = nil }
     }
     
+    /// Whether the first ISO 8601 timestamp is later than the second.
+    ///
+    /// Compared as times, because uploaders mix offsets ("+01:00" or "Z") and fractional seconds,
+    /// which makes text order differ from time order. Text order is only used when a timestamp
+    /// cannot be parsed, as before.
+    static func isTimestamp(_ first: String?, laterThan second: String?) -> Bool {
+        func parse(_ text: String?) -> Date? {
+            text.flatMap { ISO8601DateFormatter.withFractionalSeconds.date(from: $0) ?? ISO8601DateFormatter.withoutFractionalSeconds.date(from: $0) }
+        }
+        if let firstDate = parse(first), let secondDate = parse(second) {
+            return firstDate > secondDate
+        }
+        return (first ?? "") > (second ?? "")
+    }
+
     /// Initialize from a unified NightscoutDeviceStatusResponse
     init(from unified: NightscoutDeviceStatusResponse) {
         self.init()
@@ -472,7 +487,7 @@ extension NightscoutDeviceStatus {
             self.appVersion = openAPS.version
             let enacted = openAPS.enacted
             let suggested = openAPS.suggested
-            let useSuggested = suggested != nil && (enacted == nil || (suggested?.timestamp ?? "") > (enacted?.timestamp ?? ""))
+            let useSuggested = suggested != nil && (enacted == nil || Self.isTimestamp(suggested?.timestamp, laterThan: enacted?.timestamp))
             let selectedAPS = useSuggested ? suggested : enacted
             if let aps = selectedAPS {
                 self.currentTarget = aps.currentTarget
@@ -814,6 +829,38 @@ struct NightscoutDeviceStatusResponse: Codable {
             let version: String?
             let activeProfile: String?
             let baseBasalRate: Double?
+
+            private enum CodingKeys: String, CodingKey {
+                case version
+                case activeProfile
+                case baseBasalRate
+            }
+
+            /// AndroidAPS writes these keys capitalized; Loop-style uploaders use lowercase.
+            private enum AndroidAPSCodingKeys: String, CodingKey {
+                case version = "Version"
+                case activeProfile = "ActiveProfile"
+                case baseBasalRate = "BaseBasalRate"
+            }
+
+            init(version: String?, activeProfile: String?, baseBasalRate: Double?) {
+                self.version = version
+                self.activeProfile = activeProfile
+                self.baseBasalRate = baseBasalRate
+            }
+
+            /// Reads either spelling. A value of an unexpected type is treated as missing, so it
+            /// cannot make the whole device status document (and the list it is in) fail to decode.
+            init(from decoder: Decoder) throws {
+                let container = try decoder.container(keyedBy: CodingKeys.self)
+                let androidAPS = try decoder.container(keyedBy: AndroidAPSCodingKeys.self)
+                version = (try? container.decodeIfPresent(String.self, forKey: .version))
+                    ?? (try? androidAPS.decodeIfPresent(String.self, forKey: .version)) ?? nil
+                activeProfile = (try? container.decodeIfPresent(String.self, forKey: .activeProfile))
+                    ?? (try? androidAPS.decodeIfPresent(String.self, forKey: .activeProfile)) ?? nil
+                baseBasalRate = (try? container.decodeIfPresent(Double.self, forKey: .baseBasalRate))
+                    ?? (try? androidAPS.decodeIfPresent(Double.self, forKey: .baseBasalRate)) ?? nil
+            }
         }
     }
 
@@ -822,6 +869,39 @@ struct NightscoutDeviceStatusResponse: Codable {
         let isCharging: Bool?
         let name: String?
         let timestamp: String?
+
+        private enum CodingKeys: String, CodingKey {
+            case battery
+            case isCharging
+            case name
+            case timestamp
+        }
+
+        init(battery: Int?, isCharging: Bool?, name: String?, timestamp: String?) {
+            self.battery = battery
+            self.isCharging = isCharging
+            self.name = name
+            self.timestamp = timestamp
+        }
+
+        /// Some uploaders (e.g. `"uploader": "GG-Host"`) send only a name instead of an object, and
+        /// fields can have unexpected types. Failing on either would make the whole device status
+        /// list undecodable, so the follower would show no AID status at all.
+        init(from decoder: Decoder) throws {
+            if let name = try? decoder.singleValueContainer().decode(String.self) {
+                self.init(battery: nil, isCharging: nil, name: name, timestamp: nil)
+                return
+            }
+            guard let container = try? decoder.container(keyedBy: CodingKeys.self) else {
+                // Neither an object nor a text: keep the rest of the document.
+                self.init(battery: nil, isCharging: nil, name: nil, timestamp: nil)
+                return
+            }
+            self.init(battery: (try? container.decodeIfPresent(Int.self, forKey: .battery)) ?? nil,
+                      isCharging: (try? container.decodeIfPresent(Bool.self, forKey: .isCharging)) ?? nil,
+                      name: (try? container.decodeIfPresent(String.self, forKey: .name)) ?? nil,
+                      timestamp: (try? container.decodeIfPresent(String.self, forKey: .timestamp)) ?? nil)
+        }
     }
 
     private enum CodingKeys: String, CodingKey {
