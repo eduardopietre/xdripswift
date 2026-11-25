@@ -12,7 +12,7 @@ decl    xDrip/Constants/ConstantsHomeView.swift | AIDStatus, AIDStatusCondition,
 members xDrip/Constants/ConstantsHomeView.swift | ConstantsHomeView | aidStatusFutureTolerance, loopShowNoDataAfterMinutes, loopShowWarningAfterMinutes
 members xDrip/Constants/ConstantsGlucoseChartSwiftUI.swift | ConstantsGlucoseChartSwiftUI | therapyPlotCarbsPerInsulinUnit, therapyPlotHeightMultiplier, therapyPlotMaximumCOB, therapyPlotMaximumIOB, therapyPlotReferenceHeightInMgDl
 members xDrip/Texts/TextsSettingsView.swift | Texts_SettingsView | filename, carPlayLiveActivityTypeBasic, carPlayLiveActivityTypeChart, liveActivityTypeLarge, liveActivityTypeMinimal, liveActivityTypeNormal
-members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mmolToString, mgDlToMmol
+members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mmolToString, mgDlToMmol, bgValueToString, bgValueRounded, round
 src     xDrip/Texts/TextsCommon.swift
 include _texts-home-view
 include _app-colors

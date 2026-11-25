@@ -4,7 +4,7 @@
 decl    xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportPeriod, GlucoseReportLanguage, GlucoseReportText, GlucoseReportClinicalConstants, GlucoseReportClinicalMath, GlucoseReportAGPDisplayPoints, GlucoseReportAGPPoint, GlucoseReportTrendPoint, GlucoseReportTrendInterval, GlucoseReportLoopalyzerPoint, GlucoseReportRangeDistribution, GlucoseReportRangeBucket
 members xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportColors | low, target, high
 src     xDrip/Managers/Statistics/GlucoseRangeDistribution.swift
-members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol, minutesToDaysAndHours
+members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol, minutesToDaysAndHours, bgValueToString, bgValueRounded, round
 # ReportFormatting is Foundation-only, but `percentage(_:decimals:)` calls `round(toDecimalPlaces:)`
 # (Darwin.round, not on Linux), so the members that do not need it are copied.
 members xDrip/SwiftUIViews/Reports/ReportFormatting.swift | GlucoseReportFormatting | glucose, axisGlucose, gmi, number, compactDuration, hoursPerDay

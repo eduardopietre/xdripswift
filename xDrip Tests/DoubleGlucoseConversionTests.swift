@@ -110,7 +110,40 @@ final class DoubleGlucoseConversionTests: XCTestCase {
         XCTAssertEqual(14399.0.minutesToDaysAndHours(), "9d23h")
     }
 
-    // MARK: - rounding (macOS only: uses Darwin.round)
+    /// Regression: a negative age (a sensor or site past its end) was formatted from `floor` days
+    /// and truncated hours, so -30 minutes gave "-1d0h" and -90 minutes "-1d-1h". It is now the
+    /// positive format with a minus sign.
+    func testNegativeMinutesGetAMinusSignAndTheSameFormat() {
+        XCTAssertEqual((-30.0).minutesToDaysAndHours(), "-30m")
+        XCTAssertEqual((-90.0).minutesToDaysAndHours(), "-1h30m")
+        XCTAssertEqual((-1500.0).minutesToDaysAndHours(), "-1d1h")
+        XCTAssertEqual((-0.4).minutesToDaysAndHours(), "0m", "less than a minute late is not shown as negative")
+    }
+
+    /// Regression: the displayed value used `%.0f` / `%.1f`, which round exact halves to even,
+    /// while `bgValueRounded` (used for alerts and comparisons) rounds them away from zero. So
+    /// 100.5 mg/dL was shown as "100" but compared as 101. Both now round halves away from zero.
+    func testDisplayedValueRoundsLikeTheComparedValue() {
+        for value in [100.5, 101.5, 39.5, 400.5, 0.5] {
+            XCTAssertEqual(value.bgValueToString(mgDl: true), String(format: "%.0f", value.bgValueRounded(mgDl: true)), "\(value)")
+        }
+        XCTAssertEqual(100.5.bgValueToString(mgDl: true), "101")
+        XCTAssertEqual(100.5.mgDlToMmolAndToString(mgDl: true), "101")
+        // 5.25 and 5.75 are exact in binary, so they are true halves.
+        XCTAssertEqual(5.25.bgValueToString(mgDl: false), "5.3")
+        XCTAssertEqual(5.75.bgValueToString(mgDl: false), "5.8")
+        XCTAssertEqual(5.25.bgValueRounded(mgDl: false), 5.3, accuracy: 1e-12)
+    }
+
+    /// Values that are not halves are unchanged by the fix.
+    func testDisplayedValuesAwayFromHalvesAreUnchanged() {
+        XCTAssertEqual(100.4.bgValueToString(mgDl: true), "100")
+        XCTAssertEqual(100.6.bgValueToString(mgDl: true), "101")
+        XCTAssertEqual(5.56.bgValueToString(mgDl: false), "5.6")
+        XCTAssertEqual(100.0.mgDlToMmolAndToString(mgDl: false), "5.5")
+    }
+
+    // MARK: - rounding
 
     /// `round(toDecimalPlaces:)` scales, rounds half away from zero and scales back. Exact halves
     /// therefore round away from zero, while values whose binary form is just below a half do not.

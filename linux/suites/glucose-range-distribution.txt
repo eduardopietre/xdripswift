@@ -6,6 +6,6 @@ extract xDrip/SwiftUIViews/Reports/ReportModels.swift | ^enum GlucoseReportClini
 decl    xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportRangeDistribution, GlucoseReportRangeBucket, GlucoseReportText, GlucoseReportLanguage
 members xDrip/SwiftUIViews/Reports/ReportModels.swift | GlucoseReportColors | low, target, high
 include _app-colors
-members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol
+members xDrip/Extensions/Double.swift | Double | mgDlToMmolAndToString, mgDlToMmol, bgValueToString, bgValueRounded, round
 module SwiftUI
 src     xDrip/Constants/ConstantsBloodGlucose.swift

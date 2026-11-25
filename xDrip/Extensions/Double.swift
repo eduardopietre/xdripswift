@@ -57,15 +57,30 @@ extension Swift.Double: Swift.RawRepresentable {
     /// returns the value rounded to fractionDigits
     func round(toDecimalPlaces: Int) -> Double {
         let multiplier = pow(10, Double(toDecimalPlaces))
-        return Darwin.round(self * multiplier) / multiplier
+        let scaled = self * multiplier
+        // Rounds halves away from zero, like `Darwin.round` (and `rounded()` also exists on Linux).
+        // The multiplication itself can round: 5.55 is stored as 5.5499999…, but 5.55 * 10 gives
+        // exactly 55.5. `fma` gives the part of the exact product that was lost, which says on which
+        // side of the half the stored value really is, so only true halves round away from zero.
+        if abs(scaled - scaled.rounded(.towardZero)) == 0.5 {
+            let lost = fma(self, multiplier, -scaled)
+            if lost != 0 {
+                let exactIsFurtherFromZero = (lost > 0) == (scaled > 0)
+                return (exactIsFurtherFromZero ? scaled.rounded(.awayFromZero) : scaled.rounded(.towardZero)) / multiplier
+            }
+        }
+        return scaled.rounded() / multiplier
     }
     
     /// takes self as Double as bloodglucose value, converts value to string, round. Number of digits after decimal seperator depends on the unit. For mg/dl 0 digits after decimal seperator, for mmol, 1 digit after decimal seperator
+    ///
+    /// Rounds like `bgValueRounded` (halves away from zero), so the value shown is the value that
+    /// alerts and comparisons use. `%.0f` alone would round exact halves to even (100.5 -> "100").
     func bgValueToString(mgDl:Bool) -> String {
         if mgDl {
-            return String(format:"%.0f", self)
+            return String(format:"%.0f", self.bgValueRounded(mgDl: true))
         } else {
-            return String(format:"%.1f", self)
+            return String(format:"%.1f", self.bgValueRounded(mgDl: false))
         }
     }
     
@@ -89,9 +104,9 @@ extension Swift.Double: Swift.RawRepresentable {
     /// this function is actually a combination of mmolToMgDl if mgDl = true and bgValueToString
     func mgDlToMmolAndToString(mgDl: Bool) -> String {
         if mgDl {
-            return String(format:"%.0f", self)
+            return self.bgValueToString(mgDl: true)
         } else {
-            return String(format:"%.1f", self.mgDlToMmol())
+            return self.mgDlToMmol().bgValueToString(mgDl: false)
         }
     }
     
@@ -111,6 +126,13 @@ extension Swift.Double: Swift.RawRepresentable {
     /// Example: 78.minutesToDaysAndHours() would return -> "1h18m"
     /// Example: 12.minutesToDaysAndHours() would return -> "12m"
     func minutesToDaysAndHours() -> String {
+
+        // A negative age (past the end of a sensor or site) is the positive format with a minus
+        // sign. Less than a whole minute is shown as "0m", without a sign.
+        if self < 0 {
+            let positive = (-self).minutesToDaysAndHours()
+            return positive == "0m" ? positive : "-" + positive
+        }
         
         // set a default value assuming that we're unable to calculate the hours + days
         var daysAndHoursString: String = "n/a"
