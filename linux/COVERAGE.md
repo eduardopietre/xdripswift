@@ -58,23 +58,32 @@ The new tests check behaviour, not constants:
 
 Each new area was checked by breaking the code under test temporarily and seeing its tests fail.
 
-## Possible bugs found (app code not changed, no failing tests added)
+## Possible bugs found
 
-| Where | What |
-|---|---|
-| `Extensions/Date.swift`, `toMidnight()` | One hour off on daylight saving days. It subtracts h×3600 + m×60 + s instead of using `Calendar.startOfDay`. Example (Europe/Amsterdam): 2026-03-29 05:00 gives 2026-03-28 23:00. It is used for the BG readings, treatments and landscape date ranges. |
-| `Managers/Nightscout/NightscoutDeviceStatusModels.swift`, `Pump.Extended` | AAPS sends `Version`, `ActiveProfile` and `BaseBasalRate` capitalized. The keys are lowercase, so the active profile and base basal from AAPS are always nil. |
-| Same file, `NightscoutDeviceStatusResponse.uploader` | One document with a text `uploader` (some uploaders send `"GG-Host"`) makes decoding of the whole device status list fail, so the follower shows no AID status. AndroidAPS added a lenient serializer for this case. |
-| Same file, around line 475 | Suggested and enacted are ordered by comparing timestamp texts. This is wrong when the two use different formats (fractional seconds, offsets). |
-| `Libre3ClinicalReadingRecord`, `Libre3HistoricalReadingPage` `init(plaintext:)` | Index from 0 instead of `startIndex`, so a `Data` slice crashes. Not reachable today, because decryption returns a fresh buffer. |
-| `Libre/Utilities/CRC.swift`, `LibreCrc` | The length check ignores `headerOffset`. With offset 18 and 344–361 bytes it crashes instead of returning false. Callers check the length first. |
-| `Libre/Utilities/Libre2BLEUtilities.swift`, `decryptBLE` | No length check: fewer than 46 bytes crashes, and more than 66 overruns the key. The frame assembler always passes 46. |
-| `Dexcom/Generic/DexcomBackfillStream.decode()` | Calling it twice can misalign after a skipped record. It is called once today. |
-| `Dexcom` `BatteryStatusRxMessage` (10-byte frame) | `temperature` is read from byte 9, which is a CRC byte in that frame. The layout could not be confirmed. |
-| `Extensions/Double.swift` | The displayed value rounds halves to even and `bgValueRounded` rounds them away from zero, so 100.5 shows as "100" but rounds to 101. `minutesToDaysAndHours(-30)` gives "-1d0h". |
+Found while writing the coverage tests. On `test-platform-analysis` each one marked fixed has a
+test that failed or crashed before the fix.
+
+| Where | What | Status |
+|---|---|---|
+| `Extensions/Date.swift`, `toMidnight()` | One hour off on daylight saving days. It subtracted h×3600 + m×60 + s instead of using `Calendar.startOfDay`. Example (Europe/Amsterdam): 2026-03-29 05:00 gave 2026-03-28 23:00. Used for the BG readings, treatments and landscape date ranges. | fixed |
+| `Managers/Nightscout/NightscoutDeviceStatusModels.swift`, `Pump.Extended` | AAPS sends `Version`, `ActiveProfile` and `BaseBasalRate` capitalized. The keys were lowercase, so the active profile and base basal from AAPS were always nil. | fixed |
+| Same file, `NightscoutDeviceStatusResponse.uploader` | One document with a text `uploader` (some uploaders send `"GG-Host"`) made decoding of the whole device status list fail, so the follower showed no AID status. | fixed |
+| Same file, suggested vs enacted | Ordered by comparing timestamp texts, which is wrong across offsets and fractional seconds. | fixed |
+| `Libre3ClinicalReadingRecord`, `Libre3HistoricalReadingPage` `init(plaintext:)` | Indexed from 0 instead of `startIndex`, so a `Data` slice crashed. Not reachable then, because decryption returns a fresh buffer. | fixed |
+| `Libre/Utilities/CRC.swift`, `LibreCrc` | The length check ignored `headerOffset`. With offset 18 and 344–361 bytes it crashed instead of returning false. | fixed |
+| `Libre/Utilities/Libre2BLEUtilities.swift`, `decryptBLE` | No length check: fewer than 46 bytes crashed, and more than 66 overran the key. | fixed |
+| `Dexcom/Generic/DexcomBackfillStream.decode()` | A skipped record followed by an incomplete one misaligned the next call. | fixed |
+| `Extensions/Double.swift` | The displayed value rounded halves to even and `bgValueRounded` away from zero, so 100.5 showed "100" but compared as 101. `minutesToDaysAndHours(-30)` gave "-1d0h". | fixed |
+| `Dexcom` `BatteryStatusRxMessage` (10-byte frame) | `temperature` is read from byte 9, which is a CRC byte in that frame. The layout could not be confirmed. | open |
+
+Found later by the fuzz tests (`*FuzzTests.swift`), all fixed with a regression test:
+`DexcomBackfillStream.push` with a one byte packet; `PreLibre2.decryptFRAM` and `decryptBLE` with
+a patch info or sensor UID shorter than 6 bytes; the Libre 3 NFC patch info and activation
+response, phase 5/6 pairing decode and write reassembly with a `Data` slice;
+`NotifyReassembler.take(-1)`.
 
 ## Not covered on Linux
 
 UI, CoreData, CoreBluetooth, notifications, HealthKit and networking managers do not compile on
-Linux, and neither does code that needs `os.OSLog` or `CryptoKit`. A minimal `os` shim module
-would let `PreLibre2`, `Libre2BLEUtilities` and `LibreDataParser` run here too.
+Linux, and neither does code that needs `CryptoKit`. An `OSLog` shim module now lets `PreLibre2` and
+`Libre2BLEUtilities.decryptBLE` run here (suite `libre2-decryption`).

@@ -32,15 +32,16 @@ final class LibreByteParserFuzzTests: XCTestCase {
 
     func testSerialNumberAndPatchInfoNeverCrash() {
         var generator = ByteFuzzRandom(seed: 0x5E1A)
-        for input in inputs.prefix(4000) {
+        let digits = Array("0123456789ABCDEF")
+        for input in inputs.prefix(1500 * ByteFuzz.scale) {
             for type in [LibreSensorType.libre1, .libre2, .libreUS, .libreProH, nil] {
                 _ = LibreSensorSerialNumber(withUID: input, with: type)?.serialNumber
             }
-            _ = LibreSensorType.type(patchInfo: input.map { String(format: "%02X", $0) }.joined())
+            _ = LibreSensorType.type(patchInfo: String(input.prefix(16).flatMap { [digits[Int($0 >> 4)], digits[Int($0 & 0x0F)]] }))
         }
         // Patch info arrives as text from the transmitter: odd lengths, non-hex characters, spaces.
         let alphabet = Array("0123456789abcdefABCDEFxyz -")
-        for _ in 0..<3000 {
+        for _ in 0..<(1000 * ByteFuzz.scale) {
             let text = String((0..<Int.random(in: 0...16, using: &generator)).map { _ in alphabet[Int.random(in: 0..<alphabet.count, using: &generator)] })
             _ = LibreSensorType.type(patchInfo: text)
         }
@@ -50,7 +51,7 @@ final class LibreByteParserFuzzTests: XCTestCase {
     func testRecordDecodersNeverCrashOnAnyContent() {
         var generator = ByteFuzzRandom(seed: 0xFEED)
         let date = Date(timeIntervalSince1970: 1_800_000_000)
-        for _ in 0..<3000 {
+        for _ in 0..<(1000 * ByteFuzz.scale) {
             let record = Data((0..<6).map { _ in UInt8.random(in: 0...255, using: &generator) })
             _ = LibreMeasurement(bytes: record, date: date)
             let fram = Data((0..<344).map { _ in UInt8.random(in: 0...255, using: &generator) })
@@ -63,7 +64,7 @@ final class LibreByteParserFuzzTests: XCTestCase {
     func testLibre2FrameAssemblerNeverCrashes() {
         var generator = ByteFuzzRandom(seed: 0xA55E)
         let clock = ContinuousClock.now
-        for _ in 0..<500 {
+        for _ in 0..<(500 * ByteFuzz.scale) {
             var assembler = Libre2FrameAssembler()
             var time = clock
             for _ in 0..<Int.random(in: 1...10, using: &generator) {

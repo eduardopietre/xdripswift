@@ -26,6 +26,10 @@ import Foundation
 /// - and every input above once more as a slice of a larger buffer (`startIndex` not 0).
 enum ByteFuzz {
 
+    /// Multiplies the amount of random work of the fuzz tests: 1 by default, so they cost a few
+    /// seconds on every run; set `XDRIP_FUZZ_SCALE` (e.g. 20) for a deep run, like a nightly job.
+    static let scale = max(1, Int(ProcessInfo.processInfo.environment["XDRIP_FUZZ_SCALE"] ?? "") ?? 1)
+
     /// Builds the inputs described above.
     ///
     /// - Parameters:
@@ -37,6 +41,7 @@ enum ByteFuzz {
     static func inputs(seeds: [Data] = [], maxLength: Int = 64, randomMutations: Int = 200, includeSlices: Bool = true,
                        seed: UInt64 = 0x5EED) -> [Data] {
         var generator = SplitMix64(seed: seed)
+        let randomMutations = randomMutations * scale
         var inputs = [Data]()
 
         for length in 0...maxLength {

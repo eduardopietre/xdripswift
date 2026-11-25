@@ -10,16 +10,21 @@ side could not be run here (no Xcode), so its items are based on reading the cod
 
 | Item | Done in | Result |
 |---|---|---|
-| L1 write only changed files, L2 parallel suites, L6 coverage scratch path, L7 snippet target only for `snippet` | `linux/xdrip-linux.sh`, `linux/sync-tree.py` | cold 303 s → **104 s**, no change 74 s → **8 s**, after editing one test **7 s** *measured* |
-| R4 registration check | `linux/check-test-registration.py` | parses `project.pbxproj`; 123/123 test files compiled by `xdripTests` |
+| L1 write only changed files, L2 parallel suites, L6 coverage scratch path, L7 snippet target only for `snippet` | `linux/xdrip-linux.sh` | first step: cold 303 s → 104 s, no change 74 s → 8 s *measured* |
+| L3 single generator | `linux/generate.py` | generating all packages 11.6 s → **0.6 s** *measured*; output byte-identical to the old bash generator |
+| L4 merged package (default when no suite is named; `--isolated` keeps one package per suite) | `linux/generate.py --merged` | full run (28 suites, 668 tests): **cold 303 s → 42 s, no change 74 s → 5.6 s** *measured*, of which 0.9 s generate and build and about 4.9 s running the tests |
+| R4 registration check | `linux/check-test-registration.py` | parses `project.pbxproj`; 130/130 test files compiled by `xdripTests` |
 | M1 minimal test host | `XdripApp.isHostingUnitTests` | services are not started when XCTest hosts unit tests |
 | M2/M3/M4 test doubles for globals | `xDrip Tests/UserDefaultsSandbox.swift`, `NetworkStub.swift`, `AsyncTestConditions.swift` | 20 tests, Linux suite `test-support` |
 | M2 fixed setUp/tearDown sleeps (≈20 s) | the six classes of §4.2 | replaced by `waitUntilStable` on the stub's request count |
-| CI | `.github/workflows/tests_linux.yml`, `tests_macos.yml` | Linux on every push/PR, macOS on PRs and on demand |
+| Suspected bugs of `linux/COVERAGE.md` | see the table there | 9 of 10 fixed, each with a test that failed or crashed before the fix |
+| Fuzzing of the Dexcom and Libre parsers | `ByteFuzz.swift` and four `*FuzzTests.swift` | tens of thousands of hostile inputs per run in about 2 s; found and fixed 6 more crash sites; `XDRIP_FUZZ_SCALE=20` for deep runs |
+| CI | `.github/workflows/tests_linux.yml`, `tests_macos.yml` | Linux on every push/PR (merged), weekly time zones, deep fuzzing and isolated suites; macOS on PRs and on demand |
 
-Still open: L3 (single generator), L4 (merged package), R1 (`extract.py` tokenizer), R2/R3
-(expected counts, macOS-only inventory), M5 (test plan), M6 (core package), and moving the six
-classes' private `URLProtocol` stubs to `NetworkStub`.
+Still open: R1 (`extract.py` tokenizer), R2/R3 (expected counts, macOS-only inventory), M5 (test
+plan), M6 (core package), moving the six classes' private `URLProtocol` stubs to `NetworkStub`,
+and about 1.5 s of test time in tests that take exactly ~0.1 s on Linux (spread over many classes,
+probably the async test machinery of swift-corelibs-xctest).
 
 ### Writing tests against the app's globals
 

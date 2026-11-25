@@ -2,11 +2,8 @@
 # serial number encoding, raw measurement and calibration bit fields and the derived local
 # algorithm parameters. All of it is Foundation-only arithmetic on byte arrays.
 #
-# Not ported: PreLibre2 (Libre 2 FRAM decryption) and Libre2BLEUtilities (Libre 2 BLE decryption
-# and parsing, which calls PreLibre2), so Libre2DecryptionTests only runs on macOS. PreLibre2
-# declares an OSLog logger inside the class and Linux has no OSLog module; `members` cannot cut it
-# out either, because the names `key` and `op` are also used by a local constant and a nested
-# function, which `members` would copy as class members.
+# PreLibre2 and Libre2BLEUtilities.decryptBLE (Libre 2 decryption) are in suite libre2-decryption,
+# which adds the OSLog shim module they need.
 include _foundation-extensions
 src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/CRC.swift
 src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/LibreSensorSerialNumber.swift

@@ -47,7 +47,7 @@ final class Libre3ProtocolFuzzTests: XCTestCase {
     /// Write and notify fragments arrive in any order and size.
     func testReassemblersNeverCrash() {
         var generator = ByteFuzzRandom(seed: 0x1BE3)
-        for _ in 0..<500 {
+        for _ in 0..<(500 * ByteFuzz.scale) {
             let fragments = (0..<Int.random(in: 0...8, using: &generator)).map { _ in inputs[Int.random(in: 0..<inputs.count, using: &generator)] }
             _ = try? Libre3BleFraming.reassembleWrite(fragments)
 
@@ -70,7 +70,7 @@ final class Libre3ProtocolFuzzTests: XCTestCase {
         var generator = ByteFuzzRandom(seed: 0xDA7A)
 
         for kind in Libre3DataPlanePacketKind.allCases {
-            for length in [0, 1, 2, 5, 8, 12, 13, 14, 20, 26, 35] {
+            for length in ByteFuzz.scale > 1 ? Array(0...40) : [0, 1, 5, 8, 13, 14, 20, 35] {
                 let plaintext = Data((0..<length).map { _ in UInt8.random(in: 0...255, using: &generator) })
                 let frame = try crypto.encrypt(plaintext: plaintext, sequence: UInt16.random(in: 0...UInt16.max, using: &generator), kind: kind)
                 for channel in Libre3DataPlaneChannel.allCases {
@@ -82,7 +82,7 @@ final class Libre3ProtocolFuzzTests: XCTestCase {
                 }
             }
         }
-        for input in inputs.prefix(300) {
+        for input in inputs.prefix(100 * ByteFuzz.scale) {
             if let frame = try? Libre3DataFrame.parse(input) {
                 _ = try? decoder.decrypt(frame: frame, channel: .glucoseData)
             }

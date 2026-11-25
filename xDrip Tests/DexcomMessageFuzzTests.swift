@@ -87,7 +87,7 @@ final class DexcomMessageFuzzTests: XCTestCase {
     /// stream must never hold more than its 1000 byte limit.
     func testBackfillStreamNeverCrashes() {
         var generator = ByteFuzzRandom(seed: 0xBAC4)
-        for _ in 0..<300 {
+        for _ in 0..<(300 * ByteFuzz.scale) {
             let stream = DexcomBackfillStream()
             for _ in 0..<Int.random(in: 1...30, using: &generator) {
                 let packet = inputs[Int.random(in: 0..<inputs.count, using: &generator)]
