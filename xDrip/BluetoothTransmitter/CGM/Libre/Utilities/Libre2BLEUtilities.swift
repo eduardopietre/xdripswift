@@ -85,6 +85,16 @@ class Libre2BLEUtilities {
     ///   - data: Encrypted BLE data
     /// - Returns: Decrypted BLE data
     public static func decryptBLE(sensorUID: Data, data: Data) throws -> [UInt8] {
+        struct DecryptBLEError: LocalizedError {
+            var errorDescription: String? { "BLE data decryption failed" }
+        }
+
+        // A frame is a 2 byte nonce and 44 encrypted bytes (42 bytes of data and a CRC). Anything
+        // else would be read past its end or past the end of the 64 byte key below. Copied to an
+        // array so the offsets also hold when `data` is a slice of a larger buffer.
+        let data = [UInt8](data)
+        guard data.count == 46 else { throw DecryptBLEError() }
+
         let d = PreLibre2.usefulFunction(sensorUID: sensorUID, x: 0x1b, y: 0x1b6a)
         let x = UInt16(d[1], d[0]) ^ UInt16(d[3], d[2]) | 0x63
         let y = UInt16(data[1], data[0]) ^ 0x63
@@ -109,9 +119,6 @@ class Libre2BLEUtilities {
         }
         
         guard crc16(Data(result.prefix(42))) == UInt16(result[42], result[43]) else {
-            struct DecryptBLEError: LocalizedError {
-                var errorDescription: String? { "BLE data decryption failed" }
-            }
             throw DecryptBLEError()
         }
         

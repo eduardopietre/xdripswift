@@ -1,0 +1,12 @@
+# Libre 2 FRAM and BLE decryption (PreLibre2, Libre2BLEUtilities.decryptBLE) with the OSLog shim,
+# which only lets PreLibre2 declare its logger. parseBLEData is left out: it stores raw value
+# history in UserDefaults and builds GlucoseData, so the test that parses a decrypted frame stays
+# macOS-only.
+module  OSLog
+include _foundation-extensions
+src     xDrip/Extensions/UInt16.swift | without convertMinutesToTimeAsString
+src     xDrip/BluetoothTransmitter/CGM/Libre/Utilities/PreLibre2.swift
+members xDrip/BluetoothTransmitter/CGM/Libre/Utilities/Libre2BLEUtilities.swift | Libre2BLEUtilities | decryptBLE, crc16, streamingUnlockPayload
+members xDrip/Constants/ConstantsLog.swift | ConstantsLog | subSystem, categoryRootView
+members xDrip/Extensions/UserDefaults.swift | UserDefaults | Key
+test    xDrip Tests/Libre2DecryptionTests.swift | without testEncryptedFrameDecodesToTheReadingsItWasBuiltFrom

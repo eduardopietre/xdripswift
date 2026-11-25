@@ -33,3 +33,4 @@ test xDrip Tests/Libre3/Libre3NFCActivationModelsTests.swift
 test xDrip Tests/Libre3/Libre3PairingMessagesTests.swift
 test xDrip Tests/Libre3/Libre3ClinicalReadingRecordTests.swift
 test xDrip Tests/Libre3/Libre3PatchStatusTests.swift
+test xDrip Tests/Libre3/Libre3DataSliceTests.swift

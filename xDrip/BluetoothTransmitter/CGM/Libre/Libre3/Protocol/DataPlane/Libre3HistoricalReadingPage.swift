@@ -36,8 +36,10 @@ struct Libre3HistoricalReadingPage: Equatable, Sendable {
         guard plaintext.count == Self.plaintextSize else {
             throw Libre3HistoricalReadingPageError.wrongPlaintextSize(plaintext.count)
         }
-        let words = stride(from: 0, to: plaintext.count, by: 2).map { offset -> UInt16 in
-            UInt16(plaintext[offset]) | (UInt16(plaintext[offset + 1]) << 8)
+        // Copied to an array so offsets start at 0 also when `plaintext` is a slice of a larger buffer.
+        let bytes = [UInt8](plaintext)
+        let words = stride(from: 0, to: bytes.count, by: 2).map { offset -> UInt16 in
+            UInt16(bytes[offset]) | (UInt16(bytes[offset + 1]) << 8)
         }
         guard words[0] <= UInt16.max - 25 else { throw Libre3HistoricalReadingPageError.invalidLifeCount }
         self.startLifeCount = words[0]

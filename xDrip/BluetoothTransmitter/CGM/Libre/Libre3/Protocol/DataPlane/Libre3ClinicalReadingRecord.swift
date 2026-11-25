@@ -91,8 +91,10 @@ struct Libre3ClinicalReadingRecord: Equatable, Sendable {
         guard plaintext.count == Self.plaintextSize else {
             throw Libre3ClinicalReadingRecordError.wrongPlaintextSize(plaintext.count)
         }
-        let words = stride(from: 0, to: plaintext.count, by: 2).map { offset -> UInt16 in
-            UInt16(plaintext[offset]) | (UInt16(plaintext[offset + 1]) << 8)
+        // Copied to an array so offsets start at 0 also when `plaintext` is a slice of a larger buffer.
+        let bytes = [UInt8](plaintext)
+        let words = stride(from: 0, to: bytes.count, by: 2).map { offset -> UInt16 in
+            UInt16(bytes[offset]) | (UInt16(bytes[offset + 1]) << 8)
         }
         self.lifeCount = words[0]
         self.rawSensorWord1 = words[1]

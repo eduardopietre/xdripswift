@@ -212,6 +212,31 @@ final class LibreFRAMCrcTests: XCTestCase {
         XCTAssertFalse(Self.isValid(packet, headerOffset: 0, type: .libre2))
     }
 
+    /// Regression: the length check required 344 bytes whatever the header offset, so a packet with
+    /// an 18 byte header and 344 to 361 bytes in total passed the check and then crashed reading
+    /// past its end. A truncated packet must be rejected instead.
+    func testTruncatedPacketWithAHeaderIsRejectedInsteadOfCrashing() {
+        let packet = [UInt8](repeating: 0, count: 18) + Self.validFRAM(seed: 23)
+        for length in 344..<packet.count {
+            XCTAssertFalse(Self.isValid(Array(packet.prefix(length)), headerOffset: 18), "length \(length)")
+        }
+        XCTAssertTrue(Self.isValid(packet, headerOffset: 18))
+    }
+
+    /// Regression: `subdata(in:)` takes indices of the `Data` itself, so a slice of a larger buffer
+    /// was checked at the wrong bytes (or crashed). A slice must validate like a copy.
+    func testSliceOfALargerBufferIsValidatedLikeACopy() {
+        let fram = Self.validFRAM(seed: 29)
+        var slice = (Data([0xAA, 0xBB, 0xCC]) + Data(fram)).dropFirst(3)
+        XCTAssertEqual(slice.startIndex, 3)
+
+        XCTAssertTrue(Crc.LibreCrc(data: &slice, headerOffset: 0, libreSensorType: .libre1))
+    }
+
+    func testNegativeHeaderOffsetIsRejected() {
+        XCTAssertFalse(Self.isValid(Self.validFRAM(seed: 31), headerOffset: -1))
+    }
+
     func testUnknownSensorTypeUsesTheLibre1Sections() {
         // Older MiaoMiao and Bubble firmware does not report patch info, so the type is nil.
         let libre1Stamped = Self.validFRAM(seed: 23)

@@ -31,14 +31,19 @@ final class Crc {
         let bodyRange   =  headerOffset + (libreSensorType == .libreProH ? 40:24)..<headerOffset + (libreSensorType == .libreProH ? 72:320)
         let footerRange = headerOffset + (libreSensorType == .libreProH ? 72:320)..<headerOffset + (libreSensorType == .libreProH ? 176:344)
 
-        if data.count < 344 {
-            print("data.count < 344")
+        // Copied to an array so the ranges count from the first byte also when `data` is a slice.
+        let bytes = [UInt8](data)
+
+        // At least 344 bytes as before, and enough to hold the sections after the header: with a
+        // header of 18 bytes a 344 byte packet is truncated and must not be read past its end.
+        if headerOffset < 0 || bytes.count < Swift.max(344, footerRange.upperBound) {
+            print("data.count \(bytes.count) too short for headerOffset \(headerOffset)")
             return false;
         }
 
-        return Crc.hasValidCrc16InFirstTwoBytes([UInt8](data.subdata(in: headerRange))) &&
-        Crc.hasValidCrc16InFirstTwoBytes([UInt8](data.subdata(in: bodyRange))) &&
-        Crc.hasValidCrc16InFirstTwoBytes([UInt8](data.subdata(in: footerRange)))
+        return Crc.hasValidCrc16InFirstTwoBytes(Array(bytes[headerRange])) &&
+        Crc.hasValidCrc16InFirstTwoBytes(Array(bytes[bodyRange])) &&
+        Crc.hasValidCrc16InFirstTwoBytes(Array(bytes[footerRange]))
     }
     
     /// Calculates crc16. Taken from https://github.com/krzyzanowskim/CryptoSwift with modifications (reversing and byte swapping) to adjust for crc as used by Freestyle Libre

@@ -224,6 +224,29 @@ final class Libre2DecryptionTests: XCTestCase {
 
     // MARK: - streaming unlock
 
+    /// Regression: `decryptBLE` had no length check. A frame shorter than 46 bytes crashed reading
+    /// the CRC, and a longer one crashed reading past the end of the 64 byte key. The frame
+    /// assembler always passes 46 bytes, but a truncated or merged BLE frame must be rejected.
+    func testFramesOfAnyOtherLengthAreRejectedInsteadOfCrashing() {
+        let frame = Self.capturedFrames[0]
+        XCTAssertEqual(frame.count, 46)
+        for length in [0, 1, 2, 3, 10, 44, 45, 47, 66, 67, 100] {
+            let other = Data((frame + Data(repeating: 0x5A, count: 60)).prefix(length))
+            XCTAssertThrowsError(try Libre2BLEUtilities.decryptBLE(sensorUID: Self.directUID, data: other), "length \(length)")
+        }
+    }
+
+    /// Regression: the nonce was read as `data[0]` and `data[1]`, which are not the first bytes of a
+    /// slice of a larger buffer. A slice must decrypt like a copy.
+    func testSliceOfALargerBufferDecryptsLikeACopy() throws {
+        let frame = Self.capturedFrames[0]
+        let slice = (Data([0x01, 0x02, 0x03]) + frame).dropFirst(3)
+        XCTAssertEqual(slice.startIndex, 3)
+
+        XCTAssertEqual(try Libre2BLEUtilities.decryptBLE(sensorUID: Self.directUID, data: slice),
+                       try Libre2BLEUtilities.decryptBLE(sensorUID: Self.directUID, data: frame))
+    }
+
     func testUnlockPayloadUsesOnlyPatchInfoBytes4And5() {
         let info = Data(Self.miaoMiaoPatchInfo)
         let reference = Libre2BLEUtilities.streamingUnlockPayload(sensorUID: Self.directUID, info: info, enableTime: 1_000, unlockCount: 3)
