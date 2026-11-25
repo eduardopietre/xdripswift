@@ -37,64 +37,43 @@ final class DexcomBackfillStream {
         }
     }
     
+    /// Returns the records completed since the last call and drops their bytes from `data`.
+    ///
+    /// The first 4 bytes of the stream are a header. Each record is 8 bytes: little-endian time
+    /// (4), glucose (2), algorithm state (1) and trend (1). Records are read as whole blocks from
+    /// `idx`, which always points at the start of a record, so skipped records and a record that is
+    /// still incomplete keep the alignment of what follows. Previously a skipped record moved the
+    /// read position without dropping its bytes, and an incomplete record then reset the position
+    /// to 0 with the header still in the buffer, so the next call read the header as a record.
     func decode() -> [BackFill] {
+        let recordSize = 8
         var backfills: [BackFill] = []
-        
-        while idx < data.count {
-            var dexTime: UInt32
-            var glucose: UInt16
-            var type: UInt8
-            var trend: UInt8
-            
-            guard idx + 4 <= data.count - 1 else {
-                idx = 0
-                break
-            }
-            dexTime = Data(data[idx ..< idx + 4]).to(UInt32.self)
-            idx += 4
-            
-            guard idx + 2 <= data.count - 1 else {
-                idx = 0
-                break
-            }
-            glucose = Data(data[idx ..< idx + 2]).to(UInt16.self)
-            idx += 2
-            
-            guard idx <= data.count - 1 else {
-                idx = 0
-                break
-            }
-            type = data[idx]
-            idx += 1
-            
-            guard idx <= data.count - 1 else {
-                idx = 0
-                break
-            }
-            trend = data[idx]
-            idx += 1
-            
-            if let state = DexcomAlgorithmState(rawValue: type) {
-                switch state {
-                case .okay, .needsCalibration:
-                    if dexTime != 0 {
-                        backfills.append(
-                            BackFill(glucose: Int(glucose), trend: Int(trend), dexTime: Int(dexTime))
-                        )
-                    }
-                default:
-                    continue
+        let bytes = [UInt8](data)
+
+        while idx + recordSize <= bytes.count {
+            let dexTime = UInt32(bytes[idx]) | UInt32(bytes[idx + 1]) << 8 | UInt32(bytes[idx + 2]) << 16 | UInt32(bytes[idx + 3]) << 24
+            let glucose = UInt16(bytes[idx + 4]) | UInt16(bytes[idx + 5]) << 8
+            let type = bytes[idx + 6]
+            let trend = bytes[idx + 7]
+            idx += recordSize
+
+            switch DexcomAlgorithmState(rawValue: type) {
+            case .okay, .needsCalibration:
+                if dexTime != 0 {
+                    backfills.append(BackFill(glucose: Int(glucose), trend: Int(trend), dexTime: Int(dexTime)))
                 }
+            default:
+                // Unknown states and states without a usable value are skipped.
+                break
             }
-            
-            if idx <= data.count - 1 {
-                data = Data(data[idx ..< data.count])
-            } else {
-                data = Data()
-            }
-            idx = 0
         }
-        
+
+        // The header has not fully arrived yet: keep everything and the position after it.
+        guard idx <= bytes.count else { return backfills }
+
+        // Keep only the incomplete record, if any; the next record starts at its beginning.
+        data = Data(bytes[idx...])
+        idx = 0
         return backfills
     }
 }

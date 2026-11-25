@@ -278,6 +278,49 @@ final class DexcomTxMessageTests: XCTestCase {
         XCTAssertEqual(decoded.map(\.trend), [255])
     }
 
+    /// Regression: a record in a known state that is not shown (warm-up here) advanced the read
+    /// position without dropping its bytes, and a following partial record then reset the position
+    /// to 0 while the header was still in the buffer. The next call read the header as a record and
+    /// lost the alignment of everything after it.
+    func testBackfillStreamKeepsAlignmentAfterASkippedRecordAndASplitRecord() {
+        let stream = DexcomBackfillStream()
+        let warmup = record(time: 300, glucose: 0, state: 0x02, trend: 0)
+        let second = record(time: 600, glucose: 105, state: 0x06, trend: 1)
+
+        stream.push(packet([0x01, 0x00, 0xDE, 0xAD, 0xBE, 0xEF], warmup, Array(second.prefix(3))))
+        XCTAssertTrue(stream.decode().isEmpty)
+
+        stream.push(packet([0x02, 0x00], Array(second.dropFirst(3))))
+        let rest = stream.decode()
+
+        XCTAssertEqual(rest.map(\.dexTime), [600])
+        XCTAssertEqual(rest.map(\.glucose), [105])
+        XCTAssertTrue(stream.data.isEmpty)
+    }
+
+    /// Calling decode again without new data returns nothing and loses nothing.
+    func testBackfillStreamDecodeIsSafeToRepeat() {
+        let stream = DexcomBackfillStream()
+        stream.push(packet([0x01, 0x00, 0, 0, 0, 0], record(time: 300, glucose: 100, state: 0x06, trend: 0), record(time: 600, glucose: 0, state: 0x02, trend: 0)))
+
+        XCTAssertEqual(stream.decode().map(\.dexTime), [300])
+        XCTAssertTrue(stream.decode().isEmpty)
+
+        stream.push(packet([0x02, 0x00], record(time: 900, glucose: 110, state: 0x07, trend: 0)))
+        XCTAssertEqual(stream.decode().map(\.dexTime), [900])
+    }
+
+    /// A decode before the whole header has arrived must not drop the header bytes received so far.
+    func testBackfillStreamDecodeBeforeTheHeaderIsCompleteKeepsTheHeader() {
+        let stream = DexcomBackfillStream()
+
+        stream.push(packet([0x01, 0x00, 0xDE, 0xAD]))
+        XCTAssertTrue(stream.decode().isEmpty)
+        stream.push(packet([0x02, 0x00, 0xBE, 0xEF], record(time: 600, glucose: 120, state: 0x06, trend: 0)))
+
+        XCTAssertEqual(stream.decode().map(\.glucose), [120])
+    }
+
     // MARK: - Watch helpers
 
     /// Little-endian reads are bounds checked so a short notification cannot crash the Watch.
