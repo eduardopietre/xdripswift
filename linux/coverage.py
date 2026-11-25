@@ -27,8 +27,8 @@ EXTRACTED = re.compile(r'^(decl|members|extract|testdecl)_\d+_')
 
 def lcov_for_suite(build_root, llvm_cov, suite):
     package = os.path.join(build_root, suite)
-    profdata = os.path.join(package, '.build', 'debug', 'codecov', 'default.profdata')
-    binary = os.path.join(package, '.build', 'debug', 'xdrip-linuxPackageTests.xctest')
+    profdata = os.path.join(package, '.build-coverage', 'debug', 'codecov', 'default.profdata')
+    binary = os.path.join(package, '.build-coverage', 'debug', 'xdrip-linuxPackageTests.xctest')
     if not (os.path.isfile(profdata) and os.path.exists(binary)):
         sys.exit(f'coverage.py: no coverage data for suite {suite} (run it with coverage first)')
     return subprocess.run([llvm_cov, 'export', '-format=lcov', f'-instr-profile={profdata}', binary],

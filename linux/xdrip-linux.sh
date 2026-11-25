@@ -7,8 +7,8 @@
 # Nothing in the Xcode project is modified.
 #
 # Usage:
-#   linux/xdrip-linux.sh test    [suite ...]                 # swift test per suite (default: all)
-#   linux/xdrip-linux.sh coverage [suite ...]                # same, then line coverage of the app code
+#   linux/xdrip-linux.sh test    [-j N] [suite ...]          # swift test per suite (default: all)
+#   linux/xdrip-linux.sh coverage [-j N] [suite ...]         # same, then line coverage of the app code
 #                                                            # compiled on Linux (COVERAGE_FILES=N rows)
 #   linux/xdrip-linux.sh snippet <file.swift> [suite ...]    # run a script against the suites' sources
 #                                                            # (suites are merged into one module, so
@@ -19,12 +19,20 @@
 #   SWIFT_BIN          directory with the swift binary (default: /opt/swift/usr/bin, else PATH)
 #   XDRIP_LINUX_BUILD  where the generated packages live (default: /tmp/xdrip-linux)
 #   SWIFT_TEST_ARGS    extra arguments for `swift test`, e.g. "--filter Libre2"
+#   XDRIP_LINUX_JOBS   suites built and run at the same time (default: number of CPUs; `-j` wins)
+#
+# Speed: packages are generated into `<suite>.staging` and only changed files are copied into the
+# package (linux/sync-tree.py), so an unchanged suite is not recompiled. Suites run in parallel;
+# each one's output goes to `<suite>.log` and is printed in suite order when all have finished.
+# `coverage` builds into `.build-coverage`, so switching between `test` and `coverage` does not
+# invalidate the other's build.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SUITES_DIR="$ROOT/linux/suites"
 SHIM_MODULES_DIR="$ROOT/linux/shim-modules"
 BUILD="${XDRIP_LINUX_BUILD:-/tmp/xdrip-linux}"
+mkdir -p "$BUILD" && BUILD="$(cd "$BUILD" && pwd)"
 
 if [[ -x "${SWIFT_BIN:-/opt/swift/usr/bin}/swift" ]]; then
     export PATH="${SWIFT_BIN:-/opt/swift/usr/bin}:$PATH"
@@ -128,11 +136,20 @@ add_module() { # <name> <sources dir>
     MODULES="$MODULES $name"
 }
 
-# Writes the package for the given suites into <dir>.
+# Writes the package for the given suites into <dir>, touching only files whose content changed
+# (see linux/sync-tree.py), so SwiftPM rebuilds only what really changed.
 generate() { # <dir> <suite ...>
     local dir="$1"; shift
-    rm -rf "$dir/Sources" "$dir/Tests" "$dir/Package.swift"
-    mkdir -p "$dir/Sources/xdrip" "$dir/Tests/xdripTests" "$dir/Sources/snippet"
+    generate_into "$dir.staging" "$@"
+    python3 "$ROOT/linux/sync-tree.py" "$dir.staging" "$dir" || die "could not update $dir"
+}
+
+# Writes the package for the given suites into the empty directory <dir>. SNIPPET=1 adds the
+# `snippet` executable target, which only the `snippet` command needs.
+generate_into() { # <dir> <suite ...>
+    local dir="$1"; shift
+    rm -rf "$dir"
+    mkdir -p "$dir/Sources/xdrip" "$dir/Tests/xdripTests"
     local lib="$dir/Sources/xdrip" tests="$dir/Tests/xdripTests"
     PIECES=0 MODULES="" INCLUDED=""
     MEMBERS=()
@@ -150,8 +167,13 @@ generate() { # <dir> <suite ...>
         [[ -f "$piece" ]] || continue
         for module in $MODULES; do sed -i "1i import $module" "$piece"; done
     done
-    # A placeholder so the snippet target always exists; replaced by `snippet`.
-    echo 'import xdrip' > "$dir/Sources/snippet/main.swift"
+    local snippet_target=""
+    if [[ "${SNIPPET:-0}" == 1 ]]; then
+        # A placeholder; the `snippet` command copies the script over it.
+        mkdir -p "$dir/Sources/snippet"
+        echo 'import xdrip' > "$dir/Sources/snippet/main.swift"
+        snippet_target='        .executableTarget(name: "snippet", dependencies: ["xdrip"], path: "Sources/snippet"),'$'\n'
+    fi
 
     local module_targets="" module_names="" dependencies
     for module in $MODULES; do
@@ -172,8 +194,7 @@ let package = Package(
     targets: [
 ${module_targets}        .target(name: "xdrip", dependencies: [${module_names#, }], path: "Sources/xdrip",
                 swiftSettings: [.unsafeFlags(["-enable-testing"])]),
-        .executableTarget(name: "snippet", dependencies: ["xdrip"], path: "Sources/snippet"),
-        .testTarget(name: "xdripTests", dependencies: ["xdrip"], path: "Tests/xdripTests"),
+${snippet_target}        .testTarget(name: "xdripTests", dependencies: ["xdrip"], path: "Tests/xdripTests"),
     ]
 )
 EOF
@@ -184,23 +205,47 @@ command -v swift >/dev/null || die "swift not found; run linux/install-swift.sh 
 cmd="${1:-test}"; shift || true
 case "$cmd" in
     list) all_suites ;;
+    _run-suite)
+        # Internal: generates, builds and tests one suite; output goes to the caller's log file.
+        suite="$1"
+        generate "$BUILD/$suite" "$suite"
+        scratch=".build"; coverage_flag=""
+        if [[ "${XDRIP_COVERAGE:-0}" == 1 ]]; then scratch=".build-coverage"; coverage_flag="--enable-code-coverage"; fi
+        cd "$BUILD/$suite"
+        # shellcheck disable=SC2086
+        swift test --scratch-path "$scratch" $coverage_flag ${SWIFT_TEST_ARGS:-} 2>&1 \
+            | grep -vE '^(◇|↳|✔) |Test run with 0 tests'
+        exit "${PIPESTATUS[0]}"
+        ;;
     test|coverage)
         # Each suite is built in its own package: suites may extract the same declarations, which
         # would clash if compiled into one module. Build products are cached per suite.
+        jobs="${XDRIP_LINUX_JOBS:-$(nproc 2>/dev/null || echo 2)}"
+        if [[ "${1:-}" == -j ]]; then jobs="${2:?usage: -j N}"; shift 2; elif [[ "${1:-}" == -j* ]]; then jobs="${1#-j}"; shift; fi
+        [[ "$jobs" =~ ^[1-9][0-9]*$ ]] || die "-j expects a positive number, got '$jobs'"
         [[ $# -gt 0 ]] || set -- $(all_suites)
+        for suite in "$@"; do [[ -f "$SUITES_DIR/$suite.txt" ]] || die "unknown suite '$suite' (see: $0 list)"; done
+        # A worker that dies before recording its status must not inherit a previous success.
+        for suite in "$@"; do : > "$BUILD/$suite.status"; done
+        export XDRIP_COVERAGE=0; [[ "$cmd" == coverage ]] && XDRIP_COVERAGE=1
+        started=$SECONDS
+        echo "Running $# suite(s), $jobs at a time"
+        # Each worker records its exit status next to its log; xargs only reports progress.
+        printf '%s\n' "$@" | xargs -P "$jobs" -I{} bash -c '
+            start=$SECONDS
+            if bash "$0" _run-suite "$1" > "$2/$1.log" 2>&1; then status=0; else status=$?; fi
+            echo "$status" > "$2/$1.status"
+            [[ $status -eq 0 ]] && mark=ok || mark=FAILED
+            printf "  %-6s %-40s %3ss\n" "$mark" "$1" "$((SECONDS - start))"
+        ' "$0" {} "$BUILD"
         failed=()
         for suite in "$@"; do
-            echo "=== $suite"
-            generate "$BUILD/$suite" "$suite"
-            # shellcheck disable=SC2086
-            coverage_flag=""; [[ "$cmd" == coverage ]] && coverage_flag="--enable-code-coverage"
-            if ! (cd "$BUILD/$suite" && swift test $coverage_flag ${SWIFT_TEST_ARGS:-} 2>&1 \
-                    | grep -vE '^(◇|↳|✔) |Test run with 0 tests'; exit "${PIPESTATUS[0]}"); then
-                failed+=("$suite")
-            fi
+            echo; echo "=== $suite"
+            cat "$BUILD/$suite.log"
+            [[ "$(cat "$BUILD/$suite.status" 2>/dev/null)" == 0 ]] || failed+=("$suite")
         done
         echo
-        echo "Suites run: $#, failed: ${#failed[@]}${failed[*]:+ (${failed[*]})}"
+        echo "Suites run: $#, failed: ${#failed[@]}${failed[*]:+ (${failed[*]})}, $((SECONDS - started))s"
         if [[ "$cmd" == coverage ]]; then
             echo
             python3 "$ROOT/linux/coverage.py" "$BUILD" "$(dirname "$(command -v swift)")/llvm-cov" "$@" --files "${COVERAGE_FILES:-25}"
@@ -212,7 +257,7 @@ case "$cmd" in
         snippet="$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"; shift
         [[ -f "$snippet" ]] || die "no such snippet: $snippet"
         [[ $# -gt 0 ]] || set -- $(all_suites)
-        generate "$BUILD/_snippet" "$@"
+        SNIPPET=1 generate "$BUILD/_snippet" "$@"
         cp "$snippet" "$BUILD/_snippet/Sources/snippet/main.swift"
         cd "$BUILD/_snippet"
         swift run -q snippet
