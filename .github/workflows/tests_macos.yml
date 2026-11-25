@@ -1,0 +1,100 @@
+name: Tests (macOS)
+run-name: Tests on macOS (${{ github.ref_name }})
+
+# Runs the whole xdripTests target on an iOS simulator. macOS minutes cost about ten times Linux
+# minutes, so this runs on pull requests and on demand, not on every push; tests_linux.yml covers
+# the platform-independent suites on every push. Needs no secrets: the simulator build is unsigned.
+on:
+  workflow_dispatch:
+    inputs:
+      iterations:
+        description: 'Run each test this many times and stop at the first failure (finds flaky tests); 1 = normal run'
+        required: false
+        default: '1'
+  pull_request:
+    paths:
+      - 'xDrip/**'
+      - 'xDrip Tests/**'
+      - 'xDrip Widget/**'
+      - 'xDrip Watch App/**'
+      - 'xdrip.xcodeproj/**'
+      - '.github/workflows/tests_macos.yml'
+
+concurrency:
+  group: tests-macos-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: xdripTests on iOS Simulator
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - name: Select Xcode version
+        run: sudo xcode-select --switch /Applications/Xcode_26.2.app/Contents/Developer
+
+      - uses: actions/checkout@v5
+
+      - name: Pick a simulator
+        id: simulator
+        run: |
+          # The newest available iPhone simulator; the runner image decides which ones exist.
+          UDID=$(xcrun simctl list devices available --json \
+            | python3 -c 'import json,sys; d=json.load(sys.stdin)["devices"]; print([x["udid"] for r in sorted(d, reverse=True) if "iOS" in r for x in d[r] if x["name"].startswith("iPhone")][0])')
+          echo "Using simulator $UDID"
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+      - name: Restore DerivedData
+        uses: actions/cache@v4
+        with:
+          path: DerivedData
+          key: deriveddata-tests-${{ hashFiles('xdrip.xcodeproj/project.pbxproj') }}-${{ github.sha }}
+          restore-keys: deriveddata-tests-${{ hashFiles('xdrip.xcodeproj/project.pbxproj') }}-
+
+      # Building separately makes the build time visible and lets a test failure be told apart
+      # from a compile failure at a glance.
+      - name: Build for testing
+        run: |
+          set -o pipefail
+          xcodebuild build-for-testing \
+            -project xdrip.xcodeproj -scheme xdrip \
+            -destination "platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}" \
+            -derivedDataPath DerivedData \
+            CODE_SIGNING_ALLOWED=NO COMPILER_INDEX_STORE_ENABLE=NO \
+            | tee build.log | grep -E '(error|warning: unable|BUILD)' || true
+          grep -q 'TEST BUILD SUCCEEDED' build.log
+
+      - name: Run tests
+        run: |
+          set -o pipefail
+          ITERATIONS="${{ github.event.inputs.iterations || '1' }}"
+          EXTRA=()
+          if [[ "$ITERATIONS" -gt 1 ]]; then EXTRA=(-test-iterations "$ITERATIONS" -run-tests-until-failure); fi
+          xcodebuild test-without-building \
+            -project xdrip.xcodeproj -scheme xdrip \
+            -destination "platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}" \
+            -derivedDataPath DerivedData \
+            -resultBundlePath TestResults.xcresult \
+            -test-timeouts-enabled YES -default-test-execution-time-allowance 120 \
+            "${EXTRA[@]}" \
+            | tee test.log | grep -E '(error:|failed|Executed [0-9]+ tests|TEST (SUCCEEDED|FAILED))' || true
+          grep -q 'TEST EXECUTE SUCCEEDED\|TEST SUCCEEDED' test.log
+
+      - name: Slowest tests
+        if: always()
+        run: |
+          # Matches both "Test Case '-[xdripTests.A testB]' passed (0.1 seconds)" and the parallel
+          # form "Test case 'A.testB()' passed on 'Clone 1 of …' (0.1 seconds)".
+          grep -E "Test [Cc]ase '[^']+' passed .*\([0-9.]+ seconds\)" test.log 2>/dev/null \
+            | sed -E "s/.*Test [Cc]ase '([^']+)' passed .*\(([0-9.]+) seconds\).*/\2 \1/" | sort -rn | head -25 || true
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xdripTests-results
+          path: |
+            TestResults.xcresult
+            build.log
+            test.log
+          if-no-files-found: ignore

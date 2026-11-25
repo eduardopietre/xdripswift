@@ -1,0 +1,93 @@
+name: Tests (Linux)
+run-name: Tests on Linux (${{ github.ref_name }})
+
+# Runs the platform-independent tests (linux/suites) with the open-source Swift toolchain, plus
+# the checks that keep the Xcode test target complete. Needs no secrets, so it also runs on forks
+# and pull requests. The full suite needs macOS: see tests_macos.yml.
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'xDrip/**'
+      - 'xDrip Tests/**'
+      - 'xDrip Widget/**'
+      - 'linux/**'
+      - 'xdrip.xcodeproj/project.pbxproj'
+      - '.github/workflows/tests_linux.yml'
+  push:
+    paths:
+      - 'xDrip/**'
+      - 'xDrip Tests/**'
+      - 'xDrip Widget/**'
+      - 'linux/**'
+      - 'xdrip.xcodeproj/project.pbxproj'
+      - '.github/workflows/tests_linux.yml'
+  schedule:
+    - cron: '17 4 * * 1' # weekly, also under other time zones (see the timezones job)
+
+concurrency:
+  group: tests-linux-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  XDRIP_LINUX_BUILD: ${{ github.workspace }}/.linux-build
+
+jobs:
+  tests:
+    name: Linux suites
+    runs-on: ubuntu-24.04
+    container: swift:6.2.1-noble
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install Python
+        run: command -v python3 || (apt-get update -qq && apt-get install -y -qq python3)
+
+      - name: Every test file is compiled by the Xcode test target
+        run: python3 linux/check-test-registration.py
+
+      # Generated packages and their .build directories. Only files whose content changed are
+      # rewritten (linux/sync-tree.py), so a restored cache turns most suites into no-op builds.
+      - name: Restore build cache
+        uses: actions/cache@v4
+        with:
+          path: .linux-build
+          key: linux-build-${{ hashFiles('linux/**', 'xDrip/**/*.swift', 'xDrip Tests/**/*.swift', 'xDrip Widget/**/*.swift') }}
+          restore-keys: linux-build-
+
+      - name: Run all suites
+        run: linux/xdrip-linux.sh test
+
+      - name: Upload suite logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-suite-logs
+          path: .linux-build/*.log
+
+  # Date logic is easy to get wrong in zones with unusual offsets or daylight saving rules.
+  timezones:
+    name: Linux suites in ${{ matrix.tz }}
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    container: swift:6.2.1-noble
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        tz: [America/Sao_Paulo, Pacific/Chatham, America/St_Johns]
+    env:
+      TZ: ${{ matrix.tz }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install Python and time zone data
+        run: apt-get update -qq && apt-get install -y -qq python3 tzdata
+      - name: Restore build cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .linux-build
+          key: linux-build-${{ hashFiles('linux/**', 'xDrip/**/*.swift', 'xDrip Tests/**/*.swift', 'xDrip Widget/**/*.swift') }}
+          restore-keys: linux-build-
+      - name: Run all suites
+        run: linux/xdrip-linux.sh test
