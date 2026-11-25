@@ -82,7 +82,8 @@ private final class SyncFlowStubProtocol: URLProtocol {
     }
 
     override func tearDown() async throws {
-        try? await Task.sleep(nanoseconds: 300_000_000)
+        // Returns once the requests started by the managers have stopped coming, instead of a fixed sleep.
+        await waitUntilStable { SyncFlowStubProtocol.requests.count }
         for key in keys {
             if let value = saved[key.rawValue] {
                 UserDefaults.standard.set(value, forKey: key.rawValue)

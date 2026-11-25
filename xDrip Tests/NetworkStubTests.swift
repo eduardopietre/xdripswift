@@ -20,6 +20,14 @@ private final class LockedFlag: @unchecked Sendable {
     func set() { lock.lock(); value = true; lock.unlock() }
 }
 
+/// A counter changed from another thread.
+private final class LockedCounter: @unchecked Sendable {
+    private let lock = NSLock()
+    private var count = 0
+    var value: Int { lock.lock(); defer { lock.unlock() }; return count }
+    func increment() { lock.lock(); count += 1; lock.unlock() }
+}
+
 /// Guards the network stub and the waiting helpers that replace fixed sleeps in manager tests.
 /// The stub intercepts `URLSession.shared`, like the app's follower and Nightscout managers use it.
 final class NetworkStubTests: XCTestCase {
@@ -151,6 +159,35 @@ final class NetworkStubTests: XCTestCase {
         XCTAssertFalse(held)
         XCTAssertGreaterThanOrEqual(Date().timeIntervalSince(started), 0.05)
         XCTAssertLessThan(Date().timeIntervalSince(started), 1)
+    }
+
+    func testStableReturnsAfterTheQuietPeriodWhenNothingChanges() async {
+        let started = Date()
+        let stable = await AsyncTestConditions.stable(quietPeriod: 0.05, timeout: 5) { 1 }
+
+        XCTAssertTrue(stable)
+        XCTAssertGreaterThanOrEqual(Date().timeIntervalSince(started), 0.05)
+        XCTAssertLessThan(Date().timeIntervalSince(started), 1)
+    }
+
+    func testStableWaitsWhileTheValueKeepsChanging() async {
+        let counter = LockedCounter()
+        // Background work that changes the value every 10 ms for about 150 ms.
+        DispatchQueue.global().async {
+            for _ in 0..<15 { Thread.sleep(forTimeInterval: 0.01); counter.increment() }
+        }
+
+        let stable = await AsyncTestConditions.stable(quietPeriod: 0.05, timeout: 5) { counter.value }
+
+        XCTAssertTrue(stable)
+        XCTAssertEqual(counter.value, 15, "returned before the work finished")
+    }
+
+    func testStableGivesUpWhenTheValueNeverSettles() async {
+        let counter = LockedCounter()
+        let stable = await AsyncTestConditions.stable(quietPeriod: 0.05, timeout: 0.1) { counter.increment(); return counter.value }
+
+        XCTAssertFalse(stable)
     }
 
     @MainActor

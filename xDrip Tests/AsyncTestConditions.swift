@@ -21,6 +21,26 @@ enum AsyncTestConditions {
         }
         return true
     }
+
+    /// Checks `value` every `interval` seconds until it has not changed for `quietPeriod` (true) or
+    /// `timeout` passes (false).
+    static func stable<Value: Equatable>(quietPeriod: TimeInterval, timeout: TimeInterval, interval: TimeInterval = 0.005,
+                                         _ value: () -> Value) async -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+        var last = value()
+        var unchangedSince = Date()
+        while Date() < deadline {
+            try? await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000))
+            let current = value()
+            if current != last {
+                last = current
+                unchangedSince = Date()
+            } else if Date().timeIntervalSince(unchangedSince) >= quietPeriod {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 extension XCTestCase {
@@ -46,6 +66,16 @@ extension XCTestCase {
         }
         XCTFail("\(message()) within \(timeout) s", file: file, line: line)
         return false
+    }
+
+    /// Waits until `value` has stopped changing for `quietPeriod`, e.g. the number of requests a
+    /// stub has received, so background work started by the test has finished before teardown
+    /// restores settings. Returns early when nothing happens, unlike a fixed sleep; does not fail
+    /// the test on timeout, because it is meant for setUp and tearDown.
+    @discardableResult
+    func waitUntilStable<Value: Equatable>(quietPeriod: TimeInterval = 0.05, timeout: TimeInterval = 2,
+                                           _ value: () -> Value) async -> Bool {
+        await AsyncTestConditions.stable(quietPeriod: quietPeriod, timeout: timeout, value)
     }
 
     /// Lets work that was already queued run: pending main-queue blocks and tasks that are ready.

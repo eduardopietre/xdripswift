@@ -130,7 +130,8 @@ private final class ShareKeepAliveSpy: FollowerBackgroundKeepAliveManaging {
     override func tearDown() async throws {
         UserDefaults.standard.dexcomShareManuallyLoggedOut = true
         UserDefaults.standard.isMaster = saved[UserDefaults.Key.isMaster.rawValue] as? Bool ?? true
-        try? await Task.sleep(nanoseconds: 300_000_000)
+        // Returns once the requests started by the managers have stopped coming, instead of a fixed sleep.
+        await waitUntilStable { ShareFollowStubProtocol.requests.count }
         for key in keys {
             if let value = saved[key.rawValue] {
                 UserDefaults.standard.set(value, forKey: key.rawValue)
