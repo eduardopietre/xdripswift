@@ -58,6 +58,21 @@ run_package() { # <dir>
     return "${PIPESTATUS[0]}"
 }
 
+# Fails when XCTest ran a different number of tests than the package declares (see count_tests in
+# generate.py), so a test that silently stops running is noticed. Skipped with SWIFT_TEST_ARGS,
+# which may filter tests on purpose.
+check_test_count() { # <package dir> <log>
+    [[ -z "${SWIFT_TEST_ARGS:-}" ]] || return 0
+    local expected executed
+    expected="$(cat "$1/expected-tests" 2>/dev/null || echo '?')"
+    executed="$(grep -A1 "Test Suite 'All tests'" "$2" | grep -oE 'Executed [0-9]+' | tail -1 | grep -oE '[0-9]+' || true)"
+    [[ -n "$executed" ]] || return 0   # the build or the run failed; that is reported already
+    if [[ "$executed" != "$expected" ]]; then
+        echo "error: $(basename "$1"): $expected tests declared but $executed executed; a test is not run" >&2
+        return 1
+    fi
+}
+
 command -v swift >/dev/null || die "swift not found; run linux/install-swift.sh first"
 
 cmd="${1:-test}"; shift || true
@@ -86,8 +101,12 @@ case "$cmd" in
         if [[ $isolated == 0 ]]; then
             echo "Running $# suites in one package ($BUILD/$MERGED)"
             generate --merged "$MERGED" "$@"
-            status=0
-            (run_package "$BUILD/$MERGED") || status=$?
+            # No `|| true` here: with pipefail it would replace PIPESTATUS and hide a failure.
+            set +e
+            (run_package "$BUILD/$MERGED") 2>&1 | tee "$BUILD/$MERGED.log"
+            status=${PIPESTATUS[0]}
+            set -e
+            check_test_count "$BUILD/$MERGED" "$BUILD/$MERGED.log" || status=1
             echo
             echo "Suites run: $# (merged), $([[ $status == 0 ]] && echo passed || echo FAILED), $((SECONDS - started))s"
             coverage_targets=("$MERGED")
@@ -107,7 +126,9 @@ case "$cmd" in
             for suite in "$@"; do
                 echo; echo "=== $suite"
                 cat "$BUILD/$suite.log"
-                [[ "$(cat "$BUILD/$suite.status" 2>/dev/null)" == 0 ]] || failed+=("$suite")
+                if [[ "$(cat "$BUILD/$suite.status" 2>/dev/null)" != 0 ]] || ! check_test_count "$BUILD/$suite" "$BUILD/$suite.log"; then
+                    failed+=("$suite")
+                fi
             done
             echo
             echo "Suites run: $#, failed: ${#failed[@]}${failed[*]:+ (${failed[*]})}, $((SECONDS - started))s"

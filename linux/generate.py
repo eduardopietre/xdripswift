@@ -178,6 +178,23 @@ def declarations_in(lines):
 
 # MARK: - packages
 
+TEST_METHOD = re.compile(r'^\s*(?:@\w+(?:\([^)]*\))?\s+)*(?:(?:override|public|internal|final|nonisolated)\s+)*func\s+test\w*\s*\(\s*\)')
+
+
+def count_tests(files):
+    """Number of XCTest methods (`func testSomething()`) in the test files of a package.
+
+    Counted on code lines, so commented-out tests and text in strings do not count. xdrip-linux.sh
+    compares it with the number XCTest executed: a test that is generated but not run (a class
+    XCTest does not discover, a `without` that removed more than intended, a file that silently
+    lost its tests) then fails the run instead of going unnoticed.
+    """
+    total = 0
+    for path, content in files.items():
+        if path.startswith('Tests' + os.sep) and path.endswith('.swift'):
+            total += sum(1 for line in extract.code_lines(content.split('\n')) if TEST_METHOD.match(line))
+    return total
+
 class Package:
     """The files of one generated package, kept in memory until written."""
 
@@ -248,6 +265,9 @@ class Package:
 
     def write(self, destination):
         """Makes `destination` hold exactly these files, rewriting only files that changed."""
+        os.makedirs(destination, exist_ok=True)
+        with open(os.path.join(destination, 'expected-tests'), 'w', encoding='utf-8') as f:
+            f.write(f'{count_tests(self.files)}\n')
         for relative, content in self.files.items():
             target = os.path.join(destination, relative)
             if os.path.isfile(target):

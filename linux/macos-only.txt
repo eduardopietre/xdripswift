@@ -1,0 +1,75 @@
+# Test files that run only on macOS (Xcode), with the reason they are not in a Linux suite.
+#
+# linux/check-test-registration.py fails when a file of `xDrip Tests/` is neither used by a suite in
+# linux/suites nor listed here, so every new test file is a conscious choice: port it to a suite
+# (preferred, it then runs on every push) or list it with its reason. The reasons were derived
+# from what each file imports or uses; correct them when you know better. Remove a line when the
+# file is ported. Test methods left out of a ported file are documented in its suite instead.
+#
+xDrip Tests/AlgorithmCoverageCalibratorTests.swift          # CoreData
+xDrip Tests/AlgorithmCoveragePostProcessingTests.swift      # CoreData
+xDrip Tests/AlgorithmCoverageSensorNoiseTests.swift         # CoreData, UserNotifications
+xDrip Tests/AlgorithmCoverageSmoothingTests.swift           # app types not yet ported to a Linux suite
+xDrip Tests/AlgorithmCoverageStatisticsTests.swift          # CoreData
+xDrip Tests/AppCoverageAlertKindTests.swift                 # CoreData, UIKit, SwiftUI
+xDrip Tests/AppCoverageAlertManagerTests.swift              # CoreData, UserNotifications
+xDrip Tests/AppCoverageChartTests.swift                     # CoreData, SwiftUI
+xDrip Tests/AppCoverageLoopManagerTests.swift               # CoreData
+xDrip Tests/AppCoverageManagersTests.swift                  # CoreData, UIKit, SwiftUI
+xDrip Tests/AppCoverageReadSuccessTests.swift               # CoreData
+xDrip Tests/AppCoverageSpeechAndCalendarTests.swift         # app types not yet ported to a Linux suite
+xDrip Tests/AppCoverageTestSupport.swift                    # test support only (no test methods)
+xDrip Tests/AppCoverageUtilitiesTests.swift                 # SwiftUI, OSLog / trace()
+xDrip Tests/BLECoveragePeripheralManagerTests.swift         # CoreData, CoreBluetooth
+xDrip Tests/BLECoverageTransmitterTests.swift               # CoreBluetooth
+xDrip Tests/BLECoverageTypeTests.swift                      # CoreData, CoreBluetooth
+xDrip Tests/BasalInjectionTests.swift                       # CoreData, UIKit, SwiftUI
+xDrip Tests/BatteryHistoryTests.swift                       # CoreData
+xDrip Tests/BluetoothPeripheralDisplayStatusTests.swift     # CoreData, CoreBluetooth
+xDrip Tests/CareLinkTests.swift                             # CoreData, UIKit, SwiftUI
+xDrip Tests/DataCoverageAccessorTests.swift                 # CoreData
+xDrip Tests/DataCoverageBackupTests.swift                   # CoreData
+xDrip Tests/DataCoverageCoreDataClassTests.swift            # CoreData
+xDrip Tests/DataCoverageExtensionsTests.swift               # CoreData, CoreBluetooth
+xDrip Tests/DataCoverageHousekeepingTests.swift             # CoreData
+xDrip Tests/DataCoverageUserDefaultsTests.swift             # app types not yet ported to a Linux suite
+xDrip Tests/DexcomCoverageG5TransmitterTests.swift          # CoreData, CoreBluetooth
+xDrip Tests/DexcomCoverageG7AuthTests.swift                 # CoreBluetooth, CryptoKit
+xDrip Tests/DexcomCoverageG7TransmitterTests.swift          # CoreData, CoreBluetooth
+xDrip Tests/DexcomCoverageMessageTests.swift                # app types not yet ported to a Linux suite
+xDrip Tests/DexcomG6SensorLabelTests.swift                  # CoreData
+xDrip Tests/DexcomG7CalibrationTests.swift                  # CoreData
+xDrip Tests/DexcomShareUploadTests.swift                    # SwiftUI
+xDrip Tests/DirectWatchBridgeTests.swift                    # CoreData
+xDrip Tests/FollowerBackgroundKeepAliveManagerTests.swift   # CoreData, AVFoundation
+xDrip Tests/FollowerCoverageCalendarTests.swift             # CoreData, EventKit
+xDrip Tests/FollowerCoverageDexcomShareFollowTests.swift    # CoreData
+xDrip Tests/FollowerCoverageLibreLinkUpTests.swift          # CoreData
+xDrip Tests/FollowerCoverageModelTests.swift                # app types not yet ported to a Linux suite
+xDrip Tests/FollowerSettingsTests.swift                     # CoreData
+xDrip Tests/GMIStatisticsTests.swift                        # CoreData
+xDrip Tests/GlucoseAdjustmentTests.swift                    # CoreData
+xDrip Tests/Libre3/Libre3IntegrationTests.swift             # CoreData, CoreNFC
+xDrip Tests/Libre3/Libre3Phase6ResponseTests.swift          # CryptoKit
+xDrip Tests/LibreCoverageAlgorithmTests.swift               # app types not yet ported to a Linux suite
+xDrip Tests/LibreCoverageDataParserTests.swift              # app types not yet ported to a Linux suite
+xDrip Tests/LibreCoverageLibre3ReadingTests.swift           # app types not yet ported to a Linux suite
+xDrip Tests/LibreCoverageLibre3SupportTests.swift           # CryptoKit
+xDrip Tests/LibreCoverageRealDataTests.swift                # app types not yet ported to a Linux suite
+xDrip Tests/LibreCoverageSensorTypeTests.swift              # app types not yet ported to a Linux suite
+xDrip Tests/LibreCoverageTestSupport.swift                  # test support only (no test methods)
+xDrip Tests/LibreCoverageTransmitterTests.swift             # CoreBluetooth
+xDrip Tests/MissedReadingSnoozeTests.swift                  # CoreData, UserNotifications
+xDrip Tests/NightscoutCoverageAccessorTests.swift           # CoreData
+xDrip Tests/NightscoutCoverageDeviceStatusModelTests.swift  # SwiftUI
+xDrip Tests/NightscoutCoverageFollowManagerTests.swift      # CoreData
+xDrip Tests/NightscoutCoverageGapFillRunTests.swift         # CoreData
+xDrip Tests/NightscoutCoverageImportServiceTests.swift      # CoreData
+xDrip Tests/NightscoutCoverageModelTests.swift              # CoreData
+xDrip Tests/NightscoutCoverageSyncFlowTests.swift           # CoreData
+xDrip Tests/NightscoutCoverageSyncManagerTests.swift        # CoreData
+xDrip Tests/NightscoutCoverageUploadTests.swift             # CoreData
+xDrip Tests/RepeatingAlarmTests.swift                       # CoreData, UIKit, AVFoundation
+xDrip Tests/SensorExpiryReminderManagerTests.swift          # CoreData, UserNotifications
+xDrip Tests/SensorHealthIssueManagerTests.swift             # UserNotifications
+xDrip Tests/TroubleshootingLogTests.swift                   # OSLog / trace()

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Fails when a Swift file in `xDrip Tests/` is not compiled by the `xdripTests` target.
+"""Fails when a Swift file in `xDrip Tests/` would silently not run somewhere.
+
+1. On macOS: every file must be compiled by the `xdripTests` target.
+2. On Linux: every file must be used by a suite in linux/suites, or be listed with its reason in
+   linux/macos-only.txt, so leaving a new test out of the Linux run is a decision, not an accident.
 
 There is no Xcode on Linux, so a test file written there and not registered in
 xdrip.xcodeproj silently never runs on macOS (linux/add-test-to-xcodeproj.py registers one).
@@ -9,7 +13,7 @@ or inside a subfolder group are recognised; a plain grep for the file name gives
 and negatives.
 
 Usage: linux/check-test-registration.py
-Exit code 0 when every file is registered and every registered file exists, 1 otherwise.
+Exit code 0 when both hold and nothing listed is stale, 1 otherwise.
 """
 
 import os
@@ -20,6 +24,7 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 PROJECT = os.path.join(ROOT, 'xdrip.xcodeproj', 'project.pbxproj')
 TESTS_DIR = 'xDrip Tests'
 TARGET = 'xdripTests'
+MACOS_ONLY = os.path.join(ROOT, 'linux', 'macos-only.txt')
 
 TOKEN = re.compile(r'\s+|//[^\n]*|/\*.*?\*/|"((?:[^"\\]|\\.)*)"|([^\s{}()=;,"]+)|([{}()=;,])', re.S)
 
@@ -108,7 +113,47 @@ def main():
         print(f'registered in {TARGET} but missing on disk: {path}')
     problems = f', {len(missing)} not registered, {len(stale)} missing on disk' if missing or stale else ''
     print(f'{len(on_disk)} test files, {len(registered & on_disk)} compiled by {TARGET}{problems}')
-    return 1 if missing or stale else 0
+    return 1 if missing or stale or not check_linux_inventory(on_disk) else 0
+
+
+def check_linux_inventory(on_disk):
+    """Every test file is used by a Linux suite or listed in macos-only.txt, and the list is current."""
+    sys.dont_write_bytecode = True
+    sys.path.insert(0, os.path.join(ROOT, 'linux'))
+    import generate
+    suites = sorted(name[:-4] for name in os.listdir(generate.SUITES_DIR) if name.endswith('.txt') and not name.startswith('_'))
+    on_linux = set()
+    for suite in suites:
+        for kind, path, _, _ in generate.parse_suite(suite, set(), []):
+            if kind in ('test', 'testdecl'):
+                on_linux.add(os.path.normpath(path))
+    listed = {}
+    with open(MACOS_ONLY, encoding='utf-8') as f:
+        for number, raw in enumerate(f, 1):
+            path, _, reason = raw.partition('#')
+            path = path.strip()
+            if not path:
+                continue
+            if not reason.strip():
+                print(f'{os.path.relpath(MACOS_ONLY, ROOT)}:{number}: {path} has no reason')
+                listed[os.path.normpath(path)] = None
+            else:
+                listed[os.path.normpath(path)] = reason.strip()
+
+    ok = True
+    for path in sorted(on_disk - on_linux - set(listed)):
+        print(f'not run on Linux and not in linux/macos-only.txt: {path}  (port it to a suite, or list it with the reason)')
+        ok = False
+    for path in sorted(set(listed) & on_linux):
+        print(f'linux/macos-only.txt lists {path}, but a Linux suite runs it: remove the line')
+        ok = False
+    for path in sorted(set(listed) - on_disk):
+        print(f'linux/macos-only.txt lists {path}, which does not exist')
+        ok = False
+    if any(reason is None for reason in listed.values()):
+        ok = False
+    print(f'{len(on_disk & on_linux)} test files run on Linux, {len(on_disk & set(listed))} listed as macOS only')
+    return ok
 
 
 if __name__ == '__main__':

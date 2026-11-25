@@ -44,7 +44,7 @@ jobs:
       - name: Install Python
         run: command -v python3 || (apt-get update -qq && apt-get install -y -qq python3)
 
-      - name: Every test file is compiled by the Xcode test target
+      - name: Every test file runs on macOS, and on Linux or is listed as macOS only
         run: python3 linux/check-test-registration.py
 
       - name: Tests of the Linux tooling (extract.py, generate.py)
