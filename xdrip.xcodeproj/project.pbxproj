@@ -411,6 +411,11 @@
 		57FED30744046A2D826B81B7 /* DirectWatchCompatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7970B360C99EBC27912166 /* DirectWatchCompatibility.swift */; };
 		5A0100023015000100000001 /* GlucoseRangeDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0100013015000100000001 /* GlucoseRangeDistribution.swift */; };
 		5A0100043015000100000001 /* GlucoseRangeDistributionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */; };
+		61C92C3C69E6C2509AEA273C /* NetworkStubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78998FB379D3884B0F38436D /* NetworkStubTests.swift */; };
+		9A2A7A82EB02BAF545B2540D /* UserDefaultsSandboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE1954338EE5AF6AB5C8BC /* UserDefaultsSandboxTests.swift */; };
+		36CEC23648DC66CAD2A8FD28 /* AsyncTestConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690B83BBCFC92EF4CEEBF206 /* AsyncTestConditions.swift */; };
+		DED3FE56E11C42024AE6EC79 /* NetworkStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB202BAFAB0C7FADC82E21 /* NetworkStub.swift */; };
+		B45873D86D7268E6D5369F87 /* UserDefaultsSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AEA3667AB121ED29EE7043 /* UserDefaultsSandbox.swift */; };
 		5A03911BAC31439E44790D24 /* M5StackPacketRoundTripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF147B467027A244CBAE3DF /* M5StackPacketRoundTripTests.swift */; };
 		EEABD835913741170A50DE93 /* LibreSensorIdentityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */; };
 		900AFAA5DAFBDD603F8F6974 /* LibreRawMeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */; };
@@ -1508,6 +1513,11 @@
 		530FF1F30166612F05E55CF6 /* Libre3NFCActivationCommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3NFCActivationCommand.swift; path = Libre3NFCActivationCommand.swift; sourceTree = "<group>"; };
 		5A0100013015000100000001 /* GlucoseRangeDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseRangeDistribution.swift; sourceTree = "<group>"; };
 		5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseRangeDistributionTests.swift; sourceTree = "<group>"; };
+		78998FB379D3884B0F38436D /* NetworkStubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStubTests.swift; sourceTree = "<group>"; };
+		A9DE1954338EE5AF6AB5C8BC /* UserDefaultsSandboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSandboxTests.swift; sourceTree = "<group>"; };
+		690B83BBCFC92EF4CEEBF206 /* AsyncTestConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTestConditions.swift; sourceTree = "<group>"; };
+		FCBB202BAFAB0C7FADC82E21 /* NetworkStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStub.swift; sourceTree = "<group>"; };
+		D2AEA3667AB121ED29EE7043 /* UserDefaultsSandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSandbox.swift; sourceTree = "<group>"; };
 		9FF147B467027A244CBAE3DF /* M5StackPacketRoundTripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M5StackPacketRoundTripTests.swift; sourceTree = "<group>"; };
 		CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreSensorIdentityTests.swift; sourceTree = "<group>"; };
 		BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreRawMeasurementTests.swift; sourceTree = "<group>"; };
@@ -3014,6 +3024,11 @@
 				A41000020000000000000001 /* DexcomShareUploadTests.swift */,
 				4F2800123004000100000001 /* GlucoseChartYAxisRetentionTests.swift */,
 				5A0100033015000100000001 /* GlucoseRangeDistributionTests.swift */,
+				78998FB379D3884B0F38436D /* NetworkStubTests.swift */,
+				A9DE1954338EE5AF6AB5C8BC /* UserDefaultsSandboxTests.swift */,
+				690B83BBCFC92EF4CEEBF206 /* AsyncTestConditions.swift */,
+				FCBB202BAFAB0C7FADC82E21 /* NetworkStub.swift */,
+				D2AEA3667AB121ED29EE7043 /* UserDefaultsSandbox.swift */,
 				9FF147B467027A244CBAE3DF /* M5StackPacketRoundTripTests.swift */,
 				CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */,
 				BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */,
@@ -5074,6 +5089,11 @@
 				C0FE5B0DA97C91FE3D71F069 /* LibreCoverageAlgorithmTests.swift in Sources */,
 				4F3200013008000100000001 /* BgReadingTrendTests.swift in Sources */,
 				5A0100043015000100000001 /* GlucoseRangeDistributionTests.swift in Sources */,
+				61C92C3C69E6C2509AEA273C /* NetworkStubTests.swift in Sources */,
+				9A2A7A82EB02BAF545B2540D /* UserDefaultsSandboxTests.swift in Sources */,
+				36CEC23648DC66CAD2A8FD28 /* AsyncTestConditions.swift in Sources */,
+				DED3FE56E11C42024AE6EC79 /* NetworkStub.swift in Sources */,
+				B45873D86D7268E6D5369F87 /* UserDefaultsSandbox.swift in Sources */,
 				5A03911BAC31439E44790D24 /* M5StackPacketRoundTripTests.swift in Sources */,
 				EEABD835913741170A50DE93 /* LibreSensorIdentityTests.swift in Sources */,
 				900AFAA5DAFBDD603F8F6974 /* LibreRawMeasurementTests.swift in Sources */,

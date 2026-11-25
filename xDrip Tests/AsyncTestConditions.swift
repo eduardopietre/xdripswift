@@ -1,0 +1,64 @@
+//
+//  AsyncTestConditions.swift
+//  xdripTests
+//
+//  Created by Eduardo Pietre on 25/11/2026.
+//  Copyright © 2026 Johan Degraeve. All rights reserved.
+//
+
+import Foundation
+import XCTest
+
+/// The polling behind `waitForCondition`, kept free of XCTest so it can be tested on every platform.
+enum AsyncTestConditions {
+
+    /// Checks `condition` every `interval` seconds until it holds (true) or `timeout` passes (false).
+    static func poll(timeout: TimeInterval, interval: TimeInterval = 0.005, _ condition: () -> Bool) async -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+        while !condition() {
+            guard Date() < deadline else { return false }
+            try? await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000))
+        }
+        return true
+    }
+}
+
+extension XCTestCase {
+
+    /// Waits until `condition` holds, checking it every few milliseconds, and fails the test when
+    /// `timeout` passes first.
+    ///
+    /// Use it instead of a fixed `Task.sleep` before an assertion: it returns as soon as the work
+    /// is done (fast on a quick machine) and still waits long enough on a slow CI machine (no
+    /// flaky failures). The condition is evaluated on the caller's actor, so a `@MainActor` test
+    /// can read main-actor state, and the main queue keeps running between checks.
+    ///
+    /// - Returns: whether the condition held before the timeout, for tests that continue either way.
+    @discardableResult
+    func waitForCondition(_ message: @autoclosure () -> String = "condition not met",
+                          timeout: TimeInterval = 5,
+                          pollInterval: TimeInterval = 0.005,
+                          file: StaticString = #filePath,
+                          line: UInt = #line,
+                          _ condition: () -> Bool) async -> Bool {
+        if await AsyncTestConditions.poll(timeout: timeout, interval: pollInterval, condition) {
+            return true
+        }
+        XCTFail("\(message()) within \(timeout) s", file: file, line: line)
+        return false
+    }
+
+    /// Lets work that was already queued run: pending main-queue blocks and tasks that are ready.
+    ///
+    /// Use it where a test needs the effects of a `DispatchQueue.main.async` or an unstructured
+    /// `Task` started by the code under test, and nothing observable says when it is done. It
+    /// replaces sleeps of a few hundred milliseconds with a few yields.
+    func drainPendingWork(iterations: Int = 3) async {
+        for _ in 0..<iterations {
+            await withCheckedContinuation { continuation in
+                DispatchQueue.main.async { continuation.resume() }
+            }
+            await Task.yield()
+        }
+    }
+}

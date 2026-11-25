@@ -11,34 +11,11 @@ import UserNotifications
 import XCTest
 @testable import xdrip
 
-/// Restores every key of the standard defaults domain that a test changes, including keys it removes.
-final class AppCoverageDefaultsSnapshot {
-    private let saved: [String: Any]
-    private let domainName: String
-
-    init() {
-        domainName = Bundle.main.bundleIdentifier ?? ""
-        saved = UserDefaults.standard.persistentDomain(forName: domainName) ?? [:]
-    }
-
-    func restore() {
-        let standard = UserDefaults.standard
-        let current = standard.persistentDomain(forName: domainName) ?? [:]
-        for key in current.keys where saved[key] == nil {
-            standard.removeObject(forKey: key)
-        }
-        for (key, value) in saved {
-            if let currentValue = current[key], (currentValue as AnyObject).isEqual(value) { continue }
-            standard.set(value, forKey: key)
-        }
-    }
-}
-
 extension XCTestCase {
     /// Snapshots the standard defaults and restores them when the test finishes.
+    /// Kept for the existing tests; new tests call `isolateUserDefaults()` directly.
     func appCoverageIsolateDefaults() {
-        let snapshot = AppCoverageDefaultsSnapshot()
-        addTeardownBlock { snapshot.restore() }
+        isolateUserDefaults()
     }
 }
 

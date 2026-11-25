@@ -1,0 +1,9 @@
+# Shared test doubles for globals the app cannot inject: the UserDefaults sandbox, the network stub
+# for URLSession.shared and the waiting helpers that replace fixed sleeps. They only need
+# Foundation and XCTest; the fragment below just gives the `xdrip` module something to compile.
+include _foundation-extensions
+test    xDrip Tests/UserDefaultsSandbox.swift
+test    xDrip Tests/NetworkStub.swift
+test    xDrip Tests/AsyncTestConditions.swift
+test    xDrip Tests/UserDefaultsSandboxTests.swift
+test    xDrip Tests/NetworkStubTests.swift
