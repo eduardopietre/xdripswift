@@ -104,6 +104,49 @@ final class DateExtensionTests: XCTestCase {
         XCTAssertEqual(lastSecondOfDay.minutesSinceMidNightLocalTime(), 1439)
     }
 
+    /// Regression: `toMidnight()` subtracted hours × 3600 + minutes × 60 + seconds, which is one
+    /// hour off on days when the clock changes. On 2026-03-29 in Amsterdam the clock jumps from
+    /// 02:00 to 03:00, so 05:00 is only four hours after midnight and the old code returned 23:00
+    /// of the day before. The BG readings, treatments and landscape date ranges start there.
+    func testToMidnightOnTheSpringForwardDay() throws {
+        NSTimeZone.default = try XCTUnwrap(TimeZone(identifier: "Europe/Amsterdam"))
+        // 2026-03-29 05:00 CEST = 03:00 UTC
+        let morning = try XCTUnwrap(ISO8601DateFormatter().date(from: "2026-03-29T03:00:00Z"))
+
+        // 2026-03-29 00:00 CET = 2026-03-28 23:00 UTC
+        XCTAssertEqual(morning.toMidnight(), ISO8601DateFormatter().date(from: "2026-03-28T23:00:00Z"))
+    }
+
+    /// On 2026-10-25 in Amsterdam the clock goes back from 03:00 to 02:00, so 05:00 is six hours
+    /// after midnight and the old code returned 01:00 of the same day.
+    func testToMidnightOnTheFallBackDay() throws {
+        NSTimeZone.default = try XCTUnwrap(TimeZone(identifier: "Europe/Amsterdam"))
+        // 2026-10-25 05:00 CET = 04:00 UTC
+        let morning = try XCTUnwrap(ISO8601DateFormatter().date(from: "2026-10-25T04:00:00Z"))
+
+        // 2026-10-25 00:00 CEST = 2026-10-24 22:00 UTC
+        XCTAssertEqual(morning.toMidnight(), ISO8601DateFormatter().date(from: "2026-10-24T22:00:00Z"))
+    }
+
+    /// Brazil used to change the clock at midnight: on 2018-11-04 in São Paulo the day started at
+    /// 01:00, because 00:00 to 00:59 did not exist. The start of that day is 01:00.
+    func testToMidnightOnADayThatHasNoMidnight() throws {
+        NSTimeZone.default = try XCTUnwrap(TimeZone(identifier: "America/Sao_Paulo"))
+        // 2018-11-04 10:00 BRST (UTC-2) = 12:00 UTC
+        let morning = try XCTUnwrap(ISO8601DateFormatter().date(from: "2018-11-04T12:00:00Z"))
+
+        // 2018-11-04 01:00 BRST = 03:00 UTC
+        XCTAssertEqual(morning.toMidnight(), ISO8601DateFormatter().date(from: "2018-11-04T03:00:00Z"))
+    }
+
+    /// The old code kept the fraction of a second, so midnight of 05:00:00.5 was 00:00:00.5.
+    func testToMidnightDropsFractionsOfASecond() throws {
+        NSTimeZone.default = try XCTUnwrap(TimeZone(identifier: "UTC"))
+        let date = Date(timeIntervalSince1970: 1_768_435_200 + 5 * 3600 + 0.5)
+
+        XCTAssertEqual(date.toMidnight(), Date(timeIntervalSince1970: 1_768_435_200))
+    }
+
     // MARK: - ISO and trace strings
 
     /// ISO strings are always UTC with a `Z` suffix, whatever the device time zone.

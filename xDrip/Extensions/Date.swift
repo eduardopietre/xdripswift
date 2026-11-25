@@ -29,13 +29,13 @@ extension Date {
     }
     
     /// changes the date to 00:00 the same day, local time, and returns the result as a new Date object
+    ///
+    /// Uses the calendar's start of day rather than subtracting the hours, minutes and seconds of
+    /// the time: on a day when the clock changes those are an hour more or less than the time
+    /// since midnight, and on days without a midnight (clocks that change at 00:00) the day starts
+    /// at 01:00.
     func toMidnight() -> Date {
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: self)
-        let minute = calendar.component(.minute, from: self)
-        let seconds = calendar.component(.second, from: self)
-        let timeInterval = TimeInterval(-Double(hour * 3600 + minute * 60 + seconds))
-        return Date(timeInterval: timeInterval, since: self)
+        Calendar.current.startOfDay(for: self)
     }
 	
 	/// The same ISO Formtter is used for various conversions, e.g. fromISOString and ISOStringFromDate.
