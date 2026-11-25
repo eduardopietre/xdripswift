@@ -47,6 +47,9 @@ jobs:
       - name: Every test file is compiled by the Xcode test target
         run: python3 linux/check-test-registration.py
 
+      - name: Tests of the Linux tooling (extract.py, generate.py)
+        run: python3 linux/test_extract.py
+
       # Generated packages and their .build directories. Only files whose content changed are
       # rewritten (linux/sync-tree.py), so a restored cache turns most suites into no-op builds.
       - name: Restore build cache
