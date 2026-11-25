@@ -16,13 +16,18 @@ side could not be run here (no Xcode), so its items are based on reading the cod
 | R4 registration check | `linux/check-test-registration.py` | parses `project.pbxproj`; 130/130 test files compiled by `xdripTests` |
 | M1 minimal test host | `XdripApp.isHostingUnitTests` | services are not started when XCTest hosts unit tests |
 | M2/M3/M4 test doubles for globals | `xDrip Tests/UserDefaultsSandbox.swift`, `NetworkStub.swift`, `AsyncTestConditions.swift` | 20 tests, Linux suite `test-support` |
-| M2 fixed setUp/tearDown sleeps (≈20 s) | the six classes of §4.2 | replaced by `waitUntilStable` on the stub's request count |
+| M2 fixed setUp/tearDown sleeps | the six classes of §4.2 | setUp sleeps removed; tearDown waits until the stub got no request for 0.6 s (the managers schedule work up to 0.5 s later). Safer than the old fixed 300 ms, not faster; a real idle signal from the managers is the faster fix |
+| R1 `extract.py` tokenizer | `linux/extract.py`, `linux/test_extract.py` | multi-line/raw strings, block comments and interpolations handled across lines; 17 tests in CI, 8 of which fail with the old parser |
+| R2 silent test loss | `generate.py` + `xdrip-linux.sh` | the run fails when XCTest executes a different number of tests than the package declares |
+| R3 macOS-only inventory | `linux/macos-only.txt` | 65 files with their reason; CI fails for a test file that is neither on Linux nor listed |
+| More tests on Linux | suites `dexcom-messages`, `bg-smoothing` | +69 Dexcom message tests and the 29 smoothing tests: **766 tests** on every push |
 | Suspected bugs of `linux/COVERAGE.md` | see the table there | 9 of 10 fixed, each with a test that failed or crashed before the fix |
 | Fuzzing of the Dexcom and Libre parsers | `ByteFuzz.swift` and four `*FuzzTests.swift` | tens of thousands of hostile inputs per run in about 2 s; found and fixed 6 more crash sites; `XDRIP_FUZZ_SCALE=20` for deep runs |
 | CI | `.github/workflows/tests_linux.yml`, `tests_macos.yml` | Linux on every push/PR (merged), weekly time zones, deep fuzzing and isolated suites; macOS on PRs and on demand |
 
-Still open: R1 (`extract.py` tokenizer), R2/R3 (expected counts, macOS-only inventory), M5 (test
-plan), M6 (core package), moving the six classes' private `URLProtocol` stubs to `NetworkStub`,
+Still open: M5 (test plan), M6 (core package), an idle signal in the Nightscout/follower managers
+so the six classes can stop waiting 0.6 s, moving their private `URLProtocol` stubs to `NetworkStub`,
+porting the other files `macos-only.txt` marks as having no Apple dependency,
 and about 1.5 s of test time in tests that take exactly ~0.1 s on Linux (spread over many classes,
 probably the async test machinery of swift-corelibs-xctest).
 

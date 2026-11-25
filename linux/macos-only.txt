@@ -9,7 +9,6 @@
 xDrip Tests/AlgorithmCoverageCalibratorTests.swift          # CoreData
 xDrip Tests/AlgorithmCoveragePostProcessingTests.swift      # CoreData
 xDrip Tests/AlgorithmCoverageSensorNoiseTests.swift         # CoreData, UserNotifications
-xDrip Tests/AlgorithmCoverageSmoothingTests.swift           # app types not yet ported to a Linux suite
 xDrip Tests/AlgorithmCoverageStatisticsTests.swift          # CoreData
 xDrip Tests/AppCoverageAlertKindTests.swift                 # CoreData, UIKit, SwiftUI
 xDrip Tests/AppCoverageAlertManagerTests.swift              # CoreData, UserNotifications

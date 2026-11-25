@@ -1,0 +1,18 @@
+# Glucose smoothing algorithms (exponential, Kalman, LOESS, Savitzky-Golay, Hampel) and their
+# settings. They change the values shown and uploaded, and are pure arithmetic on arrays.
+src     xDrip/Constants/ConstantsBgSmoothing.swift
+src     xDrip/Managers/PostProcessing/Smoothing/ExponentialBgSmoothing.swift
+src     xDrip/Managers/PostProcessing/Smoothing/KalmanBgSmoothing.swift
+src     xDrip/Managers/PostProcessing/Smoothing/LoessBgSmoothing.swift
+src     xDrip/Managers/PostProcessing/Smoothing/SavitzkyGolayBgSmoothing.swift
+src     xDrip/Managers/PostProcessing/Smoothing/HampelSavitzkyGolayBgSmoothing.swift
+test    xDrip Tests/AlgorithmCoverageSmoothingTests.swift
+src     xDrip/Managers/PostProcessing/BgSmoothingAlgorithmPlugin.swift
+src     xDrip/Managers/PostProcessing/Smoothing/SavitzkyGolaySmoothableArray.swift
+include _texts-home-view
+include _foundation-extensions
+# These two constants files have no `import Foundation` (Apple platforms leak imports between files
+# of a module, Linux does not); `members` adds it.
+members xDrip/Constants/ConstantsNightscout.swift | ConstantsNightscout | minimiumTimeBetweenTwoReadingsInMinutes
+members xDrip/Constants/ConstantsBGGraphBuilder.swift | ConstantsBGGraphBuilder | maxSlopeInMinutes
+src     xDrip/Extensions/Double+Smoothable.swift
