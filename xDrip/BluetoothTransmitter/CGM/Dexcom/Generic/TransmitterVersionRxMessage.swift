@@ -12,7 +12,7 @@ import Foundation
 struct TransmitterVersionRxMessage: TransmitterRxMessage {
     let status: UInt8
     let firmwareVersionAsData: Data
-    var transmitterExpiryInDays: UInt8
+    var transmitterExpiryInDays: UInt16
     
     init?(data: Data) {
         guard data.count == 19 && data.isCRCValid else {
@@ -25,7 +25,8 @@ struct TransmitterVersionRxMessage: TransmitterRxMessage {
 
         status = data[1]
         firmwareVersionAsData = data[2..<6]
-        transmitterExpiryInDays = (data[14] << 8) + data[13]
+        // 16-bit little endian; the high byte is widened first, shifting a UInt8 by 8 drops it
+        transmitterExpiryInDays = UInt16(data[14]) << 8 | UInt16(data[13])
     }
 
     /// firmware version in readable format
