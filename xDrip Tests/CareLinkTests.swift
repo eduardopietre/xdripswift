@@ -2431,15 +2431,17 @@ final class CareLinkTests: XCTestCase {
     }
 
     func testSlowLogoutCannotClearANewerSession() async throws {
-        URLProtocolStub.logoutDelay = 0.2
+        URLProtocolStub.logoutDelay = 1
         let store = CareLinkMemoryTokenStore()
         try store.save(credential())
         let client = CareLinkClient(session: URLSession(configuration: stubConfiguration()), tokenStore: store, now: { self.now })
 
         let logout = Task { await client.revokeAndClear() }
-        for _ in 0 ..< 100 {
-            if try store.load() == nil { break }
-            await Task.yield()
+        // Wait for the local clear by time, not by a number of yields: under load the logout task
+        // can need longer to start. The revoke request is still held for a second after that.
+        let deadline = Date().addingTimeInterval(5)
+        while try store.load() != nil, Date() < deadline {
+            try await Task.sleep(nanoseconds: 10_000_000)
         }
         XCTAssertNil(try store.load())
 

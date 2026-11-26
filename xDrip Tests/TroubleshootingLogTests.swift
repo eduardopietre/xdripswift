@@ -1325,7 +1325,9 @@ final class TroubleshootingLogTests: XCTestCase {
             return referenceDate
         })
         store.record(.standard(.app(.started), timestamp: referenceDate))
-        await fulfillment(of: [enteredStore], timeout: 2)
+        // Only waits until the store's utility queue runs the write; under the load of parallel
+        // simulator clones that took more than 2 seconds. What is measured below is the main thread.
+        await fulfillment(of: [enteredStore], timeout: 10)
 
         let start = Date()
         let appInfo = appInfo
