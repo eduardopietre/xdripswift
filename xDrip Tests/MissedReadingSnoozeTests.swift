@@ -3,11 +3,11 @@ import UserNotifications
 @testable import xdrip
 
 final class MissedReadingSnoozeTests: XCTestCase {
-    private var center: MissedReadingNotificationCenter!
+    private var center: RecordingNotificationCenter!
 
     override func setUp() async throws {
         try await super.setUp()
-        center = MissedReadingNotificationCenter()
+        center = RecordingNotificationCenter()
     }
 
     @MainActor func testPreSnoozeReplacesExistingNotificationWhileReadingsAreMissing() async throws {
@@ -201,33 +201,9 @@ final class MissedReadingSnoozeTests: XCTestCase {
     }
 }
 
-/// Records notification changes without requiring simulator notification permission.
-private final class MissedReadingNotificationCenter: AlertNotificationScheduling {
-    private var requests = [String: UNNotificationRequest]()
-
-    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: (@Sendable (Error?) -> Void)?) {
-        requests[request.identifier] = request
-        completionHandler?(nil)
-    }
-
-    func add(_ request: UNNotificationRequest) async throws {
-        requests[request.identifier] = request
-    }
-
-    func pendingNotificationRequests() async -> [UNNotificationRequest] {
-        Array(requests.values)
-    }
-
-    func removeDeliveredNotifications(withIdentifiers identifiers: [String]) {}
-
-    func removePendingNotificationRequests(withIdentifiers identifiers: [String]) {
-        for identifier in identifiers { requests.removeValue(forKey: identifier) }
-    }
-}
-
 @MainActor
 private struct ExpiryCleanupScheduler: SensorExpiryNotificationScheduling {
-    let center: MissedReadingNotificationCenter
+    let center: RecordingNotificationCenter
 
     func pendingRequests() async -> [UNNotificationRequest] {
         await center.pendingNotificationRequests()

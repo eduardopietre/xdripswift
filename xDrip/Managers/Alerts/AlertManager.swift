@@ -10,6 +10,8 @@ protocol AlertNotificationScheduling: AnyObject {
     func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: (@Sendable (Error?) -> Void)?)
     func removeDeliveredNotifications(withIdentifiers identifiers: [String])
     func removePendingNotificationRequests(withIdentifiers identifiers: [String])
+    func getNotificationCategories(completionHandler: @escaping @Sendable (Set<UNNotificationCategory>) -> Void)
+    func setNotificationCategories(_ categories: Set<UNNotificationCategory>)
 }
 
 extension UNUserNotificationCenter: AlertNotificationScheduling {}
@@ -132,7 +134,7 @@ public class AlertManager: NSObject {
         initAlertNotificationIdentiferArray()
         
         // need to set the alert notification categories, get the existing categories first, call setAlertNotificationCategories in competionhandler
-        UNUserNotificationCenter.current().getNotificationCategories(completionHandler: setAlertNotificationCategories(_:))
+        uNUserNotificationCenter.getNotificationCategories(completionHandler: { [weak self] in self?.setAlertNotificationCategories($0) })
         
         // Opening the app acknowledges any sound still playing.
         ApplicationManager.shared.addClosureToRunWhenAppWillEnterForeground(key: applicationManagerKeyStopPlayingSound, closure: { [weak self] in
@@ -1273,8 +1275,8 @@ public class AlertManager: NSObject {
         mutableExistingCategories.insert(generalCategory)
         mutableExistingCategories.insert(dismissCategory)
         
-        // get UNUserNotificationCenter and set new list of categories
-        UNUserNotificationCenter.current().setNotificationCategories(mutableExistingCategories)
+        // set the new list of categories on the notification center the manager was given
+        uNUserNotificationCenter.setNotificationCategories(mutableExistingCategories)
     }
 
     /// when user changes M5Stack related settings, then the transmitter need to get that info, add observers

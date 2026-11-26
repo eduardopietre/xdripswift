@@ -220,13 +220,15 @@ final class RepeatingAlarmTests: XCTestCase {
         XCTAssertEqual(h.players[1].starts, 0)
     }
 
-    private func setupAlarm() -> (CoreDataManager, AlertManager, AlertType, AudioHarness) {
+    /// The alert manager gets its own notification center, so no request reaches the simulator's
+    /// center, which every test shares.
+    private func setupAlarm(center: RecordingNotificationCenter = RecordingNotificationCenter()) -> (CoreDataManager, AlertManager, AlertType, AudioHarness) {
         let core = CoreDataManager(inMemoryModelName: "xdrip")
         let type = AlertType(enabled: true, name: "Repeating alarm", overrideMute: true, snooze: true,
                              snoozePeriod: 30, vibrate: false, soundName: "xDrip", alertEntries: nil,
                              nsManagedObjectContext: core.mainManagedObjectContext, repeatSound: true)
         let h = AudioHarness()
-        let manager = AlertManager(coreDataManager: core, soundPlayer: h.sound)
+        let manager = AlertManager(coreDataManager: core, soundPlayer: h.sound, notificationCenter: center)
         return (core, manager, type, h)
     }
 
@@ -442,10 +444,8 @@ final class RepeatingAlarmTests: XCTestCase {
     }
 
     func testPendingOwningNotificationSurvivesFreshReadingCleanup() async throws {
-        let center = UNUserNotificationCenter.current()
-        let granted = try await center.requestAuthorization(options: [.alert, .sound, .provisional])
-        XCTAssertTrue(granted)
-        let (core, manager, type, h) = setupAlarm()
+        let center = RecordingNotificationCenter()
+        let (core, manager, type, h) = setupAlarm(center: center)
         let wasMaster = UserDefaults.standard.isMaster
         let until = UserDefaults.standard.snoozeAllAlertsUntilDate
         let identifiers = [AlertKind.low.notificationIdentifier(), AlertKind.high.notificationIdentifier()]

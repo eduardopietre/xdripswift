@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		696F798BFA5D98F66A36FA46 /* RecordingNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60644165449FA44E98DCF671 /* RecordingNotificationCenter.swift */; };
 		0D8AF78C5F87A3F71A1E1501 /* LibreBlankCalibrationInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */; };
 		23049534152CD62C2DB5045A /* TransmitterIdValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422DDC2E7B0ACE6BE6E0BB7 /* TransmitterIdValidationTests.swift */; };
 		18266CF1E223D047CA6D6B34 /* TransmitterVersionRxMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D798052C5242D0007777C6 /* TransmitterVersionRxMessageTests.swift */; };
@@ -1027,6 +1028,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		60644165449FA44E98DCF671 /* RecordingNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingNotificationCenter.swift; sourceTree = "<group>"; };
 		799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreBlankCalibrationInfoTests.swift; sourceTree = "<group>"; };
 		7422DDC2E7B0ACE6BE6E0BB7 /* TransmitterIdValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterIdValidationTests.swift; sourceTree = "<group>"; };
 		B2D798052C5242D0007777C6 /* TransmitterVersionRxMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterVersionRxMessageTests.swift; sourceTree = "<group>"; };
@@ -2934,6 +2936,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				60644165449FA44E98DCF671 /* RecordingNotificationCenter.swift */,
 				799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */,
 				7422DDC2E7B0ACE6BE6E0BB7 /* TransmitterIdValidationTests.swift */,
 				B2D798052C5242D0007777C6 /* TransmitterVersionRxMessageTests.swift */,
@@ -4863,6 +4866,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				696F798BFA5D98F66A36FA46 /* RecordingNotificationCenter.swift in Sources */,
 				0D8AF78C5F87A3F71A1E1501 /* LibreBlankCalibrationInfoTests.swift in Sources */,
 				23049534152CD62C2DB5045A /* TransmitterIdValidationTests.swift in Sources */,
 				18266CF1E223D047CA6D6B34 /* TransmitterVersionRxMessageTests.swift in Sources */,
