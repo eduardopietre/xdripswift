@@ -2089,6 +2089,33 @@ extension TroubleshootingLogTests {
         XCTAssertEqual(TroubleshootingLogStore(fileURL: fixture.fileURL).snapshot().map(\.kind), entries.map(\.kind))
     }
 
+    /// An authentication start is shown as pairing only right after the user adds or connects a
+    /// sensor; replaying the stored history must not turn a later retry into a new pairing row.
+    func testAuthenticationStartIsShownOnlyAfterAnAddOrConnectAction() throws {
+        let fixture = makeStore()
+        defer { removeFixture(fixture.directory) }
+        let activities: [TroubleshootingCGMActivity] = [.addingStarted, .authenticationStarted, .authenticationSucceeded, .authenticationStarted]
+        for (index, activity) in activities.enumerated() {
+            fixture.store.record(.standard(.cgm(source: .libre3, activity: activity), timestamp: referenceDate.addingTimeInterval(Double(index))))
+        }
+        let starts = fixture.store.snapshot().filter { $0.kind == .cgm(source: .libre3, activity: .authenticationStarted) }
+        XCTAssertEqual(starts.map(\.timestamp), [referenceDate.addingTimeInterval(1)], "only the start that follows the user's action")
+    }
+
+    /// A failed, cancelled or timed-out NFC scan, or a disconnect, ends the user's action: an
+    /// authentication start after it is a retry, not the first pairing of that action.
+    func testAuthenticationStartAfterAnAbandonedActionIsARetry() throws {
+        for ending in [TroubleshootingCGMActivity.nfcScanFailed, .nfcScanCancelled, .nfcScanTimedOut, .nfcUnavailable, .disconnected, .removed] {
+            let fixture = makeStore()
+            defer { removeFixture(fixture.directory) }
+            let activities: [TroubleshootingCGMActivity] = [.nfcScanStarted, ending, .authenticationStarted]
+            for (index, activity) in activities.enumerated() {
+                fixture.store.record(.standard(.cgm(source: .libre3, activity: activity), timestamp: referenceDate.addingTimeInterval(Double(index))))
+            }
+            XCTAssertFalse(fixture.store.snapshot().contains { $0.kind == .cgm(source: .libre3, activity: .authenticationStarted) }, "after \(ending)")
+        }
+    }
+
     func testLibre3ProvisioningKeepsOnlyProblemAndRecovery() throws {
         let fixture = makeStore()
         defer { removeFixture(fixture.directory) }

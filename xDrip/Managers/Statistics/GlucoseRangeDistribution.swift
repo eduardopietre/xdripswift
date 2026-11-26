@@ -41,17 +41,19 @@ enum ProportionalIntegerAllocator {
         var allocatedValues = scaledValues.map { Int(floor($0)) }
         let unitsStillToAllocate = total - allocatedValues.reduce(0, +)
 
-        // Stable index ordering makes exact fractional ties deterministic. In a TIR distribution
+        // Stable index ordering makes fractional ties deterministic. In a TIR distribution
         // this means identical input always produces identical display output on every surface.
+        // Remainders that differ only by floating-point noise (3.6 and 87.6 both leave 0.6, but
+        // not bit for bit) are ties too, so the noise cannot pick the winner.
+        // The remainders are compared rounded to nine decimals rather than with a tolerance: rounding
+        // keeps "equal" transitive, which sorting requires.
+        let roundedRemainders = scaledValues.map { (($0 - floor($0)) * 1e9).rounded() }
         let indicesByLargestRemainder = scaledValues.indices.sorted { leftIndex, rightIndex in
-            let leftRemainder = scaledValues[leftIndex] - floor(scaledValues[leftIndex])
-            let rightRemainder = scaledValues[rightIndex] - floor(scaledValues[rightIndex])
-
-            if leftRemainder == rightRemainder {
+            if roundedRemainders[leftIndex] == roundedRemainders[rightIndex] {
                 return leftIndex < rightIndex
             }
 
-            return leftRemainder > rightRemainder
+            return roundedRemainders[leftIndex] > roundedRemainders[rightIndex]
         }
 
         for index in indicesByLargestRemainder.prefix(max(0, unitsStillToAllocate)) {

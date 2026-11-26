@@ -1261,6 +1261,10 @@ final class TroubleshootingLogStore {
         var pendingBluetoothConnectionName: TroubleshootingBluetoothDeviceName?
         var pendingCGMConnection: TroubleshootingLogSource?
         var cgmAuthentication = [TroubleshootingLogSource: TroubleshootingCGMActivity]()
+        // Sources the user just added or asked to connect. Their first authentication start is
+        // setup context; any other start is a retry. A healthy reconnect's success is not kept in
+        // the history, so replaying the history cannot rely on it to recognise a retry.
+        var cgmAwaitingFirstAuthentication = Set<TroubleshootingLogSource>()
         var cgmCredentialProblems = Set<TroubleshootingLogSource>()
         var cgmSensorStatus = [TroubleshootingLogSource: TroubleshootingCGMActivity]()
         var lastAppActivity: TroubleshootingAppActivity?
@@ -1372,6 +1376,7 @@ final class TroubleshootingLogStore {
                     // inspecting an arbitrary CoreBluetooth peripheral name later.
                     result.append(entry)
                     pendingCGMConnection = source
+                    cgmAwaitingFirstAuthentication.insert(source)
                     if activity == .addingStarted {
                         cgmAuthentication.removeValue(forKey: source)
                         cgmSensorStatus.removeValue(forKey: source)
@@ -1395,6 +1400,8 @@ final class TroubleshootingLogStore {
                     // normal between-reading radio disconnect, so every user action remains visible.
                     result.append(entry)
                     pendingCGMConnection = nil
+                    // The Add/Connect action is over, so a later authentication start is a retry.
+                    cgmAwaitingFirstAuthentication.remove(source)
                     // A manual disconnect does not resolve an authentication or sensor problem.
                     if activity == .removed {
                         cgmAuthentication.removeValue(forKey: source)
@@ -1404,25 +1411,32 @@ final class TroubleshootingLogStore {
                     // One NFC session has one start and one outcome. Retries are separate actions and
                     // are useful when explaining why Libre Bluetooth streaming never began.
                     result.append(entry)
-                    if activity == .nfcScanStarted { pendingCGMConnection = source }
+                    if activity == .nfcScanStarted {
+                        pendingCGMConnection = source
+                        cgmAwaitingFirstAuthentication.insert(source)
+                    }
                 case .nfcScanFailed, .nfcScanCancelled, .nfcScanTimedOut, .nfcUnavailable:
                     // An unsuccessful NFC session ends this Add/Connect attempt. Clearing the pending
                     // source is essential: a later connection from some other configured CGM must not
-                    // be misreported as the completion of the abandoned Libre action.
+                    // be misreported as the completion of the abandoned Libre action, and a later
+                    // authentication start is a retry, not this action's first pairing.
                     result.append(entry)
                     pendingCGMConnection = nil
+                    cgmAwaitingFirstAuthentication.remove(source)
                 case .authenticationStarted:
                     // Fresh pairing is useful setup context. Retrying a failure must not reset it.
-                    if cgmAuthentication[source] == nil {
+                    if cgmAuthentication[source] == nil, cgmAwaitingFirstAuthentication.remove(source) != nil {
                         result.append(entry)
                         cgmAuthentication[source] = activity
                     }
                 case .authenticationFailed, .recoveryRequired:
+                    cgmAwaitingFirstAuthentication.remove(source)
                     if cgmAuthentication[source] != activity {
                         result.append(entry)
                         cgmAuthentication[source] = activity
                     }
                 case .authenticationSucceeded:
+                    cgmAwaitingFirstAuthentication.remove(source)
                     // A healthy cached reconnect is normal, not a new pairing or recovery.
                     if cgmAuthentication[source] == .authenticationFailed || cgmAuthentication[source] == .recoveryRequired {
                         result.append(entry.replacingKind(.cgm(source: source, activity: .authenticationRecovered)))

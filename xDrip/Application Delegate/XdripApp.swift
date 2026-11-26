@@ -34,7 +34,17 @@ import SwiftUI
         )
         _stateModel = StateObject(wrappedValue: stateModel)
 
-        applicationCoordinator.start(rootTabStateModel: stateModel)
+        // Unit tests run inside this app. Started services would observe and rewrite the same
+        // UserDefaults.standard keys the tests set, and reach Bluetooth, follower downloads and
+        // timers, so a test result would depend on what the app happened to do meanwhile.
+        if !Self.isHostingUnitTests {
+            applicationCoordinator.start(rootTabStateModel: stateModel)
+        }
+    }
+
+    /// XCTest sets this variable in the process it injects the test bundle into.
+    private static var isHostingUnitTests: Bool {
+        ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
     }
 
     var body: some Scene {
