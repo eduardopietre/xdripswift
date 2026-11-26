@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		FC7FF8A1E4123943B0904AE5 /* DexcomCoverageMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78390C4FD7EF3A2CC243EE83 /* DexcomCoverageMessageTests.swift */; };
 		A7CD7586E6E2ABBC1BA12E40 /* DexcomTxMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F570D36E98124F35D9D95 /* DexcomTxMessageTests.swift */; };
 		7D28F8BCCEFC112FA7B89F73 /* DexcomRxMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7AD22DC4435BFF5FEA31A4 /* DexcomRxMessageTests.swift */; };
 		27F40A4D83F45A9E9E4C7818 /* DataFlowPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A85FD701F8FD257D01E02 /* DataFlowPolicyTests.swift */; };
@@ -1064,6 +1065,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		78390C4FD7EF3A2CC243EE83 /* DexcomCoverageMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomCoverageMessageTests.swift; sourceTree = "<group>"; };
 		8E8F570D36E98124F35D9D95 /* DexcomTxMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomTxMessageTests.swift; sourceTree = "<group>"; };
 		3C7AD22DC4435BFF5FEA31A4 /* DexcomRxMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomRxMessageTests.swift; sourceTree = "<group>"; };
 		990A85FD701F8FD257D01E02 /* DataFlowPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFlowPolicyTests.swift; sourceTree = "<group>"; };
@@ -3008,6 +3010,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				78390C4FD7EF3A2CC243EE83 /* DexcomCoverageMessageTests.swift */,
 				8E8F570D36E98124F35D9D95 /* DexcomTxMessageTests.swift */,
 				3C7AD22DC4435BFF5FEA31A4 /* DexcomRxMessageTests.swift */,
 				990A85FD701F8FD257D01E02 /* DataFlowPolicyTests.swift */,
@@ -4974,6 +4977,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				FC7FF8A1E4123943B0904AE5 /* DexcomCoverageMessageTests.swift in Sources */,
 				A7CD7586E6E2ABBC1BA12E40 /* DexcomTxMessageTests.swift in Sources */,
 				7D28F8BCCEFC112FA7B89F73 /* DexcomRxMessageTests.swift in Sources */,
 				27F40A4D83F45A9E9E4C7818 /* DataFlowPolicyTests.swift in Sources */,
