@@ -553,12 +553,12 @@ class DexcomShareFollowManager: NSObject {
     ///     - dexcomDateString: The Dexcom date string.
     /// - Returns: Date if parsing succeeds, nil otherwise.
     static func parseDexcomDate(dexcomDateString: String) -> Date? {
-        // "/Date(1426780716000-0700)/" or "/Date(1426784306000)/"
-        // extract epoch millis before the optional offset
-        let digits = dexcomDateString.filter { "-0123456789".contains($0) }
-        // find leading integer (ms)
-        if let range = digits.range(of: "^-?\\d+", options: .regularExpression) {
-            let millisecondsString = String(digits[range])
+        // "/Date(1426780716000-0700)/", "Date(1426780716000+0100)" or "/Date(1426784306000)/"
+        // The epoch milliseconds are UTC; the optional offset only describes the local time, so it is
+        // ignored. Take the first number of the text itself: removing other characters first glued a
+        // "+0100" offset onto the milliseconds.
+        if let range = dexcomDateString.range(of: "-?\\d+", options: .regularExpression) {
+            let millisecondsString = String(dexcomDateString[range])
             if let milliseconds = Double(millisecondsString) {
                 return Date(timeIntervalSince1970: milliseconds / 1000)
             }
