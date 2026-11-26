@@ -145,6 +145,11 @@ class LibreMeasurement {
         round(glucoseValueFromRaw(libreCalibrationInfo: libreCalibrationInfo))
     }
     
+    /// the index in the calibration tables for the i2 value of the calibration info, nil if the tables have no entry for it
+    static func calibrationTableIndex(forI2 i2: Int) -> Int? {
+        return i2 - 1
+    }
+    
     func glucoseValueFromRaw(libreCalibrationInfo: LibreCalibrationInfo) -> Double {
         let x : Double = 1000 + 71500;
         let y : Double = 1000;
@@ -177,8 +182,10 @@ class LibreMeasurement {
         
         let g3 = g1 * g2
         
-        let v1 = t1[libreCalibrationInfo.i2 - 1]
-        let v2 = t2[libreCalibrationInfo.i2 - 1]
+        guard let tableIndex = Self.calibrationTableIndex(forI2: libreCalibrationInfo.i2) else { return 0 }
+        
+        let v1 = t1[tableIndex]
+        let v2 = t2[tableIndex]
         
         let res = (g3 - v1) / v2;
         

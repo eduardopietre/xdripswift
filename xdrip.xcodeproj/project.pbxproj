@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		0D8AF78C5F87A3F71A1E1501 /* LibreBlankCalibrationInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */; };
 		23049534152CD62C2DB5045A /* TransmitterIdValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7422DDC2E7B0ACE6BE6E0BB7 /* TransmitterIdValidationTests.swift */; };
 		18266CF1E223D047CA6D6B34 /* TransmitterVersionRxMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D798052C5242D0007777C6 /* TransmitterVersionRxMessageTests.swift */; };
 		8F594004574ACF6790E156BE /* NightscoutDeviceStatusFlagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364873034CBE35571F9EB42 /* NightscoutDeviceStatusFlagTests.swift */; };
@@ -1026,6 +1027,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreBlankCalibrationInfoTests.swift; sourceTree = "<group>"; };
 		7422DDC2E7B0ACE6BE6E0BB7 /* TransmitterIdValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterIdValidationTests.swift; sourceTree = "<group>"; };
 		B2D798052C5242D0007777C6 /* TransmitterVersionRxMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterVersionRxMessageTests.swift; sourceTree = "<group>"; };
 		B364873034CBE35571F9EB42 /* NightscoutDeviceStatusFlagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutDeviceStatusFlagTests.swift; sourceTree = "<group>"; };
@@ -2932,6 +2934,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */,
 				7422DDC2E7B0ACE6BE6E0BB7 /* TransmitterIdValidationTests.swift */,
 				B2D798052C5242D0007777C6 /* TransmitterVersionRxMessageTests.swift */,
 				B364873034CBE35571F9EB42 /* NightscoutDeviceStatusFlagTests.swift */,
@@ -4860,6 +4863,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				0D8AF78C5F87A3F71A1E1501 /* LibreBlankCalibrationInfoTests.swift in Sources */,
 				23049534152CD62C2DB5045A /* TransmitterIdValidationTests.swift in Sources */,
 				18266CF1E223D047CA6D6B34 /* TransmitterVersionRxMessageTests.swift in Sources */,
 				8F594004574ACF6790E156BE /* NightscoutDeviceStatusFlagTests.swift in Sources */,
