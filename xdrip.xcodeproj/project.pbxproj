@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		73EA643596A6E712972055DE /* NightscoutFollowTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DBD6D99529E48FEC18408C /* NightscoutFollowTypeTests.swift */; };
 		1FF705BD921026E55859EF33 /* NightscoutProfileModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0A537E406C6E986F15404E /* NightscoutProfileModelsTests.swift */; };
 		6860E70CA787326606A67E7B /* NightscoutCoverageModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4336E888F3D0C854C0517B0 /* NightscoutCoverageModelTests.swift */; };
 		3A057156C2B997FE3E4BF531 /* NightscoutCoverageImportServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746CE7AE2B830EC54EC581D6 /* NightscoutCoverageImportServiceTests.swift */; };
@@ -1094,6 +1095,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		87DBD6D99529E48FEC18408C /* NightscoutFollowTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutFollowTypeTests.swift; sourceTree = "<group>"; };
 		BE0A537E406C6E986F15404E /* NightscoutProfileModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutProfileModelsTests.swift; sourceTree = "<group>"; };
 		E4336E888F3D0C854C0517B0 /* NightscoutCoverageModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageModelTests.swift; sourceTree = "<group>"; };
 		746CE7AE2B830EC54EC581D6 /* NightscoutCoverageImportServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageImportServiceTests.swift; sourceTree = "<group>"; };
@@ -3068,6 +3070,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				87DBD6D99529E48FEC18408C /* NightscoutFollowTypeTests.swift */,
 				BE0A537E406C6E986F15404E /* NightscoutProfileModelsTests.swift */,
 				E4336E888F3D0C854C0517B0 /* NightscoutCoverageModelTests.swift */,
 				746CE7AE2B830EC54EC581D6 /* NightscoutCoverageImportServiceTests.swift */,
@@ -5064,6 +5067,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				73EA643596A6E712972055DE /* NightscoutFollowTypeTests.swift in Sources */,
 				1FF705BD921026E55859EF33 /* NightscoutProfileModelsTests.swift in Sources */,
 				6860E70CA787326606A67E7B /* NightscoutCoverageModelTests.swift in Sources */,
 				3A057156C2B997FE3E4BF531 /* NightscoutCoverageImportServiceTests.swift in Sources */,
