@@ -148,6 +148,11 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
     ///
     /// Must be read/written in main thread !!
     private var nightscoutSyncRequired = false
+
+    /// When each Nightscout id missing from a treatment download was last looked up, so that the next
+    /// syncs look up the others first. Only ids that are still candidates are kept.
+    private var remoteDeletionLastLookupByID = [String: Date]()
+    private let remoteDeletionLastLookupLock = NSLock()
     
     /// dateFormatter to correctly decode the received timestamps into UTC
     private lazy var dateFormatter: DateFormatter = {
@@ -1328,11 +1333,18 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
         return nil
     }
     
-    /// The local treatments checked for deletion at Nightscout after a treatment download (#624).
+    /// The local treatments checked for deletion at Nightscout after a treatment download: all of
+    /// them within the download window, not only the latest 50 used for uploading. With an AID that
+    /// records a temp basal every few minutes those 50 cover only a few hours, so a meal edited in
+    /// iAPS (which deletes and re-uploads it) later than that stayed in the list twice (#624).
     /// - parameters:
     ///     - treatmentsToSync: the latest treatments used for uploading during this sync
     func treatmentsForRemoteDeletionCheck(treatmentsToSync: [TreatmentEntry]) -> [TreatmentEntry] {
-        treatmentsToSync
+        let downloadWindow = TimeInterval(hours: ConstantsNightscout.maxHoursTreatmentsToDownload)
+        let windowTreatments = treatmentEntryAccessor.getLatestTreatments(limit: nil, howOld: downloadWindow)
+        // Keep any treatment of this sync that the window query does not return.
+        let windowIDs = Set(windowTreatments.map(\.objectID))
+        return windowTreatments + treatmentsToSync.filter { !windowIDs.contains($0.objectID) }
     }
 
     /// A missing bulk result is only a candidate for deletion. An exact-id GET must return an
@@ -1351,8 +1363,15 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
         let grouped = Dictionary(grouping: candidates) { treatment in
             String(treatment.id.dropLast(treatment.treatmentType.idExtension().count))
         }
+        // Limit the requests of one sync; ids looked up by earlier syncs come last, so the remaining
+        // ones are checked at the next syncs.
+        let lastLookupByID: [String: Date] = remoteDeletionLastLookupLock.withLock {
+            remoteDeletionLastLookupByID = remoteDeletionLastLookupByID.filter { grouped[$0.key] != nil }
+            return remoteDeletionLastLookupByID
+        }
         let remoteIDs = RemoteTreatmentDeletionLookupPolicy.remoteIDsToLookUp(
-            newestDateByRemoteID: grouped.mapValues { treatments in treatments.map(\.date).max() ?? .distantPast }
+            newestDateByRemoteID: grouped.mapValues { treatments in treatments.map(\.date).max() ?? .distantPast },
+            lastLookupByRemoteID: lastLookupByID
         )
         var deletedCount = 0
 
@@ -1363,6 +1382,7 @@ public class NightscoutSyncManager: NSObject, ObservableObject {
                 return
             }
             let remoteID = remoteIDs[index]
+            remoteDeletionLastLookupLock.withLock { remoteDeletionLastLookupByID[remoteID] = Date() }
             lookup(remoteID) { data, succeeded in
                 self.coreDataManager.mainManagedObjectContext.performAndWait {
                     if succeeded, let data,
@@ -2334,9 +2354,16 @@ extension NightscoutSyncError: CustomStringConvertible {
 }
 
 /// Decides which treatments missing from a Nightscout download are looked up one by one to
-/// confirm that they were deleted at Nightscout (#624).
+/// confirm that they were deleted at Nightscout.
+///
+/// Every local treatment of the download window is a candidate (#624). When Nightscout returns
+/// fewer treatments than the window holds (it sends at most 1000 by default), many of them are
+/// missing from the download, and an exact-id request for each would run hundreds of requests
+/// on every sync. The lookups are therefore limited per sync, newest first: a treatment edited or
+/// deleted in an AID app is usually recent, and the oldest records are the ones a truncated
+/// download leaves out.
 enum RemoteTreatmentDeletionLookupPolicy {
-    /// Most exact-id requests during one sync.
+    /// Most exact-id requests during one sync, as many as the latest treatments checked before #624.
     static let maximumLookupsPerSync = 50
 
     /// - parameters:
@@ -2345,6 +2372,18 @@ enum RemoteTreatmentDeletionLookupPolicy {
     ///     - limit: the most ids to return
     /// - returns: the Nightscout ids to look up, in the order to look them up
     static func remoteIDsToLookUp(newestDateByRemoteID: [String: Date], lastLookupByRemoteID: [String: Date] = [:], limit: Int = maximumLookupsPerSync) -> [String] {
-        newestDateByRemoteID.keys.filter { !$0.isEmpty }.sorted()
+        let lookups = newestDateByRemoteID
+            .filter { !$0.key.isEmpty }
+            .sorted { first, second in
+                // Ids never looked up first, then the ones looked up longest ago, so that when more
+                // than `limit` ids are missing from the download, the next syncs check the others.
+                let firstLookup = lastLookupByRemoteID[first.key] ?? .distantPast
+                let secondLookup = lastLookupByRemoteID[second.key] ?? .distantPast
+                if firstLookup != secondLookup { return firstLookup < secondLookup }
+                // then newest first; the id keeps the order stable for equal dates
+                return first.value != second.value ? first.value > second.value : first.key < second.key
+            }
+            .prefix(max(limit, 0))
+        return lookups.map(\.key)
     }
 }
