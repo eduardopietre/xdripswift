@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		AA321704F4EC0DDA17EE4639 /* SplitMix64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163BA79950F3C7132E0FC44A /* SplitMix64.swift */; };
 		D3FA4F81B614286AD8F5599D /* TestScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9197D83BBB0A1DA688F71EA7 /* TestScreenshots.swift */; };
 		696F798BFA5D98F66A36FA46 /* RecordingNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60644165449FA44E98DCF671 /* RecordingNotificationCenter.swift */; };
 		0D8AF78C5F87A3F71A1E1501 /* LibreBlankCalibrationInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */; };
@@ -1029,6 +1030,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		163BA79950F3C7132E0FC44A /* SplitMix64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMix64.swift; sourceTree = "<group>"; };
 		9197D83BBB0A1DA688F71EA7 /* TestScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreenshots.swift; sourceTree = "<group>"; };
 		60644165449FA44E98DCF671 /* RecordingNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingNotificationCenter.swift; sourceTree = "<group>"; };
 		799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreBlankCalibrationInfoTests.swift; sourceTree = "<group>"; };
@@ -2938,6 +2940,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				163BA79950F3C7132E0FC44A /* SplitMix64.swift */,
 				9197D83BBB0A1DA688F71EA7 /* TestScreenshots.swift */,
 				60644165449FA44E98DCF671 /* RecordingNotificationCenter.swift */,
 				799D2EA17AA5EE55F6B20EA5 /* LibreBlankCalibrationInfoTests.swift */,
@@ -4869,6 +4872,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				AA321704F4EC0DDA17EE4639 /* SplitMix64.swift in Sources */,
 				D3FA4F81B614286AD8F5599D /* TestScreenshots.swift in Sources */,
 				696F798BFA5D98F66A36FA46 /* RecordingNotificationCenter.swift in Sources */,
 				0D8AF78C5F87A3F71A1E1501 /* LibreBlankCalibrationInfoTests.swift in Sources */,
