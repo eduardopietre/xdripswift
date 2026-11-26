@@ -1236,15 +1236,12 @@ final class CareLinkTests: XCTestCase {
         UserDefaults.standard.isMaster = false
         UserDefaults.standard.followerDataSourceType = .careLink
         UserDefaults.standard.removeObject(forKey: UserDefaults.Key.careLinkTimestampRepairCompleted.rawValue)
-        let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let beforeURL = directory.appendingPathComponent("CareLinkRepairDemoBefore.sqlite")
-        let afterURL = directory.appendingPathComponent("CareLinkRepairDemoAfter.sqlite")
-        for url in [beforeURL, afterURL] {
-            for suffix in ["", "-wal", "-shm"] {
-                let path = url.path + suffix
-                if FileManager.default.fileExists(atPath: path) { try FileManager.default.removeItem(atPath: path) }
-            }
-        }
+        // Stores of this test only, removed afterwards, so no other test or run sees them.
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let beforeURL = directory.appendingPathComponent("CareLinkRepairBefore.sqlite")
+        let afterURL = directory.appendingPathComponent("CareLinkRepairAfter.sqlite")
         let end = Date(timeIntervalSince1970: Date().timeIntervalSince1970.rounded(.down))
         // The repair needs a clock shift confirmed by three events on the same UTC day. When the
         // run ends between 22:00 and 23:50 UTC, the first one or two hourly groups of the oldest
@@ -1288,7 +1285,7 @@ final class CareLinkTests: XCTestCase {
         }
         XCTAssertTrue(core.saveChangesSynchronously())
         try core.disconnectPersistentStoresForTesting()
-        // These two test-owned stores also allow visual before/after checks in an isolated simulator.
+        // The repair runs on a copy, so both stores can be checked below.
         for suffix in ["", "-wal", "-shm"] {
             let source = beforeURL.path + suffix
             if FileManager.default.fileExists(atPath: source) {
