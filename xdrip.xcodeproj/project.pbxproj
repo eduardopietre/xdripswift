@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		8F594004574ACF6790E156BE /* NightscoutDeviceStatusFlagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364873034CBE35571F9EB42 /* NightscoutDeviceStatusFlagTests.swift */; };
 		D77418CCFB9AC99804984E4D /* DailyTimeInRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EDDE49630D2BB4353FDD1 /* DailyTimeInRangeTests.swift */; };
 		F9B2AEF4FBB276832FE09353 /* NightscoutDeviceStatusDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009567106A12EDA5E6C8017 /* NightscoutDeviceStatusDisplayTests.swift */; };
 		30355EE0A75EC39A434FBDE6 /* DexcomShareDateParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3D7D9F1C385D1E86F285 /* DexcomShareDateParsingTests.swift */; };
@@ -1023,6 +1024,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		B364873034CBE35571F9EB42 /* NightscoutDeviceStatusFlagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutDeviceStatusFlagTests.swift; sourceTree = "<group>"; };
 		275EDDE49630D2BB4353FDD1 /* DailyTimeInRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTimeInRangeTests.swift; sourceTree = "<group>"; };
 		4009567106A12EDA5E6C8017 /* NightscoutDeviceStatusDisplayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutDeviceStatusDisplayTests.swift; sourceTree = "<group>"; };
 		4A6B3D7D9F1C385D1E86F285 /* DexcomShareDateParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomShareDateParsingTests.swift; sourceTree = "<group>"; };
@@ -2926,6 +2928,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				B364873034CBE35571F9EB42 /* NightscoutDeviceStatusFlagTests.swift */,
 				275EDDE49630D2BB4353FDD1 /* DailyTimeInRangeTests.swift */,
 				4009567106A12EDA5E6C8017 /* NightscoutDeviceStatusDisplayTests.swift */,
 				4A6B3D7D9F1C385D1E86F285 /* DexcomShareDateParsingTests.swift */,
@@ -4851,6 +4854,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				8F594004574ACF6790E156BE /* NightscoutDeviceStatusFlagTests.swift in Sources */,
 				D77418CCFB9AC99804984E4D /* DailyTimeInRangeTests.swift in Sources */,
 				F9B2AEF4FBB276832FE09353 /* NightscoutDeviceStatusDisplayTests.swift in Sources */,
 				30355EE0A75EC39A434FBDE6 /* DexcomShareDateParsingTests.swift in Sources */,
