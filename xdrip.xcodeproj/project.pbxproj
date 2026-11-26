@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		80E805614460306B6CCD5100 /* FollowerCoverageCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7209874C318A5A4EF172 /* FollowerCoverageCalendarTests.swift */; };
 		440F2A8C68CB107C5821C4B4 /* FollowerCoverageDexcomShareFollowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F1999454F1A5F7B310D673 /* FollowerCoverageDexcomShareFollowTests.swift */; };
 		0A5813181207F59F9B2520FB /* FollowerCoverageLibreLinkUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C5001D5446721B750DACC /* FollowerCoverageLibreLinkUpTests.swift */; };
 		B7963D0FE50A53AA1DE8F4C5 /* NightscoutCoverageGapFillRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C35999177FF8B95D2D50FF3 /* NightscoutCoverageGapFillRunTests.swift */; };
@@ -1102,6 +1103,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		BEAD7209874C318A5A4EF172 /* FollowerCoverageCalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCoverageCalendarTests.swift; sourceTree = "<group>"; };
 		A8F1999454F1A5F7B310D673 /* FollowerCoverageDexcomShareFollowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCoverageDexcomShareFollowTests.swift; sourceTree = "<group>"; };
 		909C5001D5446721B750DACC /* FollowerCoverageLibreLinkUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCoverageLibreLinkUpTests.swift; sourceTree = "<group>"; };
 		6C35999177FF8B95D2D50FF3 /* NightscoutCoverageGapFillRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageGapFillRunTests.swift; sourceTree = "<group>"; };
@@ -3084,6 +3086,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				BEAD7209874C318A5A4EF172 /* FollowerCoverageCalendarTests.swift */,
 				A8F1999454F1A5F7B310D673 /* FollowerCoverageDexcomShareFollowTests.swift */,
 				909C5001D5446721B750DACC /* FollowerCoverageLibreLinkUpTests.swift */,
 				6C35999177FF8B95D2D50FF3 /* NightscoutCoverageGapFillRunTests.swift */,
@@ -5088,6 +5091,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				80E805614460306B6CCD5100 /* FollowerCoverageCalendarTests.swift in Sources */,
 				440F2A8C68CB107C5821C4B4 /* FollowerCoverageDexcomShareFollowTests.swift in Sources */,
 				0A5813181207F59F9B2520FB /* FollowerCoverageLibreLinkUpTests.swift in Sources */,
 				B7963D0FE50A53AA1DE8F4C5 /* NightscoutCoverageGapFillRunTests.swift in Sources */,
