@@ -26,12 +26,9 @@ public class AlertManager: NSObject {
     ///     - minutesSinceMidnightNow: the current time, in minutes since midnight
     ///     - delayInSeconds: when the alert will fire, from now
     static func delayedAlertFallsInNextEntry(currentEntryStart: Int, nextEntryStart: Int, minutesSinceMidnightNow: Int, delayInSeconds: Int) -> Bool {
-        // if start of nextAlertEntry < start of currentAlertEntry, then ad 24 hours, because it means the nextAlertEntry is actually the one of the day after
-        var nextEntryStartToUse = nextEntryStart
-        if nextEntryStart < currentEntryStart {
-            nextEntryStartToUse += nextEntryStartToUse + 24 * 60
-        }
-        // check if current time + delayInSeconds falls within timezone of nextAlertEntry
+        // a next entry that starts before the current one is the one of the day after, so add 24 hours
+        let nextEntryStartToUse = nextEntryStart < currentEntryStart ? nextEntryStart + 24 * 60 : nextEntryStart
+        // check if current time + delayInSeconds falls within the time range of the next entry
         return minutesSinceMidnightNow + delayInSeconds / 60 > nextEntryStartToUse
     }
 
