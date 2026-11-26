@@ -443,7 +443,7 @@ class DexcomShareFollowManager: NSObject {
             var followGlucoseDataArray: [FollowerBgReading] = []
             followGlucoseDataArray.reserveCapacity(glucoseMeasurementsArray.count)
             for glucoseMeasurement in glucoseMeasurementsArray {
-                guard let timeStamp = parseDexcomDate(dexcomDateString: glucoseMeasurement.ST)?.timeIntervalSince1970 ?? parseDexcomDate(dexcomDateString: glucoseMeasurement.DT)?.timeIntervalSince1970 else { continue }
+                guard let timeStamp = Self.parseDexcomDate(dexcomDateString: glucoseMeasurement.ST)?.timeIntervalSince1970 ?? Self.parseDexcomDate(dexcomDateString: glucoseMeasurement.DT)?.timeIntervalSince1970 else { continue }
                 
                 let sgv = Double(glucoseMeasurement.Value)
                 
@@ -552,7 +552,7 @@ class DexcomShareFollowManager: NSObject {
     /// - Parameters
     ///     - dexcomDateString: The Dexcom date string.
     /// - Returns: Date if parsing succeeds, nil otherwise.
-    private func parseDexcomDate(dexcomDateString: String) -> Date? {
+    static func parseDexcomDate(dexcomDateString: String) -> Date? {
         // "/Date(1426780716000-0700)/" or "/Date(1426784306000)/"
         // extract epoch millis before the optional offset
         let digits = dexcomDateString.filter { "-0123456789".contains($0) }
