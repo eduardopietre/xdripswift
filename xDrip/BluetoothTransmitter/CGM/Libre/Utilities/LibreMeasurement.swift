@@ -147,7 +147,9 @@ class LibreMeasurement {
     
     /// the index in the calibration tables for the i2 value of the calibration info, nil if the tables have no entry for it
     static func calibrationTableIndex(forI2 i2: Int) -> Int? {
-        return i2 - 1
+        // i2 comes from FRAM; 0 (blank or corrupt calibration) has no table entry
+        let index = i2 - 1
+        return t1.indices.contains(index) && t2.indices.contains(index) ? index : nil
     }
     
     func glucoseValueFromRaw(libreCalibrationInfo: LibreCalibrationInfo) -> Double {

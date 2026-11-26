@@ -251,11 +251,11 @@ class LibreDataParser {
         // if libre1DerivedAlgorithmParameters == nil, then calculate them
         if UserDefaults.standard.libre1DerivedAlgorithmParameters == nil {
             
-            UserDefaults.standard.libre1DerivedAlgorithmParameters = Libre1DerivedAlgorithmParameters(bytes: libreData, serialNumber: libreSensorSerialNumber, libreSensorType: libreSensorType)
+            UserDefaults.standard.libre1DerivedAlgorithmParameters = Libre1DerivedAlgorithmParameters.derived(bytes: libreData, serialNumber: libreSensorSerialNumber, libreSensorType: libreSensorType)
             
         }
         
-        // unwrap libre1DerivedAlgorithmParameters, should be non nil because they've just been calculated
+        // unwrap libre1DerivedAlgorithmParameters, nil if they could not be derived from this data; they are derived again from the next data
         guard let libre1DerivedAlgorithmParameters = UserDefaults.standard.libre1DerivedAlgorithmParameters else {return}
         
         

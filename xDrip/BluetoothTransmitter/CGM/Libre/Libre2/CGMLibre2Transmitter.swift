@@ -450,8 +450,10 @@ extension CGMLibre2Transmitter: LibreNFCDelegate {
             var framCopy = fram
             
             if libreSensorType.decryptIfPossibleAndNeeded(rxBuffer: &framCopy, headerLength: 0, log: log, patchInfo: patchInfo.hexEncodedString().uppercased(), uid: Array(sensorUID)) {
-                // we have all date to create libre1DerivedAlgorithmParameters
-                UserDefaults.standard.libre1DerivedAlgorithmParameters = Libre1DerivedAlgorithmParameters(bytes: framCopy, serialNumber: serialNumber, libreSensorType: libreSensorType)
+                // we have all date to create libre1DerivedAlgorithmParameters; keep the stored ones if they cannot be derived from this fram
+                if let libre1DerivedAlgorithmParameters = Libre1DerivedAlgorithmParameters.derived(bytes: framCopy, serialNumber: serialNumber, libreSensorType: libreSensorType) {
+                    UserDefaults.standard.libre1DerivedAlgorithmParameters = libre1DerivedAlgorithmParameters
+                }
             }
         }
     }

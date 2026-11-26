@@ -37,6 +37,18 @@ public struct Libre1DerivedAlgorithmParameters: Codable, CustomStringConvertible
         
     }
     
+    /// The parameters derived from the calibration info in the bytes, nil when they cannot be derived.
+    ///
+    /// Blank or corrupt calibration info selects no entry of the calibration tables. Every value derived
+    /// from it is 0, and the parameters are stored per sensor until the sensor changes, so they would
+    /// make every reading of that sensor 0. Returning nil lets the next data try again.
+    ///     - libreSensorType. if nil means not known.  For transmitters that don't know the sensorType, this will not work for Libre ProH
+    public static func derived(bytes: Data, serialNumber: String, libreSensorType: LibreSensorType?) -> Libre1DerivedAlgorithmParameters? {
+        let libreCalibrationInfo = LibreCalibrationInfo(bytes: bytes, libreSensorType: libreSensorType)
+        guard LibreMeasurement.calibrationTableIndex(forI2: libreCalibrationInfo.i2) != nil else { return nil }
+        return Libre1DerivedAlgorithmParameters(bytes: bytes, serialNumber: serialNumber, libreSensorType: libreSensorType)
+    }
+    
     ///     - libreSensorType. if nil means not known.  For transmitters that don't know the sensorType, this will not work for Libre ProH
     public init(bytes: Data, serialNumber: String, libreSensorType: LibreSensorType?) {
         
