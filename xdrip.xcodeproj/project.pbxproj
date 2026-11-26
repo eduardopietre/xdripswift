@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		1E004CE86C444495297FB6BC /* DoubleGlucoseConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D963E4FF1355403AD00DFCF /* DoubleGlucoseConversionTests.swift */; };
 		6E5641460211460F90F75552 /* GlucoseReportFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732DAF3986203C70053597E /* GlucoseReportFormattingTests.swift */; };
 		26D1B44778FE9903ADDDB71A /* GlucoseReportClinicalMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69CDAAA04EDA74E2C359DE /* GlucoseReportClinicalMathTests.swift */; };
 		1EC47BA1DCECD7E1A18681A6 /* SensorNoiseClassificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */; };
@@ -1043,6 +1044,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		6D963E4FF1355403AD00DFCF /* DoubleGlucoseConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleGlucoseConversionTests.swift; sourceTree = "<group>"; };
 		1732DAF3986203C70053597E /* GlucoseReportFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseReportFormattingTests.swift; sourceTree = "<group>"; };
 		2A69CDAAA04EDA74E2C359DE /* GlucoseReportClinicalMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseReportClinicalMathTests.swift; sourceTree = "<group>"; };
 		ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorNoiseClassificationTests.swift; sourceTree = "<group>"; };
@@ -2966,6 +2968,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				6D963E4FF1355403AD00DFCF /* DoubleGlucoseConversionTests.swift */,
 				1732DAF3986203C70053597E /* GlucoseReportFormattingTests.swift */,
 				2A69CDAAA04EDA74E2C359DE /* GlucoseReportClinicalMathTests.swift */,
 				ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */,
@@ -4911,6 +4914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				1E004CE86C444495297FB6BC /* DoubleGlucoseConversionTests.swift in Sources */,
 				6E5641460211460F90F75552 /* GlucoseReportFormattingTests.swift in Sources */,
 				26D1B44778FE9903ADDDB71A /* GlucoseReportClinicalMathTests.swift in Sources */,
 				1EC47BA1DCECD7E1A18681A6 /* SensorNoiseClassificationTests.swift in Sources */,
