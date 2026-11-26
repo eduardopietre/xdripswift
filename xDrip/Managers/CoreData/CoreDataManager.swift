@@ -45,9 +45,23 @@ public final class CoreDataManager {
         return managedObjectContext
     }()
     
-    private lazy var managedObjectModel: NSManagedObjectModel = {
+    private lazy var managedObjectModel: NSManagedObjectModel = Self.loadedModel(named: self.modelName)
+
+    /// Models loaded so far, by name, shared by every stack of the process.
+    private static var loadedModels = [String: NSManagedObjectModel]()
+    private static let loadedModelsLock = NSLock()
+
+    /// Loads the bundled model once per process. Each loaded model maps every entity to its
+    /// NSManagedObject subclass again, so several copies in one process (the unit tests create many
+    /// stacks) make Core Data warn that more than one entity claims a subclass, and make looking up
+    /// the entity of a subclass ambiguous.
+    private static func loadedModel(named modelName: String) -> NSManagedObjectModel {
+        loadedModelsLock.lock()
+        defer { loadedModelsLock.unlock() }
+        if let model = loadedModels[modelName] { return model }
+        
         // Fetch Model URL
-        guard let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "momd") else {
+        guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else {
             fatalError("Unable to Find Data Model")
         }
         
@@ -56,8 +70,9 @@ public final class CoreDataManager {
             fatalError("Unable to Load Data Model")
         }
         
+        loadedModels[modelName] = managedObjectModel
         return managedObjectModel
-    }()
+    }
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         return NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
