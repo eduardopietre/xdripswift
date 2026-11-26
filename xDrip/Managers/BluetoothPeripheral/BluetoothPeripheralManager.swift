@@ -673,13 +673,24 @@ class BluetoothPeripheralManager: NSObject {
         sharedUserDefaults.removeObject(forKey: "cgmTransmitter_CBUUID_Receive")
     }
 
+    /// the UserDefaults keys this manager observes
+    private static let observedKeys: [UserDefaults.Key] = [.m5StackBlePassword, .bloodGlucoseUnitIsMgDl, .isMaster]
+
     /// when user changes M5Stack related settings, then the transmitter need to get that info, add observers
     private func addObservers() {
         
-        UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.Key.m5StackBlePassword.rawValue, options: .new, context: nil)
-        UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.Key.bloodGlucoseUnitIsMgDl.rawValue, options: .new, context: nil)
-        UserDefaults.standard.addObserver(self, forKeyPath: UserDefaults.Key.isMaster.rawValue, options: .new, context: nil)
+        for key in Self.observedKeys {
+            UserDefaults.standard.addObserver(self, forKeyPath: key.rawValue, options: .new, context: nil)
+        }
 
+    }
+
+    deinit {
+        // UserDefaults does not retain its observers: a manager released while still registered would
+        // be sent change notifications after it is gone
+        for key in Self.observedKeys {
+            UserDefaults.standard.removeObserver(self, forKeyPath: key.rawValue)
+        }
     }
     
     /// checks if the bluetoothTransmitter is the currently assigned CGMTransmitter. If yes it means bluetoothTransmitter is a CGMTransmitter and has shouldconnect = true and device address should match
