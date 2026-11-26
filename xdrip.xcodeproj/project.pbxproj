@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		B7963D0FE50A53AA1DE8F4C5 /* NightscoutCoverageGapFillRunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C35999177FF8B95D2D50FF3 /* NightscoutCoverageGapFillRunTests.swift */; };
 		1C6F948DB1AAE4A7DB25B1CE /* NightscoutCoverageFollowManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328D19825F59C43EAB107A1B /* NightscoutCoverageFollowManagerTests.swift */; };
 		17B9359C978E9A4F2E47C425 /* NightscoutCoverageSyncFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24D80B1325D5B9B4A95191 /* NightscoutCoverageSyncFlowTests.swift */; };
 		65F0051C5922162A50885F1D /* NightscoutCoverageUploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C45706D623A30DD4EFF849A /* NightscoutCoverageUploadTests.swift */; };
@@ -1099,6 +1100,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		6C35999177FF8B95D2D50FF3 /* NightscoutCoverageGapFillRunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageGapFillRunTests.swift; sourceTree = "<group>"; };
 		328D19825F59C43EAB107A1B /* NightscoutCoverageFollowManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageFollowManagerTests.swift; sourceTree = "<group>"; };
 		AC24D80B1325D5B9B4A95191 /* NightscoutCoverageSyncFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageSyncFlowTests.swift; sourceTree = "<group>"; };
 		0C45706D623A30DD4EFF849A /* NightscoutCoverageUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightscoutCoverageUploadTests.swift; sourceTree = "<group>"; };
@@ -3078,6 +3080,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				6C35999177FF8B95D2D50FF3 /* NightscoutCoverageGapFillRunTests.swift */,
 				328D19825F59C43EAB107A1B /* NightscoutCoverageFollowManagerTests.swift */,
 				AC24D80B1325D5B9B4A95191 /* NightscoutCoverageSyncFlowTests.swift */,
 				0C45706D623A30DD4EFF849A /* NightscoutCoverageUploadTests.swift */,
@@ -5079,6 +5082,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				B7963D0FE50A53AA1DE8F4C5 /* NightscoutCoverageGapFillRunTests.swift in Sources */,
 				1C6F948DB1AAE4A7DB25B1CE /* NightscoutCoverageFollowManagerTests.swift in Sources */,
 				17B9359C978E9A4F2E47C425 /* NightscoutCoverageSyncFlowTests.swift in Sources */,
 				65F0051C5922162A50885F1D /* NightscoutCoverageUploadTests.swift in Sources */,
