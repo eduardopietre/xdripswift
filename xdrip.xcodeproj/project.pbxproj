@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		003F448960E04A1C05F46A47 /* LibreCoverageDataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D4ECD4F594A779CBD7B1D /* LibreCoverageDataParserTests.swift */; };
 		BD66A38A5BE0E8414DD4395B /* LibreCoverageAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAF4CDC498819809D30CAEA /* LibreCoverageAlgorithmTests.swift */; };
 		900AFAA5DAFBDD603F8F6974 /* LibreRawMeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */; };
 		EEABD835913741170A50DE93 /* LibreSensorIdentityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */; };
@@ -1077,6 +1078,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		595D4ECD4F594A779CBD7B1D /* LibreCoverageDataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageDataParserTests.swift; sourceTree = "<group>"; };
 		DBAF4CDC498819809D30CAEA /* LibreCoverageAlgorithmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreCoverageAlgorithmTests.swift; sourceTree = "<group>"; };
 		BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreRawMeasurementTests.swift; sourceTree = "<group>"; };
 		CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreSensorIdentityTests.swift; sourceTree = "<group>"; };
@@ -3034,6 +3036,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				595D4ECD4F594A779CBD7B1D /* LibreCoverageDataParserTests.swift */,
 				DBAF4CDC498819809D30CAEA /* LibreCoverageAlgorithmTests.swift */,
 				BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */,
 				CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */,
@@ -5013,6 +5016,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				003F448960E04A1C05F46A47 /* LibreCoverageDataParserTests.swift in Sources */,
 				BD66A38A5BE0E8414DD4395B /* LibreCoverageAlgorithmTests.swift in Sources */,
 				900AFAA5DAFBDD603F8F6974 /* LibreRawMeasurementTests.swift in Sources */,
 				EEABD835913741170A50DE93 /* LibreSensorIdentityTests.swift in Sources */,
