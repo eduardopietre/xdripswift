@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		26D1B44778FE9903ADDDB71A /* GlucoseReportClinicalMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A69CDAAA04EDA74E2C359DE /* GlucoseReportClinicalMathTests.swift */; };
 		1EC47BA1DCECD7E1A18681A6 /* SensorNoiseClassificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */; };
 		3A57F69751805187BFEDC71F /* CalibrationReadinessEvaluatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA72FA8A6C1FBD89DE073078 /* CalibrationReadinessEvaluatorTests.swift */; };
 		76CE6C7E165B71F133A0FC72 /* AlgorithmCoverageStatisticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C87A5643D899C970A765EF /* AlgorithmCoverageStatisticsTests.swift */; };
@@ -1041,6 +1042,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		2A69CDAAA04EDA74E2C359DE /* GlucoseReportClinicalMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseReportClinicalMathTests.swift; sourceTree = "<group>"; };
 		ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorNoiseClassificationTests.swift; sourceTree = "<group>"; };
 		EA72FA8A6C1FBD89DE073078 /* CalibrationReadinessEvaluatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationReadinessEvaluatorTests.swift; sourceTree = "<group>"; };
 		45C87A5643D899C970A765EF /* AlgorithmCoverageStatisticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoverageStatisticsTests.swift; sourceTree = "<group>"; };
@@ -2962,6 +2964,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				2A69CDAAA04EDA74E2C359DE /* GlucoseReportClinicalMathTests.swift */,
 				ACC8BF4BC40784E7C1504CAA /* SensorNoiseClassificationTests.swift */,
 				EA72FA8A6C1FBD89DE073078 /* CalibrationReadinessEvaluatorTests.swift */,
 				45C87A5643D899C970A765EF /* AlgorithmCoverageStatisticsTests.swift */,
@@ -4905,6 +4908,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				26D1B44778FE9903ADDDB71A /* GlucoseReportClinicalMathTests.swift in Sources */,
 				1EC47BA1DCECD7E1A18681A6 /* SensorNoiseClassificationTests.swift in Sources */,
 				3A57F69751805187BFEDC71F /* CalibrationReadinessEvaluatorTests.swift in Sources */,
 				76CE6C7E165B71F133A0FC72 /* AlgorithmCoverageStatisticsTests.swift in Sources */,
