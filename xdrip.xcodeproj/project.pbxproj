@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		325C73737202D9F81D51EFBA /* AlertManagerNextEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B839AA8C797736CDE998E3B /* AlertManagerNextEntryTests.swift */; };
 		A19A00370000000000000001 /* RepeatingAlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A00370000000000000002 /* RepeatingAlarmTests.swift */; };
 		DFDD04F77F6E0CB315D1C8A3 /* HealthKitReadingPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F49FF893F99B1F2AFAEA8D9 /* HealthKitReadingPolicyTests.swift */; };
 		9EDE1BC0B3FB5339589F2E28 /* TreatmentScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD08375C304CB7CF7EDE4776 /* TreatmentScaleTests.swift */; };
@@ -1018,6 +1019,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		2B839AA8C797736CDE998E3B /* AlertManagerNextEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManagerNextEntryTests.swift; sourceTree = "<group>"; };
 		A19A00370000000000000002 /* RepeatingAlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingAlarmTests.swift; sourceTree = "<group>"; };
 		3F49FF893F99B1F2AFAEA8D9 /* HealthKitReadingPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitReadingPolicyTests.swift; sourceTree = "<group>"; };
 		DD08375C304CB7CF7EDE4776 /* TreatmentScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentScaleTests.swift; sourceTree = "<group>"; };
@@ -2916,6 +2918,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				2B839AA8C797736CDE998E3B /* AlertManagerNextEntryTests.swift */,
 				50E2401E5ED94424A2FEC5E8 /* xDrip Tests/TherapyMetricsTests.swift */,
 			);
 			path = "xDrip Tests";
@@ -4836,6 +4839,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				325C73737202D9F81D51EFBA /* AlertManagerNextEntryTests.swift in Sources */,
 				4F3200013008000100000001 /* BgReadingTrendTests.swift in Sources */,
 				5A0100043015000100000001 /* GlucoseRangeDistributionTests.swift in Sources */,
 				5A0921023015000100000001 /* GMIStatisticsTests.swift in Sources */,
