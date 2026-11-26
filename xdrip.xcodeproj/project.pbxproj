@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		E97C20E2184D8B7E7CCBEEB7 /* AlgorithmCoverageSmoothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C314371EBA0FE997BA2062B /* AlgorithmCoverageSmoothingTests.swift */; };
 		D9D05F0A8C81257B84FB464E /* AlgorithmCoverageSensorNoiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6B7F8ACEB308148CB726F5 /* AlgorithmCoverageSensorNoiseTests.swift */; };
 		2516726096CC8DD355797607 /* AlgorithmCoveragePostProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDC9A49E839F9F6677B5262 /* AlgorithmCoveragePostProcessingTests.swift */; };
 		4BD2220058D10A08781ABF86 /* AlgorithmCoverageCalibratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A02340399F4A6AA5384B50F /* AlgorithmCoverageCalibratorTests.swift */; };
@@ -1037,6 +1038,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		0C314371EBA0FE997BA2062B /* AlgorithmCoverageSmoothingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoverageSmoothingTests.swift; sourceTree = "<group>"; };
 		6B6B7F8ACEB308148CB726F5 /* AlgorithmCoverageSensorNoiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoverageSensorNoiseTests.swift; sourceTree = "<group>"; };
 		BFDC9A49E839F9F6677B5262 /* AlgorithmCoveragePostProcessingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoveragePostProcessingTests.swift; sourceTree = "<group>"; };
 		3A02340399F4A6AA5384B50F /* AlgorithmCoverageCalibratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmCoverageCalibratorTests.swift; sourceTree = "<group>"; };
@@ -2954,6 +2956,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				0C314371EBA0FE997BA2062B /* AlgorithmCoverageSmoothingTests.swift */,
 				6B6B7F8ACEB308148CB726F5 /* AlgorithmCoverageSensorNoiseTests.swift */,
 				BFDC9A49E839F9F6677B5262 /* AlgorithmCoveragePostProcessingTests.swift */,
 				3A02340399F4A6AA5384B50F /* AlgorithmCoverageCalibratorTests.swift */,
@@ -4893,6 +4896,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				E97C20E2184D8B7E7CCBEEB7 /* AlgorithmCoverageSmoothingTests.swift in Sources */,
 				D9D05F0A8C81257B84FB464E /* AlgorithmCoverageSensorNoiseTests.swift in Sources */,
 				2516726096CC8DD355797607 /* AlgorithmCoveragePostProcessingTests.swift in Sources */,
 				4BD2220058D10A08781ABF86 /* AlgorithmCoverageCalibratorTests.swift in Sources */,
