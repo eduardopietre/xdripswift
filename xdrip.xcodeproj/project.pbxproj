@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		A154B7E3F7F45B2A20817957 /* BLECoverageTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DBD668160484D867B0F82 /* BLECoverageTypeTests.swift */; };
 		40F4E58D36D9FF81DB0047D0 /* BLECoverageTransmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E366398AC5DFEC0015BAC /* BLECoverageTransmitterTests.swift */; };
 		FF533BE18830AFF97F329AE8 /* DexcomCoverageG7TransmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E7789632B6BAD2020AF91 /* DexcomCoverageG7TransmitterTests.swift */; };
 		090B009CF3EEEEDADC6D882C /* DexcomCoverageG5TransmitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE2995FCA2497A5E755855B /* DexcomCoverageG5TransmitterTests.swift */; };
@@ -1069,6 +1070,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		244DBD668160484D867B0F82 /* BLECoverageTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECoverageTypeTests.swift; sourceTree = "<group>"; };
 		6D3E366398AC5DFEC0015BAC /* BLECoverageTransmitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECoverageTransmitterTests.swift; sourceTree = "<group>"; };
 		0D0E7789632B6BAD2020AF91 /* DexcomCoverageG7TransmitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomCoverageG7TransmitterTests.swift; sourceTree = "<group>"; };
 		5CE2995FCA2497A5E755855B /* DexcomCoverageG5TransmitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexcomCoverageG5TransmitterTests.swift; sourceTree = "<group>"; };
@@ -3018,6 +3020,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				244DBD668160484D867B0F82 /* BLECoverageTypeTests.swift */,
 				6D3E366398AC5DFEC0015BAC /* BLECoverageTransmitterTests.swift */,
 				0D0E7789632B6BAD2020AF91 /* DexcomCoverageG7TransmitterTests.swift */,
 				5CE2995FCA2497A5E755855B /* DexcomCoverageG5TransmitterTests.swift */,
@@ -4989,6 +4992,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				A154B7E3F7F45B2A20817957 /* BLECoverageTypeTests.swift in Sources */,
 				40F4E58D36D9FF81DB0047D0 /* BLECoverageTransmitterTests.swift in Sources */,
 				FF533BE18830AFF97F329AE8 /* DexcomCoverageG7TransmitterTests.swift in Sources */,
 				090B009CF3EEEEDADC6D882C /* DexcomCoverageG5TransmitterTests.swift in Sources */,
