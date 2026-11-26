@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		9EACE862CA332DC23A372F2B /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D53CBDC383BC6AE17A00D2 /* DateExtensionTests.swift */; };
 		5E726C56695476D74062AB85 /* RootHomeChartRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */; };
 		1E004CE86C444495297FB6BC /* DoubleGlucoseConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D963E4FF1355403AD00DFCF /* DoubleGlucoseConversionTests.swift */; };
 		6E5641460211460F90F75552 /* GlucoseReportFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1732DAF3986203C70053597E /* GlucoseReportFormattingTests.swift */; };
@@ -1045,6 +1046,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		50D53CBDC383BC6AE17A00D2 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeChartRangeTests.swift; sourceTree = "<group>"; };
 		6D963E4FF1355403AD00DFCF /* DoubleGlucoseConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleGlucoseConversionTests.swift; sourceTree = "<group>"; };
 		1732DAF3986203C70053597E /* GlucoseReportFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseReportFormattingTests.swift; sourceTree = "<group>"; };
@@ -2970,6 +2972,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				50D53CBDC383BC6AE17A00D2 /* DateExtensionTests.swift */,
 				18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */,
 				6D963E4FF1355403AD00DFCF /* DoubleGlucoseConversionTests.swift */,
 				1732DAF3986203C70053597E /* GlucoseReportFormattingTests.swift */,
@@ -4917,6 +4920,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				9EACE862CA332DC23A372F2B /* DateExtensionTests.swift in Sources */,
 				5E726C56695476D74062AB85 /* RootHomeChartRangeTests.swift in Sources */,
 				1E004CE86C444495297FB6BC /* DoubleGlucoseConversionTests.swift in Sources */,
 				6E5641460211460F90F75552 /* GlucoseReportFormattingTests.swift in Sources */,
