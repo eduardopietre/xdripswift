@@ -12,11 +12,17 @@ import SwiftUI
 
 private final class ShareUploadURLProtocol: URLProtocol {
     // A request from a test that already finished (a delayed retry, say) can start after
-    // tearDown cleared the handler, on a URL-loading thread. Guard both values with a lock and
+    // tearDown cleared the handler, on a URL-loading thread. Guard the values with a lock and
     // fail that request instead of crashing the test process on a nil handler.
+    //
+    // Managers of a finished test can also still be alive and send requests while the next
+    // test runs. Each test's session marks its requests with the test's identifier, and only
+    // requests of the current test reach the handler, so they cannot be counted by another test.
+    static let testIdentifierHeader = "X-Share-Upload-Test"
     private static let lock = NSLock()
     nonisolated(unsafe) private static var storedHandler: ((URLRequest) -> (Int, Data))?
     nonisolated(unsafe) private static var storedDelay: TimeInterval = 0
+    nonisolated(unsafe) private static var storedTestIdentifier: String?
     static var handler: ((URLRequest) -> (Int, Data))? {
         get { lock.withLock { storedHandler } }
         set { lock.withLock { storedHandler = newValue } }
@@ -25,11 +31,28 @@ private final class ShareUploadURLProtocol: URLProtocol {
         get { lock.withLock { storedDelay } }
         set { lock.withLock { storedDelay = newValue } }
     }
+    /// The identifier of the running test; requests with another one fail.
+    static var testIdentifier: String? {
+        get { lock.withLock { storedTestIdentifier } }
+        set { lock.withLock { storedTestIdentifier = newValue } }
+    }
+
+    /// Requests that reached the stub without any test identifier. Requests of a finished test carry
+    /// its own identifier; one without any means the session header no longer reaches the stub, and
+    /// every test that expects a failure would then pass for the wrong reason.
+    nonisolated(unsafe) private static var storedUnmarkedRequestCount = 0
+    static var unmarkedRequestCount: Int {
+        get { lock.withLock { storedUnmarkedRequestCount } }
+        set { lock.withLock { storedUnmarkedRequestCount = newValue } }
+    }
 
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
-        guard let handler = Self.handler else {
+        let requestTestIdentifier = request.value(forHTTPHeaderField: Self.testIdentifierHeader)
+        if requestTestIdentifier == nil { Self.unmarkedRequestCount += 1 }
+        guard let handler = Self.handler, let testIdentifier = Self.testIdentifier,
+              requestTestIdentifier == testIdentifier else {
             client?.urlProtocol(self, didFailWithError: URLError(.cancelled))
             return
         }
@@ -47,14 +70,17 @@ private final class ShareUploadURLProtocol: URLProtocol {
 
 @MainActor final class DexcomShareUploadTests: XCTestCase {
     private var defaults: UserDefaults!
+    /// A suite of this test only. Managers of an earlier test observe their own suite, so they
+    /// cannot react to the defaults this test sets.
+    private var suiteName: String!
     private var session: URLSession!
     private var activity: [TroubleshootingLogEntry] = []
     private let readingDate = Date(timeIntervalSince1970: 1_700_000_000)
     private let identifier = Data("\"11111111-2222-3333-4444-555555555555\"".utf8)
 
     override func setUp() async throws {
-        defaults = UserDefaults(suiteName: "DexcomShareUploadTests")!
-        defaults.removePersistentDomain(forName: "DexcomShareUploadTests")
+        suiteName = "DexcomShareUploadTests." + UUID().uuidString
+        defaults = UserDefaults(suiteName: suiteName)!
         defaults.isMaster = true
         defaults.uploadReadingstoDexcomShare = true
         defaults.dexcomShareAccountName = "test-account"
@@ -62,15 +88,21 @@ private final class ShareUploadURLProtocol: URLProtocol {
         defaults.dexcomShareUploadSerialNumber = "AB12345678"
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [ShareUploadURLProtocol.self]
+        let testIdentifier = UUID().uuidString
+        configuration.httpAdditionalHeaders = [ShareUploadURLProtocol.testIdentifierHeader: testIdentifier]
         session = URLSession(configuration: configuration)
         ShareUploadURLProtocol.delay = 0
+        ShareUploadURLProtocol.testIdentifier = testIdentifier
+        ShareUploadURLProtocol.unmarkedRequestCount = 0
         activity = []
     }
 
     override func tearDown() async throws {
         session.invalidateAndCancel()
-        defaults.removePersistentDomain(forName: "DexcomShareUploadTests")
+        defaults.removePersistentDomain(forName: suiteName)
+        XCTAssertEqual(ShareUploadURLProtocol.unmarkedRequestCount, 0, "requests reached the stub without the test identifier header")
         ShareUploadURLProtocol.handler = nil
+        ShareUploadURLProtocol.testIdentifier = nil
     }
 
     private func manager(hasReadings: Bool = true) -> DexcomShareUploadManager {
