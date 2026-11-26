@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		900AFAA5DAFBDD603F8F6974 /* LibreRawMeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */; };
 		EEABD835913741170A50DE93 /* LibreSensorIdentityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */; };
 		A49DE910346CC1785A66E9D3 /* Libre2FrameAssemblyEdgeCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA66E3DA763E90105AC24294 /* Libre2FrameAssemblyEdgeCaseTests.swift */; };
 		23B2B348B9A8F3D865DCEB59 /* Libre2DecryptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566E241B555E031E97C80D7 /* Libre2DecryptionTests.swift */; };
@@ -1075,6 +1076,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreRawMeasurementTests.swift; sourceTree = "<group>"; };
 		CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreSensorIdentityTests.swift; sourceTree = "<group>"; };
 		FA66E3DA763E90105AC24294 /* Libre2FrameAssemblyEdgeCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre2FrameAssemblyEdgeCaseTests.swift; sourceTree = "<group>"; };
 		7566E241B555E031E97C80D7 /* Libre2DecryptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre2DecryptionTests.swift; sourceTree = "<group>"; };
@@ -3030,6 +3032,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				BF0D1D447DF68D81852EA384 /* LibreRawMeasurementTests.swift */,
 				CB07043216A5B4834058AFD7 /* LibreSensorIdentityTests.swift */,
 				FA66E3DA763E90105AC24294 /* Libre2FrameAssemblyEdgeCaseTests.swift */,
 				7566E241B555E031E97C80D7 /* Libre2DecryptionTests.swift */,
@@ -5007,6 +5010,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				900AFAA5DAFBDD603F8F6974 /* LibreRawMeasurementTests.swift in Sources */,
 				EEABD835913741170A50DE93 /* LibreSensorIdentityTests.swift in Sources */,
 				A49DE910346CC1785A66E9D3 /* Libre2FrameAssemblyEdgeCaseTests.swift in Sources */,
 				23B2B348B9A8F3D865DCEB59 /* Libre2DecryptionTests.swift in Sources */,
