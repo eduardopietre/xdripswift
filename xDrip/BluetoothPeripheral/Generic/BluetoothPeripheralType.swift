@@ -134,7 +134,7 @@ enum BluetoothPeripheralType: String, CaseIterable {
             }
             
             //verify allowed chars
-            let regex = try! NSRegularExpression(pattern: "[a-zA-Z0-9]", options: .caseInsensitive)
+            let regex = try! NSRegularExpression(pattern: "\\A[a-zA-Z0-9]+\\z", options: .caseInsensitive)
             if !transmitterId.validate(withRegex: regex) {
                 return Texts_ErrorMessages.DexcomTransmitterIDInvalidCharacters
             }
@@ -155,7 +155,7 @@ enum BluetoothPeripheralType: String, CaseIterable {
                 return Texts_ErrorMessages.TransmitterIDShouldHaveMaximumLength6
             }
             
-            let regex = try! NSRegularExpression(pattern: "[a-zA-Z0-9]", options: .caseInsensitive)
+            let regex = try! NSRegularExpression(pattern: "\\A[a-zA-Z0-9]+\\z", options: .caseInsensitive)
             if !transmitterId.validate(withRegex: regex) {
                 return Texts_ErrorMessages.DexcomTransmitterIDInvalidCharacters
             }
