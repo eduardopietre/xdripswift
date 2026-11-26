@@ -981,6 +981,7 @@
 		FBF34E081100804892C2ED0D /* Libre3EphemeralExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2AC649F4810090B27021F7 /* Libre3EphemeralExchange.swift */; };
 		FC15B84699D93DCF467C1888 /* Libre3ReceiverID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEA1ADD2CF92F8ADB019B9E /* Libre3ReceiverID.swift */; };
 		FD21BFADEF60DD266BF89CCF /* Libre3AESCCMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA21BE60D595114D6A698215 /* Libre3AESCCMTests.swift */; };
+		4561ADA5B41F68B401BF5FCA /* Libre3DataPlaneStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB419C72D320AED408F84B74 /* Libre3DataPlaneStateTests.swift */; };
 		9BB6DFA072E405E3962498A7 /* Libre3PatchStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538CF932A85B0D8282796FFF /* Libre3PatchStatusTests.swift */; };
 		DEC6011AA1753141018A1095 /* Libre3ClinicalReadingRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F952ABC5B88E7033F9427 /* Libre3ClinicalReadingRecordTests.swift */; };
 		D55E67AAD35CC2EE743B85DD /* Libre3RealtimeGlucoseReadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE46D9531C70035E5515A1 /* Libre3RealtimeGlucoseReadingTests.swift */; };
@@ -1663,6 +1664,7 @@
 		D4FD899627772F9100689788 /* TreatmentEntryAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatmentEntryAccessor.swift; sourceTree = "<group>"; };
 		D9C75EA5D78E3497AC44D3C8 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DA21BE60D595114D6A698215 /* Libre3AESCCMTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Libre3AESCCMTests.swift; path = Libre3AESCCMTests.swift; sourceTree = "<group>"; };
+		BB419C72D320AED408F84B74 /* Libre3DataPlaneStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3DataPlaneStateTests.swift; sourceTree = "<group>"; };
 		538CF932A85B0D8282796FFF /* Libre3PatchStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3PatchStatusTests.swift; sourceTree = "<group>"; };
 		1D6F952ABC5B88E7033F9427 /* Libre3ClinicalReadingRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3ClinicalReadingRecordTests.swift; sourceTree = "<group>"; };
 		B7CE46D9531C70035E5515A1 /* Libre3RealtimeGlucoseReadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libre3RealtimeGlucoseReadingTests.swift; sourceTree = "<group>"; };
@@ -3200,6 +3202,7 @@
 			isa = PBXGroup;
 			children = (
 				DA21BE60D595114D6A698215 /* Libre3AESCCMTests.swift */,
+				BB419C72D320AED408F84B74 /* Libre3DataPlaneStateTests.swift */,
 				538CF932A85B0D8282796FFF /* Libre3PatchStatusTests.swift */,
 				1D6F952ABC5B88E7033F9427 /* Libre3ClinicalReadingRecordTests.swift */,
 				B7CE46D9531C70035E5515A1 /* Libre3RealtimeGlucoseReadingTests.swift */,
@@ -5143,6 +5146,7 @@
 				377EBC0A484BFC8EA77C623C /* CareLinkTests.swift in Sources */,
 				0A51F9C534B04BD682E1EF4D /* xDrip Tests/TherapyMetricsTests.swift in Sources */,
 				FD21BFADEF60DD266BF89CCF /* Libre3AESCCMTests.swift in Sources */,
+				4561ADA5B41F68B401BF5FCA /* Libre3DataPlaneStateTests.swift in Sources */,
 				9BB6DFA072E405E3962498A7 /* Libre3PatchStatusTests.swift in Sources */,
 				DEC6011AA1753141018A1095 /* Libre3ClinicalReadingRecordTests.swift in Sources */,
 				D55E67AAD35CC2EE743B85DD /* Libre3RealtimeGlucoseReadingTests.swift in Sources */,
