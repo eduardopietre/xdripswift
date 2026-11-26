@@ -577,14 +577,12 @@ enum NewestFirstInsertion {
     ///     - id : the identifier of an item
     ///     - timeStamp : the time stamp of an item
     static func insert<Item>(_ item: Item, into list: inout [Item], id: (Item) -> String, timeStamp: (Item) -> Date) {
-        loop1 : for (index, listItem) in list.enumerated() {
-            if timeStamp(item).toMillisecondsAsDouble() > timeStamp(listItem).toMillisecondsAsDouble() {
-                list.insert(item, at: index)
-            } else if id(listItem) == id(item) {
-                break loop1
-            } else if index == (list.count - 1) {
-                list.append(item)
-            }
+        guard !list.contains(where: { id($0) == id(item) }) else { return }
+        // before the first older item, or at the end
+        if let index = list.firstIndex(where: { timeStamp(item) > timeStamp($0) }) {
+            list.insert(item, at: index)
+        } else {
+            list.append(item)
         }
     }
     
