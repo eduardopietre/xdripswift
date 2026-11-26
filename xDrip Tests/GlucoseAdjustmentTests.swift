@@ -106,6 +106,27 @@ final class GlucoseAdjustmentTests: XCTestCase {
         }
     }
 
+    /// A new adjustment disables the enabled ones that apply from the same time or later. The
+    /// accessor rebuilt the time through timeIntervalSince1970, which changes about half of all
+    /// dates by a fraction of a microsecond, so an adjustment from exactly the same time randomly
+    /// stayed enabled next to the new one.
+    @MainActor
+    func testAdjustmentFromTheSameTimeIsDisabledWhateverItsSubMicrosecondDigits() throws {
+        let core = CoreDataManager(inMemoryModelName: ConstantsCoreData.modelName)
+        let context = core.mainManagedObjectContext
+        let accessor = BgAdjustmentsAccessor(coreDataManager: core)
+        // a date that the old round trip moved later, which made ">=" miss it: the test does not depend on luck
+        var applyFrom = Date(timeIntervalSinceReferenceDate: 800_000_000.123_456_7)
+        while !((NSDate(timeIntervalSince1970: applyFrom.timeIntervalSince1970) as Date) > applyFrom) {
+            applyFrom = applyFrom.addingTimeInterval(0.000_001_3)
+        }
+        let existing = accessor.createBgAdjustment(timeStamp: applyFrom, applyFromTimeStamp: applyFrom, slope: 1, intercept: 10, adjustmentShapeType: 1, isEnabled: true, isBasicAdjustment: false, enteredBgValue: nil, sourceCalculatedValue: nil, sourceDescription: nil, sourceContextIdentifier: "context", on: context)
+        XCTAssertTrue(core.saveChangesSynchronously())
+
+        accessor.disableBgAdjustments(forSourceContextIdentifier: "context", fromApplyFromTimeStamp: applyFrom, on: context)
+        XCTAssertFalse(existing.isEnabled)
+    }
+
     @MainActor
     private func apply(_ manager: BgPostProcessingManager, at start: Date, offset: Double, slope: Double = 1, glucose: Bool = true, curve: Bool = false, smoothing: Bool = false) -> Bool {
         manager.applyPostProcessing(enableGlucoseAdjustment: glucose, enableCurveAdjustment: curve, slope: slope, intercept: offset, adjustmentShapeType: .neutral, applyFromTimeStamp: start, isBasicAdjustment: false, enteredBgValue: nil, sourceCalculatedValue: nil, enableSmoothing: smoothing, useFiveMinuteReadings: false, smoothingPeriodInMinutes: ConstantsBgSmoothing.defaultSmoothingPeriodInMinutes, smoothingStrength: 1)
