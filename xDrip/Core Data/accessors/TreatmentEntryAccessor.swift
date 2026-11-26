@@ -94,13 +94,13 @@ class TreatmentEntryAccessor {
 
         // create predicate between two dates
         if let from = fromDate, toDate == nil {
-            let predicate = NSPredicate(format: "date >= %@", NSDate(timeIntervalSince1970: from.timeIntervalSince1970))
+            let predicate = NSPredicate(format: "date >= %@", from as NSDate)
             fetchRequest.predicate = predicate
         } else if let to = toDate, fromDate == nil {
-            let predicate = NSPredicate(format: "date <= %@", NSDate(timeIntervalSince1970: to.timeIntervalSince1970))
+            let predicate = NSPredicate(format: "date <= %@", to as NSDate)
             fetchRequest.predicate = predicate
         } else if let to = toDate, let from = fromDate {
-            let predicate = NSPredicate(format: "date <= %@ AND date >= %@", NSDate(timeIntervalSince1970: to.timeIntervalSince1970), NSDate(timeIntervalSince1970: from.timeIntervalSince1970))
+            let predicate = NSPredicate(format: "date <= %@ AND date >= %@", to as NSDate, from as NSDate)
             fetchRequest.predicate = predicate
         }
 
