@@ -526,6 +526,8 @@ public final class StatisticsManager: @unchecked Sendable {
             let averageMgDl = daySamples.isEmpty ? 0 : daySamples.reduce(0) { $0 + $1.valueMgDl } / Double(daySamples.count)
             statisticsByDay[day] = makeStatisticsForDay(
                 values: values,
+                // every stored sample, like the root statistics: the 4.5-minute filter is not for TIR
+                valuesMgDl: daySamples.map(\.valueMgDl),
                 averageMgDl: averageMgDl,
                 lowLimitForTIR: lowLimitForTIR,
                 highLimitForTIR: highLimitForTIR
@@ -538,7 +540,9 @@ public final class StatisticsManager: @unchecked Sendable {
         return statisticsByDay
     }
 
-    private func makeStatisticsForDay(values: [Double], averageMgDl: Double, lowLimitForTIR: Double, highLimitForTIR: Double) -> Statistics {
+    /// TIR is classified on mg/dL values against the mg/dL limits, like the root statistics, so the
+    /// rounded mmol/L limits cannot move readings across a boundary.
+    private func makeStatisticsForDay(values: [Double], valuesMgDl: [Double], averageMgDl: Double, lowLimitForTIR: Double, highLimitForTIR: Double) -> Statistics {
         guard !values.isEmpty else {
             return Statistics(
                 lowStatisticValue: 0,
@@ -553,10 +557,11 @@ public final class StatisticsManager: @unchecked Sendable {
             )
         }
 
+        let timeInRangeType = UserDefaults.standard.timeInRangeType
         let rangeDistribution = GlucoseRangeDistribution(
-            values: values,
-            lowLimit: lowLimitForTIR,
-            highLimit: highLimitForTIR
+            values: valuesMgDl,
+            lowLimit: timeInRangeType.lowerLimitInMgDl,
+            highLimit: timeInRangeType.higherLimitInMgDl
         )
         let averageStatisticValue = values.reduce(0, +) / Double(values.count)
 
