@@ -200,52 +200,47 @@ final class SensorHealthIssueManagerTests: XCTestCase {
         let manager = makeManager()
         let alarm = OneOffAlarmSpy()
         manager.configure(oneOffAlarmRaiser: alarm)
-        let fired = expectation(description: "queued terminal tests fire")
 
         manager.queueTestIssue(.sensorFailure, after: 0)
         manager.queueTestIssue(.transmitterFailure, after: 0)
 
-        DispatchQueue.main.async {
-            XCTAssertEqual(alarm.issues.count, 2)
-            XCTAssertEqual(Set(alarm.issues.map(\.id)).count, 2)
-            XCTAssertTrue(alarm.issues.allSatisfy { $0.sensorSessionID == "test" })
-            fired.fulfill()
-        }
-
-        wait(for: [fired], timeout: 1)
+        runMainLoop(until: { alarm.issues.count == 2 })
+        XCTAssertEqual(alarm.issues.count, 2)
+        XCTAssertEqual(Set(alarm.issues.map(\.id)).count, 2)
+        XCTAssertTrue(alarm.issues.allSatisfy { $0.sensorSessionID == "test" })
     }
 
     func testSyntheticWarningBypassesPreferenceForExplicitTesting() {
         defaults.sensorHealthNotificationsEnabled = false
         let manager = makeManager()
-        let fired = expectation(description: "queued warning test fires")
 
         manager.queueTestIssue(.flatline, after: 0)
 
-        DispatchQueue.main.async {
-            XCTAssertEqual(self.notificationCenter.requests.count, 1)
-            XCTAssertEqual(self.notificationCenter.requests[0].content.title, manager.visibleIssue?.title)
-            XCTAssertEqual(self.notificationCenter.requests[0].content.body, manager.visibleIssue?.guidance)
-            XCTAssertEqual(manager.visibleIssue?.sensorSessionID, "test")
-            fired.fulfill()
-        }
-
-        wait(for: [fired], timeout: 1)
+        runMainLoop(until: { manager.visibleIssue != nil })
+        XCTAssertEqual(notificationCenter.requests.count, 1)
+        XCTAssertEqual(notificationCenter.requests.first?.content.title, manager.visibleIssue?.title)
+        XCTAssertEqual(notificationCenter.requests.first?.content.body, manager.visibleIssue?.guidance)
+        XCTAssertEqual(manager.visibleIssue?.sensorSessionID, "test")
     }
 
     func testSyntheticPersistentNoiseIsInAppOnly() {
         let manager = makeManager()
-        let fired = expectation(description: "queued persistent noise test fires")
 
         manager.queueTestIssue(.persistentNoise, after: 0)
 
-        DispatchQueue.main.async {
-            XCTAssertTrue(self.notificationCenter.requests.isEmpty)
-            XCTAssertEqual(manager.visibleIssue?.kind, .persistentNoise)
-            fired.fulfill()
-        }
+        runMainLoop(until: { manager.visibleIssue != nil })
+        XCTAssertTrue(notificationCenter.requests.isEmpty)
+        XCTAssertEqual(manager.visibleIssue?.kind, .persistentNoise)
+    }
 
-        wait(for: [fired], timeout: 1)
+    /// Runs the main run loop until `condition` holds, at most `timeout` seconds. The queued test
+    /// issues use asyncAfter, which GCD does not order against a plain main.async block, so the
+    /// tests wait for the issue itself instead.
+    private func runMainLoop(until condition: () -> Bool, timeout: TimeInterval = 2) {
+        let deadline = Date().addingTimeInterval(timeout)
+        while !condition() && Date() < deadline {
+            RunLoop.main.run(until: Date().addingTimeInterval(0.005))
+        }
     }
 
     func testDismissalAndDeduplicationPersistAcrossLaunches() {
