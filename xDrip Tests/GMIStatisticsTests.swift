@@ -263,10 +263,12 @@ final class GMIStatisticsTests: XCTestCase {
                 XCTAssertEqual(pdf.pageCount, 3)
                 XCTAssertEqual(analytics.gmiPercentage, GlucoseReportClinicalMath.gmiPercentage(forAverageMgDl: analytics.averageMgDl), accuracy: 0.000001)
                 XCTAssertEqual(try XCTUnwrap(pdf.page(at: 0)).bounds(for: .mediaBox).size, paperSize.pageSize)
-                // Keep the rendered report in the test results for visual review.
-                let attachment = XCTAttachment(contentsOfFile: url)
-                attachment.lifetime = .keepAlways
-                add(attachment)
+                // Keep the rendered report in the test results for visual review, when asked for.
+                if TestScreenshots.areCaptured {
+                    let attachment = XCTAttachment(contentsOfFile: url)
+                    attachment.lifetime = .keepAlways
+                    add(attachment)
+                }
                 try FileManager.default.removeItem(at: url)
             }
         }

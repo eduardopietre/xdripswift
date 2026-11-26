@@ -461,7 +461,10 @@ private final class ShareUploadURLProtocol: URLProtocol {
             let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 402, height: 874))
             window.rootViewController = host
             window.makeKeyAndVisible()
+            defer { window.isHidden = true }
             host.view.frame = window.bounds
+            host.view.layoutIfNeeded()
+            guard TestScreenshots.areCaptured else { continue }
             try await Task.sleep(nanoseconds: 200_000_000)
             host.view.layoutIfNeeded()
             let image = UIGraphicsImageRenderer(size: host.view.bounds.size).image { _ in
@@ -488,7 +491,6 @@ private final class ShareUploadURLProtocol: URLProtocol {
                     add(attachment)
                 }
             }
-            window.isHidden = true
         }
     }
 
