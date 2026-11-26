@@ -367,6 +367,19 @@ extension NightscoutDeviceStatus {
         )
     }
 
+    /// Whether an openAPS timestamp is newer than another. Parsed as dates, because suggested and
+    /// enacted can use different formats (with or without fractional seconds or an offset); compared as
+    /// text only when one of them cannot be parsed.
+    static func isTimestamp(_ timestamp: String?, newerThan other: String?) -> Bool {
+        func parse(_ text: String?) -> Date? {
+            text.flatMap { ISO8601DateFormatter.withFractionalSeconds.date(from: $0) ?? ISO8601DateFormatter.withoutFractionalSeconds.date(from: $0) }
+        }
+        if let date = parse(timestamp), let otherDate = parse(other) {
+            return date > otherDate
+        }
+        return (timestamp ?? "") > (other ?? "")
+    }
+
     /// Fill missing display values from another device status response.
     ///
     /// Nightscout can return a newest devicestatus document that is more like a heartbeat than a
@@ -388,11 +401,15 @@ extension NightscoutDeviceStatus {
         if isf == nil { isf = fallback.isf }
         if insulinReq == nil { insulinReq = fallback.insulinReq }
         if rate == nil { rate = fallback.rate }
-        if reason == nil { reason = fallback.reason }
+        // A loop error and its reason belong to one loop run. Loop leaves failureReason out when a run
+        // succeeds, so they are only taken from a document of the same run, or when this one has no
+        // loop run at all (a heartbeat-like document); an old error must not stay on a newer, good run.
+        let isSameLoopRun = lastLoopDate == .distantPast || lastLoopDate == fallback.lastLoopDate
+        if reason == nil, isSameLoopRun { reason = fallback.reason }
         if sensitivityRatio == nil { sensitivityRatio = fallback.sensitivityRatio }
         if tdd == nil { tdd = fallback.tdd }
         if timestamp == nil { timestamp = fallback.timestamp }
-        if error == nil { error = fallback.error }
+        if error == nil, isSameLoopRun { error = fallback.error }
         
         if overrideActive == nil { overrideActive = fallback.overrideActive }
         if overrideName == nil { overrideName = fallback.overrideName }
@@ -467,20 +484,26 @@ extension NightscoutDeviceStatus {
         var lastLoopDates: [Date] = []
         var cobCandidates: [(value: Double, timestamp: Date?)] = []
         var iobCandidates: [(value: Double, timestamp: Date?)] = []
+        /// enacted and suggested of an openAPS document, the newer one first
+        var openAPSNewerFirst: [NightscoutDeviceStatusResponse.OpenAPS.APSuggestion] = []
 
         if let openAPS = unified.openAPS {
             self.appVersion = openAPS.version
             let enacted = openAPS.enacted
             let suggested = openAPS.suggested
-            let useSuggested = suggested != nil && (enacted == nil || (suggested?.timestamp ?? "") > (enacted?.timestamp ?? ""))
+            let useSuggested = suggested != nil && (enacted == nil || Self.isTimestamp(suggested?.timestamp, newerThan: enacted?.timestamp))
             let selectedAPS = useSuggested ? suggested : enacted
+            openAPSNewerFirst = (useSuggested ? [suggested, enacted] : [enacted, suggested]).compactMap { $0 }
+            // The temp basal shown is the running one. Trio and iAPS do not enact a suggestion that
+            // was not received, so then the enacted one is still running.
+            let runningTempBasalAPS = useSuggested && !useSuggestedAsEnacted() && suggested?.wasReceived != true ? enacted : selectedAPS
+            self.duration = runningTempBasalAPS?.duration
+            self.rate = runningTempBasalAPS?.rate
             if let aps = selectedAPS {
                 self.currentTarget = aps.currentTarget
-                self.duration = aps.duration
                 self.eventualBG = aps.eventualBG
                 self.isf = aps.isf ?? aps.variableSens
                 self.insulinReq = aps.insulinReq
-                self.rate = aps.rate
                 self.reason = aps.reason
                 self.sensitivityRatio = aps.sensitivityRatio
                 self.tdd = aps.tdd
@@ -551,12 +574,12 @@ extension NightscoutDeviceStatus {
         var cobValue: Double?
         var iobValue: Double?
 
-        // OpenAPS/AAPS/iAPS/Trio: use .cob/.iob properties (mapped from COB/IOB in JSON)
-        if let openAPS = unified.openAPS {
-            if let cob = openAPS.suggested?.cob { cobValue = cob }
-            else if let cob = openAPS.enacted?.cob { cobValue = cob }
-            if let iob = openAPS.suggested?.iob { iobValue = iob }
-            else if let iob = openAPS.enacted?.iob { iobValue = iob }
+        // OpenAPS/AAPS/iAPS/Trio: use .cob/.iob properties (mapped from COB/IOB in JSON) of the newer of
+        // suggested and enacted, then of the other one. COB and IOB are calculated values, valid also
+        // when a suggested temp basal was not received; an older suggestion must not win over a newer enacted.
+        if unified.openAPS != nil {
+            cobValue = openAPSNewerFirst.lazy.compactMap(\.cob).first
+            iobValue = openAPSNewerFirst.lazy.compactMap(\.iob).first
         }
 
         // Loop
