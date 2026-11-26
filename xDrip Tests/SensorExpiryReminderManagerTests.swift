@@ -38,8 +38,13 @@ final class SensorExpiryReminderManagerTests: XCTestCase {
         await manager.waitForReconciliation()
     }
 
+    /// The dates the triggers fire at, read from their date components. nextTriggerDate() counts from
+    /// the real current time, so it returns nil once the fixed reference date is in the past.
     private var deadlines: [Date] {
-        scheduler.requests.values.compactMap { ($0.trigger as? UNCalendarNotificationTrigger)?.nextTriggerDate() }.sorted()
+        scheduler.requests.values.compactMap { request -> Date? in
+            guard let components = (request.trigger as? UNCalendarNotificationTrigger)?.dateComponents else { return nil }
+            return components.calendar?.date(from: components)
+        }.sorted()
     }
 
     func testDefaultsAndWholeHourValidationPreserveRawValues() {
