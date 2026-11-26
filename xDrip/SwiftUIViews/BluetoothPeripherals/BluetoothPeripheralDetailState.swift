@@ -102,6 +102,12 @@ final class BluetoothPeripheralDetailState: NSObject, ObservableObject {
     // Takes priority over saved connection history when this screen starts a fresh wait.
     private var explicitlyStartedScanAt: Date?
     private var previousScanningResult: BluetoothTransmitter.startScanningResult?
+
+    /// Whether this screen keeps the screen awake while a device is being added.
+    private var keepsScreenAwakeForAddingDevice = false
+
+    /// Lets the screen lock if a found device does not connect in time.
+    private var connectionTimeoutWorkItem: DispatchWorkItem?
     private var cachedTransmitterReadSuccessDisplay: TransmitterReadSuccessDisplay?
     private var cachedTransmitterReadSuccessSummaryText: String?
     private var cachedTransmitterReadSuccessSummaryIndicatorColor: Color?
@@ -1477,8 +1483,18 @@ private extension BluetoothPeripheralDetailState {
 
     /// Lets the screen lock, or keeps it awake, as decided by `AddDeviceScreenLockPolicy`.
     private func applyScreenLock(after event: AddDeviceScreenLockPolicy.Event) {
-        if let keepsScreenAwake = AddDeviceScreenLockPolicy.keepsScreenAwake(after: event) {
+        if let keepsScreenAwake = AddDeviceScreenLockPolicy.keepsScreenAwake(after: event, isKeptAwakeForAddingDevice: keepsScreenAwakeForAddingDevice) {
             UIApplication.shared.isIdleTimerDisabled = keepsScreenAwake
+            keepsScreenAwakeForAddingDevice = keepsScreenAwake
+        }
+
+        // A found device that never connects must not keep the screen awake until the user leaves.
+        connectionTimeoutWorkItem?.cancel()
+        connectionTimeoutWorkItem = nil
+        if event == .deviceFound, keepsScreenAwakeForAddingDevice {
+            let workItem = DispatchWorkItem { [weak self] in self?.applyScreenLock(after: .connectionTimedOut) }
+            connectionTimeoutWorkItem = workItem
+            DispatchQueue.main.asyncAfter(deadline: .now() + AddDeviceScreenLockPolicy.maximumWaitForConnection, execute: workItem)
         }
     }
 
@@ -3345,7 +3361,9 @@ extension BluetoothPeripheralDetailState: BluetoothTransmitterDelegate {
 
 /// Whether the screen is kept awake while a CGM or other Bluetooth device is being added.
 ///
-/// Scanning, connecting and pairing must not be interrupted by the screen locking.
+/// Scanning, connecting and pairing must not be interrupted by the screen locking. Finding the
+/// device is not the end: it still has to connect and, for a Libre 2, be unlocked, which fails if
+/// the screen locks in between (#418). The screen therefore stays awake until the connection.
 enum AddDeviceScreenLockPolicy {
     enum Event {
         case scanningStarted
@@ -3367,10 +3385,13 @@ enum AddDeviceScreenLockPolicy {
         switch event {
         case .scanningStarted:
             return true
-        case .scanningFailed, .deviceFound, .screenClosed:
-            return false
-        case .connected, .connectionTimedOut:
+        case .deviceFound:
             return nil
+        case .connected:
+            // a device that was already added reconnects on its own; that is no reason to change the screen lock
+            return isKeptAwakeForAddingDevice ? false : nil
+        case .scanningFailed, .connectionTimedOut, .screenClosed:
+            return false
         }
     }
 }
