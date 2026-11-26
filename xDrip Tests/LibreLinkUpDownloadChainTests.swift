@@ -17,10 +17,13 @@ import XCTest
 /// for hours made dozens of LibreLinkUp downloads per minute until the app was restarted.
 final class LibreLinkUpDownloadChainTests: XCTestCase {
 
-    /// Standard defaults changed by the test, restored afterwards.
+    /// Standard defaults changed by the test, restored afterwards: those it sets, and those the
+    /// manager writes while downloading and when logging out at the end.
     private let keys: [UserDefaults.Key] = [.isMaster, .followerDataSourceType, .libreLinkUpEmail, .libreLinkUpPassword,
                                             .libreLinkUpManuallyLoggedOut, .libreLinkUpPreventLogin,
-                                            .followerBackgroundKeepAliveType, .libreLinkUpRegion]
+                                            .followerBackgroundKeepAliveType, .libreLinkUpRegion, .libreLinkUpCountry,
+                                            .activeSensorSerialNumber, .activeSensorStartDate, .activeSensorMaxSensorAgeInDays,
+                                            .nightscoutSyncRequired]
     private var saved: [String: Any] = [:]
 
     // MARK: - Setup
@@ -38,7 +41,7 @@ final class LibreLinkUpDownloadChainTests: XCTestCase {
         defaults.libreLinkUpManuallyLoggedOut = false
         defaults.libreLinkUpPreventLogin = false
 
-        // Heartbeat mode never schedules the 60 s timer; the timer is only used with the other modes.
+        // Heartbeat mode never schedules the download timer; the timer is only used with the other modes.
         defaults.followerBackgroundKeepAliveType = .normal
 
         // No real LibreView traffic: every request fails at once.
@@ -55,28 +58,42 @@ final class LibreLinkUpDownloadChainTests: XCTestCase {
         super.tearDown()
     }
 
+    /// Time between scheduled downloads in this test.
+    private static let timerInterval: TimeInterval = 2
+
     // MARK: - Download scheduling
 
     /// Regression: three calls, like the first download and two returns to the foreground. After
     /// the next timer interval exactly one more download must start, not three.
     ///
-    /// This test waits for the real 60 s timer, so it takes about a minute.
+    /// The timer interval is 2 s instead of 60 s. With the bug the three timers fire within
+    /// milliseconds of each other; without it, the download the one timer starts schedules the next
+    /// one a whole interval later. So once the first timer has fired, half an interval is enough
+    /// to see whether others follow, with as much margin against a busy main thread.
     @MainActor
     func testRegressionExtraDownloadCallsDoNotMultiplyTheTimer() async throws {
         // No initial download, so the test controls every call.
         let manager = CountingLibreLinkUpFollowManager(coreDataManager: CoreDataManager(inMemoryModelName: ConstantsCoreData.modelName),
                                                followerDelegate: NoOpFollowerDelegate(),
                                                backgroundKeepAliveManager: NoOpKeepAliveManager(),
-                                               startsInitialDownload: false)
+                                               startsInitialDownload: false,
+                                               downloadTimerInterval: Self.timerInterval)
+        // The pending timer keeps the manager alive; stop it so it cannot download during later tests.
+        defer { manager.logOut() }
 
         // Each call fails on the network and then schedules the next download, as a real one would.
         for _ in 0..<3 { manager.download() }
         try await waitForRequests(3, timeout: 10)
         XCTAssertEqual(manager.downloadCount, 3)
 
-        // Let the 60 s timers fire. Count download() runs, not requests: a failed login can
-        // block later login requests, so a download may end before reaching the network.
-        try await Task.sleep(nanoseconds: 62 * 1_000_000_000)
+        // Wait for the first timer, then half an interval for any other. Count download() runs, not
+        // requests: a failed login can block later login requests, so a download may end before
+        // reaching the network.
+        let deadline = Date().addingTimeInterval(Self.timerInterval * 5)
+        while manager.downloadCount < 4, Date() < deadline {
+            try await Task.sleep(nanoseconds: 20_000_000)
+        }
+        try await Task.sleep(nanoseconds: UInt64(Self.timerInterval * 0.5 * 1_000_000_000))
         XCTAssertEqual(manager.downloadCount - 3, 1, "downloads started by the timers after one interval")
     }
 

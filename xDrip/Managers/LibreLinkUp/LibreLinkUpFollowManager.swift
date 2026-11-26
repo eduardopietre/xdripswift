@@ -36,6 +36,9 @@ class LibreLinkUpFollowManager: NSObject {
 
     /// Allows wiring tests to reconcile real manager state without starting follower networking.
     private let startsInitialDownload: Bool
+
+    /// Time between scheduled downloads. Only tests use another value than the default 60 seconds.
+    private let downloadTimerInterval: TimeInterval
     
     /// closure to call when downloadtimer needs to be invalidated, eg when changing from master to follower
     private var invalidateDownLoadTimerClosure: (() -> Void)?
@@ -82,7 +85,8 @@ class LibreLinkUpFollowManager: NSObject {
         coreDataManager: CoreDataManager,
         followerDelegate: FollowerDelegate,
         backgroundKeepAliveManager: FollowerBackgroundKeepAliveManaging,
-        startsInitialDownload: Bool = true
+        startsInitialDownload: Bool = true,
+        downloadTimerInterval: TimeInterval = 60
     ) {
         // initialize non optional private properties
         self.coreDataManager = coreDataManager
@@ -90,6 +94,7 @@ class LibreLinkUpFollowManager: NSObject {
         self.followerDelegate = followerDelegate
         self.backgroundKeepAliveManager = backgroundKeepAliveManager
         self.startsInitialDownload = startsInitialDownload
+        self.downloadTimerInterval = downloadTimerInterval
         
         // initialize the LibreLinkUpRegion
         self.libreLinkUpRegion = .notConfigured
@@ -716,8 +721,8 @@ class LibreLinkUpFollowManager: NSObject {
         // number of downloads per minute kept growing until the app was restarted.
         invalidateDownLoadTimerClosure?()
         
-        // schedule a timer for 60 seconds and assign it to a let property
-        let downloadTimer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(self.download), userInfo: nil, repeats: false)
+        // schedule a timer for downloadTimerInterval (60 seconds outside tests) and assign it to a let property
+        let downloadTimer = Timer.scheduledTimer(timeInterval: downloadTimerInterval, target: self, selector: #selector(self.download), userInfo: nil, repeats: false)
         
         // assign invalidateDownLoadTimerClosure to a closure that will invalidate the downloadTimer
         self.invalidateDownLoadTimerClosure = {
