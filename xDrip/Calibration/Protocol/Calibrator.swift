@@ -328,15 +328,7 @@ extension Calibrator {
     ///     - calibration : calibration to check if it's in the list
     ///     - list : list to check
     private func check(ifThisCalibration calibration:Calibration, isInThisList list:inout Array<Calibration>) {
-        loop1 : for (index, calibrationItem) in list.enumerated() {
-            if calibration.timeStamp.toMillisecondsAsDouble() > calibrationItem.timeStamp.toMillisecondsAsDouble() {
-                list.insert(calibration, at: index)
-            } else if calibrationItem.id == calibration.id {
-                break loop1
-            } else if index == (list.count - 1) {
-                list.append(calibration)
-            }
-        }
+        NewestFirstInsertion.insert(calibration, into: &list, id: \.id, timeStamp: \.timeStamp)
     }
     
     /// calculate slopeOOBHandler
@@ -575,3 +567,25 @@ extension Calibrator {
 
 
 
+
+/// Inserts an item into a list sorted from newest to oldest, unless an item with the same id is already in it.
+enum NewestFirstInsertion {
+    
+    /// - parameters:
+    ///     - item : the item to insert
+    ///     - list : list sorted from newest to oldest
+    ///     - id : the identifier of an item
+    ///     - timeStamp : the time stamp of an item
+    static func insert<Item>(_ item: Item, into list: inout [Item], id: (Item) -> String, timeStamp: (Item) -> Date) {
+        loop1 : for (index, listItem) in list.enumerated() {
+            if timeStamp(item).toMillisecondsAsDouble() > timeStamp(listItem).toMillisecondsAsDouble() {
+                list.insert(item, at: index)
+            } else if id(listItem) == id(item) {
+                break loop1
+            } else if index == (list.count - 1) {
+                list.append(item)
+            }
+        }
+    }
+    
+}
