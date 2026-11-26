@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		E9570368B52482C78785B100 /* AppCoverageAlertKindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161CF0ACB813AA33C1F5862 /* AppCoverageAlertKindTests.swift */; };
 		46C7105BCE3DBB30CF0C8BD9 /* DataExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */; };
 		9EACE862CA332DC23A372F2B /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D53CBDC383BC6AE17A00D2 /* DateExtensionTests.swift */; };
 		5E726C56695476D74062AB85 /* RootHomeChartRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */; };
@@ -1047,6 +1048,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		D161CF0ACB813AA33C1F5862 /* AppCoverageAlertKindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageAlertKindTests.swift; sourceTree = "<group>"; };
 		1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensionTests.swift; sourceTree = "<group>"; };
 		50D53CBDC383BC6AE17A00D2 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHomeChartRangeTests.swift; sourceTree = "<group>"; };
@@ -2974,6 +2976,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				D161CF0ACB813AA33C1F5862 /* AppCoverageAlertKindTests.swift */,
 				1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */,
 				50D53CBDC383BC6AE17A00D2 /* DateExtensionTests.swift */,
 				18CCE2491D8F8AB506FE8073 /* RootHomeChartRangeTests.swift */,
@@ -4923,6 +4926,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				E9570368B52482C78785B100 /* AppCoverageAlertKindTests.swift in Sources */,
 				46C7105BCE3DBB30CF0C8BD9 /* DataExtensionTests.swift in Sources */,
 				9EACE862CA332DC23A372F2B /* DateExtensionTests.swift in Sources */,
 				5E726C56695476D74062AB85 /* RootHomeChartRangeTests.swift in Sources */,
