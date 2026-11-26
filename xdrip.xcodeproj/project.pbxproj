@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */; };
+		FDD4278A6CC38CEBFF3AC8B8 /* AppCoverageChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540AE9FC57008173355A2BE0 /* AppCoverageChartTests.swift */; };
 		3C00DB4AA5C1A65CC9CC13FB /* AppCoverageAlertManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D06F56D87E6716582EE17F /* AppCoverageAlertManagerTests.swift */; };
 		E9570368B52482C78785B100 /* AppCoverageAlertKindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D161CF0ACB813AA33C1F5862 /* AppCoverageAlertKindTests.swift */; };
 		46C7105BCE3DBB30CF0C8BD9 /* DataExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */; };
@@ -1049,6 +1050,7 @@
 
 /* Begin PBXFileReference section */
 		C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibreLinkUpDownloadChainTests.swift; sourceTree = "<group>"; };
+		540AE9FC57008173355A2BE0 /* AppCoverageChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageChartTests.swift; sourceTree = "<group>"; };
 		E0D06F56D87E6716582EE17F /* AppCoverageAlertManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageAlertManagerTests.swift; sourceTree = "<group>"; };
 		D161CF0ACB813AA33C1F5862 /* AppCoverageAlertKindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoverageAlertKindTests.swift; sourceTree = "<group>"; };
 		1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensionTests.swift; sourceTree = "<group>"; };
@@ -2978,6 +2980,7 @@
 				4F2600113002000200000001 /* SensorNoisePersistenceTests.swift */,
 				4D7A00053014000100000001 /* TroubleshootingLogTests.swift */,
 				C0FE9FB9D8F272AF643B2AAA /* LibreLinkUpDownloadChainTests.swift */,
+				540AE9FC57008173355A2BE0 /* AppCoverageChartTests.swift */,
 				E0D06F56D87E6716582EE17F /* AppCoverageAlertManagerTests.swift */,
 				D161CF0ACB813AA33C1F5862 /* AppCoverageAlertKindTests.swift */,
 				1B803E76EE2B7460FEBBE8A0 /* DataExtensionTests.swift */,
@@ -4929,6 +4932,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0FEC7F710031A867E44BD7D /* LibreLinkUpDownloadChainTests.swift in Sources */,
+				FDD4278A6CC38CEBFF3AC8B8 /* AppCoverageChartTests.swift in Sources */,
 				3C00DB4AA5C1A65CC9CC13FB /* AppCoverageAlertManagerTests.swift in Sources */,
 				E9570368B52482C78785B100 /* AppCoverageAlertKindTests.swift in Sources */,
 				46C7105BCE3DBB30CF0C8BD9 /* DataExtensionTests.swift in Sources */,
